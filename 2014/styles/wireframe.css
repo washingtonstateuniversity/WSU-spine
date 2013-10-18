@@ -1,0 +1,113 @@
+.wireframe .row .column {
+	min-height: 198px;
+	box-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
+	}
+	
+/* GRID */
+
+/* ------------------- */
+
+#grid {
+	display: none;
+	}
+.grid #grid {
+	position: absolute;
+	width: 990px;
+	left: 0;
+	top: 0;
+	display: block;
+	height: 3000px;
+	z-index: 9999;
+	background: transparent url('../images/elements/grid.png') repeat-y left top;
+	}
+.grid.grid12 #grid {
+	background: transparent url('../images/elements/grid12.png') repeat-y left top;
+	}
+.grid section.row::before {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .5;
+	position: absolute;
+	right: 0px;
+	width: 75px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	}
+.grid .row.eighths::before { content: "eighths"; }
+.grid .row.twelfths::before { content: "twelfths"; }
+.grid .row.quarters::before { content: "quarters"; }
+.grid .row.single::before { content: "single"; }
+.grid .row.halves::before { content: "halves"; }
+.grid .row.sidebar::before { content: "sidebar"; }
+.grid .row.triptych::before { content: "triptych"; }
+.grid .row.thirds::before { content: "thirds"; }
+.grid .row.margin::before { content: "margin"; }
+	
+/* Column Numbering */
+.column::after { 
+	color: white;
+	background-color: #b6bcbf;
+	padding: 5px 10px;
+	position: absolute;
+	right: 0; bottom: 0;
+	}
+.wireframe .column.one::after { content:"1"; }
+.wireframe .column.two::after { content:"2"; }
+.wireframe .column.three::after { content:"3"; }
+.wireframe .column.four::after { content:"4"; }
+.wireframe .column.five::after { content:"5"; }
+.wireframe .column.six::after { content:"6"; }
+.wireframe .column.seven::after { content:"7"; }
+.wireframe .column.eight::after { content:"8"; }
+.wireframe .column.nine::after { content:"9"; }
+.wireframe .column.ten::after { content:"10"; }
+.wireframe .column.eleven::after { content:"11"; }
+.wireframe .column.twelve::after { content:"12"; }
+
+/* Column Measurements */
+.wireframe .column::before { 
+	color: black;
+	padding: 2px 4px;
+	position: absolute;
+	opacity: .2;
+	font-size: 10px;
+	top: 0;	left: 0;
+	width: 95%;
+	margin: 0px auto;
+	text-align: center;
+	}
+.wireframe .single .column::before { content:"\2190 792 \2192"; }
+.wireframe .sidebar .column.one::before { content:"\2190 528 \2192"; }
+.wireframe .sidebar .column.two::before,
+.wireframe .thirds .column::before { content:"\2190 264 \2192"; }
+.wireframe .margin .column.one::before { content:"\2190 594 \2192"; }
+.wireframe .margin .column.two::before,
+.wireframe .quarters .column::before,
+.wireframe .triptych .column.one::before,
+.wireframe .triptych .column.three::before { content:"\2190 198 \2192"; }
+.wireframe .halves .column::before,
+.wireframe .triptych .column.two::before { content:"\2190 396 \2192"; }
+
+.wireframe .nested::before {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .2;
+	position: absolute;
+	text-align: left;
+	left: 0px;
+	width: 75px;
+	top: 60px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	content:"nested" !important;
+	}
