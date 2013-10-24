@@ -1,4 +1,8 @@
 
+$("#shelve").click(function() {
+	$('#spine').toggleClass('unshelved shelved');
+	});
+
 //////////////////////
 
 // Tools
@@ -10,10 +14,10 @@ function printPage(){
 $("#wsu-tab-share button,#wsu-share button.shut").click(function() {
 	$('#wsu-actions *.opened,#wsu-share,#wsu-tab-share').toggleClass('opened closed');
 	});
-$("#wsu-tab-print button:nth-of-type(1)").click(function() {
+$("#wsu-tab-print .print-button button").click(function() {
 	$('#wsu-actions *.opened').toggleClass('opened closed');
 	$('html').toggleClass('print');
-	setTimeout(function(){ printPage()},400000000);
+	setTimeout(function(){ printPage()},400);
 	});
 $("#wsu-tab-search button").click(function() {
 	$('#wsu-actions *.opened,#wsu-search,#wsu-tab-search').toggleClass('opened closed');
@@ -35,7 +39,8 @@ $("#print-cancel").click(function() { $('html').toggleClass('print'); });
 
 ////////////////////////////////
 
-// Fixed Horizontal Header 
+// Fixed Horizontal Header
+
 $(document).scroll(function() {
 var top = $(document).scrollTop();
 	if (top > 50) { $('#spine').not('.unshelved').addClass('scanned'); }
@@ -43,8 +48,6 @@ var top = $(document).scrollTop();
 });
 
 ////////////////////////////////
-
-
 
 // Couplets
 
@@ -200,21 +203,7 @@ $(document).scroll(function() {
   };
 })(jQuery);
 
-$(document).ready(function(){
-    $('.row:not(".unequal")').each(function(){  
-        var highestBox = 0;
-        $('.column', this).each(function(){
-            if($(this).height() > highestBox) 
-               highestBox = $(this).height(); 
-        });  
-        $('.column',this).height(highestBox);
-
-});
-});
-
-////////////////////////////////
-
-// Equalize Columns
+// Start Filtering
 
 $(document).ready(function(){
 
@@ -230,6 +219,21 @@ $("#wsu-search input[type=text]").keyup(function(){
 		$("#wsu-search menu").hide();
 	}
 });
+});
+
+////////////////////////////////
+
+// Equalize Columns
+
+$(document).ready(function(){
+	$('.row:not(".unequal")').each(function(){  
+	    var highestBox = 0;
+	    $('.column', this).each(function(){
+	        if($(this).height() > highestBox) 
+	           highestBox = $(this).height(); 
+	    });  
+	    $('.column',this).css('min-height',highestBox);
+	});
 });
 
 ////////////////////////////////
