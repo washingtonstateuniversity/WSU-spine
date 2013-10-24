@@ -50,6 +50,63 @@
 	padding-top: 15px;
 	}
 
+/* Cropped */
+#spine.cropped {
+	font-size: 12px;
+	height: 198px;
+	min-height: 198px;
+	box-shadow: 0px 0px 5px rgba(66,74,79,0.5);
+	position: absolute;
+	top: 0px;
+	z-index: 9999;
+	}
+footer.looseleaf {
+	padding-top: 10px;
+	}
+footer.looseleaf nav,
+footer.looseleaf small {
+	xborder: 1px pink solid;
+	position: absolute;
+	white-space: nowrap;
+	}
+footer.looseleaf #global {
+	right: 50%;
+	padding-right: 60px;
+	}
+footer.looseleaf #copyright {
+	left: 50%;
+	padding-left: 60px;
+	padding-top: 5px;
+	}
+footer.looseleaf #social {
+	float: right;
+	display: block;
+	left: 50%;
+	z-index: 500;
+	}
+footer.looseleaf #social ul {
+	position: relative;
+	left: -50px;
+	}
+footer.looseleaf #social ul li {
+	display: inline-block;
+	width: auto;
+	padding: 0px 0px 0px 1px;
+	margin: 0px;
+	width: 30px;
+	white-space: nowrap;
+	}
+footer.looseleaf #social li a {
+	color: #5e6a71;
+	padding: 5px;
+	}
+footer.looseleaf #global li {
+	width: auto;
+	display: inline-block;
+	margin: 0px;
+	padding-left: 10px;
+	}
+
 /* HEADER (Spine) */
 #spine header {
 	z-index: 999;
@@ -67,7 +124,7 @@
 	background-position: center center;
 	background-image: url('../marks/sig-vertical.svg');
 	background-size: 150px auto;
-	height: 145px;
+	height: 155px;
 	display: block;
 	text-indent: -9000px;
 	}
@@ -306,7 +363,7 @@ html.search #wsu-search {
 #spine #wsu-search button.arrow.glassine:hover,
 #spine #wsu-search button.arrow.glassine:hover i {
 	color: white;
-	color: #981e32;;
+	color: #981e32;
 	text-shadow: none;
 	}
 #wsu-search button i {
@@ -354,6 +411,9 @@ html.search #wsu-search {
 	white-space: nowrap;
 	overflow-x: hidden;
 	}
+#submit-search #wsu-icon:before {
+	content: "x";
+	}
 #wsu-search ul.tabs li a {
 	height: 40px;
 	box-sizing: border-box;
@@ -365,9 +425,6 @@ html.search #wsu-search {
 	}
 #wsu-search ul.tabs li.active a span {
 	display: inline;
-	}
-#wsu-search ul.tabs li:nth-of-type(1) a {
-	xpadding-left: 20px;
 	}
 #wsu-search ul.tabs li a i {
 	position: relative;
@@ -397,20 +454,20 @@ html.search #wsu-search {
 	}
 #spine #wsu-share li a {
 	display: block;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: .5em;
+	padding-bottom: .5em;
 	border-bottom: 1px #c3cbcf solid;
 	}
-#spine #wsu-share ul li:nth-last-of-type(1) a  {
+#spine #wsu-share ul li:last-of-type a  {
 	border-bottom: none;
 	}
 #spine #wsu-share li a:hover {
 	color: white;
 	background: #434d53;
-	padding-top: 6px;
+	padding-top: .5em;
 	padding-left: 2em;
 	padding-right: 2em;
-	margin: -1px -2em 0px -2em;
+	margin: -1px -2em 1px -2em;
 	}
 #spine #wsu-share li a:active {
 	background: #981e32;
@@ -419,7 +476,7 @@ html.search #wsu-search {
 	color: white;
 	}
 #wsu-share i.wsu-icon {
-	width: 20px;
+	width: 1.8em;
 	display: inline-block;
 	text-align: center;
 	}
@@ -490,7 +547,7 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 
 /* !NAVIGATION */
 #spine nav#site {
-	margin: 0px 20px;
+	margin: 10px 20px;
 	}
 #spine nav ul li {
 	position: relative;
@@ -537,12 +594,14 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 
 /* Navigation Icons */
 #spine nav#site > ul > li:first-child a {
-	padding-left: 15px;
+	padding-left: 1.4em;
 	background: transparent url('../images/icons/home-gray.svg') no-repeat left center;
+	background-size: 1em auto;
 	}
 #spine nav#site > ul > li:first-child a:hover,
 #spine nav#site > ul > li:first-child a:before {
 	background: transparent url('../images/icons/home-crimson.svg') no-repeat left center;
+	background-size: 1em auto;
 	}
 #spine nav#site ul li u {
 	position: absolute;
@@ -603,7 +662,7 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 #spine nav ul li a {
 	display: block;
 	padding: 6px 0px;
-	text-transform: uppercase;
+	xtext-transform: uppercase;
 	}
 #spine nav ul li a:hover {
 	color: #981e32;
@@ -651,7 +710,11 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	}
 #spine nav#site a.external:hover:after {
 	font-family: "Iconography", null;
-	content: " ";
+	content: " ⬈";
+	content: " ";
+	content: " ";
+	content: " e";
+	xcontent: " ";
 	}
 	
 /* FOOTER (Spine) */
@@ -665,7 +728,7 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 
 /* Social */
 #spine #social {
-	margin-bottom: 4px;
+	margin-bottom: .6em;
 	width: 100%;
 	}
 #spine #social ul {
@@ -676,7 +739,7 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	color: #b6bcbf;
 	background-position: center center;
 	background-repeat: no-repeat;
-	width: 30px;
+	width: 2.5em;
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
@@ -687,10 +750,11 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	}
 nav#social ul li a {
 	color: #e0e5e8;
+	color: #b6bcbf;
 	text-indent: -9000px;
 	font-size: 1.8em;
 	line-height: .8em;
-	height: 20px;
+	height: 1.2em;
 	padding: 0px;
 	display: block;
 	position: relative;
@@ -709,9 +773,10 @@ nav#social ul li#facebook a:before { content: "F"; }
 nav#social ul li#twitter a:before { content: "T"; }
 nav#social ul li#youtube a:before { content: "Y"; }
 
-.johnrules nav#social ul li#facebook a:before { content: "f"; }
-.johnrules nav#social ul li#twitter a:before { content: "t"; }
-.johnrules nav#social ul li#youtube a:before { content: "y"; }
+nav#social ul li#facebook a:before { content: "f"; }
+nav#social ul li#twitter a:before { content: "t"; }
+nav#social ul li#youtube a:before { content: "y"; }
+nav#social ul li#youtube a:before { content: "z"; }
 
 nav#social ul li#facebook a:hover { color: #3c6693; }
 nav#social ul li#twitter a:hover { color: #6fb8cb; }
@@ -752,7 +817,9 @@ nav#global ul li a:hover {
 	padding: 6px 0px;
 	}
 #spine footer small a,
-#spine footer small a:hover {
+footer.looseleaf small a,
+#spine footer small a:hover,
+footer.looseleaf small a:hover {
 	color: #b6bcbf;
 	}
 	
@@ -837,7 +904,7 @@ nav#global ul li a:hover {
 #spine.light, #spine.light #glue > header { background: #8b9399; }
 #spine.light #logo { background-image: url('../marks/sig-vertical-whitelogotype.svg') }
 #spine.light nav#site > ul > li:first-child a {
-	background-image: url('../images/icons/home-gray-darker.svg') }
+	background-image: url('../images/icons/home-gray-lightest.svg') }
 #spine.light nav#site > ul > li:first-child a:before,
 #spine.light nav#site > ul > li:first-child a:hover {
 	background-image: url('../images/icons/home-crimson.svg') }
@@ -852,15 +919,15 @@ nav#global ul li a:hover {
 #spine.light nav#site ul li,
 #spine.light nav#offsite ul li,
 #spine.light #global {
-	border-color: #5e6a71; }
+	border-color: #babfc2; }
 #spine.light nav#offsite ul li a,
 #spine.light #global ul li a,
 #spine.light footer small a {
-	color: #5e6a71; }
+	color: #babfc2; }
 #spine.light nav#site ul li a,
 #spine.light nav#offsite ul li a:hover,
 #spine.light #global ul li a:hover {
-	color: #424a4f; }
+	color: #e6e8e9; }
 #spine.light #wsu-actions li#wsu-tab-search button,
 #spine.light #wsu-actions li button:hover {
 	color: #e6e8e9; }
@@ -885,10 +952,11 @@ nav#global ul li a:hover {
 #spine.gray #wsu-actions li.opened button:hover,
 #spine.gray #wsu-actions li#wsu-tab-search.opened button:hover,
 #spine.gray #social ul li a,
-#spine.gray #global ul li a,
 #spine.gray footer small,
 #spine.gray footer small a {
 	color: #424a4f; }
+#spine.gray #global ul li a {
+	color: #8b9399; }
 #spine.gray nav#site ul li,
 #spine.gray nav#offsite ul li,
 #spine.gray #global {
@@ -896,11 +964,11 @@ nav#global ul li a:hover {
 #spine.gray nav#site ul li a,
 #spine.gray nav#offsite ul li a:hover {
 	color: #e6e8e9; }
-#spine.gray nav#offsite ul li a {
+#spine.gray nav#offsite ul li a,
+#spine.gray #global ul li a:hover {
 	color: #babfc2; }
 #spine.gray #wsu-actions li button:hover,
-#spine.gray #wsu-actions li#wsu-tab-search button,
-#spine.gray #global ul li a:hover {
+#spine.gray #wsu-actions li#wsu-tab-search button {
 	color: #262a2d; }
 #spine.gray #social ul li#facebook a:hover {
 	color: #eeeff4;	}
@@ -1058,7 +1126,7 @@ nav#global ul li a:hover {
 	color: #981e32; }
 	
 /* CRIMSON #981e32 */
-#spine.crimson { background: #981e32; }
+#spine.crimson, #spine.crimson #glue > header, #spine.crimson > header { background-color: #981e32; }
 #spine.crimson #logo { background-image: url('../marks/sig-vertical-white.svg'); }
 #spine.crimson nav#site > ul > li:first-child a { background-image: url('../images/icons/home-gray-lighter.svg') }
 #spine.crimson nav#site > ul > li:first-child a:hover, #spine.crimson nav#site > ul > li:first-child a:before { background-image: url('../images/icons/home-white.svg') }
