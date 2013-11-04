@@ -71,25 +71,28 @@ input {
 	outline: none;
 	}
 
+.sans { font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif; }
+.serif { font: 14px/22px "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
+
 /* ! Grid //////////////////////// */
 
 /* LAYOUT */
 
 body {
 	color: #262a2d;
-	xfont: 14px/22px "OpenSans","Lucida Grande","Lucida Sans Unicode", "Arial", san-serif;
-	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", san-serif;
-	background: #EEEFF1 url('../images/elements/bg.png') left top repeat-x;
-	background: white url('../images/elements/gray-white-south.png') left top repeat-x;
+	xfont: 14px/22px "OpenSans","Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
+	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
+	background: white url('../images/gradient.png') left top repeat-x;
 	}
-.serif,
-body.serif {
-	font: 14px/22px "Palatino","Lucida Sans Unicode", "Arial", san-serif;
-	}
+
 #binder {
 	width: 990px;
 	margin: 0px auto;
 	position: relative;
+	}
+#binder.fluid.folio {
+	width: 100%;
+	max-width: 1782px; /* Main (792) x 2 + Spine (198) */
 	}
 main {
 	margin-left: 198px;
@@ -190,12 +193,12 @@ section {
 .three-fourths, .nine-twelfths { width: 594px; }
 
 /* Fifteenths */
-.one-fifteenth { width: 66px; }
-.three-fifteenths, .one-fifth { width: 198px; }
-.six-fifteenths, .two-fifths { width: 396px; }
-.nine-fifteenths, .three-fifths { width: 594px; }
-.twelve-fifteenths, .four-fifths { width: 792px; }
-.fifteen-fifteenths, .five-fifths { width: 990px; }
+.row .column.one-fifteenth { width: 66px; }
+.row .column.three-fifteenths, .column.one-fifth { width: 198px; }
+.row .column.six-fifteenths, .column.two-fifths { width: 396px; }
+.row .column.nine-fifteenths, .column.three-fifths { width: 594px; }
+.row .column.twelve-fifteenths, .column.four-fifths { width: 792px; }
+.row .column.fifteen-fifteenths, .column.five-fifths { width: 990px; }
 
 .panel {
 	position: absolute;
@@ -229,7 +232,9 @@ section {
 /* Self Clearing Goodness */
 section:before,
 section:after,
+main:before,
 main:after,
+#binder:after,
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -240,10 +245,13 @@ main:after,
   visibility: hidden;
   width: 0;
   height: 0; }
+#binder:after,
+main:after,
 section:after,
 .row:after,
 .clearfix:after {
   clear: both; }
+main,
 section,
 .row,
 .clearfix {

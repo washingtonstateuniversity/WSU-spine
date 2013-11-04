@@ -29,7 +29,6 @@ $("#wsu-tab-contact button,#wsu-contact button.shut").click(function() {
 $("button#submit-search").click(function() {
 	$('#results').show();
 	return false;
-	
 	});	
 	
 });
@@ -55,7 +54,9 @@ $(document).ready(function() {
 	$("#spine:not(.test) nav ul,#spine:not(.test) ul").parents("li").addClass("parent");
 	$("#spine:not(.test) nav li[class*=current],:not(.test) nav li[class*=active]").addClass("active").parents("li").addClass("active");
 	$("#spine:not(.test) .active").not(":has(.active)").addClass("dogeared");
-});
+}); 
+
+
 
 $(document).ready(function(){
 
@@ -226,13 +227,13 @@ $("#wsu-search input[type=text]").keyup(function(){
 // Equalize Columns
 
 $(document).ready(function(){
-	$('.row:not(".unequal")').each(function(){  
+	$('.row:not(".unequaled")').each(function(){  
 	    var highestBox = 0;
 	    $('.column', this).each(function(){
 	        if($(this).height() > highestBox) 
 	           highestBox = $(this).height(); 
 	    });  
-	    $('.column',this).css('min-height',highestBox);
+	    $('.column',this).not('.unequaled').css('min-height',highestBox);
 	});
 });
 
