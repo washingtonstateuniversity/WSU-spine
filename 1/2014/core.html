@@ -10,18 +10,18 @@
 	<title>Page Title | Unit | Washington State University</title>
 	
 	<!-- FAVICON -->
-	<link rel="shortcut icon" href="http://images.wsu.edu/spine/images/icons/favicon.ico" />
+	<link rel="shortcut icon" href="http://images.wsu.edu/spine/1/images/icons/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-	<link href="http://images.wsu.edu/spine/styles.css" rel="stylesheet" type="text/css" />
+	<link href="http://images.wsu.edu/spine/1/styles.css" rel="stylesheet" type="text/css" />
 	<!-- Your theme stylesheets here -->
 	
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
 	<!-- SCRIPTS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
-	<script src="http://images.wsu.edu/spine/scripts.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://images.wsu.edu/spine/1/scripts.js" type="text/javascript"></script>
 	<!-- Your supplementary scripts here -->
 	
 	<!-- DOCS -->
@@ -39,6 +39,29 @@
 <div id="jacket">
 <div id="binder">
 
+<!-- CONTENT -->
+<main id="page" role="main">
+
+<!-- Responsive Sections -->
+<section class="row sidebar">
+
+	<div class="column one">
+		<article>
+			You Could write an article here.
+		</article>
+	</div><!--/column-->
+
+	<div class="column two">
+		<aside>
+			You could have a sidebar here.
+		</aside>
+	</div><!--/column-->
+
+</section>
+
+</main><!--/#page-->
+<!-- /CONTENT -->
+
 <!-- SPINE -->
 <div id="spine" class="shelved">
 <div id="glue" class="clearfix">
@@ -49,38 +72,45 @@
 </header>
 
 <!-- ACTIONS -->
-<section id="wsu-actions" class="clearfix" role="actions">
+<section id="wsu-actions" role="actions">
 
-<!-- Icons -->
-<ul id="wsu-tabs-actions" class="wsuicons clearfix">
-	<li id="wsu-tab-search" class="closed" label="Search"><button class="glassine">🔎</button></li>
-	<li id="wsu-tab-contact" class="closed" label="Contact"><button class="glassine">✉</button></li>
-	<li id="wsu-tab-share" class="closed" label="Share"><button class="glassine"></button></li>
+<!-- Tabs -->
+<ul id="wsu-tabs-actions" class="clearfix">
+	<li id="wsu-tab-search" class="closed" label="Search"><button><span>Search</span></button></li>
+	<li id="wsu-tab-contact" class="closed" label="Contact"><button><span>Contact</span></button></li>
+	<li id="wsu-tab-share" class="closed" label="Share"><button><span>Share</span></button></li>
 	<li id="wsu-tab-print" class="closed" label="Print">
-		<span class="print-button"><button class="glassine">⎙</button></span>
-		<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>
+		<span class="print-button"><button><span>Print</span></button></span>
+		<span class="print-controls">
+			<button id="print-invoke"><span>Print</span></button>
+			<button id="print-cancel"><span>Cancel</span></button>
+		</span>
 	</li>
 </ul>
 
 <!-- Search/Index ( In great FLUX ) -->
 <section id="wsu-search" class="tools closed">
+	<!--
+	You can turn off default search functions by adding classes to #wsu-search
+	Options: .nix-index, .nix-site, .nix-wsu, .nix-facstaff, .nix-students
+	-->
 	
 	<form name="search" id="search">
-		<input name="term" type="text" value="" placeholder="search" />
-		<button class="glassine"><i class="wsu-icon"></i>Search</button>
-	</form>
+        <input id="searchterm" name="term" type="text" value="" placeholder="search">
+        <button id="submit-search"><span>Submit</span></button>
+     </form>
      
 	<div id="results">
 		<ul class="tabs cf">
-			<li id="tab-site-search" class="active"><a href="#">Site</li>
-			<li id="tab-wsu-search" class="inactive"><a href="#">WSU</li>
-			<li id="tab-staff-search" class="inactive"><a href="#">Faculty/Staff</li>
-			<li id="tab-student-search" class="inactive"><a href="#">Students</li>
+			<li id="tab-site-search" class="active"><a href="#"><button><span>Site</span></button></li>
+			<li id="tab-wsu-search" class="inactive"><button><span>WSU</span></button></li>
+			<li id="tab-staff-search" class="inactive"><button><span>Faculty/Staff</span></button></li>
+			<li id="tab-student-search" class="inactive"><button><span>Students</span></button></li>
 		</ul>
 	</div>
 	
 	<div id="resulting">
-		<button id="shut-results" class="shut glassine"></button>
+		
 	</div>
 
 	<!-- AtoZ Index Goes Here -->
@@ -94,7 +124,7 @@
 
 <!-- Contact -->
 <section id="wsu-contact" class="tools closed">
-	<button id="shut-contact" class="shut glassine"><i class="ss-pika ss-delete"></i></button>
+	<button id="shut-contact" class="shut"><span>Close</span></button>
 	<!-- This following  address uses microformat classes to enable automated contact recognition -->
 	<address class="hcard">
 		<div class="organization-unit fn org"><a href="http://example.wsu.edu/" class="url">University College</a></div>
@@ -109,7 +139,7 @@
 		</div>
 		<div class="tel"><i class="wsu-icon"></i>888-468-6978</div>
 		<div class="email" rel="email"><a href="mailto:contact@wsu.edu"><i class="wsu-icon"></i>Email us</a></div>
-		<div class="more"><a href="http://about.wsu.edu/contact/"><i class="wsu-icon"></i>More Contacts</a></div>
+		<div class="more"><a href="http://about.wsu.edu/contact/"><i class="wsu-icon"></i>More Contacts &#8230;</a></div>
 	</address>
 </section>
 
@@ -171,9 +201,10 @@
 <footer>
 	<nav id="social">
 		<ul>
-			<li id="facebook"><a href="http://facebook.com/wsupullman" title="Facebook" class="wsu-icon">Facebook</a></li>
-			<li id="twitter"><a href="http://twitter.com/wsupullman" title="Twitter" class="wsu-icon">Twitter</a></li>
-			<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv" title="YouTube" class="wsu-icon">YouTube</a></li>
+			<li id="facebook"><a href="http://facebook.com/wsupullman">Facebook</a></li>
+			<li id="twitter"><a href="http://twitter.com/wsupullman">Twitter</a></li>
+			<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+			<li id="social"><a href="http://social.wsu.edu">Social</a></li>
 		</ul>
 	</nav>
 	<nav id="global">
@@ -183,35 +214,12 @@
 			<li id="policies"><a href="http://policies.wsu.edu/">Policies</a></li>
 		</ul>
 	</nav>	
-	<small><a href="http://publishing.wsu.edu/copyright/WSU.html">&copy; Washington State University</a></small>
+	<small id="copyright"><a href="http://publishing.wsu.edu/copyright/WSU.html">&copy; Washington State University</a></small>
 </footer>
 
 </div><!--/glue-->
 </div><!--/spine-->
 <!-- /SPINE -->
-
-<!-- CONTENT -->
-<main id="page" role="main">
-
-<!-- Responsive Sections -->
-<section class="row sidebar">
-
-	<div class="column one">
-		<article>
-			You Could write an article here.
-		</article>
-	</div><!--/column-->
-
-	<div class="column two">
-		<aside>
-			You could have a sidebar here.
-		</aside>
-	</div><!--/column-->
-
-</section>
-
-</main><!--/#page-->
-<!-- /CONTENT -->
 
 </div><!--/cover-->
 </div><!--/jacket-->

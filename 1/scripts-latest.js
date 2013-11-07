@@ -1,0 +1,1 @@
+$.getScript("http://images.wsu.edu/spine/1/2014/scripts/scripts.js", function(){ });

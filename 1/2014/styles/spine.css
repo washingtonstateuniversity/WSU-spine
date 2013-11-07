@@ -3,10 +3,18 @@
 /* SYMBOLS */
 @font-face {
 	font-family: "Iconography";
-	src: url('../symbols/wsuicons-Regular.ttf') format("truetype");
+    src: url('../symbols/wsu-icons-regular.eot');
+    src: url('../symbols/wsu-icons-regular.eot?#iefix') format('embedded-opentype'),
+         url('../symbols/wsu-icons-regular.ttf') format('truetype'),
+         url('../symbols/wsu-icons-regular.woff') format('woff');
+    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
 	}
 	
-/*////////////////////////*/
+	
+/* Spine
+--------------------------------------------------------------------------- */
 
 #spine {
 	font-size: 12px;
@@ -24,6 +32,7 @@
 .wsu-icon, .wsu-icons {
 	font-family: "Iconography";
 	font-style: normal;
+	font-weight: 400;
 	}
 	
 /* Cracked */
@@ -129,13 +138,14 @@ footer.looseleaf #global li {
 	display: block;
 	text-indent: -9000px;
 	}
-.spokane #spine a#logo { background-image: url('../marks/sig-v-spokane.svg'); }
-.tricities #spine a#logo { background-image: url('../marks/sig-v-tricities.svg'); }
-.globalcampus #spine a#logo { background-image: url('../marks/sig-v-globalcampus.svg'); }
-.vancouver #spine a#logo { background-image: url('../marks/sig-v-vancouver.svg'); }
-.extension #spine a#logo { background-image: url('../marks/sig-v-extension.svg'); }
+.spokane-campus #spine a#logo { background-image: url('../marks/sig-v-spokane.svg'); }
+.tricities-campus #spine a#logo { background-image: url('../marks/sig-v-tricities.svg'); }
+.global-campus #spine a#logo { background-image: url('../marks/sig-v-globalcampus.svg'); }
+.vancouver-campus #spine a#logo { background-image: url('../marks/sig-v-vancouver.svg'); }
+.extension-signature #spine a#logo { background-image: url('../marks/sig-v-extension.svg'); }
 
 
+/* Spine Button */
 #spine header button#shelve {
 	height: 50px;
 	width: 50px;
@@ -154,9 +164,26 @@ footer.looseleaf #global li {
 	color: #5e6a71;
 	}
 
-/*////////////////////////*/
+/* ACTIONS ( 
+--------------------------------------------------------------------------- */
 
-/* !ACTIONS */
+#spine button {
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+	}
+#spine button span {
+	display: none;
+	}
+#spine button:before,
+#spine button::before {
+	font-family: "Iconography";
+	text-indent: 0px;
+	position: relative;
+	left: 0px;
+	display: block;
+	}
+
 #spine #glue {
 	margin-top: 0px;
 	}
@@ -197,6 +224,21 @@ footer.looseleaf #global li {
 #spine #wsu-actions > ul li#wsu-tab-search button {
 	color: #a9aeb1;
 	}
+#wsu-tabs-actions button {
+	outline: none;
+	}
+#wsu-tabs-actions button:before {
+	font-family: "Iconography", null;
+	width: 20px;
+	display: inline-block;
+	text-align: center;
+	}
+
+#wsu-tab-search button:before { content: "$"; }
+#wsu-tab-contact button:before { content: "\2709"; }
+#wsu-tab-share button:before { content: "\F601"; }
+#wsu-tab-print .print-button button:before { content: "\2399"; }	
+
 #spine #wsu-actions > ul li button:hover,
 #spine #wsu-actions > ul li.opened button,
 #spine #wsu-actions > ul li#wsu-tab-search button:hover {
@@ -222,8 +264,23 @@ footer.looseleaf #global li {
 #wsu-actions section {
 	background: #e6e8e9;
 	}
-	
-/* Contact */
+#spine button.shut {
+	font-size: 1.3em;
+	margin-top: 5px;
+	position: absolute;
+	right: 5px;
+	}
+#spine button.shut:before {
+	content: "\2421";
+	color: #d0d2d2;
+	}
+#spine button.shut:hover:before {
+	color: #424a4f;
+	}
+
+/* ACTIONS -> Contact 
+--------------------------------------------------------------------------- */
+
 #wsu-contact address {
 	color: #384044;
 	margin: 2em;
@@ -243,7 +300,7 @@ footer.looseleaf #global li {
 	padding-bottom: .0em;
 	}
 #wsu-contact i.wsu-icon {
-	width: 20px;
+	width: 1.7em
 	display: inline-block;
 	text-align: center;
 	}
@@ -262,9 +319,9 @@ footer.looseleaf #global li {
 	}
 #wsu-contact .organization-name  {
 	font-size: .9em;
-	line-height: 1.2em;
-	text-transform: uppercase;
-	font-family: "Palatino", serif;
+	xline-height: 1.2em;
+	xtext-transform: uppercase;
+	xfont-family: "Palatino", serif;
 	padding-top: 0;
 	}
 #wsu-contact .street-address,
@@ -277,19 +334,60 @@ footer.looseleaf #global li {
 	}
 #wsu-contact i.wsu-icon:before {
 	font-family: "Iconography", null;
-	width: 20px;
+	width: 1.7em;
 	display: inline-block;
 	text-align: center;
 	}
-#wsu-contact .tel i.wsu-icon:before { content: "📞"; }
-#wsu-contact .email i.wsu-icon:before { content: "@"; }
-#wsu-contact .more i.wsu-icon:before { content: "ℹ"; }
+#wsu-contact .tel i.wsu-icon:before { content: "\1F4DE"; }
+#wsu-contact .email i.wsu-icon:before { content: "\0040"; }
+#wsu-contact .more i.wsu-icon:before { content: "\2139"; }
 
-/* Search */
+
+/* ACTIONS -> Search 
+--------------------------------------------------------------------------- */
+
 #spine #wsu-search form {
 	padding: 1em 2em 0 2em;
 	margin: 0px 0px -1px 0px;
+	position: relative;
 	}
+#spine #wsu-search input[type="text"] {
+	font-size: 1.6em;
+	color: #5e6a71;
+	background-color: transparent;
+	border-radius: 0px;
+	padding: .5em 2em .5em 0;
+	text-indent:0px;
+	height: 1.7em;
+	width: 100%;
+	margin: 0px;
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px #b6bcbf solid;
+	margin-bottom: 3px;
+	}
+#spine #wsu-search input:focus {
+	color: #981e32;
+	border: none;
+	border-bottom: 1px #981e32 solid;
+	}
+#spine #wsu-search button#submit-search {
+	position: absolute;
+	left: auto;
+	top: 1.7em;
+	right: 2em;
+	padding: 0px;
+	}
+#spine #wsu-search button#submit-search:before {
+	content: "\25BB";
+	color: #b6bcbf;
+	font-size: 1.3em;
+	}
+#spine #wsu-search button#submit-search:hover:before {
+	color: #90979c;
+	}
+	
+/* Index */
 #wsu-search menu {
 	overflow: hidden;
 	max-height: 100%;
@@ -329,49 +427,13 @@ footer.looseleaf #global li {
 #wsu-search menu ul li:last-child a {
 	border-bottom: none;
 	}
-html.search li#wsu-tab-search {
-	background-color: #e7e9ea;
-	background: #262b2d;
-	}
-html.search #wsu-search {
-	display: block;
-	}
-#spine #wsu-search input[type="text"] {
-	font-size: 1.6em;
-	color: #5e6a71;
-	background-color: transparent;
-	border-radius: 0px;
-	padding: 5px 30px 5px 0px;
-	text-indent:0px;
-	height: 1.6em;
+	
+/* Search Results */
+#wsu-search ul.tabs {
 	width: 100%;
-	margin: 0px;
-	border: none;
-	box-shadow: none;
-	border-bottom: 1px #b6bcbf solid;
-	margin-bottom: 3px;
+	background: #d6d8d9;
+	background: #eceeef;
 	}
-#spine #wsu-search input:focus {
-	color: #981e32;
-	border: none;
-	border-bottom: 1px #981e32 solid;
-	}
-#spine #wsu-search button.arrow.glassine {
-	position: absolute;
-	top: 1.3em;
-	right: 2em;
-	width: 2.5em;
-	height: 2.5em;
-	text-shadow: none;
-	}
-
-#spine #wsu-search button.arrow.glassine:hover,
-#spine #wsu-search button.arrow.glassine:hover i {
-	color: white;
-	color: #981e32;
-	text-shadow: none;
-	}
-
 #results {
 	display: none;
 	width: 396px;
@@ -399,31 +461,9 @@ html.search #wsu-search {
 	height: 100%;
 	position: absolute;
 	}
-
-#wsu-search ul.tabs {
-	width: 100%;
-	background: #d6d8d9;
-	background: #eceeef;
-	}
 #wsu-search ul.tabs li {
 	white-space: nowrap;
 	overflow-x: hidden;
-	}
-x#submit-search #wsu-icon:before {
-	content: "x";
-	}
-#spine #wsu-search button#submit-search {
-	text-align: right;
-	}
-#spine #wsu-search button#submit-search .wsu-icon:before {
-	content: "▻";
-	color: #b6bcbf;
-	position: relative;
-	top: 2px;
-	font-size: 1.3em;
-	}
-#spine #wsu-search button#submit-search:hover .wsu-icon:before {
-	color: #90979c;
 	}
 #wsu-search ul.tabs li a {
 	height: 40px;
@@ -441,23 +481,7 @@ x#submit-search #wsu-icon:before {
 	position: relative;
 	top: 2px;
 	}
-#spine button.shut {
-	font-size: 1.3em;
-	margin-top: 5px;
-	position: absolute;
-	right: 5px;
-	}
-#spine #wsu-search button.shut {
-	margin-top: 10px;
-	right: 20px;
-	}
-#spine button.shut i {
-	color: #a6adb0;
-	color: #d0d2d2;
-	}
-#spine button.shut:hover i {
-	color: #424a4f;
-	}
+
 	
 /* Share */
 #spine #wsu-share ul {
@@ -492,21 +516,25 @@ x#submit-search #wsu-icon:before {
 	text-align: center;
 	}
 #wsu-share i.wsu-icon:before {
-	font-family: "Iconography", null;
+	font-family: "Iconography" !important;
 	}
-#wsu-share li.by-facebook i.wsu-icon:before { content: "f"; }
-#wsu-share li.by-twitter i.wsu-icon:before { content: "t"; }
+#wsu-share li.by-facebook i.wsu-icon:before { content: "F"; }
+#wsu-share li.by-twitter i.wsu-icon:before { content: "T"; }
 #wsu-share li.by-email i.wsu-icon:before { content: "@"; }
 #wsu-share li.by-other i.wsu-icon:before { content: ""; display: none; }
 #wsu-share li.by-other i.wsu-icon { display: none; }
 
 /* Print */
-html.print #spine #wsu-tab-print span:first-child {
+html.print #spine .print-button {
 	display: none;
 	}
 
 html.print #spine #wsu-tab-print .print-controls {
-	width: 200px;
+	width: 500px;
+	display: block;
+	}
+#wsu-tab-print .print-controls button span {
+	display: inline;
 	}
 html.print #spine #wsu-tab-print .print-controls button {
 	display: block;
@@ -522,16 +550,17 @@ html.print #spine #wsu-tab-print .print-controls button {
 	background: white;
 	border-color: #babfc2;
 	border-style: solid;
-	padding: 2px 10px 2px;
 	display: block;
 	}
 #spine #wsu-actions #wsu-tab-print button#print-invoke {
 	border-width: 1px 1px 1px 1px;
 	border-radius: 5px 0px 0px 5px;
+	padding: 2px 15px 2px;
 	}
 #spine #wsu-actions #wsu-tab-print button#print-cancel {
 	border-width: 1px 1px 1px 0px;
 	border-radius: 0px 5px 5px 0px;
+	padding: 2px 5px 2px;
 	}
 #spine #wsu-actions #wsu-tab-print button#print-invoke:hover,
 #spine #wsu-actions #wsu-tab-print button#print-cancel:hover {
@@ -545,18 +574,20 @@ html.print #spine #wsu-tab-print .print-controls button {
 #spine #wsu-actions #wsu-tab-print button#print-cancel:before {
 	font-family: "Iconography", null;
 	font-size: 12px;
-	width: 20px;
+	width: 17px;
+	padding-right: 2px;
 	text-align: center;
 	display: inline-block;
 	}
-x#spine #wsu-actions #wsu-tab-print button#print-invoke:before { content: "⎙"; }
-x#spine #wsu-actions #wsu-tab-print button#print-cancel:before { content: "␡"; }
+#spine #wsu-actions #wsu-tab-print button#print-invoke:before { content: "⎙"; }
+#spine #wsu-actions #wsu-tab-print button#print-cancel:before { content: "␡"; }
 html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-invoke,
 html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { display: none; }
 
-/*////////////////////////*/
 
-/* !NAVIGATION */
+/* NAVIGATION -> Search 
+--------------------------------------------------------------------------- */
+
 #spine nav#site {
 	margin: 10px 20px;
 	}
@@ -609,47 +640,10 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	background: transparent url('../symbols/home-gray.svg') no-repeat left center;
 	background-size: 1em auto;
 	}
-#spine nav#site > ul > li:first-child a:hover,
-#spine nav#site > ul > li:first-child a:before {
+#spine nav#site:not(.homeless) > ul > li:first-child a:hover,
+#spine nav#site:not(.homeless) > ul > li:first-child a:before {
 	background: transparent url('../symbols/home-crimson.svg') no-repeat left center;
 	background-size: 1em auto;
-	}
-#spine nav#site ul li u {
-	position: absolute;
-    display: none;
-    height: 25px;
-    width: 25px;
-    top: 0px;
-    right: 0px;
-	}
-#spine nav#site ul li:hover u,
-#spine nav#site ul li.opened u,
-#spine nav#site ul li.active u,
-#spine nav#site ul li.current-menu-item u {
-    cursor: pointer;
-    display: block;
-	}
-#spine nav#site > ul > li.active > u,
-#spine nav#site > ul > li.current-menu-parent > u,
-#spine nav#site > ul > li.current-menu-item > u,
-#spine nav#site > ul > li.current-menu-ancestor > u,
-#spine nav#site > ul > li.current-page-ancestor > u {
-    display: none;
-	}
-#spine nav#site ul li u:after,
-#spine nav#site ul li.opened ul li.parent u:after {
-    content:"";
-    position: absolute;
-    display: block;
-    top:11px;
-    right:5px;
-    margin-left:-5px;
-	width: 0; 
-	height: 0;
-	border-width: 5px 5px 0px 5px;
-	border-style: solid;
-	border-color: transparent;
-	border-top-color: #d2d4d5;
 	}
 #spine nav#site ul li.opened u:after,
 #spine nav#site ul li.opened ul li.parent.opened u:after {
@@ -661,7 +655,6 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	color: #981e32;
 	font-weight: bold;
 	}
-
 #spine nav#site ul li u:hover::after {
     border-top-color: #5e6a71;
 	}
@@ -681,18 +674,17 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	}
 #spine nav ul li li,
 #spine nav ul li li:hover {
-	border-top-width: 0px;
+	border-top: none;
 	}
 #spine nav ul li ul li a {
 	text-transform: none;
 	padding: 4px 0px;
 	}
 #spine nav ul ul li {
-	margin-left: 15px;
+	margin-left: 1.25em;
 	}
 #spine nav ul ul ul li a {
-	padding: 3px 0px;
-	xfont-size: .9em;
+	padding: .25em 0;
 	}
 #spine nav ul li.current a,
 #spine nav ul li.current-menu-item > a {
@@ -722,11 +714,12 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	}
 #spine nav#site a.external:hover:after {
 	font-family: "Iconography", null;
-	content: " ⬈";
-	content: " ";
-	content: " ";
-	content: " e";
-	xcontent: " ";
+	position: absolute;
+	margin-left: 3px;
+	content: "\21AA";
+	xcontent: " ";
+	xcontent: " ";
+	xcontent: " e";
 	}
 	
 /* FOOTER (Spine) */
@@ -772,6 +765,7 @@ nav#social ul li a {
 	text-transform: none;
 	}
 nav#social ul li a:before {
+	font-family: "Iconography";
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -783,11 +777,9 @@ nav#social ul li a:before {
 nav#social ul li#facebook a:before { content: "F"; }
 nav#social ul li#twitter a:before { content: "T"; }
 nav#social ul li#youtube a:before { content: "Y"; }
-
-nav#social ul li#facebook a:before { content: "f"; }
-nav#social ul li#twitter a:before { content: "t"; }
-nav#social ul li#youtube a:before { content: "y"; }
-nav#social ul li#youtube a:before { content: "z"; }
+nav#social ul li#social a:before { content: "s"; }
+nav#social ul li#social a:hover:before { content: "S"; }
+/* nav#social ul li#social a:before { content: "\2026"; } */
 
 nav#social ul li#facebook a:hover { color: #3c6693; }
 nav#social ul li#twitter a:hover { color: #6fb8cb; }

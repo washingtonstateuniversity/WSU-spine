@@ -46,7 +46,7 @@ sub { vertical-align: sub; }
 small { font-size: 10px; line-height: 12px;	}
 nav ul li,
 .widget ul li { list-style: none; }
-a,a:hover,a:visited {
+a {
 	text-decoration: none;
 	color: #981e32;
 	}

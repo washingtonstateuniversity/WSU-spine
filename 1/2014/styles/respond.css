@@ -34,7 +34,10 @@ html.print #spine li#wsu-tab-print {
 	border-radius: 5px;
 	float: none;
 	}
-html.print #spine #wsu-tab-print span,
+
+html.print #spine #wsu-tab-print .print-controls button {
+	display: inline-block;
+	}
 html.print #spine #wsu-tab-print button {
 	display: inline-block;
 	width: auto;

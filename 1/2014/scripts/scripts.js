@@ -1,17 +1,16 @@
-
 $("#shelve").click(function() {
 	$('#spine').toggleClass('unshelved shelved');
 	});
 
-//////////////////////
 
-// Tools
+
+// Tools tabs
 
 $(document).ready(function(){
 function printPage(){
     window.print();
 }
-$("#wsu-tab-share button,#wsu-share button.shut").click(function() {
+$("#wsu-tab-share button").click(function() {
 	$('#wsu-actions *.opened,#wsu-share,#wsu-tab-share').toggleClass('opened closed');
 	});
 $("#wsu-tab-print .print-button button").click(function() {
@@ -23,9 +22,16 @@ $("#wsu-tab-search button").click(function() {
 	$('#wsu-actions *.opened,#wsu-search,#wsu-tab-search').toggleClass('opened closed');
 	$('#spine section#wsu-search input').focus();
 	});
-$("#wsu-tab-contact button,#wsu-contact button.shut").click(function() {
+$("#wsu-tab-contact button").click(function() {
 	$('#wsu-actions *.opened,#wsu-contact,#wsu-tab-contact').toggleClass('opened closed');
 	});	
+
+// Shut (ie close) a tool section
+$("button.shut").click(function() {
+	$('#wsu-actions').find('.opened').toggleClass('opened closed');
+	});
+
+// Submit search
 $("button#submit-search").click(function() {
 	$('#results').show();
 	return false;
@@ -36,7 +42,8 @@ $("button#submit-search").click(function() {
 $("#print-invoke").click(function() { window.print(); });
 $("#print-cancel").click(function() { $('html').toggleClass('print'); });
 
-////////////////////////////////
+
+
 
 // Fixed Horizontal Header
 
@@ -46,7 +53,7 @@ var top = $(document).scrollTop();
 	else { $('#spine').removeClass('scanned'); } 
 });
 
-////////////////////////////////
+
 
 // Couplets
 
@@ -81,7 +88,8 @@ $("#spine:not(.test) li.parent > a").each( function() {
 })
 });
 
-////////////////////////////////
+
+
 
 // Clicking Outside Spine Closes It
 $(document).ready(function(){
@@ -90,7 +98,7 @@ $(document).ready(function(){
 	});
 });
 
-////////////////////////////////
+
 
 // Clicking Outside Spine Closes It
 $(document).on('mouseup touchstart', function (e) {
@@ -99,7 +107,7 @@ $(document).on('mouseup touchstart', function (e) {
     { container.toggleClass('shelved unshelved'); }
 });
 
-////////////////////////////////
+
 
 // Cracking the Spine for Short Windows
 $(window).on('load resize scroll mouseup touchend',function() {
@@ -112,6 +120,8 @@ $(window).on('load resize scroll mouseup touchend',function() {
 	};
 });
 
+
+
 // Moving the Spine for Short Windows
 $(document).scroll(function() {
 	var windowHeight = window.innerHeight;
@@ -122,7 +132,7 @@ $(document).scroll(function() {
 	else { $('#spine.cracked').removeClass('pinned'); }
 });
 
-////////////////////////////////
+
 
 // AZ Index Shortcuts
 
@@ -222,7 +232,8 @@ $("#wsu-search input[type=text]").keyup(function(){
 });
 });
 
-////////////////////////////////
+
+
 
 // Equalize Columns
 
@@ -237,7 +248,7 @@ $(document).ready(function(){
 	});
 });
 
-////////////////////////////////
+
 
 // External Links in nav
 
