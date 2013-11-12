@@ -55,39 +55,41 @@ var top = $(document).scrollTop();
 
 
 
-// Couplets
+// NAVIGATION -> Highlight Current
 
 $(document).ready(function() {
-	$("#spine:not(.test) nav ul,#spine:not(.test) ul").parents("li").addClass("parent");
-	$("#spine:not(.test) nav li[class*=current],:not(.test) nav li[class*=active]").addClass("active").parents("li").addClass("active");
-	$("#spine:not(.test) .active").not(":has(.active)").addClass("dogeared");
-}); 
 
+$("#spine nav ul,#spine:not(.test) ul").parents("li").addClass("parent");
+$("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
+$("#spine .active").not(":has(.active)").addClass("dogeared");
 
+// NAVIGATION -> Overview Links (Couplets)
 
-$(document).ready(function(){
-
-$("#spine:not(.test) li.parent > a").click(function(e) { 
+$("#spine li.parent > a").click(function(e) {
 	e.preventDefault();
 	$(this).parent("li").siblings().removeClass("opened");
 	$(this).parent("li").toggleClass("opened");
   });
-$("#spine:not(.test) li.parent > a").each( function() {
+$("#spine li.parent > a").each( function() {
 	
 	var title = 'Overview';
 	if ($(this).attr('title')) {
 		var alt = $(this).attr('title').length;
-		if ( alt > 0 ) {
-		title = $(this).attr('title');
-		}
-		}
+		if ( alt > 0 ) { title = $(this).attr('title'); }
+	}
+	if ($(this).parents('.parent').hasClass('dogeared')) {
+		var classes = "overview dogeared";
+	}
+	else {
+		var classes = "overview";
+	}
 	var url = $(this).attr("href");
 	if ( url != '#' ) {
-		$(this).parent("li").children("ul").prepend('<li class="overview"><a href="'  + url +  '">' + title + '</a></li>');
+		$(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
 	}
 })
-});
 
+}); 
 
 
 

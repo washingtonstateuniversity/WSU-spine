@@ -5,13 +5,16 @@ The WSU Spine binds together the many stories of wsu.edu. The Spine unifies and 
 
 	1) Consistently brands the university across websites and platforms
 	2) Provides a usable and consistent navigation solution
-	3) 
+	3)
+	
+
 	
 Table of Contents
 ================================
 1. Implementing the Spine on a university website
 ...
 10. Usage of the packaged spine for development and review purposes
+
 
 Implementation
 ================================
@@ -20,3 +23,10 @@ A typical implementation of the WSU Spine would start with core.html.
 	1) Customize core.html by replacing default data with the appropriate university contact details.
 	2) Customize core.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of core.html and, for some lesser used options, at identity.wsu.edu.
 	3) Rebuilding the markup in your CMS of choice while taking care to preserve its elements and structure.
+	
+Connecting to various Spine packages.
+
+The canonical spine requires three calls in your <head>
+• <link href="http://images.wsu.edu/spine/1/styles.css" />
+• <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+• <script src="http://images.wsu.edu/spine/1/scripts.js"></script>
