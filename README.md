@@ -27,6 +27,6 @@ A typical implementation of the WSU Spine would start with core.html.
 Connecting to various Spine packages.
 
 The canonical spine requires three calls in your <head>
-• <link href="http://images.wsu.edu/spine/1/styles.css" />
-• <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-• <script src="http://images.wsu.edu/spine/1/scripts.js"></script>
+ <link href="http://images.wsu.edu/spine/1/styles.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+ <script src="http://images.wsu.edu/spine/1/scripts.js"></script>

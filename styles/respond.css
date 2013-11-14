@@ -1,23 +1,25 @@
 @media /* !PRINT */
 	print {
 	
-html.print #spine header button,
 html.print #spine header button#shelve,
-html.print #spine header span.controls button,
-html.print #spine #wsu-actions #wsu-tab-print button#print-invoke,
-html.print #spine #wsu-actions #wsu-tab-print button#print-cancel {
+html.print #spine .print-controls {
 	display: none;
 	}
 	}
 	
 html.print #spine {
 	position: absolute;
-	top: -9000px;
+	left: -99163px;
 	}
-
+html.print #spine header {
+	height: 155px;
+	width: 792px;
+	background-color: pink;
+	}
+	
 html.print #spine header button,
 html.print #wsu-tabs-actions li:not(#wsu-tab-print) button {
-	display: none;
+	xdisplay: none;
 	}
 html.print #binder {
 	background: white url("../marks/sig-horizontal.svg") center 32px no-repeat;
@@ -26,22 +28,17 @@ html.print #binder {
 	width: 792px;
 	}
 
-html.print #spine li#wsu-tab-print {
-	position: fixed;
-	top: 10px;
-	left: 70%;
-	width: 150px;
-	border-radius: 5px;
-	float: none;
-	}
-
 html.print #spine #wsu-tab-print .print-controls button {
 	display: inline-block;
 	}
-html.print #spine #wsu-tab-print button {
+html.print #spine .print-controls {
+	top: 10px;
+	left: 99793px;
+	}
+html.print #spine .print-controls button {
 	display: inline-block;
 	width: auto;
-	margin-right: 10px;
+	xmargin-right: 10px;
 	font-size: 1.4em;
 	line-height: 1em;
 	padding: 0px;
@@ -222,7 +219,9 @@ main {
 	}
 	}
 	
-@media /* !BREAK <= TWO */
+
+	
+@media /* !BREAK -> TWO */
 	screen
 	and ( max-width : 791px )
 	and ( min-device-width : 990px ),
@@ -318,7 +317,6 @@ main {
 	background-position: center center;
 	background-size: 200px auto;
 	height: 200px;
-	margin-left: 35px;
 	}
 #binder:not(.fluid) #spine #glue {
 	margin-top: 50px;
@@ -665,9 +663,26 @@ x#binder.fluid #spine.lighter a#logo { background-image: url('../marks/sig-horiz
 .vancouver #binder #spine a#logo { background-image: url('../marks/sig-h-vancouver.svg'); }
 
 	}
+	
+@media /* BREAK : TWO -> <- ONE */
+	screen
+	and ( min-width : 694px )
+	and ( max-width : 791px )
+	and ( min-device-width : 990px ),
+	
+	screen
+	and ( max-width : 767px )
+	
+	{
+	
+#binder:not(.fluid) #spine #glue {
+	margin-top: 0px;
+	}
+	
+	}
 
 
-@media /* BREAK THREE */
+@media /* BREAK : THREE -> */
 	only screen and
 	(max-width: 693px) {
 

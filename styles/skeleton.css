@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+/* SYMBOLS */
+@font-face {
+	font-family: "Iconography";
+    src: url('../symbols/wsu-icons-regular.eot');
+    src: url('../symbols/wsu-icons-regular.eot?#iefix') format('embedded-opentype'),
+         url('../symbols/wsu-icons-regular.ttf') format('truetype'),
+         url('../symbols/wsu-icons-regular.woff') format('woff');
+    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+	}
+
 /* Reset (Thanks Eric Meyer) */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -222,8 +234,11 @@ section {
     #Mobile (Landscape)
     #Clearing */
 
-.column article {
+.column > article {
 	padding: 30px;
+	}
+.column aside > section {
+	padding: 30px 30px 0px 30px;
 	}
 
 

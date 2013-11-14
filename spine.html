@@ -6,23 +6,27 @@
 
 <head>
 
-	<meta charset="UTF-8">
-	<title>Page Title | Unit | Washington State University</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title | Washington State University</title>
 	
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="http://images.wsu.edu/spine/1/images/icons/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-	<link href="http://images.wsu.edu/spine/1/styles.css" rel="stylesheet" />
-	<!-- Your theme stylesheets here -->
+	<!-- TARGET <link href="http://nbj.me/spine/1/styles.css" rel="stylesheet" type="text/css" /> -->
+	<!-- PCKG --><link href="styles/styles.css" rel="stylesheet" type="text/css" /><!-- -->
+	<!-- Your custom stylesheets here -->
 	
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-	<script src="http://images.wsu.edu/spine/1/scripts.js" type="text/javascript"></script>
-	<!-- Your supplementary scripts here -->
+	<!-- TARGET <script src="http://images.wsu.edu/spine/1/scripts.js" type="text/javascript"></script>-->
+	<!-- TEMP <script src="http://nbj.me/spine/1/scripts-dev.js" type="text/javascript"></script>-->
+	<!-- PCKG --><script src="scripts/scripts.js" type="text/javascript"></script><!-- -->
+	<!-- Your supplementary scripts here -->    
 	
 	<!-- DOCS -->
 	<link type="text/plain" rel="author" href="http://images.wsu.edu/spine/humans.txt" />
@@ -37,7 +41,7 @@
 
 <!-- WRAPPING -->
 <div id="jacket">
-<div id="binder">
+<div id="binder" class="hybrid">
 
 <!-- CONTENT -->
 <main id="page" role="main">
@@ -47,13 +51,43 @@
 
 	<div class="column one">
 		<article>
-			You Could write an article here.
+			
+			<h1>Heading using the h1tag</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet porttitor enim, et porttitor sem auctor ac. Aliquam posuere facilisis tempus. Phasellus consectetur eu risus non dignissim. Mauris suscipit, nulla quis eleifend rhoncus, felis ligula euismod ligula, in pulvinar eros quam sed neque. Integer enim mauris, eleifend id tellus ut, laoreet rhoncus eros. Proin ultricies suscipit mi eget placerat. Quisque ultrices ultricies sem non varius.</p>
+			
+			<p>Nulla leo mi, vestibulum ut ornare nec, gravida at odio. Ut dignissim molestie velit. Etiam quis porta orci, id congue lacus. Nam quis elit rutrum eros mollis venenatis. Ut volutpat arcu in interdum hendrerit. Pellentesque at diam elit. Praesent turpis metus, tincidunt nec consectetur ut, porta vitae odio. Sed urna metus, tincidunt ac elementum euismod, adipiscing in nunc. Mauris fringilla feugiat nunc, at imperdiet arcu interdum sed. Aliquam malesuada ornare libero, a euismod ligula laoreet posuere.</p>
+			
+			<ul>
+				<li>Sed bibendum vel arcu vel aliquam.</li>
+				<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
+				<li>Duis non commodo dui.</li>
+				<li>Integer consectetur erat et dignissim porttitor.</li>
+				<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
+			</ul>
+			
+			<p>Vivamus cursus nec nibh nec ullamcorper. Nulla consequat ipsum et erat volutpat, non fringilla massa ultrices. Phasellus placerat sem in nibh vehicula lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ut ligula in odio pharetra pretium. Pellentesque auctor euismod magna dictum suscipit. Nam euismod, ipsum in mattis imperdiet, elit mi accumsan tellus, eu accumsan lorem dui rhoncus felis. Fusce eleifend placerat est, eget consectetur lorem dignissim et.</p>
+			
+			<p>Morbi gravida magna magna. Aliquam erat volutpat. Sed enim sem, laoreet a nisi sit amet, mattis venenatis est. Curabitur imperdiet, nibh et sagittis feugiat, nunc purus faucibus lacus, sodales auctor ipsum lorem eu lectus. Integer aliquet placerat metus, ut rhoncus augue congue quis. Duis feugiat augue nec elementum faucibus. Nam tincidunt dui elementum magna pretium luctus. Aenean fringilla lectus nulla, sit amet mollis neque tristique eu. Pellentesque justo ligula, auctor quis viverra vitae, accumsan vel nisl. Sed bibendum vel arcu vel aliquam. Donec sodales iaculis lobortis. Praesent ac feugiat sem. Duis non commodo dui. Integer consectetur erat et dignissim porttitor. Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</p>
+
 		</article>
 	</div><!--/column-->
 
 	<div class="column two">
 		<aside>
-			You could have a sidebar here.
+			<section>
+			<h2>You could have a sidebar here.</h2>
+			<ul>
+				<li>Sed bibendum vel arcu vel aliquam.</li>
+				<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
+				<li>Duis non commodo dui.</li>
+				<li>Integer consectetur erat et dignissim porttitor.</li>
+				<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
+			</ul>
+			</section>
+			<section>
+				<h2>I could be a widget</h2>
+				<p>Pellentesque auctor euismod magna</p>
+			</section>
 		</aside>
 	</div><!--/column-->
 
@@ -66,26 +100,17 @@
 <div id="spine" class="shelved">
 <div id="glue" class="clearfix">
 
-<header>
-	<a id="logo" class="title" href="http://www.wsu.edu/">Washington State University</a>
-	<button id="shelve"></button>
-</header>
+<header><a href="http://www.wsu.edu/" id="logo">Washington State University</a></header>
 
 <!-- ACTIONS -->
 <section id="wsu-actions" role="actions">
 
 <!-- Tabs -->
 <ul id="wsu-tabs-actions" class="clearfix">
-	<li id="wsu-tab-search" class="closed" label="Search"><button><span>Search</span></button></li>
-	<li id="wsu-tab-contact" class="closed" label="Contact"><button><span>Contact</span></button></li>
-	<li id="wsu-tab-share" class="closed" label="Share"><button><span>Share</span></button></li>
-	<li id="wsu-tab-print" class="closed" label="Print">
-		<span class="print-button"><button><span>Print</span></button></span>
-		<span class="print-controls">
-			<button id="print-invoke"><span>Print</span></button>
-			<button id="print-cancel"><span>Cancel</span></button>
-		</span>
-	</li>
+	<li id="wsu-tab-search" class="closed" label="Search"><button>Search</button></li>
+	<li id="wsu-tab-contact" class="closed" label="Contact"><button>Contact</button></li>
+	<li id="wsu-tab-share" class="closed" label="Share"><button>Share</button></li>
+	<li id="wsu-tab-print" class="closed" label="Print"><button>Print</button></li>
 </ul>
 
 <!-- Search/Index ( In great FLUX ) -->
@@ -97,64 +122,22 @@
 	
 	<form name="search" id="search">
         <input id="searchterm" name="term" type="text" value="" placeholder="search">
-        <button id="submit-search"><span>Submit</span></button>
+        <button id="submit-search">Submit</button>
      </form>
      
 	<div id="results">
 		<ul class="tabs cf">
-			<li id="tab-site-search" class="active"><a href="#"><button><span>Site</span></button></li>
-			<li id="tab-wsu-search" class="inactive"><button><span>WSU</span></button></li>
-			<li id="tab-staff-search" class="inactive"><button><span>Faculty/Staff</span></button></li>
-			<li id="tab-student-search" class="inactive"><button><span>Students</span></button></li>
+			<li id="tab-site-search" class="active"><a href="#"><button>Site</button></li>
+			<li id="tab-wsu-search" class="inactive"><button>WSU</button></li>
+			<li id="tab-staff-search" class="inactive"><button>Faculty/Staff</button></li>
+			<li id="tab-student-search" class="inactive"><button>Students</button></li>
 		</ul>
 	</div>
 	
-	<div id="resulting">
-		
-	</div>
+	<div id="resulting"></div>
 
-	<!-- AtoZ Index Goes Here -->
-	<menu id="azindex">      	
-		<ul id="indices">
-			<li></li>
-		</ul>
-	</menu>
+	<menu id="azindex"></menu>
 
-</section>
-
-<!-- Contact -->
-<section id="wsu-contact" class="tools closed">
-	<button id="shut-contact" class="shut"><span>Close</span></button>
-	<!-- This following  address uses microformat classes to enable automated contact recognition -->
-	<address class="hcard">
-		<div class="organization-unit fn org"><a href="http://example.wsu.edu/" class="url">University College</a></div>
-		<div class="organization-name">Washington State University</div>
-		<div class="adr">
-			<div class="street-address">French Administration</div>
-			<div class="area">
-				<span class="locality">Pullman</span>, 
-				<abbr class="region">WA</abbr>
-				<span class="postal-code">99164</span>
-			</div>
-		</div>
-		<div class="tel"><i class="wsu-icon"></i>888-468-6978</div>
-		<div class="email" rel="email"><a href="mailto:contact@wsu.edu"><i class="wsu-icon"></i>Email us</a></div>
-		<div class="more"><a href="http://about.wsu.edu/contact/"><i class="wsu-icon"></i>More Contacts &#8230;</a></div>
-	</address>
-</section>
-
-<!-- Share -->
-<section id="wsu-share" class="tools closed">
-	<button id="shut-share" class="shut glassine"><i class="ss-pika ss-delete"></i></button>
-	<ul><!-- addthisdotcom -->
-		<li class="by-facebook"><a href="#" class="addthis_button_facebook"><i class="wsu-icon"></i>Facebook</a></li>
-		<li class="by-twitter"><a href="#" class="addthis_button_twitter"><i class="wsu-icon"></i>Twitter</a></li>
-		<li class="by-email"><a href="#" class="addthis_button_email"><i class="wsu-icon"></i>Email</a></li>
-		<li class="by-other"><a href="#" class="addthis_button_compact">More Options ...</a></li>
-		<style>.addthis_button_compact > .at16nc { background: none !important; height: 0px; overflow: hidden; }</style>
-	</ul>
-	<script type="text/javascript">var addthis_config = { data_ga_property: 'UA-17815664-1', data_ga_social: true }; var addthis_config = { ui_cobrand: "WSU" }</script>
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 </section>
 	
 </section><!--/#wsu-actions-->
@@ -171,18 +154,23 @@
 <ul>
 	<li><a href="/">Site Home</a></li>
 	<li>
-		<a href="">About</a>
+		<a href="link">About</a>
 		<ul>
 			<li><a href="">The first link in a list of links</a></li>
-			<li class="active"><a href="">A secondary link</a></li>
+			<li class="current"><a href="link">A secondary link</a></li>
 			<li>
-				<a href="">A third link</a>
+				<a href="link">A third link</a>
 				<ul>
-					<li><a href="">A second level link</a></li>
+					<li><a href="link">A second level link</a></li>
 				</ul>
 			</li>
 		</ul>
-		<li><a href="">Another first order link</a></li>
+		<li><a href="link">Another first order link</a>
+			<ul>
+				<li><a href="link">A subpage link</a></li>
+				<li><a href="link">Table of Context</a></li>
+			</ul>
+		</li>
 	</li>
 </ul>
 
@@ -205,16 +193,21 @@
 			<li id="twitter"><a href="http://twitter.com/wsupullman">Twitter</a></li>
 			<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
 			<li id="social"><a href="http://social.wsu.edu">Social</a></li>
+			<!-- You can replace default social channels with your own. Available channels are:
+				• Facebook, Twitter, Youtube, Google+, Tumblr, Pinterest, Flickr, 
+				• Example: <li id="pinterest"><a href="http://pinterest.com/user">Pinterest</a></li>
+				• Maximum number of channels is four
+			-->
 		</ul>
 	</nav>
 	<nav id="global">
 		<ul>
-			<li id="zzusis"><a href="https://portal.wsu.edu/">Zzu<strong>sis</strong></a></li>
+			<li id="zzusis"><a href="https://zzusis.wsu.edu/">Zzu<strong>sis</strong></a></li>
 			<li id="access"><a href="http://access.wsu.edu/">Access</a></li>
 			<li id="policies"><a href="http://policies.wsu.edu/">Policies</a></li>
 		</ul>
 	</nav>	
-	<small id="copyright"><a href="http://publishing.wsu.edu/copyright/WSU.html">&copy; Washington State University</a></small>
+	<small id="copyright"><a href="http://copyright.wsu.edu">&copy; Washington State University</a></small>
 </footer>
 
 </div><!--/glue-->

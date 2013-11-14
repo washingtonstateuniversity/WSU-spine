@@ -1,17 +1,5 @@
 @charset "UTF-8";
 
-/* SYMBOLS */
-@font-face {
-	font-family: "Iconography";
-    src: url('../symbols/wsu-icons-regular.eot');
-    src: url('../symbols/wsu-icons-regular.eot?#iefix') format('embedded-opentype'),
-         url('../symbols/wsu-icons-regular.ttf') format('truetype'),
-         url('../symbols/wsu-icons-regular.woff') format('woff');
-    font-weight: normal;
-    font-weight: 400;
-    font-style: normal;
-	}
-	
 	
 /* Spine
 --------------------------------------------------------------------------- */
@@ -22,6 +10,10 @@
 	height: 100%;
 	top: 0;
 	position: fixed;
+	z-index: 99163;
+	}
+#spine #glue {
+	margin-top: 0px;
 	}
 #spine a {
 	color: #5e6a71;
@@ -119,15 +111,12 @@ footer.looseleaf #global li {
 
 /* HEADER (Spine) */
 #spine header {
-	z-index: 999;
+	z-index: 99631;
 	background: white;
+	
 	}
-#spine #glue {
-	z-index: 9999;
-	}
-#spine #logo {	
-	height: 140px;
-	overflow: hidden;
+x#spine #glue {
+	z-index: 99631;
 	}
 #spine a#logo {
 	background-repeat: no-repeat;
@@ -136,7 +125,9 @@ footer.looseleaf #global li {
 	background-size: 150px auto;
 	height: 155px;
 	display: block;
-	text-indent: -9000px;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
 	}
 .spokane-campus #spine a#logo { background-image: url('../marks/sig-v-spokane.svg'); }
 .tricities-campus #spine a#logo { background-image: url('../marks/sig-v-tricities.svg'); }
@@ -164,31 +155,40 @@ footer.looseleaf #global li {
 	color: #5e6a71;
 	}
 
-/* ACTIONS ( 
+/* ACTIONS 
 --------------------------------------------------------------------------- */
 
 #spine button {
 	background-color: transparent;
 	border: none;
 	border-radius: 0px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 	}
-#spine button span {
-	display: none;
+
+#wsu-tabs-actions li {
+	width: 25%;
 	}
-#spine button:before,
+#wsu-tabs-actions li button {
+	position: relative;
+	width: 100%;
+	height: 2.2em;
+	}
 #spine button::before {
 	font-family: "Iconography";
 	text-indent: 0px;
-	position: relative;
-	left: 0px;
-	display: block;
+	position: absolute;
+	left: 0px;	top: 0em; right: 0px; bottom: 0px;
 	}
-
-#spine #glue {
-	margin-top: 0px;
+#spine #wsu-tabs-actions li button::before {
+	top: .9em;
 	}
 #spine #wsu-actions {
 	padding: 0px;
+	}
+.no-js #spine #wsu-actions {
+	display: none;
 	}
 #spine #wsu-actions section {
 	height: 100%;
@@ -229,16 +229,8 @@ footer.looseleaf #global li {
 	}
 #wsu-tabs-actions button:before {
 	font-family: "Iconography", null;
-	width: 20px;
-	display: inline-block;
 	text-align: center;
 	}
-
-#wsu-tab-search button:before { content: "$"; }
-#wsu-tab-contact button:before { content: "\2709"; }
-#wsu-tab-share button:before { content: "\F601"; }
-#wsu-tab-print .print-button button:before { content: "\2399"; }	
-
 #spine #wsu-actions > ul li button:hover,
 #spine #wsu-actions > ul li.opened button,
 #spine #wsu-actions > ul li#wsu-tab-search button:hover {
@@ -248,7 +240,6 @@ footer.looseleaf #global li {
 	margin: 0px 20px;
 	}
 #spine ul#wsu-tabs-actions li button {
-	font-family: "Iconography";
 	font-weight: normal;
 	font-size: 1.2em;
 	line-height: 1em;
@@ -266,9 +257,11 @@ footer.looseleaf #global li {
 	}
 #spine button.shut {
 	font-size: 1.3em;
-	margin-top: 5px;
+	top: 5px;
 	position: absolute;
 	right: 5px;
+	padding: 0px;
+	width: 1.1em;
 	}
 #spine button.shut:before {
 	content: "\2421";
@@ -277,6 +270,11 @@ footer.looseleaf #global li {
 #spine button.shut:hover:before {
 	color: #424a4f;
 	}
+	
+#wsu-tab-search button:before { content: "$"; }
+#wsu-tab-contact button:before { content: "\2709"; }
+#wsu-tab-share button:before { content: "\F601"; }
+#wsu-tab-print button:before { content: "\2399"; }	
 
 /* ACTIONS -> Contact 
 --------------------------------------------------------------------------- */
@@ -287,7 +285,7 @@ footer.looseleaf #global li {
 	display: block;
 	}
 
-#wsu-contact div  {
+#wsu-contact div {
 	padding: .5em 0;
 	border-bottom: 1px #c3cbcf solid;
 	line-height: 1.4em;
@@ -295,9 +293,6 @@ footer.looseleaf #global li {
 #wsu-contact .organization  {
 	font-weight: bold;
 	padding-bottom: .5em;
-	}
-#wsu-contact div:nth-of-type(1)  {
-	padding-bottom: .0em;
 	}
 #wsu-contact i.wsu-icon {
 	width: 1.7em
@@ -310,7 +305,7 @@ footer.looseleaf #global li {
 	}
 #wsu-contact .organization-unit  {
 	font-size: 1.3em;
-	padding-bottom: 0;
+	padding-bottom: .3em;
 	border-bottom: none;
 	}
 #wsu-contact .organization-unit a,
@@ -318,16 +313,23 @@ footer.looseleaf #global li {
 	color: black;
 	}
 #wsu-contact .organization-name  {
-	font-size: .9em;
-	xline-height: 1.2em;
-	xtext-transform: uppercase;
-	xfont-family: "Palatino", serif;
-	padding-top: 0;
+	xfont-size: .9em;
+	white-space: nowrap;
+	padding: 0;
+	border-bottom: none;
 	}
-#wsu-contact .street-address,
+#wsu-contact .street-address {
+	border-bottom: none;
+	padding: 0;
+	}
+#spine .coupled > a {
+	font-weight: bold;
+	}
+#spine .coupled > a:hover {
+	color: #5e6a71;
+	}
 #wsu-contact .more {
 	border-bottom: none;
-	padding-bottom: 0;
 	}
 #wsu-contact .area {
 	padding-top: 0;
@@ -345,6 +347,7 @@ footer.looseleaf #global li {
 
 /* ACTIONS -> Search 
 --------------------------------------------------------------------------- */
+
 
 #spine #wsu-search form {
 	padding: 1em 2em 0 2em;
@@ -377,6 +380,7 @@ footer.looseleaf #global li {
 	top: 1.7em;
 	right: 2em;
 	padding: 0px;
+	width: 1.4em;
 	}
 #spine #wsu-search button#submit-search:before {
 	content: "\25BB";
@@ -388,44 +392,77 @@ footer.looseleaf #global li {
 	}
 	
 /* Index */
-#wsu-search menu {
-	overflow: hidden;
+
+/* Reset jQuery UI */
+#spine #azindex *,
+#spine #azindex *:focus,
+#spine #azindex *:hover {
+	border: none;
+	background: transparent;
+	padding: 0px; 
+	margin: 0px;
+	border-radius: 0;
+	line-height: 1.1em;
+	box-shadow: none;
+	}
+	
+#spine menu#azindex {
+	xoverflow: hidden;
 	max-height: 100%;
 	display: block;
+	position: relative;
+	min-height: 100px;
+	margin: 0 2em;
 	}
-#wsu-search menu {
-	display: none;
-	width: auto;
-	}
-#wsu-search menu ul li {
-	line-height: 1.1em;
+
+#spine menu#azindex ul li {
+	font-size: .9em;
+	line-height: 1.2em;
 	padding: 0px;
 	list-style: none;
 	}
-#spine #indices {
-	margin: 0px 2em;
-	}
-#wsu-search menu ul li:nth-of-type(1) a {
-	xborder-top: none;
-	padding-top: 10px;
-	}
-#wsu-search menu ul li a {
+#spine menu#azindex ul li a {
 	color: #5e6a71;
 	display: block;
-	padding: 5px 0px;
+	padding: .6em 0px;
 	border-bottom: 1px #c3cbcf solid;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	}
-#wsu-search menu ul li a:hover {
+#spine menu#azindex ul li a:active,
+#spine menu#azindex ul li a:hover,
+#spine menu#azindex ul li a:focus {
+	outline: none;
+	}
+#spine menu#azindex ul li a:hover {
 	color: white;
 	background-color: #434d53;
-	margin: -1px -2em 0px -2em;
-	padding-left: 2em;
-	padding-top: 6px;
-	padding-right: 2em;
-	border-bottom: 1px #434d53 solid;
+	margin: -1px -2em 2px -2em;
+	padding: .6em 2em .6em 2em;
+	xborder-bottom-width: 0px;
 	}
-#wsu-search menu ul li:last-child a {
+#spine menu#azindex ul li:last-child a {
 	border-bottom: none;
+	}
+	
+.ui-helper-hidden-accessible {
+	  border: 0 none;
+	  clip: rect(0px, 0px, 0px, 0px);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+	}
+x#wsu-search menu ul li a[href=""]:hover{
+    border-bottom: 1px solid #C3CBCF;
+    color: #5E6A71;
+    display: block;
+    background:none;
+	}
+x#wsu-search menu ul li a[href=""]:hover * {
+	color: #5E6A71;
 	}
 	
 /* Search Results */
@@ -529,20 +566,23 @@ html.print #spine .print-button {
 	display: none;
 	}
 
-html.print #spine #wsu-tab-print .print-controls {
+#spine .print-controls {
 	width: 500px;
+	height: 100px;
 	display: block;
+	z-index: 999631;
+	position: absolute;
+	right: 0;
 	}
-#wsu-tab-print .print-controls button span {
-	display: inline;
-	}
-html.print #spine #wsu-tab-print .print-controls button {
+
+#spine .print-controls button {
 	display: block;
 	float: left;
 	margin: 0px;
+	text-indent: 0px;
 	}
-#spine #wsu-actions #wsu-tab-print button#print-invoke,
-#spine #wsu-actions #wsu-tab-print button#print-cancel {
+#spine button#print-invoke,
+#spine button#print-cancel {
 	xwidth: 100px;
 	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", san-serif;
 	color: #8b9399;
@@ -552,37 +592,37 @@ html.print #spine #wsu-tab-print .print-controls button {
 	border-style: solid;
 	display: block;
 	}
-#spine #wsu-actions #wsu-tab-print button#print-invoke {
+#spine button#print-invoke {
 	border-width: 1px 1px 1px 1px;
 	border-radius: 5px 0px 0px 5px;
 	padding: 2px 15px 2px;
 	}
-#spine #wsu-actions #wsu-tab-print button#print-cancel {
+#spine button#print-cancel {
 	border-width: 1px 1px 1px 0px;
 	border-radius: 0px 5px 5px 0px;
 	padding: 2px 5px 2px;
 	}
-#spine #wsu-actions #wsu-tab-print button#print-invoke:hover,
-#spine #wsu-actions #wsu-tab-print button#print-cancel:hover {
+#spine button#print-invoke:hover,
+#spine button#print-cancel:hover {
 	xcolor: black;
 	text-shadow: 1px 1px 0px #e6e8e9;
 	background: #babfc2;
 	background: white;
 	background: #e6e8e9;
 	}
-#spine #wsu-actions #wsu-tab-print button#print-invoke:before,
-#spine #wsu-actions #wsu-tab-print button#print-cancel:before {
-	font-family: "Iconography", null;
+#spine button#print-invoke:before,
+#spine button#print-cancel:before {
+	font-family: "Iconography";
 	font-size: 12px;
 	width: 17px;
 	padding-right: 2px;
 	text-align: center;
 	display: inline-block;
 	}
-#spine #wsu-actions #wsu-tab-print button#print-invoke:before { content: "⎙"; }
-#spine #wsu-actions #wsu-tab-print button#print-cancel:before { content: "␡"; }
-html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-invoke,
-html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { display: none; }
+#spine button#print-invoke:before { content: "⎙"; }
+#spine button#print-cancel:before { content: "␡"; }
+html:not(.print) #spine button#print-invoke,
+html:not(.print) #spine button#print-cancel { display: none; }
 
 
 /* NAVIGATION -> Search 
@@ -645,24 +685,19 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	background: transparent url('../symbols/home-crimson.svg') no-repeat left center;
 	background-size: 1em auto;
 	}
-#spine nav#site ul li.opened u:after,
-#spine nav#site ul li.opened ul li.parent.opened u:after {
-	border-width: 0px 5px 5px 5px;
-	border-color: transparent;
-	border-bottom-color: #d2d4d5;
-	}
-#spine nav#site ul li.dogeared > a {
+#spine nav#site ul li:not(.parent).dogeared > a {
 	color: #981e32;
 	font-weight: bold;
 	}
-#spine nav#site ul li u:hover::after {
-    border-top-color: #5e6a71;
+#spine nav#site ul li.parent.active > a {
+	font-weight: bold;
 	}
-#spine nav#site ul li.active > u {
-    display: none;
+#spine nav#site ul li.dogeared > a:hover {
+	cursor: default;
 	}
-#spine nav#site ul li:hover u:hover {
-    border-top-color: #5e6a71;
+#spine nav#site ul li.parent.dogeared > a:hover {
+	color: #5e6a71;
+	cursor: default;
 	}
 #spine nav ul li a {
 	display: block;
@@ -685,11 +720,6 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	}
 #spine nav ul ul ul li a {
 	padding: .25em 0;
-	}
-#spine nav ul li.current a,
-#spine nav ul li.current-menu-item > a {
-	color: #981e32;
-	font-weight: bold;
 	}
 #offsite {
 	margin: 20px 20px 0px 20px;
@@ -717,9 +747,6 @@ html:not(.print) #spine #wsu-actions #wsu-tab-print button#print-cancel { displa
 	position: absolute;
 	margin-left: 3px;
 	content: "\21AA";
-	xcontent: " ";
-	xcontent: " ";
-	xcontent: " e";
 	}
 	
 /* FOOTER (Spine) */
