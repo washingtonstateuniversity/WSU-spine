@@ -5,7 +5,7 @@
 	font-family: "Iconography";
     src: url('../symbols/wsu-icons-regular.eot');
     src: url('../symbols/wsu-icons-regular.eot?#iefix') format('embedded-opentype'),
-         url('../symbols/wsu-icons-regular.ttf') format('truetype'),
+         url('../symbols/wsu-icons-Regular.ttf') format('truetype'),
          url('../symbols/wsu-icons-regular.woff') format('woff');
     font-weight: normal;
     font-weight: 400;
@@ -182,8 +182,10 @@ section {
 /* Sidebar */
 .row.sidebar .column.one { width: 528px; }
 .row.sidebar .column.two { width: 264px; }
-.fluid .row.sidebar .column.one { width: 67%; }
-.fluid .row.sidebar .column.two { width: 33%; }
+.fluid .row.sidebar .column.one,
+.hybrid .row.sidebar .column.one { width: 67%; }
+.fluid .row.sidebar .column.two,
+.hybrid .row.sidebar .column.two { width: 33%; }
 
 /* Nested */
 
@@ -196,10 +198,6 @@ section {
 .row.quarters .thirds .column { width: 66px; }
 .fluid .row .column.thirds .column { width: 33%; }
 .fluid .row .column.thirds .column.two { width: 34%; }
-
-/* Spineless Severed */
-.row.fifths .column { width: 198px; }
-.fluid .row.fifths .column { width: 20%; }
 
 /* Twelfths */
 .three-fourths, .nine-twelfths { width: 594px; }
@@ -234,7 +232,11 @@ section {
     #Mobile (Landscape)
     #Clearing */
 
+
 .column > article {
+	padding: 30px 30px 0px 30px;
+	}
+.column > article:nth-of-type(1) {
 	padding: 30px;
 	}
 .column aside > section {

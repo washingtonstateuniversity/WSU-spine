@@ -70,9 +70,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			search: function(event, ui) {
 				/**/
 			},
-			appendTo: "#azindex",
+			appendTo: "#index-search-results",
 			showRelated:true,
-			relatedHeader:"<i><b>Related search items</b></i>",
+			relatedHeader:"<hr/>",
 			minLength: 2,
 			select: function( e, ui ) {
 				var id = ui.item.searchKeywords;
@@ -168,20 +168,20 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		
 		// Tools tabs
 		
-		$("#wsu-tab-share button").on("click",function(e) {
+		$("#wsu-share-tab button").on("click",function(e) {
 			e.preventDefault();
-			$('#wsu-actions *.opened,#wsu-share,#wsu-tab-share').toggleClass('opened closed');
+			$('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
 		});
 		
-		$("#wsu-tab-search button").on("click",function(e) {
+		$("#wsu-search-tab button").on("click",function(e) {
 			e.preventDefault();
-			$('#wsu-actions *.opened,#wsu-search,#wsu-tab-search').toggleClass('opened closed');
+			$('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
 			$('#spine section#wsu-search input').focus();
 		});
-		$("#wsu-tab-contact button").on("click",function(e) {
+		$("#wsu-contact-tab button").on("click",function(e) {
 			e.preventDefault();
-			$('#wsu-actions *.opened,#wsu-contact,#wsu-tab-contact').toggleClass('opened closed');
-		});	
+			$('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
+		});
 		
 		
 		// Print & Print View
@@ -200,9 +200,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$("#spine header").append(print_controls);
 			$("#print-invoke").on("click",function() { window.print(); });
 			$("#print-cancel").on("click",print_cancel);
-			setTimeout(function(){ printPage(); },400000);
+			setTimeout(function(){ printPage(); },400);
 			}
-		$("#wsu-tab-print button").click(print);
+		$("#wsu-print-tab button").click(print);
 		
 		// Shut (ie close) a tool section
 		$("button.shut").on("click",function(e) {
@@ -215,19 +215,33 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			e.preventDefault();
 			$('#results').show();
 			//return false;
-		});	
+		});
+		
+		// Search tabs
+		$('#wsu-search-tabs button').on("click",function(e) {
+			e.preventDefault();
+			var tab = $(this).closest('li').attr('id');
+			var id = tab.replace('-tab','');
+			var selector = '#wsu-search *.active,#'+tab+',#'+id+'-results';
+			$(selector).toggleClass('active inactive');
+		});
+		
+		// Search tabs
+		/* $(".spine-tabs li button,.spine-tabs li a").click(function() {
+			$(this).parent('li').siblings('.active').toggleClass('active inactive');
+			$(this).parent('li').addClass('active');
+		}); */
 	
 	
 		// Fixed/Sticky Horizontal Header
 		$(document).scroll(function() {
 			var top = $(document).scrollTop();
-			if (top > 50) {
+			if (top > 49) {
 				$('#spine').not('.unshelved').addClass('scanned'); 
 			} else { 
 				$('#spine').removeClass('scanned');
 			} 
 		});
-	
 	
 		// NAVIGATION
 		// Tag location and hierarchy
@@ -249,7 +263,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
                 var alt = $(this).attr('title').length;
                 if ( alt > 0 ) { title = $(this).attr('title'); }
 	        }
-	        if ($(this).parents('.parent').hasClass('dogeared')) {
+	        if ($(this).closest('.parent').hasClass('dogeared')) {
 	        	var classes = "overview dogeared";
 	        } else {
 	        	var classes = "overview";
@@ -261,23 +275,26 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			})
 	
 	
-		// Search tabs
-		$(".tabs li button,.tabs li a").click(function() {
-			$(this).parent('li').siblings('.active').toggleClass('active inactive');
-			$(this).parent('li').addClass('active');
-		});
+		
 	
 		// Clicking Outside Spine Closes It
-		$(document).on('mouseup touchstart', function (e) {
+		/* $(document).on('mouseup touchstart', function (e) {
 			var container = $("#spine.unshelved");
 			if (container.has(e.target).length === 0)
 			{ container.toggleClass('shelved unshelved'); }
+		}); */
+		$('main').on('click swipeleft', function() {
+			if ( $('#spine').hasClass('unshelved') ) {
+				$('#spine').toggleClass('shelved unshelved');
+			};
 		});
 	
 		// Cracking the Spine for Short Windows
 		$(window).on('load resize scroll mouseup touchend',function() {
-			var windowHeight = window.innerHeight - 110;
+			var footerHeight = $("#spine footer").height();
+			var windowHeight = window.innerHeight - footerHeight - 50;
 			var spineHeight = $("#glue").height();
+			//$('main').prepend(footerHeight);
 			if ( windowHeight < spineHeight ) {
 				$("#spine").removeClass("uncracked").addClass("cracked");
 			} else { 
