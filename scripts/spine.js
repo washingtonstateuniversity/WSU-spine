@@ -1,5 +1,5 @@
 /* for debug only. remove when done */
-function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(typeof n=="object")for(r in n)u=n[r],typeof u=="object"?(i+=f+"'"+r+"' ...\n",i+=dump(u,t+1)):i+=f+"'"+r+"' => \""+u+'"\n';else i="===>"+n+"<===("+typeof n+")";return i}
+function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(typeof n=="object")for(r in n)u=n[r],typeof u=="object"?(i+=f+"'"+r+"' ...\n",i+=dump(u,t+1)):i+=f+"'"+r+"' => \""+u+'"\n';else i="===>"+n+"<===("+typeof n+")";return i;}
 
 (function($){
 	"use strict";
@@ -61,7 +61,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 									value: item.value,
 									searchKeywords: item.searchKeywords,
 									related: item.related
-								}
+								};
 							}
 						}));
 					}
@@ -97,7 +97,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				// to come back later to
 				//$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
 			}
-		}).data( "autocomplete" )
+		}).data( "autocomplete" );
 
 	// to come back later to
 	//	$( "#wsu-search input#searchterm[type=text]" ).on('keyup',function(e) {
@@ -152,10 +152,10 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			contact += '<address class="hcard">';
 			contact += '	<div class="organization-unit fn org"><a href="http://example.wsu.edu/" class="url">University College</a></div>';
 			contact += '	<div class="organization-name">Washington State University</div>';
-			contact += '	<div class="adr">'
+			contact += '	<div class="adr">';
 			contact += '	<div class="street-address">French Administration</div>';
 			contact += '	<div class="area">';
-			contact += '		<span class="locality">Pullman</span>,'
+			contact += '		<span class="locality">Pullman</span>,';
 			contact += '		<abbr class="region">WA</abbr> <span class="postal-code">99164</span></div>';
 			contact += '	</div>';
 			contact += '	<div class="tel"><i class="wsu-icon"></i>888-468-6978</div>';
@@ -272,7 +272,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			if ( url != '#' ) {
 				$(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
 			}
-			})
+			});
 
 
 
