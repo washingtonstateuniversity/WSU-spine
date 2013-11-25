@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 			files: ['Gruntfile.js', 'scripts/*.js'],
 			options: {
 				// options here to override JSHint defaults
+				smarttabs: true,
 				globals: {
 					jQuery: true,
 					console: true,
