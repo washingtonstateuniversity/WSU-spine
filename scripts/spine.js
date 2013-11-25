@@ -286,7 +286,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$('main').on('click swipeleft', function() {
 			if ( $('#spine').hasClass('unshelved') ) {
 				$('#spine').toggleClass('shelved unshelved');
-			};
+			}
 		});
 
 		// Cracking the Spine for Short Windows
