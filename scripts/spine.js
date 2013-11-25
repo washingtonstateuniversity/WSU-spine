@@ -258,15 +258,17 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		// Couplets
 		$("#spine li.parent > a").each( function() {
-			var title = 'Overview';
+			var title = 'Overview',
+				classes;
+
 			if ($(this).attr('title')) {
 				var alt = $(this).attr('title').length;
 				if ( alt > 0 ) { title = $(this).attr('title'); }
 			}
 			if ($(this).closest('.parent').hasClass('dogeared')) {
-				var classes = "overview dogeared";
+				classes = "overview dogeared";
 			} else {
-				var classes = "overview";
+				classes = "overview";
 			}
 			var url = $(this).attr("href");
 			if ( url != '#' ) {
