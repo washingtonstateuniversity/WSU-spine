@@ -86,21 +86,30 @@ input {
 .sans { font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif; }
 .serif { font: 14px/22px "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
 
-/* ! Grid //////////////////////// */
+/* Grid
+-------------------------------------------------------- */
 
-/* LAYOUT */
+/* LAYOUT
+-------------------------------------------------------- */
 
+html {
+	height: 100%;
+	}
 body {
 	color: #262a2d;
 	xfont: 14px/22px "OpenSans","Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
 	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
 	background: white url('../images/gradient.png') left top repeat-x;
+	min-height: 100%;
 	}
-
+#jacket {
+	min-height: 100%;
+	}
 #binder {
 	width: 990px;
 	margin: 0px auto;
 	position: relative;
+	min-height: 100%;
 	}
 #binder.fluid.folio {
 	width: 100%;
@@ -111,6 +120,7 @@ main {
 	width: 792px;
 	background-color: #e6e7e8;
 	float: right;
+	min-height: 100%;
 	}
 #spine {
 	width: 198px;
@@ -244,7 +254,8 @@ section {
 	}
 
 
-/* #Clearing //////////////////////// */
+/* #Clearing
+-------------------------------------------------------- */
 
 /* Self Clearing Goodness */
 section:before,
@@ -286,7 +297,8 @@ section,
     
 
 
-/* #Basic Styles //////////////////////// */
+/* Basic Styles
+-------------------------------------------------------- */
 
 .cf:before,
 .cf:after {
@@ -335,12 +347,14 @@ ul.tabs li.active a {
 	xfont-weight: bold;
 	}
 	
-/* Character Styles //////////////////////// */
+/* Character Styles
+-------------------------------------------------------- */
 
 
 
 
-/* BUTTONS //////////////////////// */
+/* BUTTONS
+-------------------------------------------------------- */
 
 .button,
 button,

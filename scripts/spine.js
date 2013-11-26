@@ -146,7 +146,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		if (!$("#wsu-share").length) { $("#wsu-actions").append(share); }
 		
 		// Section -> Contact
-		// I'll get to building these from declarations in the template
+		// We'll get to building these from declarations in the template
 		var contact  = '<section id="wsu-contact" class="tools closed">';
 		    contact += '<button id="shut-contact" class="shut">Close</button>';
 		    contact += '<address class="hcard">';
