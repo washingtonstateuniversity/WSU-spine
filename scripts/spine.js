@@ -134,7 +134,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		
 		// Section -> Share
 		var share  = '<section id="wsu-share" class="tools closed">';
-		    share += '<button id="shut-share" class="shut">Close</button>';
+		    // share += '<button id="shut-share" class="shut">Close</button>';
 		    share += '	<ul>';
 		    share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook"><i class="wsu-icon"></i>Facebook</a></li>';
 		    share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter"><i class="wsu-icon"></i>Twitter</a></li>';
@@ -148,7 +148,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Section -> Contact
 		// We'll get to building these from declarations in the template
 		var contact  = '<section id="wsu-contact" class="tools closed">';
-		    contact += '<button id="shut-contact" class="shut">Close</button>';
+		    // contact += '<button id="shut-contact" class="shut">Close</button>';
 		    contact += '<address class="hcard">';
 		    contact += '	<div class="organization-unit fn org"><a href="http://example.wsu.edu/" class="url">University College</a></div>';
 		    contact += '	<div class="organization-name">Washington State University</div>';
@@ -211,27 +211,29 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		});
 		
 		// Submit search
-		$("button#submit-search").on("click",function(e) {
+		/* $("button#submit-search").on("click",function(e) {
 			e.preventDefault();
 			$('#results').show();
 			//return false;
-		});
-		
-		// Search tabs
-		$('#wsu-search-tabs button').on("click",function(e) {
-			e.preventDefault();
-			var tab = $(this).closest('li').attr('id');
-			var id = tab.replace('-tab','');
-			var selector = '#wsu-search *.active,#'+tab+',#'+id+'-results';
-			$(selector).toggleClass('active inactive');
-		});
-		
-		// Search tabs
-		/* $(".spine-tabs li button,.spine-tabs li a").click(function() {
-			$(this).parent('li').siblings('.active').toggleClass('active inactive');
-			$(this).parent('li').addClass('active');
 		}); */
-	
+		
+		// Submit search
+		$("#wsu-search form").submit( function() {
+			var scope = $("#wsu-search").attr('data-default');
+			if ( scope == 'site-search' ) {
+				var site = ' site:'+location.hostname;
+				var site = ' site:admission.wsu.edu' // temporary for testing
+			} else {
+				var site = '';
+			}
+			var cx = 'cx=004677039204386950923:xvo7gapmrrg';
+			var cof = 'cof=FORID%3A11';
+			var search_term = $("#wsu-search input").val();
+			var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
+			window.location.href = search_url;
+			return false;
+		});
+
 	
 		// Fixed/Sticky Horizontal Header
 		$(document).scroll(function() {

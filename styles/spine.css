@@ -280,7 +280,7 @@ x#spine #glue {
 #wsu-actions-tabs #wsu-share-tab button::before { content: "\F601"; }
 #wsu-actions-tabs #wsu-print-tab button::before { content: "\2399"; }
 
-#wsu-actions-tabs #wsu-search-tab.opened button:hover::before { content: "\F500"; }
+#wsu-actions-tabs #wsu-search-tab.opened button:hover::before,
 #wsu-actions-tabs #wsu-contact-tab.opened button:hover::before,
 #wsu-actions-tabs #wsu-share-tab.opened button:hover::before,
 #wsu-actions-tabs #wsu-print-tab.opened button:hover::before { content: "\2421"; }	
@@ -375,13 +375,13 @@ x#spine #glue {
 	margin: 0px;
 	border: none;
 	box-shadow: none;
-	border-bottom: 0px #b6bcbf solid;
+	border-bottom: 1px #b6bcbf solid;
 	margin-bottom: 3px;
 	}
 #spine #wsu-search input:focus {
 	color: #981e32;
 	border: none;
-	border-bottom-color: #981e32;
+	border-bottom: 1px #981e32 solid;
 	}
 #spine #wsu-search button#submit-search {
 	position: absolute;
@@ -420,13 +420,8 @@ x#spine #glue {
 	max-height: 100%;
 	display: block;
 	position: relative;
-	xmin-height: 100px;
 	margin: 0 2em;
-	display: none;
 	padding-bottom: 100px;
-	}
-#spine #wsu-search-results > div.active {
-	display: block;
 	}
 
 #spine #index-search-results ul li {
@@ -467,145 +462,6 @@ x#spine #glue {
 	  padding: 0;
 	  position: absolute;
 	  width: 1px;
-	}
-	
-/* Search Results */
-#spine #wsu-search-results header,
-#spine #wsu-search-results header:hover {
-	background: transparent;
-	padding: 5px 0px;
-	text-transform: uppercase;
-	border-bottom: 1px #a6adb0 dotted;
-	}
-#wsu-search ul.tabs {
-	width: 100%;
-	background: #d6d8d9;
-	background: #eceeef;
-	}
-#results {
-	display: none;
-	width: 396px;
-	box-sizing: border-box;
-	height: 100%;
-	position: fixed;
-	position: absolute;
-	left: 25px;
-	xtop: 5.5em;
-	xbottom: 0px;
-	z-index: 9999;
-	background: white;
-	margin-top: -3px;
-	margin-left: -2px;
-	xz-index: 99;
-	padding-bottom: 100px;
-	box-shadow: 0px 0px 4px rgba(96,96,96,.5);
-	}
-#results table {
-	background: white;
-	}
-#resulting {
-	padding: 0px 20px 10px 20px;
-	overflow-y: scroll;
-	height: 100%;
-	position: absolute;
-	}
-	
-/* Tabs */
-#wsu-search ul.spine-tabs li {
-	float: left;
-	position: relative;
-	
-	xbackground: #a6adb0;
-	padding: 0px; margin: 0px;
-	border-color: transparent transparent #a6adb0 transparent;
-	border-style: solid;
-	border-style: solid solid;
-	border-width: 1px;
-	}
-#wsu-search ul.spine-tabs li.active {
-	xbackground-color: transparent;
-	border-color: #a6adb0 #a6adb0 transparent #a6adb0;
-	}
-#index-search-results ul.ui-autocomplete {
-	top: 20px !important;
-	}
-#wsu-search ul.spine-tabs {
-	margin: 0px 2em;
-	display: block;
-	}
-#wsu-search ul.spine-tabs > li {
-	width: 28px;
-	text-align: center;
-	}
-#wsu-search ul.spine-tabs button {
-	text-indent: 100%;
-	overflow: hidden;
-	white-space: nowrap;
-	padding: 0px;
-	display: block;
-	height: 2em;
-	text-shadow: none;
-	font-weight: normal;
-	}
-#wsu-search ul.spine-tabs button::before {
-	color: #5e6a71;
-	font-family: "Iconography";
-	font-size: 1.4em;
-	font-weight: normal !important;
-	text-indent: 0px;
-	xwidth: 30px;
-	display: block;
-	padding: 4px;
-	overflow: hidden;
-	}
-	
-#wsu-search ul.spine-tabs li.active button::before {
-	color: #5e6a71;
-	}
-
-#index-search-tab button::before { content: "\ED50"; }
-#site-search-tab button::before { content: "\2316"; }
-#global-search-tab button::before { content: "\1F310"; }
-#staff-search-tab button::before { content: "\E407"; }
-#student-search-tab button::before { content: "\E400"; }
-
-/* Results */
-x#spine #wsu-search #search-wrap {
-	xposition: relative;
-	background: white;
-	width: 298px;
-	}
-
-#spine #wsu-search-results {
-	width: 298px;
-	background-color: white;
-	xheight: 9000px;
-	border-top: ;
-	xposition: absolute;
-	xbottom: 0;
-	xtop: 0;
-	}
-
-#spine #wsu-search-results .result {
-	border-bottom: 1px #a6adb0 dotted;
-	padding-bottom: 5px;
-	}
-#spine #wsu-search-results .result header {
-	text-transform: none;
-	font-weight: bold;
-	line-height: 1.2em;
-	border-bottom: none;
-	}
-#spine #wsu-search-results .result header a {
-	color: #981e32;
-	font-weight: bold;
-	}
-#spine #wsu-search-results .result header a:hover {
-	color: #c60c30;
-	}
-#spine #wsu-search-results .result p {
-	margin: 0px; padding: 0px;
-	line-height: 1.2em;
 	}
 
 	

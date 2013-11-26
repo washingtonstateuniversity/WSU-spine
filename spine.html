@@ -115,7 +115,7 @@
 </ul>
 
 <!-- Search/Index ( In great FLUX ) -->
-<section id="wsu-search" class="tools closed">
+<section id="wsu-search" class="tools closed" data-default="site-search">
 	<!--
 	You can turn off default search functions by adding classes to #wsu-search
 	Options: .nix-index, .nix-site, .nix-wsu, .nix-facstaff, .nix-students
@@ -126,22 +126,8 @@
 		<button id="submit-search">Submit</button>
 	</form>
 	
-	<ul id="wsu-search-tabs" class="spine-tabs clearfix">
-		<li id="index-search-tab" class="active"><button>Site</button></li>
-		<li id="site-search-tab" class="inactive"><button>Site</button></li>
-		<li id="global-search-tab" class="inactive"><button>WSU</button></li>
-		<li id="staff-search-tab" class="inactive"><button>Faculty/Staff</button></li>
-		<li id="student-search-tab" class="inactive"><button>Students</button></li>
-	</ul>
-	
-	<div id="search-wrap" class="clearfix">
 	<div id="wsu-search-results" class="spine-results">
-		<div id="index-search-results" class="active"><header>A-Z Index</header></div>
-		<div id="site-search-results" class="inactive"><header>Subsite Search</header><?php get_template_part('includes/sitesearch'); ?></div>
-		<div id="global-search-results" class="inactive"><header>WSU.EDU Search</header><?php get_template_part('includes/globalsearch'); ?></div>
-		<div id="staff-search-results" class="inactive"><header>Faculty and Staff</header></div>
-		<div id="student-search-results" class="inactive"><header>Students</header></div>
-	</div>
+		<div id="index-search-results" class="active"></div>
 	</div>
 	     
 	</section>
