@@ -11,8 +11,17 @@
     font-weight: 400;
     font-style: normal;
 	}
+	
+/* Table of Contents
+==================================================
+    1.0 Reset
+    1.1 Set Defaults
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
 
-/* Reset (Thanks Eric Meyer) */
+/* 1.0 Reset (Thanks Eric Meyer) */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -72,9 +81,9 @@ hr { border-width: 3px 0px 0px 0px;
 	}
 h6,h5,h4,h3,h2,h1 { margin: 0px 0px 3px 0px; letter-spacing: 0em; font-weight: normal; }
 h1 { font-size: 26px; line-height: 30px; font-weight: bold; }
-h2 { font-size: 18px; line-height: 20px; font-weight: bold;	margin: 5px 0px; }
-h3 { font-size: 1.2em; line-height: 1.2em; margin: 10px 0px 5px 0px; text-transform: uppercase;	}
-h4 { font-weight: bold;	font-size: 1.1em; line-height: 1.2em; }
+h2 { font-size: 22px; line-height: 26px; font-weight: bold;	margin: 5px 0px; }
+h3 { font-size: 18px; line-height: 22px; font-weight: bold; margin: 10px 0px 5px 0px; }
+h4 { font-size: 14px; line-height: 18px; font-weight: bold; }
 p { margin: 0px; padding-bottom: 12px; }
 ol li { list-style: decimal; margin: 0px 0px 5px 25px; }
 ul li { list-style: circle; margin: 0px 0px 5px 20px; padding: 0px 0px 0px 0px; }
@@ -83,13 +92,13 @@ input {
 	outline: none;
 	}
 
+/* Fonts
+-------------------------------------------------------- */
 .sans { font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif; }
 .serif { font: 14px/22px "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
 
-/* Grid
--------------------------------------------------------- */
 
-/* LAYOUT
+/* Layout
 -------------------------------------------------------- */
 
 html {
@@ -97,19 +106,17 @@ html {
 	}
 body {
 	color: #262a2d;
-	xfont: 14px/22px "OpenSans","Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
 	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
 	background: white url('../images/gradient.png') left top repeat-x;
-	min-height: 100%;
+	height: 100%;
 	}
 #jacket {
-	min-height: 100%;
+	height: 100%;
 	}
 #binder {
 	width: 990px;
 	margin: 0px auto;
-	position: relative;
-	min-height: 100%;
+	height: 100%;
 	}
 #binder.fluid.folio {
 	width: 100%;
@@ -119,7 +126,6 @@ main {
 	margin-left: 198px;
 	width: 792px;
 	background-color: #e6e7e8;
-	float: right;
 	min-height: 100%;
 	}
 #spine {
@@ -132,8 +138,10 @@ section {
 	position: relative;
 	clear: both;
 	}
-	
-/* !LAYOUTS */
+
+
+/* Grid
+-------------------------------------------------------- */
 .row {
 	width: 100%;
 	xmargin-bottom: 5px;
@@ -156,27 +164,34 @@ section {
 
 /* halves */
 .row.halves .column { width: 396px; }
+.hybrid .row.halves .column,
 .fluid .row.halves .column { width: 50%; }
 	
 /* thirds */
 .row.thirds .column { width: 264px; }
+.hybrid .row.thirds .column,
 .fluid .row.thirds .column { width: 33%; }
+.hybrid .row.thirds .column.two,
 .fluid .row.thirds .column.two { width: 34%; }
 
 /* quarters */
 .row.quarters .column { width: 198px; }
+.hybrid .row.quarters .column,
 .fluid .row.quarters .column { width: 25%; }
 
 /* eighths */
 .row.eighths .column { width: 99px; }
+.hybrid .row.eighths .column,
 .fluid .row.eighths .column { width: 12.5%; }
 
 /* ninths */
 .row.ninths .column { width: 99px; }
+.hybrid .row.ninths .column,
 .fluid .row.ninths .column { width: 12.5%; }
 
 /* twelfths */
 .row.twelfths .column { width: 66px; }
+.hybrid .row.twelfths .column,
 .fluid .row.twelfths .column { width: 8.33334%; }
 	
 /* Triptych */
@@ -186,7 +201,9 @@ section {
 /* Margin */
 .row.margin .column.one { width: 594px; }
 .row.margin .column.two { width: 198px; }
+.hybrid .row.margin .column.one,
 .fluid .row.margin .column.one { width: 75%; }
+.hybrid .row.margin .column.two,
 .fluid .row.margin .column.two { width: 25%; }
 
 /* Sidebar */
@@ -201,12 +218,15 @@ section {
 
 /* halves and halves */
 .row.halves .halves .column { width: 198px; }
+.hybrid .row.halves .halves .column,
 .fluid .row.halves .halves .column { width: 50%; }
 
 /* halves and thirds */
 .row .column.thirds .column { width: 132px; }
 .row.quarters .thirds .column { width: 66px; }
+.hybrid .row .column.thirds .column,
 .fluid .row .column.thirds .column { width: 33%; }
+.hybrid .row .column.thirds .column.two,
 .fluid .row .column.thirds .column.two { width: 34%; }
 
 /* Twelfths */
@@ -220,38 +240,36 @@ section {
 .row .column.twelve-fifteenths, .column.four-fifths { width: 792px; }
 .row .column.fifteen-fifteenths, .column.five-fifths { width: 990px; }
 
-.panel {
-	position: absolute;
-	z-index: 5000;
-	}
-.quarters .panel.doublewide,
-.fifths .panel.doublewide {
-	width: 396px;
-	xborder: 1px pink solid;
-	}
-.fifths .panel.doublehigh {
-	height: 396px;
-	}
 
-
-/* Table of Contents
-==================================================
-    #Base 960 Grid
-    #Tablet (Portrait)
-    #Mobile (Portrait)
-    #Mobile (Landscape)
-    #Clearing */
+/* Content
+-------------------------------------------------------- */
 
 
 .column > article {
-	padding: 30px 30px 0px 30px;
+	padding: 10px 30px;
 	}
-.column > article:nth-of-type(1) {
-	padding: 30px;
+.column > article:first-of-type,
+.column > aside:first-of-type {
+	padding: 30px 30px 10px 30px;
 	}
-.column aside > section {
-	padding: 30px 30px 0px 30px;
+.column > article ~ article p {
+	padding-bottom: 0px;
 	}
+.column > aside {
+	padding: 10px 30px;
+	}
+.column > aside > header {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding-bottom: 5px;
+	}
+.column > aside ul li {
+	list-style: none;
+	padding: 5px 0px;
+	margin: 0px;
+	border-top: 1px gray dotted;
+	}
+	
 
 
 /* #Clearing
@@ -497,7 +515,8 @@ code textarea:focus {
 	background-color: rgba(94,106,113,0.5);
 	}
 	
-/* COLORS */
+/* COLORS
+-------------------------------------------------------- */
 
 /* CRIMSON */ div.crimson, section.crimson, article.crimson, aside.crimson, header.crimson, footer.crimson { color: white; background-color: #981e32; }
 /* crimsoner */ div.crimsonr, section.crimson-er, article.crimson-er, aside.crimson-er, header.crimson-er, footer.crimson-er { color: white; background-color: #9b0023; }

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>$!{title} | Washington State University</title>
+	
+	<!-- FAVICON -->
+	<link rel="shortcut icon" href="http://images.wsu.edu/spine/1/images/icons/favicon.ico" />
+	
+	<!-- STYLESHEETS -->
+	<!-- TARGET --><link href="http://nbj.me/spine/1/styles.css" rel="stylesheet" type="text/css" /><!-- -->
+	<!-- PCKG <link href="styles/styles.css" rel="stylesheet" type="text/css" />-->
+	<!-- Your custom stylesheets here -->
+	
+	<!-- RESPOND -->
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	
+	<!-- SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<!-- TARGET <script src="http://images.wsu.edu/spine/1/scripts.js" type="text/javascript"></script>-->
+	<!-- TEMP --><script src="http://nbj.me/spine/1/scripts-dev.js" type="text/javascript"></script><!-- -->
+	<!-- PCKG <script src="scripts/scripts.js" type="text/javascript"></script>-->
+	<!-- Your supplementary scripts here -->  
+	
+	<!-- DOCS -->
+	<link type="text/plain" rel="author" href="http://images.wsu.edu/spine/humans.txt" />
+	<link type="text/html" rel="docs" href="http://identity.wsu.edu" />
+	
+	<!-- ANALYTICS -->
+	<!-- Your analytics code here -->
+	
+</head>
+
+<body id="$!{story.Slug}" class="$!{story.Slug} $!{story.Parent.Slug} $!{story.FullSlug}">
+
+<!-- WRAPPING -->
+<div id="jacket">
+<div id="binder" class="hybrid">
+
+<!-- CONTENT -->
+<main id="page" role="main">
+
+<!-- Responsive Sections -->
+<section class="row sidebar">
+
+	<div class="column one">
+		<article>
+			
+			$!{body}
+
+		</article>
+	</div><!--/column-->
+
+	<div class="column two">
+		<aside>
+			
+			$!{sidebar}
+			
+		</aside>
+	</div><!--/column-->
+
+</section>
+
+</main><!--/#page-->
+<!-- /CONTENT -->
+
+<!-- SPINE -->
+<div id="spine" class="shelved">
+<div id="glue" class="clearfix">
+
+<header><a href="http://www.wsu.edu/" id="logo">Washington State University</a></header>
+
+<!-- ACTIONS -->
+<section id="wsu-actions" class="clearfix" role="actions">
+
+<!-- Tabs -->
+<ul id="wsu-actions-tabs" class="spine-tabs clearfix">
+	<li id="wsu-search-tab" class="closed" label="Search"><button>Search</button></li>
+	<li id="wsu-contact-tab" class="closed" label="Contact"><button>Contact</button></li>
+	<li id="wsu-share-tab" class="closed" label="Share"><button>Share</button></li>
+	<li id="wsu-print-tab" class="closed" label="Print"><button>Print</button></li>
+</ul>
+
+<!-- Search/Index ( In great FLUX ) -->
+<section id="wsu-search" class="tools closed">
+	<!--
+	You can turn off default search functions by adding classes to #wsu-search
+	Options: .nix-index, .nix-site, .nix-wsu, .nix-facstaff, .nix-students
+	-->
+	
+	<form name="search" id="search">
+        <input id="searchterm" name="term" type="text" value="" placeholder="search">
+        <button id="submit-search">Submit</button>
+     </form>
+     
+	<ul id="wsu-search-tabs" class="spine-tabs clearfix">
+		<li id="index-search-tab" class="active"><button>Site</button></li>
+		<li id="site-search-tab" class="inactive"><button>Site</button></li>
+		<li id="global-search-tab" class="inactive"><button>WSU</button></li>
+		<li id="staff-search-tab" class="inactive"><button>Faculty/Staff</button></li>
+		<li id="student-search-tab" class="inactive"><button>Students</button></li>
+	</ul>
+	
+	<div id="wsu-search-results">
+		<div id="index-search-results" class="active"><header>A-Z Index</header></div>
+		<div id="site-search-results" class="inactive"><header>Subsite Search</header></div>
+		<div id="global-search-results" class="inactive"><header>WSU.EDU Search</header></div>
+		<div id="staff-search-results" class="inactive"><header>Faculty and Staff</header></div>
+		<div id="student-search-results" class="inactive"><header>Students</header></div>
+	</div>
+
+</section>
+	
+</section><!--/#wsu-actions-->
+
+<nav id="navigation">
+
+<nav id="site">
+<!-- Your navigation list here
+	• Active link should be denoted with an "active" or "current" link on the link's parent li tag.
+	• First link should be home link (otherwise, add "homeless" class to #site nav)
+	• Replace example navigation list below
+-->
+
+#shownavwithhomelink("Primary Navigation")
+
+</nav>
+
+<nav id="offsite">
+	<ul>
+		<li><a href="">Offsite Link</a></li>
+		<li><a href="">Another</a></li>
+	</ul>
+</nav>
+
+</nav><!-- #navigation -->
+
+<!-- Social and Global Links -->
+<footer>
+	<nav id="social">
+		<ul>
+			<li id="facebook"><a href="http://facebook.com/wsupullman">Facebook</a></li>
+			<li id="twitter"><a href="http://twitter.com/wsupullman">Twitter</a></li>
+			<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+			<li id="social"><a href="http://social.wsu.edu">Social</a></li>
+			<!-- You can replace default social channels with your own. Available channels are:
+				• Facebook, Twitter, Youtube, Google+, Tumblr, Pinterest, Flickr, 
+				• Example: <li id="pinterest"><a href="http://pinterest.com/user">Pinterest</a></li>
+				• Maximum number of channels is four
+			-->
+		</ul>
+	</nav>
+	<nav id="global">
+		<ul>
+			<li id="zzusis"><a href="https://zzusis.wsu.edu/">Zzu<strong>sis</strong></a></li>
+			<li id="access"><a href="http://access.wsu.edu/">Access</a></li>
+			<li id="policies"><a href="http://policies.wsu.edu/">Policies</a></li>
+			<li id="copyright"><a href="http://copyright.wsu.edu">&nbsp;&copy;</a></li>
+		</ul>
+	</nav>	
+	<!-- <small id="copyright"><a href="http://copyright.wsu.edu">&copy; Washington State University</a></small> -->
+</footer>
+
+</div><!--/glue-->
+</div><!--/spine-->
+<!-- /SPINE -->
+
+</div><!--/cover-->
+</div><!--/jacket-->
+<!-- /WRAPPING -->
+
+</body>
+</html>
