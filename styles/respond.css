@@ -271,17 +271,17 @@
 .vancouver-signature #binder.fluid #spine a#logo { background-image: url("../marks/sig-h-vancouver.svg"); }
 
 /* Grid */
-.row .column {
+.row > .column {
 	float: none;
 	}
-.row.halves .column,
-.row.triptych .column,
-.row.triptych .column.two,
-.row.sidebar .column.one,
-.row.sidebar .column.two,
-.row.thirds .column,
-.row.margin .column.one,
-.row.margin .column.two {
+.row.halves > .column,
+.row.triptych > .column,
+.row.triptych > .column.two,
+.row.sidebar > .column.one,
+.row.sidebar > .column.two,
+.row.thirds > .column,
+.row.margin > .column.one,
+.row.margin > .column.two {
 	width: 100%;
 	}
 .row.quarters .column,
@@ -428,16 +428,16 @@
 	}
 	
 /* Grid */
-.fluid .row.single .column,
-.fluid .row.halves .column,
-.fluid .row.thirds .column.one,
-.fluid .row.thirds .column.two,
-.fluid .row.thirds .column.three,
-.fluid .row.triptych .column,
-.fluid .row.sidebar .column.one,
-.fluid .row.sidebar .column.two,
-.fluid .row.margin .column.one,
-.fluid .row.margin .column.two {
+.fluid .row.single > .column,
+.fluid .row.halves > .column,
+.fluid .row.thirds > .column.one,
+.fluid .row.thirds > .column.two,
+.fluid .row.thirds > .column.three,
+.fluid .row.triptych > .column,
+.fluid .row.sidebar > .column.one,
+.fluid .row.sidebar > .column.two,
+.fluid .row.margin > .column.one,
+.fluid .row.margin > .column.two {
 	width: 100%;
 	float: none;
 	}
@@ -445,20 +445,20 @@
 	width: 50%;
 	}
 	
-.hybrid .row.single .column,
-.hybrid .row.halves .column,
-.hybrid .row.thirds .column.one,
-.hybrid .row.thirds .column.two,
-.hybrid .row.thirds .column.three,
-.hybrid .row.triptych .column,
-.hybrid .row.sidebar .column.one,
-.hybrid .row.sidebar .column.two,
-.hybrid .row.margin .column.one,
-.hybrid .row.margin .column.two {
+.hybrid .row.single > .column,
+.hybrid .row.halves > .column,
+.hybrid .row.thirds > .column.one,
+.hybrid .row.thirds > .column.two,
+.hybrid .row.thirds > .column.three,
+.hybrid .row.triptych > .column,
+.hybrid .row.sidebar > .column.one,
+.hybrid .row.sidebar > .column.two,
+.hybrid .row.margin > .column.one,
+.hybrid .row.margin > .column.two {
 	width: 100%;
 	float: none;
 	}
-.hybrid .row.quarters .column {
+.hybrid .row.quarters > .column {
 	width: 50%;
 	}
 
