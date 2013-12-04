@@ -120,7 +120,7 @@ body {
 	}
 #binder.fluid.folio {
 	width: 100%;
-	max-width: 1782px; /* Main (792) x 2 + Spine (198) */
+	max-width: 1980px; /* 990 x 2 */
 	}
 main {
 	margin-left: 198px;
@@ -163,9 +163,9 @@ section {
 	}
 
 /* halves */
-.row.halves .column { width: 396px; }
-.hybrid .row.halves .column,
-.fluid .row.halves .column { width: 50%; }
+.halves .column { width: 396px; }
+.hybrid .halves .column,
+.fluid .halves .column { width: 50%; }
 	
 /* thirds */
 .row.thirds .column { width: 264px; }
@@ -193,6 +193,23 @@ section {
 .row.twelfths .column { width: 66px; }
 .hybrid .row.twelfths .column,
 .fluid .row.twelfths .column { width: 8.33334%; }
+.three-fourths, .nine-twelfths { width: 594px; }
+.one-twelfth { width: 66px; } .fluid .one-twelfth { width: 8.33% }
+.two-twelfths, .one-sixth { width: 132px; } .fluid .two-twelfths, .fluid .one-sixth { width: 16.66% }
+.three-twelfths { width: 198px; } .fluid .three-twelfths { width: 25% }
+.four-twelfths { width: 264px; } .fluid .four-twelfths { width: 33.33% }
+.five-twelfths { width: 330px; } .fluid .five-twelfths { width: 41.66% }
+.six-twelfths, .one-half { width: 396px; } .fluid .six-twelfths, .fluid one-half { width: 50% }
+.seven-twelfths { width: 462px; } .fluid .five-twelfths { width: 58.33% }
+.eight-twelfths { width: 528px; } .fluid .eight-twelfths { width: 64.66% }
+.nine-twelfths, .three-quarters { width: 594px; } .fluid .nine-twelfths, .fluid .three-quarters { width: 75% }
+.ten-twelfths { width: 528px; } .fluid .ten-twelfths { width: 83.33% }
+.eleven-twelfths { width: 528px; } .fluid .eleven-twelfths { width: 91.66% }
+
+.hybrid .row.halves .two-twelfths,
+.fluid .row.halves .two-twelfths { width: 33%; }
+.hybrid .row.halves .four-twelfths,
+.fluid .row.halves .four-twelfths { width: 67%; }
 	
 /* Triptych */
 .row.triptych .column { width: 198px; }
@@ -216,21 +233,18 @@ section {
 
 /* Nested */
 
-/* halves and halves */
+/* halves then halves */
 .row.halves .halves .column { width: 198px; }
 .hybrid .row.halves .halves .column,
 .fluid .row.halves .halves .column { width: 50%; }
 
-/* halves and thirds */
+/* halves then thirds */
 .row .column.thirds .column { width: 132px; }
 .row.quarters .thirds .column { width: 66px; }
 .hybrid .row .column.thirds .column,
 .fluid .row .column.thirds .column { width: 33%; }
 .hybrid .row .column.thirds .column.two,
 .fluid .row .column.thirds .column.two { width: 34%; }
-
-/* Twelfths */
-.three-fourths, .nine-twelfths { width: 594px; }
 
 /* Fifteenths */
 .row .column.one-fifteenth { width: 66px; }
@@ -239,6 +253,8 @@ section {
 .row .column.nine-fifteenths, .column.three-fifths { width: 594px; }
 .row .column.twelve-fifteenths, .column.four-fifths { width: 792px; }
 .row .column.fifteen-fifteenths, .column.five-fifths { width: 990px; }
+
+
 
 
 /* Content
@@ -329,41 +345,10 @@ section,
 }
 
 /* #Images */
-img.scale-with-grid {
+.fluid .column img {
 		max-width: 100%;
 		height: auto; }
 
-/* Tabs */
-ul.tabs {
-	display: block;
-	xbackground: #eceeef;
-	}
-ul.tabs li {
-	display: block;
-	float: left;
-	margin-right: 1px;
-	white-space: nowrap;
-	}
-ul.tabs li a {
-	padding: 6px 12px;
-	display: table-cell;
-	vertical-align: middle;
-	background: #eceeef;
-	border-right: 1px #bdbfc0 solid;
-	border-bottom: 2px #d6d8d9 solid;
-	}
-ul.tabs li.active a {
-	xborder-left-color: white;
-	}
-ul.tabs li a:hover {
-	-webkit-transition: background .3s ease-in-out;
-	background: #d6d8d9;
-	}
-ul.tabs li.active a {
-	background: white;
-	border-bottom: 2px white solid;
-	xfont-weight: bold;
-	}
 	
 /* Character Styles
 -------------------------------------------------------- */

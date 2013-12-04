@@ -12,6 +12,19 @@
     5.0 Print
     6.0 Targeting */
 
+#binder #spine.unshelved header::before {
+	content: "";
+	position: absolute;
+	width: 900px;
+	height: 15px;
+	box-shadow: 0px 4px 10px -6px rgba(0,0,0,0.5);
+	-webkit-transition: box-shadow 0.1s ease-in-out;
+	transition: box-shadow 0.1s ease-in-out;
+	top: 35px;
+	left: 298px;
+	display: block;
+	z-index: 1;
+	}
 
 /* LARGE
 -------------------------------------------------- */
@@ -89,6 +102,7 @@
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 	left: 0;
 	}
+
 #binder:not(.fluid) #spine.scanned header {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 	}
@@ -474,17 +488,15 @@
 
 @media /* !LARGE FORMAT Fixed +1 */
 	only screen
-	and ( min-width : 1188px )
+	and ( min-width : 991px )
 	and ( min-device-width : 990px )
 	{
-#binder.fixed.folio-1188,
-#binder.hybrid.folio-1188 {
-	width: 1188px;
-	}
-#binder.fixed.folio main,
-#binder.fixed.folio main > section {
-	width: 990px;
-	}
+#binder.folio.max-1188 { width: 1188px; }
+#binder.fluid.folio.max-1188 { width: 100%; max-width: 1188px; }
+
+#binder.folio.max-1188 main { width: 990px; }
+#binder.fluid.folio.max-1188 { width: 100%; }
+
 .folio .row .column.folio-only {
 	display: block;
 	}
@@ -495,12 +507,10 @@
 	and ( min-width : 1386px )
 	and ( min-device-width : 990px )
 	{
-#binder.fixed.folio-1386,
-#binder.hyrbrid.folio-1386 {
+#binder.folio.max-1386 {
 	width: 1386px;
 	}
-#binder.fixed.folio main,
-#binder.fixed.folio main > section {
+#binder.folio.max-1386 main {
 	width: 1188px;
 	}
 .folio-only {
@@ -513,28 +523,41 @@
 	and ( min-width : 1584px )
 	and ( min-device-width : 990px )
 	{
-#binder.fixed.folio-1584,
-#binder.hybrid.folio-1584 {
+#binder.folio.max-1584 {
 	width: 1584px;
 	}
-#binder.fixed.folio main,
-#binder.fixed.folio main > section {
+#binder.folio.max-1584 main {
 	width: 1386px;
+	}
+.folio-only {
+	display: block;
+	}
+	}
+	
+@media /* !LARGE FORMAT +3  */
+	only screen
+	and ( min-width : 1782px )
+	and ( min-device-width : 990px )
+	{
+#binder.folio.max-1782 {
+	width: 1782px;
+	}
+#binder.folio.max-1782 main {
+	width: 1584px;
 	}
 
 	}
-	
+
 @media /* !LARGE FORMAT +3  */
 	only screen
 	and ( min-width : 1980px )
 	and ( min-device-width : 990px )
 	{
-#binder.fixed.folio-1584 {
+#binder.folio.max-1980 {
 	width: 1980px;
 	}
-#binder.fixed.folio main,
-#binder.fixed.folio main > section {
-	width: 1584px;
+#binder.folio.max-1980 main {
+	width: 1782px;
 	}
 
 	}
