@@ -467,97 +467,121 @@
 /* LARGE FORMAT (Folio)
 ---------------------------------------------------------- */
 
-.row .column.folio-only {
+.folio-only {
 	display: none;
+	}
+.hybrid.folio .row .column,
+.fixed.folio .row .column {
+	float: left;
 	}
 
 @media
 	only screen
-	and ( min-width : 989px )
+	and ( min-width : 990px )
 	{
+
 #binder.fluid.folio {
 	width: 100%;
-	max-width: 1782px; /* Main (792) x 2 + Spine (198) */
 	}		
 #binder.fluid.folio main {
 	width: auto;
 	margin: 0px 0px 0px 198px;
 	}
-
+#binder.fluid.folio.max-1188 { max-width: 1188px; }
+#binder.fluid.folio.max-1386 { max-width: 1386px; }
+#binder.fluid.folio.max-1584 { max-width: 1584px; }
+#binder.fluid.folio.max-1782 { max-width: 1782px; }
+#binder.fluid.folio.max-1980 { max-width: 1980px; }
 	}
 
-@media /* !LARGE FORMAT Fixed +1 */
+@media /* !LARGE FORMAT -> 1188 */
 	only screen
-	and ( min-width : 991px )
+	and ( min-width : 1188px )
 	and ( min-device-width : 990px )
 	{
-#binder.folio.max-1188 { width: 1188px; }
-#binder.fluid.folio.max-1188 { width: 100%; max-width: 1188px; }
 
-#binder.folio.max-1188 main { width: 990px; }
-#binder.fluid.folio.max-1188 { width: 100%; }
+#binder:not(.fluid).folio.max-1188,
+#binder:not(.fluid).folio.max-1386,
+#binder:not(.fluid).folio.max-1584,
+#binder:not(.fluid).folio.max-1782,
+#binder:not(.fluid).folio.max-1980 { width: 1188px; }
 
-.folio .row .column.folio-only {
+#binder:not(.fluid).folio.max-1188 main,
+#binder:not(.fluid).folio.max-1386 main,
+#binder:not(.fluid).folio.max-1584 main,
+#binder:not(.fluid).folio.max-1782 main,
+#binder:not(.fluid).folio.max-1980 main { width: 990px; }
+
+.folio-only {
 	display: block;
 	}
 	}
 
-@media /* !LARGE FORMAT Fixed +2 */
+@media /* !LARGE FORMAT -> 1386 */
 	only screen
 	and ( min-width : 1386px )
 	and ( min-device-width : 990px )
 	{
-#binder.folio.max-1386 {
-	width: 1386px;
-	}
-#binder.folio.max-1386 main {
-	width: 1188px;
-	}
-.folio-only {
+
+#binder:not(.fluid).folio.max-1386,
+#binder:not(.fluid).folio.max-1584,
+#binder:not(.fluid).folio.max-1782,
+#binder:not(.fluid).folio.max-1980 { width: 1386px; }
+
+#binder:not(.fluid).folio.max-1386 main,
+#binder:not(.fluid).folio.max-1584 main,
+#binder:not(.fluid).folio.max-1782 main,
+#binder:not(.fluid).folio.max-1980 main { width: 1188px; }
+
+.max-1386-only {
 	display: block;
 	}
 	}
 	
-@media /* !LARGE FORMAT +3  */
+@media /* !LARGE FORMAT -> 1584  */
 	only screen
 	and ( min-width : 1584px )
 	and ( min-device-width : 990px )
 	{
-#binder.folio.max-1584 {
-	width: 1584px;
-	}
-#binder.folio.max-1584 main {
-	width: 1386px;
-	}
-.folio-only {
+#binder:not(.fluid).folio.max-1584,
+#binder:not(.fluid).folio.max-1782,
+#binder:not(.fluid).folio.max-1980 { width: 1584px; }
+
+#binder:not(.fluid).folio.max-1584 main,
+#binder:not(.fluid).folio.max-1782 main,
+#binder:not(.fluid).folio.max-1980 main { width: 1386px; }
+
+.max-1584-only {
 	display: block;
 	}
 	}
 	
-@media /* !LARGE FORMAT +3  */
+@media /* !LARGE FORMAT -> 1782  */
 	only screen
 	and ( min-width : 1782px )
 	and ( min-device-width : 990px )
 	{
-#binder.folio.max-1782 {
-	width: 1782px;
-	}
-#binder.folio.max-1782 main {
-	width: 1584px;
-	}
+
+#binder:not(.fluid).folio.max-1782,
+#binder:not(.fluid).folio.max-1980 { width: 1782px;	}
+
+#binder:not(.fluid).folio.max-1782 main,
+#binder:not(.fluid).folio.max-1980 main { width: 1584px; }
 
 	}
 
-@media /* !LARGE FORMAT +3  */
+@media /* !LARGE FORMAT -> 1980  */
 	only screen
 	and ( min-width : 1980px )
 	and ( min-device-width : 990px )
 	{
-#binder.folio.max-1980 {
-	width: 1980px;
-	}
-#binder.folio.max-1980 main {
-	width: 1782px;
+
+#binder:not(.fluid).folio.max-1980 { width: 1980px;	}
+
+#binder:not(.fluid).folio.max-1980 main { width: 1782px; }
+	
+.max-1980-only {
+	display: block;
 	}
 
 	}
