@@ -25,6 +25,49 @@
 	display: block;
 	z-index: 1;
 	}
+xx#binder #spine.unshelved.cracked.pinned header::before {
+	left: 0px;
+	}
+
+/* Hide */
+.small-only,
+.medium-only,
+.large-only,
+.folio-only,
+.more-than-small,
+.more-than-medium,
+.more-than-large,
+.less-than-medium,
+.less-than-large,
+.less-than-folio,
+.max-1188-only,
+.max-1386-only,
+.max-1584-only,
+.max-1782-only,
+.max-1980-only,
+.less-than-1188,
+.less-than-1386,
+.less-than-1584,
+.less-than-1782,
+.less-than-1980 {
+	display: none !important;
+	}
+	
+/* Pseudo Responsive Images */
+.fill-width {
+	width: 100%;
+	height: auto;
+	}
+.fill-height {
+	width: auto;
+	height: 100%;
+	}
+.center-vertically {
+	display: table-cell;
+	vertical-align: middle;
+	box-sizing: border-box;
+	}
+
 
 /* LARGE
 -------------------------------------------------- */
@@ -68,6 +111,11 @@
 	position: fixed;
 	z-index: 99163;
 	}
+#binder:not(.fluid) #glue,
+#binder:not(.fluid) #spine #glue,
+#binder:not(.fluid) #spine.cracked.pinned #glue {
+	width: 298px;
+	}
 #binder:not(.fluid) #glue {
 	margin-top: 50px;
 	}
@@ -96,6 +144,7 @@
 	background-position: 40% center;
 	background-size: 200px auto;
 	height: 50px;
+	margin-left: 40px;
 	}
 #binder:not(.fluid) #spine.unshelved {
 	-webkit-transition: left 0.1s ease-in-out;
@@ -141,7 +190,21 @@
 .spokane-signature #binder #spine:not(.fluid) a#logo { background-image: url("../marks/sig-h-spokane.svg"); }
 .tricities-signature #binder #spine:not(.fluid) a#logo { background-image: url("../marks/sig-h-tricities.svg"); }
 .vancouver-signature #binder #spine:not(.fluid) a#logo { background-image: url("../marks/sig-h-vancouver.svg"); }
-	
+
+/* Show */
+.large-only,
+.more-than-small,
+.more-than-medium,
+.less-than-large,
+.less-than-folio,
+.less-than-1188,
+.less-than-1386,
+.less-than-1584,
+.less-than-1782,
+.less-than-1980, {
+	display: block !important;
+	}
+
 	}
 
 /* MEDIUM
@@ -221,10 +284,9 @@
 	height: 50px;
 	}
 #binder.fluid #spine a#logo {
-	background-position: 40% center;
+	background-position: center center;
 	background-size: 200px auto;
-	height: 50px;
-	margin-left: 35px;
+	height: 49px;
 	}
 #binder.fluid #spine.unshelved {
 	-webkit-transition: left 0.1s ease-in-out;
@@ -272,7 +334,7 @@
 
 /* Grid */
 .row > .column {
-	float: none;
+	xxfloat: none;
 	}
 .row.halves > .column,
 .row.triptych > .column,
@@ -307,6 +369,30 @@
 	width: 132px;
 	float: left;
 	}
+	
+/* Show */
+.small-only,
+.medium-only,
+.large-only,
+.folio-only,
+.more-than-small,
+.more-than-medium,
+.more-than-large,
+.less-than-medium,
+.less-than-large,
+.less-than-folio,
+.max-1188-only,
+.max-1386-only,
+.max-1584-only,
+.max-1782-only,
+.max-1980-only,
+.less-than-1188,
+.less-than-1386,
+.less-than-1584,
+.less-than-1782,
+.less-than-1980, {
+	display: block;
+	}
 
 	}
 
@@ -335,6 +421,9 @@
 #binder.fixed #spine {
 	left: auto;
 	}
+#binder.fixed #glue {
+	margin-top: 0px;
+	}
 
 /* Header */
 #binder.fixed #spine #glue > header {
@@ -361,9 +450,9 @@
 	background-position: center;
 	background-size: 180px auto;
 	height: 197px;
+	margin-left: 0px;
 	}
 
-#binder.fixed #spine.lightest a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
 #binder.fixed #spine.lighter a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
 #binder.fixed #spine.light a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
 #binder.fixed #spine.gray a#logo { background-image: url('../marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
@@ -378,7 +467,6 @@
 .spokane-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-spokane.svg"); }
 .tricities-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-tricities.svg"); }
 .vancouver-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-vancouver.svg"); }
-	
 	
 	}
 
@@ -397,7 +485,7 @@
 	}
 #binder main {
 	width: 396px;
-	margin: 0px;
+	margin: 50px 0px 0px 0px;
 	}
 #binder.fixed main {
 	margin-top: 50px;
@@ -412,9 +500,6 @@
 	width: auto;
 	margin-left: 0px;
 	}	
-#binder #spine a#logo {
-	background-position: 55px center;
-	}
 
 /* Logo */
 .extension-signature #binder #spine a#logo,
@@ -440,6 +525,7 @@
 .fluid .row.margin > .column.two {
 	width: 100%;
 	float: none;
+	clear: both;
 	}
 .fluid .row.quarters .column {
 	width: 50%;
@@ -457,11 +543,49 @@
 .hybrid .row.margin > .column.two {
 	width: 100%;
 	float: none;
+	clear: both;
 	}
 .hybrid .row.quarters > .column {
 	width: 50%;
 	}
 
+	}
+	
+@media 
+	only screen
+	and (max-width: 420px) /* 792px - 198px = 594px */
+	{
+	
+#binder:not(.fluid) #spine a#logo,
+#binder.fluid #spine a#logo,
+.extension-signature #binder #spine a#logo,
+.globalcampus-signature  #binder #spine a#logo,
+.spokane-signature #binder #spine a#logo,
+.tricities-signature #binder #spine a#logo,
+.vancouver-signature #binder #spine a#logo {
+	background-size: 320px auto;
+	}
+	
+	}
+	
+@media 
+	only screen
+	and (max-width: 360px) /* 792px - 198px = 594px */
+	{
+	
+#binder:not(.fluid) #spine a#logo,
+#binder.fluid #spine a#logo {
+	background-size: 270px auto;
+	}
+.extension-signature #binder #spine a#logo,
+.globalcampus-signature  #binder #spine a#logo,
+.spokane-signature #binder #spine a#logo,
+.tricities-signature #binder #spine a#logo,
+.vancouver-signature #binder #spine a#logo {
+	background-size: 270px auto;
+	background-position: center 60%;
+	}
+	
 	}
 	
 /* LARGE FORMAT (Folio)
@@ -589,6 +713,14 @@
 
 /* PRINT
 ----------------------------------------------------------------- */
+
+html.print #binder main {
+	margin-left: 0px;
+	}
+html.print #binder #spine header button#shelve {
+	display: none;
+	}
+
 @media 
 	print {
 	
@@ -597,7 +729,7 @@ html.print #spine .print-controls {
 	display: none;
 	}
 	}
-	
+
 html.print #spine {
 	position: absolute;
 	left: -99163px;
@@ -633,14 +765,4 @@ html.print #spine .print-controls button {
 	padding: 0px;
 	}
 
-/* !Exclusions */
-.desktop-only,
-.hide-on-desktop,
-.ipad-only,
-.hide-on-ipad,
-.small-tablet-only,
-.hide-on-small-tablet,
-.mobile-only.
-.hide-on-mobile {
-	display: none;
-	}
+

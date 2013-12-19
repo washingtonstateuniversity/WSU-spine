@@ -6,7 +6,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 	function setup_search(){
 		$.widget( "ui.autosearch", $.ui.autocomplete, {
 			_renderMenu: function( ul, items ) {
-				var that 	= this;
+				var that	= this;
 				var matched	= items.filter(function(obj, item) { if(obj.related=="false"){return item;} });//note this should be a single loop?
 				var related	= items.filter(function(obj, item) { if(obj.related!="false"){return item;} });
 
@@ -23,10 +23,10 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				return this._renderItem( ul, item ).data( "ui-autocomplete-item", item );
 			},
 			_renderItem: function( ul, item ) {
-				var text 	= item.label;
-				var value 	= item.value;
-				var regex 	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)";
-					text 	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), "<strong>$1</strong>" )+"</a>";
+				var text	= item.label;
+				var value	= item.value;
+				var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)";
+					text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), "<strong>$1</strong>" )+"</a>";
 	
 				return $( "<li></li>" ).data( "item.autocomplete", item ).append( text ).appendTo( ul );
 			},
@@ -61,7 +61,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 									value: item.value,
 									searchKeywords: item.searchKeywords,
 									related: item.related
-								}
+								};
 							}
 						}));
 					}
@@ -96,8 +96,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			open: function(e,ui) {
 				// to come back later to
 				//$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
-			 }
-		}).data( "autocomplete" )
+			}
+		}).data( "autocomplete" );
 	
 	// to come back later to
 	//	$( "#wsu-search input#searchterm[type=text]" ).on('keyup',function(e) {
@@ -139,32 +139,49 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		    share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook"><i class="wsu-icon"></i>Facebook</a></li>';
 		    share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter"><i class="wsu-icon"></i>Twitter</a></li>';
 		    share += '		<li class="by-email"><a href="#" class="addthis_button_email"><i class="wsu-icon"></i>Email</a></li>';
-		    share += '		<li class="by-other"><a href="#" class="addthis_button_compact"><i class="wsu-icon"></i>More Options ...</a></li>';
+		    share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_gplus"><i class="wsu-icon"></i>Google Plus</a></li>-->';
+		    share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_linkedin"><i class="wsu-icon"></i>LinkedIn</a></li>-->';
+		    share += '		<!--<li class="by-other"><a href="#" class="addthis_button_compact"><i class="wsu-icon"></i>More Options ...</a></li>-->';
 		    share += '	</ul>';
 		    share += '</section>';
 				
 		if (!$("#wsu-share").length) { $("#wsu-actions").append(share); }
 		
 		// Section -> Contact
+		if (!$("#wsu-contact").length) {
+		
+		// Can we loop through instead and set these on the fly?
+		var name = $('meta[itemprop="name"]').attr('content');
+		var department = $('meta[itemprop="department"]').attr('content');
+		var url = $('meta[itemprop="url"]').attr('content');
+		var streetAddress = $('meta[itemprop="streetAddress"]').attr('content');
+		var addressLocality = $('meta[itemprop="addressLocality"]').attr('content');
+		var postalCode = $('meta[itemprop="postalCode"]').attr('content');
+		var telephone = $('meta[itemprop="telephone"]').attr('content');
+		var email = $('meta[itemprop="email"]').attr('content');
+		var ContactPointTitle = $('meta[itemprop="ContactPoint"]').attr('title');
+		var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
+		
 		// We'll get to building these from declarations in the template
 		var contact  = '<section id="wsu-contact" class="tools closed">';
 		    // contact += '<button id="shut-contact" class="shut">Close</button>';
 		    contact += '<address class="hcard">';
-		    contact += '	<div class="organization-unit fn org"><a href="http://example.wsu.edu/" class="url">University College</a></div>';
-		    contact += '	<div class="organization-name">Washington State University</div>';
-			contact += '	<div class="adr">'
-			contact += '	<div class="street-address">French Administration</div>';
-			contact += '	<div class="area">';
-			contact += '		<span class="locality">Pullman</span>,'
-			contact += '		<abbr class="region">WA</abbr> <span class="postal-code">99164</span></div>';
+		    contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
+		    contact += '	<div class="organization-name">'+name+'</div>';
+		    contact += '	<div class="address">';
+			contact += '		<div class="street-address">'+streetAddress+'</div>';
+			contact += '		<div class="locality">'+addressLocality+'</div>'
 			contact += '	</div>';
-			contact += '	<div class="tel"><i class="wsu-icon"></i>888-468-6978</div>';
-			contact += '	<div class="email" rel="email"><a href="mailto:contact@wsu.edu"><i class="wsu-icon"></i>Email us</a></div>';
-			contact += '	<div class="more"><a href="http://about.wsu.edu/contact/"><i class="wsu-icon"></i>More Contacts &#8230;</a></div>';
+			contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
+			contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
+			if (typeof ContactPoint != 'undefined') {
+				contact += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
+				}
 			contact += '</address>';
 			contact += '</section>';
 				
-		if (!$("#wsu-contact").length) { $("#wsu-actions").append(contact); }
+		 $("#wsu-actions").append(contact);
+		 } // End Contact Generation
 		
 		// Tools tabs
 		
@@ -274,10 +291,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 	        if ( url != '#' ) {
 	        	$(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
 	        }
-			})
-	
-	
-		
+			});
 	
 		// Clicking Outside Spine Closes It
 		/* $(document).on('mouseup touchstart', function (e) {
@@ -305,6 +319,16 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		});
 	
 		// Moving the Spine for Short Windows
+		/* $(document).scroll(function() {
+			var windowHeight = window.innerHeight;
+			var top = $(document).scrollTop();
+			var spineHeight = $("#glue").height();
+			var crack = spineHeight - windowHeight;
+			if ( top > crack ) { $('#spine.cracked').addClass('pinned'); }
+			else { $('#spine.cracked').removeClass('pinned'); }
+		}); */
+		
+		// Moving the Spine for Short Windows
 		$(document).scroll(function() {
 			var windowHeight = window.innerHeight;
 			var top = $(document).scrollTop();
@@ -312,10 +336,46 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			var crack = spineHeight - windowHeight;
 			if ( top > crack ) { $('#spine.cracked').addClass('pinned'); }
 			else { $('#spine.cracked').removeClass('pinned'); }
-		});
+		}); 
+		
+		// Moving the Spine for Short Windows
+		/* $(document).scroll(function() {
+			var windowHeight = window.innerHeight;
+			var top = $(document).scrollTop();
+			var spineHeight = $("#glue").height();
+			var crack = spineHeight - windowHeight;
+			if ( top > crack ) {
+				var top_pos = -(top);
+				$('#spine.cracked').addClass('pinned');
+				$('#spine.cracked #glue').css('top',top_pos);
+			} else {
+				$('#spine.cracked').removeClass('pinned');
+			}
+		}); */
 	
+		
+	
+		// External Links in nav
+		//this shouldn't be done this way
+		$('nav#site a').filter(function() {
+		   return this.hostname && this.hostname !== location.hostname;
+		}).addClass("external");
+
+		// Supplementary Responsive
+		    var current_width = $(window).width();
+		    if(current_width >= 1188)
+		      $('#binder').addClass("xlarge").removeClass("medium small small-medium large");
+		    else if(current_width >= 990)
+		      $('#binder').addClass("large").removeClass("medium small small-medium xlarge");
+		    else if(current_width < 990 && current_width >= 792)
+		      $('#binder').addClass("medium").removeClass("xlarge large small small-medium");
+		    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
+		      $('#binder').addClass("small-medium").removeClass("xlarge large small medium");
+		    else if(current_width < 792)
+		      $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
+		
 		// Equalize Columns
-		$('.row:not(".unequaled")').each(function(){  
+		$('.large .row:not(".unequaled"), .xlarge .row:not(".unequaled")').each(function(){  
 			var highestBox = 0;
 			$('.column', this).each(function(){
 				if($(this).height() > highestBox) {
@@ -324,13 +384,22 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			});  
 			$('.column',this).not('.unequaled').css('min-height',highestBox);
 		});
-	
-		// External Links in nav
-		//this shouldn't be done this way
-		$('nav#site a').filter(function() {
-		   return this.hostname && this.hostname !== location.hostname;
-		}).addClass("external");
-
+ 
+	  $(window).resize(function(){
+	    var current_width = $(window).width();
+	    if(current_width >= 1188)
+	      $('#binder').addClass("xlarge").removeClass("medium small large small-medium");
+	    else if(current_width >= 990)
+	      $('#binder').addClass("large").removeClass("medium small xlarge small-medium");
+	    else if(current_width < 990 && current_width >= 792)
+	      $('#binder').addClass("medium").removeClass("xlarge large small small-medium");
+	    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
+		      $('#binder').addClass("small-medium").removeClass("xlarge large small medium");
+	    else if(current_width < 792)
+	      $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
+	  });
+	  
+	  
 
 	/*
 	this is for now.  
