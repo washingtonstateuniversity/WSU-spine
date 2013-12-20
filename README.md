@@ -31,27 +31,27 @@ The Spine requires several calls in your <head>
  <link href="http://images.wsu.edu/spine/1/styles.css" />
  
  Scripts
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
- <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
  	Optional: <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
  	Optional: <script src="http://nbj.me/spine/1/1.0/scripts/modernizr/modernizr.custom.95689.js"></script>
- <script src="http://*.wsu.edu/spine/1/scripts.js"></script>
+  <script src="http://*.wsu.edu/spine/1/scripts.js"></script>
  
 
 Basic Markup
 ================================
 In addition to these assets, the Spine requires some minimal markup.
 
-<html>
-	<body>
-		<div id="jacket"></div>
-		<div id="binder">
-			<main>
-				Content
-			</main>
-			<div id="spine">
-				*
-			</div>
-		</div>
-	</body>
-</html>
+ <html>
+ 	<body>
+ 		<div id="jacket"></div>
+ 		<div id="binder">
+ 			<main>
+ 				Content
+ 			</main>
+ 			<div id="spine">
+ 				*
+ 			</div>
+ 		</div>
+ 	</body>
+ </html>
