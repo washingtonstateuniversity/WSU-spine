@@ -7,7 +7,7 @@
 <head>
 
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 	<title>Page Title | Washington State University</title>
 	
 	<!-- FAVICON -->
@@ -15,18 +15,20 @@
 	
 	<!-- STYLESHEETS -->
 	<!-- TARGET <link href="http://images.wsu.edu/spine/1/styles.css" rel="stylesheet" type="text/css" /> -->
-	<!-- TEMP --><link href="http://nbj.me/spine/1/styles.css" rel="stylesheet" type="text/css" /><!--  -->
-	<!-- PCKG <link href="styles/styles.css" rel="stylesheet" type="text/css" />-->
+	<!-- TEMP <link href="http://nbj.me/spine/1/spine.css" rel="stylesheet" type="text/css" />  -->
+	<!-- PCKG --><link href="spine.css" rel="stylesheet" type="text/css" /><!-- -->
 	<!-- Your custom stylesheets here -->
 	
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
 	<!-- SCRIPTS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-	<!-- TARGET <script src="http://images.wsu.edu/spine/1/scripts.js" type="text/javascript"></script>-->
-	<!-- TEMP <script src="http://nbj.me/spine/1/1.0/scripts/scripts.js" type="text/javascript"></script>-->
-	<!-- PCKG --><script src="scripts/scripts.js" type="text/javascript"></script><!-- -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+	<!-- TARGET <script src="http://repo.wsu.edu/spine/1/spine.js"></script>-->
+	<!-- TEMP <script src="http://nbj.me/spine/1/1.0/scripts/spine.js"></script>-->
+	<!-- PCKG --><script src="spine.js"></script><!-- -->
 	<!-- Your supplementary scripts here -->
 	
 	<!-- COMPATIBILITY -->
@@ -107,18 +109,18 @@
 <header><a href="http://www.wsu.edu/" id="logo">Washington State University</a></header>
 
 <!-- ACTIONS -->
-<section id="wsu-actions" class="clearfix" role="actions">
+<section id="wsu-actions">
 
 <!-- Tabs -->
 <ul id="wsu-actions-tabs" class="spine-tabs clearfix">
-	<li id="wsu-search-tab" class="closed" label="Search"><button>Search</button></li>
-	<li id="wsu-contact-tab" class="closed" label="Contact"><button>Contact</button></li>
-	<li id="wsu-share-tab" class="closed" label="Share"><button>Share</button></li>
-	<li id="wsu-print-tab" class="closed" label="Print"><button>Print</button></li>
+	<li id="wsu-search-tab" class="closed"><button>Search</button></li>
+	<li id="wsu-contact-tab" class="closed"><button>Contact</button></li>
+	<li id="wsu-share-tab" class="closed"><button>Share</button></li>
+	<li id="wsu-print-tab" class="closed"><button>Print</button></li>
 </ul>
 
-<!-- Search/Index ( In great FLUX ) -->
-<section id="wsu-search" class="tools closed" data-default="site-search">
+	<!-- Search/Index ( In great FLUX ) -->
+	<section id="wsu-search" class="tools closed" data-default="site-search">
 	<!--
 	You can turn off default search functions by adding classes to #wsu-search
 	Options: .nix-index, .nix-site, .nix-wsu, .nix-facstaff, .nix-students
@@ -134,8 +136,23 @@
 	</div>
 	     
 	</section>
-
-</section>
+	
+	<!-- Local Search (How to specify local search option?) -->
+	<!--<input type="hidden" value="http://site.wsu.edu/search/?" id="local" class="action" />-->
+	
+	<!-- Contact (Thinking about moving this to the header) -->
+	<address id="contact-details" itemscope itemtype="http://schema.org/Organization">
+    	<meta itemprop="name" class="required" content="Washington State University">
+    	<meta itemprop="department" class="required" content="University Unit">
+    	<meta itemprop="url" class="required" content="your-unit.wsu.edu">
+    	<meta itemprop="location" class="optional" content="French Administration Building">
+		<meta itemprop="streetAddress" class="optional" content="PO Box 555555">
+		<meta itemprop="addressLocality" class="optional" content="Pullman, WA">
+		<meta itemprop="postalCode" class="required" content="99163">
+		<meta itemprop="telephone" class="required" content="(509) 335-3564">
+		<meta itemprop="email" class="required" content="your-contact-email@wsu.edu">
+		<meta itemprop="ContactPoint" title="Contact Page" class="optional" content="http://contact.wsu.edu">
+	</address>
 	
 </section><!--/#wsu-actions-->
 
@@ -162,7 +179,8 @@
 				</ul>
 			</li>
 		</ul>
-		<li><a href="link">Another first order link</a>
+		<li>
+			<a href="link">Another first order link</a>
 			<ul>
 				<li><a href="link">A subpage link</a></li>
 				<li><a href="link">Table of Context</a></li>
@@ -189,7 +207,7 @@
 			<li id="facebook"><a href="http://facebook.com/wsupullman">Facebook</a></li>
 			<li id="twitter"><a href="http://twitter.com/wsupullman">Twitter</a></li>
 			<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
-			<li id="social"><a href="http://social.wsu.edu">Social</a></li>
+			<li id="directory"><a href="http://social.wsu.edu">Social</a></li>
 			<!-- You can replace default social channels with your own. Available channels are:
 				• Facebook, Twitter, Youtube, Google+, Tumblr, Pinterest, Flickr, 
 				• Example: <li id="pinterest"><a href="http://pinterest.com/user">Pinterest</a></li>
