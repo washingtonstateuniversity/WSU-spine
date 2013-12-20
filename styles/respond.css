@@ -169,27 +169,27 @@ xx#binder #spine.unshelved.cracked.pinned header::before {
 	
 /* Logo */
 #binder:not(.fluid) #spine a#logo {
-	background-image: url("../marks/sig-horizontal.svg");
+	background-image: url("http://nbj.me/spine/1/1.0/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
 
-#binder:not(.fluid) #spine.lightest a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.lighter a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.light a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.gray a#logo { background-image: url('../marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
-#binder:not(.fluid) #spine.dark a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.darker a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.darkest a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.black a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.crimson a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.lightest a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.lighter a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.light a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.gray a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
+#binder:not(.fluid) #spine.dark a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.darker a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.darkest a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.black a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.crimson a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 
-.extension-signature #binder:not(.fluid) #spine a#logo { background-image: url("../marks/sig-h-extension.svg"); }
-.globalcampus-signature #binder:not(.fluid) #spine a#logo { background-image: url("../marks/sig-h-globalcampus.svg"); }
-.spokane-signature #binder #spine:not(.fluid) a#logo { background-image: url("../marks/sig-h-spokane.svg"); }
-.tricities-signature #binder #spine:not(.fluid) a#logo { background-image: url("../marks/sig-h-tricities.svg"); }
-.vancouver-signature #binder #spine:not(.fluid) a#logo { background-image: url("../marks/sig-h-vancouver.svg"); }
+.extension-signature #binder:not(.fluid) #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-extension.svg"); }
+.globalcampus-signature #binder:not(.fluid) #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
+.spokane-signature #binder #spine:not(.fluid) a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-spokane.svg"); }
+.tricities-signature #binder #spine:not(.fluid) a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-tricities.svg"); }
+.vancouver-signature #binder #spine:not(.fluid) a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-vancouver.svg"); }
 
 /* Show */
 .large-only,
@@ -310,27 +310,27 @@ xx#binder #spine.unshelved.cracked.pinned header::before {
 	
 /* Logo */
 #binder.fluid #spine a#logo {
-	background-image: url("../marks/sig-horizontal.svg");
+	background-image: url("http://nbj.me/spine/1/1.0/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
 
-#binder.fluid #spine.lightest a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.lighter a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.light a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.gray a#logo { background-image: url('../marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
-#binder.fluid #spine.dark a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.darker a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.darkest a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.black a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.crimson a#logo { background-image: url('../marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.lightest a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.lighter a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.light a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.gray a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
+#binder.fluid #spine.dark a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.darker a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.darkest a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.black a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.crimson a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 
-.extension-signature #binder.fluid #spine a#logo { background-image: url("../marks/sig-h-extension.svg"); }
-.globalcampus-signature #binder.fluid #spine a#logo { background-image: url("../marks/sig-h-globalcampus.svg"); }
-.spokane-signature #binder.fluid #spine a#logo { background-image: url("../marks/sig-h-spokane.svg"); }
-.tricities-signature #binder.fluid #spine a#logo { background-image: url("../marks/sig-h-tricities.svg"); }
-.vancouver-signature #binder.fluid #spine a#logo { background-image: url("../marks/sig-h-vancouver.svg"); }
+.extension-signature #binder.fluid #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-extension.svg"); }
+.globalcampus-signature #binder.fluid #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
+.spokane-signature #binder.fluid #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-spokane.svg"); }
+.tricities-signature #binder.fluid #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-tricities.svg"); }
+.vancouver-signature #binder.fluid #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-vancouver.svg"); }
 
 /* Grid */
 .row > .column {
@@ -446,27 +446,27 @@ xx#binder #spine.unshelved.cracked.pinned header::before {
 
 /* Logo */
 #binder.fixed #spine a#logo {
-	background-image: url("../marks/sig-vertical.svg");
+	background-image: url("http://nbj.me/spine/1/1.0/marks/sig-vertical.svg");
 	background-position: center;
 	background-size: 180px auto;
 	height: 197px;
 	margin-left: 0px;
 	}
 
-#binder.fixed #spine.lighter a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.light a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.gray a#logo { background-image: url('../marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
-#binder.fixed #spine.dark a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.darker a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.darkest a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.black a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.crimson a#logo { background-image: url('../marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.lighter a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.light a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.gray a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
+#binder.fixed #spine.dark a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.darker a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.darkest a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.black a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.crimson a#logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
 
-.extension-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-extension.svg"); }
-.globalcampus-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-globalcampus.svg"); }
-.spokane-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-spokane.svg"); }
-.tricities-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-tricities.svg"); }
-.vancouver-signature #binder.fixed #spine a#logo { background-image: url("../marks/sig-v-vancouver.svg"); }
+.extension-signature #binder.fixed #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-extension.svg"); }
+.globalcampus-signature #binder.fixed #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-globalcampus.svg"); }
+.spokane-signature #binder.fixed #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-spokane.svg"); }
+.tricities-signature #binder.fixed #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-tricities.svg"); }
+.vancouver-signature #binder.fixed #spine a#logo { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-vancouver.svg"); }
 	
 	}
 
@@ -744,7 +744,7 @@ html.print #wsu-tabs-actions li:not(#wsu-tab-print) button {
 	xdisplay: none;
 	}
 html.print #binder {
-	background: white url("../marks/sig-horizontal.svg") center 32px no-repeat;
+	background: white url("http://nbj.me/spine/1/1.0/marks/sig-horizontal.svg") center 32px no-repeat;
 	background-size: auto 30px;
 	padding-top: 80px;
 	width: 792px;

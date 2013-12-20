@@ -1,12 +1,11 @@
 WSU-spine
 ================================
 
-The WSU Spine binds together the many stories of wsu.edu. The Spine unifies and encourages diversity. More concretely, the WSU Spine is minimal Web template and framework that...
+As a graphic element, the WSU Spine binds together the many stories of wsu.edu. The Spine balances the unity and diversity of our university. As a Web framework, the WSU Spine is minimal template that serves the front-facing ground level of every WSU website...
 
 	1) Consistently brands the university across websites and platforms
 	2) Provides a usable and consistent navigation solution
-	3)
-	
+	3) Provides a responsive solution for devices
 
 	
 Table of Contents
@@ -26,7 +25,33 @@ A typical implementation of the WSU Spine would start with core.html.
 	
 Connecting to various Spine packages.
 
-The canonical spine requires three calls in your <head>
+The Spine requires several calls in your <head>
+ 
+ Styles
  <link href="http://images.wsu.edu/spine/1/styles.css" />
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
- <script src="http://images.wsu.edu/spine/1/scripts.js"></script>
+ 
+ Scripts
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+ 	Optional: <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+ 	Optional: <script src="http://nbj.me/spine/1/1.0/scripts/modernizr/modernizr.custom.95689.js"></script>
+ <script src="http://*.wsu.edu/spine/1/scripts.js"></script>
+ 
+
+Basic Markup
+================================
+In addition to these assets, the Spine requires some minimal markup.
+
+<html>
+	<body>
+		<div id="jacket"></div>
+		<div id="binder">
+			<main>
+				Content
+			</main>
+			<div id="spine">
+				*
+			</div>
+		</div>
+	</body>
+</html>

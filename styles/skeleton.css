@@ -101,7 +101,7 @@ html {
 body {
 	color: #262a2d;
 	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
-	background: white url('../images/gradient-south-lightest-white.png') left top repeat-x;
+	background: white url('http://nbj.me/spine/1/1.0/images/gradient-south-lightest-white.png') left top repeat-x;
 	xheight: 100%;
 	}
 #jacket {

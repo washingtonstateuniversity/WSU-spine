@@ -1,5 +1,0 @@
-<httpProtocol>
-  <customHeaders>
-    <add name="Access-Control-Allow-Origin" value="*" />
-  </customHeaders>
-</httpProtocol>
