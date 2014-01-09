@@ -338,8 +338,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			var top = $(document).scrollTop();
 			var spineHeight = $("#glue").height();
 			var crack = spineHeight - windowHeight;
-			if ( top > crack ) { $('#spine.cracked').addClass('pinned'); }
-			else { $('#spine.cracked').removeClass('pinned'); }
+			if ( top > crack ) { $('#spine.cracked').addClass('scrolled'); }
+			else { $('#spine.cracked').removeClass('scrolled'); }
 		}); 
 		
 		// Moving the Spine for Short Windows
@@ -378,6 +378,21 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		    else if(current_width < 792)
 		      $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
 		
+		// We should be able to combine this with the above	
+		  $(window).resize(function(){
+		    var current_width = $(window).width();
+		    if(current_width >= 1188)
+		      $('#binder').addClass("xlarge").removeClass("medium small large small-medium");
+		    else if(current_width >= 990)
+		      $('#binder').addClass("large").removeClass("medium small xlarge small-medium");
+		    else if(current_width < 990 && current_width >= 792)
+		      $('#binder').addClass("medium").removeClass("xlarge large small small-medium");
+		    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
+			      $('#binder').addClass("small-medium").removeClass("xlarge large small medium");
+		    else if(current_width < 792)
+		     $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
+		  });
+		
 		// Equalize Columns
 		$('.large .row:not(".unequaled"), .xlarge .row:not(".unequaled")').each(function(){  
 			var highestBox = 0;
@@ -388,20 +403,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			});  
 			$('.column',this).not('.unequaled').css('min-height',highestBox);
 		});
- 
-	  $(window).resize(function(){
-	    var current_width = $(window).width();
-	    if(current_width >= 1188)
-	      $('#binder').addClass("xlarge").removeClass("medium small large small-medium");
-	    else if(current_width >= 990)
-	      $('#binder').addClass("large").removeClass("medium small xlarge small-medium");
-	    else if(current_width < 990 && current_width >= 792)
-	      $('#binder').addClass("medium").removeClass("xlarge large small small-medium");
-	    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
-		      $('#binder').addClass("small-medium").removeClass("xlarge large small medium");
-	    else if(current_width < 792)
-	      $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
-	  });
+		
+	
 	  
 	  
 

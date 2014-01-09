@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 		cssmin: {
 		  combine: {
 		    files: {
-		      'spine.min.css': ['styles/skeleton.css', 'styles/spine.css', 'styles/respond.css']
+		      'spine.min.css': ['spine.css']
 		    }
 		  }
 		},

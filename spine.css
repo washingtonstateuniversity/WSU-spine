@@ -78,7 +78,7 @@ h1 { font-size: 26px; line-height: 30px; font-weight: bold; }
 h2 { font-size: 22px; line-height: 26px; font-weight: bold;	margin: 5px 0px; }
 h3 { font-size: 18px; line-height: 22px; font-weight: bold; margin: 10px 0px 5px 0px; }
 h4 { font-size: 14px; line-height: 18px; font-weight: bold; }
-p { margin: 0px; padding-bottom: 12px; }
+p { margin: 0px; padding-bottom: .8em; }
 ol li { list-style: decimal; margin: 0px 0px 5px 25px; }
 ul li { list-style: circle; margin: 0px 0px 5px 20px; padding: 0px 0px 0px 0px; }
 
@@ -295,7 +295,33 @@ section {
 	margin: 0px;
 	border-top: 1px gray dotted;
 	}
+
+/* Basic Styles
+-------------------------------------------------------- */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* #Images */
+.fluid .column img {
+		max-width: 100%;
+		height: auto; }
+
 	
+/* Character Styles
+-------------------------------------------------------- */
+
+ul + h1, ul + h2, ul + h3, ul + h4,
+ol + h1, ol + h2, ol + h3, ol + h4 {
+	margin-top: .8;
+	}
 
 
 /* #Clearing
@@ -340,28 +366,6 @@ section,
 }
     
 
-
-/* Basic Styles
--------------------------------------------------------- */
-
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-/* #Images */
-.fluid .column img {
-		max-width: 100%;
-		height: auto; }
-
-	
-/* Character Styles
--------------------------------------------------------- */
 
 
 
@@ -594,23 +598,10 @@ code textarea:focus {
 	position: fixed;
 	z-index: 99163;
 	}
-.small #spine { 
-	xposition: absolute !important;
-	xheight: 10000px;
-	}
-x.small #spine #glue { 
-	xheight: 10000px;
-	xbottom: 0px;
-	xposition: fixed;
-	}
-#spine #boards {
-	xdisplay: relative;
-	}
 #spine #glue {
-	xposition: absolute;
 	margin-top: 0px;
-	xoverflow-y: scroll;
 	}
+
 #spine a {
 	color: #5e6a71;
 	}
@@ -632,12 +623,11 @@ x.small #spine #glue {
 	width: 198px;
 	display: block;
 	}
-.small #spine.cracked.pinned,
-.medium #spine.cracked.pinned {
+xx#spine.cracked.scrolled,
+xx#spine.cracked.scrolled {
 	position: fixed;
 	}
-.small #spine.cracked.pinned #glue {,
-.medium #spine.cracked.pinned #glue
+#spine.cracked.scrolled #glue {
 	top: 0px;
 	bottom: 0;
 	/* Need to figure this out */
@@ -1835,7 +1825,7 @@ main {
 	display: block;
 	z-index: 1;
 	}
-xx#binder #spine.unshelved.cracked.pinned header::before {
+xx#binder #spine.unshelved.cracked.scrolled header::before {
 	left: 0px;
 	}
 
@@ -1923,7 +1913,7 @@ xx#binder #spine.unshelved.cracked.pinned header::before {
 	}
 #binder:not(.fluid) #glue,
 #binder:not(.fluid) #spine #glue,
-#binder:not(.fluid) #spine.cracked.pinned #glue {
+#binder:not(.fluid) #spine.cracked.scrolled #glue {
 	width: 298px;
 	}
 #binder:not(.fluid) #glue {

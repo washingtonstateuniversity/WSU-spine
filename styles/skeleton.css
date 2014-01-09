@@ -78,7 +78,7 @@ h1 { font-size: 26px; line-height: 30px; font-weight: bold; }
 h2 { font-size: 22px; line-height: 26px; font-weight: bold;	margin: 5px 0px; }
 h3 { font-size: 18px; line-height: 22px; font-weight: bold; margin: 10px 0px 5px 0px; }
 h4 { font-size: 14px; line-height: 18px; font-weight: bold; }
-p { margin: 0px; padding-bottom: 12px; }
+p { margin: 0px; padding-bottom: .8em; }
 ol li { list-style: decimal; margin: 0px 0px 5px 25px; }
 ul li { list-style: circle; margin: 0px 0px 5px 20px; padding: 0px 0px 0px 0px; }
 
@@ -295,7 +295,33 @@ section {
 	margin: 0px;
 	border-top: 1px gray dotted;
 	}
+
+/* Basic Styles
+-------------------------------------------------------- */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* #Images */
+.fluid .column img {
+		max-width: 100%;
+		height: auto; }
+
 	
+/* Character Styles
+-------------------------------------------------------- */
+
+ul + h1, ul + h2, ul + h3, ul + h4,
+ol + h1, ol + h2, ol + h3, ol + h4 {
+	margin-top: .8;
+	}
 
 
 /* #Clearing
@@ -340,28 +366,6 @@ section,
 }
     
 
-
-/* Basic Styles
--------------------------------------------------------- */
-
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-/* #Images */
-.fluid .column img {
-		max-width: 100%;
-		height: auto; }
-
-	
-/* Character Styles
--------------------------------------------------------- */
 
 
 

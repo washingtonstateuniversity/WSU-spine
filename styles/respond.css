@@ -25,7 +25,7 @@
 	display: block;
 	z-index: 1;
 	}
-xx#binder #spine.unshelved.cracked.pinned header::before {
+xx#binder #spine.unshelved.cracked.scrolled header::before {
 	left: 0px;
 	}
 
@@ -113,7 +113,7 @@ xx#binder #spine.unshelved.cracked.pinned header::before {
 	}
 #binder:not(.fluid) #glue,
 #binder:not(.fluid) #spine #glue,
-#binder:not(.fluid) #spine.cracked.pinned #glue {
+#binder:not(.fluid) #spine.cracked.scrolled #glue {
 	width: 298px;
 	}
 #binder:not(.fluid) #glue {

@@ -33,23 +33,10 @@
 	position: fixed;
 	z-index: 99163;
 	}
-.small #spine { 
-	xposition: absolute !important;
-	xheight: 10000px;
-	}
-x.small #spine #glue { 
-	xheight: 10000px;
-	xbottom: 0px;
-	xposition: fixed;
-	}
-#spine #boards {
-	xdisplay: relative;
-	}
 #spine #glue {
-	xposition: absolute;
 	margin-top: 0px;
-	xoverflow-y: scroll;
 	}
+
 #spine a {
 	color: #5e6a71;
 	}
@@ -71,12 +58,11 @@ x.small #spine #glue {
 	width: 198px;
 	display: block;
 	}
-.small #spine.cracked.pinned,
-.medium #spine.cracked.pinned {
+xx#spine.cracked.scrolled,
+xx#spine.cracked.scrolled {
 	position: fixed;
 	}
-.small #spine.cracked.pinned #glue {,
-.medium #spine.cracked.pinned #glue
+#spine.cracked.scrolled #glue {
 	top: 0px;
 	bottom: 0;
 	/* Need to figure this out */
