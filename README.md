@@ -1,7 +1,7 @@
 WSU-spine
 ================================
 
-As a graphic element, the WSU Spine binds together the many stories of wsu.edu. With both a consistent and global spine on the left and a blank, unwritten page to the right, the Spine balances the unity and diversity of our university. As a Web framework, the WSU Spine is minimal template that provides a responsive and flexible grid for every WSU website...
+As a visual element, the WSU Spine is a 198px wide column that binds together the many websites of wsu.edu. As a framework, the WSU Spine is minimal template that provides global tools and a responsive and flexible grid for every WSU website. With a uniform and global spine on the left and a blank, unwritten page to the right, the Spine balances the unity and diversity of our university.
 
 	1) Consistently brands the university across websites and platforms
 	2) Provides a usable and consistent navigation solution
@@ -25,15 +25,18 @@ A typical implementation of the WSU Spine would start with spine.html.
 	
 Connecting to various Spine packages.
 
-The Spine requires several calls in your HEAD
- 
-Styles
+Anatomy
 --------------------------------
+
+The Spine requires several calls in <HEAD>
+ 
+### Styles
  
  	<link href="http://repo.wsu.edu/spine/1/spine.css" />
+ 	
+This single CSS file includes a CSS reset, default styles, responsive styles, and finally the styling for the spinal column itself.
  
- Scripts
---------------------------------
+### Scripts
  
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -41,9 +44,11 @@ Styles
 	 	<!--Optional--> <script src="http://nbj.me/spine/1/1.0/scripts/modernizr/modernizr.custom.95689.js"></script>
 	 <script src="http://repo.wsu.edu/spine/1/spine.js"></script>
 	 
+For the time being, we're sticking with jQuery 1.10.2 to preserve support for IE7 and IE8.
+	 
 
-Markup
---------------------------------
+### Markup
+
 In addition to these assets, the Spine requires some minimal markup.
 
 	<html>
