@@ -19,7 +19,7 @@ Implementation
 ================================
 A typical implementation of the WSU Spine would start with spine.html.
 
-	1) Customize spine.html by replacing default data with the appropriate contact details.
+	1) Customize #spine by replacing default data with the appropriate contact details.
 	2) Customize spine.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of spine.html and, for some lesser used options, at identity.wsu.edu.
 	3) Rebuilding the markup in your CMS of choice while taking care to preserve its elements and structure.
 	
@@ -55,7 +55,11 @@ In addition to these assets, the Spine requires some minimal markup.
 				</main>
 				<div id="spine">
 					<div id="glue">
+						University Signature
+						Tools
 						Nav (Unordered List)
+						Social Channels
+						Global Footer
 					</div>
 				</div>
 			</div>
