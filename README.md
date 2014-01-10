@@ -25,7 +25,7 @@ A typical implementation of the WSU Spine would start with spine.html.
 	
 Connecting to various Spine packages.
 
-Anatomy
+Essential Parts
 --------------------------------
 
 The Spine requires several calls in <HEAD>
@@ -37,15 +37,17 @@ The Spine requires several calls in <HEAD>
 This single CSS file includes a CSS reset, default styles, responsive styles, and finally the styling for the spinal column itself.
  
 ### Scripts
- 
+
+First, the Spine relies on jQuery and jQuery UI. For the time being, we're sticking with jQuery 1.10.2 to preserve support for IE7 and IE8. Additional scripts needed for a specific site can be added, including libraries like Modernizr.
+
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	 	<!--Optional--> <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-	 	<!--Optional--> <script src="http://nbj.me/spine/1/1.0/scripts/modernizr/modernizr.custom.95689.js"></script>
+
+Secondly, we need the Spine-specific javascript.
+
 	 <script src="http://repo.wsu.edu/spine/1/spine.js"></script>
-	 
-For the time being, we're sticking with jQuery 1.10.2 to preserve support for IE7 and IE8.
-	 
+
+Finally, additional site-specific scripts can be added.
 
 ### Markup
 
@@ -53,7 +55,7 @@ In addition to these assets, the Spine requires some minimal markup.
 
 	<html>
 		<body>
-			<div id="jacket"></div>
+			<div id="jacket">
 			<div id="binder">
 				<main>
 					Content
@@ -68,5 +70,8 @@ In addition to these assets, the Spine requires some minimal markup.
 					</div>
 				</div>
 			</div>
+			</div>
 		</body>
 	</html>
+	
+The "#jacket" <div> is the outermost wrapper and fills window width. The "#binder" <div> is a container that serves to constrain the maximum width of content. Both are necessary for Spine positioning and responsive behavior.
