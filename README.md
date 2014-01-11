@@ -3,9 +3,9 @@ WSU-spine
 
 As a visual element, the WSU Spine is a 198px wide column that binds together the many websites of wsu.edu. As a framework, the WSU Spine is a minimal template that provides global tools and a responsive and flexible grid for every WSU website. With a uniform and global spine on the left and a blank, unwritten page to the right, the Spine balances the unity and diversity of our university.
 
-	1) Consistently brands the university across websites and platforms
-	2) Provides a usable and consistent navigation solution
-	3) Provides a responsive solution for devices
+1) Consistently brands the university across websites and platforms
+2) Provides a usable and consistent navigation solution
+3) Provides a responsive solution for devices
 
 	
 Table of Contents
@@ -19,16 +19,16 @@ Implementation
 ================================
 A typical implementation of the WSU Spine would start with spine.html.
 
-	1) Customize #spine by replacing default data with the appropriate contact details.
-	2) Customize spine.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of spine.html and, for some lesser used options, at identity.wsu.edu.
-	3) Rebuilding the markup in your CMS of choice while taking care to preserve its elements and structure.
+1) Customize #spine by replacing default data with the appropriate contact details.
+2) Customize spine.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of spine.html and, for some lesser used options, at identity.wsu.edu.
+3) Rebuilding the markup in your CMS of choice while taking care to preserve its elements and structure.
 	
 Connecting to various Spine packages.
 
 Essential Parts
 --------------------------------
 
-The spine is a "skeleton" framework in order to keep global requirement to a minimum and to avoid code conflicts. The Spine requires just a few calls in <HEAD>.
+The spine is a "skeleton" framework in order to keep global requirement to a minimum and to avoid code conflicts. The Spine has just a few dependencies.
  
 ### Styles
  
@@ -74,4 +74,4 @@ In addition to these assets, the Spine requires some minimal markup.
 		</body>
 	</html>
 	
-The "#jacket" <div> is the outermost wrapper and fills window width. The "#binder" <div> is a container that serves to constrain the maximum width of content. Both are necessary for Spine positioning and responsive behavior.
+The "#jacket" is the outermost wrapper and fills the window width. The "#binder" is a container that serves to constrain the maximum width of content. Both are necessary for Spine positioning and responsive behavior.
