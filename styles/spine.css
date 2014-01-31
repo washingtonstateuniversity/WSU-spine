@@ -1,12 +1,21 @@
 /* Spine
 
-	0.9 Icons Font
-	1.0 The Spine
-		1.1 Cracked Spine
-		1.2 Cropped Spine
-	2.0 Header (of the Spine)
-		2.1 
-	4.0 Footer (of the Spine)
+0.9 Icons Font
+1.0 The Spine
+	1.1 Cracked Spine
+	1.2 Cropped Spine
+2.0 Header (of the Spine)
+	2.1 Signature
+3.0 Actions/Tools
+	3.1 Search
+	3.2 Contact
+	3.3 Share
+	3.4 Print
+4.0 Navigation
+	4.1 
+5.0 Footer (of the Spine)
+	5.1 Social
+	5.2 Global
 
 --------------------------------------------------------------------------- */
 
@@ -324,92 +333,10 @@ x#spine #glue {
 #wsu-actions-tabs #wsu-search-tab.opened button:hover::before,
 #wsu-actions-tabs #wsu-contact-tab.opened button:hover::before,
 #wsu-actions-tabs #wsu-share-tab.opened button:hover::before,
-#wsu-actions-tabs #wsu-print-tab.opened button:hover::before { content: "\2421"; }	
+#wsu-actions-tabs #wsu-print-tab.opened button:hover::before { content: "\2421"; }
 
-/* ACTIONS -> Contact 
+/* 3.1 ACTIONS -> Search 
 --------------------------------------------------------------------------- */
-
-address[role="contact"],
-#wsu-actions > address {
-	display: none;
-	}
-
-#wsu-contact address {
-	color: #384044;
-	margin: 2em;
-	display: block;
-	}
-
-#wsu-contact div {
-	padding: .75em 0;
-	border-bottom: 1px #c3cbcf solid;
-	line-height: 1.4em;
-	}
-#wsu-contact div div {
-	padding: 0;
-	line-height: 1.1em;
-	border-bottom: none;
-	}
-#wsu-contact .organization  {
-	font-weight: bold;
-	padding-bottom: .5em;
-	}
-#wsu-contact i.wsu-icon {
-	width: 1.7em
-	display: inline-block;
-	text-align: center;
-	}
-#wsu-contact div.adr {
-	border: none;
-	padding: 0px;
-	}
-#wsu-contact .organization-unit  {
-	font-size: 1.3em;
-	padding-bottom: .3em;
-	border-bottom: none;
-	}
-#wsu-contact .organization-unit a,
-#wsu-contact .organization-unit a:hover {
-	color: black;
-	}
-#wsu-contact .organization-name  {
-	xfont-size: .9em;
-	white-space: nowrap;
-	padding: 0;
-	border-bottom: none;
-	}
-#wsu-contact .street-address {
-	border-bottom: none;
-	padding: 0;
-	}
-#spine .coupled > a {
-	font-weight: bold;
-	}
-#spine .coupled > a:hover {
-	color: #5e6a71;
-	}
-#wsu-contact .more {
-	border-bottom: none;
-	}
-#wsu-contact .area {
-	padding-top: 0;
-	}
-#wsu-contact i.wsu-icon:before {
-	font-family: "Iconography";
-	width: 1.7em;
-	display: inline-block;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	}
-#wsu-contact .tel i.wsu-icon:before { content: "\1F4DE"; }
-#wsu-contact .email i.wsu-icon:before { content: "\0040"; }
-#wsu-contact .more i.wsu-icon:before { content: "\2139"; }
-
-
-/* ACTIONS -> Search 
---------------------------------------------------------------------------- */
-
 
 #spine #wsu-search form {
 	padding: 1em 2em 0 2em;
@@ -517,8 +444,87 @@ address[role="contact"],
 	  width: 1px;
 	}
 
-	
-/* Share */
+/* 3.2 ACTIONS -> Contact 
+--------------------------------------------------------------------------- */
+
+address[role="contact"],
+#wsu-actions > address {
+	display: none;
+	}
+
+#wsu-contact address {
+	color: #384044;
+	margin: 2em;
+	display: block;
+	}
+
+#wsu-contact div {
+	padding: .75em 0;
+	border-bottom: 1px #c3cbcf solid;
+	line-height: 1.4em;
+	}
+#wsu-contact div div {
+	padding: 0;
+	line-height: 1.1em;
+	border-bottom: none;
+	}
+#wsu-contact .organization  {
+	font-weight: bold;
+	padding-bottom: .5em;
+	}
+#wsu-contact i.wsu-icon {
+	width: 1.7em
+	display: inline-block;
+	text-align: center;
+	}
+#wsu-contact div.adr {
+	border: none;
+	padding: 0px;
+	}
+#wsu-contact .organization-unit  {
+	font-size: 1.3em;
+	padding-bottom: .3em;
+	border-bottom: none;
+	}
+#wsu-contact .organization-unit a,
+#wsu-contact .organization-unit a:hover {
+	color: black;
+	}
+#wsu-contact .organization-name  {
+	xfont-size: .9em;
+	white-space: nowrap;
+	padding: 0;
+	border-bottom: none;
+	}
+#wsu-contact .street-address {
+	border-bottom: none;
+	padding: 0;
+	}
+#spine .coupled > a {
+	font-weight: bold;
+	}
+#spine .coupled > a:hover {
+	color: #5e6a71;
+	}
+#wsu-contact .more {
+	border-bottom: none;
+	}
+#wsu-contact .area {
+	padding-top: 0;
+	}
+#wsu-contact i.wsu-icon:before {
+	font-family: "Iconography";
+	width: 1.7em;
+	display: inline-block;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	}
+#wsu-contact .tel i.wsu-icon:before { content: "\1F4DE"; }
+#wsu-contact .email i.wsu-icon:before { content: "\0040"; }
+#wsu-contact .more i.wsu-icon:before { content: "\2139"; }
+
+/* 3.3 Share */
 #spine #wsu-share ul {
 	margin: 2em;
 	}
@@ -562,7 +568,7 @@ address[role="contact"],
 #wsu-share li.by-other i.wsu-icon:before { content: ""; display: none; }
 #wsu-share li.by-other i.wsu-icon { display: none; }
 
-/* Print */
+/* 3.4 Print */
 html.print #spine .print-button {
 	display: none;
 	}
@@ -632,11 +638,15 @@ html.print #spine .print-button {
 #spine button#print-cancel:before { content: "␡"; }
 
 
-/* NAVIGATION -> Tag hierarchy
+/* 4.0 NAVIGATION -> Tag hierarchy
 --------------------------------------------------------------------------- */
 
 #spine nav#site {
 	margin: 10px 20px;
+	}
+#spine ul {
+	margin: 0px;
+	padding: 0px;
 	}
 #spine nav ul li {
 	position: relative;
@@ -1212,21 +1222,45 @@ main {
 /* CRIMSON #981e32 */
 #spine.crimson, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed::before { background-color: #981e32; }
 #spine.crimson #logo { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-white.svg'); }
-#spine.crimson:not(.homeless) nav#site > ul > li:first-child a { background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lighter.svg') }
-#spine.crimson:not(.homeless) nav#site > ul > li:first-child a:hover, #spine.crimson nav#site > ul > li:first-child a:before { background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
+#spine.crimson:not(.homeless) nav#site > ul > li:first-child a {
+	color: #b6bcbf;
+	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lighter.svg') }
+#spine.crimson:not(.homeless) nav#site > ul > li:first-child a:hover,
+#spine.crimson nav#site > ul > li:first-child a:before {
+	color: white;
+	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg'); }
 #spine.crimson #wsu-actions li button { color: #490e18; }
-#spine.crimson #wsu-actions li button:hover { color: black; }
-#spine.crimson #wsu-actions li#wsu-tab-search button { color: #37141a; }
-#spine.crimson #wsu-actions li#wsu-tab-search button:hover { color: black; }
-#spine.crimson nav#site ul li, #spine.crimson nav#offsite ul li, #spine.crimson nav#global { border-color: #6b1523; }
-#spine.crimson nav#site ul li a { color: #b6bcbf; }
-#spine.crimson nav#site ul li a:hover { color: #e7e9ea; }
-#spine.crimson nav#site ul li.active.parent > a { color: white; }
-#spine.crimson nav#offsite ul li a { color: #3d0c14; }
-#spine.crimson #social ul li a { color: #490e18; }
+#spine.crimson #wsu-actions li button:hover {
+	color: black; }
+#spine.crimson #wsu-actions li#wsu-tab-search button {
+	color: #37141a; }
+#spine.crimson #wsu-actions li#wsu-tab-search button:hover {
+	color: black; }
+#spine.crimson nav#site ul li,
+#spine.crimson nav#offsite ul li,
+#spine.crimson nav#global {
+	border-color: #6b1523; }
+#spine.crimson nav#site ul li a {
+	color: #b6bcbf; }
+#spine.crimson nav#site ul li a:hover {
+	color: #e7e9ea; }
+#spine.crimson nav#site ul li.active.parent > a {
+	color: white; }
+#spine.crimson nav#offsite ul li a {
+	color: #3d0c14; }
+#spine.crimson #social ul li a {
+	color: #490e18; }
 #spine.crimson #global ul li a { color: black; }
-#spine.crimson #global ul li a:hover { color: black; }
-#spine.crimson footer small,#spine.crimson footer small a { color: #490e18; }
+#spine.crimson #global ul li a:hover,
+#spine.crimson #social ul li a:hover,
+#spine.crimson nav#offsite ul li a:hover {
+	color: black; }
+#spine.crimson footer small,
+#spine.crimson footer small a {
+	color: #490e18; }
+#spine.crimson nav#site ul li a:hover,
+#spine.crimson nav#site ul li.dogeared > a {
+	color: white; }
 
 /* Transparent */
 #spine.velum, #spine.velum.bleed::before { background: rgba(255,255,255,0.9); }

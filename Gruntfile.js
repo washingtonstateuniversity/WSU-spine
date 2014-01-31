@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		      dest: 'spine.css',
 		    },
 		    scripts: {
-		      src: [ 'scripts/modernizr/modernizr.custom.95689.js', 'scripts/spine.js'],
+		      src: [ 'scripts/spine.js'],
 			  dest: 'spine.js',
 			  },
 		},

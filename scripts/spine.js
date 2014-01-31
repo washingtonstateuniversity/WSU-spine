@@ -239,7 +239,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			var scope = $("#wsu-search").attr('data-default');
 			if ( scope == 'site-search' ) {
 				var site = ' site:'+location.hostname;
-				var site = ' site:admission.wsu.edu' // temporary for testing
+				// var site = ' site:admission.wsu.edu' // temporary for testing
 			} else {
 				var site = '';
 			}
@@ -266,6 +266,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Tag location and hierarchy
 		$("#spine nav ul,#spine ul").parents("li").addClass("parent");
 		$("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
+		$("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
 		$("#spine .active").not(":has(.active)").addClass("dogeared");
 	
 		// Disclosure
@@ -356,49 +357,47 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		
 	
 		// External Links in nav
-		//this shouldn't be done this way
+		// this shouldn't be done this way
 		$('nav#site a').filter(function() {
 		   return this.hostname && this.hostname !== location.hostname;
 		}).addClass("external");
-
-		// Supplementary Responsive
-		    var current_width = $(window).width();
-		    if(current_width >= 1188)
-		      $('#binder').addClass("xlarge").removeClass("medium small small-medium large");
-		    else if(current_width >= 990)
-		      $('#binder').addClass("large").removeClass("medium small small-medium xlarge");
-		    else if(current_width < 990 && current_width >= 792)
-		      $('#binder').addClass("medium").removeClass("xlarge large small small-medium");
-		    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
-		      $('#binder').addClass("small-medium").removeClass("xlarge large small medium");
-		    else if(current_width < 792)
-		      $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
 		
-		// We should be able to combine this with the above	
-		  $(window).resize(function(){
-		    var current_width = $(window).width();
-		    if(current_width >= 1188)
-		      $('#binder').addClass("xlarge").removeClass("medium small large small-medium");
+		// Label #jacket with current window size
+		function sizing() {
+			var current_width = $(window).width();
+			if ( $('#jacket').hasClass() ) {
+				var jacket_classes = $('#jacket').attr('class');
+				var jacket_classes = jacket_classes.replace(/\b^size-\s\S+/ig,"");
+			}
+			if(current_width >= 1188)
+		      $('#jacket').removeClass().removeClass().addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
 		    else if(current_width >= 990)
-		      $('#binder').addClass("large").removeClass("medium small xlarge small-medium");
+		      $('#jacket').removeClass().addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
 		    else if(current_width < 990 && current_width >= 792)
-		      $('#binder').addClass("medium").removeClass("xlarge large small small-medium");
+		      $('#jacket').removeClass().addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
 		    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
-			      $('#binder').addClass("small-medium").removeClass("xlarge large small medium");
+		      $('#jacket').removeClass().addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
 		    else if(current_width < 792)
-		     $('#binder').addClass("small").removeClass("xlarge large medium small-medium");
-		  });
+		      $('#jacket').removeClass().addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+			}
+		sizing();
+		$(window).resize(function(){ sizing(); });
 		
 		// Equalize Columns
-		$('.large .row:not(".unequaled"), .xlarge .row:not(".unequaled")').each(function(){  
-			var highestBox = 0;
-			$('.column', this).each(function(){
-				if($(this).height() > highestBox) {
-				   highestBox = $(this).height(); 
-				}
-			});  
-			$('.column',this).not('.unequaled').css('min-height',highestBox);
-		});
+		function equalizing() {
+			$('.size-large .row:not(".unequaled"), .size-xlarge .row:not(".unequaled")').each(function(){  
+				var highestBox = 0;
+				$('.column', this).each(function(){
+					if($(this).height() > highestBox) {
+					   highestBox = $(this).height(); 
+					}
+				});  
+				$('.column',this).not('.unequaled').css('min-height',highestBox);
+				$('.size-smallish .column, size-small .column',this).css('min-height','auto');
+			});
+		}
+		equalizing();
+		$(window).resize(function(){ equalizing(); });
 		
 	
 	  

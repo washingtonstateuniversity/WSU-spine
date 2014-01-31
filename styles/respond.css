@@ -336,6 +336,13 @@ xx#binder #spine.unshelved.cracked.scrolled header::before {
 .row > .column {
 	xxfloat: none;
 	}
+	
+/* Hybrid Shift */
+.hybrid .row.halves > .column { width: 50%; }
+.hybrid .row.thirds .column { width: 33%; }
+.hybrid .row.thirds .column.two { width: 34%; }
+.hybrid .row.quarters .column { width: 25%; }
+
 .row.halves > .column,
 .row.triptych > .column,
 .row.triptych > .column.two,
@@ -540,7 +547,9 @@ xx#binder #spine.unshelved.cracked.scrolled header::before {
 .hybrid .row.sidebar > .column.one,
 .hybrid .row.sidebar > .column.two,
 .hybrid .row.margin > .column.one,
-.hybrid .row.margin > .column.two {
+.hybrid .row.margin > .column.two,
+.hybrid .row.thirds .halves .column,
+.fluid .row.thirds .halves .column {
 	width: 100%;
 	float: none;
 	clear: both;
