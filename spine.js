@@ -354,63 +354,66 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			}
 		}); */
 	
-		
+	// External Links in nav
+	// this shouldn't be done this way
+	$('nav#site a').filter(function() {
+	   return this.hostname && this.hostname !== location.hostname;
+	}).addClass("external");
 	
-		// External Links in nav
-		// this shouldn't be done this way
-		$('nav#site a').filter(function() {
-		   return this.hostname && this.hostname !== location.hostname;
-		}).addClass("external");
-		
-		// Label #jacket with current window size
-		function sizing() {
-			var current_width = $(window).width();
-			if ( $('#jacket').hasClass() ) {
-				var jacket_classes = $('#jacket').attr('class');
-				var jacket_classes = jacket_classes.replace(/\b^size-\s\S+/ig,"");
-			}
-			if(current_width >= 1188)
-		      $('#jacket').removeClass().removeClass().addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
-		    else if(current_width >= 990)
-		      $('#jacket').removeClass().addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
-		    else if(current_width < 990 && current_width >= 792)
-		      $('#jacket').removeClass().addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
-		    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
-		      $('#jacket').removeClass().addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
-		    else if(current_width < 792)
-		      $('#jacket').removeClass().addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
-			}
-		sizing();
-		$(window).resize(function(){ sizing(); });
-		
-		// Equalize Columns
-		function equalizing() {
-			$('.size-large .row:not(".unequaled"), .size-xlarge .row:not(".unequaled")').each(function(){  
-				var highestBox = 0;
-				$('.column', this).each(function(){
-					if($(this).height() > highestBox) {
-					   highestBox = $(this).height(); 
-					}
-				});  
-				$('.column',this).not('.unequaled').css('min-height',highestBox);
-				$('.size-smallish .column, size-small .column',this).css('min-height','auto');
-			});
+	// Label #jacket with current window size
+	function sizing() {
+		var current_width = $(window).width();
+		if(current_width >= 1188)
+	      $('#jacket').removeClass().removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
+	    else if(current_width >= 990)
+	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
+	    else if(current_width < 990 && current_width >= 792)
+	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
+	    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
+	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
+	    else if(current_width < 792)
+	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
 		}
-		equalizing();
-		$(window).resize(function(){ equalizing(); });
+	sizing();
+	$(window).resize(function(){ sizing(); });
 		
+	// Equalize Columns
+	function equalizing() {
+		$('.size-large .row:not(".unequaled"):not("single"), .size-xlarge .row:not(".unequaled"):not("single")').each(function(){  
+			var highestBox = 0;
+			$('.column', this).each(function(){
+				if($(this).height() > highestBox) {
+				   highestBox = $(this).height(); 
+				}
+			});  
+			$('.column',this).not('.unequaled').css('min-height',highestBox);
+			$('.size-smallish .column, size-small .column',this).css('min-height','auto');
+		});
+	}
+	equalizing();
+	$(window).resize(function(){ equalizing(); });
 	
-	  
-	  
+	$(window).on('load resize', function(){
+	// Only run function if an unbound element exists
+	if( $('.unbound').length ) {
+		var verso = $('main').offset().left;
+		var recto = $('main').offset().right;
+		// var recto = $(window).width() - ($('main').offset().left + $('main').width());
+		var spread = $(window).width();
+		var page = $('main').width();
+		var recto = spread - $('main').offset().left;
+		if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
+		
+		
+		var verso_width = verso + $('main').width();
+		$('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
+		$('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
+		$('.unbound.verso.recto').css('width',spread);
+	}
+	});
 
-	/*
-	this is for now.  
-	*/
+	setup_search();
+	
 
-setup_search();
-	
-	
-	
-	
 	});
 })(jQuery);

@@ -3,7 +3,7 @@
 /* Table of Contents
 ==================================================
     1.0 Reset
-    1.1 Set Defaults
+    2.0 Set Defaults
     #Tablet (Portrait)
     #Mobile (Portrait)
     #Mobile (Landscape)
@@ -45,7 +45,7 @@ q:before, q:after {
 	content: none;
 	}
 figure { /* Hmmmm */
-	line-height: 0px;
+	xxline-height: 0px;
 	}
 figcaption {
 	line-height: 1em;
@@ -100,16 +100,12 @@ input {
 /* Layout
 -------------------------------------------------------- */
 
-html {
-	xheight: 100%;
-	}
 body {
-	color: #262a2d;
+	color: #5e6a71;
 	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
-	background: white url('http://nbj.me/spine/1/1.0/images/gradient-south-lightest-white.png') left top repeat-x;
-	}
-#jacket {
-	xxheight: 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #f9f9f9;
 	}
 #binder {
 	width: 990px;
@@ -139,7 +135,6 @@ section {
 -------------------------------------------------------- */
 .row {
 	width: 100%;
-	xmargin-bottom: 5px;
 	}
 .row .column {
 	position: relative;
@@ -147,10 +142,13 @@ section {
 	overflow: visible;
 	z-index: auto;
 	float: left;
-	xxmin-height: 198px;
+	}
+.row.unbound {
+	xposition: absolute;
+	position: relative;
 	}
 
-/* !Single */
+/* single */
 .row.single .column {
 	width: 100%;	
 	display: block;
@@ -511,7 +509,7 @@ code textarea:focus {
 /* CRIMSON */ .crimson-back, div.crimson, section.crimson, article.crimson, aside.crimson, header.crimson, footer.crimson, figure.crimson { color: white; background-color: #981e32; } .crimson-text, span.crimson, p.crimson, a.crimson { color: #981e32; }
 /* crimsoner */ .crimson-er-back, div.crimson-er, section.crimson-er, article.crimson-er, aside.crimson-er, header.crimson-er, footer.crimson-er { color: white; background-color: #cf0a2f; }
 
-/* GRAY */ .gray-back, div.gray, section.gray, article.gray, aside.gray, header.gray, footer.gray, figure.gray { color: white; background-color: #5E6A71; } .gray-text, span.gray, p.gray, a.gray { color: #5E6A71; }
+/* GRAY */ .gray-back, div.gray, section.gray, article.gray, aside.gray, header.gray, footer.gray, figure.gray { background-color: #5E6A71; } .gray-text, span.gray, p.gray, a.gray { color: #5E6A71; }
 /* grayer */ .gray-er-back, div.gray-er, section.gray-er, article.gray-er, aside.gray-er, header.gray-er, footer.gray-er { background-color: white; }
 /* light */ .gray-light-back, div.gray-light, section.gray-light, article.gray-light, aside.gray-light, header.gray-light, footer.gray-light,
 	div.light, section.light, article.light, aside.light, header.light, footer.light { background-color: #8c949a; }
@@ -520,7 +518,7 @@ code textarea:focus {
 /* lightly */ .gray-lightly-back, div.gray-lightly, section.gray-lightly, article.gray-lightly, aside.gray-lightly, header.gray-lightly, footer.gray-lightly,
 	div.lighter, section.lighter, article.lighter, aside.lighter, header.lighter, footer.lighter { background-color: #d7dadb; }
 /* lightest */ .gray-lightest-back, div.gray-lightest, section.gray-lightest, article.gray-lightest, aside.gray-lightest, header.gray-lightest, footer.gray-lightest,
-	div.lightest, section.lightest, article.lightest, aside.lightest, header.lightest, footer.lightest { background-color: #f2f3f3; }
+	div.lightest, section.lightest, article.lightest, aside.lightest, header.lightest, footer.lightest { background-color: #f2f3f3; } .gray-lightest-text { color: white; }
 /* dark */ .gray-dark-back, div.gray-dark, section.gray-dark, article.gray-dark, aside.gray-dark, header.gray-dark, footer.gray-dark, figure.gray-dark
 	div.dark, section.dark, article.dark, aside.dark, header.dark, footer.dark, figure.dark { background-color: #464f54; }
 /* darker */ .gray-darker-back, div.gray-darker, section.gray-darker, article.gray-darker, aside.gray-darker, header.gray-darker, footer.gray-darker, figure.gray-darker
