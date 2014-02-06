@@ -205,19 +205,20 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
 		function printPage(){
 			window.print();
-		}
+			}
 		function print_cancel() {
 			$('html').toggleClass('print');
 			$('.print-controls').remove();
 			}
+		/* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
 		function print(e) {
 			e.preventDefault();
 			$('#wsu-actions *.opened').toggleClass('opened closed');
 			$('html').toggleClass('print');
-			$("#spine header").append(print_controls);
+			$("#spine header").prepend(print_controls);
 			$("#print-invoke").on("click",function() { window.print(); });
 			$("#print-cancel").on("click",print_cancel);
-			setTimeout(function(){ printPage(); },400);
+			setTimeout(function() { printPage(); }, 400);
 			}
 		$("#wsu-print-tab button").click(print);
 		
@@ -340,7 +341,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		}); 
 		
 		// Moving the Spine for Short Windows
-		/* $(document).scroll(function() {
+		$(document).scroll(function() {
 			var windowHeight = window.innerHeight;
 			var top = $(document).scrollTop();
 			var spineHeight = $("#glue").height();
@@ -352,7 +353,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			} else {
 				$('#spine.cracked').removeClass('pinned');
 			}
-		}); */
+		});
 	
 	// External Links in nav
 	// this shouldn't be done this way
@@ -373,13 +374,15 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
 	    else if(current_width < 792)
 	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+	      else if(current_width < 396)
+	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
 		}
 	sizing();
 	$(window).resize(function(){ sizing(); });
 		
 	// Equalize Columns
 	function equalizing() {
-		$('.size-large .row:not(".unequaled"):not("single"), .size-xlarge .row:not(".unequaled"):not("single")').each(function(){  
+		$('.size-large .row.equalize:not(.unequaled)').each(function(){  
 			var highestBox = 0;
 			$('.column', this).each(function(){
 				if($(this).height() > highestBox) {

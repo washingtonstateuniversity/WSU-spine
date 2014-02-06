@@ -502,69 +502,73 @@ code textarea:focus {
 	color: white;
 	background-color: rgba(94,106,113,0.5);
 	}
-	
-/* COLORS
+
+
+/* WSU COLORS
 -------------------------------------------------------- */
 
 /* CRIMSON */ .crimson-back, div.crimson, section.crimson, article.crimson, aside.crimson, header.crimson, footer.crimson, figure.crimson { color: white; background-color: #981e32; } .crimson-text, span.crimson, p.crimson, a.crimson { color: #981e32; }
 /* crimsoner */ .crimson-er-back, div.crimson-er, section.crimson-er, article.crimson-er, aside.crimson-er, header.crimson-er, footer.crimson-er { color: white; background-color: #cf0a2f; }
 
-/* GRAY */ .gray-back, div.gray, section.gray, article.gray, aside.gray, header.gray, footer.gray, figure.gray { background-color: #5E6A71; } .gray-text, span.gray, p.gray, a.gray { color: #5E6A71; }
+/* GRAY */ .gray-back, div.gray, section.gray, article.gray, aside.gray, header.gray, footer.gray, figure.gray { background-color: #5E6A71; color: white; } .gray-text, span.gray, p.gray, a.gray { color: #5E6A71; }
 /* grayer */ .gray-er-back, div.gray-er, section.gray-er, article.gray-er, aside.gray-er, header.gray-er, footer.gray-er { background-color: white; }
 /* light */ .gray-light-back, div.gray-light, section.gray-light, article.gray-light, aside.gray-light, header.gray-light, footer.gray-light,
-	div.light, section.light, article.light, aside.light, header.light, footer.light { background-color: #8c949a; }
+	div.light, section.light, article.light, aside.light, header.light, footer.light { background-color: #8d959a; }
 /* lighter */ .gray-lighter-back, div.gray-lighter, section.gray-lighter, article.gray-lighter, aside.gray-lighter, header.gray-lighter, footer.gray-lighter,
 	div.lighter, section.lighter, article.lighter, aside.lighter, header.lighter, footer.lighter { background-color: #b5babe; }
 /* lightly */ .gray-lightly-back, div.gray-lightly, section.gray-lightly, article.gray-lightly, aside.gray-lightly, header.gray-lightly, footer.gray-lightly,
-	div.lighter, section.lighter, article.lighter, aside.lighter, header.lighter, footer.lighter { background-color: #d7dadb; }
+	div.lighter, section.lighter, article.lighter, aside.lighter, header.lighter, footer.lighter { background-color: #d7dad8; }
 /* lightest */ .gray-lightest-back, div.gray-lightest, section.gray-lightest, article.gray-lightest, aside.gray-lightest, header.gray-lightest, footer.gray-lightest,
-	div.lightest, section.lightest, article.lightest, aside.lightest, header.lightest, footer.lightest { background-color: #f2f3f3; } .gray-lightest-text { color: white; }
+	div.lightest, section.lightest, article.lightest, aside.lightest, header.lightest, footer.lightest { background-color: #eff0f1; } .gray-lightest-text { color: white; }
 /* dark */ .gray-dark-back, div.gray-dark, section.gray-dark, article.gray-dark, aside.gray-dark, header.gray-dark, footer.gray-dark, figure.gray-dark
-	div.dark, section.dark, article.dark, aside.dark, header.dark, footer.dark, figure.dark { background-color: #464f54; }
+	div.dark, section.dark, article.dark, aside.dark, header.dark, footer.dark, figure.dark { background-color: #464e54; color: white; }
 /* darker */ .gray-darker-back, div.gray-darker, section.gray-darker, article.gray-darker, aside.gray-darker, header.gray-darker, footer.gray-darker, figure.gray-darker
-	div.darker, section.darker, article.darker, aside.darker, header.darker, footer.darker, figure.darker { background-color: #2b3033; }
+	div.darker, section.darker, article.darker, aside.darker, header.darker, footer.darker, figure.darker { background-color: #2a3033; color: white; }
 /* darkest */ .gray-darkest-back, div.gray-darkest, section.gray-darkest, article.gray-darkest, aside.gray-darkest, header.gray-darkest, footer.gray-darkest,
-	div.darkest, section.darkest, article.darkest, aside.darkest, header.darkest, footer.darkest { background-color: black; }
+	div.darkest, section.darkest, article.darkest, aside.darkest, header.darkest, footer.darkest { background-color: black; color: white; }
 
-/* BLUE */ .blue-back, div.blue, section.blue, article.blue, aside.blue, header.blue, footer.blue, figure.blue { background-color: #568a90; } .blue-text, span.blue, p.blue, a.blue, dd.blue { color: #568a90; }
-/* bluer */ .blue-er-back, div.blue-er, section.blue-er, article.blue-er, aside.blue-er, header.blue-er, footer.blue-er { background-color: #3ba2ad; }
-/* light */ .blue-light-back, div.blue-light, section.blue-light, article.blue-light, aside.blue-light, header.blue-light, footer.blue-light { background-color: #86acb0; }
-/* lighter */ .blue-lighter-back, div.blue-lighter, section.blue-lighter, article.blue-lighter, aside.blue-lighter, header.blue-lighter, footer.blue-lighter { background-color: #b1c9cc; }
-/* lightly */ .blue-lightly-back, div.blue-lightly, section.blue-lightly, article.blue-lightly, aside.blue-lightly, header.blue-lightly, footer.blue-lightly { background-color: #d5e2e3; }
-/* lightest */ .blue-lightest-back, div.blue-lightest, section.blue-lightest, article.blue-lightest, aside.blue-lightest, header.blue-lightest, footer.blue-lightest { background-color: #f1f5f6; }
-/* dark */ .blue-dark-back, div.blue-dark, section.blue-dark, article.blue-dark, aside.blue-dark, header.blue-dark, footer.blue-dark { background-color: #446f74; }
-/* darker */ .blue-darker-back, div.blue-darker, section.blue-darker, article.blue-darker, aside.blue-darker, header.blue-darker, footer.blue-darker { background-color: #335257; }
-/* darkest */ .blue-darkest-back, div.blue-darkest, section.blue-darkest, article.blue-darkest, aside.blue-darkest, header.blue-darkest, footer.blue-darkest { background-color: #22383a; }
+/* ORANGE */ .orange-back, div.orange, section.orange, article.orange, aside.orange, header.orange, footer.orange, figure.orange { background-color: #b67233; } .orange-text, span.orange, p.orange, a.orange { color: #b46f2d; }
+/* orange-er */ .orange-er-back, div.orange-er, section.orange-er, article.orange-er, aside.orange-er, header.orange-er, footer.orange-er { background-color: #d38235; }
+/* light */ .orange-light-back, div.orange-light, section.orange-light, article.orange-light, aside.orange-light, header.orange-light, footer.orange-light { background-color: #cb986e; }
+/* lighter */ .orange-lighter-back, div.orange-lighter, section.orange-lighter, article.orange-lighter, aside.orange-lighter, header.orange-lighter, footer.orange-lighter { background-color: #ddbea1; }
+/* lightly */ .orange-lightly-back, div.orange-lightly, section.orange-lightly, article.orange-lightly, aside.orange-lightly, header.orange-lightly, footer.orange-lightly { background-color: #eddccc; }
+/* lightest */ .orange-lightest-back, div.orange-lightest, section.orange-lightest, article.orange-lightest, aside.orange-lightest, header.orange-lightest, footer.orange-lightest { background-color: #f8f1eb; }
+/* dark */ .orange-dark-back, div.orange-dark, section.orange-dark, article.orange-dark, aside.orange-dark, header.orange-dark, footer.orange-dark { background-color: #925829; }
+/* darker */ .orange-darker-back, div.orange-darker, section.orange-darker, article.orange-darker, aside.orange-darker, header.orange-darker, footer.orange-darker { background-color: #6d441f; }
+/* darkest */ .orange-darkest-back, div.orange-darkest, section.orange-darkest, article.orange-darkest, aside.orange-darkest, header.orange-darkest, footer.orange-darkest { background-color: #492e14; }
 
-/* YELLOW */ .yellow-back, div.yellow, section.yellow, article.yellow, aside.yellow, header.yellow, footer.yellow, figure.yellow { background-color: #c6a960; } .yellow-text, span.yellow, p.yellow, a.yellow { color: #c6a960; }
-/* yellower */ .yellow-er-back, div.yellow-er, section.yellow-er, article.yellow-er, aside.yellow-er, header.yellow-er, footer.yellow-er { background-color: #f8bf3b; }
-/* light */ .yellow-light-back, div.yellow-light, section.yellow-light, article.yellow-light, aside.yellow-light, header.yellow-light, footer.yellow-light { background-color: #d6c18c; }
-/* lighter */ .yellow-lighter-back, div.yellow-lighter, section.yellow-lighter, article.yellow-lighter, aside.yellow-lighter, header.yellow-lighter, footer.yellow-lighter { background-color: #e5d7b6; }
-/* lightly */ .yellow-lightly-back, div.yellow-lightly, section.yellow-lightly, article.yellow-lightly, aside.yellow-lightly, header.yellow-lightly, footer.yellow-lightly { background-color: #f1e9d7; }
-/* lightest */ .yellow-lightest-back, div.yellow-lightest, section.yellow-lightest, article.yellow-lightest, aside.yellow-lightest, header.yellow-lightest, footer.yellow-lightest { background-color: #f9f5ed; }
-/* dark */ .yellow-dark-back, div.yellow-dark, section.yellow-dark, article.yellow-dark, aside.yellow-dark, header.yellow-dark, footer.yellow-dark { background-color: #9e874d; }
-/* darker */ .yellow-darker-back, div.yellow-darker, section.yellow-darker, article.yellow-darker, aside.yellow-darker, header.yellow-darker, footer.yellow-darker { background-color: #76653a; }
-/* darkest */ .yellow-darkest-back, div.yellow-darkest, section.yellow-darkest, article.yellow-darkest, aside.yellow-darkest, header.yellow-darkest, footer.yellow-darkest { background-color: #504326; }
+/* GREEN */ .green-back, div.green, section.green, article.green, aside.green, header.green, footer.green, figure.green { background-color: #8f7e35; } .green-text, span.green, p.green, a.green { color: #878247; }
+/* greener */ .green-er-back, div.green-er, section.green-er, article.green-er, aside.green-er, header.green-er, footer.green-er { background-color: #ada400; }
+/* light */ .green-light-back, div.green-light, section.green-light, article.green-light, aside.green-light, header.green-light, footer.green-light { background-color: #afa370; }
+/* lighter */ .green-lighter-back, div.green-lighter, section.green-lighter, article.green-lighter, aside.green-lighter, header.green-lighter, footer.green-lighter { background-color: #cbc4a2; }
+/* lightly */ .green-lightly-back, div.green-lightly, section.green-lightly, article.green-lightly, aside.green-lightly, header.green-lightly, footer.green-lightly { background-color: #e3dfcd; }
+/* lightest */ .green-lightest-back, div.green-lightest, section.green-lightest, article.green-lightest, aside.green-lightest, header.green-lightest, footer.green-lightest { background-color: #f4f2eb; }
+/* dark */ .green-dark-back, div.green-dark, section.green-dark, article.green-dark, aside.green-dark, header.green-dark, footer.green-dark { background-color: #72652a; }
+/* darker */ .green-darker-back, div.green-darker, section.green-darker, article.green-darker, aside.green-darker, header.green-darker, footer.green-darker { background-color: #564c20; }
+/* darkest */ .green-darkest-back, div.green-darkest, section.green-darkest, article.green-darkest, aside.green-darkest, header.green-darkest, footer.green-darkest { background-color: #393215; }
 
-/* ORANGE */ .orange-back, div.orange, section.orange, article.orange, aside.orange, header.orange, footer.orange, figure.orange { background-color: #b46f2d; } .orange-text, span.orange, p.orange, a.orange { color: #b46f2d; }
-/* orange */ .orange-er-back, div.orange-er, section.orange-er, article.orange-er, aside.orange-er, header.orange-er, footer.orange-er { background-color: #da7100; }
-/* light */ .orange-light-back, div.orange-light, section.orange-light, article.orange-light, aside.orange-light, header.orange-light, footer.orange-light { background-color: #c99866; }
-/* lighter */ .orange-lighter-back, div.orange-lighter, section.orange-lighter, article.orange-lighter, aside.orange-lighter, header.orange-lighter, footer.orange-lighter { background-color: #dbbc9c; }
-/* lightly */ .orange-lightly-back, div.orange-lightly, section.orange-lightly, article.orange-lightly, aside.orange-lightly, header.orange-lightly, footer.orange-lightly { background-color: #ebdac8; }
-/* lightest */ .orange-lightest-back, div.orange-lightest, section.orange-lightest, article.orange-lightest, aside.orange-lightest, header.orange-lightest, footer.orange-lightest { background-color: #f9f2ed; }
-/* dark */ .orange-dark-back, div.orange-dark, section.orange-dark, article.orange-dark, aside.orange-dark, header.orange-dark, footer.orange-dark { background-color: #915924; }
-/* darker */ .orange-darker-back, div.orange-darker, section.orange-darker, article.orange-darker, aside.orange-darker, header.orange-darker, footer.orange-darker { background-color: #6c431c; }
-/* darkest */ .orange-darkest-back, div.orange-darkest, section.orange-darkest, article.orange-darkest, aside.orange-darkest, header.orange-darkest, footer.orange-darkest { background-color: #472d10; }
+/* BLUE */ .blue-back, div.blue, section.blue, article.blue, aside.blue, header.blue, footer.blue, figure.blue { background-color: #4f868e; } .blue-text, span.blue, p.blue, a.blue, dd.blue { color: #568a90; }
+/* bluer */ .blue-er-back, div.blue-er, section.blue-er, article.blue-er, aside.blue-er, header.blue-er, footer.blue-er { background-color: #00a5bd; }
+/* light */ .blue-light-back, div.blue-light, section.blue-light, article.blue-light, aside.blue-light, header.blue-light, footer.blue-light { background-color: #76adb3; }
+/* lighter */ .blue-lighter-back, div.blue-lighter, section.blue-lighter, article.blue-lighter, aside.blue-lighter, header.blue-lighter, footer.blue-lighter { background-color: #a6cace; }
+/* lightly */ .blue-lightly-back, div.blue-lightly, section.blue-lightly, article.blue-lightly, aside.blue-lightly, header.blue-lightly, footer.blue-lightly { background-color: #cfe2e4; }
+/* lightest */ .blue-lightest-back, div.blue-lightest, section.blue-lightest, article.blue-lightest, aside.blue-lightest, header.blue-lightest, footer.blue-lightest { background-color: #ecf3f4; }
+/* dark */ .blue-dark-back, div.blue-dark, section.blue-dark, article.blue-dark, aside.blue-dark, header.blue-dark, footer.blue-dark { background-color: #326f76; }
+/* darker */ .blue-darker-back, div.blue-darker, section.blue-darker, article.blue-darker, aside.blue-darker, header.blue-darker, footer.blue-darker { background-color: #255359; }
+/* darkest */ .blue-darkest-back, div.blue-darkest, section.blue-darkest, article.blue-darkest, aside.blue-darkest, header.blue-darkest, footer.blue-darkest { background-color: #193838; }
 
-/* GREEN */ .green-back, div.green, section.green, article.green, aside.green, header.green, footer.green, figure.green { background-color: #898245; } .green-text, span.green, p.green, a.green { color: #878247; }
-/* greener */ .green-er-back, div.green-er, section.green-er, article.green-er, aside.green-er, header.green-er, footer.green-er { background-color: #a1942a; }
-/* light */ .green-light-back, div.green-light, section.green-light, article.green-light, aside.green-light, header.green-light, footer.green-light { background-color: #aba57a; }
-/* lighter */ .green-lighter-back, div.green-lighter, section.green-lighter, article.green-lighter, aside.green-lighter, header.green-lighter, footer.green-lighter { background-color: #c9c6a9; }
-/* lightly */ .green-lightly-back, div.green-lightly, section.green-lightly, article.green-lightly, aside.green-lightly, header.green-lightly, footer.green-lightly { background-color: #e1dfcf; }
-/* lightest */ .green-lightest-back, div.green-lightest, section.green-lightest, article.green-lightest, aside.green-lightest, header.green-lightest, footer.green-lightest { background-color: #f5f5ef; }
-/* dark */ .green-dark-back, div.green-dark, section.green-dark, article.green-dark, aside.green-dark, header.green-dark, footer.green-dark { background-color: #6e6836; }
-/* darker */ .green-darker-back, div.green-darker, section.green-darker, article.green-darker, aside.green-darker, header.green-darker, footer.green-darker { background-color: #534e29; }
-/* darkest */ .green-darkest-back, div.green-darkest, section.green-darkest, article.green-darkest, aside.green-darkest, header.green-darkest, footer.green-darkest { background-color: #37321b; }
+/* YELLOW */ .yellow-back, div.yellow, section.yellow, article.yellow, aside.yellow, header.yellow, footer.yellow, figure.yellow { background-color: #c69214; } .yellow-text, span.yellow, p.yellow, a.yellow { color: #c6a960; }
+/* yellower */ .yellow-er-back, div.yellow-er, section.yellow-er, article.yellow-er, aside.yellow-er, header.yellow-er, footer.yellow-er { background-color: #ffb81c; }
+/* light */ .yellow-light-back, div.yellow-light, section.yellow-light, article.yellow-light, aside.yellow-light, header.yellow-light, footer.yellow-light { background-color: #d7b258; }
+/* lighter */ .yellow-lighter-back, div.yellow-lighter, section.yellow-lighter, article.yellow-lighter, aside.yellow-lighter, header.yellow-lighter, footer.yellow-lighter { background-color: #e5cd93; }
+/* lightly */ .yellow-lightly-back, div.yellow-lightly, section.yellow-lightly, article.yellow-lightly, aside.yellow-lightly, header.yellow-lightly, footer.yellow-lightly { background-color: #f1e4c4; }
+/* lightest */ .yellow-lightest-back, div.yellow-lightest, section.yellow-lightest, article.yellow-lightest, aside.yellow-lightest, header.yellow-lightest, footer.yellow-lightest { background-color: #f9f4e7; }
+/* dark */ .yellow-dark-back, div.yellow-dark, section.yellow-dark, article.yellow-dark, aside.yellow-dark, header.yellow-dark, footer.yellow-dark { background-color: #9e7510; }
+/* darker */ .yellow-darker-back, div.yellow-darker, section.yellow-darker, article.yellow-darker, aside.yellow-darker, header.yellow-darker, footer.yellow-darker { background-color: #77580c; }
+/* darkest */ .yellow-darkest-back, div.yellow-darkest, section.yellow-darkest, article.yellow-darkest, aside.yellow-darkest, header.yellow-darkest, footer.yellow-darkest { background-color: #4f3a08; }
+
+
+
 
 /* Spine
 
@@ -1137,73 +1141,7 @@ address[role="contact"],
 #wsu-share li.by-other i.wsu-icon { display: none; }
 
 /* II.3.4 Print */
-html.print #spine .print-button {
-	display: none;
-	}
 
-#spine .print-controls {
-	width: 500px;
-	height: 100px;
-	display: block;
-	z-index: 999631;
-	position: absolute;
-	right: 0;
-	}
-
-#spine .print-controls button {
-	display: block;
-	float: left;
-	margin: 0px;
-	text-indent: 0px;
-	}
-#spine button#print-invoke,
-#spine button#print-cancel {
-	xwidth: 100px;
-	color: #8b9399;
-	font-weight: normal;
-	background: #e6e8e9;
-	background: white;
-	border-color: #babfc2;
-	border-style: solid;
-	display: block;
-	font-size: 12px;
-	position: relative;
-	}
-#spine button#print-invoke {
-	border-width: 1px 1px 1px 1px;
-	border-radius: 5px 0px 0px 5px;
-	padding: 4px 15px 4px 24px;
-	}
-#spine button#print-cancel {
-	border-width: 1px 1px 1px 0px;
-	border-radius: 0px 5px 5px 0px;
-	padding: 4px 5px 4px 18px;
-	}
-#spine button#print-invoke:hover,
-#spine button#print-cancel:hover {
-	text-shadow: 1px 1px 0px #e6e8e9;
-	background: #babfc2;
-	background: white;
-	background: #e6e8e9;
-	}
-#spine button#print-invoke:before,
-#spine button#print-cancel:before {
-	font-family: "Iconography";
-	font-size: 12px;
-	width: 17px;
-	padding-right: 3px;
-	padding-left: 2px;
-	padding-top: 5px;
-	text-align: center;
-	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	}
-#spine button#print-invoke:before {
-	padding-left: 5px;
-	}
-#spine button#print-invoke:before { content: "⎙"; }
-#spine button#print-cancel:before { content: "␡"; }
 
 
 /* II.4.0 NAVIGATION -> Tag hierarchy
@@ -1838,17 +1776,17 @@ main {
 
 /* Table of Contents
 ==================================================
-    1.0 Large (First Break)
+    III.1.0 Large (First Break)
     	1.1 Container
     	1.2 Navigation
     	1.3 Header
     	1.4 Logo
-    2.0 Medium (Between)
-    2.5 Middling (Extra Break for Fixed)
-    3.0 Small (Second Break)
-    4.0 Large Format
-    5.0 Print
-    6.0 Targeting */
+    III.2.0 Medium (Between)
+    III.2.5 Middling (Extra Break for Fixed)
+    III.3.0 Small (Second Break)
+    III.4.0 Large Format
+    III.5.0 Print
+    III.6.0 Targeting */
 
 #binder #spine.unshelved header::before {
 	content: "";
@@ -1862,9 +1800,6 @@ main {
 	left: 298px;
 	display: block;
 	z-index: 1;
-	}
-xx#binder #spine.unshelved.cracked.scrolled header::before {
-	left: 0px;
 	}
 
 /* Hide */
@@ -1907,7 +1842,7 @@ xx#binder #spine.unshelved.cracked.scrolled header::before {
 	}
 
 
-/* LARGE
+/* III.1.0 MEDIUM (after first break)
 -------------------------------------------------- */
 @media /* Tablets (iPad) */
 	(max-width: 989px),
@@ -1926,10 +1861,10 @@ xx#binder #spine.unshelved.cracked.scrolled header::before {
 	}
 #binder:not(.fluid) main {
 	margin-left: 0px;
-	margin-top: 50px;
+	
 	}
-body {
-	background-position: center 50px;
+#binder:not(.fluid) main {
+	padding-top: 50px;
 	}
 #binder.fluid {
 	width: 100%;
@@ -1950,7 +1885,7 @@ body {
 	top: 0;
 	overflow: visible;
 	position: fixed;
-	z-index: 99163;
+	z-index: 99164;
 	}
 #binder:not(.fluid) #glue,
 #binder:not(.fluid) #spine #glue,
@@ -1958,7 +1893,7 @@ body {
 	width: 298px;
 	}
 #binder:not(.fluid) #glue {
-	margin-top: 50px;
+	padding-top: 50px;
 	}
 	
 /* 1.2 Navigation */
@@ -2008,29 +1943,29 @@ body {
 	display: block;
 	}
 	
-/* Logo */
+/* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
-	background-image: url("http://nbj.me/spine/1/1.0/marks/sig-horizontal.svg");
+	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
 
-#binder:not(.fluid) #spine.lightest a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.lighter a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.light a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.gray a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
-#binder:not(.fluid) #spine.dark a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.darker a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.darkest a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.black a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder:not(.fluid) #spine.crimson a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.gray a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
+#binder:not(.fluid) #spine.dark a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.darker a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.darkest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder:not(.fluid) #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 
-.extension-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-extension.svg"); }
-.globalcampus-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
-.spokane-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-spokane.svg"); }
-.tricities-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-tricities.svg"); }
-.vancouver-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-vancouver.svg"); }
+.extension-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-extension.svg"); }
+.globalcampus-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
+.spokane-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-spokane.svg"); }
+.tricities-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-tricities.svg"); }
+.vancouver-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-vancouver.svg"); }
 
 /* Show */
 .large-only,
@@ -2048,7 +1983,7 @@ body {
 
 	}
 
-/* MEDIUM
+/* SMALL
 ------------------------------------------ */
 @media screen
 	and ( max-width : 791px )
@@ -2074,7 +2009,7 @@ body {
 
 #binder main {
 	width: auto;
-	margin-top: 50px;
+	padding-top: 50px;
 	margin-left: 0px;
 	}
 #binder.hybrid main,
@@ -2095,7 +2030,7 @@ body {
 	top: 0;
 	overflow: visible;
 	position: fixed;
-	z-index: 99163;
+	z-index: 99164;
 	}
 #binder #glue {
 	margin-top: 50px;
@@ -2150,28 +2085,29 @@ body {
 	}
 	
 /* Logo */
-#binder.fluid #spine a#wsu-signature {
-	background-image: url("http://nbj.me/spine/1/1.0/marks/sig-horizontal.svg");
+#binder.fluid #spine a#wsu-signature,
+html.print #spine a#wsu-signature {
+	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
 
-#binder.fluid #spine.lightest a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.lighter a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.light a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.gray a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
-#binder.fluid #spine.dark a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.darker a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.darkest a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.black a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
-#binder.fluid #spine.crimson a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.gray a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
+#binder.fluid #spine.dark a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.darker a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.darkest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+#binder.fluid #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 
-.extension-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-extension.svg"); }
-.globalcampus-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
-.spokane-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-spokane.svg"); }
-.tricities-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-tricities.svg"); }
-.vancouver-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-h-vancouver.svg"); }
+.extension-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-extension.svg"); }
+.globalcampus-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
+.spokane-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-spokane.svg"); }
+.tricities-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-tricities.svg"); }
+.vancouver-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-vancouver.svg"); }
 
 /* Grid */
 .row > .column {
@@ -2294,27 +2230,27 @@ body {
 
 /* Logo */
 #binder.fixed #spine a#wsu-signature {
-	background-image: url("http://nbj.me/spine/1/1.0/marks/sig-vertical.svg");
+	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical.svg");
 	background-position: center;
 	background-size: 180px auto;
 	height: 197px;
 	margin-left: 0px;
 	}
 
-#binder.fixed #spine.lighter a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.light a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.gray a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
-#binder.fixed #spine.dark a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.darker a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.darkest a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.black a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
-#binder.fixed #spine.crimson a#wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.gray a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
+#binder.fixed #spine.dark a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.darker a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.darkest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
+#binder.fixed #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-vertical-whitelogotype.svg'); }
 
-.extension-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-extension.svg"); }
-.globalcampus-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-globalcampus.svg"); }
-.spokane-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-spokane.svg"); }
-.tricities-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-tricities.svg"); }
-.vancouver-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://nbj.me/spine/1/1.0/marks/sig-v-vancouver.svg"); }
+.extension-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-v-extension.svg"); }
+.globalcampus-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-v-globalcampus.svg"); }
+.spokane-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-v-spokane.svg"); }
+.tricities-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-v-tricities.svg"); }
+.vancouver-signature #binder.fixed #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-v-vancouver.svg"); }
 	
 	}
 
@@ -2333,7 +2269,8 @@ body {
 	}
 #binder main {
 	width: 396px;
-	margin: 50px 0px 0px 0px;
+	margin: 0px;
+	padding-top: 50px;
 	}
 #binder.fixed main {
 	margin-top: 50px;
@@ -2561,7 +2498,7 @@ body {
 	}
 
 
-/* PRINT
+/* III.5.0 PRINT
 ----------------------------------------------------------------- */
 
 html.print #binder main {
@@ -2573,39 +2510,61 @@ html.print #binder #spine header button#shelve {
 
 @media 
 	print {
-	
+	html.print {
+	zoom: 90%;
+	}
 html.print #spine header button#shelve,
 html.print #spine .print-controls {
 	display: none;
 	}
 	}
-
+	
+html.print #binder {
+	position: relative;
+	width: 792px;
+	overflow: hidden;
+	}
 html.print #spine {
+	min-height: 1px;
+	height: 50px;
+	width: 100%;
 	position: absolute;
-	left: -99163px;
+	top: 0;
+	margin-left: 0px;
+	}
+html.print main {
+	padding-top: 50px;
 	}
 html.print #spine header {
-	height: 155px;
-	width: 792px;
+	position: relative;
 	}
-	
-html.print #spine header button,
-html.print #wsu-tabs-actions li:not(#wsu-tab-print) button {
-	xdisplay: none;
-	}
-html.print #binder {
-	background: white url("http://nbj.me/spine/1/1.0/marks/sig-horizontal.svg") center 32px no-repeat;
+html.print #binder #spine a#wsu-signature {
+	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal.svg");
+	background-position: center 14px;
 	background-size: auto 30px;
-	padding-top: 80px;
-	width: 792px;
+	height: 49px;
 	}
+html.print #spine #glue header ~ * {
+	display: none;
+	}
+html.print #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.gray a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
+html.print #spine.dark a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.darker a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.darkest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 
-html.print #spine #wsu-tab-print .print-controls button {
-	display: inline-block;
-	}
+html.print .extension-signature #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-extension.svg"); }
+html.print .globalcampus-signature #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
+html.print .spokane-signature #binder #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-spokane.svg"); }
+html.print .tricities-signature #binder #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-tricities.svg"); }
+html.print .vancouver-signature #binder #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-vancouver.svg"); }
+	
 html.print #spine .print-controls {
-	top: 10px;
-	left: 99793px;
+	float: right;
 	}
 html.print #spine .print-controls button {
 	display: inline-block;
@@ -2614,5 +2573,62 @@ html.print #spine .print-controls button {
 	line-height: 1em;
 	padding: 0px;
 	}
+html.print #spine .print-button {
+	display: none;
+	}
+#spine .print-controls {
+	display: block;
+	z-index: 99164;
+	margin: 0px 10px 0px 0px;
+	position: absolute;
+	right: 20px;
+	resize: 20px;
+	}
+#spine .print-controls button {
+	display: block;
+	float: left;
+	margin: 0px;
+	text-indent: 0px;
+	font-weight: normal;
+	}
+#spine button#print-invoke,
+#spine button#print-cancel {
+	color: #8D959A;
+	background: white;
+	border-color: #8D959A;
+	border-style: solid;
+	display: block;
+	}
+#spine button#print-invoke {
+	border-width: 0px 1px 1px 1px;
+	border-radius: 0px 0px 0px 5px;
+	padding: 4px 15px 4px 12px;
+	}
+#spine button#print-cancel {
+	border-width: 0px 1px 1px 0px;
+	border-radius: 0px 0px 5px 0px;
+	padding: 4px 5px 4px 12px;
+	}
+#spine button#print-invoke:hover,
+#spine button#print-cancel:hover {
+	text-shadow: none;
+	background: #EFF0F1;
+	}
+#spine button#print-invoke:before,
+#spine button#print-cancel:before {
+	font-family: "Iconography";
+	font-size: 12px;
+	width: 17px;
+	text-align: left;
+	padding-right: 8px;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	}
+#spine button#print-cancel:before {
+	padding-right: 5px;
+	}
+#spine button#print-invoke:before { content: "⎙"; }
+#spine button#print-cancel:before { content: "␡"; }
 
 

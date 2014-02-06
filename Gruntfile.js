@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		concat: {
 			styles: {
-		      src: ['styles/skeleton.css','styles/spine.css','styles/respond.css'],
+		      src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
 		      dest: 'spine.css',
 		    },
 		    scripts: {

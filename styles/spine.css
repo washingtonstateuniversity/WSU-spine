@@ -569,73 +569,7 @@ address[role="contact"],
 #wsu-share li.by-other i.wsu-icon { display: none; }
 
 /* II.3.4 Print */
-html.print #spine .print-button {
-	display: none;
-	}
 
-#spine .print-controls {
-	width: 500px;
-	height: 100px;
-	display: block;
-	z-index: 999631;
-	position: absolute;
-	right: 0;
-	}
-
-#spine .print-controls button {
-	display: block;
-	float: left;
-	margin: 0px;
-	text-indent: 0px;
-	}
-#spine button#print-invoke,
-#spine button#print-cancel {
-	xwidth: 100px;
-	color: #8b9399;
-	font-weight: normal;
-	background: #e6e8e9;
-	background: white;
-	border-color: #babfc2;
-	border-style: solid;
-	display: block;
-	font-size: 12px;
-	position: relative;
-	}
-#spine button#print-invoke {
-	border-width: 1px 1px 1px 1px;
-	border-radius: 5px 0px 0px 5px;
-	padding: 4px 15px 4px 24px;
-	}
-#spine button#print-cancel {
-	border-width: 1px 1px 1px 0px;
-	border-radius: 0px 5px 5px 0px;
-	padding: 4px 5px 4px 18px;
-	}
-#spine button#print-invoke:hover,
-#spine button#print-cancel:hover {
-	text-shadow: 1px 1px 0px #e6e8e9;
-	background: #babfc2;
-	background: white;
-	background: #e6e8e9;
-	}
-#spine button#print-invoke:before,
-#spine button#print-cancel:before {
-	font-family: "Iconography";
-	font-size: 12px;
-	width: 17px;
-	padding-right: 3px;
-	padding-left: 2px;
-	padding-top: 5px;
-	text-align: center;
-	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	}
-#spine button#print-invoke:before {
-	padding-left: 5px;
-	}
-#spine button#print-invoke:before { content: "⎙"; }
-#spine button#print-cancel:before { content: "␡"; }
 
 
 /* II.4.0 NAVIGATION -> Tag hierarchy
