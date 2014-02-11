@@ -83,7 +83,7 @@ xx#spine.cracked.scrolled {
 	position: relative !important;
 	padding: 5px 0px !important;
 	}
-#spine.cracked #social ul {
+#spine.cracked #wsu-social-channels ul {
 	margin-top: 10px;
 	padding-top: 15px;
 	}
@@ -118,16 +118,16 @@ footer.looseleaf small {
 	position: absolute;
 	white-space: nowrap;
 	}
-footer.looseleaf #global {
+footer.looseleaf #wsu-global-links {
 	right: 50%;
 	padding-right: 45px;
 	}
-footer.looseleaf #copyright {
+footer.looseleaf .copyright-link {
 	left: 50%;
 	padding-left: 43px;
 	padding-top: 4px;
 	}
-footer.looseleaf #social {
+footer.looseleaf #wsu-social-channels {
 	float: right;
 	display: block;
 	left: 50%;
@@ -135,11 +135,11 @@ footer.looseleaf #social {
 	width: 1px;
 	overflow: visible;
 	}
-footer.looseleaf #social ul {
+footer.looseleaf #wsu-social-channels ul {
 	position: relative;
 	left: -42px;
 	}
-footer.looseleaf #social ul li {
+footer.looseleaf #wsu-social-channels ul li {
 	display: inline-block;
 	width: auto;
 	padding: 0px 0px 0px 1px;
@@ -147,10 +147,10 @@ footer.looseleaf #social ul li {
 	width: 20px;
 	white-space: nowrap;
 	}
-footer.looseleaf #social li a {
+footer.looseleaf #wsu-social-channels li a {
 	font-size: 16px;
 	}
-footer.looseleaf #global li {
+footer.looseleaf #wsu-global-links li {
 	width: auto;
 	display: inline-block;
 	margin: 0px;
@@ -524,6 +524,10 @@ address[role="contact"],
 #wsu-contact .email i.wsu-icon:before { content: "\0040"; }
 #wsu-contact .more i.wsu-icon:before { content: "\2139"; }
 
+.postalcode {
+	white-space: nowrap;
+	}
+
 /* 3.3 Share */
 #spine #wsu-share ul {
 	margin: 2em;
@@ -575,7 +579,7 @@ address[role="contact"],
 /* II.4.0 NAVIGATION -> Tag hierarchy
 --------------------------------------------------------------------------- */
 
-#spine nav#site {
+#spine nav#spine-sitenav {
 	margin: 10px 20px;
 	}
 #spine ul {
@@ -621,7 +625,7 @@ address[role="contact"],
 #spine nav ul li.parent.active li:last-child a {
 	padding-bottom: 8px;
 	}
-#spine nav#site > ul > li:nth-last-of-type(1) {
+#spine nav#spine-sitenav > ul > li:nth-last-of-type(1) {
 	border-bottom-width: 1px;
 	}
 #spine #wsu-search ::-webkit-input-placeholder {
@@ -638,12 +642,12 @@ address[role="contact"],
 }
 
 /* NAVIGATION -> Disclosure */
-#spine nav#site ul ul li {
+#spine nav#spine-sitenav ul ul li {
 	display: none;
 	line-height: 1.3em;
 	}
-#spine nav#site ul li.active > ul > li,
-#spine nav#site ul li.opened > ul > li {
+#spine nav#spine-sitenav ul li.active > ul > li,
+#spine nav#spine-sitenav ul li.opened > ul > li {
 	display: block;
 	}
 #spine #wsu-actions section {
@@ -657,31 +661,31 @@ address[role="contact"],
 	}
 
 /* NAVIGATION -> Home Icon */
-#spine nav#site:not(.homeless) > ul > li:first-of-type > a {
+#spine nav#spine-sitenav:not(.homeless) > ul > li:first-of-type > a {
 	padding-left: 1.4em;
 	background: transparent url('http://nbj.me/spine/1/1.0/icons/home-gray.svg') no-repeat left center;
 	background-size: 1em auto;
 	}
-#spine nav#site:not(.homeless) > ul > li.active:first-of-type > a,
-#spine nav#site:not(.homeless) > ul > li:first-of-type > a:hover,
-#spine nav#site:not(.homeless) > ul > li:first-of-type > a:before {
+#spine nav#spine-sitenav:not(.homeless) > ul > li.active:first-of-type > a,
+#spine nav#spine-sitenav:not(.homeless) > ul > li:first-of-type > a:hover,
+#spine nav#spine-sitenav:not(.homeless) > ul > li:first-of-type > a:before {
 	background: transparent url('http://nbj.me/spine/1/1.0/icons/home-crimson.svg') no-repeat left center;
 	background-size: 1em auto;
 	}
 	
 /* NAVIGATION -> Active, Current, "Dogeared" */
-#spine nav#site ul li:not(.parent).dogeared > a {
+#spine nav#spine-sitenav ul li:not(.parent).dogeared > a {
 	color: #981e32;
 	font-weight: bold;
 	}
-#spine nav#site ul li.parent.active > a {
+#spine nav#spine-sitenav ul li.parent.active > a {
 	xfont-weight: bold;
 	}
-#spine nav#site ul li.dogeared > a:hover {
+#spine nav#spine-sitenav ul li.dogeared > a:hover {
 	cursor: default;
 	}
-#spine nav#site ul li.parent.active > a:hover,
-#spine nav#site ul li.parent.dogeared > a:hover {
+#spine nav#spine-sitenav ul li.parent.active > a:hover,
+#spine nav#spine-sitenav ul li.parent.dogeared > a:hover {
 	color: #5e6a71;
 	cursor: default;
 	}
@@ -709,28 +713,28 @@ address[role="contact"],
 #spine nav ul ul ul li a {
 	padding: .25em 0;
 	}
-#offsite {
+#spine-offsitenav {
 	margin: 20px 20px 0px 20px;
 	}
-#spine nav#offsite ul li {
+#spine nav#spine-offsitenav ul li {
 	border: none;
 	line-height: 1.3em;
 	}
-#spine nav#offsite ul li a {
+#spine nav#spine-offsitenav ul li a {
 	text-transform: none;
 	padding: 4px 0px;
 	color: #B4BABD;
 	}
-#spine nav#offsite ul li a:hover {
+#spine nav#spine-offsitenav ul li a:hover {
 	color: #8b9399;
 	}
-#spine nav#offsite ul li a i {
+#spine nav#spine-offsitenav ul li a i {
 	display: none;
 	}
-#spine nav#offsite ul li a:hover i {
+#spine nav#spine-offsitenav ul li a:hover i {
 	display: inline;
 	}
-#spine nav#site a.external:hover:after {
+#spine nav#spine-sitenav a.external:hover:after {
 	font-family: "Iconography";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -750,14 +754,14 @@ address[role="contact"],
 	}
 
 /* Social */
-#spine #social {
+#spine #wsu-social-channels {
 	margin-bottom: .6em;
 	width: 100%;
 	}
-#spine #social ul {
+#spine #wsu-social-channels ul {
 	text-align: center;
 	}
-#spine nav#social ul li {
+#spine nav#wsu-social-channels ul li {
 	color: #b6bcbf;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -770,7 +774,7 @@ address[role="contact"],
 	border-top: none;
 	text-align: center;
 	}
-nav#social ul li a {
+nav#wsu-social-channels ul li a {
 	color: #e0e5e8;
 	color: #D7DADB;
 	text-indent: -9000px;
@@ -782,7 +786,7 @@ nav#social ul li a {
 	position: relative;
 	text-transform: none;
 	}
-nav#social ul li a:before {
+nav#wsu-social-channels ul li a:before {
 	font-family: "Iconography";
 	position: absolute;
 	top: 0;
@@ -794,49 +798,47 @@ nav#social ul li a:before {
 	-moz-osx-font-smoothing: grayscale;
 	}
 
-nav#social ul li#facebook a:before { content: "F"; }
-nav#social ul li#facebook a:hover { color: #3b5998; }
+nav#wsu-social-channels ul li.facebook-channel a:before { content: "F"; }
+nav#wsu-social-channels ul li.facebook-channel a:hover { color: #3b5998; }
 
-nav#social ul li#twitter a:before { content: "T"; }
-nav#social ul li#twitter a:hover { color: #00aced; }
+nav#wsu-social-channels ul li.twitter-channel a:before { content: "T"; }
+nav#wsu-social-channels ul li.twitter-channel a:hover { color: #00aced; }
 
-nav#social ul li#youtube a:before { content: "Y"; }
-nav#social ul li#youtube a:hover { color: #bb0000; }
+nav#wsu-social-channels ul li.youtube-channel a:before { content: "Y"; }
+nav#wsu-social-channels ul li.youtube-channel a:hover { color: #bb0000; }
 
-nav#social ul li#social a:before,
-nav#social ul li#directory a:before { content: "s"; }
-nav#social ul li#social a:hover:before,
-nav#social ul li#directory a:hover:before { content: "S"; }
-nav#social ul li#directory a:hover { color: #b6bcbf; }
+nav#wsu-social-channels ul li.directory-channel a:before { content: "s"; }
+nav#wsu-social-channels ul li.directory-channel a:hover:before { content: "S"; }
+nav#wsu-social-channels ul li.directory-channel a:hover { color: #b6bcbf; }
 
-nav#social ul li#linkedin a:before { content: "L"; }
-nav#social ul li#linkedin a:hover { color: #007bb6; }
+nav#wsu-social-channels ul li.linkedin-channel a:before { content: "L"; }
+nav#wsu-social-channels ul li.linkedin-channel a:hover { color: #007bb6; }
 
-nav#social ul li#pinterest a:before { content: "P"; }
-nav#social ul li#pinterest a:hover { color: #cb2027; }
+nav#wsu-social-channels ul li.pinterest-channel a:before { content: "P"; }
+nav#wsu-social-channels ul li.pinterest-channel a:hover { color: #cb2027; }
 
-nav#social ul li#gplus a:before { content: "G"; }
-nav#social ul li#gplus a:hover { color: #b6bcbf; }
+nav#wsu-social-channels ul li.gplus-channel a:before { content: "G"; }
+nav#wsu-social-channels ul li.gplus-channel a:hover { color: #b6bcbf; }
 
-nav#social ul li#flickr a:before { content: "R"; }
-nav#social ul li#flickr a:hover { color: #b6bcbf; }
+nav#wsu-social-channels ul li.flickr-channel a:before { content: "R"; }
+nav#wsu-social-channels ul li.flickr-channel a:hover { color: #b6bcbf; }
 
-nav#social ul li#tumblr a:before { content: "B"; }
-nav#social ul li#tumblr a:hover { color: #32506d; }
+nav#wsu-social-channels ul li.tumblr-channel a:before { content: "B"; }
+nav#wsu-social-channels ul li.tumblr-channel a:hover { color: #32506d; }
 
 /* Global Navigation */
-#spine nav#global {
+#spine nav#wsu-global-links {
 	font-size: .9em;
 	border-top: 1px #e7e9ea solid;
 	padding-top: 5px;
 	margin-top: 5px;
 	width: 100%;
 	}
-nav#global ul {
+nav#wsu-global-links ul {
 	display: table;
 	width: 100%;
 	}
-nav#global ul li {
+nav#wsu-global-links ul li {
 	font-size: .8em;
 	line-height: 1em;
 	display: table-cell;
@@ -844,16 +846,16 @@ nav#global ul li {
 	text-align: left;
 	width: 29%;
 	}
-nav#global ul li:nth-of-type(1) { text-align: left; width: 22%; }
+nav#wsu-global-links ul li:nth-of-type(1) { text-align: left; width: 22%; }
 
-nav#global ul li:nth-of-type(4) {
+nav#wsu-global-links ul li:nth-of-type(4) {
 	text-align: right;
 	width: 10%;
 	}
-nav#global ul li a {
+nav#wsu-global-links ul li a {
 	color: #B4BABD;
 	}
-nav#global ul li a:hover {
+nav#wsu-global-links ul li a:hover {
 	color: #8f959a;
 	}
 #spine footer small {
@@ -865,12 +867,12 @@ nav#global ul li a:hover {
 	margin: 0px 0px;
 	padding: 6px 0px;
 	}
-#spine #copyright a,
-.looseleaf #copyright a {
+#spine .copyright-link a,
+.looseleaf .copyright-link a {
 	color: #8b9399;
 	}
-#spine #copyright a:hover,
-.looseleaf #copyright a:hover {
+#spine .copyright-link a:hover,
+.looseleaf .copyright-link a:hover {
 	color: #5f6b71;
 	}
 	
@@ -896,28 +898,28 @@ main {
 #spine.lightest #wsu-actions li.opened button,
 #spine.lightest #wsu-actions li button,
 #spine.lightest #wsu-actions li.opened button:hover,
-#spine.lightest #social ul li a,
-#spine.lightest #global ul li a,
+#spine.lightest #wsu-social-channels ul li a,
+#spine.lightest #wsu-global-links ul li a,
 #spine.lightest footer small,
 #spine.lightest footer small a {
 	color: #babfc2; }
-#spine.lightest nav#site ul li,
-#spine.lightest nav#offsite ul li,
-#spine.lightest #global {
+#spine.lightest nav#spine-sitenav ul li,
+#spine.lightest nav#spine-offsitenav ul li,
+#spine.lightest #wsu-global-links {
 	border-color: #babfc2; }
 #spine.lightest #wsu-actions li#wsu-tab-search.opened button,
 #spine.lightest #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.lightest nav#offsite ul li a {
+#spine.lightest nav#spine-offsitenav ul li a {
 	color: #8b9399; }
 #spine.lightest #wsu-actions li button:hover,
 #spine.lightest #wsu-actions li#wsu-tab-search button:hover,
 #spine.lightest #wsu-actions li#wsu-tab-search button,
-#spine.lightest nav#site ul li a,
-#spine.lightest nav#offsite ul li a:hover,
-#spine.lightest #global ul li a:hover {
+#spine.lightest nav#spine-sitenav ul li a,
+#spine.lightest nav#spine-offsitenav ul li a:hover,
+#spine.lightest #wsu-global-links ul li a:hover {
 	color: #5e6a71; } 
-#spine.lightest nav#site ul li a:hover,
-#spine.lightest nav#site ul li.dogeared > a {
+#spine.lightest nav#spine-sitenav ul li a:hover,
+#spine.lightest nav#spine-sitenav ul li.dogeared > a {
 	color: #981e32; }
 #spine.lightest #wsu-actions li.opened,
 #spine.lightest #wsu-actions li.opened:hover,
@@ -929,10 +931,10 @@ main {
 #spine.lighter, #spine.lighter #glue > header, #spine.lighter.bleed::before { background: #babfc2; }
 #spine.lighter #wsu-signature {
 	background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-darkestlogotype.svg') }
-#spine.lighter:not(.homeless) nav#site > ul > li:first-child a {
+#spine.lighter:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-darker.svg') }
-#spine.lighter:not(.homeless) nav#site > ul > li:first-child a:before,
-#spine.lighter:not(.homeless) nav#site > ul > li:first-child a:hover {
+#spine.lighter:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
+#spine.lighter:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-crimson.svg') }
 #spine.lighter #wsu-actions li#wsu-tab-search.opened button {
 	color: #babfc2; }
@@ -940,38 +942,38 @@ main {
 #spine.lighter #wsu-actions li.opened button,
 #spine.lighter #wsu-actions li.opened button:hover,
 #spine.lighter #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.lighter #social ul li a,
+#spine.lighter #wsu-social-channels ul li a,
 #spine.lighter footer small,
 #spine.lighter footer small a {
 	color: #8b9399; }
-#spine.lighter nav#site ul li,
-#spine.lighter nav#offsite ul li,
-#spine.lighter #global {
+#spine.lighter nav#spine-sitenav ul li,
+#spine.lighter nav#spine-offsitenav ul li,
+#spine.lighter #wsu-global-links {
 	border-color: #8b9399; }
 #spine.lighter #wsu-actions li#wsu-tab-search button,
 #spine.lighter #wsu-actions li#wsu-tab-search.opened button,
 #spine.lighter #wsu-actions li button:hover,
-#spine.lighter #global ul li a,
-#spine.lighter nav#offsite ul li a,
-#spine.lighter #social ul li a:hover {
+#spine.lighter #wsu-global-links ul li a,
+#spine.lighter nav#spine-offsitenav ul li a,
+#spine.lighter #wsu-social-channels ul li a:hover {
 	color: #5e6a71; }
-#spine.lighter nav#site ul li a,
-#spine.lighter #global ul li a:hover,
-#spine.lighter nav#offsite ul li a:hover {
+#spine.lighter nav#spine-sitenav ul li a,
+#spine.lighter #wsu-global-links ul li a:hover,
+#spine.lighter nav#spine-offsitenav ul li a:hover {
 	color: #384044; } 
 #spine.lighter #wsu-actions li#wsu-tab-search button:hover {
 	color: #384044; }
-#spine.lighter nav#site ul li a:hover,
-#spine.lighter nav#site ul li.dogeared > a {
+#spine.lighter nav#spine-sitenav ul li a:hover,
+#spine.lighter nav#spine-sitenav ul li.dogeared > a {
 	color: #981e32; }
 
 /* LIGHT #8b9399, rgb(139,147,153) */
 #spine.light, #spine.light #glue > header, #spine.light.bleed::before { background: #8b9399; }
 #spine.light #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg') }
-#spine.light:not(.homeless) nav#site > ul > li:first-child a {
+#spine.light:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.light:not(.homeless) nav#site > ul > li:first-child a:before,
-#spine.light:not(.homeless) nav#site > ul > li:first-child a:hover {
+#spine.light:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
+#spine.light:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.light #wsu-actions li.opened button,
 #spine.light #wsu-actions li#wsu-tab-search.opened button {
@@ -979,36 +981,36 @@ main {
 #spine.light #wsu-actions li button,
 #spine.light #wsu-actions li.opened button:hover,
 #spine.light #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.light #social ul li a {
+#spine.light #wsu-social-channels ul li a {
 	color: #babfc2; }
-#spine.light nav#site ul li,
-#spine.light nav#offsite ul li,
-#spine.light #global {
+#spine.light nav#spine-sitenav ul li,
+#spine.light nav#spine-offsitenav ul li,
+#spine.light #wsu-global-links {
 	border-color: #babfc2; }
-#spine.light nav#offsite ul li a,
-#spine.light #global ul li a,
+#spine.light nav#spine-offsitenav ul li a,
+#spine.light #wsu-global-links ul li a,
 #spine.light footer small a {
 	color: #babfc2; }
-#spine.light nav#site ul li a,
-#spine.light nav#offsite ul li a:hover,
-#spine.light #global ul li a:hover {
+#spine.light nav#spine-sitenav ul li a,
+#spine.light nav#spine-offsitenav ul li a:hover,
+#spine.light #wsu-global-links ul li a:hover {
 	color: #e6e8e9; }
 #spine.light #wsu-actions li#wsu-tab-search button,
 #spine.light #wsu-actions li button:hover {
 	color: #e6e8e9; }
 #spine.light #wsu-actions li#wsu-tab-search button:hover {
 	color: white; }
-#spine.light nav#site ul li a:hover,
-#spine.light nav#site ul li.dogeared > a {
+#spine.light nav#spine-sitenav ul li a:hover,
+#spine.light nav#spine-sitenav ul li.dogeared > a {
 	color: white; }
 
 /* GRAY #5e6a71, rgb(94,106,113) */
 #spine.gray, #spine.gray #glue > header, #spine.gray.bleed::before { background: #5e6a71; }
 #spine.gray #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
-#spine.gray:not(.homeless) nav#site > ul > li:first-child a {
+#spine.gray:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.gray:not(.homeless) nav#site > ul > li:first-child a:before,
-#spine.gray:not(.homeless) nav#site > ul > li:first-child a:hover {
+#spine.gray:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
+#spine.gray:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.gray #wsu-actions li.opened button,
 #spine.gray #wsu-actions li#wsu-tab-search.opened button {
@@ -1016,29 +1018,29 @@ main {
 #spine.gray #wsu-actions li button,
 #spine.gray #wsu-actions li.opened button:hover,
 #spine.gray #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.gray #social ul li a,
+#spine.gray #wsu-social-channels ul li a,
 #spine.gray footer small,
 #spine.gray footer small a {
 	color: #424a4f; }
-#spine.gray #global ul li a {
+#spine.gray #wsu-global-links ul li a {
 	color: #8b9399; }
-#spine.gray nav#site ul li,
-#spine.gray nav#offsite ul li,
-#spine.gray #global {
+#spine.gray nav#spine-sitenav ul li,
+#spine.gray nav#spine-offsitenav ul li,
+#spine.gray #wsu-global-links {
 	border-color: #424a4f; }
-#spine.gray nav#site ul li a,
-#spine.gray nav#offsite ul li a:hover {
+#spine.gray nav#spine-sitenav ul li a,
+#spine.gray nav#spine-offsitenav ul li a:hover {
 	color: #e6e8e9; }
-#spine.gray nav#offsite ul li a,
-#spine.gray #global ul li a:hover {
+#spine.gray nav#spine-offsitenav ul li a,
+#spine.gray #wsu-global-links ul li a:hover {
 	color: #babfc2; }
 #spine.gray #wsu-actions li button:hover,
 #spine.gray #wsu-actions li#wsu-tab-search button {
 	color: #262a2d; }
-#spine.gray #social ul li#facebook a:hover {
+#spine.gray #wsu-social-channels ul li.facebook-channel a:hover {
 	color: #eeeff4;	}
-#spine.gray nav#site ul li a:hover,
-#spine.gray nav#site ul li.dogeared > a {
+#spine.gray nav#spine-sitenav ul li a:hover,
+#spine.gray nav#spine-sitenav ul li.dogeared > a {
 	color: white; }
 #spine.gray #wsu-actions li#wsu-tab-search button:hover {
 	color: black; }
@@ -1046,10 +1048,10 @@ main {
 /* GRAY-DARK #383D42, rgb(75,85,90) */
 #spine.dark, #spine.dark #glue > header, #spine.dark.bleed::before { background: #383D42; }
 #spine.dark #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-lightchevron.svg'); }
-#spine.dark:not(.homeless) nav#site > ul > li:first-child a {
+#spine.dark:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.dark:not(.homeless) nav#site > ul > li:first-child a:before,
-#spine.dark:not(.homeless) nav#site > ul > li:first-child a:hover {
+#spine.dark:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
+#spine.dark:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.dark #wsu-actions li.opened button,
 #spine.dark #wsu-actions li#wsu-tab-search.opened button {
@@ -1057,26 +1059,26 @@ main {
 #spine.dark #wsu-actions li button,
 #spine.dark #wsu-actions li.opened button:hover,
 #spine.dark #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.dark #social ul li a,
-#spine.dark #global ul li a,
+#spine.dark #wsu-social-channels ul li a,
+#spine.dark #wsu-global-links ul li a,
 #spine.dark footer small,
 #spine.dark footer small a {
 	color: #8b9399; }
-#spine.dark nav#site ul li,
-#spine.dark nav#offsite ul li,
-#spine.dark #global {
+#spine.dark nav#spine-sitenav ul li,
+#spine.dark nav#spine-offsitenav ul li,
+#spine.dark #wsu-global-links {
 	border-color: #8b9399; }
-#spine.dark nav#offsite ul li a,
-#spine.dark #global ul li a:hover {
+#spine.dark nav#spine-offsitenav ul li a,
+#spine.dark #wsu-global-links ul li a:hover {
 	color: #babfc2; }
 #spine.dark #wsu-actions li#wsu-tab-search button,
-#spine.dark nav#site ul li a,
-#spine.dark nav#offsite ul li a:hover {
+#spine.dark nav#spine-sitenav ul li a,
+#spine.dark nav#spine-offsitenav ul li a:hover {
 	color: #e6e8e9; }
-#spine.dark #social ul li#facebook a:hover {
+#spine.dark #wsu-social-channels ul li.facebook-channel a:hover {
 	color: #eeeff4;	}
-#spine.dark nav#site ul li a:hover,
-#spine.dark nav#site ul li.dogeared > a,
+#spine.dark nav#spine-sitenav ul li a:hover,
+#spine.dark nav#spine-sitenav ul li.dogeared > a,
 #spine.dark #wsu-actions li button:hover,
 #spine.dark #wsu-actions li#wsu-tab-search button:hover {
 	color: white; }
@@ -1084,10 +1086,10 @@ main {
 /* GRAY-DARKER #384044 #424a4f #212426, rgb(56,64,68) */
 #spine.darker, #spine.darker #glue > header, #spine.darker.bleed::before { background: #212426; }
 #spine.darker #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-graychevron.svg'); }
-#spine.darker:not(.homeless) nav#site > ul > li:first-child a {
+#spine.darker:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.darker:not(.homeless) nav#site > ul > li:first-child a:before,
-#spine.darker:not(.homeless) nav#site > ul > li:first-child a:hover {
+#spine.darker:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
+#spine.darker:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.darker #wsu-actions li.opened button,
 #spine.darker #wsu-actions li#wsu-tab-search.opened button {
@@ -1095,24 +1097,24 @@ main {
 #spine.darker #wsu-actions li button,
 #spine.darker #wsu-actions li.opened button:hover,
 #spine.darker #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.darker #social ul li a,
-#spine.darker #global ul li a,
+#spine.darker #wsu-social-channels ul li a,
+#spine.darker #wsu-global-links ul li a,
 #spine.darker footer small,
 #spine.darker footer small a {
 	color: #5e6a71; }
-#spine.darker nav#site ul li,
-#spine.darker nav#offsite ul li,
-#spine.darker #global {
+#spine.darker nav#spine-sitenav ul li,
+#spine.darker nav#spine-offsitenav ul li,
+#spine.darker #wsu-global-links {
 	border-color: #5e6a71; }
-#spine.darker nav#offsite ul li a,
-#spine.darker #global ul li a:hover {
+#spine.darker nav#spine-offsitenav ul li a,
+#spine.darker #wsu-global-links ul li a:hover {
 	color: #8b9399; }
 #spine.darker #wsu-actions li#wsu-tab-search button,
-#spine.darker nav#site ul li a,
-#spine.darker nav#offsite ul li a:hover {
+#spine.darker nav#spine-sitenav ul li a,
+#spine.darker nav#spine-offsitenav ul li a:hover {
 	color: #babfc2; }
-#spine.darker nav#site ul li a:hover,
-#spine.darker nav#site ul li.dogeared > a,
+#spine.darker nav#spine-sitenav ul li a:hover,
+#spine.darker nav#spine-sitenav ul li.dogeared > a,
 #spine.darker #wsu-actions li button:hover,
 #spine.darker #wsu-actions li#wsu-tab-search button:hover {
 	color: white; }
@@ -1120,10 +1122,10 @@ main {
 /* GRAY-DARKEST #000 */
 #spine.darkest, #spine.darkest #glue > header, #spine.darkest.bleed::before { background: black; }
 #spine.darkest #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-darkchevron.svg'); }
-#spine.darkest:not(.homeless) nav#site > ul > li:first-child a {
+#spine.darkest:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lighter.svg') }
-#spine.darkest:not(.homeless) nav#site > ul > li:first-child a:before,
-#spine.darkest:not(.homeless) nav#site > ul > li:first-child a:hover {
+#spine.darkest:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
+#spine.darkest:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-crimson.svg') }
 #spine.darkest #wsu-actions li.opened button,
 #spine.darkest #wsu-actions li#wsu-tab-search.opened button {
@@ -1131,37 +1133,37 @@ main {
 #spine.darkest #wsu-actions li button,
 #spine.darkest #wsu-actions li.opened button:hover,
 #spine.darkest #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.darkest #social ul li a,
-#spine.darkest #global ul li a,
+#spine.darkest #wsu-social-channels ul li a,
+#spine.darkest #wsu-global-links ul li a,
 #spine.darkest footer small,
 #spine.darkest footer small a {
 	color: #4b555a; }
-#spine.darkest nav#site ul li,
-#spine.darkest nav#offsite ul li,
-#spine.darkest #global {
+#spine.darkest nav#spine-sitenav ul li,
+#spine.darkest nav#spine-offsitenav ul li,
+#spine.darkest #wsu-global-links {
 	border-color: #4b555a; }
-#spine.darkest nav#offsite ul li a {
+#spine.darkest nav#spine-offsitenav ul li a {
 	color: #5e6a71; }
 #spine.darkest #wsu-actions li#wsu-tab-search button,
-#spine.darkest nav#offsite ul li a:hover,
-#spine.darkest #global ul li a:hover,
+#spine.darkest nav#spine-offsitenav ul li a:hover,
+#spine.darkest #wsu-global-links ul li a:hover,
 #spine.darkest #wsu-actions li button:hover {
 	color: #8b9399; }
-#spine.darkest nav#site ul li a,
+#spine.darkest nav#spine-sitenav ul li a,
 #spine.darkest #wsu-actions li#wsu-tab-search button:hover {
 	color: #babfc2; }
-#spine.darkest nav#site ul li a:hover,
-#spine.darkest nav#site ul li.dogeared > a {
+#spine.darkest nav#spine-sitenav ul li a:hover,
+#spine.darkest nav#spine-sitenav ul li.dogeared > a {
 	color: #981e32; }
 	
 /* CRIMSON #981e32 */
 #spine.crimson, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed::before { background-color: #981e32; }
 #spine.crimson #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-white.svg'); }
-#spine.crimson:not(.homeless) nav#site > ul > li:first-child a {
+#spine.crimson:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
 	color: #b6bcbf;
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lighter.svg') }
-#spine.crimson:not(.homeless) nav#site > ul > li:first-child a:hover,
-#spine.crimson nav#site > ul > li:first-child a:before {
+#spine.crimson:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover,
+#spine.crimson nav#spine-sitenav > ul > li:first-child a:before {
 	color: white;
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg'); }
 #spine.crimson #wsu-actions li button { color: #490e18; }
@@ -1171,30 +1173,30 @@ main {
 	color: #37141a; }
 #spine.crimson #wsu-actions li#wsu-tab-search button:hover {
 	color: black; }
-#spine.crimson nav#site ul li,
-#spine.crimson nav#offsite ul li,
-#spine.crimson nav#global {
+#spine.crimson nav#spine-sitenav ul li,
+#spine.crimson nav#spine-offsitenav ul li,
+#spine.crimson nav#wsu-global-links {
 	border-color: #6b1523; }
-#spine.crimson nav#site ul li a {
+#spine.crimson nav#spine-sitenav ul li a {
 	color: #b6bcbf; }
-#spine.crimson nav#site ul li a:hover {
+#spine.crimson nav#spine-sitenav ul li a:hover {
 	color: #e7e9ea; }
-#spine.crimson nav#site ul li.active.parent > a {
+#spine.crimson nav#spine-sitenav ul li.active.parent > a {
 	color: white; }
-#spine.crimson nav#offsite ul li a {
+#spine.crimson nav#spine-offsitenav ul li a {
 	color: #3d0c14; }
-#spine.crimson #social ul li a {
+#spine.crimson #wsu-social-channels ul li a {
 	color: #490e18; }
-#spine.crimson #global ul li a { color: black; }
-#spine.crimson #global ul li a:hover,
-#spine.crimson #social ul li a:hover,
-#spine.crimson nav#offsite ul li a:hover {
+#spine.crimson #wsu-global-links ul li a { color: black; }
+#spine.crimson #wsu-global-links ul li a:hover,
+#spine.crimson #wsu-social-channels ul li a:hover,
+#spine.crimson nav#spine-offsitenav ul li a:hover {
 	color: black; }
 #spine.crimson footer small,
 #spine.crimson footer small a {
 	color: #490e18; }
-#spine.crimson nav#site ul li a:hover,
-#spine.crimson nav#site ul li.dogeared > a {
+#spine.crimson nav#spine-sitenav ul li a:hover,
+#spine.crimson nav#spine-sitenav ul li.dogeared > a {
 	color: white; }
 
 /* Transparent */

@@ -85,9 +85,6 @@
 	}
 #binder:not(.fluid) main {
 	margin-left: 0px;
-	
-	}
-#binder:not(.fluid) main {
 	padding-top: 50px;
 	}
 #binder.fluid {
@@ -96,6 +93,10 @@
 #binder.fluid main {
 	width: auto;
 	margin-left: 198px;
+	}
+.spineless #binder main {
+	width: auto;
+	margin-left: 0px;
 	}
 #binder:not(.fluid) #spine,
 #binder:not(.fluid) #spine #wsu-actions section {

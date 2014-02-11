@@ -170,7 +170,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		    contact += '	<div class="organization-name">'+name+'</div>';
 		    contact += '	<div class="address">';
 			contact += '		<div class="street-address">'+streetAddress+'</div>';
-			contact += '		<div class="locality">'+addressLocality+'</div>'
+			contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>'
 			contact += '	</div>';
 			contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
 			contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
@@ -216,13 +216,14 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$('#wsu-actions *.opened').toggleClass('opened closed');
 			$('html').toggleClass('print');
 			$("#spine header").prepend(print_controls);
+			$('#spine.unshelved').removeClass('unshelved').addClass('shelved');
 			$("#print-invoke").on("click",function() { window.print(); });
 			$("#print-cancel").on("click",print_cancel);
 			setTimeout(function() { printPage(); }, 400);
 			}
 		$("#wsu-print-tab button").click(print);
 		
-		// Shut (ie close) a tool section
+		// Shut a tool section
 		$("button.shut").on("click",function(e) {
 			e.preventDefault();
 			$('#wsu-actions').find('.opened').toggleClass('opened closed');
@@ -271,14 +272,14 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$("#spine .active").not(":has(.active)").addClass("dogeared");
 	
 		// Disclosure
-		$("#spine li.parent > a").on("click",function(e) { 
+		$("#spine nav li.parent > a").on("click",function(e) { 
 			e.preventDefault();
 			$(this).parent("li").siblings().removeClass("opened");
 			$(this).parent("li").toggleClass("opened");
 		  });
 		
 		// Couplets
-		$("#spine li.parent > a").each( function() {
+		$("#spine nav li.parent > a").each( function() {
 			var title = 'Overview';
 	        if ($(this).attr('title')) {
                 var alt = $(this).attr('title').length;
@@ -341,7 +342,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		}); 
 		
 		// Moving the Spine for Short Windows
-		$(document).scroll(function() {
+		/*$(document).scroll(function() {
 			var windowHeight = window.innerHeight;
 			var top = $(document).scrollTop();
 			var spineHeight = $("#glue").height();
@@ -353,11 +354,11 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			} else {
 				$('#spine.cracked').removeClass('pinned');
 			}
-		});
+		});*/
 	
 	// External Links in nav
 	// this shouldn't be done this way
-	$('nav#site a').filter(function() {
+	$('nav#spine-sitenav a').filter(function() {
 	   return this.hostname && this.hostname !== location.hostname;
 	}).addClass("external");
 	
@@ -382,7 +383,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		
 	// Equalize Columns
 	function equalizing() {
-		$('.size-large .row.equalize:not(.unequaled)').each(function(){  
+	if( $('.equalize').length ) {
+		$('.row.equalize').each(function(){  
 			var highestBox = 0;
 			$('.column', this).each(function(){
 				if($(this).height() > highestBox) {
@@ -390,11 +392,25 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				}
 			});  
 			$('.column',this).not('.unequaled').css('min-height',highestBox);
-			$('.size-smallish .column, size-small .column',this).css('min-height','auto');
+			$('section.equalize .column',this).css('min-height','auto');
 		});
+	}
 	}
 	equalizing();
 	$(window).resize(function(){ equalizing(); });
+	
+	function mainheight() {
+		var main_top = $('main').offset().top;
+		var window_height = $(window).height();
+		if ($('#binder').hasClass('size-lt-large')) {
+			var main_height = window_height - 50;
+			} else {
+			var main_height = window_height;
+			}
+		$('main.fill-window-height').css('min-height',main_height);
+		};
+	mainheight();
+	$(window).resize(function(){ mainheight(); });
 	
 	$(window).on('load resize', function(){
 	// Only run function if an unbound element exists
@@ -406,7 +422,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		var page = $('main').width();
 		var recto = spread - $('main').offset().left;
 		if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
-		
 		
 		var verso_width = verso + $('main').width();
 		$('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));

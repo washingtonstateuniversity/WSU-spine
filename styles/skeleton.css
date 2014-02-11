@@ -70,12 +70,16 @@ a {
 a:hover { color: #c60c30; }
 strong,b { font-weight: bold; }
 em,i { font-style: italic; }
-hr { border-width: 3px 0px 0px 0px;
-	border-style: dotted;
-	border-color: #b6bcbf;
+hr { border-width: 0px;
+	border-style: solid;
+	border-color: black;
 	margin: 10px 0px;
+	height: 2px;
+	background-color: rgba(93,105,112,0.50);
+	display: block;
+	clear: both;
 	}
-h6,h5,h4,h3,h2,h1 { margin: 0px 0px 3px 0px; line-height: 1.1em; letter-spacing: 0em; font-weight: bold; }
+h6,h5,h4,h3,h2,h1 { margin: 0px 0px 3px 0px; line-height: 1.1em; letter-spacing: 0em; font-weight: 700; }
 h1 { font-size: 2em; }
 h2 { font-size: 1.8em; margin: 5px 0px; }
 h3 { font-size: 1.6em; margin: 10px 0px 5px 0px; }
@@ -83,12 +87,23 @@ h4 { font-size: 1.4em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1.0em; }
 p { margin: 0px; padding-bottom: .8em; }
+blockquote { padding-bottom: .8em; }
 ul, ol { padding-bottom: .8em; }
 ol li { list-style: decimal; margin: 0px 0px 5px 25px; }
 ul li { list-style: circle; margin: 0px 0px 5px 20px; padding: 0px 0px 0px 0px; }
 
 input {
 	outline: none;
+	}
+/* These may be too heavy-handed */
+xxarticle img {
+	margin: 10px;
+	}
+article img[align="right"] {
+	margin: 0px 0px 10px 10px;
+	}
+article img[align="left"] {
+	margin: 0px 10px 10px 0px;
 	}
 
 /* Fonts
@@ -118,6 +133,11 @@ body {
 main {
 	margin-left: 198px;
 	width: 792px;
+	box-sizing: border-box;
+	}
+.spineless main {
+	margin-left: 0px;
+	width: 990px;
 	}
 #spine {
 	width: 198px;
@@ -142,6 +162,7 @@ section {
 	overflow: visible;
 	z-index: auto;
 	float: left;
+	box-sizing: border-box;
 	}
 .row.unbound {
 	xposition: absolute;
@@ -158,6 +179,8 @@ section {
 .halves > .column { width: 396px; }
 .fluid .row.halves > .column { width: 50%; }
 .one-half { width: 50%; }
+.halves .column:nth-of-type(odd) { clear: both; }
+.halves .column:nth-of-type(1) { clear: none; }
 	
 /* thirds */
 .row.thirds .column { width: 264px; }
@@ -231,6 +254,10 @@ section {
 
 /* Nested */
 
+.row.single row.halves .column { width: 396px; }
+.hybrid .row.single .halves .column,
+.fluid .row.single .halves .column { width: 50%; }
+
 /* halves then halves */
 .row.halves .halves .column { width: 198px; }
 .hybrid .row.halves .halves .column,
@@ -260,12 +287,12 @@ section {
 /* Content
 -------------------------------------------------------- */
 
-.column > article {
-	padding: 10px 30px;
-	}
-.column > article:first-of-type,
-.column > aside:first-of-type {
+.column > article,
+.column > aside {
 	padding: 30px 30px 10px 30px;
+	}
+.column > article ~ article {
+	padding: 10px 30px;
 	}
 .column > article ~ article p {
 	padding-bottom: 0px;
