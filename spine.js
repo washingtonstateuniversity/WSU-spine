@@ -202,23 +202,19 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		 } // End Contact Generation
 		
 		// Tools tabs
-		
-		$("#wsu-share-tab button").on("click",function(e) {
+		$('#wsu-actions-tabs' ).on('click', 'li', function(e) {
 			e.preventDefault();
-			$('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
+
+			if ( 'wsu-share-tab' === this.id ) {
+				$('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
+			} else if ( 'wsu-search-tab' === this.id ) {
+				$('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
+				$('#spine section#wsu-search input').focus();
+			} else if ( 'wsu-contact-tab' === this.id ) {
+				$('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
+			}
 		});
-		
-		$("#wsu-search-tab button").on("click",function(e) {
-			e.preventDefault();
-			$('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-			$('#spine section#wsu-search input').focus();
-		});
-		$("#wsu-contact-tab button").on("click",function(e) {
-			e.preventDefault();
-			$('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
-		});
-		
-		
+
 		// Print & Print View
 		var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
 		function printPage(){
