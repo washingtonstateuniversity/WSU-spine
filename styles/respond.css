@@ -109,7 +109,7 @@
 	left: -298px;
 	top: 0;
 	overflow: visible;
-	position: fixed;
+	xxposition: fixed;
 	z-index: 99164;
 	}
 #binder:not(.fluid) #glue,
@@ -118,12 +118,12 @@
 	width: 298px;
 	}
 #binder:not(.fluid) #glue {
-	padding-top: 50px;
+	margin-top: 50px;
 	}
 	
 /* 1.2 Navigation */
-#binder:not(.fluid) #spine nav#site,
-#binder:not(.fluid) #spine nav#offsite,
+#binder:not(.fluid) #spine nav#spine-sitenav,
+#binder:not(.fluid) #spine nav#spine-offsitenav,
 #binder:not(.fluid) #spine footer {
 	width: 238px;
 	margin-left: 30px;
@@ -265,8 +265,8 @@
 	}
 	
 /* Navigation */
-#binder.fluid #spine nav#site,
-#binder.fluid #spine nav#offsite,
+#binder.fluid #spine nav#spine-sitenav,
+#binder.fluid #spine nav#spine-offsitenav,
 #binder.fluid #spine footer {
 	width: 238px;
 	margin-left: 30px;
@@ -340,7 +340,7 @@ html.print #spine a#wsu-signature {
 	}
 	
 /* Hybrid Shift */
-.hybrid .row.halves > .column { width: 50%; }
+.hybrid .row.halves .column { width: 50%; }
 .hybrid .row.thirds .column { width: 33%; }
 .hybrid .row.thirds .column.two { width: 34%; }
 .hybrid .row.quarters .column { width: 25%; }
@@ -523,16 +523,16 @@ html.print #spine a#wsu-signature {
 	}
 	
 /* Grid */
-.fluid .row.single > .column,
-.fluid .row.halves > .column,
-.fluid .row.thirds > .column.one,
-.fluid .row.thirds > .column.two,
-.fluid .row.thirds > .column.three,
-.fluid .row.triptych > .column,
-.fluid .row.sidebar > .column.one,
-.fluid .row.sidebar > .column.two,
-.fluid .row.margin > .column.one,
-.fluid .row.margin > .column.two {
+.fluid .row.single .column,
+.fluid .row.halves .column,
+.fluid .row.thirds .column.one,
+.fluid .row.thirds .column.two,
+.fluid .row.thirds .column.three,
+.fluid .row.triptych .column,
+.fluid .row.sidebar .column.one,
+.fluid .row.sidebar .column.two,
+.fluid .row.margin .column.one,
+.fluid .row.margin .column.two {
 	width: 100%;
 	float: none;
 	clear: both;
@@ -541,16 +541,16 @@ html.print #spine a#wsu-signature {
 	width: 50%;
 	}
 	
-.hybrid .row.single > .column,
-.hybrid .row.halves > .column,
-.hybrid .row.thirds > .column.one,
-.hybrid .row.thirds > .column.two,
-.hybrid .row.thirds > .column.three,
-.hybrid .row.triptych > .column,
-.hybrid .row.sidebar > .column.one,
-.hybrid .row.sidebar > .column.two,
-.hybrid .row.margin > .column.one,
-.hybrid .row.margin > .column.two,
+.hybrid .row.single .column,
+.hybrid .row.halves .column,
+.hybrid .row.thirds .column.one,
+.hybrid .row.thirds .column.two,
+.hybrid .row.thirds .column.three,
+.hybrid .row.triptych .column,
+.hybrid .row.sidebar .column.one,
+.hybrid .row.sidebar .column.two,
+.hybrid .row.margin .column.one,
+.hybrid .row.margin .column.two,
 .hybrid .row.thirds .halves .column,
 .fluid .row.thirds .halves .column {
 	width: 100%;

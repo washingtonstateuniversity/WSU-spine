@@ -132,21 +132,34 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 	$(document).ready(function(){
 		$("#spine #glue > header").append('<button id="shelve"></button>');
 		$("#shelve").click(function() {
+			// var body_height = $('body').height();
+			// $('#spine.unshelved').css('height',body_height);
 			$('#spine').toggleClass('unshelved shelved');
 		});
 		
 		// ADD TOOLS
 		
+		// Section -> Search
+		if (!$("#wsu-search").length) {
+		var search  = '<section id="wsu-search" class="tools closed" data-default="site-search">';
+			search += '		<form id="default-search">';
+			search += '			<input name="term" type="text" value="" placeholder="search">'
+			search += '			<button>Submit</button>';
+			search += '		</form>';
+			search += '</section>';
+		$("#wsu-actions").append(search);
+		} // End Search Generation
+	     
 		// Section -> Share
 		var share  = '<section id="wsu-share" class="tools closed">';
 		    // share += '<button id="shut-share" class="shut">Close</button>';
 		    share += '	<ul>';
-		    share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook"><i class="wsu-icon"></i>Facebook</a></li>';
-		    share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter"><i class="wsu-icon"></i>Twitter</a></li>';
-		    share += '		<li class="by-email"><a href="#" class="addthis_button_email"><i class="wsu-icon"></i>Email</a></li>';
-		    share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_gplus"><i class="wsu-icon"></i>Google Plus</a></li>-->';
-		    share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_linkedin"><i class="wsu-icon"></i>LinkedIn</a></li>-->';
-		    share += '		<!--<li class="by-other"><a href="#" class="addthis_button_compact"><i class="wsu-icon"></i>More Options ...</a></li>-->';
+		    share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook">Facebook</a></li>';
+		    share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter">Twitter</a></li>';
+		    share += '		<li class="by-email"><a href="#" class="addthis_button_email">Email</a></li>';
+		    share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_gplus">Google Plus</a></li>-->';
+		    share += '		<li class="by-linkedin"><a href="#" class="addthis_button_linkedin">LinkedIn</a></li>';
+		    share += '		<!--<li class="by-other"><a href="#" class="addthis_button_compact">More Options ...</a></li>-->';
 		    share += '	</ul>';
 		    share += '</section>';
 				
@@ -170,7 +183,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// We'll get to building these from declarations in the template
 		var contact  = '<section id="wsu-contact" class="tools closed">';
 		    // contact += '<button id="shut-contact" class="shut">Close</button>';
-		    contact += '<address class="hcard">';
+		    contact += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
 		    contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
 		    contact += '	<div class="organization-name">'+name+'</div>';
 		    contact += '	<div class="address">';

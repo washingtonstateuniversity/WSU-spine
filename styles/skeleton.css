@@ -2,14 +2,13 @@
 
 /* Table of Contents
 ==================================================
-    1.0 Reset
-    2.0 Set Defaults
-    #Tablet (Portrait)
-    #Mobile (Portrait)
-    #Mobile (Landscape)
+    I.1.0 Reset
+    I.2.0 Set Defaults
+    
+    
     #Clearing */
 
-/* 1.0 Reset (Thanks Eric Meyer)
+/* 1.0 RESET
 -------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -55,12 +54,12 @@ table {
 	border-spacing: 0;
 	}
 
-/* Setting Defaults (feel free to override)
+/* I.2.0 DEFAULTS (feel free to override)
 -------------------------------------------------------- */
-sup,sub { font-size: 9px; line-height: 11px; }
+sup,sub { font-size: .7em; line-height: .7em; }
 sup { vertical-align: super; margin-top: -6px; }
 sub { vertical-align: sub; }
-small { font-size: 10px; line-height: 12px;	}
+small { font-size: .8em; line-height: .8em;	}
 nav ul li,
 .widget ul li { list-style: none; }
 a {
@@ -81,24 +80,24 @@ hr { border-width: 0px;
 	}
 h6,h5,h4,h3,h2,h1 { margin: 0px 0px 3px 0px; line-height: 1.1em; letter-spacing: 0em; font-weight: 700; }
 h1 { font-size: 2em; }
-h2 { font-size: 1.8em; margin: 5px 0px; }
-h3 { font-size: 1.6em; margin: 10px 0px 5px 0px; }
-h4 { font-size: 1.4em; }
-h5 { font-size: 1.2em; }
-h6 { font-size: 1.0em; }
+h2 { font-size: 1.8em; margin: 0px; padding: 0px 0px .2em; }
+h3 { font-size: 1.6em; margin: 0px; padding: 0px 0px .2em; }
+h4 { font-size: 1.4em; margin: 0px; padding: 0px 0px .2em; }
+h5 { font-size: 1.2em; margin: 0px; padding: 0px 0px .2em; }
+h6 { font-size: 1.0em; margin: 0px; padding: 0px 0px .2em; }
 p { margin: 0px; padding-bottom: .8em; }
 blockquote { padding-bottom: .8em; }
 ul, ol { padding-bottom: .8em; }
-ol li { list-style: decimal; margin: 0px 0px 5px 25px; }
-ul li { list-style: circle; margin: 0px 0px 5px 20px; padding: 0px 0px 0px 0px; }
+ol li { list-style: decimal; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px;  }
+ul li { list-style: circle; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px; }
 
 input {
 	outline: none;
 	}
 /* These may be too heavy-handed */
-xxarticle img {
+/*article img {
 	margin: 10px;
-	}
+	}*/
 article img[align="right"] {
 	margin: 0px 0px 10px 10px;
 	}
@@ -151,7 +150,7 @@ section {
 	}
 
 
-/* Grid
+/* I.4.0 GRID
 -------------------------------------------------------- */
 .row {
 	width: 100%;
@@ -164,8 +163,8 @@ section {
 	float: left;
 	box-sizing: border-box;
 	}
-.row.unbound {
-	xposition: absolute;
+.row.unbound,
+.unbound {
 	position: relative;
 	}
 
@@ -176,9 +175,8 @@ section {
 	}
 
 /* halves */
-.halves > .column { width: 396px; }
-.fluid .row.halves > .column { width: 50%; }
-.one-half { width: 50%; }
+.row.halves .column { width: 396px; }
+.fluid .row.halves .column { width: 50%; }
 .halves .column:nth-of-type(odd) { clear: both; }
 .halves .column:nth-of-type(1) { clear: none; }
 	
@@ -209,7 +207,7 @@ section {
 .four-twelfths { width: 33.33% } .hybrid .four-twelfths, .fixed .four-twelfths { width: 264px; }
 .five-twelfths { width: 41.66% } .hybrid .five-twelfths, .fixed .five-twelfths { width: 330px; }
 .six-twelfths { width: 50% } .hybrid .six-twelfths, .fixed .six-twelfths { width: 396px; }
-.five-twelfths { width: 58.33% } .hybrid .seven-twelfths, .fixed .seven-twelfths { width: 462px; }
+.seven-twelfths { width: 58.33% } .hybrid .seven-twelfths, .fixed .seven-twelfths { width: 462px; }
 .eight-twelfths { width: 64.66% } .hybrid .eight-twelfths, .fixed .eight-twelfths { width: 528px; }
 .nine-twelfths { width: 75% } .hybrid .nine-twelfths, .fixed .nine-twelfths { width: 594px; }
 .ten-twelfths { width: 83.33% } .hybrid .ten-twelfths, .fixed .ten-twelfths { width: 660px; }
@@ -222,7 +220,7 @@ section {
 .four-twelfths.squared { width: 33.33% } .hybrid .four-twelfths.squared, .fixed .four-twelfths.squared { width: 264px; max-width: 264px; min-height: 264px; max-height: 264px; overflow: hidden; }
 .five-twelfths.squared { width: 41.66% } .hybrid .five-twelfths.squared, .fixed .five-twelfths.squared { width: 330px; }
 .six-twelfths.squared { width: 50% } .hybrid .six-twelfths.squared, .fixed .six-twelfths.squared { width: 396px; min-height: 396px; }
-.five-twelfths.squared { width: 58.33% } .hybrid .seven-twelfths.squared, .fixed .seven-twelfths.squared { width: 462px; }
+.seven-twelfths.squared { width: 58.33% } .hybrid .seven-twelfths.squared, .fixed .seven-twelfths.squared { width: 462px; }
 .eight-twelfths.squared { width: 64.66% } .hybrid .eight-twelfths.squared, .fixed .eight-twelfths.squared { width: 528px; }
 .nine-twelfths.squared { width: 75% } .hybrid .nine-twelfths.squared, .fixed .nine-twelfths.squared { width: 594px; }
 .ten-twelfths.squared{ width: 83.33% } .hybrid .ten-twelfths.squared, .fixed .ten-twelfths.squared { width: 660px; }
@@ -252,7 +250,8 @@ section {
 .fluid .row.sidebar .column.two,
 .hybrid .row.sidebar .column.two { width: 33%; }
 
-/* Nested */
+/* I.4.1 NESTING
+-------------------------------------------------------- */
 
 .row.single row.halves .column { width: 396px; }
 .hybrid .row.single .halves .column,
@@ -275,6 +274,9 @@ section {
 .row.thirds .halves .column { width: 132px; }
 .fluid .row.thirds .halves .column { width: 50%; }
 
+
+/* I.4.2 Units
+-------------------------------------------------------- */
 /* Fifteenths */
 .one-fifteenth { width: 66px; }
 .three-fifteenths, .one-fifth { width: 198px; }
@@ -283,8 +285,14 @@ section {
 .twelve-fifteenths, .four-fifths { width: 792px; }
 .fifteen-fifteenths, .five-fifths { width: 990px; }
 
+/* I.4.3 Spineless
+-------------------------------------------------------- */
+.row.fifths .column { width: 198px; }
+.fluid .row.fifths .column { width: 20%; }
 
-/* Content
+
+
+/* I.5.0  CONTENT
 -------------------------------------------------------- */
 
 .column > article,
@@ -347,7 +355,7 @@ ol + h1, ol + h2, ol + h3, ol + h4 {
 /* #Clearing
 -------------------------------------------------------- */
 
-/* Self Clearing Goodness */
+/* Self Clearing */
 section.row:before,
 section.row:after,
 main:before,
@@ -459,8 +467,9 @@ input::-moz-focus-inner {
 	padding: 0;
 	}
 
-/*////////////////////////*/
-/* FORMS */
+
+/* I.5.0 FORMS
+-------------------------------------------------------- */
 
 /* This could be a wee bit controversial */
 form,fieldset,input,textarea,legend,label {

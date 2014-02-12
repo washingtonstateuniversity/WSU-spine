@@ -67,8 +67,8 @@ II.5.0 Footer (of the Spine)
 	width: 198px;
 	display: block;
 	}
-xx#spine.cracked.scrolled,
-xx#spine.cracked.scrolled {
+#spine.cracked.scrolled,
+#spine.cracked.scrolled {
 	position: fixed;
 	}
 #spine.cracked.scrolled #glue {
@@ -363,7 +363,7 @@ x#spine #glue {
 	border: none;
 	border-bottom: 1px #981e32 solid;
 	}
-#spine #wsu-search button#submit-search {
+#spine #wsu-search button {
 	position: absolute;
 	left: auto;
 	top: 1.7em;
@@ -371,12 +371,12 @@ x#spine #glue {
 	padding: 0px;
 	width: 1.4em;
 	}
-#spine #wsu-search button#submit-search:before {
+#spine #wsu-search button::before {
 	content: "\25BB";
 	color: #b6bcbf;
 	font-size: 1.3em;
 	}
-#spine #wsu-search button#submit-search:hover:before {
+#spine #wsu-search button:hover::before {
 	color: #90979c;
 	}
 	
@@ -534,17 +534,20 @@ address[role="contact"],
 	}
 #spine #wsu-share li a {
 	display: block;
-	padding-top: .5em;
-	padding-bottom: .5em;
+	padding-top: .75em;
+	padding-bottom: .75em;
 	border-bottom: 1px #c3cbcf solid;
+	}
+#spine #wsu-share li a span {
+	display: none;
 	}
 #spine #wsu-share ul li:last-of-type a  {
 	border-bottom: none;
 	}
+
 #spine #wsu-share li a:hover {
 	color: white;
 	background: #434d53;
-	padding-top: .5em;
 	padding-left: 2em;
 	padding-right: 2em;
 	margin: -1px -2em 1px -2em;
@@ -552,25 +555,23 @@ address[role="contact"],
 #spine #wsu-share li a:active {
 	background: #981e32;
 	}
-#spine #wsu-actions #wsu-share li a:hover i {
+#spine #wsu-share li a:hover {
 	color: white;
 	}
-#wsu-share i.wsu-icon {
+#wsu-share li a::before {
+	font-family: "Iconography" !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	width: 1.8em;
 	display: inline-block;
 	text-align: center;
 	}
-#wsu-share i.wsu-icon:before {
-	font-family: "Iconography" !important;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	}
-#wsu-share li.by-facebook i.wsu-icon:before { content: "F"; }
-#wsu-share li.by-twitter i.wsu-icon:before { content: "T"; }
-#wsu-share li.by-email i.wsu-icon:before { content: "@"; }
-#wsu-share li.by-pinterest i.wsu-icon:before { content: "P"; }
-#wsu-share li.by-other i.wsu-icon:before { content: ""; display: none; }
-#wsu-share li.by-other i.wsu-icon { display: none; }
+#wsu-share li.by-facebook a::before { content: "F"; }
+#wsu-share li.by-twitter a::before { content: "T"; }
+#wsu-share li.by-email a::before { content: "@"; }
+#wsu-share li.by-pinterest a::before { content: "P"; }
+#wsu-share li.by-linkedin a::before { content: "L"; }
+#wsu-share li.by-other a::before { content: ""; display: none; }
 
 /* II.3.4 Print */
 
@@ -579,7 +580,7 @@ address[role="contact"],
 /* II.4.0 NAVIGATION -> Tag hierarchy
 --------------------------------------------------------------------------- */
 
-#spine nav#spine-sitenav {
+#spine #spine-sitenav {
 	margin: 10px 20px;
 	}
 #spine ul {
@@ -593,6 +594,9 @@ address[role="contact"],
 	border-style: solid;
 	border-color: #e7e9ea;
 	line-height: 1.1em;
+	}
+#spine nav ul li.parent > a {
+	padding-right: 15px;
 	}
 
 #spine nav ul li.parent.opened > a,
@@ -625,7 +629,7 @@ address[role="contact"],
 #spine nav ul li.parent.active li:last-child a {
 	padding-bottom: 8px;
 	}
-#spine nav#spine-sitenav > ul > li:nth-last-of-type(1) {
+#spine #spine-sitenav > ul > li:nth-last-of-type(1) {
 	border-bottom-width: 1px;
 	}
 #spine #wsu-search ::-webkit-input-placeholder {
@@ -642,12 +646,12 @@ address[role="contact"],
 }
 
 /* NAVIGATION -> Disclosure */
-#spine nav#spine-sitenav ul ul li {
+#spine #spine-sitenav ul ul li {
 	display: none;
 	line-height: 1.3em;
 	}
-#spine nav#spine-sitenav ul li.active > ul > li,
-#spine nav#spine-sitenav ul li.opened > ul > li {
+#spine #spine-sitenav ul li.active > ul > li,
+#spine #spine-sitenav ul li.opened > ul > li {
 	display: block;
 	}
 #spine #wsu-actions section {
@@ -661,31 +665,31 @@ address[role="contact"],
 	}
 
 /* NAVIGATION -> Home Icon */
-#spine nav#spine-sitenav:not(.homeless) > ul > li:first-of-type > a {
+#spine #spine-sitenav:not(.homeless) > ul > li:first-of-type > a {
 	padding-left: 1.4em;
 	background: transparent url('http://nbj.me/spine/1/1.0/icons/home-gray.svg') no-repeat left center;
 	background-size: 1em auto;
 	}
-#spine nav#spine-sitenav:not(.homeless) > ul > li.active:first-of-type > a,
-#spine nav#spine-sitenav:not(.homeless) > ul > li:first-of-type > a:hover,
-#spine nav#spine-sitenav:not(.homeless) > ul > li:first-of-type > a:before {
+#spine #spine-sitenav:not(.homeless) > ul > li.active:first-of-type > a,
+#spine #spine-sitenav:not(.homeless) > ul > li:first-of-type > a:hover,
+#spine #spine-sitenav:not(.homeless) > ul > li:first-of-type > a:before {
 	background: transparent url('http://nbj.me/spine/1/1.0/icons/home-crimson.svg') no-repeat left center;
 	background-size: 1em auto;
 	}
 	
 /* NAVIGATION -> Active, Current, "Dogeared" */
-#spine nav#spine-sitenav ul li:not(.parent).dogeared > a {
+#spine #spine-sitenav ul li:not(.parent).dogeared > a {
 	color: #981e32;
 	font-weight: bold;
 	}
-#spine nav#spine-sitenav ul li.parent.active > a {
-	xfont-weight: bold;
+#spine #spine-sitenav ul li.parent.active > a {
+	xxfont-weight: bold;
 	}
-#spine nav#spine-sitenav ul li.dogeared > a:hover {
+#spine #spine-sitenav ul li.dogeared > a:hover {
 	cursor: default;
 	}
-#spine nav#spine-sitenav ul li.parent.active > a:hover,
-#spine nav#spine-sitenav ul li.parent.dogeared > a:hover {
+#spine #spine-sitenav ul li.parent.active > a:hover,
+#spine #spine-sitenav ul li.parent.dogeared > a:hover {
 	color: #5e6a71;
 	cursor: default;
 	}
@@ -716,25 +720,25 @@ address[role="contact"],
 #spine-offsitenav {
 	margin: 20px 20px 0px 20px;
 	}
-#spine nav#spine-offsitenav ul li {
+#spine #spine-offsitenav ul li {
 	border: none;
 	line-height: 1.3em;
 	}
-#spine nav#spine-offsitenav ul li a {
+#spine #spine-offsitenav ul li a {
 	text-transform: none;
 	padding: 4px 0px;
 	color: #B4BABD;
 	}
-#spine nav#spine-offsitenav ul li a:hover {
+#spine #spine-offsitenav ul li a:hover {
 	color: #8b9399;
 	}
-#spine nav#spine-offsitenav ul li a i {
+#spine #spine-offsitenav ul li a i {
 	display: none;
 	}
-#spine nav#spine-offsitenav ul li a:hover i {
+#spine #spine-offsitenav ul li a:hover i {
 	display: inline;
 	}
-#spine nav#spine-sitenav a.external:hover:after {
+#spine #spine-sitenav a.external:hover:after {
 	font-family: "Iconography";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -844,9 +848,10 @@ nav#wsu-global-links ul li {
 	display: table-cell;
 	text-transform: uppercase;
 	text-align: left;
-	width: 29%;
 	}
-nav#wsu-global-links ul li:nth-of-type(1) { text-align: left; width: 22%; }
+nav#wsu-global-links ul li:nth-of-type(1) { text-align: left; width: 29%; }
+nav#wsu-global-links ul li:nth-of-type(2) { text-align: left; width: 31%; }
+nav#wsu-global-links ul li:nth-of-type(3) { text-align: left; width: 30%; }
 
 nav#wsu-global-links ul li:nth-of-type(4) {
 	text-align: right;
@@ -903,23 +908,23 @@ main {
 #spine.lightest footer small,
 #spine.lightest footer small a {
 	color: #babfc2; }
-#spine.lightest nav#spine-sitenav ul li,
-#spine.lightest nav#spine-offsitenav ul li,
+#spine.lightest #spine-sitenav ul li,
+#spine.lightest #spine-offsitenav ul li,
 #spine.lightest #wsu-global-links {
 	border-color: #babfc2; }
 #spine.lightest #wsu-actions li#wsu-tab-search.opened button,
 #spine.lightest #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.lightest nav#spine-offsitenav ul li a {
+#spine.lightest #spine-offsitenav ul li a {
 	color: #8b9399; }
 #spine.lightest #wsu-actions li button:hover,
 #spine.lightest #wsu-actions li#wsu-tab-search button:hover,
 #spine.lightest #wsu-actions li#wsu-tab-search button,
-#spine.lightest nav#spine-sitenav ul li a,
-#spine.lightest nav#spine-offsitenav ul li a:hover,
+#spine.lightest #spine-sitenav ul li a,
+#spine.lightest #spine-offsitenav ul li a:hover,
 #spine.lightest #wsu-global-links ul li a:hover {
 	color: #5e6a71; } 
-#spine.lightest nav#spine-sitenav ul li a:hover,
-#spine.lightest nav#spine-sitenav ul li.dogeared > a {
+#spine.lightest #spine-sitenav ul li a:hover,
+#spine.lightest #spine-sitenav ul li.dogeared > a {
 	color: #981e32; }
 #spine.lightest #wsu-actions li.opened,
 #spine.lightest #wsu-actions li.opened:hover,
@@ -931,10 +936,10 @@ main {
 #spine.lighter, #spine.lighter #glue > header, #spine.lighter.bleed::before { background: #babfc2; }
 #spine.lighter #wsu-signature {
 	background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-darkestlogotype.svg') }
-#spine.lighter:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.lighter:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-darker.svg') }
-#spine.lighter:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
-#spine.lighter:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
+#spine.lighter:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+#spine.lighter:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-crimson.svg') }
 #spine.lighter #wsu-actions li#wsu-tab-search.opened button {
 	color: #babfc2; }
@@ -946,34 +951,34 @@ main {
 #spine.lighter footer small,
 #spine.lighter footer small a {
 	color: #8b9399; }
-#spine.lighter nav#spine-sitenav ul li,
-#spine.lighter nav#spine-offsitenav ul li,
+#spine.lighter #spine-sitenav ul li,
+#spine.lighter #spine-offsitenav ul li,
 #spine.lighter #wsu-global-links {
 	border-color: #8b9399; }
 #spine.lighter #wsu-actions li#wsu-tab-search button,
 #spine.lighter #wsu-actions li#wsu-tab-search.opened button,
 #spine.lighter #wsu-actions li button:hover,
 #spine.lighter #wsu-global-links ul li a,
-#spine.lighter nav#spine-offsitenav ul li a,
+#spine.lighter #spine-offsitenav ul li a,
 #spine.lighter #wsu-social-channels ul li a:hover {
 	color: #5e6a71; }
-#spine.lighter nav#spine-sitenav ul li a,
+#spine.lighter #spine-sitenav ul li a,
 #spine.lighter #wsu-global-links ul li a:hover,
-#spine.lighter nav#spine-offsitenav ul li a:hover {
+#spine.lighter #spine-offsitenav ul li a:hover {
 	color: #384044; } 
 #spine.lighter #wsu-actions li#wsu-tab-search button:hover {
 	color: #384044; }
-#spine.lighter nav#spine-sitenav ul li a:hover,
-#spine.lighter nav#spine-sitenav ul li.dogeared > a {
+#spine.lighter #spine-sitenav ul li a:hover,
+#spine.lighter #spine-sitenav ul li.dogeared > a {
 	color: #981e32; }
 
 /* LIGHT #8b9399, rgb(139,147,153) */
 #spine.light, #spine.light #glue > header, #spine.light.bleed::before { background: #8b9399; }
 #spine.light #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype.svg') }
-#spine.light:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.light:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
-#spine.light:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
+#spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+#spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.light #wsu-actions li.opened button,
 #spine.light #wsu-actions li#wsu-tab-search.opened button {
@@ -983,16 +988,16 @@ main {
 #spine.light #wsu-actions li#wsu-tab-search.opened button:hover,
 #spine.light #wsu-social-channels ul li a {
 	color: #babfc2; }
-#spine.light nav#spine-sitenav ul li,
-#spine.light nav#spine-offsitenav ul li,
+#spine.light #spine-sitenav ul li,
+#spine.light #spine-offsitenav ul li,
 #spine.light #wsu-global-links {
 	border-color: #babfc2; }
-#spine.light nav#spine-offsitenav ul li a,
+#spine.light #spine-offsitenav ul li a,
 #spine.light #wsu-global-links ul li a,
 #spine.light footer small a {
 	color: #babfc2; }
-#spine.light nav#spine-sitenav ul li a,
-#spine.light nav#spine-offsitenav ul li a:hover,
+#spine.light #spine-sitenav ul li a,
+#spine.light #spine-offsitenav ul li a:hover,
 #spine.light #wsu-global-links ul li a:hover {
 	color: #e6e8e9; }
 #spine.light #wsu-actions li#wsu-tab-search button,
@@ -1000,17 +1005,17 @@ main {
 	color: #e6e8e9; }
 #spine.light #wsu-actions li#wsu-tab-search button:hover {
 	color: white; }
-#spine.light nav#spine-sitenav ul li a:hover,
-#spine.light nav#spine-sitenav ul li.dogeared > a {
+#spine.light #spine-sitenav ul li a:hover,
+#spine.light #spine-sitenav ul li.dogeared > a {
 	color: white; }
 
 /* GRAY #5e6a71, rgb(94,106,113) */
 #spine.gray, #spine.gray #glue > header, #spine.gray.bleed::before { background: #5e6a71; }
 #spine.gray #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-darkerchevron.svg'); }
-#spine.gray:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.gray:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
-#spine.gray:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
+#spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+#spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.gray #wsu-actions li.opened button,
 #spine.gray #wsu-actions li#wsu-tab-search.opened button {
@@ -1024,14 +1029,14 @@ main {
 	color: #424a4f; }
 #spine.gray #wsu-global-links ul li a {
 	color: #8b9399; }
-#spine.gray nav#spine-sitenav ul li,
-#spine.gray nav#spine-offsitenav ul li,
+#spine.gray #spine-sitenav ul li,
+#spine.gray #spine-offsitenav ul li,
 #spine.gray #wsu-global-links {
 	border-color: #424a4f; }
-#spine.gray nav#spine-sitenav ul li a,
-#spine.gray nav#spine-offsitenav ul li a:hover {
+#spine.gray #spine-sitenav ul li a,
+#spine.gray #spine-offsitenav ul li a:hover {
 	color: #e6e8e9; }
-#spine.gray nav#spine-offsitenav ul li a,
+#spine.gray #spine-offsitenav ul li a,
 #spine.gray #wsu-global-links ul li a:hover {
 	color: #babfc2; }
 #spine.gray #wsu-actions li button:hover,
@@ -1039,8 +1044,8 @@ main {
 	color: #262a2d; }
 #spine.gray #wsu-social-channels ul li.facebook-channel a:hover {
 	color: #eeeff4;	}
-#spine.gray nav#spine-sitenav ul li a:hover,
-#spine.gray nav#spine-sitenav ul li.dogeared > a {
+#spine.gray #spine-sitenav ul li a:hover,
+#spine.gray #spine-sitenav ul li.dogeared > a {
 	color: white; }
 #spine.gray #wsu-actions li#wsu-tab-search button:hover {
 	color: black; }
@@ -1048,10 +1053,10 @@ main {
 /* GRAY-DARK #383D42, rgb(75,85,90) */
 #spine.dark, #spine.dark #glue > header, #spine.dark.bleed::before { background: #383D42; }
 #spine.dark #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-lightchevron.svg'); }
-#spine.dark:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.dark:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.dark:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
-#spine.dark:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
+#spine.dark:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+#spine.dark:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.dark #wsu-actions li.opened button,
 #spine.dark #wsu-actions li#wsu-tab-search.opened button {
@@ -1064,21 +1069,21 @@ main {
 #spine.dark footer small,
 #spine.dark footer small a {
 	color: #8b9399; }
-#spine.dark nav#spine-sitenav ul li,
-#spine.dark nav#spine-offsitenav ul li,
+#spine.dark #spine-sitenav ul li,
+#spine.dark #spine-offsitenav ul li,
 #spine.dark #wsu-global-links {
 	border-color: #8b9399; }
-#spine.dark nav#spine-offsitenav ul li a,
+#spine.dark #spine-offsitenav ul li a,
 #spine.dark #wsu-global-links ul li a:hover {
 	color: #babfc2; }
 #spine.dark #wsu-actions li#wsu-tab-search button,
-#spine.dark nav#spine-sitenav ul li a,
-#spine.dark nav#spine-offsitenav ul li a:hover {
+#spine.dark #spine-sitenav ul li a,
+#spine.dark #spine-offsitenav ul li a:hover {
 	color: #e6e8e9; }
 #spine.dark #wsu-social-channels ul li.facebook-channel a:hover {
 	color: #eeeff4;	}
-#spine.dark nav#spine-sitenav ul li a:hover,
-#spine.dark nav#spine-sitenav ul li.dogeared > a,
+#spine.dark #spine-sitenav ul li a:hover,
+#spine.dark #spine-sitenav ul li.dogeared > a,
 #spine.dark #wsu-actions li button:hover,
 #spine.dark #wsu-actions li#wsu-tab-search button:hover {
 	color: white; }
@@ -1086,10 +1091,10 @@ main {
 /* GRAY-DARKER #384044 #424a4f #212426, rgb(56,64,68) */
 #spine.darker, #spine.darker #glue > header, #spine.darker.bleed::before { background: #212426; }
 #spine.darker #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-graychevron.svg'); }
-#spine.darker:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lightest.svg') }
-#spine.darker:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
-#spine.darker:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
+#spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+#spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg') }
 #spine.darker #wsu-actions li.opened button,
 #spine.darker #wsu-actions li#wsu-tab-search.opened button {
@@ -1102,19 +1107,19 @@ main {
 #spine.darker footer small,
 #spine.darker footer small a {
 	color: #5e6a71; }
-#spine.darker nav#spine-sitenav ul li,
-#spine.darker nav#spine-offsitenav ul li,
+#spine.darker #spine-sitenav ul li,
+#spine.darker #spine-offsitenav ul li,
 #spine.darker #wsu-global-links {
 	border-color: #5e6a71; }
-#spine.darker nav#spine-offsitenav ul li a,
+#spine.darker #spine-offsitenav ul li a,
 #spine.darker #wsu-global-links ul li a:hover {
 	color: #8b9399; }
 #spine.darker #wsu-actions li#wsu-tab-search button,
-#spine.darker nav#spine-sitenav ul li a,
-#spine.darker nav#spine-offsitenav ul li a:hover {
+#spine.darker #spine-sitenav ul li a,
+#spine.darker #spine-offsitenav ul li a:hover {
 	color: #babfc2; }
-#spine.darker nav#spine-sitenav ul li a:hover,
-#spine.darker nav#spine-sitenav ul li.dogeared > a,
+#spine.darker #spine-sitenav ul li a:hover,
+#spine.darker #spine-sitenav ul li.dogeared > a,
 #spine.darker #wsu-actions li button:hover,
 #spine.darker #wsu-actions li#wsu-tab-search button:hover {
 	color: white; }
@@ -1122,10 +1127,10 @@ main {
 /* GRAY-DARKEST #000 */
 #spine.darkest, #spine.darkest #glue > header, #spine.darkest.bleed::before { background: black; }
 #spine.darkest #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-whitelogotype-darkchevron.svg'); }
-#spine.darkest:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lighter.svg') }
-#spine.darkest:not(.homeless) nav#spine-sitenav > ul > li:first-child a:before,
-#spine.darkest:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover {
+#spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+#spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-crimson.svg') }
 #spine.darkest #wsu-actions li.opened button,
 #spine.darkest #wsu-actions li#wsu-tab-search.opened button {
@@ -1138,32 +1143,32 @@ main {
 #spine.darkest footer small,
 #spine.darkest footer small a {
 	color: #4b555a; }
-#spine.darkest nav#spine-sitenav ul li,
-#spine.darkest nav#spine-offsitenav ul li,
+#spine.darkest #spine-sitenav ul li,
+#spine.darkest #spine-offsitenav ul li,
 #spine.darkest #wsu-global-links {
 	border-color: #4b555a; }
-#spine.darkest nav#spine-offsitenav ul li a {
+#spine.darkest #spine-offsitenav ul li a {
 	color: #5e6a71; }
 #spine.darkest #wsu-actions li#wsu-tab-search button,
-#spine.darkest nav#spine-offsitenav ul li a:hover,
+#spine.darkest #spine-offsitenav ul li a:hover,
 #spine.darkest #wsu-global-links ul li a:hover,
 #spine.darkest #wsu-actions li button:hover {
 	color: #8b9399; }
-#spine.darkest nav#spine-sitenav ul li a,
+#spine.darkest #spine-sitenav ul li a,
 #spine.darkest #wsu-actions li#wsu-tab-search button:hover {
 	color: #babfc2; }
-#spine.darkest nav#spine-sitenav ul li a:hover,
-#spine.darkest nav#spine-sitenav ul li.dogeared > a {
+#spine.darkest #spine-sitenav ul li a:hover,
+#spine.darkest #spine-sitenav ul li.dogeared > a {
 	color: #981e32; }
 	
 /* CRIMSON #981e32 */
 #spine.crimson, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed::before { background-color: #981e32; }
 #spine.crimson #wsu-signature { background-image: url('http://nbj.me/spine/1/1.0/marks/sig-vertical-white.svg'); }
-#spine.crimson:not(.homeless) nav#spine-sitenav > ul > li:first-child a {
+#spine.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	color: #b6bcbf;
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-gray-lighter.svg') }
-#spine.crimson:not(.homeless) nav#spine-sitenav > ul > li:first-child a:hover,
-#spine.crimson nav#spine-sitenav > ul > li:first-child a:before {
+#spine.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a:hover,
+#spine.crimson #spine-sitenav > ul > li:first-child a:before {
 	color: white;
 	background-image: url('http://nbj.me/spine/1/1.0/icons/home-white.svg'); }
 #spine.crimson #wsu-actions li button { color: #490e18; }
@@ -1173,33 +1178,32 @@ main {
 	color: #37141a; }
 #spine.crimson #wsu-actions li#wsu-tab-search button:hover {
 	color: black; }
-#spine.crimson nav#spine-sitenav ul li,
-#spine.crimson nav#spine-offsitenav ul li,
+#spine.crimson #spine-sitenav ul li,
+#spine.crimson #spine-offsitenav ul li,
 #spine.crimson nav#wsu-global-links {
 	border-color: #6b1523; }
-#spine.crimson nav#spine-sitenav ul li a {
+#spine.crimson #spine-sitenav ul li a {
 	color: #b6bcbf; }
-#spine.crimson nav#spine-sitenav ul li a:hover {
+#spine.crimson #spine-sitenav ul li a:hover {
 	color: #e7e9ea; }
-#spine.crimson nav#spine-sitenav ul li.active.parent > a {
+#spine.crimson #spine-sitenav ul li.active.parent > a {
 	color: white; }
-#spine.crimson nav#spine-offsitenav ul li a {
+#spine.crimson #spine-offsitenav ul li a {
 	color: #3d0c14; }
 #spine.crimson #wsu-social-channels ul li a {
 	color: #490e18; }
 #spine.crimson #wsu-global-links ul li a { color: black; }
 #spine.crimson #wsu-global-links ul li a:hover,
 #spine.crimson #wsu-social-channels ul li a:hover,
-#spine.crimson nav#spine-offsitenav ul li a:hover {
+#spine.crimson #spine-offsitenav ul li a:hover {
 	color: black; }
 #spine.crimson footer small,
 #spine.crimson footer small a {
 	color: #490e18; }
-#spine.crimson nav#spine-sitenav ul li a:hover,
-#spine.crimson nav#spine-sitenav ul li.dogeared > a {
+#spine.crimson #spine-sitenav ul li a:hover,
+#spine.crimson #spine-sitenav ul li.dogeared > a {
 	color: white; }
 
 /* Transparent */
 #spine.velum, #spine.velum.bleed::before { background: rgba(255,255,255,0.9); }
-.small #spine.velum, .medium #spine.velum.bleed::before, .small #spine.velum header,
-.medium #spine.velum, .medium #spine.velum.bleed::before, .medium #spine.velum header { background: white; }
+.size-lt-large #spine.velum header, .size-lt-large #spine.velum.bleed::before { background: rgba(255,255,255,0.9); }
