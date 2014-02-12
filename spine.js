@@ -133,11 +133,14 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Cache the wsu-actions selector
 		var $wsu_actions = $('#wsu-actions');
 
+		// Cache the spine selector.
+		var $spine = $('#spine');
+
 		$("#spine #glue > header").append('<button id="shelve"></button>');
 		$("#shelve").click(function() {
 			// var body_height = $('body').height();
 			// $('#spine.unshelved').css('height',body_height);
-			$('#spine').toggleClass('unshelved shelved');
+			$spine.toggleClass('unshelved shelved');
 		});
 		
 		// ADD TOOLS
@@ -277,9 +280,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$(document).scroll(function() {
 			var top = $(document).scrollTop();
 			if (top > 49) {
-				$('#spine').not('.unshelved').addClass('scanned'); 
+				$spine.not('.unshelved').addClass('scanned');
 			} else { 
-				$('#spine').removeClass('scanned');
+				$spine.removeClass('scanned');
 			} 
 		});
 	
@@ -322,8 +325,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			{ container.toggleClass('shelved unshelved'); }
 		}); */
 		$('main').on('click swipeleft', function() {
-			if ( $('#spine').hasClass('unshelved') ) {
-				$('#spine').toggleClass('shelved unshelved');
+			if ( $spine.hasClass('unshelved') ) {
+				$spine.toggleClass('shelved unshelved');
 			};
 		});
 	
@@ -334,9 +337,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			var spineHeight = $("#glue").height();
 			//$('main').prepend(footerHeight);
 			if ( windowHeight < spineHeight ) {
-				$("#spine").removeClass("uncracked").addClass("cracked");
+				$spine.removeClass("uncracked").addClass("cracked");
 			} else { 
-				$("#spine").removeClass("cracked").addClass("uncracked");
+				$spine.removeClass("cracked").addClass("uncracked");
 			}
 		});
 	
