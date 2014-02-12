@@ -221,6 +221,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				$('#spine section#wsu-search input').focus();
 			} else if ( 'wsu-contact-tab' === this.id ) {
 				$('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
+			} else if ( 'wsu-print-tab' === this.id ) {
+				print();
 			}
 		});
 
@@ -238,7 +240,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		/* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
 		function print(e) {
-			e.preventDefault();
+			if ( undefined !== e ) {
+				e.preventDefault();
+			}
 			$('#wsu-actions *.opened').toggleClass('opened closed');
 			$('html').toggleClass('print');
 			$("#spine header").prepend(print_controls);
@@ -247,8 +251,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$("#print-cancel").on("click",print_cancel);
 			setTimeout(function() { printPage(); }, 400);
 		}
-
-		$("#wsu-print-tab button").click(print);
 		
 		// Shut a tool section
 		$("button.shut").on("click",function(e) {
