@@ -150,13 +150,14 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		// Section -> Search
 		if (!$wsu_search.length) {
-		var search  = '<section id="wsu-search" class="tools closed" data-default="site-search">';
-			search += '		<form id="default-search">';
-			search += '			<input name="term" type="text" value="" placeholder="search">'
-			search += '			<button>Submit</button>';
-			search += '		</form>';
-			search += '</section>';
-		$wsu_actions.append(search);
+			var search  = '<section id="wsu-search" class="tools closed" data-default="site-search">';
+				search += '		<form id="default-search">';
+				search += '			<input name="term" type="text" value="" placeholder="search">'
+				search += '			<button>Submit</button>';
+				search += '		</form>';
+				search += '</section>';
+
+			$wsu_actions.append(search);
 		} // End Search Generation
 
 		// Section -> Share
