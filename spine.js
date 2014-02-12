@@ -219,14 +219,14 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$('#wsu-actions-tabs' ).on('click', 'li', function(e) {
 			e.preventDefault();
 			if ( 'wsu-share-tab' === this.id ) {
-				$wsu_actions.find('.opened').toggleClass('opened closed');
-				$('#wsu-share,#wsu-share-tab').toggleClass('opened closed');
+				$wsu_actions.find('li .opened').toggleClass('opened closed');
+				$('#wsu-share,#wsu-share-tab' ).toggleClass('opened closed' );
 			} else if ( 'wsu-search-tab' === this.id ) {
-				$wsu_actions.find('.opened').toggleClass('opened closed');
+				$wsu_actions.find('li .opened').toggleClass('opened closed');
 				$('#wsu-search,#wsu-search-tab').toggleClass('opened closed');
 				$spine.find('#wsu-search input').focus();
 			} else if ( 'wsu-contact-tab' === this.id ) {
-				$wsu_actions.find('.opened').toggleClass('opened closed');
+				$wsu_actions.find('li .opened').toggleClass('opened closed');
 				$('#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
 			} else if ( 'wsu-print-tab' === this.id ) {
 				print();
