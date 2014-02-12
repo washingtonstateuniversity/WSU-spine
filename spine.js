@@ -130,6 +130,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 	}	
 
 	$(document).ready(function(){
+		// Cache the wsu-actions selector
+		var $wsu_actions = $('#wsu-actions');
+
 		$("#spine #glue > header").append('<button id="shelve"></button>');
 		$("#shelve").click(function() {
 			// var body_height = $('body').height();
@@ -147,7 +150,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			search += '			<button>Submit</button>';
 			search += '		</form>';
 			search += '</section>';
-		$("#wsu-actions").append(search);
+		$wsu_actions.append(search);
 		} // End Search Generation
 	     
 		// Section -> Share
@@ -163,7 +166,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		    share += '	</ul>';
 		    share += '</section>';
 				
-		if (!$("#wsu-share").length) { $("#wsu-actions").append(share); }
+		if (!$("#wsu-share").length) {
+			$wsu_actions.append(share);
+		}
 		
 		// Section -> Contact
 		if (!$("#wsu-contact").length) {
@@ -198,7 +203,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			contact += '</address>';
 			contact += '</section>';
 				
-		 $("#wsu-actions").append(contact);
+		 $wsu_actions.append(contact);
 		 } // End Contact Generation
 		
 		// Tools tabs
@@ -240,7 +245,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Shut a tool section
 		$("button.shut").on("click",function(e) {
 			e.preventDefault();
-			$('#wsu-actions').find('.opened').toggleClass('opened closed');
+			$wsu_actions.find('.opened').toggleClass('opened closed');
 		});
 		
 		// Submit search
