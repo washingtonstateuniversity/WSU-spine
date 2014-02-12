@@ -142,9 +142,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			// $('#spine.unshelved').css('height',body_height);
 			$spine.toggleClass('unshelved shelved');
 		});
-		
+
 		// ADD TOOLS
-		
+
 		// Section -> Search
 		if (!$("#wsu-search").length) {
 		var search  = '<section id="wsu-search" class="tools closed" data-default="site-search">';
@@ -155,19 +155,19 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			search += '</section>';
 		$wsu_actions.append(search);
 		} // End Search Generation
-	     
+
 		// Section -> Share
 		var share  = '<section id="wsu-share" class="tools closed">';
-		    // share += '<button id="shut-share" class="shut">Close</button>';
-		    share += '	<ul>';
-		    share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook">Facebook</a></li>';
-		    share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter">Twitter</a></li>';
-		    share += '		<li class="by-email"><a href="#" class="addthis_button_email">Email</a></li>';
-		    share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_gplus">Google Plus</a></li>-->';
-		    share += '		<li class="by-linkedin"><a href="#" class="addthis_button_linkedin">LinkedIn</a></li>';
-		    share += '		<!--<li class="by-other"><a href="#" class="addthis_button_compact">More Options ...</a></li>-->';
-		    share += '	</ul>';
-		    share += '</section>';
+			// share += '<button id="shut-share" class="shut">Close</button>';
+			share += '	<ul>';
+			share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook">Facebook</a></li>';
+			share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter">Twitter</a></li>';
+			share += '		<li class="by-email"><a href="#" class="addthis_button_email">Email</a></li>';
+			share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_gplus">Google Plus</a></li>-->';
+			share += '		<li class="by-linkedin"><a href="#" class="addthis_button_linkedin">LinkedIn</a></li>';
+			share += '		<!--<li class="by-other"><a href="#" class="addthis_button_compact">More Options ...</a></li>-->';
+			share += '	</ul>';
+			share += '</section>';
 				
 		if (!$("#wsu-share").length) {
 			$wsu_actions.append(share);
@@ -176,43 +176,44 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Section -> Contact
 		if (!$("#wsu-contact").length) {
 		
-		// Can we loop through instead and set these on the fly?
-		var name = $('meta[itemprop="name"]').attr('content');
-		var department = $('meta[itemprop="department"]').attr('content');
-		var url = $('meta[itemprop="url"]').attr('content');
-		var streetAddress = $('meta[itemprop="streetAddress"]').attr('content');
-		var addressLocality = $('meta[itemprop="addressLocality"]').attr('content');
-		var postalCode = $('meta[itemprop="postalCode"]').attr('content');
-		var telephone = $('meta[itemprop="telephone"]').attr('content');
-		var email = $('meta[itemprop="email"]').attr('content');
-		var ContactPointTitle = $('meta[itemprop="ContactPoint"]').attr('title');
-		var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
+			// Can we loop through instead and set these on the fly?
+			var name = $('meta[itemprop="name"]').attr('content');
+			var department = $('meta[itemprop="department"]').attr('content');
+			var url = $('meta[itemprop="url"]').attr('content');
+			var streetAddress = $('meta[itemprop="streetAddress"]').attr('content');
+			var addressLocality = $('meta[itemprop="addressLocality"]').attr('content');
+			var postalCode = $('meta[itemprop="postalCode"]').attr('content');
+			var telephone = $('meta[itemprop="telephone"]').attr('content');
+			var email = $('meta[itemprop="email"]').attr('content');
+			var ContactPointTitle = $('meta[itemprop="ContactPoint"]').attr('title');
+			var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
 		
-		// We'll get to building these from declarations in the template
-		var contact  = '<section id="wsu-contact" class="tools closed">';
-		    // contact += '<button id="shut-contact" class="shut">Close</button>';
-		    contact += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
-		    contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
-		    contact += '	<div class="organization-name">'+name+'</div>';
-		    contact += '	<div class="address">';
-			contact += '		<div class="street-address">'+streetAddress+'</div>';
-			contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>'
-			contact += '	</div>';
-			contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
-			contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
+			// We'll get to building these from declarations in the template
+			var contact  = '<section id="wsu-contact" class="tools closed">';
+				// contact += '<button id="shut-contact" class="shut">Close</button>';
+				contact += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
+				contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
+				contact += '	<div class="organization-name">'+name+'</div>';
+				contact += '	<div class="address">';
+				contact += '		<div class="street-address">'+streetAddress+'</div>';
+				contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>'
+				contact += '	</div>';
+				contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
+				contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
+
 			if (typeof ContactPoint != 'undefined') {
 				contact += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
-				}
-			contact += '</address>';
-			contact += '</section>';
+			}
+
+				contact += '</address>';
+				contact += '</section>';
 				
-		 $wsu_actions.append(contact);
-		 } // End Contact Generation
+			$wsu_actions.append(contact);
+		} // End Contact Generation
 		
 		// Tools tabs
 		$('#wsu-actions-tabs' ).on('click', 'li', function(e) {
 			e.preventDefault();
-
 			if ( 'wsu-share-tab' === this.id ) {
 				$('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
 			} else if ( 'wsu-search-tab' === this.id ) {
@@ -225,13 +226,16 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		// Print & Print View
 		var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
+
 		function printPage(){
 			window.print();
-			}
+		}
+
 		function print_cancel() {
 			$('html').toggleClass('print');
 			$('.print-controls').remove();
-			}
+		}
+
 		/* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
 		function print(e) {
 			e.preventDefault();
@@ -242,7 +246,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$("#print-invoke").on("click",function() { window.print(); });
 			$("#print-cancel").on("click",print_cancel);
 			setTimeout(function() { printPage(); }, 400);
-			}
+		}
+
 		$("#wsu-print-tab button").click(print);
 		
 		// Shut a tool section
@@ -275,7 +280,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			return false;
 		});
 
-	
 		// Fixed/Sticky Horizontal Header
 		$(document).scroll(function() {
 			var top = $(document).scrollTop();
@@ -285,7 +289,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				$spine.removeClass('scanned');
 			} 
 		});
-	
+
 		// NAVIGATION
 		// Tag location and hierarchy
 		$("#spine nav ul,#spine ul").parents("li").addClass("parent");
@@ -298,26 +302,26 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			e.preventDefault();
 			$(this).parent("li").siblings().removeClass("opened");
 			$(this).parent("li").toggleClass("opened");
-		  });
+		});
 		
 		// Couplets
 		$("#spine nav li.parent > a").each( function() {
 			var title = 'Overview';
-	        if ($(this).attr('title')) {
-                var alt = $(this).attr('title').length;
-                if ( alt > 0 ) { title = $(this).attr('title'); }
-	        }
-	        if ($(this).closest('.parent').hasClass('dogeared')) {
-	        	var classes = "overview dogeared";
-	        } else {
-	        	var classes = "overview";
-	        }
-	        var url = $(this).attr("href");
-	        if ( url != '#' ) {
-	        	$(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
-	        }
-			});
-	
+			if ($(this).attr('title')) {
+				var alt = $(this).attr('title').length;
+				if ( alt > 0 ) { title = $(this).attr('title'); }
+			}
+			if ($(this).closest('.parent').hasClass('dogeared')) {
+				var classes = "overview dogeared";
+			} else {
+				var classes = "overview";
+			}
+			var url = $(this).attr("href");
+			if ( url != '#' ) {
+				$(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
+			}
+		});
+
 		// Clicking Outside Spine Closes It
 		/* $(document).on('mouseup touchstart', function (e) {
 			var container = $("#spine.unshelved");
@@ -327,7 +331,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$('main').on('click swipeleft', function() {
 			if ( $spine.hasClass('unshelved') ) {
 				$spine.toggleClass('shelved unshelved');
-			};
+			}
 		});
 	
 		// Cracking the Spine for Short Windows
@@ -359,10 +363,13 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			var top = $(document).scrollTop();
 			var spineHeight = $("#glue").height();
 			var crack = spineHeight - windowHeight;
-			if ( top > crack ) { $('#spine.cracked').addClass('scrolled'); }
-			else { $('#spine.cracked').removeClass('scrolled'); }
+			if ( top > crack ) {
+				$('#spine.cracked').addClass('scrolled');
+			} else {
+				$('#spine.cracked').removeClass('scrolled');
+			}
 		}); 
-		
+
 		// Moving the Spine for Short Windows
 		/*$(document).scroll(function() {
 			var windowHeight = window.innerHeight;
@@ -378,82 +385,85 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			}
 		});*/
 	
-	// External Links in nav
-	// this shouldn't be done this way
-	$('nav#spine-sitenav a').filter(function() {
-	   return this.hostname && this.hostname !== location.hostname;
-	}).addClass("external");
+		// External Links in nav
+		// this shouldn't be done this way
+		$('nav#spine-sitenav a').filter(function() {
+		   return this.hostname && this.hostname !== location.hostname;
+		}).addClass("external");
 	
-	// Label #jacket with current window size
-	function sizing() {
-		var current_width = $(window).width();
-		if(current_width >= 1188)
-	      $('#jacket').removeClass().removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
-	    else if(current_width >= 990)
-	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
-	    else if(current_width < 990 && current_width >= 792)
-	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
-	    else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed')))
-	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
-	    else if(current_width < 792)
-	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
-	      else if(current_width < 396)
-	      $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
-		}
-	sizing();
-	$(window).resize(function(){ sizing(); });
-		
-	// Equalize Columns
-	function equalizing() {
-	if( $('.equalize').length ) {
-		$('.row.equalize').each(function(){  
-			var highestBox = 0;
-			$('.column', this).each(function(){
-				if($(this).height() > highestBox) {
-				   highestBox = $(this).height(); 
-				}
-			});  
-			$('.column',this).not('.unequaled').css('min-height',highestBox);
-			$('section.equalize .column',this).css('min-height','auto');
-		});
-	}
-	}
-	equalizing();
-	$(window).resize(function(){ equalizing(); });
-	
-	function mainheight() {
-		var main_top = $('main').offset().top;
-		var window_height = $(window).height();
-		if ($('#binder').hasClass('size-lt-large')) {
-			var main_height = window_height - 50;
-			} else {
-			var main_height = window_height;
+		// Label #jacket with current window size
+		function sizing() {
+			var current_width = $(window).width();
+			if(current_width >= 1188) {
+				$('#jacket').removeClass().removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
+			} else if(current_width >= 990) {
+				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
+			} else if(current_width < 990 && current_width >= 792) {
+				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
+			} else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
+				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
+			} else if(current_width < 792) {
+				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+			} else if(current_width < 396) {
+				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
 			}
-		$('main.fill-window-height').css('min-height',main_height);
-		};
-	mainheight();
-	$(window).resize(function(){ mainheight(); });
-	
-	$(window).on('load resize', function(){
-	// Only run function if an unbound element exists
-	if( $('.unbound').length ) {
-		var verso = $('main').offset().left;
-		var recto = $('main').offset().right;
-		// var recto = $(window).width() - ($('main').offset().left + $('main').width());
-		var spread = $(window).width();
-		var page = $('main').width();
-		var recto = spread - $('main').offset().left;
-		if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
-		
-		var verso_width = verso + $('main').width();
-		$('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
-		$('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
-		$('.unbound.verso.recto').css('width',spread);
-	}
-	});
+		}
+		sizing();
 
-	setup_search();
+		$(window).resize(function(){ sizing(); });
+
+		// Equalize Columns
+		function equalizing() {
+			if( $('.equalize').length ) {
+				$('.row.equalize').each(function(){
+					var highestBox = 0;
+					$('.column', this).each(function(){
+						if($(this).height() > highestBox) {
+						   highestBox = $(this).height();
+						}
+					});
+					$('.column',this).not('.unequaled').css('min-height',highestBox);
+					$('section.equalize .column',this).css('min-height','auto');
+				});
+			}
+		}
+		equalizing();
+
+		$(window).resize(function(){ equalizing(); });
 	
+		function mainheight() {
+			var main_top = $('main').offset().top;
+			var window_height = $(window).height();
+			if ($('#binder').hasClass('size-lt-large')) {
+				var main_height = window_height - 50;
+			} else {
+				var main_height = window_height;
+			}
+			$('main.fill-window-height').css('min-height',main_height);
+		}
+		mainheight();
+
+		$(window).resize(function(){ mainheight(); });
+	
+		$(window).on('load resize', function(){
+			// Only run function if an unbound element exists
+			if( $('.unbound').length ) {
+				var verso = $('main').offset().left;
+				var recto = $('main').offset().right;
+				// var recto = $(window).width() - ($('main').offset().left + $('main').width());
+				var spread = $(window).width();
+				var page = $('main').width();
+				var recto = spread - $('main').offset().left;
+				if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
+
+				var verso_width = verso + $('main').width();
+				$('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
+				$('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
+				$('.unbound.verso.recto').css('width',spread);
+			}
+		});
+
+		setup_search();
 
 	});
 })(jQuery);
