@@ -441,7 +441,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$(window).resize(function(){ equalizing(); });
 	
 		function mainheight() {
-			var main_top = $('main').offset().top;
+			//var main_top = $('main').offset().top;
 			var window_height = $(window).height();
 			if ($('#binder').hasClass('size-lt-large')) {
 				var main_height = window_height - 50;
