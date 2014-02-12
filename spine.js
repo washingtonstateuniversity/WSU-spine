@@ -446,17 +446,18 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$(window).resize(function(){ mainheight(); });
 	
 		$(window).on('load resize', function(){
+			var $main = $('main');
 			// Only run function if an unbound element exists
 			if( $('.unbound').length ) {
-				var verso = $('main').offset().left;
-				var recto = $('main').offset().right;
+				var verso = $main.offset().left;
+				var recto = $main.offset().right;
 				// var recto = $(window).width() - ($('main').offset().left + $('main').width());
 				var spread = $(window).width();
-				var page = $('main').width();
-				var recto = spread - $('main').offset().left;
+				var page = $main.width();
+				var recto = spread - $main.offset().left;
 				if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
 
-				var verso_width = verso + $('main').width();
+				var verso_width = verso + $main.width();
 				$('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
 				$('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
 				$('.unbound.verso.recto').css('width',spread);
