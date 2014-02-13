@@ -126,17 +126,13 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 	$(document).ready(function(){
 		// Cache the wsu-actions selector
-<<<<<<< HEAD
 		
 		var $current_url = window.location.href;
-=======
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 		var $wsu_actions = $('#wsu-actions');
 
 		// Cache the spine selector.
 		var $spine = $('#spine');
 
-<<<<<<< HEAD
 		// Cache Spine sections selectors.
 		var $wsu_search = $('#wsu-search');
 		var $wsu_contact = $('#wsu-contact');
@@ -144,15 +140,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		$("#glue > header").append('<button id="shelve"></button>');
 		$("#shelve").click(function() {
-=======
-		// Cache the wsu-search selector.
-		var $wsu_search = $('#wsu-search');
-
-		$("#glue > header").append('<button id="shelve"></button>');
-		$("#shelve").click(function() {
-			// var body_height = $('body').height();
-			// $('#spine.unshelved').css('height',body_height);
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 			$spine.toggleClass('unshelved shelved');
 		});
 
@@ -160,7 +147,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		// Section -> Search
 		if (!$wsu_search.length) {
-<<<<<<< HEAD
 		var search  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
 			search += '		<form id="default-search">';
 			search += '			<input name="term" type="text" value="" placeholder="search">'
@@ -191,38 +177,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Section -> Contact
 		if (!$("#wsu-contact").length) {
 
-=======
-			var search  = '<section id="wsu-search" class="tools closed" data-default="site-search">';
-				search += '		<form id="default-search">';
-				search += '			<input name="term" type="text" value="" placeholder="search">'
-				search += '			<button>Submit</button>';
-				search += '		</form>';
-				search += '</section>';
-
-			$wsu_actions.append(search);
-		} // End Search Generation
-
-		// Section -> Share
-		var share  = '<section id="wsu-share" class="tools closed">';
-			// share += '<button id="shut-share" class="shut">Close</button>';
-			share += '	<ul>';
-			share += '		<li class="by-facebook"><a href="#" class="addthis_button_facebook">Facebook</a></li>';
-			share += '		<li class="by-twitter"><a href="#" class="addthis_button_twitter">Twitter</a></li>';
-			share += '		<li class="by-email"><a href="#" class="addthis_button_email">Email</a></li>';
-			share += '		<!--<li class="by-gmail"><a href="#" class="addthis_button_gplus">Google Plus</a></li>-->';
-			share += '		<li class="by-linkedin"><a href="#" class="addthis_button_linkedin">LinkedIn</a></li>';
-			share += '		<!--<li class="by-other"><a href="#" class="addthis_button_compact">More Options ...</a></li>-->';
-			share += '	</ul>';
-			share += '</section>';
-				
-		if (!$("#wsu-share").length) {
-			$wsu_actions.append(share);
-		}
-		
-		// Section -> Contact
-		if (!$("#wsu-contact").length) {
-		
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 			// Can we loop through instead and set these on the fly?
 			var name = $('meta[itemprop="name"]').attr('content');
 			var department = $('meta[itemprop="department"]').attr('content');
@@ -234,15 +188,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			var email = $('meta[itemprop="email"]').attr('content');
 			var ContactPointTitle = $('meta[itemprop="ContactPoint"]').attr('title');
 			var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
-<<<<<<< HEAD
 
 			// We'll get to building these from declarations in the template
 			var contact  = '<section id="wsu-contact" class="spine-contact tools closed">';
-=======
-		
-			// We'll get to building these from declarations in the template
-			var contact  = '<section id="wsu-contact" class="tools closed">';
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 				// contact += '<button id="shut-contact" class="shut">Close</button>';
 				contact += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
 				contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
@@ -260,11 +208,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 				contact += '</address>';
 				contact += '</section>';
-<<<<<<< HEAD
 
-=======
-				
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 			$wsu_actions.append(contact);
 		} // End Contact Generation
 
@@ -272,7 +216,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		$('#wsu-actions-tabs' ).on('click', 'li', function(e) {
 			e.preventDefault();
 			if ( 'wsu-share-tab' === this.id ) {
-<<<<<<< HEAD
 				$wsu_actions.find('.opened').toggleClass('opened closed');
 				$('#wsu-share,#wsu-share-tab').toggleClass('opened closed');
 			} else if ( 'wsu-search-tab' === this.id ) {
@@ -281,16 +224,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				$spine.find('#wsu-search input').focus();
 			} else if ( 'wsu-contact-tab' === this.id ) {
 				$wsu_actions.find('.opened').toggleClass('opened closed');
-=======
-				$wsu_actions.find('li .opened').toggleClass('opened closed');
-				$('#wsu-share,#wsu-share-tab' ).toggleClass('opened closed' );
-			} else if ( 'wsu-search-tab' === this.id ) {
-				$wsu_actions.find('li .opened').toggleClass('opened closed');
-				$('#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-				$spine.find('#wsu-search input').focus();
-			} else if ( 'wsu-contact-tab' === this.id ) {
-				$wsu_actions.find('li .opened').toggleClass('opened closed');
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 				$('#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
 			} else if ( 'wsu-print-tab' === this.id ) {
 				print();
@@ -322,11 +255,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$("#print-cancel").on("click",print_cancel);
 			setTimeout(function() { printPage(); }, 400);
 		}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 		// Shut a tool section
 		$("button.shut").on("click",function(e) {
 			e.preventDefault();
@@ -380,11 +309,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$(this).parent("li").siblings().removeClass("opened");
 			$(this).parent("li").toggleClass("opened");
 		});
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 		// Couplets
 		$("#spine nav li.parent > a").each( function() {
 			var title = 'Overview';
@@ -465,21 +390,13 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				$('#spine.cracked').removeClass('pinned');
 			}
 		});*/
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 		// External Links in nav
 		// this shouldn't be done this way
 		$('nav#spine-sitenav a').filter(function() {
 		   return this.hostname && this.hostname !== location.hostname;
 		}).addClass("external");
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 		// Label #jacket with current window size
 		function sizing() {
 			var current_width = $(window).width();
@@ -504,7 +421,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		// Equalize Columns
 		function equalizing() {
 			if( $('.equalize').length ) {
-<<<<<<< HEAD
 				$('.row.equalize .column').css('min-height','');
 				$('.row.equalize').each(function(){
 					var tallestBox = 0;
@@ -514,16 +430,6 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 						}
 					});
 					$('.column',this).not('.unequaled').css('min-height',tallestBox);
-=======
-				$('.row.equalize').each(function(){
-					var highestBox = 0;
-					$('.column', this).each(function(){
-						if($(this).height() > highestBox) {
-						   highestBox = $(this).height();
-						}
-					});
-					$('.column',this).not('.unequaled').css('min-height',highestBox);
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 					$('section.equalize .column',this).css('min-height','auto');
 				});
 			}
@@ -531,15 +437,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		equalizing();
 
 		$(window).resize(function(){ equalizing(); });
-<<<<<<< HEAD
 
 		function mainheight() {
 			var main_top = $('main').offset().top;
-=======
-	
-		function mainheight() {
-			//var main_top = $('main').offset().top;
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 			var window_height = $(window).height();
 			if ($('#binder').hasClass('size-lt-large')) {
 				var main_height = window_height - 50;
@@ -551,11 +451,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		mainheight();
 
 		$(window).resize(function(){ mainheight(); });
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> afba228227dd21f06a0c633df5bcd011c20e7f19
 		$(window).on('load resize', function(){
 			var $main = $('main');
 			// Only run function if an unbound element exists
