@@ -79,12 +79,12 @@ hr { border-width: 0px;
 	clear: both;
 	}
 h6,h5,h4,h3,h2,h1 { margin: 0px 0px 3px 0px; line-height: 1.1em; letter-spacing: 0em; font-weight: 700; }
-h1 { font-size: 2em; }
-h2 { font-size: 1.8em; margin: 0px; padding: 0px 0px .2em; }
-h3 { font-size: 1.6em; margin: 0px; padding: 0px 0px .2em; }
-h4 { font-size: 1.4em; margin: 0px; padding: 0px 0px .2em; }
-h5 { font-size: 1.2em; margin: 0px; padding: 0px 0px .2em; }
-h6 { font-size: 1.0em; margin: 0px; padding: 0px 0px .2em; }
+h1 { font-size: 2em; padding: 0px 0px .2em 0px; }
+h2 { font-size: 1.8em; margin: 0px; padding: .5em 0px .2em 0px; }
+h3 { font-size: 1.6em; margin: 0px; padding: .5em 0px .2em 0px; }
+h4 { font-size: 1.4em; margin: 0px; padding: .5em 0px .2em 0px; }
+h5 { font-size: 1.2em; margin: 0px; padding: .5em 0px .2em 0px; }
+h6 { font-size: 1.0em; margin: 0px; padding: .5em 0px .2em 0px; }
 p { margin: 0px; padding-bottom: .8em; }
 blockquote { padding-bottom: .8em; }
 ul, ol { padding-bottom: .8em; }
@@ -167,6 +167,9 @@ section {
 .unbound {
 	position: relative;
 	}
+.single .unbound .rebind { max-width: 792px; }
+.margin .unbound .rebind { max-width: 594px; }
+.sidebar .unbound .rebind { max-width: 528px; }
 
 /* single */
 .row.single .column {
@@ -177,8 +180,8 @@ section {
 /* halves */
 .row.halves .column { width: 396px; }
 .fluid .row.halves .column { width: 50%; }
-.halves .column:nth-of-type(odd) { clear: both; }
-.halves .column:nth-of-type(1) { clear: none; }
+.halves :not(.row) .column:nth-of-type(odd) { clear: both; }
+.halves :not(.row) .column:nth-of-type(1) { clear: none; }
 	
 /* thirds */
 .row.thirds .column { width: 264px; }
@@ -200,21 +203,21 @@ section {
 .fluid .row.ninths .column { width: 12.5%; }
 
 /* twelfths */
-.twelfths > .column { width: 8.33%; } .twelfths > .column:nth-of-type(odd) { width: 8.34%; } .fixed .twelfths > .column { width: 66px; }
-.one-twelfth { width: 8.33% } .hybrid .one-twelfth, .fixed .one-twelfth { width: 66px; }
-.two-twelfths { width: 16.66% } .hybrid .two-twelfths, .fixed .two-twelfths { width: 132px; }
-.three-twelfths { width: 25% } .hybrid .three-twelfths, .fixed .three-twelfths { width: 198px; }
-.four-twelfths { width: 33.33% } .hybrid .four-twelfths, .fixed .four-twelfths { width: 264px; }
-.five-twelfths { width: 41.66% } .hybrid .five-twelfths, .fixed .five-twelfths { width: 330px; }
-.six-twelfths { width: 50% } .hybrid .six-twelfths, .fixed .six-twelfths { width: 396px; }
-.seven-twelfths { width: 58.33% } .hybrid .seven-twelfths, .fixed .seven-twelfths { width: 462px; }
-.eight-twelfths { width: 64.66% } .hybrid .eight-twelfths, .fixed .eight-twelfths { width: 528px; }
-.nine-twelfths { width: 75% } .hybrid .nine-twelfths, .fixed .nine-twelfths { width: 594px; }
-.ten-twelfths { width: 83.33% } .hybrid .ten-twelfths, .fixed .ten-twelfths { width: 660px; }
-.eleven-twelfths { width: 91.66% } .hybrid .eleven-twelfths, .fixed .eleven-twelfths { width: 726px; }
-.twelve-twelfths { width: 100% } .hybrid .twelve-twelfths, .fixed .twelve-twelfths { width: 792px; }
+.twelfths .column { width: 8.33%; } .twelfths .column:nth-of-type(odd) { width: 8.34%; } .fixed .twelfths .column { width: 66px; }
+.one-twelfth, .twelfth-1 { width: 8.33% } .hybrid .one-twelfth, .hybrid .twelfth-1, .fixed .one-twelfth, .fixed .twelfth-1 { width: 66px; }
+.two-twelfths, .twelfths-2 { width: 16.66% } .hybrid .two-twelfths, .hybrid .twelfths-2, .fixed .two-twelfths, .fixed .twelfths-2 { width: 132px; }
+.three-twelfths, .twelfths-3 { width: 25% } .hybrid .three-twelfths, .hybrid .twelfths-3, .fixed .three-twelfths, .fixed .twelfths-3 { width: 198px; }
+.four-twelfths, .twelfths-4 { width: 33.33% } .hybrid .four-twelfths, .hybrid .twelfths-4, .fixed .four-twelfths, .fixed .twelfths-4 { width: 264px; }
+.five-twelfths, .twelfths-5 { width: 41.66% } .hybrid .five-twelfths, .hybrid .twelfths-5, .fixed .five-twelfths, .fixed .twelfths-5 { width: 330px; }
+.six-twelfths, .twelfths-6 { width: 50% } .hybrid .six-twelfths, .hybrid .twelfths-6, .fixed .six-twelfths, .fixed .twelfths-6 { width: 396px; }
+.seven-twelfths, .twelfths-7 { width: 58.33% } .hybrid .seven-twelfths, .hybrid .twelfths-7, .fixed .seven-twelfths, .fixed .twelfths-7 { width: 462px; }
+.eight-twelfths, .twelfths-8 { width: 64.66% } .hybrid .eight-twelfths, .hybrid .twelfths-8, .fixed .eight-twelfths, .fixed .twelfths-8 { width: 528px; }
+.nine-twelfths, .twelfths-9 { width: 75% } .hybrid .nine-twelfths, .hybrid .twelfths-9, .fixed .nine-twelfths, .fixed .twelfths-9 { width: 594px; }
+.ten-twelfths, .twelfths-10 { width: 83.33% } .hybrid .ten-twelfths, .hybrid .twelfths-10, .fixed .ten-twelfths, .fixed .twelfths-10 { width: 660px; }
+.eleven-twelfths, .twelfths-11 { width: 91.66% } .hybrid .eleven-twelfths, .hybrid .twelfths-11, .fixed .eleven-twelfths, .fixed .twelfths-11 { width: 726px; }
+.twelve-twelfths, .twelfths-12 { width: 100% } .hybrid .twelve-twelfths, .hybrid .twelfths-12, .fixed .twelve-twelfths, .fixed .twelfths-12 { width: 792px; }
 
-.one-twelfth.squared { width: 8.33% } .hybrid .one-twelfth.squared, .fixed .one-twelfth.squared { width: 66px; min-height: 66px; }
+/* .one-twelfth.squared { width: 8.33% } .hybrid .one-twelfth.squared, .fixed .one-twelfth.squared { width: 66px; min-height: 66px; }
 .two-twelfths.squared { width: 16.66% } .hybrid .two-twelfths.squared, .fixed .two-twelfths.squared { width: 132px; min-height: 132px; }
 .three-twelfths.squared { width: 25% } .hybrid .three-twelfths.squared, .fixed .three-twelfths.squared { width: 198px; min-height: 198px; }
 .four-twelfths.squared { width: 33.33% } .hybrid .four-twelfths.squared, .fixed .four-twelfths.squared { width: 264px; max-width: 264px; min-height: 264px; max-height: 264px; overflow: hidden; }
@@ -225,7 +228,7 @@ section {
 .nine-twelfths.squared { width: 75% } .hybrid .nine-twelfths.squared, .fixed .nine-twelfths.squared { width: 594px; }
 .ten-twelfths.squared{ width: 83.33% } .hybrid .ten-twelfths.squared, .fixed .ten-twelfths.squared { width: 660px; }
 .eleven-twelfths.squared { width: 91.66% } .hybrid .eleven-twelfths.squared, .fixed .eleven-twelfths.squared { width: 726px; }
-.twelve-twelfths.squared { width: 100% } .hybrid .twelve-twelfths.squared, .fixed .twelve-twelfths.squared { width: 792px; }
+.twelve-twelfths.squared { width: 100% } .hybrid .twelve-twelfths.squared, .fixed .twelve-twelfths.squared { width: 792px; } */
 
 :not(.fixed) .halves .two-twelfths { width: 33%; }
 :not(.fixed) .halves .four-twelfths { width: 67%; }
@@ -270,8 +273,13 @@ section {
 .hybrid .row .column.thirds .column.two,
 .fluid .row .column.thirds .column.two { width: 34%; }
 
+/* halves then quarters */
+.row .row.quarters .column { width: 99px; }
+.hybrid .row .row.quarters .column,
+.fluid .row .row.quarters .column { width: 25%; }
+
 /* thirds then halves */
-.row.thirds .halves .column { width: 132px; }
+.row.thirds .row.halves .column { width: 132px; }
 .fluid .row.thirds .halves .column { width: 50%; }
 
 
@@ -319,6 +327,13 @@ section {
 	margin: 0px;
 	border-top: 1px gray dotted;
 	}
+	
+/* Gutters */
+.halves.guttered .column:nth-of-type(odd) { padding: 0px 15px 0px 30px; } 
+.halves.guttered .column:nth-of-type(even) { padding: 0px 30px 0px 15px; } 
+.thirds.guttered .column:nth-of-type(3n+1) { padding: 0px 0px 0px 30px; } 
+.thirds.guttered .column:nth-of-type(3n+2) { padding: 0px 30px; } 
+.thirds.guttered .column:nth-of-type(3n+3) { padding: 0px 30px 0px 0px; }
 
 /* Basic Styles
 -------------------------------------------------------- */
@@ -341,6 +356,14 @@ img.fill-height {
 .hybrid.small figure.fill-width {
 	width: 100%;
 	}
+.picture-frame {
+	line-height: 0px;
+	}
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
 
 	
 /* Character Styles
@@ -538,4 +561,5 @@ code textarea:focus {
 	color: white;
 	background-color: rgba(94,106,113,0.5);
 	}
-
+.hidden { display: none; visibility: hidden; }
+.invisible { visibility: hidden; }

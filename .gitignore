@@ -2,3 +2,7 @@
 node_modules
 build
 1.0
+spine.css
+spine.min.css
+spine.js
+spine.min.js

@@ -1,3 +1,5 @@
+Note: Edits, commits should not be made to Grunt output, but rather to source: scripts/spine.js and styles/*.css.
+
 WSU-spine
 ================================
 
