@@ -19,14 +19,14 @@ module.exports = function(grunt) {
 					'/*  See https://github.com/washingtonstateuniversity/WSU-spine/ for full source.*/\n'
 			},
 			build: {
-				src: 'spine.js',
+				src: 'build/spine.js',
 				dest: 'build/spine.min.js'
 			}
 		},
 		cssmin: {
 		  combine: {
 		    files: {
-		      'spine.min.css': ['build/spine.css']
+		      'build/spine.css': ['build/spine.min.css']
 		    }
 		  }
 		},
