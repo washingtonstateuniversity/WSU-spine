@@ -6,11 +6,11 @@ module.exports = function(grunt) {
 		concat: {
 			styles: {
 		      src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
-		      dest: 'spine.css',
+		      dest: 'build/spine.css',
 		    },
 		    scripts: {
 		      src: [ 'scripts/spine.js'],
-			  dest: 'spine.js',
+			  dest: 'build/spine.js',
 			  },
 		},
 		uglify: {
@@ -20,27 +20,27 @@ module.exports = function(grunt) {
 			},
 			build: {
 				src: 'spine.js',
-				dest: 'spine.min.js'
+				dest: 'build/spine.min.js'
 			}
 		},
 		cssmin: {
 		  combine: {
 		    files: {
-		      'spine.min.css': ['spine.css']
+		      'spine.min.css': ['build/spine.css']
 		    }
 		  }
 		},
 		copy: {
 		  main: {
 		    files: [
-		      {expand: true, src: ['fonts/*'], dest: '1.0/'},
-		      {expand: true, src: ['html/*'], dest: '1.0/'},
-		      {expand: true, src: ['icons/*'], dest: '1.0/'},
-		      {expand: true, src: ['images/*'], dest: '1.0/'},
-		      {expand: true, src: ['marks/*'], dest: '1.0/'},
-		      {expand: true, src: ['scripts/*'], dest: '1.0/'},
-		      {expand: true, src: ['styles/*'], dest: '1.0/'},
-		      {expand: true, src: ['spine.html','spine.css','spine.js','authors.txt'], dest: '1.0/'},
+		      {expand: true, src: ['fonts/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['html/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['icons/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['images/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['marks/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['scripts/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['styles/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['spine.html','spine.min.html','spine.css','spine.min.css','spine.js','authors.txt','favicon.ico'], dest: 'build/'},
 		    ]
 		  }
 		},
