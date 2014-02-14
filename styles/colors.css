@@ -1,25 +1,18 @@
 /* WSU COLORS
 -------------------------------------------------------- */
 
-/* CRIMSON */ .crimson-back, div.crimson, section.crimson, article.crimson, aside.crimson, header.crimson, footer.crimson, figure.crimson { color: white; background-color: #981e32; } .crimson-text, span.crimson, p.crimson, a.crimson { color: #981e32; }
-/* crimsoner */ .crimson-er-back, div.crimson-er, section.crimson-er, article.crimson-er, aside.crimson-er, header.crimson-er, footer.crimson-er { color: white; background-color: #cf0a2f; }
+/* CRIMSON */ .crimson-back { color: white; background-color: #981e32; } .crimson-text { color: #981e32; }
+/* crimsoner */ .crimson-er-back { color: white; background-color: #cf0a2f; }
 
-/* GRAY */ .gray-back, div.gray, section.gray, article.gray, aside.gray, header.gray, footer.gray, figure.gray { background-color: #5E6A71; color: white; } .gray-text, span.gray, p.gray, a.gray { color: #5E6A71; }
-/* grayer */ .gray-er-back, div.gray-er, section.gray-er, article.gray-er, aside.gray-er, header.gray-er, footer.gray-er { background-color: white; }
-/* light */ .gray-light-back, div.gray-light, section.gray-light, article.gray-light, aside.gray-light, header.gray-light, footer.gray-light,
-	div.light, section.light, article.light, aside.light, header.light, footer.light { background-color: #8d959a; }
-/* lighter */ .gray-lighter-back, div.gray-lighter, section.gray-lighter, article.gray-lighter, aside.gray-lighter, header.gray-lighter, footer.gray-lighter,
-	div.lighter, section.lighter, article.lighter, aside.lighter, header.lighter, footer.lighter { background-color: #b5babe; }
-/* lightly */ .gray-lightly-back, div.gray-lightly, section.gray-lightly, article.gray-lightly, aside.gray-lightly, header.gray-lightly, footer.gray-lightly,
-	div.lighter, section.lighter, article.lighter, aside.lighter, header.lighter, footer.lighter { background-color: #d7dad8; }
-/* lightest */ .gray-lightest-back, div.gray-lightest, section.gray-lightest, article.gray-lightest, aside.gray-lightest, header.gray-lightest, footer.gray-lightest,
-	div.lightest, section.lightest, article.lightest, aside.lightest, header.lightest, footer.lightest { background-color: #eff0f1; } .gray-lightest-text { color: white; }
-/* dark */ .gray-dark-back, div.gray-dark, section.gray-dark, article.gray-dark, aside.gray-dark, header.gray-dark, footer.gray-dark, figure.gray-dark
-	div.dark, section.dark, article.dark, aside.dark, header.dark, footer.dark, figure.dark { background-color: #464e54; color: white; }
-/* darker */ .gray-darker-back, div.gray-darker, section.gray-darker, article.gray-darker, aside.gray-darker, header.gray-darker, footer.gray-darker, figure.gray-darker
-	div.darker, section.darker, article.darker, aside.darker, header.darker, footer.darker, figure.darker { background-color: #2a3033; color: white; }
-/* darkest */ .gray-darkest-back, div.gray-darkest, section.gray-darkest, article.gray-darkest, aside.gray-darkest, header.gray-darkest, footer.gray-darkest,
-	div.darkest, section.darkest, article.darkest, aside.darkest, header.darkest, footer.darkest { background-color: black; color: white; }
+/* GRAY */ .gray-back { background-color: #5E6A71; color: white; } .gray-text { color: #5E6A71; }
+/* grayer */ .gray-er-back, .er-back, .white-back { background-color: white; }
+/* light */ .gray-light-back, .light-back { background-color: #8d959a; }
+/* lighter */ .gray-lighter-back, .lighter-back { background-color: #b5babe; }
+/* lightly */ .gray-lightly-back, .lightly-back { background-color: #d7dad8; }
+/* lightest */ .gray-lightest-back, .lightest-back { background-color: #eff0f1; } .gray-lightest-text { color: white; }
+/* dark */ .gray-dark-back, .dark-back { background-color: #464e54; color: white; }
+/* darker */ .gray-darker-back, .darker-back { background-color: #2a3033; color: white; }
+/* darkest */ .gray-darkest-back, .darkest-back, .black-back { background-color: black; color: white; }
 
 /* ORANGE */ .orange-back, div.orange, section.orange, article.orange, aside.orange, header.orange, footer.orange, figure.orange { background-color: #b67233; } .orange-text, span.orange, p.orange, a.orange { color: #b46f2d; }
 /* orange-er */ .orange-er-back, div.orange-er, section.orange-er, article.orange-er, aside.orange-er, header.orange-er, footer.orange-er { background-color: #d38235; }
@@ -41,25 +34,25 @@
 /* darker */ .green-darker-back, div.green-darker, section.green-darker, article.green-darker, aside.green-darker, header.green-darker, footer.green-darker { background-color: #564c20; }
 /* darkest */ .green-darkest-back, div.green-darkest, section.green-darkest, article.green-darkest, aside.green-darkest, header.green-darkest, footer.green-darkest { background-color: #393215; }
 
-/* BLUE */ .blue-back, div.blue, section.blue, article.blue, aside.blue, header.blue, footer.blue, figure.blue { background-color: #4f868e; } .blue-text, span.blue, p.blue, a.blue, dd.blue { color: #568a90; }
-/* bluer */ .blue-er-back, div.blue-er, section.blue-er, article.blue-er, aside.blue-er, header.blue-er, footer.blue-er { background-color: #00a5bd; }
-/* light */ .blue-light-back, div.blue-light, section.blue-light, article.blue-light, aside.blue-light, header.blue-light, footer.blue-light { background-color: #76adb3; }
-/* lighter */ .blue-lighter-back, div.blue-lighter, section.blue-lighter, article.blue-lighter, aside.blue-lighter, header.blue-lighter, footer.blue-lighter { background-color: #a6cace; }
-/* lightly */ .blue-lightly-back, div.blue-lightly, section.blue-lightly, article.blue-lightly, aside.blue-lightly, header.blue-lightly, footer.blue-lightly { background-color: #cfe2e4; }
-/* lightest */ .blue-lightest-back, div.blue-lightest, section.blue-lightest, article.blue-lightest, aside.blue-lightest, header.blue-lightest, footer.blue-lightest { background-color: #ecf3f4; }
-/* dark */ .blue-dark-back, div.blue-dark, section.blue-dark, article.blue-dark, aside.blue-dark, header.blue-dark, footer.blue-dark { background-color: #326f76; }
-/* darker */ .blue-darker-back, div.blue-darker, section.blue-darker, article.blue-darker, aside.blue-darker, header.blue-darker, footer.blue-darker { background-color: #255359; }
-/* darkest */ .blue-darkest-back, div.blue-darkest, section.blue-darkest, article.blue-darkest, aside.blue-darkest, header.blue-darkest, footer.blue-darkest { background-color: #193838; }
+/* BLUE */ .blue-back { background-color: #4f868e; } .blue-text { color: #568a90; }
+/* bluer */ .blue-er-back { background-color: #00a5bd; }
+/* light */ .blue-light-back { background-color: #76adb3; }
+/* lighter */ .blue-lighter-back { background-color: #a6cace; }
+/* lightly */ .blue-lightly-back { background-color: #cfe2e4; }
+/* lightest */ .blue-lightest-back { background-color: #ecf3f4; }
+/* dark */ .blue-dark-back { background-color: #326f76; }
+/* darker */ .blue-darker-back { background-color: #255359; }
+/* darkest */ .blue-darkest-back { background-color: #193838; }
 
-/* YELLOW */ .yellow-back, div.yellow, section.yellow, article.yellow, aside.yellow, header.yellow, footer.yellow, figure.yellow { background-color: #c69214; } .yellow-text, span.yellow, p.yellow, a.yellow { color: #c6a960; }
-/* yellower */ .yellow-er-back, div.yellow-er, section.yellow-er, article.yellow-er, aside.yellow-er, header.yellow-er, footer.yellow-er { background-color: #ffb81c; }
-/* light */ .yellow-light-back, div.yellow-light, section.yellow-light, article.yellow-light, aside.yellow-light, header.yellow-light, footer.yellow-light { background-color: #d7b258; }
-/* lighter */ .yellow-lighter-back, div.yellow-lighter, section.yellow-lighter, article.yellow-lighter, aside.yellow-lighter, header.yellow-lighter, footer.yellow-lighter { background-color: #e5cd93; }
-/* lightly */ .yellow-lightly-back, div.yellow-lightly, section.yellow-lightly, article.yellow-lightly, aside.yellow-lightly, header.yellow-lightly, footer.yellow-lightly { background-color: #f1e4c4; }
-/* lightest */ .yellow-lightest-back, div.yellow-lightest, section.yellow-lightest, article.yellow-lightest, aside.yellow-lightest, header.yellow-lightest, footer.yellow-lightest { background-color: #f9f4e7; }
-/* dark */ .yellow-dark-back, div.yellow-dark, section.yellow-dark, article.yellow-dark, aside.yellow-dark, header.yellow-dark, footer.yellow-dark { background-color: #9e7510; }
-/* darker */ .yellow-darker-back, div.yellow-darker, section.yellow-darker, article.yellow-darker, aside.yellow-darker, header.yellow-darker, footer.yellow-darker { background-color: #77580c; }
-/* darkest */ .yellow-darkest-back, div.yellow-darkest, section.yellow-darkest, article.yellow-darkest, aside.yellow-darkest, header.yellow-darkest, footer.yellow-darkest { background-color: #4f3a08; }
+/* YELLOW */ .yellow-back { background-color: #c69214; } .yellow-text { color: #c6a960; }
+/* yellower */ .yellow-er-back { background-color: #ffb81c; } .yellow-er-back { }
+/* light */ .yellow-light-back { background-color: #d7b258; }
+/* lighter */ .yellow-lighter-back { background-color: #e5cd93; }
+/* lightly */ .yellow-lightly-back { background-color: #f1e4c4; }
+/* lightest */ .yellow-lightest-back { background-color: #f9f4e7; }
+/* dark */ .yellow-dark-back { background-color: #9e7510; }
+/* darker */ .yellow-darker-back { background-color: #77580c; }
+/* darkest */ .yellow-darkest-back { background-color: #4f3a08; }
 
 
 
