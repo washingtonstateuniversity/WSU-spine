@@ -167,6 +167,14 @@
 #binder:not(.fluid) #spine button#shelve {
 	display: block;
 	}
+
+/* Adjust Search */
+#spine #wsu-search input[type="text"] {
+	padding-right: 18px;
+	}
+#spine #wsu-search button {
+	right: 10px;
+	}
 	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
@@ -263,6 +271,9 @@
 #spine button#shelve {
 	display: block;
 	}
+	
+
+
 	
 /* Navigation */
 #binder.fluid #spine nav#spine-sitenav,

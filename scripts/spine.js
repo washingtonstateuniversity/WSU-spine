@@ -39,7 +39,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		var cur_search = "";
 		var termTemplate = "<strong>%s</strong>";
 		var term = "";
-		$( "#wsu-search input#searchterm[type=text]" ).autosearch({
+		$( "#wsu-search input[type=text]" ).autosearch({
 			source: function( request, response ) {
 				term = request.term;
 				$.ajax({
@@ -70,7 +70,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			search: function(event, ui) {
 				/**/
 			},
-			appendTo: "#index-search-results",
+			appendTo: "#spine-shortcuts",
 			showRelated:true,
 			relatedHeader:"<hr/>",
 			minLength: 2,
@@ -98,30 +98,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				//$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
 			}
 		}).data( "autocomplete" );
-	
-	// to come back later to
-	//	$( "#wsu-search input#searchterm[type=text]" ).on('keyup',function(e) {
-	//		if ( e.which == 13){
-	//			var id   = $( "#wsu-search .ui-autocomplete-input" ).val();
-	//			/*
-	//			var url=siteroot+"public/get_place.castle";
-	//			if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
-	//			$( "#wsu-search input#searchterm[type=text]" ).autocomplete("close");
-	//			getSignlePlace(jObj,$( "#wsu-search .ui-autocomplete-input" ).val());
-	//			*/
-	//			
-	//		}
-	//	});	
-	//	$("#wsu-search input#searchterm[type=text]").off().on('click',function(e){
-	//		e.stopPropagation();
-	//		e.preventDefault();
-	//		var btn=$(this);
-	//		var id   = $( "#wsu-search .ui-autocomplete-input" ).val();
-	//		/*
-	//		getSignlePlace(jObj,id);
-	//		if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
-	//		*/
-	//	});
+
 	}	
 
 	$(document).ready(function(){
@@ -152,9 +129,46 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			search += '			<input name="term" type="text" value="" placeholder="search">'
 			search += '			<button>Submit</button>';
 			search += '		</form>';
+			search += '		<div id="spine-shortcuts"></div>';
 			search += '</section>';
 		$wsu_actions.append(search);
-		} // End Search Generation
+		
+		// Submit search
+		/* This broke it 
+		$wsu_search.find('form').submit( function() {
+			var scope = $wsu_search.attr('data-default');
+			if ( scope == 'site-search' ) {
+				var site = ' site:'+location.hostname;
+				// var site = ' site:admission.wsu.edu' // temporary for testing
+			} else {
+				var site = '';
+			}
+			var cx = 'cx=004677039204386950923:xvo7gapmrrg';
+			var cof = 'cof=FORID%3A11';
+			var search_term = $wsu_search.find('input').val();
+			var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q=hello'+search_term+site;
+			window.location.href = search_url;
+			return false;
+		}); */
+		
+		$("#wsu-search form").submit( function() {
+			var scope = $("#wsu-search").attr('data-default');
+			if ( scope == 'site-search' ) {
+				var site = ' site:'+location.hostname;
+				// var site = ' site:admission.wsu.edu' // temporary for testing
+			} else {
+				var site = '';
+			}
+			var cx = 'cx=004677039204386950923:xvo7gapmrrg';
+			var cof = 'cof=FORID%3A11';
+			var search_term = $("#wsu-search input").val();
+			var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
+			window.location.href = search_url;
+			return false;
+		});
+		}
+		
+		// End Search Generation
 
 		// Section -> Share
 		// Just getting started on rolling our own... more to come.
@@ -204,7 +218,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 			if (typeof ContactPoint != 'undefined') {
 				contact += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
-			}
+				}
 
 				contact += '</address>';
 				contact += '</section>';
@@ -212,23 +226,20 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$wsu_actions.append(contact);
 		} // End Contact Generation
 
-		// Tools tabs
-		$('#wsu-actions-tabs' ).on('click', 'li', function(e) {
+		// Tools tabs		
+		$("#wsu-share-tab button").on("click",function(e) {
 			e.preventDefault();
-			if ( 'wsu-share-tab' === this.id ) {
-				$wsu_actions.find('li .opened').toggleClass('opened closed');
- 				$('#wsu-share,#wsu-share-tab' ).toggleClass('opened closed' );
-			} else if ( 'wsu-search-tab' === this.id ) {
-				$wsu_actions.find('li .opened').toggleClass('opened closed');
-				$('#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-				$spine.find('#wsu-search input').focus();
-			} else if ( 'wsu-contact-tab' === this.id ) {
-				$wsu_actions.find('li .opened').toggleClass('opened closed');
-				$('#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
-			} else if ( 'wsu-print-tab' === this.id ) {
-				print();
-			}
-		});
+			$('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
+			});
+		$("#wsu-search-tab button").on("click",function(e) {
+			e.preventDefault();
+			$('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
+			$('#spine section#wsu-search input').focus();
+			});
+		$("#wsu-contact-tab button").on("click",function(e) {
+			e.preventDefault();
+			$('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
+			});
 
 		// Print & Print View
 		var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
@@ -255,6 +266,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			$("#print-cancel").on("click",print_cancel);
 			setTimeout(function() { printPage(); }, 400);
 		}
+		$("#wsu-print-tab button").click(print);
 
 		// Shut a tool section
 		$("button.shut").on("click",function(e) {
@@ -269,22 +281,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 			//return false;
 		}); */
 
-		// Submit search
-		$wsu_search.find('form').submit( function() {
-			var scope = $wsu_search.attr('data-default');
-			if ( scope == 'site-search' ) {
-				var site = ' site:'+location.hostname;
-				// var site = ' site:admission.wsu.edu' // temporary for testing
-			} else {
-				var site = '';
-			}
-			var cx = 'cx=004677039204386950923:xvo7gapmrrg';
-			var cof = 'cof=FORID%3A11';
-			var search_term = $wsu_search.find('input').val();
-			var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
-			window.location.href = search_url;
-			return false;
-		});
+		
 
 		// Fixed/Sticky Horizontal Header
 		$(document).scroll(function() {
@@ -401,7 +398,7 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 		function sizing() {
 			var current_width = $(window).width();
 			if(current_width >= 1188) {
-				$('#jacket').removeClass().removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
+				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
 			} else if(current_width >= 990) {
 				$('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
 			} else if(current_width < 990 && current_width >= 792) {

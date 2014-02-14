@@ -133,6 +133,8 @@ main {
 	margin-left: 198px;
 	width: 792px;
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	}
 .spineless main {
 	margin-left: 0px;
@@ -161,15 +163,24 @@ section {
 	overflow: visible;
 	z-index: auto;
 	float: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	}
 .row.unbound,
 .unbound {
 	position: relative;
 	}
-.single .unbound .rebind { max-width: 792px; }
-.margin .unbound .rebind { max-width: 594px; }
-.sidebar .unbound .rebind { max-width: 528px; }
+.unbound .rebound {
+	width: 792px;
+	}
+.single .unbound .rebound { width: 792px; }
+.margin .unbound .rebound { width: 594px; }
+.sidebar .unbound .rebound { width: 528px; }
+.spineless .unbound .rebound,
+.fifteenths .unbound .rebound,
+.fifths .unbound .rebound { width: 990px; }
+
 
 /* single */
 .row.single .column {
@@ -319,6 +330,7 @@ section {
 .column > aside > header {
 	font-size: 1.3em;
 	font-weight: bold;
+	padding-top: 20px;
 	padding-bottom: 5px;
 	}
 .column > aside ul li {
@@ -334,6 +346,10 @@ section {
 .thirds.guttered .column:nth-of-type(3n+1) { padding: 0px 0px 0px 30px; } 
 .thirds.guttered .column:nth-of-type(3n+2) { padding: 0px 30px; } 
 .thirds.guttered .column:nth-of-type(3n+3) { padding: 0px 30px 0px 0px; }
+
+.fifths.guttered .column { padding: 15px; }
+.fifths.guttered .column:nth-of-type(5n+1) { padding-left: 30px; }
+.fifths.guttered .column:nth-of-type(5n+5) { padding-right: 30px; }
 
 /* Basic Styles
 -------------------------------------------------------- */
@@ -497,6 +513,7 @@ input::-moz-focus-inner {
 /* This could be a wee bit controversial */
 form,fieldset,input,textarea,legend,label {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
 form {
