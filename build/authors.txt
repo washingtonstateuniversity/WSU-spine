@@ -1,0 +1,26 @@
+/* AUTHORS */
+
+John Vleck: Concept and design
+Nate Jacobson: Execution and responsive skeleton
+Nicole Wood: Navigation testing
+---
+Stephen Locker: Fluidity and largesse
+Jeremy Bass: Javascript refactoring
+Jeremy Felt: Javascript tweaks
+
+Site: web.wsu.edu
+
+Location: Pullman, Washington, USA.
+                        
+/* THANKS */
+						
+• The IOBA for the most comprehensive and helpful rundown of book parts (http://www.ioba.org/pages/resources/book-terminology/). They have been liberally employed in our Spine framework.
+• "Lee" for the best "equalize columns in a row" solution (http://stackoverflow.com/users/887728/lee)
+• HTML5 Boilerplate
+						
+/* SITE */
+
+Last update: 2014/02/12 of this document
+Standards: HTML5, CSS3,..
+Components: jQuery, jQuery UI, ie7-js polyfill, addthis
+Software: Coda, Photoshop
