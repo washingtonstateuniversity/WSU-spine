@@ -26,7 +26,8 @@ module.exports = function(grunt) {
 		cssmin: {
 		  combine: {
 		    files: {
-		      'build/spine.css': ['build/spine.min.css']
+		    // Hmmm, in reverse order
+		      'build/spine.min.css': ['build/spine.css']
 		    }
 		  }
 		},
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['marks/*'], dest: 'build/1.0/'},
 		      {expand: true, src: ['scripts/*'], dest: 'build/1.0/'},
 		      {expand: true, src: ['styles/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['spine.html','spine.min.html','spine.css','spine.min.css','spine.js','authors.txt','favicon.ico'], dest: 'build/'},
+		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'},
 		    ]
 		  }
 		},
