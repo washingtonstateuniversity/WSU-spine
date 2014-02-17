@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		      dest: 'build/spine.css',
 		    },
 		    scripts: {
-		      src: [ 'scripts/spine.js'],
+		      src: [ 'scripts/wsu_autocomplete.js','scripts/spine.js'],
 			  dest: 'build/spine.js',
 			  },
 		},
