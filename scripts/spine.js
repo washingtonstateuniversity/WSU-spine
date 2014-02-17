@@ -215,11 +215,9 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 				contact += '	</div>';
 				contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
 				contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
-
 			if (typeof ContactPoint != 'undefined') {
 				contact += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
 				}
-
 				contact += '</address>';
 				contact += '</section>';
 

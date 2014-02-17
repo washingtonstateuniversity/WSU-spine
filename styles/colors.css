@@ -4,7 +4,7 @@
 /* CRIMSON */ .crimson-back { background-color: #981e32; } .crimson-text { color: #981e32; }
 /* crimsoner */ .crimson-er-back { background-color: #cf0a2f; } .crimson-er-text { color: #cf0a2f; }
 
-/* GRAY */ .gray-back { background-color: #5E6A71; color: white; } .gray-text { color: #5E6A71; }
+/* GRAY */ .gray-back { background-color: #5E6A71; } .gray-text { color: #5E6A71; }
 /* grayer */ .gray-er-back, .er-back, .white-back { background-color: white; } .gray-er-text, .er-text, .white-text { color: white; }
 /* light */ .gray-light-back, .light-back { background-color: #8d959a; } .gray-light-text, .light-text { color: #8d959a; }
 /* lighter */ .gray-lighter-back, .lighter-back { background-color: #b5babe; } .gray-lighter-text, .lighter-text { color: #b5babe; }

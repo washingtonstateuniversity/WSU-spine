@@ -176,6 +176,21 @@
 	right: 10px;
 	}
 	
+/* Gutters */
+.halves.guttered .column:nth-of-type(odd),
+.halves.guttered .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
+.halves.guttered.wide .column:nth-of-type(odd),
+.halves.guttered.wide .column:nth-of-type(even) { padding: 4em 4em 0 4em; }
+.halves.guttered.wide .column ~ .column { padding: 0em 4em 0 4em; }
+
+.thirds.guttered .column:nth-of-type(3n+1) { padding-left: 2em; } 
+.thirds.guttered .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
+.thirds.guttered .column:nth-of-type(3n+3) { padding-right: 2em; }
+
+.fifths.guttered .column { padding: 1em; }
+.fifths.guttered .column:nth-of-type(5n+1) { padding-left: 2em; }
+.fifths.guttered .column:nth-of-type(5n+5) { padding-right: 2em; }
+	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
 	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal.svg");
@@ -228,7 +243,11 @@
 	
 	{
 
-#binder {
+#binder,
+.rebound,
+.spineless .rebound,
+.fifteenths .rebound,
+.fifths .rebound {
 	width: 100%;
 	}
 

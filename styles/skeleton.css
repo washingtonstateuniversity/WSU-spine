@@ -171,15 +171,10 @@ section {
 .unbound {
 	position: relative;
 	}
-.unbound .rebound {
-	width: 792px;
-	}
-.single .unbound .rebound { width: 792px; }
-.margin .unbound .rebound { width: 594px; }
-.sidebar .unbound .rebound { width: 528px; }
-.spineless .unbound .rebound,
-.fifteenths .unbound .rebound,
-.fifths .unbound .rebound { width: 990px; }
+.rebound { width: 792px; }
+.spineless .rebound,
+.fifteenths .rebound,
+.fifths .rebound { width: 990px; }
 
 
 /* single */
@@ -339,21 +334,33 @@ section {
 	margin: 0px;
 	border-top: 1px gray dotted;
 	}
-	
-/* Gutters */
-.halves.guttered .column:nth-of-type(odd) { padding: 0px 15px 0px 30px; } 
-.halves.guttered .column:nth-of-type(even) { padding: 0px 30px 0px 15px; } 
-.thirds.guttered .column:nth-of-type(3n+1) { padding: 0px 0px 0px 30px; } 
-.thirds.guttered .column:nth-of-type(3n+2) { padding: 0px 30px; } 
-.thirds.guttered .column:nth-of-type(3n+3) { padding: 0px 30px 0px 0px; }
 
-.fifths.guttered .column { padding: 15px; }
-.fifths.guttered .column:nth-of-type(5n+1) { padding-left: 30px; }
-.fifths.guttered .column:nth-of-type(5n+5) { padding-right: 30px; }
+/* Margins */
+.marginalized .column { padding: 2em; }
+.marginalized.wide .column { padding: 4em; }
+
+/* Gutters */
+.halves.guttered .column:nth-of-type(odd) { padding-left: 2em; padding-right:  1em; } 
+.halves.guttered .column:nth-of-type(even) { padding-left: 1em; padding-right: 2em; }
+.size-lt-medium .halves.guttered .column:nth-of-type(odd),
+.size-lt-medium .halves.guttered .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
+.halves.guttered.wide .column:nth-of-type(odd) {  padding-left: 4em; padding-right: 2em; }
+.halves.guttered.wide .column:nth-of-type(even) { padding-left: 2em; padding-right: 4em; }
+
+.thirds.guttered .column:nth-of-type(3n+1) { padding-left: 2em; } 
+.thirds.guttered .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
+.thirds.guttered .column:nth-of-type(3n+3) { padding-right: 2em; }
+
+.fifths.guttered .column { padding: 1em; }
+.fifths.guttered .column:nth-of-type(5n+1) { padding-left: 2em; }
+.fifths.guttered .column:nth-of-type(5n+5) { padding-right: 2em; }
+
+
 
 /* Basic Styles
 -------------------------------------------------------- */
 
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { padding-top: 0; }
 
 
 /* Images
@@ -578,5 +585,7 @@ code textarea:focus {
 	color: white;
 	background-color: rgba(94,106,113,0.5);
 	}
+.padless { padding: 0px !important; }
+.marginless { margin: 0px !important; }
 .hidden { display: none; visibility: hidden; }
 .invisible { visibility: hidden; }
