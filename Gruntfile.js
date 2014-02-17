@@ -56,7 +56,18 @@ module.exports = function(grunt) {
 					document: true
 				}
 			}
-		}
+		},
+        preprocess : {
+            options: {
+                inline: true,
+                context : {
+                    DEBUG: false
+                }
+            },
+            js : {
+                src: 'build/spine.js'
+            }
+        }
 	});
 	
 
@@ -66,8 +77,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-
+    grunt.loadNpmTasks('grunt-preprocess');
+        
 	// Default task(s).
-	grunt.registerTask('default', ['concat','cssmin','uglify','copy']);
+	grunt.registerTask('default', ['concat','preprocess:js','cssmin','uglify','copy']);
 
 };
