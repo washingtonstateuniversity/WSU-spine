@@ -23,61 +23,6 @@
             var $wsu_contact = $('#wsu-contact');
             var $wsu_share = $('#wsu-share');
     
-            $("#glue > header").append('<button id="shelve"></button>');
-            $("#shelve").click(function() {
-                $spine.toggleClass('unshelved shelved');
-            });
-    
-            // ADD TOOLS
-    
-            // Section -> Search
-            if (!$wsu_search.length) {
-            var search  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
-                search += '		<form id="default-search">';
-                search += '			<input name="term" type="text" value="" placeholder="search">'
-                search += '			<button>Submit</button>';
-                search += '		</form>';
-                search += '		<div id="spine-shortcuts"></div>';
-                search += '</section>';
-            $wsu_actions.append(search);
-            
-            // Submit search
-            /* This broke it 
-            $wsu_search.find('form').submit( function() {
-                var scope = $wsu_search.attr('data-default');
-                if ( scope == 'site-search' ) {
-                    var site = ' site:'+location.hostname;
-                    // var site = ' site:admission.wsu.edu' // temporary for testing
-                } else {
-                    var site = '';
-                }
-                var cx = 'cx=004677039204386950923:xvo7gapmrrg';
-                var cof = 'cof=FORID%3A11';
-                var search_term = $wsu_search.find('input').val();
-                var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q=hello'+search_term+site;
-                window.location.href = search_url;
-                return false;
-            }); */
-            
-            $("#wsu-search form").submit( function() {
-                var scope = $("#wsu-search").attr('data-default');
-                if ( scope == 'site-search' ) {
-                    var site = ' site:'+location.hostname;
-                    // var site = ' site:admission.wsu.edu' // temporary for testing
-                } else {
-                    var site = '';
-                }
-                var cx = 'cx=004677039204386950923:xvo7gapmrrg';
-                var cof = 'cof=FORID%3A11';
-                var search_term = $("#wsu-search input").val();
-                var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
-                window.location.href = search_url;
-                return false;
-            });
-            }
-            
-            // End Search Generation
-    
             // Section -> Share
             // Just getting started on rolling our own... more to come.
             if (!$wsu_share.length) {
