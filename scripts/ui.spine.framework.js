@@ -61,7 +61,7 @@
                     contact += '	<div class="organization-name">'+name+'</div>';
                     contact += '	<div class="address">';
                     contact += '		<div class="street-address">'+streetAddress+'</div>';
-                    contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>'
+                    contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>';
                     contact += '	</div>';
                     contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
                     contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
@@ -97,8 +97,9 @@
                     // var recto = $(window).width() - ($('main').offset().left + $('main').width());
                     var spread = $(window).width();
                     var page = $main.width();
-                    var recto = spread - $main.offset().left;
-                    if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
+                        recto = spread - $main.offset().left;
+                    var recto_margin = "";
+                    if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
     
                     var verso_width = verso + $main.width();
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
@@ -147,10 +148,9 @@
         mainheight: function () {
             var main_top = $('main').offset().top;
             var window_height = $(window).height();
+            var main_height = window_height;
             if ($('#binder').hasClass('size-lt-large')) {
-                var main_height = window_height - 50;
-            } else {
-                var main_height = window_height;
+                main_height -= 50;
             }
             $('main.fill-window-height').css('min-height',main_height);
         },
@@ -306,10 +306,9 @@
                     var alt = $(this).attr('title').length;
                     if ( alt > 0 ) { title = $(this).attr('title'); }
                 }
+                var classes = "overview";
                 if ($(this).closest('.parent').hasClass('dogeared')) {
-                    var classes = "overview dogeared";
-                } else {
-                    var classes = "overview";
+                    classes += " dogeared";
                 }
                 var url = $(this).attr("href");
                 if ( url != '#' ) {
