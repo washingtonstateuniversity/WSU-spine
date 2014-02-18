@@ -1,3 +1,4 @@
+var version="0.5";
 module.exports = function(grunt) {
 
 	// Project configuration.
@@ -34,13 +35,13 @@ module.exports = function(grunt) {
 		copy: {
 		  main: {
 		    files: [
-		      {expand: true, src: ['fonts/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['html/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['icons/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['images/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['marks/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['scripts/*'], dest: 'build/1.0/'},
-		      {expand: true, src: ['styles/*'], dest: 'build/1.0/'},
+		      {expand: true, src: ['fonts/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['html/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['icons/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['images/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['marks/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['scripts/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['styles/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'},
 		    ]
 		  }

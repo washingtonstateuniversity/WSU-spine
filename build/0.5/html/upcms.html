@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<title>$!{title} | Washington State University</title>
+	
+	<!-- FAVICON -->
+	<link rel="shortcut icon" href="http://images.wsu.edu/spine/1/images/icons/favicon.ico" />
+	
+	<!-- STYLESHEETS -->
+	<link href="http://repo.wsu.edu/spine/1/spine.css" rel="stylesheet" type="text/css" />
+	<!-- Your custom stylesheets here -->
+	
+	<!-- RESPOND -->
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	
+	<!-- SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+	<script src="http://repo.wsu.edu/spine/1/spine.min.js"></script>
+	<!-- Your supplementary scripts here -->
+	
+	<!-- COMPATIBILITY -->
+	<!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">IE7_PNG_SUFFIX=".png";</script><![endif]--> 
+	
+	<!-- DOCS -->
+	<link type="text/plain" rel="author" href="http://images.wsu.edu/spine/humans.txt" />
+	<link type="text/html" rel="docs" href="http://identity.wsu.edu" />
+	
+	<!-- ANALYTICS -->
+	<!-- Your analytics code here -->
+	
+</head>
+
+<body id="$!{story.Slug}" class="$!{story.Slug} $!{story.Parent.Slug} $!{story.FullSlug}">
+
+<!-- WRAPPING -->
+<div id="jacket">
+<div id="binder" class="hybrid">
+
+<!-- CONTENT -->
+<main id="page" role="main">
+
+<!-- Responsive Sections -->
+<section class="row sidebar">
+
+	<header>
+		<div class="parent-header"></div>
+		<div class="child-header"></div>
+	</header>
+
+	<div class="column one">
+		<article>
+			
+			$!{body}
+
+		</article>
+	</div><!--/column-->
+
+	<div class="column two">
+		<aside>
+			
+			$!{sidebar}
+			
+		</aside>
+	</div><!--/column-->
+
+</section>
+
+</main><!--/#page-->
+<!-- /CONTENT -->
+
+<!-- SPINE -->
+<div id="spine" class="shelved">
+<div id="glue" class="clearfix">
+
+<header><a href="http://www.wsu.edu/" id="logo">Washington State University</a></header>
+
+<!-- ACTIONS -->
+<section id="wsu-actions">
+
+<!-- Tabs -->
+<ul id="wsu-actions-tabs" class="spine-tabs clearfix">
+	<li id="wsu-search-tab" class="closed"><button>Search</button></li>
+	<li id="wsu-contact-tab" class="closed"><button>Contact</button></li>
+	<li id="wsu-share-tab" class="closed"><button>Share</button></li>
+	<li id="wsu-print-tab" class="closed"><button>Print</button></li>
+</ul>
+
+	<!-- Search/Index ( In great FLUX ) -->
+	<section id="wsu-search" class="tools closed" data-default="site-search">
+	<!--
+	You can turn off default search functions by adding classes to #wsu-search
+	Options: .nix-index, .nix-site, .nix-wsu, .nix-facstaff, .nix-students
+	-->
+	
+	<form name="search" id="search">
+		<input id="searchterm" name="term" type="text" value="" placeholder="search">
+		<button id="submit-search">Submit</button>
+	</form>
+	
+	<div id="wsu-search-results" class="spine-results">
+		<div id="index-search-results" class="active"></div>
+	</div>
+	     
+	</section>
+	
+	<!-- Local Search (How to specify local search option?) -->
+	<!--<input type="hidden" value="http://site.wsu.edu/search/?" id="local" class="action" />-->
+	
+	<!-- Contact (Thinking about moving this to the header) -->
+	<address id="contact-details" itemscope itemtype="http://schema.org/Organization">
+    	<meta itemprop="name" class="required" content="Washington State University">
+    	<meta itemprop="department" class="required" content="University Unit">
+    	<meta itemprop="url" class="required" content="your-unit.wsu.edu">
+    	<meta itemprop="location" class="optional" content="French Administration Building">
+		<meta itemprop="streetAddress" class="optional" content="PO Box 555555">
+		<meta itemprop="addressLocality" class="optional" content="Pullman, WA">
+		<meta itemprop="postalCode" class="required" content="99163">
+		<meta itemprop="telephone" class="required" content="(509) 335-3564">
+		<meta itemprop="email" class="required" content="your-contact-email@wsu.edu">
+		<meta itemprop="ContactPoint" title="Contact Page" class="optional" content="http://contact.wsu.edu">
+	</address>
+	
+</section><!--/#wsu-actions-->
+
+<nav id="navigation">
+
+<nav id="site">
+
+#shownav("Primary Navigation")
+
+</nav>
+
+<nav id="offsite">
+	<ul>
+		<li><a href="">Offsite Link</a></li>
+		<li><a href="">Another</a></li>
+	</ul>
+</nav>
+
+</nav><!-- #navigation -->
+
+<!-- Social and Global Links -->
+<footer>
+	<nav id="social">
+		<ul>
+			<li id="facebook"><a href="http://facebook.com/wsupullman">Facebook</a></li>
+			<li id="twitter"><a href="http://twitter.com/wsupullman">Twitter</a></li>
+			<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+			<li id="directory"><a href="http://social.wsu.edu">Social</a></li>
+			<!-- You can replace default social channels with your own. Available channels are:
+				• Facebook, Twitter, Youtube, Google+, Tumblr, Pinterest, Flickr, 
+				• Example: <li id="pinterest"><a href="http://pinterest.com/user">Pinterest</a></li>
+				• Maximum number of channels is four
+			-->
+		</ul>
+	</nav>
+	<nav id="global">
+		<ul>
+			<li id="zzusis"><a href="http://zzusis.wsu.edu/">Zzu<strong>sis</strong></a></li>
+			<li id="access"><a href="http://access.wsu.edu/">Access</a></li>
+			<li id="policies"><a href="http://policies.wsu.edu/">Policies</a></li>
+			<li id="copyright"><a href="http://copyright.wsu.edu">&nbsp;&copy;</a></li>
+		</ul>
+	</nav>	
+	<!-- <small id="copyright"><a href="http://copyright.wsu.edu">&copy; Washington State University</a></small> -->
+</footer>
+
+</div><!--/glue-->
+</div><!--/spine-->
+<!-- /SPINE -->
+
+</div><!--/cover-->
+</div><!--/jacket-->
+<!-- /WRAPPING -->
+
+</body>
+</html>
