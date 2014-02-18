@@ -146,37 +146,7 @@
                 } 
             });
     
-            // NAVIGATION
-            // Tag location and hierarchy
-            $("#spine nav ul,#spine ul").parents("li").addClass("parent");
-            $("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
-            $("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
-            $("#spine .active").not(":has(.active)").addClass("dogeared");
-    
-            // Disclosure
-            $("#spine nav li.parent > a").on("click",function(e) { 
-                e.preventDefault();
-                $(this).parent("li").siblings().removeClass("opened");
-                $(this).parent("li").toggleClass("opened");
-            });
-    
-            // Couplets
-            $("#spine nav li.parent > a").each( function() {
-                var title = 'Overview';
-                if ($(this).attr('title')) {
-                    var alt = $(this).attr('title').length;
-                    if ( alt > 0 ) { title = $(this).attr('title'); }
-                }
-                if ($(this).closest('.parent').hasClass('dogeared')) {
-                    var classes = "overview dogeared";
-                } else {
-                    var classes = "overview";
-                }
-                var url = $(this).attr("href");
-                if ( url != '#' ) {
-                    $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
-                }
-            });
+
     
             // Clicking Outside Spine Closes It
             /* $(document).on('mouseup touchstart', function (e) {
@@ -330,8 +300,37 @@
          * Sets up navagation system
          */
         setup_nav: function(){
-            
-            
+            // NAVIGATION
+            // Tag location and hierarchy
+            $("#spine nav ul,#spine ul").parents("li").addClass("parent");
+            $("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
+            $("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
+            $("#spine .active").not(":has(.active)").addClass("dogeared");
+    
+            // Disclosure
+            $("#spine nav li.parent > a").on("click",function(e) { 
+                e.preventDefault();
+                $(this).parent("li").siblings().removeClass("opened");
+                $(this).parent("li").toggleClass("opened");
+            });
+    
+            // Couplets
+            $("#spine nav li.parent > a").each( function() {
+                var title = 'Overview';
+                if ($(this).attr('title')) {
+                    var alt = $(this).attr('title').length;
+                    if ( alt > 0 ) { title = $(this).attr('title'); }
+                }
+                if ($(this).closest('.parent').hasClass('dogeared')) {
+                    var classes = "overview dogeared";
+                } else {
+                    var classes = "overview";
+                }
+                var url = $(this).attr("href");
+                if ( url != '#' ) {
+                    $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
+                }
+            });
         },
         
         /**
