@@ -1,5 +1,6 @@
 (function($){
 	"use strict";
+    $.spine();
 	function setup_search(){
 		/* Search autocomplete */
 		var cur_search = "";
