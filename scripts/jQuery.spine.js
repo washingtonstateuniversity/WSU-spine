@@ -4,18 +4,6 @@
  *	});
 **/
 ;(function ( $, window, document, undefined ) {
-	var SPINE = function(elem, options){
-		this.elem = elem;
-		this.$elem = $(elem);
-		this.options = options;
-		this.metadata = this.$elem.data('plugin-options');
-	};
-	
-	SPINE.prototype = {
-			
-	}
-	
-	SPINE.defaults = SPINE.prototype.defaults;
 	/**
      * Sets up the plugins prototype
 	 * @param name:string
@@ -35,6 +23,14 @@
 			'pluginName': name
         }, prototype);
 		$.fn[name] = function(options) {
+        
+            this.elem = elem;
+            this.$elem = $(elem);
+            this.options = options;
+            this.metadata = this.$elem.data('plugin-options');
+            
+            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+
 			var isMethodCall = typeof options === "string",
 				args = Array.prototype.slice.call(arguments, 1),
 				returnValue = this;
@@ -62,19 +58,17 @@
 			message: 'Hello world!'
 		},
         
-        
-		init: function() {
-            
-			this.config = $.extend({}, this.defaults, this.options, this.metadata);
-			
-			this.displayMessage();
-			
-			return this;
-		},
-        
-        
-		displayMessage: function() {
-			alert(this.config.message);
+		/**
+		 * Setup plugin basics, 
+		 * @param options:object
+		 * @param element:node
+		 */
+		_setup: function(options, element) {
+			this.el = element;
+			options = options || {};
+			jQuery.extend(this.options, options, {  });
+			this._create();
+			if ( this._init ) { this._init(); }
 		},
         
         
