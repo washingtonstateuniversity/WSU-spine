@@ -171,7 +171,7 @@
 		 * @param obj:string/node/jQuery
 		 */
 		_unwrap: function(obj) {
-			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) )
+			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) );
 		},
 		/**
 		 * Helper method for calling a function
