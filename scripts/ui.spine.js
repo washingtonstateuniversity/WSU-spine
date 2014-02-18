@@ -66,7 +66,7 @@
 		_setup: function(options, element) {
 			this.el = element;
 			options = options || {};
-			jQuery.extend(this.options, options, {  });
+			$.extend(this.options, options, {  });
 			this._create();
 			if ( this._init ) { this._init(); }
 		},
@@ -80,8 +80,6 @@
 		},
         
 
-        
-        
 		/**
 		 * Clears by type
 		 * @param ctx:string	e.g. 'search', 'social', 'framework'
@@ -124,7 +122,7 @@
 		 */
 		destroy: function(callback) {
 			this.clear('markers').clear('services').clear('overlays')._c(this.instance);
-			jQuery.removeData(this.el, this.name);
+			$.removeData(this.el, this.name);
 			this._call(callback, this);
 		},
     });
@@ -134,7 +132,8 @@
         //we are going to prep for the day we move to correction to the dom
         var targ = this.jquery===undefined ? $(window) : this;
 		return $.each(targ,function() {
-			new SPINE(this, options).init();
+            $.spine(this, options);
+			//new SPINE(this, options).init();
 		});
 	};
 	
