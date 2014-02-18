@@ -144,7 +144,7 @@
 		 */
 		_unwrap: function(obj) {
 			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) )
-		}
+		},
 		/**
 		 * Helper method for calling a function
 		 * @param callback
@@ -153,6 +153,14 @@
 			if ( callback && $.isFunction(callback) ) {
 				callback.apply(this, Array.prototype.slice.call(arguments, 1));
 			}
+		},
+		/**
+		 * Destroys the plugin.
+		 */
+		destroy: function(callback) {
+			this.clear('markers').clear('services').clear('overlays')._c(this.instance);
+			jQuery.removeData(this.el, this.name);
+			this._call(callback, this);
 		},
     });
     
