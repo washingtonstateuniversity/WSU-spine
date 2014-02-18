@@ -126,16 +126,97 @@
                 e.preventDefault();
                 $wsu_actions.find('.opened').toggleClass('opened closed');
             });
+
+
+
+            $(window).on('resize', function(){
+                this.setup_spine();
+                this.setup_nav();
+                this.sizing();
+                this.equalizing();
+                this.mainheight();
+                var $main = $('main');
+                // Only run function if an unbound element exists
+                if( $('.unbound').length ) {
+                    var verso = $main.offset().left;
+                    var recto = $main.offset().right;
+                    // var recto = $(window).width() - ($('main').offset().left + $('main').width());
+                    var spread = $(window).width();
+                    var page = $main.width();
+                    var recto = spread - $main.offset().left;
+                    if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
     
-            // Submit search
-            /* $("button#submit-search").on("click",function(e) {
-                e.preventDefault();
-                $('#results').show();
-                //return false;
-            }); */
-    
+                    var verso_width = verso + $main.width();
+                    $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
+                    $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
+                    $('.unbound.verso.recto').css('width',spread);
+                }
+            }).trigger();
+
+        },
+        
+        // Label #jacket with current window size
+        sizing: function (jacket) {
+                jacket=jacket||$('#jacket');
+                var current_width = $(window).width();
+                if(current_width >= 1188) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
+                } else if(current_width >= 990) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
+                } else if(current_width < 990 && current_width >= 792) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
+                } else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
+                } else if(current_width < 792) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+                } else if(current_width < 396) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+                }
+         },
+        // Equalize Columns
+        equalizing: function () {
+            if( $('.equalize').length ) {
+                var obj=$('.row.equalize');
+                obj.find('.column').css('min-height','');
+                $.each(obj,function(){
+                    var tallestBox = 0;
+                    $.each($('.column', this),function(){
+                        if($(this).height() > tallestBox) {
+                           tallestBox = $(this).outerHeight();
+                        }
+                    });
+                    $('.column',this).not('.unequaled').css('min-height',tallestBox);
+                    $('section.equalize .column',this).css('min-height','auto');
+                });
+            }
+        },
+        mainheight: function () {
+            var main_top = $('main').offset().top;
+            var window_height = $(window).height();
+            if ($('#binder').hasClass('size-lt-large')) {
+                var main_height = window_height - 50;
+            } else {
+                var main_height = window_height;
+            }
+            $('main.fill-window-height').css('min-height',main_height);
+        },
+
+
+        
+        /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_binder: function(){
             
-    
+            
+        },
+        
+        
+        
+        /**
+         * Sets up the spine area
+         */
+        setup_spine: function(){
             // Fixed/Sticky Horizontal Header
             $(document).scroll(function() {
                 var top = $(document).scrollTop();
@@ -210,80 +291,8 @@
                     $('#spine.cracked').removeClass('pinned');
                 }
             });*/
-    
-
-
-    
-            $(window).on('resize', function(){
-                this.setup_nav();
-                this.sizing();
-                this.equalizing();
-                this.mainheight();
-                var $main = $('main');
-                // Only run function if an unbound element exists
-                if( $('.unbound').length ) {
-                    var verso = $main.offset().left;
-                    var recto = $main.offset().right;
-                    // var recto = $(window).width() - ($('main').offset().left + $('main').width());
-                    var spread = $(window).width();
-                    var page = $main.width();
-                    var recto = spread - $main.offset().left;
-                    if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
-    
-                    var verso_width = verso + $main.width();
-                    $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
-                    $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
-                    $('.unbound.verso.recto').css('width',spread);
-                }
-            }).trigger();
-
         },
         
-        // Label #jacket with current window size
-        sizing: function (jacket) {
-                jacket=jacket||$('#jacket');
-                var current_width = $(window).width();
-                if(current_width >= 1188) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
-                } else if(current_width >= 990) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
-                } else if(current_width < 990 && current_width >= 792) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
-                } else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
-                } else if(current_width < 792) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
-                } else if(current_width < 396) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
-                }
-         },
-        // Equalize Columns
-        equalizing: function () {
-            if( $('.equalize').length ) {
-                var obj=$('.row.equalize');
-                obj.find('.column').css('min-height','');
-                $.each(obj,function(){
-                    var tallestBox = 0;
-                    $.each($('.column', this),function(){
-                        if($(this).height() > tallestBox) {
-                           tallestBox = $(this).outerHeight();
-                        }
-                    });
-                    $('.column',this).not('.unequaled').css('min-height',tallestBox);
-                    $('section.equalize .column',this).css('min-height','auto');
-                });
-            }
-        },
-        mainheight: function () {
-            var main_top = $('main').offset().top;
-            var window_height = $(window).height();
-            if ($('#binder').hasClass('size-lt-large')) {
-                var main_height = window_height - 50;
-            } else {
-                var main_height = window_height;
-            }
-            $('main.fill-window-height').css('min-height',main_height);
-        },
         
         /**
          * Sets up the tabs that will be able to be used by other extensions
@@ -334,15 +343,7 @@
                return this.hostname && this.hostname !== location.hostname;
             }).addClass("external");
         },
-        
-        /**
-         * Sets up framework html and other DOM attributes
-         */
-        setup_binder: function(){
-            
-            
-        }
-        
+
         
 	});
 } (jQuery) );
