@@ -94,7 +94,45 @@
 	}
 	
 	SPINE.defaults = SPINE.prototype.defaults;
-	
+	/**
+     * Sets up the plugins prototype
+	 * @param name:string
+	 * @param prototype:object
+	 */
+	$.s = function(name, prototype) {
+		var namespace = name.split('.')[0];
+        name = name.split('.')[1];
+		$[namespace] = $[namespace] || {};
+		$[namespace][name] = function(options, element) {
+			if ( arguments.length ) {
+				this._setup(options, element);
+			}
+		};
+		$[namespace][name].prototype = $.extend({
+			'namespace': namespace,
+			'pluginName': name
+        }, prototype);
+		$.fn[name] = function(options) {
+			var isMethodCall = typeof options === "string",
+				args = Array.prototype.slice.call(arguments, 1),
+				returnValue = this;
+			
+			if ( isMethodCall && options.substring(0, 1) === '_' ) { 
+				return returnValue; 
+			}
+
+			this.each(function() {
+				var instance = $.data(this, name);
+				if (!instance) {
+					instance = $.data(this, name, new $[namespace][name](options, this));
+				}
+				if (isMethodCall) {
+					returnValue = instance[options].apply(instance, args);
+				}
+			});
+			return returnValue; 
+		};
+	};
 	$.spine = function(options) {
         //we are going to prep for the day we move to correction to the dom
         var targ = this.jquery===undefined ? $(window) : this;
