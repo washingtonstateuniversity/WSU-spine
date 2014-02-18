@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		      dest: 'build/spine.css',
 		    },
 		    scripts: {
-		      src: [ 'scripts/wsu_autocomplete.js','scripts/jQuery.spine.js','scripts/spine.js'],
+		      src: [ 'scripts/debug.js','scripts/wsu_autocomplete.js','scripts/jQuery.spine.js','scripts/spine.js'],
 			  dest: 'build/spine.js',
 			  },
 		},
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             options: {
                 inline: true,
                 context : {
-                    DEBUG: false
+                    DEBUG: true
                 }
             },
             js : {
