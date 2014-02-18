@@ -211,11 +211,7 @@
                 }
             });*/
     
-            // External Links in nav
-            // this shouldn't be done this way
-            $('nav#spine-sitenav a').filter(function() {
-               return this.hostname && this.hostname !== location.hostname;
-            }).addClass("external");
+
 
     
             $(window).on('resize', function(){
@@ -332,6 +328,11 @@
                     $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
                 }
             });
+            // External Links in nav
+            // this shouldn't be done this way
+            $('nav#spine-sitenav a').filter(function() {
+               return this.hostname && this.hostname !== location.hostname;
+            }).addClass("external");
         },
         
         /**
