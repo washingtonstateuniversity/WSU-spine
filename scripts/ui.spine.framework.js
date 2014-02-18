@@ -246,19 +246,12 @@
             $('nav#spine-sitenav a').filter(function() {
                return this.hostname && this.hostname !== location.hostname;
             }).addClass("external");
+
     
-            
-            this.sizing();
-            this.equalizing();
-            this.mainheight();
-    
-            $(window).resize(function(){
+            $(window).on('resize', function(){
                 this.sizing();
                 this.equalizing();
                 this.mainheight();
-            });
-    
-            $(window).on('resize', function(){
                 var $main = $('main');
                 // Only run function if an unbound element exists
                 if( $('.unbound').length ) {
@@ -275,7 +268,7 @@
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
                     $('.unbound.verso.recto').css('width',spread);
                 }
-            });
+            }).trigger();
 
         },
         
