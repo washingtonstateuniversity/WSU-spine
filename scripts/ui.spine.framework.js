@@ -79,59 +79,16 @@
                 $wsu_actions.append(contact);
             } // End Contact Generation
     
-            // Tools tabs		
-            $("#wsu-share-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
-                });
-            $("#wsu-search-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-                $('#spine section#wsu-search input').focus();
-                });
-            $("#wsu-contact-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
-                });
+
     
-            // Print & Print View
-            var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
-    
-            function printPage(){
-                window.print();
-            }
-    
-            function print_cancel() {
-                $('html').toggleClass('print');
-                $('.print-controls').remove();
-            }
-    
-            /* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
-            function print(e) {
-                if ( undefined !== e ) {
-                    e.preventDefault();
-                }
-                $wsu_actions.find('.opened').toggleClass('opened closed');
-                $('html').toggleClass('print');
-                $spine.find('header').prepend(print_controls);
-                $spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
-                $("#print-invoke").on("click",function() { window.print(); });
-                $("#print-cancel").on("click",print_cancel);
-                setTimeout(function() { printPage(); }, 400);
-            }
-            $("#wsu-print-tab button").click(print);
-    
-            // Shut a tool section
-            $("button.shut").on("click",function(e) {
-                e.preventDefault();
-                $wsu_actions.find('.opened').toggleClass('opened closed');
-            });
+
 
 
 
             $(window).on('resize', function(){
                 this.setup_spine();
                 this.setup_nav();
+                this.setup_tabs();
                 this.sizing();
                 this.equalizing();
                 this.mainheight();
@@ -298,8 +255,20 @@
          * Sets up the tabs that will be able to be used by other extensions
          */
         setup_tabs: function(){
-            
-            
+            // Tools tabs		
+            $("#wsu-share-tab button").on("click",function(e) {
+                e.preventDefault();
+                $('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
+                });
+            $("#wsu-search-tab button").on("click",function(e) {
+                e.preventDefault();
+                $('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
+                $('#spine section#wsu-search input').focus();
+                });
+            $("#wsu-contact-tab button").on("click",function(e) {
+                e.preventDefault();
+                $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
+                });
         },
         
         /**
@@ -343,7 +312,41 @@
                return this.hostname && this.hostname !== location.hostname;
             }).addClass("external");
         },
-
+        
+        setup_printing: function(){
+            // Print & Print View
+            var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
+    
+            function printPage(){
+                window.print();
+            }
+    
+            function print_cancel() {
+                $('html').toggleClass('print');
+                $('.print-controls').remove();
+            }
+    
+            /* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
+            function print(e) {
+                if ( undefined !== e ) {
+                    e.preventDefault();
+                }
+                $wsu_actions.find('.opened').toggleClass('opened closed');
+                $('html').toggleClass('print');
+                $spine.find('header').prepend(print_controls);
+                $spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
+                $("#print-invoke").on("click",function() { window.print(); });
+                $("#print-cancel").on("click",print_cancel);
+                setTimeout(function() { printPage(); }, 400);
+            }
+            $("#wsu-print-tab button").click(print);
+    
+            // Shut a tool section
+            $("button.shut").on("click",function(e) {
+                e.preventDefault();
+                $wsu_actions.find('.opened').toggleClass('opened closed');
+            });
+        }
         
 	});
 } (jQuery) );
