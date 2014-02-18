@@ -35,7 +35,7 @@
             if (!$wsu_search.length) {
             var search  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
                 search += '		<form id="default-search">';
-                search += '			<input name="term" type="text" value="" placeholder="search">'
+                search += '			<input name="term" type="text" value="" placeholder="search">';
                 search += '			<button>Submit</button>';
                 search += '		</form>';
                 search += '		<div id="spine-shortcuts"></div>';
@@ -61,10 +61,9 @@
             }); */
             $("#wsu-search form").submit( function() {
                 var scope = $("#wsu-search").attr('data-default');
+                var site = '';
                 if ( scope == 'site-search' ) {
-                    var site = ' site:'+location.hostname;
-                } else {
-                    var site = '';
+                    site = ' site:'+location.hostname;
                 }
                 var cx = 'cx=004677039204386950923:xvo7gapmrrg';
                 var cof = 'cof=FORID%3A11';
