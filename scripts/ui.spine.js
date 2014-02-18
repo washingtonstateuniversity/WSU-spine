@@ -24,12 +24,15 @@
         }, prototype);
 		$.fn[name] = function(options) {
         
-            this.elem = elem;
-            this.$elem = $(elem);
             this.options = options;
-            this.metadata = this.$elem.data('plugin-options');
             
-            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+            //this is will used to provide data changes as things are read if they exist
+            //this.elem = elem;
+            //this.$elem = $(elem);
+            //this.options = options;
+            //this.metadata = this.$elem.data('plugin-options');
+            
+            //this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
 			var isMethodCall = typeof options === "string",
 				args = Array.prototype.slice.call(arguments, 1),
@@ -57,7 +60,8 @@
         defaults: {
 			message: 'Hello world!'
 		},
-        
+        options: {
+		},
 		/**
 		 * Setup plugin basics, 
 		 * @param options:object
@@ -197,15 +201,15 @@
 			this._call(callback, this);
 		},
     });
-    
-    
-	$.spine = function(options) {
+    $.spine = function(options) {
         //we are going to prep for the day we move to correction to the dom
         var targ = this.jquery===undefined ? $(window) : this;
 		return $.each(targ,function() {
-            $.spine(this, options);
+            $(this).spine(options);
 			//new SPINE(this, options).init();
 		});
 	};
 
+    
+	
 })( jQuery, window, document );

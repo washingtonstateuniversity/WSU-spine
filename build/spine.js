@@ -1,101 +1,29 @@
 /* for debug only. remove when done */
 
-function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(typeof n=="object")for(r in n)u=n[r],typeof u=="object"?(i+=f+"'"+r+"' ...\n",i+=dump(u,t+1)):i+=f+"'"+r+"' => \""+u+'"\n';else i="===>"+n+"<===("+typeof n+")";return i;}
-
-
-/* repeatString() returns a string which has been repeated a set number of times */ 
-function repeatString(str, num) {
-    out = '';
-    for (var i = 0; i < num; i++) {
-        out += str; 
-    }
-    return out;
+function dump(arr,level) {
+	var dumped_text = "";
+	if(!level) level = 0;
+	
+	//The padding given at the beginning of the line.
+	var level_padding = "";
+	for(var j=0;j<level+1;j++) level_padding += "    ";
+	
+	if(typeof(arr) == 'object') { //Array/Hashes/Objects 
+		for(var item in arr) {
+			var value = arr[item];
+			
+			if(typeof(value) == 'object') { //If it is an array,
+				dumped_text += level_padding + "'" + item + "' ...\n";
+				dumped_text += dump(value,level+1);
+			} else {
+				dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+			}
+		}
+	} else { //Stings/Chars/Numbers etc.
+		dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+	}
+	return dumped_text;
 }
-
-/*
-dump() displays the contents of a variable like var_dump() does in PHP. dump() is
-better than typeof, because it can distinguish between array, null and object.  
-Parameters:
-  v:              The variable
-  howDisplay:     "none", "body", "alert" (default)
-  recursionLevel: Number of times the function has recursed when entering nested
-                  objects or arrays. Each level of recursion adds extra space to the 
-                  output to indicate level. Set to 0 by default.
-Return Value:
-  A string of the variable's contents 
-Limitations:
-  Can't pass an undefined variable to dump(). 
-  dump() can't distinguish between int and float.
-  dump() can't tell the original variable type of a member variable of an object.
-  These limitations can't be fixed because these are *features* of JS. However, dump()
-*/
-function var_dump(v, howDisplay, recursionLevel) {
-    howDisplay = (typeof howDisplay === 'undefined') ? "alert" : howDisplay;
-    recursionLevel = (typeof recursionLevel !== 'number') ? 0 : recursionLevel;
-
-
-    var vType = typeof v;
-    var out = vType;
-
-    switch (vType) {
-        case "number":
-            /* there is absolutely no way in JS to distinguish 2 from 2.0
-            so 'number' is the best that you can do. The following doesn't work:
-            var er = /^[0-9]+$/;
-            if (!isNaN(v) && v % 1 === 0 && er.test(3.0))
-                out = 'int';*/
-        case "boolean":
-            out += ": " + v;
-            break;
-        case "string":
-            out += "(" + v.length + '): "' + v + '"';
-            break;
-        case "object":
-            //check if null
-            if (v === null) {
-                out = "null";
-
-            }
-            //If using jQuery: if ($.isArray(v))
-            //If using IE: if (isArray(v))
-            //this should work for all browsers according to the ECMAScript standard:
-            else if (Object.prototype.toString.call(v) === '[object Array]') {  
-                out = 'array(' + v.length + '): {\n';
-                for (var i = 0; i < v.length; i++) {
-                    out += repeatString('   ', recursionLevel) + "   [" + i + "]:  " + 
-                        dump(v[i], "none", recursionLevel + 1) + "\n";
-                }
-                out += repeatString('   ', recursionLevel) + "}";
-            }
-            else { //if object    
-                sContents = "{\n";
-                cnt = 0;
-                for (var member in v) {
-                    //No way to know the original data type of member, since JS
-                    //always converts it to a string and no other way to parse objects.
-                    sContents += repeatString('   ', recursionLevel) + "   " + member +
-                        ":  " + dump(v[member], "none", recursionLevel + 1) + "\n";
-                    cnt++;
-                }
-                sContents += repeatString('   ', recursionLevel) + "}";
-                out += "(" + cnt + "): " + sContents;
-            }
-            break;
-    }
-
-    if (howDisplay == 'body') {
-        var pre = document.createElement('pre');
-        pre.innerHTML = out;
-        document.body.appendChild(pre);
-    }
-    else if (howDisplay == 'alert') {
-        alert(out);
-    }
-
-    return out;
-}
-
-
 
 (function($){
 	"use strict";
@@ -156,12 +84,15 @@ function var_dump(v, howDisplay, recursionLevel) {
         }, prototype);
 		$.fn[name] = function(options) {
         
-            this.elem = elem;
-            this.$elem = $(elem);
             this.options = options;
-            this.metadata = this.$elem.data('plugin-options');
             
-            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+            //this is will used to provide data changes as things are read if they exist
+            //this.elem = elem;
+            //this.$elem = $(elem);
+            //this.options = options;
+            //this.metadata = this.$elem.data('plugin-options');
+            
+            //this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
 			var isMethodCall = typeof options === "string",
 				args = Array.prototype.slice.call(arguments, 1),
@@ -303,7 +234,7 @@ function var_dump(v, howDisplay, recursionLevel) {
 		 * @param obj:string/node/jQuery
 		 */
 		_unwrap: function(obj) {
-			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) )
+			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) );
 		},
 		/**
 		 * Helper method for calling a function
@@ -329,17 +260,17 @@ function var_dump(v, howDisplay, recursionLevel) {
 			this._call(callback, this);
 		},
     });
-    
-    
-	$.spine = function(options) {
+    $.spine = function(options) {
         //we are going to prep for the day we move to correction to the dom
         var targ = this.jquery===undefined ? $(window) : this;
 		return $.each(targ,function() {
-            $.spine(this, options);
+            $(this).spine(options);
 			//new SPINE(this, options).init();
 		});
 	};
 
+    
+	
 })( jQuery, window, document );
  /*!
  *
@@ -404,7 +335,7 @@ function var_dump(v, howDisplay, recursionLevel) {
                     contact += '	<div class="organization-name">'+name+'</div>';
                     contact += '	<div class="address">';
                     contact += '		<div class="street-address">'+streetAddress+'</div>';
-                    contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>'
+                    contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>';
                     contact += '	</div>';
                     contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
                     contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
@@ -440,8 +371,9 @@ function var_dump(v, howDisplay, recursionLevel) {
                     // var recto = $(window).width() - ($('main').offset().left + $('main').width());
                     var spread = $(window).width();
                     var page = $main.width();
-                    var recto = spread - $main.offset().left;
-                    if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
+                        recto = spread - $main.offset().left;
+                    var recto_margin = "";
+                    if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
     
                     var verso_width = verso + $main.width();
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
@@ -490,10 +422,9 @@ function var_dump(v, howDisplay, recursionLevel) {
         mainheight: function () {
             var main_top = $('main').offset().top;
             var window_height = $(window).height();
+            var main_height = window_height;
             if ($('#binder').hasClass('size-lt-large')) {
-                var main_height = window_height - 50;
-            } else {
-                var main_height = window_height;
+                main_height -= 50;
             }
             $('main.fill-window-height').css('min-height',main_height);
         },
@@ -649,10 +580,9 @@ function var_dump(v, howDisplay, recursionLevel) {
                     var alt = $(this).attr('title').length;
                     if ( alt > 0 ) { title = $(this).attr('title'); }
                 }
+                var classes = "overview";
                 if ($(this).closest('.parent').hasClass('dogeared')) {
-                    var classes = "overview dogeared";
-                } else {
-                    var classes = "overview";
+                    classes += " dogeared";
                 }
                 var url = $(this).attr("href");
                 if ( url != '#' ) {
@@ -740,7 +670,7 @@ function var_dump(v, howDisplay, recursionLevel) {
             if (!$wsu_search.length) {
             var search  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
                 search += '		<form id="default-search">';
-                search += '			<input name="term" type="text" value="" placeholder="search">'
+                search += '			<input name="term" type="text" value="" placeholder="search">';
                 search += '			<button>Submit</button>';
                 search += '		</form>';
                 search += '		<div id="spine-shortcuts"></div>';
@@ -766,10 +696,9 @@ function var_dump(v, howDisplay, recursionLevel) {
             }); */
             $("#wsu-search form").submit( function() {
                 var scope = $("#wsu-search").attr('data-default');
+                var site = '';
                 if ( scope == 'site-search' ) {
-                    var site = ' site:'+location.hostname;
-                } else {
-                    var site = '';
+                    site = ' site:'+location.hostname;
                 }
                 var cx = 'cx=004677039204386950923:xvo7gapmrrg';
                 var cof = 'cof=FORID%3A11';
