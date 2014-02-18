@@ -257,16 +257,7 @@
     
             $(window).resize(function(){ this.equalizing(); });
     
-            function mainheight() {
-                var main_top = $('main').offset().top;
-                var window_height = $(window).height();
-                if ($('#binder').hasClass('size-lt-large')) {
-                    var main_height = window_height - 50;
-                } else {
-                    var main_height = window_height;
-                }
-                $('main.fill-window-height').css('min-height',main_height);
-            }
+            
             mainheight();
     
             $(window).resize(function(){ mainheight(); });
@@ -326,9 +317,17 @@
                     $('section.equalize .column',this).css('min-height','auto');
                 });
             }
+        },
+        mainheight: function () {
+            var main_top = $('main').offset().top;
+            var window_height = $(window).height();
+            if ($('#binder').hasClass('size-lt-large')) {
+                var main_height = window_height - 50;
+            } else {
+                var main_height = window_height;
+            }
+            $('main.fill-window-height').css('min-height',main_height);
         }
-        
-        
         
 	});
 } (jQuery) );
