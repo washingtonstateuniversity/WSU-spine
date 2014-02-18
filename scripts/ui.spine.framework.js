@@ -316,7 +316,11 @@
                 var main_height = window_height;
             }
             $('main.fill-window-height').css('min-height',main_height);
-        }
+        },
+        setup_tabs: function(){
+            
+            
+        },
         
 	});
 } (jQuery) );
