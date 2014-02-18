@@ -372,10 +372,22 @@ img.fill-width {
 	width: 100%;
 	height: auto;
 	}
+
 img.fill-height {
 	height: 100%;
 	width: auto;
 	}
+	
+img.max-width {
+	max-width: 100%;
+	height: auto;
+	}
+@media \0screen {
+  img.max-width { 
+  	width: auto; /* for ie 8 */
+  }
+  }
+	
 .hybrid.small figure.fill-width {
 	width: 100%;
 	}
