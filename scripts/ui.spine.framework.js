@@ -258,9 +258,9 @@
             $(window).resize(function(){ this.equalizing(); });
     
             
-            mainheight();
+            this.mainheight();
     
-            $(window).resize(function(){ mainheight(); });
+            $(window).resize(function(){ this.mainheight(); });
     
             $(window).on('load resize', function(){
                 var $main = $('main');
