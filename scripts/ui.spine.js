@@ -150,6 +150,19 @@
 			return this;
 		},
         
+        /**
+         * Sets up an object that can be worked
+         */
+		_c: function(obj) {
+			for ( var property in obj ) {
+				if ( obj.hasOwnProperty(property) ) {
+					obj[property] = null;
+				}
+			}
+		},
+        
+        
+        
 		/**
 		 * Helper method for unwrapping jQuery/DOM/string elements
 		 * @param obj:string/node/jQuery
