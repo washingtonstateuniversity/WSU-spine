@@ -70,7 +70,14 @@
 			this._create();
 			if ( this._init ) { this._init(); }
 		},
-        
+        /**
+		 * Instanciate the object
+		 */
+		_create: function() {
+			var self = this;
+			this.instance = { 'spine': self.options };
+			self._call(self.options.callback, self.instance.spine);
+		},
         
         setup_search: function (){
             /* Search autocomplete */
