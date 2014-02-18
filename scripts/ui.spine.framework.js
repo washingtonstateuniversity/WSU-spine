@@ -317,10 +317,31 @@
             }
             $('main.fill-window-height').css('min-height',main_height);
         },
+        
+        /**
+         * Sets up the tabs that will be able to be used by other extensions
+         */
         setup_tabs: function(){
             
             
         },
+        
+        /**
+         * Sets up navagation system
+         */
+        setup_nav: function(){
+            
+            
+        },
+        
+        /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_binder: function(){
+            
+            
+        }
+        
         
 	});
 } (jQuery) );
