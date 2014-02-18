@@ -154,7 +154,13 @@
             $('main.fill-window-height').css('min-height',main_height);
         },
 
-
+        /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_jacket: function(){
+            
+            
+        },
         
         /**
          * Sets up framework html and other DOM attributes
