@@ -313,10 +313,11 @@
         // Equalize Columns
         equalizing: function () {
             if( $('.equalize').length ) {
-                $('.row.equalize .column').css('min-height','');
-                $('.row.equalize').each(function(){
+                var obj=$('.row.equalize');
+                obj.find('.column').css('min-height','');
+                $.each(obj,function(){
                     var tallestBox = 0;
-                    $('.column', this).each(function(){
+                    $.each($('.column', this),function(){
                         if($(this).height() > tallestBox) {
                            tallestBox = $(this).outerHeight();
                         }
