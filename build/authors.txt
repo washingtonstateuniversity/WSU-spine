@@ -2,7 +2,7 @@
 
 John Vleck: Concept and design
 Nate Jacobson: Execution and responsive skeleton
-Nicole Wood: Navigation testing
+Nicole Wood: Navigation and info architecture
 ---
 Stephen Locker: Fluidity and largesse
 Jeremy Bass: Javascript refactoring
@@ -20,7 +20,7 @@ Location: Pullman, Washington, USA.
 						
 /* SITE */
 
-Last update: 2014/02/12 of this document
+Last update: 2014/02/16 of this document
 Standards: HTML5, CSS3,..
 Components: jQuery, jQuery UI, ie7-js polyfill, addthis
-Software: Coda, Photoshop
+Software: Coda, Illustrator, Glyphs, Photoshop
