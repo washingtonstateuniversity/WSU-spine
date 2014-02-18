@@ -60,7 +60,8 @@
         defaults: {
 			message: 'Hello world!'
 		},
-        
+        options: {
+		},
 		/**
 		 * Setup plugin basics, 
 		 * @param options:object

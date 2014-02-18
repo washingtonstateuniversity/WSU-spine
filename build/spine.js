@@ -120,7 +120,8 @@ function dump(arr,level) {
         defaults: {
 			message: 'Hello world!'
 		},
-        
+        options: {
+		},
 		/**
 		 * Setup plugin basics, 
 		 * @param options:object
