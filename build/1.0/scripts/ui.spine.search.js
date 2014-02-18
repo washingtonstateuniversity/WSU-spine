@@ -59,12 +59,10 @@
                 window.location.href = search_url;
                 return false;
             }); */
-            
             $("#wsu-search form").submit( function() {
                 var scope = $("#wsu-search").attr('data-default');
                 if ( scope == 'site-search' ) {
                     var site = ' site:'+location.hostname;
-                    // var site = ' site:admission.wsu.edu' // temporary for testing
                 } else {
                     var site = '';
                 }
@@ -78,6 +76,9 @@
             }
         },
         
+        start_tab:function(){
+        
+        },
         
         setup_search: function (jObj, options){
             /* Search autocomplete */

@@ -207,6 +207,5 @@
 			//new SPINE(this, options).init();
 		});
 	};
-	
-	window.SPINE = SPINE;
+
 })( jQuery, window, document );

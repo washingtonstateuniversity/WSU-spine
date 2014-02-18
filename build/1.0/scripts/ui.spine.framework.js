@@ -5,10 +5,6 @@
  */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
-        foo: function(jObj, options) {
-                //do stuff
-                return jObj;
-            },
         _init: function(jObj, options) {
             // Cache the wsu-actions selector
             
@@ -79,63 +75,113 @@
                 $wsu_actions.append(contact);
             } // End Contact Generation
     
-            // Tools tabs		
-            $("#wsu-share-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
-                });
-            $("#wsu-search-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-                $('#spine section#wsu-search input').focus();
-                });
-            $("#wsu-contact-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
-                });
+
     
-            // Print & Print View
-            var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
+
+
+
+
+            $(window).on('resize', function(){
+                this.setup_spine();
+                this.setup_nav();
+                this.setup_tabs();
+                this.sizing();
+                this.equalizing();
+                this.mainheight();
+                var $main = $('main');
+                // Only run function if an unbound element exists
+                if( $('.unbound').length ) {
+                    var verso = $main.offset().left;
+                    var recto = $main.offset().right;
+                    // var recto = $(window).width() - ($('main').offset().left + $('main').width());
+                    var spread = $(window).width();
+                    var page = $main.width();
+                    var recto = spread - $main.offset().left;
+                    if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
     
-            function printPage(){
-                window.print();
-            }
-    
-            function print_cancel() {
-                $('html').toggleClass('print');
-                $('.print-controls').remove();
-            }
-    
-            /* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
-            function print(e) {
-                if ( undefined !== e ) {
-                    e.preventDefault();
+                    var verso_width = verso + $main.width();
+                    $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
+                    $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
+                    $('.unbound.verso.recto').css('width',spread);
                 }
-                $wsu_actions.find('.opened').toggleClass('opened closed');
-                $('html').toggleClass('print');
-                $spine.find('header').prepend(print_controls);
-                $spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
-                $("#print-invoke").on("click",function() { window.print(); });
-                $("#print-cancel").on("click",print_cancel);
-                setTimeout(function() { printPage(); }, 400);
+            }).trigger();
+
+        },
+        
+        // Label #jacket with current window size
+        sizing: function (jacket) {
+                jacket=jacket||$('#jacket');
+                var current_width = $(window).width();
+                if(current_width >= 1188) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
+                } else if(current_width >= 990) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
+                } else if(current_width < 990 && current_width >= 792) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
+                } else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
+                } else if(current_width < 792) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+                } else if(current_width < 396) {
+                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+                }
+         },
+        // Equalize Columns
+        equalizing: function () {
+            if( $('.equalize').length ) {
+                var obj=$('.row.equalize');
+                obj.find('.column').css('min-height','');
+                $.each(obj,function(){
+                    var tallestBox = 0;
+                    $.each($('.column', this),function(){
+                        if($(this).height() > tallestBox) {
+                           tallestBox = $(this).outerHeight();
+                        }
+                    });
+                    $('.column',this).not('.unequaled').css('min-height',tallestBox);
+                    $('section.equalize .column',this).css('min-height','auto');
+                });
             }
-            $("#wsu-print-tab button").click(print);
-    
-            // Shut a tool section
-            $("button.shut").on("click",function(e) {
-                e.preventDefault();
-                $wsu_actions.find('.opened').toggleClass('opened closed');
-            });
-    
-            // Submit search
-            /* $("button#submit-search").on("click",function(e) {
-                e.preventDefault();
-                $('#results').show();
-                //return false;
-            }); */
-    
+        },
+        mainheight: function () {
+            var main_top = $('main').offset().top;
+            var window_height = $(window).height();
+            if ($('#binder').hasClass('size-lt-large')) {
+                var main_height = window_height - 50;
+            } else {
+                var main_height = window_height;
+            }
+            $('main.fill-window-height').css('min-height',main_height);
+        },
+
+        /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_jacket: function(){
             
-    
+            
+        },
+        
+        /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_binder: function(){
+            
+            
+        },
+        
+         /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_content: function(){
+            
+            
+        },       
+        
+        /**
+         * Sets up the spine area
+         */
+        setup_spine: function(){
             // Fixed/Sticky Horizontal Header
             $(document).scroll(function() {
                 var top = $(document).scrollTop();
@@ -146,37 +192,7 @@
                 } 
             });
     
-            // NAVIGATION
-            // Tag location and hierarchy
-            $("#spine nav ul,#spine ul").parents("li").addClass("parent");
-            $("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
-            $("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
-            $("#spine .active").not(":has(.active)").addClass("dogeared");
-    
-            // Disclosure
-            $("#spine nav li.parent > a").on("click",function(e) { 
-                e.preventDefault();
-                $(this).parent("li").siblings().removeClass("opened");
-                $(this).parent("li").toggleClass("opened");
-            });
-    
-            // Couplets
-            $("#spine nav li.parent > a").each( function() {
-                var title = 'Overview';
-                if ($(this).attr('title')) {
-                    var alt = $(this).attr('title').length;
-                    if ( alt > 0 ) { title = $(this).attr('title'); }
-                }
-                if ($(this).closest('.parent').hasClass('dogeared')) {
-                    var classes = "overview dogeared";
-                } else {
-                    var classes = "overview";
-                }
-                var url = $(this).attr("href");
-                if ( url != '#' ) {
-                    $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
-                }
-            });
+
     
             // Clicking Outside Spine Closes It
             /* $(document).on('mouseup touchstart', function (e) {
@@ -240,89 +256,105 @@
                     $('#spine.cracked').removeClass('pinned');
                 }
             });*/
+        },
+        
+        
+        /**
+         * Sets up the tabs that will be able to be used by other extensions
+         */
+        setup_tabs: function(){
+            // Tools tabs		
+            $("#wsu-share-tab button").on("click",function(e) {
+                e.preventDefault();
+                $('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
+                });
+            $("#wsu-search-tab button").on("click",function(e) {
+                e.preventDefault();
+                $('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
+                $('#spine section#wsu-search input').focus();
+                });
+            $("#wsu-contact-tab button").on("click",function(e) {
+                e.preventDefault();
+                $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
+                });
+            this.setup_printing();
+        },
+        
+        /**
+         * Sets up navagation system
+         */
+        setup_nav: function(){
+            // NAVIGATION
+            // Tag location and hierarchy
+            $("#spine nav ul,#spine ul").parents("li").addClass("parent");
+            $("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
+            $("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
+            $("#spine .active").not(":has(.active)").addClass("dogeared");
     
+            // Disclosure
+            $("#spine nav li.parent > a").on("click",function(e) { 
+                e.preventDefault();
+                $(this).parent("li").siblings().removeClass("opened");
+                $(this).parent("li").toggleClass("opened");
+            });
+    
+            // Couplets
+            $("#spine nav li.parent > a").each( function() {
+                var title = 'Overview';
+                if ($(this).attr('title')) {
+                    var alt = $(this).attr('title').length;
+                    if ( alt > 0 ) { title = $(this).attr('title'); }
+                }
+                if ($(this).closest('.parent').hasClass('dogeared')) {
+                    var classes = "overview dogeared";
+                } else {
+                    var classes = "overview";
+                }
+                var url = $(this).attr("href");
+                if ( url != '#' ) {
+                    $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
+                }
+            });
             // External Links in nav
             // this shouldn't be done this way
             $('nav#spine-sitenav a').filter(function() {
                return this.hostname && this.hostname !== location.hostname;
             }).addClass("external");
-    
-            
-            this.sizing();
-            this.equalizing();
-            this.mainheight();
-    
-            $(window).resize(function(){
-                this.sizing();
-                this.equalizing();
-                this.mainheight();
-            });
-    
-            $(window).on('load resize', function(){
-                var $main = $('main');
-                // Only run function if an unbound element exists
-                if( $('.unbound').length ) {
-                    var verso = $main.offset().left;
-                    var recto = $main.offset().right;
-                    // var recto = $(window).width() - ($('main').offset().left + $('main').width());
-                    var spread = $(window).width();
-                    var page = $main.width();
-                    var recto = spread - $main.offset().left;
-                    if (recto >= page ) { var recto_margin = recto - page; } else { recto_margin = 0}
-    
-                    var verso_width = verso + $main.width();
-                    $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
-                    $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
-                    $('.unbound.verso.recto').css('width',spread);
-                }
-            });
-
         },
         
-        // Label #jacket with current window size
-        sizing: function (jacket) {
-                jacket=jacket||$('#jacket');
-                var current_width = $(window).width();
-                if(current_width >= 1188) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
-                } else if(current_width >= 990) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
-                } else if(current_width < 990 && current_width >= 792) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
-                } else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
-                } else if(current_width < 792) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
-                } else if(current_width < 396) {
-                    jacket.removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+        setup_printing: function(){
+            // Print & Print View
+            var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
+    
+            function printPage(){
+                window.print();
+            }
+    
+            function print_cancel() {
+                $('html').toggleClass('print');
+                $('.print-controls').remove();
+            }
+    
+            /* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
+            function print(e) {
+                if ( undefined !== e ) {
+                    e.preventDefault();
                 }
-         },
-        // Equalize Columns
-        equalizing: function () {
-            if( $('.equalize').length ) {
-                var obj=$('.row.equalize');
-                obj.find('.column').css('min-height','');
-                $.each(obj,function(){
-                    var tallestBox = 0;
-                    $.each($('.column', this),function(){
-                        if($(this).height() > tallestBox) {
-                           tallestBox = $(this).outerHeight();
-                        }
-                    });
-                    $('.column',this).not('.unequaled').css('min-height',tallestBox);
-                    $('section.equalize .column',this).css('min-height','auto');
-                });
+                $wsu_actions.find('.opened').toggleClass('opened closed');
+                $('html').toggleClass('print');
+                $spine.find('header').prepend(print_controls);
+                $spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
+                $("#print-invoke").on("click",function() { window.print(); });
+                $("#print-cancel").on("click",print_cancel);
+                setTimeout(function() { printPage(); }, 400);
             }
-        },
-        mainheight: function () {
-            var main_top = $('main').offset().top;
-            var window_height = $(window).height();
-            if ($('#binder').hasClass('size-lt-large')) {
-                var main_height = window_height - 50;
-            } else {
-                var main_height = window_height;
-            }
-            $('main.fill-window-height').css('min-height',main_height);
+            $("#wsu-print-tab button").click(print);
+    
+            // Shut a tool section
+            $("button.shut").on("click",function(e) {
+                e.preventDefault();
+                $wsu_actions.find('.opened').toggleClass('opened closed');
+            });
         }
         
 	});

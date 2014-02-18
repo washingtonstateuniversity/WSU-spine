@@ -42,7 +42,7 @@
                 "social":{ },
                 "analytics":{ }
             },
-            $siteoptions
+            siteoptions
         );
         $.spine(options);
 	});
