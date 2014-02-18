@@ -128,6 +128,34 @@
 			}
 			return this;
 		},
+
+		/**
+		 * Returns an instance property by key. Has the ability to set an object if the property does not exist
+		 * @param key:string
+		 * @param value:object(optional)
+		 */
+		get: function(key, value) {
+			var instance = this.instance;
+			if ( !instance[key] ) {
+				if ( key.indexOf('>') > -1 ) {
+					var e = key.replace(/ /g, '').split('>');
+					for ( var i = 0; i < e.length; i++ ) {
+						if ( !instance[e[i]] ) {
+							if (value) {
+								instance[e[i]] = ( (i + 1) < e.length ) ? [] : value;
+							} else {
+								return null;
+							}
+						}
+						instance = instance[e[i]];
+					}
+					return instance;
+				} else if ( value && !instance[key] ) {
+					this.set(key, value);
+				}
+			}
+			return instance[key];
+		},
         
 		/**
 		 * Helper method for unwrapping jQuery/DOM/string elements
