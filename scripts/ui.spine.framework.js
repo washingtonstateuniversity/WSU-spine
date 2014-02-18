@@ -252,22 +252,7 @@
     
             $(window).resize(function(){ this.sizing(); });
     
-            // Equalize Columns
-            function equalizing() {
-                if( $('.equalize').length ) {
-                    $('.row.equalize .column').css('min-height','');
-                    $('.row.equalize').each(function(){
-                        var tallestBox = 0;
-                        $('.column', this).each(function(){
-                            if($(this).height() > tallestBox) {
-                               tallestBox = $(this).outerHeight();
-                            }
-                        });
-                        $('.column',this).not('.unequaled').css('min-height',tallestBox);
-                        $('section.equalize .column',this).css('min-height','auto');
-                    });
-                }
-            }
+            
             equalizing();
     
             $(window).resize(function(){ equalizing(); });
@@ -324,7 +309,23 @@
                 } else if(current_width < 396) {
                     $('#jacket').removeClass('size-small size-medium size-large size-xlarge size-lt-xlarge size-lt-large size-lt-medium size-lt-smallish size-gt-large size-gt-medium size-gt-smallish size-gt-small').addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
                 }
-         }
+         },
+        // Equalize Columns
+        equalizing: function () {
+            if( $('.equalize').length ) {
+                $('.row.equalize .column').css('min-height','');
+                $('.row.equalize').each(function(){
+                    var tallestBox = 0;
+                    $('.column', this).each(function(){
+                        if($(this).height() > tallestBox) {
+                           tallestBox = $(this).outerHeight();
+                        }
+                    });
+                    $('.column',this).not('.unequaled').css('min-height',tallestBox);
+                    $('section.equalize .column',this).css('min-height','auto');
+                });
+            }
+        }
         
         
         
