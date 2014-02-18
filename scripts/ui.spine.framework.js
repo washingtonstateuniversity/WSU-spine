@@ -249,18 +249,14 @@
     
             
             this.sizing();
-    
-            $(window).resize(function(){ this.sizing(); });
-    
-            
             this.equalizing();
-    
-            $(window).resize(function(){ this.equalizing(); });
-    
-            
             this.mainheight();
     
-            $(window).resize(function(){ this.mainheight(); });
+            $(window).resize(function(){
+                this.sizing();
+                this.equalizing();
+                this.mainheight();
+            });
     
             $(window).on('load resize', function(){
                 var $main = $('main');
