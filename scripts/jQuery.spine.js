@@ -133,6 +133,12 @@
 			return returnValue; 
 		};
 	};
+    
+    $.s('ui.spine', {
+    
+    });
+    
+    
 	$.spine = function(options) {
         //we are going to prep for the day we move to correction to the dom
         var targ = this.jquery===undefined ? $(window) : this;
