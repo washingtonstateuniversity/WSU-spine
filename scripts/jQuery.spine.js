@@ -16,6 +16,7 @@
 			message: 'Hello world!'
 		},
 		init: function() {
+            
 			this.config = $.extend({}, this.defaults, this.options, this.metadata);
 			
 			this.displayMessage();
@@ -29,8 +30,10 @@
 	
 	SPINE.defaults = SPINE.prototype.defaults;
 	
-	$.fn.spine = function(options) {
-		return this.each(function() {
+	$.spine = function(options) {
+        //we are going to prep for the day we move to correction to the dom
+        var targ = this.jquery===undefined ? $(window) : this;
+		return $.each(targ,function() {
 			new SPINE(this, options).init();
 		});
 	};
