@@ -219,6 +219,7 @@
 
     
             $(window).on('resize', function(){
+                this.setup_nav();
                 this.sizing();
                 this.equalizing();
                 this.mainheight();
