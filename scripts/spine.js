@@ -1,7 +1,5 @@
 (function($){
 	"use strict";
-    $.spine();
-
 	$(document).ready(function(){
 		// Cache the wsu-actions selector
 		
@@ -369,6 +367,12 @@
 			}
 		});
 
+        $.spine("search",{});
+        $.spine({
+            
+        });
+        
+        
 		setup_search();
 
 	});
