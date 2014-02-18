@@ -193,7 +193,7 @@
 	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
-	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal.svg");
+	background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/wsu-signature-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
@@ -209,11 +209,11 @@
 #binder:not(.fluid) #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 #binder:not(.fluid) #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/1.0/marks/sig-horizontal-whitelogotype.svg'); }
 
-.extension-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-extension.svg"); }
-.globalcampus-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-globalcampus.svg"); }
-.spokane-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-spokane.svg"); }
-.tricities-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-tricities.svg"); }
-.vancouver-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/sig-h-vancouver.svg"); }
+.extension-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/wsu-extension-signature-horizontal.svg"); }
+.globalcampus-signature #binder:not(.fluid) #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/wsu-globalcampus-signature-horizontal.svg"); }
+.spokane-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/wsu-spokane-signature-horizontal.svg"); }
+.tricities-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/wsu-tricities-signature-horizontal.svg"); }
+.vancouver-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/1.0/marks/wsu-vancouver-signature-horizontal.svg"); }
 
 /* Show */
 .large-only,
