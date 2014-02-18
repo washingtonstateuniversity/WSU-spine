@@ -22,7 +22,8 @@
             // Section -> Share
             // Just getting started on rolling our own... more to come.
             if (!$wsu_share.length) {
-            if ($('meta.share-text').length) /* Need a better name */ { var share_text = $('meta.share-text'); } else { share_text = "You should know ..."; }
+                var share_text = "";
+            if ($('meta.share-text').length) /* Need a better name */ { share_text = $('meta.share-text'); } else { share_text = "You should know ..."; }
             var share  = '<section id="wsu-share" class="spine-share tools closed">';
                 share += '	<ul>';
                 share += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+$current_url+'">Facebook</a></li>';
