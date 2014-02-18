@@ -138,6 +138,18 @@
             }).data( "autocomplete" );
         },
         
+        
+        
+		/**
+		 * Clears by type
+		 * @param ctx:string	e.g. 'search', 'social', 'framework'
+		 */
+		clear: function(TAX) {
+			this._c(this.get(TAX));
+			this.set(TAX, []);
+			return this;
+		},
+        
 		/**
 		 * Helper method for unwrapping jQuery/DOM/string elements
 		 * @param obj:string/node/jQuery
