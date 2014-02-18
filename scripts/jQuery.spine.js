@@ -12,9 +12,57 @@
 	};
 	
 	SPINE.prototype = {
-		defaults: {
+			
+	}
+	
+	SPINE.defaults = SPINE.prototype.defaults;
+	/**
+     * Sets up the plugins prototype
+	 * @param name:string
+	 * @param prototype:object
+	 */
+	$.s = function(name, prototype) {
+		var namespace = name.split('.')[0];
+        name = name.split('.')[1];
+		$[namespace] = $[namespace] || {};
+		$[namespace][name] = function(options, element) {
+			if ( arguments.length ) {
+				this._setup(options, element);
+			}
+		};
+		$[namespace][name].prototype = $.extend({
+			'namespace': namespace,
+			'pluginName': name
+        }, prototype);
+		$.fn[name] = function(options) {
+			var isMethodCall = typeof options === "string",
+				args = Array.prototype.slice.call(arguments, 1),
+				returnValue = this;
+			
+			if ( isMethodCall && options.substring(0, 1) === '_' ) { 
+				return returnValue; 
+			}
+
+			this.each(function() {
+				var instance = $.data(this, name);
+				if (!instance) {
+					instance = $.data(this, name, new $[namespace][name](options, this));
+				}
+				if (isMethodCall) {
+					returnValue = instance[options].apply(instance, args);
+				}
+			});
+			return returnValue; 
+		};
+	};
+    
+    $.s('ui.spine', {
+
+        defaults: {
 			message: 'Hello world!'
 		},
+        
+        
 		init: function() {
             
 			this.config = $.extend({}, this.defaults, this.options, this.metadata);
@@ -23,9 +71,13 @@
 			
 			return this;
 		},
+        
+        
 		displayMessage: function() {
 			alert(this.config.message);
 		},
+        
+        
         setup_search: function (){
             /* Search autocomplete */
             var cur_search = "";
@@ -90,52 +142,15 @@
                     //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
                 }
             }).data( "autocomplete" );
-        }	
-	}
-	
-	SPINE.defaults = SPINE.prototype.defaults;
-	/**
-     * Sets up the plugins prototype
-	 * @param name:string
-	 * @param prototype:object
-	 */
-	$.s = function(name, prototype) {
-		var namespace = name.split('.')[0];
-        name = name.split('.')[1];
-		$[namespace] = $[namespace] || {};
-		$[namespace][name] = function(options, element) {
-			if ( arguments.length ) {
-				this._setup(options, element);
-			}
-		};
-		$[namespace][name].prototype = $.extend({
-			'namespace': namespace,
-			'pluginName': name
-        }, prototype);
-		$.fn[name] = function(options) {
-			var isMethodCall = typeof options === "string",
-				args = Array.prototype.slice.call(arguments, 1),
-				returnValue = this;
-			
-			if ( isMethodCall && options.substring(0, 1) === '_' ) { 
-				return returnValue; 
-			}
-
-			this.each(function() {
-				var instance = $.data(this, name);
-				if (!instance) {
-					instance = $.data(this, name, new $[namespace][name](options, this));
-				}
-				if (isMethodCall) {
-					returnValue = instance[options].apply(instance, args);
-				}
-			});
-			return returnValue; 
-		};
-	};
-    
-    $.s('ui.spine', {
-    
+        },
+        
+		/**
+		 * Helper method for unwrapping jQuery/DOM/string elements
+		 * @param obj:string/node/jQuery
+		 */
+		_unwrap: function(obj) {
+			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) )
+		}
     });
     
     
