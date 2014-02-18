@@ -170,7 +170,13 @@
             
         },
         
-        
+         /**
+         * Sets up framework html and other DOM attributes
+         */
+        setup_content: function(){
+            
+            
+        },       
         
         /**
          * Sets up the spine area
