@@ -258,7 +258,7 @@
                 this.mainheight();
             });
     
-            $(window).on('resize', function(){
+            $(window).on('load resize', function(){
                 var $main = $('main');
                 // Only run function if an unbound element exists
                 if( $('.unbound').length ) {
