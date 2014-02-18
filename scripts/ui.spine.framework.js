@@ -253,9 +253,9 @@
             $(window).resize(function(){ this.sizing(); });
     
             
-            equalizing();
+            this.equalizing();
     
-            $(window).resize(function(){ equalizing(); });
+            $(window).resize(function(){ this.equalizing(); });
     
             function mainheight() {
                 var main_top = $('main').offset().top;
