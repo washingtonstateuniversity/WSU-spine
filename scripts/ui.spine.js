@@ -75,7 +75,7 @@
 		 */
 		_create: function() {
 			var self = this;
-			this.instance = { 'spine': self.options };
+			this.instance = { 'spine': self.options,'search': [], 'framework': [], 'social': [], 'analytics': []  };
 			self._call(self.options.callback, self.instance.spine);
 		},
         
@@ -183,10 +183,16 @@
 			}
 		},
 		/**
+		 * Destroys map elements.
+		 */
+		clear_map: function() {
+			this.clear('search').clear('framework').clear('social').clear('analytics');
+		},
+		/**
 		 * Destroys the plugin.
 		 */
 		destroy: function(callback) {
-			this.clear('markers').clear('services').clear('overlays')._c(this.instance);
+			this.clear('search').clear('framework').clear('social').clear('analytics')._c(this.instance);
 			$.removeData(this.el, this.name);
 			this._call(callback, this);
 		},
