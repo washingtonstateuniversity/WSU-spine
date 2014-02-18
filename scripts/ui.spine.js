@@ -102,6 +102,34 @@
 		},
 
 		/**
+		 * Returns the objects with a specific property and value, e.g. 'category', 'tags'
+		 * @param ctx:string	in what context, e.g. 'search' 
+		 * @param options:object	property:string	the property to search within, value:string, operator:string (optional) (AND/OR)
+		 * @param callback:function(search:jObj, isFound:boolean)
+		 */
+		find: function(ctx, options, callback) {
+			var obj = this.get(TAX);
+			options.value = $.isArray(options.value) ? options.value : [options.value];
+			for ( var property in obj ) {
+				if ( obj.hasOwnProperty(property) ) {
+					var isFound = false;
+					for ( var value in options.value ) {
+						if ( $.inArray(options.value[value], obj[property][options.property]) > -1 ) {
+							isFound = true;
+						} else {
+							if ( options.operator && options.operator === 'AND' ) {
+								isFound = false;
+								break;
+							}
+						}
+					}
+					callback(obj[property], isFound);
+				}
+			}
+			return this;
+		},
+        
+		/**
 		 * Helper method for unwrapping jQuery/DOM/string elements
 		 * @param obj:string/node/jQuery
 		 */
