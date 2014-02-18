@@ -156,7 +156,16 @@
 			}
 			return instance[key];
 		},
-        
+				
+		/**
+		 * Sets an instance property
+		 * @param key:string
+		 * @param value:object
+		 */
+		set: function(key, value) {
+			this.instance[key] = value;
+			return this;
+		},
 		/**
 		 * Helper method for unwrapping jQuery/DOM/string elements
 		 * @param obj:string/node/jQuery
