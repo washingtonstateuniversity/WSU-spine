@@ -269,6 +269,7 @@
                 e.preventDefault();
                 $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
                 });
+            this.setup_printing();
         },
         
         /**
