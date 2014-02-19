@@ -4,12 +4,36 @@
  *		jquery.ui.v.js
  */
 ( function($) {
-	$.extend($.ui.spine.prototype, {
-
+	$.extend($.ui.spine.prototype, {        
         search_init: function(options) {
             alert('init search');
-            alert("options==>"+dump(options));
+            alert("this.search_options==>"+dump(this.search_options));
+            $.extend(this.search_options,options);
+            alert("options==>"+dump(this.search_options));
+            this.create_search();
         },
+        
+        search_options:{
+            providers:{
+                local:{
+                    url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+                    dataType: "jsonp",
+                    featureClass: "P",
+                    style: "full",
+                    maxRows: 12
+                } 
+            },
+            result:{
+                appendTo: "#spine-shortcuts",
+                showRelated:false,
+                relatedHeader:"<hr/>",
+                minLength: 2, 
+                template:"<li>%s</li>"
+            }
+        },
+        
+        
+        
         
         create_search: function(){
             

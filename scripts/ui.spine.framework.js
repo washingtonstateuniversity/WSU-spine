@@ -8,10 +8,12 @@
         framework_init: function(options) {
             alert('init framework');
             alert("options==>"+dump(options));
+            this.framework_create();
         },
 
-        _create: function(){
-        
+        framework_create: function(){
+            alert('framework_create');
+            var self=this;
             // Cache the wsu-actions selector
             
             var $current_url = window.location.href;
@@ -85,16 +87,16 @@
 
     
 
-
+            
 
 
             $(window).on('resize', function(){
-                //this.setup_spine();
-                //this.setup_nav();
-               // this.setup_tabs();
-               // this.sizing();
-               // this.equalizing();
-               // this.mainheight();
+                self.setup_spine();
+                self.setup_nav();
+                self.setup_tabs();
+                self.sizing();
+                self.equalizing();
+                self.mainheight();
                 var $main = $('main');
                 // Only run function if an unbound element exists
                 if( $('.unbound').length ) {
@@ -187,6 +189,8 @@
          * Sets up the spine area
          */
         setup_spine: function(){
+            // Cache the spine selector.
+            var $spine = $('#spine');
             // Fixed/Sticky Horizontal Header
             $(document).scroll(function() {
                 var top = $(document).scrollTop();

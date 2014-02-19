@@ -101,7 +101,7 @@
 		_create: function() {
             //alert('spine _create');
 			var self = this;
-			this.instance = { 'spine': self.options,'search': [], 'framework': [], 'social': [], 'analytics': []  };
+			this.instance = { 'spine': self.options,'framework': [], 'search': [], 'social': [], 'analytics': []  };
             //alert('self.instance.spine==>'+dump(self.instance.spine));
 			self._call(self.options.callback, self.instance.spine);
 		},
