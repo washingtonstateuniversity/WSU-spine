@@ -12,11 +12,12 @@
 	$.s = function(name, prototype) {
         
         
-        alert("starting name ==>"+dump(name));
+        //alert("starting name ==>"+dump(name));
 		var namespace = name.split('.')[0];
         name = name.split('.')[1];
 		$[namespace] = $[namespace] || {};
 		$[namespace][name] = function(options, element) {
+            //alert("$[namespace][name] options==>"+dump(options));
 			if ( arguments.length ) {
 				this._setup(options, element);
 			}
@@ -25,11 +26,12 @@
 			'namespace': namespace,
 			'pluginName': name
         }, prototype);
-		$.fn[name] = function(options) {
-            alert("$.fn[name] ==>"+dump(name));
-            alert("w/ options ==>"+dump(options));
-            options = options || {};
-            this.options = $.extend({}, options);
+		$.fn[name] = function(context) {
+            //alert("$.fn[name] ==>"+dump(name));
+            //alert("w/ context ==>"+dump(context));
+            //alert("w/ arguments ==>"+dump(arguments));
+            context = context || {};
+            this.options = $.extend({}, context);
             
             //this is will used to provide data changes as things are read if they exist
             //this.elem = elem;
@@ -39,27 +41,30 @@
             
             //this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
-			var isMethodCall = typeof options === "string",
+			var isMethodCall = typeof context === "string",
 				args = Array.prototype.slice.call(arguments, 1),
 				returnValue = this;
 			
-			if ( isMethodCall && options.substring(0, 1) === '_' ) { 
+			if ( isMethodCall && context.substring(0, 1) === '_' ) { 
 				return returnValue; 
 			}
-            
-            
-            
+
 			this.each(function() {
-                alert("==>"+dump(name));
+                //alert("==>"+dump(name));
 				var instance = $.data(this, name);
                 
 				if (!instance) {
-					instance = $.data(this, name, new $[namespace][name](options, this));
+					instance = $.data(this, name, new $[namespace][name](context, this));
 				}
-                
-				if (isMethodCall && instance[options] !== undefined ) {
-                    
-					returnValue = instance[options].apply(instance, args);
+
+                //alert("LOOKING TO INIT context==>"+dump(context));
+                if(instance[context+"_init"]!== undefined){
+                    //alert("INIT @ instance[context+\"_init\"]==>"+dump(instance[context+"_init"]));
+                    if ( instance[context+"_init"] ) { instance[context+"_init"](arguments); }
+                }
+				if (isMethodCall && instance[context] !== undefined ) {
+                    //alert("has context==>"+dump(context));
+					returnValue = instance[context].apply(instance, args);
 				}
 			});
 			return returnValue; 
@@ -79,24 +84,25 @@
 		 * @param element:node
 		 */
 		_setup: function(options, element) {
-            alert('spine _setup');
+            //alert('spine _setup');
 			this.el = element;
 			options = options || {};
+            //alert("options==>"+dump(options));
+            //alert("this.options==>"+dump(options));
 			$.extend(this.options, options, {  });
 			this._create();
-			if ( this._init ) { this._init(); }
 		},
         /**
 		 * Instanciate the object
 		 */
 		_create: function() {
-            alert('spine _create');
+            //alert('spine _create');
 			var self = this;
 			this.instance = { 'spine': self.options,'search': [], 'framework': [], 'social': [], 'analytics': []  };
+            //alert('self.instance.spine==>'+dump(self.instance.spine));
 			self._call(self.options.callback, self.instance.spine);
 		},
         
-
 		/**
 		 * Clears by type
 		 * @param ctx:string	e.g. 'search', 'social', 'framework'
@@ -219,7 +225,10 @@
         var targ = this.jquery===undefined ? $('body') : this;
 		return $.each(targ,function() {
             var targ=$(this);
+            //init the plugin
+            targ.spine({});
             $.each(options,function(i,v) {
+                //calling out to set up the other extensions
                 targ.spine(i,v);
                 //new SPINE(this, options).init();
             });

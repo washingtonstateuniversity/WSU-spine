@@ -5,8 +5,13 @@
  */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
-        _init: function() {
+        framework_init: function(options) {
             alert('init framework');
+            alert("options==>"+dump(options));
+        },
+
+        _create: function(){
+        
             // Cache the wsu-actions selector
             
             var $current_url = window.location.href;
@@ -107,10 +112,8 @@
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
                     $('.unbound.verso.recto').css('width',spread);
                 }
-            }).trigger();
-
-        },
-        
+            }).trigger('resize');
+        },   
         // Label #jacket with current window size
         sizing: function (jacket) {
                 jacket=jacket||$('#jacket');

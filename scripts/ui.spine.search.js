@@ -6,8 +6,9 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
 
-        _init: function() {
+        search_init: function(options) {
             alert('init search');
+            alert("options==>"+dump(options));
         },
         
         create_search: function(){
