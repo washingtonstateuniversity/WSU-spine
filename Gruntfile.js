@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 		  combine: {
 		    files: {
 		    // Hmmm, in reverse order
-		      'build/spine.min.css': ['build/spine.css']
+		      'build/spine.min.css': ['build/'+version+'/spine.css']
 		    }
 		  }
 		},
