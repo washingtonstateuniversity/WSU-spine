@@ -5,7 +5,7 @@
  */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
-        _init: function(jObj, options) {
+        _init: function() {
             // Cache the wsu-actions selector
             
             var $current_url = window.location.href;
@@ -83,12 +83,12 @@
 
 
             $(window).on('resize', function(){
-                this.setup_spine();
-                this.setup_nav();
-                this.setup_tabs();
-                this.sizing();
-                this.equalizing();
-                this.mainheight();
+                //this.setup_spine();
+                //this.setup_nav();
+               // this.setup_tabs();
+               // this.sizing();
+               // this.equalizing();
+               // this.mainheight();
                 var $main = $('main');
                 // Only run function if an unbound element exists
                 if( $('.unbound').length ) {

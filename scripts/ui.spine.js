@@ -23,8 +23,8 @@
 			'pluginName': name
         }, prototype);
 		$.fn[name] = function(options) {
-        
-            this.options = options;
+            options = options || {};
+            this.options = $.extend({}, options);
             
             //this is will used to provide data changes as things are read if they exist
             //this.elem = elem;
@@ -44,9 +44,11 @@
 
 			this.each(function() {
 				var instance = $.data(this, name);
+                
 				if (!instance) {
 					instance = $.data(this, name, new $[namespace][name](options, this));
 				}
+                alert(dump(instance));
 				if (isMethodCall) {
 					returnValue = instance[options].apply(instance, args);
 				}
@@ -203,10 +205,13 @@
     });
     $.spine = function(options) {
         //we are going to prep for the day we move to correction to the dom
-        var targ = this.jquery===undefined ? $(window) : this;
+        var targ = this.jquery===undefined ? $('body') : this;
 		return $.each(targ,function() {
-            $(this).spine(options);
-			//new SPINE(this, options).init();
+            var targ=$(this);
+            $.each(options,function(i,v) {
+                targ.spine(i,v);
+                //new SPINE(this, options).init();
+            });
 		});
 	};
 

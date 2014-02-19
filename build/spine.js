@@ -1,7 +1,8 @@
 /* for debug only. remove when done */
 
-function dump(arr,level) {
+function dump(arr,limit,level) {
 	var dumped_text = "";
+    if(!limit) limit=10;
 	if(!level) level = 0;
 	
 	//The padding given at the beginning of the line.
@@ -9,16 +10,18 @@ function dump(arr,level) {
 	for(var j=0;j<level+1;j++) level_padding += "    ";
 	
 	if(typeof(arr) == 'object') { //Array/Hashes/Objects 
-		for(var item in arr) {
-			var value = arr[item];
-			
-			if(typeof(value) == 'object') { //If it is an array,
-				dumped_text += level_padding + "'" + item + "' ...\n";
-				dumped_text += dump(value,level+1);
-			} else {
-				dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-			}
-		}
+        if(level<=limit){
+            for(var item in arr) {
+                var value = arr[item];
+                
+                if(typeof(value) == 'object') { //If it is an array,
+                    dumped_text += level_padding + "'" + item + "' ...\n";
+                    dumped_text += dump(value,limit,level+1);
+                } else {
+                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                }
+            }
+        }
 	} else { //Stings/Chars/Numbers etc.
 		dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
 	}
@@ -83,8 +86,8 @@ function dump(arr,level) {
 			'pluginName': name
         }, prototype);
 		$.fn[name] = function(options) {
-        
-            this.options = options;
+            options = options || {};
+            this.options = $.extend({}, options);
             
             //this is will used to provide data changes as things are read if they exist
             //this.elem = elem;
@@ -104,9 +107,11 @@ function dump(arr,level) {
 
 			this.each(function() {
 				var instance = $.data(this, name);
+                
 				if (!instance) {
 					instance = $.data(this, name, new $[namespace][name](options, this));
 				}
+                alert(dump(instance));
 				if (isMethodCall) {
 					returnValue = instance[options].apply(instance, args);
 				}
@@ -263,10 +268,13 @@ function dump(arr,level) {
     });
     $.spine = function(options) {
         //we are going to prep for the day we move to correction to the dom
-        var targ = this.jquery===undefined ? $(window) : this;
+        var targ = this.jquery===undefined ? $('body') : this;
 		return $.each(targ,function() {
-            $(this).spine(options);
-			//new SPINE(this, options).init();
+            var targ=$(this);
+            $.each(options,function(i,v) {
+                targ.spine(i,v);
+                //new SPINE(this, options).init();
+            });
 		});
 	};
 
@@ -280,7 +288,7 @@ function dump(arr,level) {
  */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
-        _init: function(jObj, options) {
+        _init: function() {
             // Cache the wsu-actions selector
             
             var $current_url = window.location.href;
@@ -358,12 +366,12 @@ function dump(arr,level) {
 
 
             $(window).on('resize', function(){
-                this.setup_spine();
-                this.setup_nav();
-                this.setup_tabs();
-                this.sizing();
-                this.equalizing();
-                this.mainheight();
+                //this.setup_spine();
+                //this.setup_nav();
+               // this.setup_tabs();
+               // this.sizing();
+               // this.equalizing();
+               // this.mainheight();
                 var $main = $('main');
                 // Only run function if an unbound element exists
                 if( $('.unbound').length ) {
