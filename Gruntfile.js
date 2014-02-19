@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                     'scripts/ui.spine.framework.js',
                     'scripts/ui.spine.search.js',
                     'scripts/ui.spine.social.js',
-                    'scripts/ui.spine.analytics.js'
+                    'scripts/ui.spine.analytics.js',
                     'scripts/spine.js'
                    ],
 			  dest: 'build/spine.js',
