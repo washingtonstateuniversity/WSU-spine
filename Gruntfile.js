@@ -43,9 +43,9 @@ module.exports = function(grunt) {
 		copy: {
 		  main: {
 		    files: [
-		      {expand: true, src: ['fonts/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, dot:true, src: ['fonts/*'], dest: 'build/<%= pkg.build_version %>/'},
 		      {expand: true, src: ['html/*'], dest: 'build/<%= pkg.build_version %>/'},
-		      {expand: true, src: ['icons/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, dot:true, src: ['icons/*'], dest: 'build/<%= pkg.build_version %>/'},
 		      {expand: true, src: ['images/*'], dest: 'build/<%= pkg.build_version %>/'},
 		      {expand: true, src: ['marks/*'], dest: 'build/<%= pkg.build_version %>/'},
 		      {expand: true, src: ['scripts/*'], dest: 'build/<%= pkg.build_version %>/'},
