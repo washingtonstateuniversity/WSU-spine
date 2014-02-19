@@ -6,10 +6,10 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {        
         search_init: function(options) {
-            alert('init search');
-            alert("this.search_options==>"+dump(this.search_options));
+            //alert('init search');
+            //alert("this.search_options==>"+dump(this.search_options));
             $.extend(this.search_options,options);
-            alert("options==>"+dump(this.search_options));
+            //alert("options==>"+dump(this.search_options));
             this.create_search();
         },
         

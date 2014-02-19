@@ -6,13 +6,13 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
         framework_init: function(options) {
-            alert('init framework');
-            alert("options==>"+dump(options));
+            //alert('init framework');
+            //alert("options==>"+dump(options));
             this.framework_create();
         },
 
         framework_create: function(){
-            alert('framework_create');
+            //alert('framework_create');
             var self=this;
             // Cache the wsu-actions selector
             
