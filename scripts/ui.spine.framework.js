@@ -91,13 +91,10 @@
 
     
 
-            
-
-
-            $(window).on('resize', function(){
-                self.setup_spine();
-                self.setup_nav();
-                self.setup_tabs();
+            self.setup_nav();
+            self.setup_tabs();
+            self.setup_spine();
+            $(window).on('resize', function(){  
                 self.sizing();
                 self.equalizing();
                 self.mainheight();
