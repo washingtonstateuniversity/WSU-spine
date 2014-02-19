@@ -31,10 +31,7 @@
                 template:"<li>%s</li>"
             }
         },
-        
-        
-        
-        
+
         create_search: function(){
             
             // Cache the wsu-actions selector
