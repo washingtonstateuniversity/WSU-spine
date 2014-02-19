@@ -44,15 +44,6 @@ module.exports = function(grunt) {
 		copy: {
 		  main: {
 		    files: [
-<<<<<<< HEAD
-		      {expand: true, dot: true, src: ['fonts/*'], dest: 'build/0.5/'},
-		      {expand: true, src: ['html/*'], dest: 'build/0.5/'},
-		      {expand: true, dot: true, src: ['icons/*'], dest: 'build/0.5/'},
-		      {expand: true, src: ['images/*'], dest: 'build/0.5/'},
-		      {expand: true, src: ['marks/*'], dest: 'build/0.5/'},
-		      {expand: true, src: ['scripts/*'], dest: 'build/0.5/'},
-		      {expand: true, src: ['styles/*'], dest: 'build/0.5/'},
-=======
 		      {expand: true, src: ['fonts/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['html/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['icons/*'], dest: 'build/'+version+'/'},
@@ -60,7 +51,6 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['marks/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['scripts/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['styles/*'], dest: 'build/'+version+'/'},
->>>>>>> 7a52456ffb1d52007bc447202f84d35e799fac98
 		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'},
 		    ]
 		  }
