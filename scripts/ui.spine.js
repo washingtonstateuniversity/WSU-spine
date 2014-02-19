@@ -10,6 +10,9 @@
 	 * @param prototype:object
 	 */
 	$.s = function(name, prototype) {
+        
+        
+        alert("starting name ==>"+dump(name));
 		var namespace = name.split('.')[0];
         name = name.split('.')[1];
 		$[namespace] = $[namespace] || {};
@@ -23,6 +26,8 @@
 			'pluginName': name
         }, prototype);
 		$.fn[name] = function(options) {
+            alert("$.fn[name] ==>"+dump(name));
+            alert("w/ options ==>"+dump(options));
             options = options || {};
             this.options = $.extend({}, options);
             
@@ -41,15 +46,19 @@
 			if ( isMethodCall && options.substring(0, 1) === '_' ) { 
 				return returnValue; 
 			}
-
+            
+            
+            
 			this.each(function() {
+                alert("==>"+dump(name));
 				var instance = $.data(this, name);
                 
 				if (!instance) {
 					instance = $.data(this, name, new $[namespace][name](options, this));
 				}
-                alert(dump(instance));
-				if (isMethodCall) {
+                
+				if (isMethodCall && instance[options] !== undefined ) {
+                    
 					returnValue = instance[options].apply(instance, args);
 				}
 			});
@@ -70,6 +79,7 @@
 		 * @param element:node
 		 */
 		_setup: function(options, element) {
+            alert('spine _setup');
 			this.el = element;
 			options = options || {};
 			$.extend(this.options, options, {  });
@@ -80,6 +90,7 @@
 		 * Instanciate the object
 		 */
 		_create: function() {
+            alert('spine _create');
 			var self = this;
 			this.instance = { 'spine': self.options,'search': [], 'framework': [], 'social': [], 'analytics': []  };
 			self._call(self.options.callback, self.instance.spine);

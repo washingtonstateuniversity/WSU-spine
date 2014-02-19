@@ -6,6 +6,7 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
         _init: function() {
+            alert('init framework');
             // Cache the wsu-actions selector
             
             var $current_url = window.location.href;

@@ -21,9 +21,9 @@
             */
         var siteoptions={};
         var options = $.extend({
-                "search":{
-                    "providers":{
-                        "local":{
+                search:{
+                    providers:{
+                        local:{
                             url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
                             dataType: "jsonp",
                             featureClass: "P",
@@ -31,16 +31,37 @@
                             maxRows: 12
                         } 
                     },
-                    "result":{
+                    result:{
                         appendTo: "#spine-shortcuts",
                         showRelated:true,
                         relatedHeader:"<hr/>",
-                        minLength: 2,   
+                        minLength: 2, 
+                        template:"<li>%s</li>"
                     }
                 },
-                "framework":{ },
-                "social":{ },
-                "analytics":{ }
+                framework:{
+                    equalizer_filter:".skip*"
+                },
+                social:{
+                    provider:"WSU_share",
+                    script_url:"//repo.wsu.edu/wsu_share/1/",
+                    channels:[
+                        "facebook",
+                        "twitter",
+                        "Pintrest"
+                    ]
+                },
+                analytics:{ 
+                    "google":{
+                        analytics:{
+                            "account_id":"UA-XXXXX-XX"
+                        },
+                        verification:"XXXXXXXXXXXXXXXXXXXXX"
+                    },
+                    "bing":{
+                        verification:"XXXXXXXXXXXXXXXXXXXXX"
+                    }
+                }
             },
             siteoptions
         );

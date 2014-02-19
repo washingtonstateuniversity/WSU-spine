@@ -5,13 +5,9 @@
  */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
-        foo: function(jObj, options) {
-                //do stuff
-                return jObj;
-            },
-        
+
         _init: function() {
-            
+            alert('init search');
         },
         
         create_search: function(){
