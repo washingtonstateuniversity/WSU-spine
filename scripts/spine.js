@@ -1,107 +1,7 @@
-/* for debug only. remove when done */
-function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(typeof n=="object")for(r in n)u=n[r],typeof u=="object"?(i+=f+"'"+r+"' ...\n",i+=dump(u,t+1)):i+=f+"'"+r+"' => \""+u+'"\n';else i="===>"+n+"<===("+typeof n+")";return i}
-
 (function($){
 	"use strict";
-	function setup_search(){
-		$.widget( "ui.autosearch", $.ui.autocomplete, {
-			_renderMenu: function( ul, items ) {
-				var that	= this;
-				var matched	= items.filter(function(obj, item) { if(obj.related=="false"){return item;} });//note this should be a single loop?
-				var related	= items.filter(function(obj, item) { if(obj.related!="false"){return item;} });
-
-				$.each(matched, function(i, item) { that._renderItemData( ul, item ); });
-				
-				if(this.options.showRelated && related.length){
-					if(this.options.relatedHeader){
-						that._renderHeader( ul, this.options.relatedHeader );
-					}
-					$.each( related, function(i, item) { that._renderItemData( ul, item ); });
-				}
-			},
-			_renderItemData: function( ul, item ) {
-				return this._renderItem( ul, item ).data( "ui-autocomplete-item", item );
-			},
-			_renderItem: function( ul, item ) {
-				var text	= item.label;
-				var value	= item.value;
-				var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)";
-					text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), "<strong>$1</strong>" )+"</a>";
-	
-				return $( "<li></li>" ).data( "item.autocomplete", item ).append( text ).appendTo( ul );
-			},
-			_renderHeader: function( ul, text ) {
-				return $( "<li></li>" ).append( "<a href=''>"+text+"</a>" ).appendTo( ul );
-			}
-		});
-	
-		/* Search autocomplete */
-		var cur_search = "";
-		var termTemplate = "<strong>%s</strong>";
-		var term = "";
-		$( "#wsu-search input[type=text]" ).autosearch({
-			source: function( request, response ) {
-				term = request.term;
-				$.ajax({
-					url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
-					dataType: "jsonp",
-					data: {
-						featureClass: "P",
-						style: "full",
-						maxRows: 12,
-						name_startsWith: request.term
-					},
-					success: function( data, status, xhr  ) {
-						var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-						response( $.map( data, function( item ) {
-							var text = item.label;
-							if ( (item.value && ( !request.term || matcher.test(text)) || item.related == "true" ) ){
-								return {
-									label: item.label,
-									value: item.value,
-									searchKeywords: item.searchKeywords,
-									related: item.related
-								};
-							}
-						}));
-					}
-				});
-			},
-			search: function(event, ui) {
-				/**/
-			},
-			appendTo: "#spine-shortcuts",
-			showRelated:true,
-			relatedHeader:"<hr/>",
-			minLength: 2,
-			select: function( e, ui ) {
-				var id = ui.item.searchKeywords;
-				var term = ui.item.label;
-				$("#indices").empty();
-				// to come back later to
-				/*
-				var url=siteroot+"public/get_place.castle";
-				if ( e.which != 13 ){
-					if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
-					getSignlePlace(jObj,id);
-				}
-				*/
-				$( "#wsu-search input#searchterm[type=text]" ).autocomplete("close");
-			},
-			focus: function( event, ui ) {
-				// to come back later to
-				//$( "#wsu-search input#searchterm[type=text]" ).val( ui.item.label );
-				//return false;
-			},
-			open: function(e,ui) {
-				// to come back later to
-				//$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
-			}
-		}).data( "autocomplete" );
-
-	}	
-
 	$(document).ready(function(){
+<<<<<<< HEAD
 		// Cache the wsu-actions selector
 		
 		var $current_url = window.location.href;
@@ -468,5 +368,8 @@ function dump(n,t){var i="",f,e,r,u;for(t||(t=0),f="",e=0;e<t+1;e++)f+=" ";if(ty
 
 		setup_search();
 
+=======
+        $.spine(typeof(spineoptions)!="undefined"? spineoptions : {});
+>>>>>>> 7a52456ffb1d52007bc447202f84d35e799fac98
 	});
 })(jQuery);

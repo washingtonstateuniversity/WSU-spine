@@ -1,3 +1,4 @@
+var version="0.5";
 module.exports = function(grunt) {
 
 	// Project configuration.
@@ -9,7 +10,16 @@ module.exports = function(grunt) {
 		      dest: 'build/spine.css',
 		    },
 		    scripts: {
-		      src: [ 'scripts/spine.js'],
+		      src: [ 
+                    'scripts/debug.js',
+                    'scripts/wsu_autocomplete.js',
+                    'scripts/ui.spine.js',
+                    'scripts/ui.spine.framework.js',
+                    'scripts/ui.spine.search.js',
+                    'scripts/ui.spine.social.js',
+                    'scripts/ui.spine.analytics.js',
+                    'scripts/spine.js'
+                   ],
 			  dest: 'build/spine.js',
 			  },
 		},
@@ -34,6 +44,7 @@ module.exports = function(grunt) {
 		copy: {
 		  main: {
 		    files: [
+<<<<<<< HEAD
 		      {expand: true, dot: true, src: ['fonts/*'], dest: 'build/0.5/'},
 		      {expand: true, src: ['html/*'], dest: 'build/0.5/'},
 		      {expand: true, dot: true, src: ['icons/*'], dest: 'build/0.5/'},
@@ -41,6 +52,15 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['marks/*'], dest: 'build/0.5/'},
 		      {expand: true, src: ['scripts/*'], dest: 'build/0.5/'},
 		      {expand: true, src: ['styles/*'], dest: 'build/0.5/'},
+=======
+		      {expand: true, src: ['fonts/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['html/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['icons/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['images/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['marks/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['scripts/*'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['styles/*'], dest: 'build/'+version+'/'},
+>>>>>>> 7a52456ffb1d52007bc447202f84d35e799fac98
 		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'},
 		    ]
 		  }
@@ -56,7 +76,18 @@ module.exports = function(grunt) {
 					document: true
 				}
 			}
-		}
+		},
+        preprocess : {
+            options: {
+                inline: true,
+                context : {
+                    DEBUG: true
+                }
+            },
+            js : {
+                src: 'build/spine.js'
+            }
+        }
 	});
 	
 
@@ -66,8 +97,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-
+    grunt.loadNpmTasks('grunt-preprocess');
+        
 	// Default task(s).
-	grunt.registerTask('default', ['concat','cssmin','uglify','copy']);
+	grunt.registerTask('default', ['concat','preprocess:js','cssmin','uglify','copy']);
 
 };
