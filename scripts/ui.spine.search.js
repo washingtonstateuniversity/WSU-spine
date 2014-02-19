@@ -10,9 +10,13 @@
                 return jObj;
             },
         
-        _init: function(jObj, options) {
-            // Cache the wsu-actions selector
+        _init: function() {
             
+        },
+        
+        create_search: function(){
+            
+            // Cache the wsu-actions selector
             var $current_url = window.location.href;
             var $wsu_actions = $('#wsu-actions');
     
@@ -72,8 +76,11 @@
                 window.location.href = search_url;
                 return false;
             });
-            }
-        },
+            }   
+            
+        }
+        
+        
         
         start_tab:function(){
         
