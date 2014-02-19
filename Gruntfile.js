@@ -10,7 +10,15 @@ module.exports = function(grunt) {
 		      dest: 'build/spine.css',
 		    },
 		    scripts: {
-		      src: [ 'scripts/debug.js','scripts/wsu_autocomplete.js','scripts/ui.spine.js','scripts/ui.spine.framework.js','scripts/ui.spine.search.js','scripts/spine.js'],
+		      src: [ 
+                    'scripts/debug.js',
+                    'scripts/wsu_autocomplete.js',
+                    'scripts/ui.spine.js',
+                    'scripts/ui.spine.framework.js',
+                    'scripts/ui.spine.search.js',
+                    'scripts/ui.spine.social.js',
+                    'scripts/spine.js'
+                   ],
 			  dest: 'build/spine.js',
 			  },
 		},
