@@ -331,6 +331,8 @@
         },
         
         setup_printing: function(){
+            var $wsu_actions = $('#wsu-actions');
+            var $spine = $('#spine');
             // Print & Print View
             var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
     
