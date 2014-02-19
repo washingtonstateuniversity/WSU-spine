@@ -8,9 +8,13 @@
         framework_init: function(options) {
             //alert('init framework');
             //alert("options==>"+dump(options));
+            $.extend(this.framework_options,options);
+            //alert("options==>"+dump(this.framework_options));
             this.framework_create();
         },
-
+        framework_options:{
+            equalizer_filter:".skip*"
+        },
         framework_create: function(){
             //alert('framework_create');
             var self=this;

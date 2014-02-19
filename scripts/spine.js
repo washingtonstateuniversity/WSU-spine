@@ -39,9 +39,6 @@
                         template:"<li>%s</li>"
                     }
                 },
-                framework:{
-                    equalizer_filter:".skip*"
-                },
                 social:{
                     provider:"WSU_share",
                     script_url:"//repo.wsu.edu/wsu_share/1/",
