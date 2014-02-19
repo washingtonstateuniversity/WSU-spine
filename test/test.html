@@ -5,16 +5,6 @@
 
 	<meta charset="utf-8">
 	<title>Page Title | Unit at Washington State University</title>
-<<<<<<< HEAD:build/spine.html
-		
-=======
-	
->>>>>>> 7a52456ffb1d52007bc447202f84d35e799fac98:test/test.html
-	<!-- SEARCH -->
-	<!-- Example of what's coming, multiple search sources -->
-	<meta data-section="site-search" data-id="wsu-search" data-source="nav" data-title="Nav Search" data-type="local" data-engine="html" data-response="filter">
-	<meta data-section="site-search" data-id="wsu-search" data-source="http://search.wsu.edu" data-title="WSU Search" data-type="local" data-engine="wordpress" data-response="submit">
-	<meta data-section="site-search" data-source="">
 	
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
@@ -29,10 +19,6 @@
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<<<<<<< HEAD:build/spine.html
-	<script src="http://repo.wsu.edu/spine/1/spine.min.js"></script>
-	<!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
-=======
     <script type="text/javascript">
         var spineoptions={
             search:{
@@ -76,8 +62,7 @@
         };
     </script>   
 	<script src="../build/spine.js"></script>
-	<!-- Your supplementary scripts here -->
->>>>>>> 7a52456ffb1d52007bc447202f84d35e799fac98:test/test.html
+    <!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
 	
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">IE7_PNG_SUFFIX=".png";</script><![endif]--> 
@@ -86,11 +71,7 @@
 	<link rel="author" href="https://plus.google.com/109412257237874861202?rel=author">
 	<link type="text/plain" rel="authors" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="docs" href="http://brand.wsu.edu">
-	
-	<!-- ANALYTICS -->
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<meta id="google-analytics" data-version="v4" data-gacode="UA-XXXXX-X" data-rules="" data-domain="">
-	
+
 </head>
 
 <body>
@@ -277,21 +258,27 @@
 </div><!--/jacket-->
 <!-- /WRAPPING -->
 
-<!-- SITE CONTACT -->
-<div id="site-contact" itemscope itemtype="http://schema.org/Organization">
-	<meta itemprop="name" content="Washington State University"><!-- required -->
-	<meta itemprop="department" content="University Unit"><!-- required -->
-	<meta itemprop="url" content="site.wsu.edu"><!-- required -->
-	<meta itemprop="location" content="Your Building"><!-- optional -->
-	<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<meta itemprop="streetAddress" content="PO Box 555555"><!-- optional -->
-		<meta itemprop="addressLocality" content="Pullman, WA"><!-- optional -->
-		<meta itemprop="postalCode" content="99164"><!-- required -->
-	</span>
-	<meta itemprop="telephone" content="(509) 335-3564"><!-- required -->
-	<meta itemprop="email" content="your-contact-email@wsu.edu"><!-- required -->
-	<meta itemprop="ContactPoint" title="Contact Page" content="http://contact.wsu.edu"><!-- optional -->
-</div>
+    <!-- 
+    This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+    cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
+    or something that will work to let you display one thing to a user but another to the search engines.
+    -->
+    <div itemscope itemtype="http://schema.org/Organization"> 
+        <span itemprop="department"  content="University Unit"></span> 
+        <span itemprop="name" content="Washington State University"></span> 
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="location" content="French Administration Building"></span>
+            <span itemprop="streetAddress" content="PO Box 555555"></span>
+            <span itemprop="addressLocality" content="Pullman, WA"></span>
+            <span itemprop="addressRegion"></span>
+            <span itemprop="postalCode" content="99163"></span>
+        </div>
+        <span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+        <span itemprop="telephone" content="(509) 335-3564"></span>
+        <span itemprop="email" content="your-contact-email@wsu.edu"></span>
+        <span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+        <span itemprop="url" content="http://your-unit.wsu.edu"></span>
+    </div>
 
 </body>
 </html>
