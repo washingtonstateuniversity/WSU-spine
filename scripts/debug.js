@@ -3,7 +3,7 @@
 
 function dump(arr,limit,level) {
 	var dumped_text = "";
-    if(!limit) limit=10;
+    if(!limit) limit=3;
 	if(!level) level = 0;
 	
 	//The padding given at the beginning of the line.
