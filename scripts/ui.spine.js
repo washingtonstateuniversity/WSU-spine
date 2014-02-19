@@ -251,6 +251,7 @@
             var targ=$(this);
             //init the plugin
             targ.spine({});
+            options=$.extend( {"framework":{},"search":{},"social":{},"analytics":{}}, options );
             $.each(options,function(i,v) {
                 //calling out to set up the other extensions
                 targ.spine(i,v);
@@ -259,6 +260,5 @@
 		});
 	};
 
-    
 	
 })( jQuery, window, document );
