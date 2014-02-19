@@ -1,14 +1,12 @@
-var version="0.5";
 module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		version: version,
 		pkg: grunt.file.readJSON('package.json'),
 		concat: {
 			styles: {
 		      src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
-		      dest: 'build/'+version+'/spine.css',
+		      dest: 'build/<%= pkg.build_version %>/spine.css',
 		    },
 		    scripts: {
 		      src: [ 
@@ -21,7 +19,7 @@ module.exports = function(grunt) {
                     'scripts/ui.spine.analytics.js',
                     'scripts/spine.js'
                    ],
-			  dest: 'build/'+version+'/spine.js',
+			  dest: 'build/<%= pkg.build_version %>/spine.js',
 			  },
 		},
 		uglify: {
@@ -30,29 +28,29 @@ module.exports = function(grunt) {
 					'/*  See https://github.com/washingtonstateuniversity/WSU-spine/ for full source.*/\n'
 			},
 			build: {
-				src: 'build/'+version+'/spine.js',
-				dest: 'build/'+version+'/spine.min.js'
+				src: 'build/<%= pkg.build_version %>/spine.js',
+				dest: 'build/<%= pkg.build_version %>/spine.min.js'
 			}
 		},
 		cssmin: {
 		  combine: {
 		    files: {
 		    // Hmmm, in reverse order
-		      'build/<%= version %>/spine.min.css': ['build/'+version+'/spine.css']
+		      'build/<%= pkg.build_version %>/spine.min.css': ['build/<%= pkg.build_version %>/spine.css']
 		    }
 		  }
 		},
 		copy: {
 		  main: {
 		    files: [
-		      {expand: true, src: ['fonts/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['html/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['icons/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['images/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['marks/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['scripts/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['styles/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'+version+'/'},
+		      {expand: true, src: ['fonts/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['html/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['icons/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['images/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['marks/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['scripts/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['styles/*'], dest: 'build/<%= pkg.build_version %>/'},
+		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/<%= pkg.build_version %>/'},
 		    ]
 		  }
 		},
@@ -76,7 +74,7 @@ module.exports = function(grunt) {
                 }
             },
             js : {
-                src: 'build/'+version+'/spine.js'
+                src: 'build/<%= pkg.build_version %>/spine.js'
             }
         }
 	});
