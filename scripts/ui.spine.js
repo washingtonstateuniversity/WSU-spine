@@ -29,7 +29,10 @@
 		$.fn[name] = function(context) {
             //alert("$.fn[name] ==>"+dump(name));
             //alert("w/ context ==>"+dump(context));
-            //alert("w/ arguments ==>"+dump(arguments));
+            var context_options={}
+            if(arguments[1])context_options=arguments[1];
+            //alert("w/ arguments ==>"+dump(context_options));
+            
             context = context || {};
             this.options = $.extend({}, context);
             
@@ -59,8 +62,8 @@
 
                 //alert("LOOKING TO INIT context==>"+dump(context));
                 if(instance[context+"_init"]!== undefined){
-                    //alert("INIT @ instance[context+\"_init\"]==>"+dump(instance[context+"_init"]));
-                    if ( instance[context+"_init"] ) { instance[context+"_init"](arguments); }
+                    //alert("INIT @ instance[context+\"_init\"]context_options==>"+dump(context_options));
+                    if ( instance[context+"_init"] ) { instance[context+"_init"](context_options); }
                 }
 				if (isMethodCall && instance[context] !== undefined ) {
                     //alert("has context==>"+dump(context));
