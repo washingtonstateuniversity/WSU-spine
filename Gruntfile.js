@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
+		version: version,
 		pkg: grunt.file.readJSON('package.json'),
 		concat: {
 			styles: {
@@ -37,7 +38,7 @@ module.exports = function(grunt) {
 		  combine: {
 		    files: {
 		    // Hmmm, in reverse order
-		      'build/spine.min.css': ['build/'+version+'/spine.css']
+		      'build/<%= version %>/spine.min.css': ['build/'+version+'/spine.css']
 		    }
 		  }
 		},
