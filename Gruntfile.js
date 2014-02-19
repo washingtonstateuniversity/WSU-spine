@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		concat: {
 			styles: {
 		      src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
-		      dest: 'build/spine.css',
+		      dest: 'build/'+version+'/spine.css',
 		    },
 		    scripts: {
 		      src: [ 
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                     'scripts/ui.spine.analytics.js',
                     'scripts/spine.js'
                    ],
-			  dest: 'build/spine.js',
+			  dest: 'build/'+version+'/spine.js',
 			  },
 		},
 		uglify: {
@@ -29,8 +29,8 @@ module.exports = function(grunt) {
 					'/*  See https://github.com/washingtonstateuniversity/WSU-spine/ for full source.*/\n'
 			},
 			build: {
-				src: 'build/spine.js',
-				dest: 'build/spine.min.js'
+				src: 'build/'+version+'/spine.js',
+				dest: 'build/'+version+'/spine.min.js'
 			}
 		},
 		cssmin: {
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['marks/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['scripts/*'], dest: 'build/'+version+'/'},
 		      {expand: true, src: ['styles/*'], dest: 'build/'+version+'/'},
-		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'},
+		      {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/'+version+'/'},
 		    ]
 		  }
 		},
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                 }
             },
             js : {
-                src: 'build/spine.js'
+                src: 'build/'+version+'/spine.js'
             }
         }
 	});
