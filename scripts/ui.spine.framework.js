@@ -99,17 +99,16 @@
                 self.sizing();
                 self.equalizing();
                 self.mainheight();
-                var $main = $('main');
                 // Only run function if an unbound element exists
                 if( $('.unbound').length || $('#binder.broken').length ) {
                     var spread = $(window).width();
-                    var verso = $main.offset().left;
-                    var page = $main.width();
-                    var recto = spread - $main.offset().left;
+                    var verso = self.globals.main.offset().left;
+                    var page = self.globals.main.width();
+                    var recto = spread - self.globals.main.offset().left;
                     var recto_margin = "";
                     if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-					/* Broken Binding */ if ($('#binder').hasClass('broken')) { $('main').css('width',recto); }
-                    var verso_width = verso + $main.width();
+					/* Broken Binding */ if ($('#binder').hasClass('broken')) { self.globals.main.css('width',recto); }
+                    var verso_width = verso + self.globals.main.width();
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
                     $('.unbound.verso.recto').css('width',spread);
@@ -153,7 +152,7 @@
             }
         },        
         mainheight: function () {
-            var main_top = $('main').offset().top;
+            var main_top = this.globals.main.offset().top;
             var window_height = $(window).height();
             var main_height = window_height;
             if ($('#binder').hasClass('size-lt-large')) {
@@ -209,7 +208,7 @@
                 if (container.has(e.target).length === 0)
                 { container.toggleClass('shelved unshelved'); }
             }); */
-            $('main').on('click swipeleft', function() {
+            this.globals.main.on('click swipeleft', function() {
                 if ( self.globals.spine.hasClass('unshelved') ) {
                     self.globals.spine.toggleClass('shelved unshelved');
                 }
