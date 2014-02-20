@@ -18,7 +18,7 @@
         },
         framework_globals: {
             spine: $('#spine'),
-            main = $('main')
+            main: $('main')
         },
         framework_create: function(){
             //alert('framework_create');
@@ -119,20 +119,21 @@
         sizing: function (jacket) {
                 jacket=jacket||$('#jacket');
                 var current_width = $(window).width();
+                var ele_class="";
                 if(current_width >= 1188) {
-                    class='size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large';
+                    ele_class='size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large';
                 } else if(current_width >= 990) {
-                    class='size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium';
+                    ele_class='size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium';
                 } else if(current_width < 990 && current_width >= 792) {
-                    class='size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small';
+                    ele_class='size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small';
                 } else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
-                    class='size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small';
+                    ele_class='size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small';
                 } else if(current_width < 792) {
-                    class='size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
+                    ele_class='size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
                 } else if(current_width < 396) {
-                    class='size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
+                    ele_class='size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
                 }
-                jacket.stripClass("size-").addClass(class);
+                jacket.stripClass("size-").addClass(ele_class);
          },
         // Equalize Columns
         equalizing: function () {
