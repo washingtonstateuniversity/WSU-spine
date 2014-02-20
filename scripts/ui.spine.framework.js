@@ -17,7 +17,8 @@
             equalizer_filter:".skip*"
         },
         framework_globals: {
-            spine: $('#spine')
+            spine: $('#spine'),
+            main = $('main')
         },
         framework_create: function(){
             //alert('framework_create');
