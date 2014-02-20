@@ -15,6 +15,10 @@
         framework_options:{
             equalizer_filter:".skip*"
         },
+        framework_globals: {
+            
+            
+        },
         framework_create: function(){
             //alert('framework_create');
             var self=this;
