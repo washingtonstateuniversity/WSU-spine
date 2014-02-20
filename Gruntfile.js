@@ -69,12 +69,17 @@ module.exports = function(grunt) {
 			options: {
 				inline: true,
 				context : {
-					DEBUG: true
+					DEBUG: true,
+                    build_version : '<%= pkg.build_version %>'
 				}
 			},
 			js : {
 				src: 'build/<%= pkg.build_version %>/spine.js'
-			}
+			},
+            html : {
+                src : 'test/test.pre.html',
+                dest : 'test/test.html'
+            }
 		}
 	});
 
@@ -87,5 +92,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	// Default task(s).
-	grunt.registerTask('default', ['concat','preprocess:js','cssmin','uglify','copy']);
+	grunt.registerTask('default', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);
 };
