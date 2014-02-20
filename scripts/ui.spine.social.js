@@ -10,6 +10,7 @@
             //alert("options==>"+dump(options));
             $.extend(this.social_options,options);
             //alert("options==>"+dump(this.social_options));
+            this._set_globals(this.social_globals);
             this.social_create();
         },
         social_options:{
