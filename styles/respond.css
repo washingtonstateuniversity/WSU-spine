@@ -26,28 +26,38 @@
 	z-index: 1;
 	}
 
+/* III.0.5 Show and Hide
+-------------------------------------------------- */
 /* Hide */
-.small-only,
-.medium-only,
-.large-only,
-.folio-only,
-.more-than-small,
-.more-than-medium,
-.more-than-large,
-.less-than-medium,
-.less-than-large,
-.less-than-folio,
-.max-1188-only,
-.max-1386-only,
-.max-1584-only,
-.max-1782-only,
-.max-1980-only,
-.less-than-1188,
-.less-than-1386,
-.less-than-1584,
-.less-than-1782,
-.less-than-1980 {
+.size-small-only,
+.size-gt-small-only,
+.size-gt-smallish-only,
+.size-gt-medium-only,
+.size-gt-large-only,
+.size-gt-xlarge-only,
+.size-lt-small-only,
+.size-lt-smallish-only,
+.size-lt-medium-only,
+.size-lt-large-only,
+.size-lt-xlarge-only,
+.size-xlarge-only {
 	display: none !important;
+	}
+
+/* Show */
+.size-small .size-small-only,
+.size-gt-small .size-gt-small-only,
+.size-gt-smallish .size-gt-smallish-only,
+.size-gt-medium .size-gt-medium-only,
+.size-gt-large .size-gt-large-only,
+.size-gt-xlarge .size-gt-xlarge-only,
+.size-lt-small .size-lt-small-only,
+.size-lt-smallish .size-lt-smallish-only,
+.size-lt-medium .size-lt-medium-only,
+.size-lt-large .size-lt-large-only,
+.size-lt-xlarge .size-lt-xlarge-only,
+.size-xlarge .size-xlarge-only {
+	display: block !important;
 	}
 	
 /* Pseudo Responsive Images */
@@ -176,20 +186,7 @@
 	right: 10px;
 	}
 	
-/* Gutters */
-.halves.guttered .column:nth-of-type(odd),
-.halves.guttered .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
-.halves.guttered.wide .column:nth-of-type(odd),
-.halves.guttered.wide .column:nth-of-type(even) { padding: 4em 4em 0 4em; }
-.halves.guttered.wide .column ~ .column { padding: 0em 4em 0 4em; }
 
-.thirds.guttered .column:nth-of-type(3n+1) { padding-left: 2em; } 
-.thirds.guttered .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
-.thirds.guttered .column:nth-of-type(3n+3) { padding-right: 2em; }
-
-.fifths.guttered .column { padding: 1em; }
-.fifths.guttered .column:nth-of-type(5n+1) { padding-left: 2em; }
-.fifths.guttered .column:nth-of-type(5n+5) { padding-right: 2em; }
 	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
@@ -212,20 +209,6 @@
 .spokane-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/0.5/marks/wsu-spokane-signature-horizontal.svg"); }
 .tricities-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/0.5/marks/wsu-tricities-signature-horizontal.svg"); }
 .vancouver-signature #binder #spine:not(.fluid) a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/0.5/marks/wsu-vancouver-signature-horizontal.svg"); }
-
-/* Show */
-.large-only,
-.more-than-small,
-.more-than-medium,
-.less-than-large,
-.less-than-folio,
-.less-than-1188,
-.less-than-1386,
-.less-than-1584,
-.less-than-1782,
-.less-than-1980, {
-	display: block !important;
-	}
 
 	}
 
@@ -280,6 +263,7 @@
 	top: 0;
 	overflow: visible;
 	position: fixed;
+	position: absolute;
 	z-index: 99164;
 	}
 #binder #glue {
@@ -378,7 +362,7 @@ html.print #spine a#wsu-signature {
 .row.triptych .column.two,
 .row.sidebar .column.one,
 .row.sidebar .column.two,
-.row.thirds .column,
+/* .row.thirds .column, */
 .row.margin .column.one,
 .row.margin .column.two {
 	width: 100%;
@@ -406,29 +390,11 @@ html.print #spine a#wsu-signature {
 	width: 132px;
 	float: left;
 	}
-	
-/* Show */
-.small-only,
-.medium-only,
-.large-only,
-.folio-only,
-.more-than-small,
-.more-than-medium,
-.more-than-large,
-.less-than-medium,
-.less-than-large,
-.less-than-folio,
-.max-1188-only,
-.max-1386-only,
-.max-1584-only,
-.max-1782-only,
-.max-1980-only,
-.less-than-1188,
-.less-than-1386,
-.less-than-1584,
-.less-than-1782,
-.less-than-1980, {
-	display: block;
+.hybrid .row .row.thirds .column {
+	width: 33%;
+	}
+.hybrid .row .row.thirds .column.two {
+	width: 34%;
 	}
 
 	}
@@ -537,7 +503,7 @@ html.print #spine a#wsu-signature {
 #binder.hybrid main {
 	width: auto;
 	margin-left: 0px;
-	}	
+	}
 
 /* Logo */
 .extension-signature #binder #spine a#wsu-signature,
@@ -559,8 +525,11 @@ html.print #spine a#wsu-signature {
 .fluid .row.triptych .column,
 .fluid .row.sidebar .column.one,
 .fluid .row.sidebar .column.two,
+.fluid .row.sideleft .column.one,
+.fluid .row.sideleft .column.two,
 .fluid .row.margin .column.one,
-.fluid .row.margin .column.two {
+.fluid .row.margin .column.two,
+.fluid .row.thirds .halves .column {
 	width: 100%;
 	float: none;
 	clear: both;
@@ -571,32 +540,72 @@ html.print #spine a#wsu-signature {
 	
 .hybrid .row.single .column,
 .hybrid .row.halves .column,
+/* Unfortunately, this doesn't work --> .hybrid .row.halves *:not(.row) .column, */
 .hybrid .row.thirds .column.one,
 .hybrid .row.thirds .column.two,
 .hybrid .row.thirds .column.three,
 .hybrid .row.triptych .column,
 .hybrid .row.sidebar .column.one,
 .hybrid .row.sidebar .column.two,
+.hybrid .row.sideleft .column.one,
+.hybrid .row.sideleft .column.two,
 .hybrid .row.margin .column.one,
 .hybrid .row.margin .column.two,
 .hybrid .row.thirds .halves .column,
-.fluid .row.thirds .halves .column {
+.hybrid .row.fifteenths .four-fifteenths,
+.hybrid .row.fifteenths .five-fifteenths,
+.hybrid .row.fifteenths .six-fifteenths,
+.hybrid .row.fifteenths .seven-fifteenths {
 	width: 100%;
 	float: none;
 	clear: both;
 	}
-.hybrid .row.quarters > .column {
+.hybrid .row.quarters .column,
+.hybrid .row.fifteenths .two-fifteenths,
+.hybrid .row.fifteenths .three-fifteenths {
 	width: 50%;
 	}
+	
+.hybrid .row .row.thirds .column {
+	width: 33%;
+	}
+.hybrid .row .row.thirds .column.two {
+	width: 34%;
+	}
+
 
 /* nesting */
 .hybrid .row .row.quarters .column,
 .fluid .row .row.quarters .column,
+.hybrid .row .row.thirds .column,
+.hybrid .row .row.thirds .column.two,
 .hybrid .row .row.halves .column,
 .hybrid .row .row.halves .column {
 	clear: none;
 	float: left;
 	}
+
+/* Gutters */
+.halves.guttered .column:nth-of-type(odd),
+.halves.guttered .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
+.halves.guttered.wide .column:nth-of-type(odd),
+.halves.guttered.wide .column:nth-of-type(even) { padding: 4em 4em 0 4em; }
+.halves.guttered.wide .column ~ .column { padding: 0em 4em 0 4em; }
+
+.thirds.guttered .column:nth-of-type(3n+1) { padding-left: 2em; } 
+.thirds.guttered .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
+.thirds.guttered .column:nth-of-type(3n+3) { padding-right: 2em; }
+
+.fifths.guttered .column { padding: 1em; }
+.fifths.guttered .column:nth-of-type(5n+1) { padding-left: 2em; }
+.fifths.guttered .column:nth-of-type(5n+5) { padding-right: 2em; }
+
+/* Gutters */
+.halves.guttered .column:nth-of-type(odd),
+.halves.guttered .column:nth-of-type(even) { padding: 2em 2em 1em 2em; } 
+.halves.guttered.wide .column:nth-of-type(odd),
+.halves.guttered.wide .column:nth-of-type(even) { padding: 4em 4em 1.5em 4em; }
+.halves.guttered.wide .column ~ .column { padding: 0em 4em 1.5em 4em; }
 
 
 	}
@@ -802,7 +811,7 @@ html.print #spine header {
 	position: relative;
 	}
 html.print #binder #spine a#wsu-signature {
-	background-image: url("http://repo.wsu.edu/spine/1/0.5/marks/sig-horizontal.svg");
+	background-image: url("http://repo.wsu.edu/spine/1/0.5/marks/wsu-signature-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
