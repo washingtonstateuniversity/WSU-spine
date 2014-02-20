@@ -1,7 +1,7 @@
 {
   "name": "wsu-spine",
   "version": "0.5.0",
-  "build_version": "0.5",
+  "build_version": "1",
   "file": "spine",
   "devDependencies": {
     "grunt": "~0.4.2",
