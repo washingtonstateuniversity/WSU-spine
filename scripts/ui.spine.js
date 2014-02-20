@@ -96,9 +96,9 @@
 	};
     
     $.s('ui.spine', {
-
-        defaults: {
-			message: 'Hello world!'
+        
+        globals: {
+			version: 0.1.0
 		},
         options: {
 		},
