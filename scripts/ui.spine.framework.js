@@ -120,18 +120,19 @@
                 jacket=jacket||$('#jacket');
                 var current_width = $(window).width();
                 if(current_width >= 1188) {
-                    jacket.stripClass("size-").addClass('size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large');
+                    class='size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large';
                 } else if(current_width >= 990) {
-                    jacket.stripClass("size-").addClass('size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium');
+                    class='size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium';
                 } else if(current_width < 990 && current_width >= 792) {
-                    jacket.stripClass("size-").addClass('size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small');
+                    class='size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small';
                 } else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
-                    jacket.stripClass("size-").addClass('size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small');
+                    class='size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small';
                 } else if(current_width < 792) {
-                    jacket.stripClass("size-").addClass('size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+                    class='size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
                 } else if(current_width < 396) {
-                    jacket.stripClass("size-").addClass('size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge');
+                    class='size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
                 }
+                jacket.stripClass("size-").addClass(class);
          },
         // Equalize Columns
         equalizing: function () {
