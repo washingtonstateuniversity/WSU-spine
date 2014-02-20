@@ -21,6 +21,9 @@
                 "Pintrest"
             ]
         },
+        social_globals: {
+            'share_block': $('#wsu-share')
+        },
         social_create: function(){
         
             var $wsu_share = $('#wsu-share');
