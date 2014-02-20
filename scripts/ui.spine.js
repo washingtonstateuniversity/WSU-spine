@@ -22,7 +22,12 @@
         });
         return this;
     };
-    
+    $.fn.refresh = function() {
+        var elems = $(this.selector);
+        this.splice(0, this.length);
+        this.push.apply( this, elems );
+        return this;
+    };
     
     
 	/**
@@ -136,10 +141,12 @@
         _set_globals: function(obj,context) {
             //context will be done later
             if(typeof(obj) != 'object')return;
-            $.extend(this.globals,obj, {  });
+            $.extend(this.globals,obj);
         },
 
-
+        _get_globals: function(context) {
+            return this.globals[context];
+        },
         
 		/**
 		 * Clears by type
@@ -234,6 +241,7 @@
 		_unwrap: function(obj) {
 			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) );
 		},
+        
 		/**
 		 * Helper method for calling a function
 		 * @param callback

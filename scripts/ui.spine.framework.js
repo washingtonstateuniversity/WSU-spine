@@ -17,8 +17,8 @@
             equalizer_filter:".skip*"
         },
         framework_globals: {
-            spine: $('#spine'),
-            main: $('main')
+            'spine': $('#spine'),
+            'main': $('main')
         },
         framework_create: function(){
             //alert('framework_create');
@@ -102,13 +102,13 @@
                 // Only run function if an unbound element exists
                 if( $('.unbound').length || $('#binder.broken').length ) {
                     var spread = $(window).width();
-                    var verso = self.globals.main.offset().left;
-                    var page = self.globals.main.width();
-                    var recto = spread - self.globals.main.offset().left;
+                    var verso = self._get_globals('main').offset().left;
+                    var page = self._get_globals('main').width();
+                    var recto = spread - self._get_globals('main').offset().left;
                     var recto_margin = "";
                     if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-					/* Broken Binding */ if ($('#binder').hasClass('broken')) { self.globals.main.css('width',recto); }
-                    var verso_width = verso + self.globals.main.width();
+					/* Broken Binding */ if ($('#binder').hasClass('broken')) { self._get_globals('main').css('width',recto); }
+                    var verso_width = verso + self._get_globals('main').width();
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
                     $('.unbound.verso.recto').css('width',spread);
@@ -153,13 +153,16 @@
             }
         },        
         mainheight: function () {
-            var main_top = this.globals.main.offset().top;
-            var window_height = $(window).height();
-            var main_height = window_height;
-            if ($('#binder').hasClass('size-lt-large')) {
-                main_height -= 50;
+            var main = this._get_globals('main').refresh();
+            if(main.offset()){
+                var main_top = main.offset().top;
+                var window_height = $(window).height();
+                var main_height = window_height;
+                if ($('#binder').hasClass('size-lt-large')) {
+                    main_height -= 50;
+                }
+                $('main.fill-window-height').css('min-height',main_height);
             }
-            $('main.fill-window-height').css('min-height',main_height);
         },
 
         /**
