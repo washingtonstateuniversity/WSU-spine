@@ -2,6 +2,10 @@
   "name": "wsu-spine",
   "version": "0.5.0",
   "build_version": "0.5",
+  "repository" : {
+	  "type" : "git",
+	  "url" : "http://github.com/washingtonstateuniversity/wsu-spine.git"
+  },
   "file": "spine",
   "devDependencies": {
     "grunt": "~0.4.2",
