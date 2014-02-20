@@ -132,7 +132,7 @@
 		 * @param obj:object        e.g. {'foo':'bar'}
          * @param context:string    e.g. 'search', 'social', 'framework'
          */
-        _set_global: function(obj,context) {
+        _set_globals: function(obj,context) {
             //context will be done later
             if(typeof(obj) != 'object')return;
             $.extend(this.globals,obj, {  });
