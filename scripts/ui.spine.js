@@ -98,7 +98,8 @@
     $.s('ui.spine', {
         
         globals: {
-			version: '0.1.0'
+            version: '0.1.0',
+            $current_url:window.location.href
 		},
         options: {
 		},
