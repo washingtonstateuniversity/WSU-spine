@@ -100,23 +100,21 @@
                 self.mainheight();
                 var $main = $('main');
                 // Only run function if an unbound element exists
-                if( $('.unbound').length ) {
-                    var verso = $main.offset().left;
-                    var recto = $main.offset().right;
-                    // var recto = $(window).width() - ($('main').offset().left + $('main').width());
+                if( $('.unbound').length || $('#binder.broken').length ) {
                     var spread = $(window).width();
+                    var verso = $main.offset().left;
                     var page = $main.width();
-                        recto = spread - $main.offset().left;
+                    var recto = spread - $main.offset().left;
                     var recto_margin = "";
                     if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-    
+					/* Broken Binding */ if ($('#binder').hasClass('broken')) { $('main').css('width',recto); }
                     var verso_width = verso + $main.width();
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
                     $('.unbound.verso.recto').css('width',spread);
                 }
             }).trigger('resize');
-        },   
+        },
         // Label #jacket with current window size
         sizing: function (jacket) {
                 jacket=jacket||$('#jacket');
@@ -151,7 +149,7 @@
                     $('section.equalize .column',this).css('min-height','auto');
                 });
             }
-        },
+        },        
         mainheight: function () {
             var main_top = $('main').offset().top;
             var window_height = $(window).height();
