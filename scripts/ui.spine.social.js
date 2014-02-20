@@ -21,6 +21,31 @@
                 "Pintrest"
             ]
         },
-        social_create: function(){}
+        social_create: function(){
+        
+            var $wsu_share = $('#wsu-share');
+    
+            // Section -> Share
+            // Just getting started on rolling our own... more to come.
+            if (!$wsu_share.length) {
+                var share_text = "";
+            if ($('meta.share-text').length) /* Need a better name */ { share_text = $('meta.share-text'); } else { share_text = "You should know ..."; }
+            var share  = '<section id="wsu-share" class="spine-share tools closed">';
+                share += '	<ul>';
+                share += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+self.globals.current_url+'">Facebook</a></li>';
+                share += '		<li class="by-twitter"><a href="https://twitter.com/intent/tweet?text='+share_text+'&url='+self.globals.current_url+'&via=wsupullman" target="_blank">Twitter</a></li>';
+                share += '		<li class="by-email"><a href="mailto:?subject='+share_text+'&body='+self.globals.current_url+'">Email</a></li>';
+                share += '		<!--<li class="by-gmail"><a href="https://plusone.google.com/_/+1/confirm?hl=en&url='+self.globals.current_url+'">Google+</a></li>-->';
+                share += '		<!--<li class="by-linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url='+self.globals.current_url+'&title=articleTitle&summary=articleSummary&source=articleSource">LinkedIn</a></li>-->';
+                share += '		<!--<li class="by-pinterest"><a href="http://pinterest.com/pin/create/button/?url=""title="Pinterest">Pinterest</a></li>-->';
+                share += '	</ul>';
+                share += '</section>';
+    
+                $wsu_actions.append(share);
+            } // End Share Generation
+        
+        
+        
+        }
 	});
 } (jQuery) );

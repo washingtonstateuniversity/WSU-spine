@@ -30,26 +30,7 @@
             // Cache Spine sections selectors.
             var $wsu_search = $('#wsu-search');
             var $wsu_contact = $('#wsu-contact');
-            var $wsu_share = $('#wsu-share');
-    
-            // Section -> Share
-            // Just getting started on rolling our own... more to come.
-            if (!$wsu_share.length) {
-                var share_text = "";
-            if ($('meta.share-text').length) /* Need a better name */ { share_text = $('meta.share-text'); } else { share_text = "You should know ..."; }
-            var share  = '<section id="wsu-share" class="spine-share tools closed">';
-                share += '	<ul>';
-                share += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+self.globals.current_url+'">Facebook</a></li>';
-                share += '		<li class="by-twitter"><a href="https://twitter.com/intent/tweet?text='+share_text+'&url='+self.globals.current_url+'&via=wsupullman" target="_blank">Twitter</a></li>';
-                share += '		<li class="by-email"><a href="mailto:?subject='+share_text+'&body='+self.globals.current_url+'">Email</a></li>';
-                share += '		<!--<li class="by-gmail"><a href="https://plusone.google.com/_/+1/confirm?hl=en&url='+self.globals.current_url+'">Google+</a></li>-->';
-                share += '		<!--<li class="by-linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url='+self.globals.current_url+'&title=articleTitle&summary=articleSummary&source=articleSource">LinkedIn</a></li>-->';
-                share += '		<!--<li class="by-pinterest"><a href="http://pinterest.com/pin/create/button/?url=""title="Pinterest">Pinterest</a></li>-->';
-                share += '	</ul>';
-                share += '</section>';
-    
-                $wsu_actions.append(share);
-            } // End Share Generation
+
     
             // Section -> Contact
             if (!$("#wsu-contact").length) {
@@ -194,13 +175,15 @@
          */
         setup_spine: function(){
             var self=this;//hold to preserve scope
+            var spine = this._get_globals('spine').refresh();
+            var main = this._get_globals('main').refresh();
             // Fixed/Sticky Horizontal Header
             $(document).scroll(function() {
                 var top = $(document).scrollTop();
                 if (top > 49) {
-                    self.globals.spine.not('.unshelved').addClass('scanned');
+                    spine.not('.unshelved').addClass('scanned');
                 } else { 
-                    self.globals.spine.removeClass('scanned');
+                    spine.removeClass('scanned');
                 } 
             });
     
@@ -212,9 +195,9 @@
                 if (container.has(e.target).length === 0)
                 { container.toggleClass('shelved unshelved'); }
             }); */
-            this.globals.main.on('click swipeleft', function() {
-                if ( self.globals.spine.hasClass('unshelved') ) {
-                    self.globals.spine.toggleClass('shelved unshelved');
+            main.on('click swipeleft', function() {
+                if ( spine.hasClass('unshelved') ) {
+                    spine.toggleClass('shelved unshelved');
                 }
             });
     
@@ -225,9 +208,9 @@
                 var spineHeight = $("#glue").height();
                 //$('main').prepend(footerHeight);
                 if ( windowHeight < spineHeight ) {
-                    self.globals.spine.removeClass("uncracked").addClass("cracked");
+                    spine.removeClass("uncracked").addClass("cracked");
                 } else { 
-                    self.globals.spine.removeClass("cracked").addClass("uncracked");
+                    spine.removeClass("cracked").addClass("uncracked");
                 }
             });
     
@@ -335,6 +318,7 @@
         
         setup_printing: function(){
             var self=this;//hold to preserve scope
+            var spine = self._get_globals('spine').refresh();
             var $wsu_actions = $('#wsu-actions');
             // Print & Print View
             var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
@@ -355,8 +339,8 @@
                 }
                 $wsu_actions.find('.opened').toggleClass('opened closed');
                 $('html').toggleClass('print');
-                self.globals.spine.find('header').prepend(print_controls);
-                self.globals.spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
+                spine.find('header').prepend(print_controls);
+                spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
                 $("#print-invoke").on("click",function() { window.print(); });
                 $("#print-cancel").on("click",print_cancel);
                 setTimeout(function() { printPage(); }, 400);
