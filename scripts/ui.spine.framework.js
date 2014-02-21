@@ -190,7 +190,8 @@
                 } 
             });
     
-
+            $("#glue > header").append('<button id="shelve"></button>');
+            $("#shelve").click(function() { $spine.toggleClass('unshelved shelved'); });
     
             // Clicking Outside Spine Closes It
             /* $(document).on('mouseup touchstart', function (e) {
