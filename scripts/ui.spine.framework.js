@@ -18,7 +18,8 @@
         },
         framework_globals: {
             'spine': $('#spine'),
-            'main': $('main')
+            'main': $('main'),
+            'wsu_actions':$('#wsu-actions')
         },
         framework_create: function(){
             //alert('framework_create');
@@ -319,7 +320,8 @@
         setup_printing: function(){
             var self=this;//hold to preserve scope
             var spine = self._get_globals('spine').refresh();
-            var $wsu_actions = $('#wsu-actions');
+            var wsu_actions = self._get_globals('wsu_actions').refresh();
+
             // Print & Print View
             var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
     
@@ -337,7 +339,7 @@
                 if ( undefined !== e ) {
                     e.preventDefault();
                 }
-                $wsu_actions.find('.opened').toggleClass('opened closed');
+                wsu_actions.find('.opened').toggleClass('opened closed');
                 $('html').toggleClass('print');
                 spine.find('header').prepend(print_controls);
                 spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
@@ -350,7 +352,7 @@
             // Shut a tool section
             $("button.shut").on("click",function(e) {
                 e.preventDefault();
-                $wsu_actions.find('.opened').toggleClass('opened closed');
+                wsu_actions.find('.opened').toggleClass('opened closed');
             });
         }
         
