@@ -36,8 +36,8 @@
             'wsu_search': $('#wsu-search'),
         },
         create_search: function(){
-            var wsu_search = this._get_globals('wsu_search').refresh();
-            
+            var self=this;//hold to preserve scop
+            var wsu_search = self._get_globals('wsu_search').refresh();
             if (!wsu_search.length) {
                 var tabhtml  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
                     tabhtml += '		<form id="default-search">';
@@ -47,31 +47,17 @@
                     tabhtml += '		<div id="spine-shortcuts"></div>';
                     tabhtml += '</section>';
                 this.setup_tabs("search",tabhtml);
-    
-                $("#wsu-search form").submit( function() {
-                    var scope = wsu_search.attr('data-default');
-                    var site = '';
-                    if ( scope == 'site-search' ) {
-                        site = ' site:'+location.hostname;
-                    }
-                    var cx = 'cx=004677039204386950923:xvo7gapmrrg';
-                    var cof = 'cof=FORID%3A11';
-                    var search_term = $("#wsu-search input").val();
-                    var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
-                    window.location.href = search_url;
-                    return false;
-                });
+                this.setup_search();
             }   
-            
         },
-        
-        
-        
+
         start_tab:function(){
         
         },
         
         setup_search: function (jObj, options){
+            var self=this;//hold to preserve scop
+            var wsu_search = self._get_globals('wsu_search').refresh();
             /* Search autocomplete */
             var cur_search = "";
             var termTemplate = "<strong>%s</strong>";
@@ -135,6 +121,22 @@
                     //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
                 }
             }).data( "autocomplete" );
+            
+            $("#wsu-search form").submit( function() {
+                var scope = wsu_search.attr('data-default');
+                var site = '';
+                if ( scope == 'site-search' ) {
+                    site = ' site:'+location.hostname;
+                }
+                var cx = 'cx=004677039204386950923:xvo7gapmrrg';
+                var cof = 'cof=FORID%3A11';
+                var search_term = $("#wsu-search input").val();
+                var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
+                window.location.href = search_url;
+                return false;
+            });
+            
+            
         },
         
 	});
