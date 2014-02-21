@@ -6,11 +6,12 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
         analytics_init: function(options) {
+            var self=this;//hold to preserve scope
             //alert('init analytics');
             //alert("options==>"+dump(options));
-            $.extend(this.analytics_options,options);
+            $.extend(self.analytics_options,options);
             //alert("options==>"+dump(this.analytics_options));
-            this.analytics_create();
+            self.analytics_create();
         },
         analytics_options:{ 
             "google":{
