@@ -37,7 +37,7 @@
             // Cache the wsu-actions selector
             var $current_url = window.location.href;
             var $wsu_actions = $('#wsu-actions');
-    
+            
             // Cache the spine selector.
             var $spine = $('#spine');
     
@@ -63,7 +63,7 @@
                 search += '		<div id="spine-shortcuts"></div>';
                 search += '</section>';
             $wsu_actions.append(search);
-            
+            this.setup_tabs("search");
             // Submit search
             /* This broke it 
             $wsu_search.find('form').submit( function() {
