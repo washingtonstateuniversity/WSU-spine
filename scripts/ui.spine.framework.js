@@ -16,24 +16,24 @@
         framework_options:{
             equalizer_filter:".skip*",
             contact_template:" <address itemscope itemtype='http://schema.org/Organization' class='hcard'> \
-                                    <% if (typeof(department) != 'undefined') { %><div class='organization-unit fn org'>\
-                                        <% if (typeof(url) != 'undefined') { %><a href='<%url%>' class='url'><% } %> \
-                                            <%department%> \
-                                        <% if (typeof(url) != 'undefined') { %></a><% } %> \
+                                    <% if (typeof(this.department) != 'undefined') { %><div class='organization-unit fn org'>\
+                                        <% if (typeof(this.url) != 'undefined') { %><a href='<%this.url%>' class='url'><% } %> \
+                                            <%this.department%> \
+                                        <% if (typeof(this.url) != 'undefined') { %></a><% } %> \
                                     </div><% } %> \
-                                    <% if (typeof(url) != 'undefined') { %><div class='organization-name'><%name%></div><% } %> \
+                                    <% if (typeof(this.name) != 'undefined') { %><div class='organization-name'><%this.name%></div><% } %> \
                                     <div class='address'> \
-                                        <% if (typeof(streetAddress) != 'undefined') { %><div class='street-address'><%streetAddress%></div><% } %> \
-                                        <% if (typeof(addressLocality) != 'undefined' || typeof(postalCode) != 'undefined') { %><div class='locality'> \
-                                            <% if (typeof(addressLocality) != 'undefined' ) { %><%addressLocality%><% } %> \
-                                            <% if (typeof(postalCode) != 'undefined' ) { %><span class='postalcode'><%postalCode%></span><% } %> \
+                                        <% if (typeof(this.streetAddress) != 'undefined') { %><div class='street-address'><%this.streetAddress%></div><% } %> \
+                                        <% if (typeof(this.addressLocality) != 'undefined' || typeof(this.postalCode) != 'undefined') { %><div class='locality'> \
+                                            <% if (typeof(this.addressLocality) != 'undefined' ) { %><%this.addressLocality%><% } %> \
+                                            <% if (typeof(this.postalCode) != 'undefined' ) { %><span class='postalcode'><%this.postalCode%></span><% } %> \
                                         </div><% } %> \
                                     </div> \
-                                    <% if (typeof(telephone) != 'undefined' ) { %><div class='tel'><%telephone%></div><% } %> \
-                                    <% if (typeof(email) != 'undefined' ) { %><div class='email' rel='email'><a href='mailto:<%email%>'>Email us</a></div><% } %> \
+                                    <% if (typeof(this.telephone) != 'undefined' ) { %><div class='tel'><%this.telephone%></div><% } %> \
+                                    <% if (typeof(this.email) != 'undefined' ) { %><div class='email' rel='email'><a href='mailto:<%this.email%>'>Email us</a></div><% } %> \
                                          \
-                                    <% if (typeof(ContactPoint) != 'undefined' && typeof(ContactPointTitle) != 'undefined') { %> \
-                                        <div class='more'><a href='<%ContactPoint%>'><%ContactPointTitle%></a></div> \
+                                    <% if (typeof(this.ContactPoint) != 'undefined' && typeof(this.ContactPointTitle) != 'undefined') { %> \
+                                        <div class='more'><a href='<%this.ContactPoint%>'><%this.ContactPointTitle%></a></div> \
                                     <% } %> \
                                 </address>"
         },
