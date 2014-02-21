@@ -31,7 +31,7 @@
             var current_url = self._get_globals('current_url');
             var wsu_actions = self._get_globals('wsu_actions').refresh();
             var share_block = self._get_globals('share_block').refresh();
-            var share_text = this.social_options
+            var share_text = this.social_options;
             // Section -> Share
             // Just getting started on rolling our own... more to come.
             if (!share_block.length) {

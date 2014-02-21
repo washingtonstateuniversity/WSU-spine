@@ -17,10 +17,15 @@
                 analytics:{
                     "account_id":"UA-XXXXX-XX",
                     "url":"wsu.edu",
-                    "load":false,
+                    "load_reporule":false,
                     "domainName":false,
                     "cookiePath":false,
-                    "trackrule":false
+                    "trackrule":false,
+                    "debug":{
+                        run: false,
+                        v_console: false,
+                        console: true,
+                    }
                 },
                 verification:"XXXXXXXXXXXXXXXXXXXXX"
             },
@@ -29,27 +34,24 @@
             }
         },
         buildpackage:function(){
+            var self=this;//hold to preserve scope
             var scriptArray = [ 
                 {
                     src:"//images.wsu.edu/javascripts/jquery.jTrack.0.2.1.js",
                     exc:function(){
-                        var url = document.getElementById('tracker_agent').src;
-                        var GAcode = param("gacode", url );
-                        var _load  = param("loading", url );
-                        var _DN    = param("domainName", url );
-                        var _CP    = param("cookiePath", url );
-
-                        var url='//images.wsu.edu/javascripts/tracking/configs/pick.asp';
-                        $.getJSON(url+'?callback=?'+(_load!=false?'&loading='+_load:''), function(data){
-                            $.jtrack.defaults.debug.run = false;
-                            $.jtrack.defaults.debug.v_console = false;
-                            $.jtrack.defaults.debug.console = true;
-                            $.jtrack({ 
-                                load_analytics:{
-                                    account:GAcode
-                                },
-                                options:$.extend({},(_DN!=false?{'domainName':_DN}:{}),(_CP!=false?{'cookiePath':_CP}:{})), trackevents:data });
-                        });
+                        var _load  = self.analytics_options.load_reporule;
+                        var trackingrules = self.analytics_options.trackrule || {} ;
+                        var loaded="";
+                        if(_load!==false){
+                            loaded='loading='+_load;
+                        }
+                        if(self.analytics_options.trackrule===false||_load!==false){
+                            var url='//images.wsu.edu/javascripts/tracking/configs/pick.asp';
+                            $.getJSON(url+'?callback=?'+loaded, function(rules){
+                               $.extend(trackingrules,rules);
+                            });
+                        }
+                        self.run_tracker(trackingrules);
                     }
                 }
             ];
@@ -58,14 +60,25 @@
         analytics_create: function(){
             var self=this;//hold to preserve scope
             var scriptArray = self.analytics_options.scriptArray;
-            jQuery.each(scriptArray, function(i,v){
-                jQuery.ajax({
+            $.each(scriptArray, function(i,v){
+                $.ajax({
                     type:"GET",dataType:"script",cache:true,url:v.src,
                     success: function() {v.exc();}
                 });
             });
+        },
+        run_tracker:function(rules){
+            var _DN    = self.analytics_options.domainName;
+            var _CP    = self.analytics_options.cookiePath;
+            $.extend($.jtrack.defaults.debug,self.analytics_options.debug);
+            $.jtrack({ 
+                load_analytics:{
+                    account:self.analytics_options.account_id
+                },
+                options:$.extend({},(_DN!==false?{'domainName':_DN}:{}),(_CP!==false?{'cookiePath':_CP}:{})),
+                trackevents:rules 
+            });
         }
-        
         
         
 	});
