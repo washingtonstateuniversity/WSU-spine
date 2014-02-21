@@ -40,13 +40,13 @@
                 {
                     src:('https:' == document.location.protocol ? 'https://' : 'http://') + "images.wsu.edu/javascripts/jquery.jTrack.0.2.1.js",
                     exc:function(){
-                        var _load  = self.analytics_options.load_reporule;
-                        var trackingrules = self.analytics_options.trackrule || {} ;
+                        var _load  = self.analytics_options.google.analytics.load_reporule;
+                        var trackingrules = self.analytics_options.google.analytics.trackrule || {} ;
                         var loaded="";
                         if(_load!==false){
                             loaded='loading='+_load;
                         }
-                        if(self.analytics_options.trackrule===false||_load!==false){
+                        if(self.analytics_options.google.analytics.trackrule===false||_load!==false){
                             var url='//images.wsu.edu/javascripts/tracking/configs/pick.asp';
                             $.getJSON(url+'?callback=?'+loaded, function(rules){
                                $.extend(trackingrules,rules);
@@ -71,12 +71,12 @@
         },
         run_tracker:function(rules){
             var self=this;//hold to preserve scope
-            var _DN    = self.analytics_options.domainName;
-            var _CP    = self.analytics_options.cookiePath;
-            $.extend($.jtrack.defaults.debug,self.analytics_options.debug);
+            var _DN    = self.analytics_options.google.analytics.domainName;
+            var _CP    = self.analytics_options.google.analytics.cookiePath;
+            $.extend($.jtrack.defaults.debug,self.analytics_options.google.analytics.debug);
             $.jtrack({ 
                 load_analytics:{
-                    account:self.analytics_options.account_id
+                    account:self.analytics_options.google.analytics.account_id
                 },
                 options:$.extend({},(_DN!==false?{'domainName':_DN}:{}),(_CP!==false?{'cookiePath':_CP}:{})),
                 trackevents:rules 
