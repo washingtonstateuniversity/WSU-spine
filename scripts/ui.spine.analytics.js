@@ -35,9 +35,10 @@
         },
         buildpackage:function(){
             var self=this;//hold to preserve scope
-            var scriptArray = [ 
+            var scriptArray = {
+                scriptArray:[ 
                 {
-                    src:"//images.wsu.edu/javascripts/jquery.jTrack.0.2.1.js",
+                    src:('https:' == document.location.protocol ? 'https://' : 'http://') + "images.wsu.edu/javascripts/jquery.jTrack.0.2.1.js",
                     exc:function(){
                         var _load  = self.analytics_options.load_reporule;
                         var trackingrules = self.analytics_options.trackrule || {} ;
@@ -54,11 +55,12 @@
                         self.run_tracker(trackingrules);
                     }
                 }
-            ];
+            ]};
             $.extend(self.analytics_options,scriptArray);
         },
         analytics_create: function(){
             var self=this;//hold to preserve scope
+            self.buildpackage();
             var scriptArray = self.analytics_options.scriptArray;
             $.each(scriptArray, function(i,v){
                 $.ajax({
@@ -68,6 +70,7 @@
             });
         },
         run_tracker:function(rules){
+            var self=this;//hold to preserve scope
             var _DN    = self.analytics_options.domainName;
             var _CP    = self.analytics_options.cookiePath;
             $.extend($.jtrack.defaults.debug,self.analytics_options.debug);
