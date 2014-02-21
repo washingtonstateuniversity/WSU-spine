@@ -46,9 +46,6 @@
             //alert('framework_create');
             var self=this;//hold to preserve scop
 
-            // Cache the wsu-actions selector
-            var $wsu_actions = $('#wsu-actions');
-
             // Section -> Contact
             if (!$("#wsu-contact").length) {
                 var contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
