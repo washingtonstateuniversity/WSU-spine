@@ -30,10 +30,11 @@
             var self=this;//hold to preserve scope
             var current_url = self._get_globals('current_url');
             var wsu_actions = self._get_globals('wsu_actions').refresh();
+            var share_block = self._get_globals('share_block').refresh();
             var share_text = this.social_options
             // Section -> Share
             // Just getting started on rolling our own... more to come.
-            if (!$('#wsu-share').length) {
+            if (!share_block.length) {
                 var share  = '<section id="wsu-share" class="spine-share tools closed">';
                     share += '	<ul>';
                     share += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+current_url+'">Facebook</a></li>';
