@@ -15,7 +15,11 @@
         analytics_options:{ 
             "google":{
                 analytics:{
-                    "account_id":"UA-XXXXX-XX"
+                    "account_id":"UA-XXXXX-XX",
+                    "url":"wsu.edu",
+                    "load":false,
+                    "domainName":"",
+                    "cookiePath":""
                 },
                 verification:"XXXXXXXXXXXXXXXXXXXXX"
             },
