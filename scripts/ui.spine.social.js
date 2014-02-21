@@ -48,7 +48,7 @@
                 $wsu_actions.append(share);
             } // End Share Generation
         
-        
+            this.setup_tabs("share");
         
         }
 	});
