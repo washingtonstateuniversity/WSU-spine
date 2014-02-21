@@ -30,7 +30,7 @@
             var self=this;//hold to preserve scope
             var share_block = self._get_globals('share_block').refresh();
             if (!share_block.length) {
-                var share_text = this.social_options.share_text;
+                var share_text = encodeURIComponent(this.social_options.share_text);
                 var current_url = self._get_globals('current_url');
                 var wsu_actions = self._get_globals('wsu_actions').refresh();
                 var sharehtml  = '<section id="wsu-share" class="spine-share tools closed">';
