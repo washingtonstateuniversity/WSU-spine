@@ -75,7 +75,7 @@
     
 
             self.setup_nav();
-            self.setup_tabs();
+            //self.setup_tabs();
             self.setup_spine();
             self.setup_printing();
             $(window).on('resize', function(){  
