@@ -69,6 +69,7 @@
                     contact += '</section>';
     
                 $wsu_actions.append(contact);
+                self.setup_tabs("contact");
             } // End Contact Generation
     
 
@@ -262,16 +263,11 @@
         setup_tabs: function(tab){
             var self=this;//hold to preserve scope
             var wsu_actions = self._get_globals('wsu_actions').refresh();
-            // Tools tabs		
 
-            
             $("#wsu-"+tab+"-tab button").on("click",function(e) {
                 e.preventDefault();
                 wsu_actions.find('*.opened,#wsu-'+tab+',#wsu-'+tab+'-tab').toggleClass('opened closed');
-            });
-            
-            
-            
+            });            
         },
         
         /**
