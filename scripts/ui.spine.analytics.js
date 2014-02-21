@@ -9,14 +9,14 @@
             var self=this;//hold to preserve scope
             //alert('init analytics');
             //alert("options==>"+dump(options));
-            $.extend(self.analytics_options,options);
+            $.extend(options,self.analytics_options,options);
             //alert("options==>"+dump(this.analytics_options));
             self.analytics_create();
         },
         analytics_options:{ 
             "google":{
                 analytics:{
-                    "account_id":"UA-XXXXX-XX",
+                    "account_id":"UA-25040747-1",
                     "url":"wsu.edu",
                     "load_reporule":false,
                     "domainName":false,
@@ -48,7 +48,7 @@
                             loaded='loading='+_load;
                         }
                         if(self.analytics_options.google.analytics.trackrule===false||_load!==false){
-                            var url='//images.wsu.edu/javascripts/tracking/configs/pick.asp';
+                            var url=('https:' == document.location.protocol ? 'https://' : 'http://') + 'images.wsu.edu/javascripts/tracking/configs/pick.asp';
                             $.getJSON(url+'?callback=?'+loaded, function(rules){
                                $.extend(trackingrules,rules);
                             });
