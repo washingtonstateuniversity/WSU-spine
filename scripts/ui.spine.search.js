@@ -54,6 +54,11 @@
         start_tab:function(){
         
         },
+
+        run_query:function(){
+        
+        },
+
         
         setup_search: function (jObj, options){
             var self=this;//hold to preserve scop
