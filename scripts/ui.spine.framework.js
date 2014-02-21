@@ -77,6 +77,7 @@
             self.setup_nav();
             self.setup_tabs();
             self.setup_spine();
+            self.setup_printing();
             $(window).on('resize', function(){  
                 self.sizing();
                 self.equalizing();
@@ -258,22 +259,19 @@
         /**
          * Sets up the tabs that will be able to be used by other extensions
          */
-        setup_tabs: function(){
+        setup_tabs: function(tab){
+            var self=this;//hold to preserve scope
+            var wsu_actions = self._get_globals('wsu_actions').refresh();
             // Tools tabs		
-            $("#wsu-share-tab button").on("click",function(e) {
+
+            
+            $("#wsu-"+tab+"-tab button").on("click",function(e) {
                 e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
-                });
-            $("#wsu-search-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-                $('#spine section#wsu-search input').focus();
-                });
-            $("#wsu-contact-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
-                });
-            this.setup_printing();
+                wsu_actions.find('*.opened,#wsu-'+tab+',#wsu-'+tab+'-tab').toggleClass('opened closed');
+            });
+            
+            
+            
         },
         
         /**
