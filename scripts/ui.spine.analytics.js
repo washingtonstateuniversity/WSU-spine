@@ -18,8 +18,9 @@
                     "account_id":"UA-XXXXX-XX",
                     "url":"wsu.edu",
                     "load":false,
-                    "domainName":"",
-                    "cookiePath":""
+                    "domainName":false,
+                    "cookiePath":false,
+                    "trackrule":false
                 },
                 verification:"XXXXXXXXXXXXXXXXXXXXX"
             },
@@ -43,7 +44,11 @@
                             $.jtrack.defaults.debug.run = false;
                             $.jtrack.defaults.debug.v_console = false;
                             $.jtrack.defaults.debug.console = true;
-                            $.jtrack({ load_analytics:{account:GAcode},options:jQuery.extend({},(_DN!=false?{'domainName':_DN}:{}),(_CP!=false?{'cookiePath':_CP}:{})), trackevents:data });
+                            $.jtrack({ 
+                                load_analytics:{
+                                    account:GAcode
+                                },
+                                options:$.extend({},(_DN!=false?{'domainName':_DN}:{}),(_CP!=false?{'cookiePath':_CP}:{})), trackevents:data });
                         });
                     }
                 }
