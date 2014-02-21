@@ -49,14 +49,11 @@
             // Cache the wsu-actions selector
             var $wsu_actions = $('#wsu-actions');
 
-            // Cache Spine sections selectors.
-            var $wsu_search = $('#wsu-search');
-
             // Section -> Contact
             if (!$("#wsu-contact").length) {
                 var contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
                 var propmap={};
-                $.each($('[itemtype="http://schema.org/Organization"]'),function(i,v){
+                $.each($('[itemtype="http://schema.org/Organization"]'),function(){
                     var tar = this;
                     $.each($(tar).find('[itemprop]'),function(i,v){
                         var tmp={};
@@ -68,9 +65,6 @@
                 contactHtml += "</section>";
                 self.setup_tabs("contact",contactHtml);
             } // End Contact Generation
-    
-
-    
 
             self.setup_nav();
             self.setup_spine();
