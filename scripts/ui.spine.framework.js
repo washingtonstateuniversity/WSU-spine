@@ -260,10 +260,11 @@
         /**
          * Sets up the tabs that will be able to be used by other extensions
          */
-        setup_tabs: function(tab){
+        setup_tabs: function(tab,html){
+            html=html||"";
             var self=this;//hold to preserve scope
             var wsu_actions = self._get_globals('wsu_actions').refresh();
-
+            wsu_actions.append(html);
             $("#wsu-"+tab+"-tab button").on("click",function(e) {
                 e.preventDefault();
                 wsu_actions.find('*.opened,#wsu-'+tab+',#wsu-'+tab+'-tab').toggleClass('opened closed');

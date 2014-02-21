@@ -40,9 +40,6 @@
                     share += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+current_url+'">Facebook</a></li>';
                     share += '		<li class="by-twitter"><a href="https://twitter.com/intent/tweet?text='+share_text+'&url='+current_url+'&via=wsupullman" target="_blank">Twitter</a></li>';
                     share += '		<li class="by-email"><a href="mailto:?subject='+share_text+'&body='+current_url+'">Email</a></li>';
-                    share += '		<!--<li class="by-gmail"><a href="https://plusone.google.com/_/+1/confirm?hl=en&url='+current_url+'">Google+</a></li>-->';
-                    share += '		<!--<li class="by-linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url='+current_url+'&title=articleTitle&summary=articleSummary&source=articleSource">LinkedIn</a></li>-->';
-                    share += '		<!--<li class="by-pinterest"><a href="http://pinterest.com/pin/create/button/?url=""title="Pinterest">Pinterest</a></li>-->';
                     share += '	</ul>';
                     share += '</section>';
     
