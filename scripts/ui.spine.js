@@ -50,7 +50,7 @@
 		$.fn[name] = function(context) {
             //alert("$.fn[name] ==>"+dump(name));
             //alert("w/ context ==>"+dump(context));
-            var context_options={};
+            var context_options={}
             if(arguments[1])context_options=arguments[1];
             //alert("w/ arguments ==>"+dump(context_options));
             
@@ -96,10 +96,9 @@
 	};
     
     $.s('ui.spine', {
-        
-        globals: {
-            version: '0.1.0',
-            current_url:window.location.href
+
+        defaults: {
+			message: 'Hello world!'
 		},
         options: {
 		},
@@ -128,22 +127,9 @@
 			self._call(self.options.callback, self.instance.spine);
 		},
         
-        /**
-         * Sets up values to the global spine obj
-		 * @param obj:object        e.g. {'foo':'bar'}
-         * @param context:string    e.g. 'search', 'social', 'framework'
-         */
-        _set_globals: function(obj,context) {
-            //context will be done later
-            if(typeof(obj) != 'object')return;
-            $.extend(this.globals,obj, {  });
-        },
-
-
-        
 		/**
 		 * Clears by type
-		 * @param TAX:string	e.g. 'search', 'social', 'framework'
+		 * @param ctx:string	e.g. 'search', 'social', 'framework'
 		 */
 		clear: function(TAX) {
 			this._c(this.get(TAX));
