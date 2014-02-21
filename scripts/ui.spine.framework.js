@@ -49,27 +49,25 @@
                 var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
     
                 // We'll get to building these from declarations in the template
-                var contact  = '<section id="wsu-contact" class="spine-contact tools closed">';
+                var contactHtml  = '<section id="wsu-contact" class="spine-contact tools closed">';
                     // contact += '<button id="shut-contact" class="shut">Close</button>';
-                    contact += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
-                    contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
-                    contact += '	<div class="organization-name">'+name+'</div>';
-                    contact += '	<div class="address">';
-                    contact += '		<div class="street-address">'+streetAddress+'</div>';
-                    contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>';
-                    contact += '	</div>';
-                    contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
-                    contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
+                    contactHtml += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
+                    contactHtml += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
+                    contactHtml += '	<div class="organization-name">'+name+'</div>';
+                    contactHtml += '	<div class="address">';
+                    contactHtml += '		<div class="street-address">'+streetAddress+'</div>';
+                    contactHtml += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>';
+                    contactHtml += '	</div>';
+                    contactHtml += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
+                    contactHtml += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
     
-                if (typeof ContactPoint != 'undefined') {
-                    contact += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
+                    if (typeof ContactPoint != 'undefined') {
+                        contactHtml += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
                     }
     
-                    contact += '</address>';
-                    contact += '</section>';
-    
-                $wsu_actions.append(contact);
-                self.setup_tabs("contact");
+                    contactHtml += '</address>';
+                    contactHtml += '</section>';
+                self.setup_tabs("contact",contactHtml);
             } // End Contact Generation
     
 
@@ -313,6 +311,9 @@
             }).addClass("external");
         },
         
+        /**
+         * Sets up printing, not 100% this should live here
+         */        
         setup_printing: function(){
             var self=this;//hold to preserve scope
             var spine = self._get_globals('spine').refresh();
