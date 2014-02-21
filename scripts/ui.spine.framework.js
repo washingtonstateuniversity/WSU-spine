@@ -14,7 +14,28 @@
             this.framework_create();
         },
         framework_options:{
-            equalizer_filter:".skip*"
+            equalizer_filter:".skip*",
+            contact_template:" <address itemscope itemtype='http://schema.org/Organization' class='hcard'> \
+                                    <% if (typeof(department) != 'undefined') { %><div class='organization-unit fn org'>\
+                                        <% if (typeof(url) != 'undefined') { %><a href='<%url%>' class='url'><% } %> \
+                                            <%department%> \
+                                        <% if (typeof(url) != 'undefined') { %></a><% } %> \
+                                    </div><% } %> \
+                                    <% if (typeof(url) != 'undefined') { %><div class='organization-name'><%name%></div><% } %> \
+                                    <div class='address'> \
+                                        <% if (typeof(streetAddress) != 'undefined') { %><div class='street-address'><%streetAddress%></div><% } %> \
+                                        <% if (typeof(addressLocality) != 'undefined' || typeof(postalCode) != 'undefined') { %><div class='locality'> \
+                                            <% if (typeof(addressLocality) != 'undefined' ) { %><%addressLocality%><% } %> \
+                                            <% if (typeof(postalCode) != 'undefined' ) { %><span class='postalcode'><%postalCode%></span><% } %> \
+                                        </div><% } %> \
+                                    </div> \
+                                    <% if (typeof(telephone) != 'undefined' ) { %><div class='tel'><%telephone%></div><% } %> \
+                                    <% if (typeof(email) != 'undefined' ) { %><div class='email' rel='email'><a href='mailto:<%email%>'>Email us</a></div><% } %> \
+                                         \
+                                    <% if (typeof(ContactPoint) != 'undefined' && typeof(ContactPointTitle) != 'undefined') { %> \
+                                        <div class='more'><a href='<%ContactPoint%>'><%ContactPointTitle%></a></div> \
+                                    <% } %> \
+                                </address>"
         },
         framework_globals: {
             'spine': $('#spine'),
@@ -35,38 +56,18 @@
     
             // Section -> Contact
             if (!$("#wsu-contact").length) {
-    
-                // Can we loop through instead and set these on the fly?
-                var name = $('meta[itemprop="name"]').attr('content');
-                var department = $('meta[itemprop="department"]').attr('content');
-                var url = $('meta[itemprop="url"]').attr('content');
-                var streetAddress = $('meta[itemprop="streetAddress"]').attr('content');
-                var addressLocality = $('meta[itemprop="addressLocality"]').attr('content');
-                var postalCode = $('meta[itemprop="postalCode"]').attr('content');
-                var telephone = $('meta[itemprop="telephone"]').attr('content');
-                var email = $('meta[itemprop="email"]').attr('content');
-                var ContactPointTitle = $('meta[itemprop="ContactPoint"]').attr('title');
-                var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
-    
-                // We'll get to building these from declarations in the template
-                var contactHtml  = '<section id="wsu-contact" class="spine-contact tools closed">';
-                    // contact += '<button id="shut-contact" class="shut">Close</button>';
-                    contactHtml += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
-                    contactHtml += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
-                    contactHtml += '	<div class="organization-name">'+name+'</div>';
-                    contactHtml += '	<div class="address">';
-                    contactHtml += '		<div class="street-address">'+streetAddress+'</div>';
-                    contactHtml += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>';
-                    contactHtml += '	</div>';
-                    contactHtml += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
-                    contactHtml += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
-    
-                    if (typeof ContactPoint != 'undefined') {
-                        contactHtml += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
-                    }
-    
-                    contactHtml += '</address>';
-                    contactHtml += '</section>';
+                var contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
+                var propmap={};
+                $.each($('[itemtype="http://schema.org/Organization"]'),function(i,v){
+                    var tar = this;
+                    $.each($(tar).find('[itemprop]'),function(i,v){
+                        var tmp={};
+                        tmp[$(v).attr('itemprop')]=$(v).attr('content');
+                        $.extend(propmap,tmp);
+                    });
+                    contactHtml+=$.runTemplate(self.framework_options.contact_template,propmap);
+                });
+                contactHtml += "</section>";
                 self.setup_tabs("contact",contactHtml);
             } // End Contact Generation
     
