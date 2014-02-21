@@ -10,6 +10,7 @@
             //alert("this.search_options==>"+dump(this.search_options));
             $.extend(this.search_options,options);
             //alert("options==>"+dump(this.search_options));
+            this._set_globals(this.search_globals);
             this.create_search();
         },
         
@@ -31,13 +32,13 @@
                 template:"<li>%s</li>"
             }
         },
-
+        search_globals: {
+            'wsu_search': $('#wsu-search'),
+        },
         create_search: function(){
-
-            var $spine = $('#spine');
-            var $wsu_search = $('#wsu-search');
-
-            if (!$wsu_search.length) {
+            var wsu_search = this._get_globals('wsu_search').refresh();
+            
+            if (!wsu_search.length) {
                 var tabhtml  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
                     tabhtml += '		<form id="default-search">';
                     tabhtml += '			<input name="term" type="text" value="" placeholder="search">';
@@ -48,7 +49,7 @@
                 this.setup_tabs("search",tabhtml);
     
                 $("#wsu-search form").submit( function() {
-                    var scope = $("#wsu-search").attr('data-default');
+                    var scope = wsu_search.attr('data-default');
                     var site = '';
                     if ( scope == 'site-search' ) {
                         site = ' site:'+location.hostname;
