@@ -51,9 +51,7 @@
 
             // Cache Spine sections selectors.
             var $wsu_search = $('#wsu-search');
-            var $wsu_contact = $('#wsu-contact');
 
-    
             // Section -> Contact
             if (!$("#wsu-contact").length) {
                 var contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
@@ -75,7 +73,6 @@
     
 
             self.setup_nav();
-            //self.setup_tabs();
             self.setup_spine();
             self.setup_printing();
             $(window).on('resize', function(){  
