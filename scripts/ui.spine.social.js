@@ -28,26 +28,20 @@
         },
         social_create: function(){
             var self=this;//hold to preserve scope
-            var current_url = self._get_globals('current_url');
-            var wsu_actions = self._get_globals('wsu_actions').refresh();
             var share_block = self._get_globals('share_block').refresh();
-            var share_text = this.social_options;
-            // Section -> Share
-            // Just getting started on rolling our own... more to come.
             if (!share_block.length) {
-                var share  = '<section id="wsu-share" class="spine-share tools closed">';
-                    share += '	<ul>';
-                    share += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+current_url+'">Facebook</a></li>';
-                    share += '		<li class="by-twitter"><a href="https://twitter.com/intent/tweet?text='+share_text+'&url='+current_url+'&via=wsupullman" target="_blank">Twitter</a></li>';
-                    share += '		<li class="by-email"><a href="mailto:?subject='+share_text+'&body='+current_url+'">Email</a></li>';
-                    share += '	</ul>';
-                    share += '</section>';
-    
-                wsu_actions.append(share);
+                var share_text = this.social_options;
+                var current_url = self._get_globals('current_url');
+                var wsu_actions = self._get_globals('wsu_actions').refresh();
+                var sharehtml  = '<section id="wsu-share" class="spine-share tools closed">';
+                    sharehtml += '	<ul>';
+                    sharehtml += '		<li class="by-facebook"><a href="http://www.facebook.com/sharer/sharer.php?u='+current_url+'">Facebook</a></li>';
+                    sharehtml += '		<li class="by-twitter"><a href="https://twitter.com/intent/tweet?text='+share_text+'&url='+current_url+'&via=wsupullman" target="_blank">Twitter</a></li>';
+                    sharehtml += '		<li class="by-email"><a href="mailto:?subject='+share_text+'&body='+current_url+'">Email</a></li>';
+                    sharehtml += '	</ul>';
+                    sharehtml += '</section>';
+                self.setup_tabs("share",sharehtml);
             } // End Share Generation
-        
-            self.setup_tabs("share");
-        
         }
 	});
 } (jQuery) );
