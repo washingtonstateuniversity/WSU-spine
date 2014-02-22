@@ -61,7 +61,8 @@
         },
 
         run_query:function(term,provider){
-            if(typeof(provider.url)!="undefind"){
+            var result = [];
+            if(typeof(provider.url)!="undefined"){
                 $.ajax({
                     url: provider.url,
                     dataType: provider.dataType,
@@ -73,7 +74,7 @@
                     },
                     success: function( data, status, xhr  ) {
                         var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
-                        var result = $.map( data, function( item ) {
+                        result = $.map( data, function( item ) {
                             var text = item.label;
                             if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
                                 return {
@@ -84,13 +85,13 @@
                                 };
                             }
                         });
-                        return result;
+                       
                     }
                 });
             }else{
                 
-                
             }
+            return result;
         },
 
         
@@ -104,11 +105,13 @@
             $( "#wsu-search input[type=text]" ).autosearch({
                 source: function( request, response ) {
                     term = request.term;
-                    var responseData;
-                    $.each(self.search_globals.providers, function(){
-                        $.map(responseData,self.run_query(term));
+                    var responseData=[];
+                    $.each(self.search_options.providers, function(i,provider){
+                        var proData=self.run_query(term,provider);
+                        if(proData!==undefined)responseData=$.merge(responseData,proData);
                     });
-                    response(responseData);
+                    alert(dump(responseData));
+                    return responseData;
                 },
                 search: function(event, ui) {
                     /**/

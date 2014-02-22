@@ -11,7 +11,7 @@
             //alert("options==>"+dump(options));
             $.extend(options,self.analytics_options,options);
             //alert("options==>"+dump(this.analytics_options));
-            self.analytics_create();
+            //self.analytics_create();
         },
         analytics_options:{ 
             "google":{
