@@ -16,13 +16,18 @@
         
         search_options:{
             providers:{
-                local:{
+                nav:{
+                    nodes: $("#spine nav"),
+                    dataType: "html",
+                    maxRows: 12
+                },
+                atoz:{
                     url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
                     dataType: "jsonp",
                     featureClass: "P",
                     style: "full",
                     maxRows: 12
-                } 
+                }
             },
             result:{
                 appendTo: "#spine-shortcuts",
@@ -30,7 +35,7 @@
                 relatedHeader:"<hr/>",
                 minLength: 2, 
                 template:"<li>%s</li>"
-            }
+            } 
         },
         search_globals: {
             'wsu_search': $('#wsu-search'),
@@ -55,12 +60,41 @@
         
         },
 
-        run_query:function(){
-        
+        run_query:function(term,provider){
+            if(typeof(provider.url)!="undefind"){
+                $.ajax({
+                    url: provider.url,
+                    dataType: provider.dataType,
+                    data: {
+                        featureClass: provider.featureClass,
+                        style: provider.style,
+                        maxRows: provider.maxRows,
+                        name_startsWith: term
+                    },
+                    success: function( data, status, xhr  ) {
+                        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
+                        var result = $.map( data, function( item ) {
+                            var text = item.label;
+                            if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
+                                return {
+                                    label: item.label,
+                                    value: item.value,
+                                    searchKeywords: item.searchKeywords,
+                                    related: item.related
+                                };
+                            }
+                        });
+                        return result;
+                    }
+                });
+            }else{
+                
+                
+            }
         },
 
         
-        setup_search: function (jObj, options){
+        setup_search: function (){
             var self=this;//hold to preserve scop
             var wsu_search = self._get_globals('wsu_search').refresh();
             /* Search autocomplete */
@@ -70,30 +104,11 @@
             $( "#wsu-search input[type=text]" ).autosearch({
                 source: function( request, response ) {
                     term = request.term;
-                    $.ajax({
-                        url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
-                        dataType: "jsonp",
-                        data: {
-                            featureClass: "P",
-                            style: "full",
-                            maxRows: 12,
-                            name_startsWith: request.term
-                        },
-                        success: function( data, status, xhr  ) {
-                            var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-                            response( $.map( data, function( item ) {
-                                var text = item.label;
-                                if ( (item.value && ( !request.term || matcher.test(text)) || item.related == "true" ) ){
-                                    return {
-                                        label: item.label,
-                                        value: item.value,
-                                        searchKeywords: item.searchKeywords,
-                                        related: item.related
-                                    };
-                                }
-                            }));
-                        }
+                    var responseData;
+                    $.each(self.search_globals.providers, function(){
+                        $.map(responseData,self.run_query(term));
                     });
+                    response(responseData);
                 },
                 search: function(event, ui) {
                     /**/
