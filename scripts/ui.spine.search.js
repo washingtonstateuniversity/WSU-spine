@@ -131,7 +131,7 @@
                     term = request.term;
                     var responseData=[];
                     $.each(self.search_options.providers, function(i,provider){
-                        autoSearchObj.options.provider = provider;
+                        autoSearchObj.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate!="") ? provider.termTemplate : undefined;
                         var proData=self.run_query(term,provider);
                         if(proData!==undefined)responseData=$.merge(responseData,proData);
                     });
