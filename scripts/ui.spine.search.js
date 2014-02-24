@@ -4,6 +4,7 @@
  *		jquery.ui.v.js
  */
 ( function($) {
+	"use strict";
 	$.extend($.ui.spine.prototype, {        
         search_init: function(options) {
             //alert('init search');
@@ -123,13 +124,14 @@
 
             /* Search autocomplete */
             var cur_search = "";
-            var termTemplate = "<strong>%s</strong>";
             var term = "";
             search_input.autosearch({
                 source: function( request, response ) {
+                    var autoSearchObj = this;
                     term = request.term;
                     var responseData=[];
                     $.each(self.search_options.providers, function(i,provider){
+                        autoSearchObj.options.provider = provider;
                         var proData=self.run_query(term,provider);
                         if(proData!==undefined)responseData=$.merge(responseData,proData);
                     });
