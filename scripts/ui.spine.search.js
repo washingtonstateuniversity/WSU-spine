@@ -91,12 +91,16 @@
                         result = $.map( data, function( item ) {
                             var text = item.label;
                             if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
-                                return {
+                                
+                                var resultObj = {
                                     label: item.label,
                                     value: item.value,
                                     searchKeywords: item.searchKeywords,
                                     related: item.related
-                                };
+                                }
+                                
+                                
+                                return resultObj;
                             }
                         });
                        
@@ -121,7 +125,7 @@
             var cur_search = "";
             var termTemplate = "<strong>%s</strong>";
             var term = "";
-            $( "#wsu-search input[type=text]" ).autosearch({
+            search_input.autosearch({
                 source: function( request, response ) {
                     term = request.term;
                     var responseData=[];
@@ -151,7 +155,7 @@
                         getSignlePlace(jObj,id);
                     }
                     */
-                    $( "#wsu-search input#searchterm[type=text]" ).autocomplete("close");
+                    search_input.autocomplete("close");
                 },
                 focus: function( event, ui ) {
                     // to come back later to
@@ -172,7 +176,7 @@
                 }
                 var cx = 'cx=004677039204386950923:xvo7gapmrrg';
                 var cof = 'cof=FORID%3A11';
-                var search_term = $("#wsu-search input").val();
+                var search_term = search_input.val();
                 var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
                 window.location.href = search_url;
                 return false;
