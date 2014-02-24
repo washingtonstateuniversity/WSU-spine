@@ -106,21 +106,7 @@
                             related:self.search_options.search.getRelated
                         },
                         success: function( data, status, xhr  ) {
-                            var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
-                                result = $.map( data, function( item ) {
-                                    var text = item.label;
-                                    var value	= item.value;
-                                    if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
-                                        text = self.format_result(text,value);
-                                        var resultObj = {
-                                            label: text,
-                                            value: item.value,
-                                            searchKeywords: item.searchKeywords,
-                                            related: item.related
-                                        };
-                                        return resultObj;
-                                    }
-                                });
+                            result = self.setup_result_obj(term,data);
                         }
                     })
                 ).done(function( x ) {
@@ -131,7 +117,7 @@
             }
         },
 
-        format_result:function(text,value){
+        format_result_text:function(text,value){
             var termTemplate = typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
             var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
@@ -139,6 +125,23 @@
             return text;
         },
         
+        setup_result_obj:function(term,data){
+            var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
+            return $.map( data, function( item ) {
+                var text = item.label;
+                var value	= item.value;
+                if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
+                    text = self.format_result_text(text,value);
+                    var resultObj = {
+                        label: text,
+                        value: item.value,
+                        searchKeywords: item.searchKeywords,
+                        related: item.related
+                    };
+                    return resultObj;
+                }
+            });
+        },        
         
         
         
