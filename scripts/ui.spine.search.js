@@ -108,25 +108,19 @@
                         success: function( data, status, xhr  ) {
                             var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
                                 result = $.map( data, function( item ) {
-                                var text = item.label;
-                                var value	= item.value;
-                                if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
-                                    
-                                    var termTemplate = typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
-    
-                                    var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
-                                        text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
-                                    
-                                    var resultObj = {
-                                        label: text,
-                                        value: item.value,
-                                        searchKeywords: item.searchKeywords,
-                                        related: item.related
-                                    };
-                                    return resultObj;
-                                }
-                            });
-                            
+                                    var text = item.label;
+                                    var value	= item.value;
+                                    if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
+                                        text = self.format_result(text,value);
+                                        var resultObj = {
+                                            label: text,
+                                            value: item.value,
+                                            searchKeywords: item.searchKeywords,
+                                            related: item.related
+                                        };
+                                        return resultObj;
+                                    }
+                                });
                         }
                     })
                 ).done(function( x ) {
@@ -137,12 +131,12 @@
             }
         },
 
-        format_result:function(){
-        
-        
-        
-        
-        
+        format_result:function(text,value){
+            var termTemplate = typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
+
+            var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
+                text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
+            return text;
         },
         
         
