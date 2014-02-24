@@ -30,7 +30,7 @@
         _renderItem: function( ul, item ) {
             var text	= item.label;
             var value	= item.value;
-            var termTemplate = typeof(autoSearchObj.options.provider.termTemplate)!==undefined ? autoSearchObj.options.provider.termTemplate : "<strong>$1</strong>";
+            var termTemplate = typeof(this.options.termTemplate)!==undefined ? this.options.termTemplate : "<strong>$1</strong>";
             
             
             var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)";
