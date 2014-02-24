@@ -29,13 +29,7 @@
         },
         _renderItem: function( ul, item ) {
             var text	= item.label;
-            var value	= item.value;
-            var termTemplate = typeof(this.options.termTemplate)!==undefined ? this.options.termTemplate : "<strong>$1</strong>";
             
-            
-            var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)";
-                text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
-
             return $( "<li></li>" ).data( "item.autocomplete", item ).append( text ).appendTo( ul );
         },
         _renderHeader: function( ul, text ) {

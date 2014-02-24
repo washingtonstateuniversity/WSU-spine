@@ -3,6 +3,7 @@
  *		"option":"value"
  *	});
 **/
+/*jshint -W054 */
 ;(function ( $, window, document, undefined ) {
     
     var cache = {};
@@ -31,10 +32,10 @@
     $.runTemplate = function(html, options) {
         var re = /<%(.+?)%>/g, reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g, code = 'var r=[];\n', cursor = 0, result;
         var add = function(line, js) {
-            js? (code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n') :
-                (code += line != '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
-            return add;
-        }
+                        js? (code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n') :
+                            (code += line !== '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
+                        return add;
+                    };
         while(match = re.exec(html)) {
             add(html.slice(cursor, match.index))(match[1], true);
             cursor = match.index + match[0].length;
@@ -45,7 +46,7 @@
         //try { result = new Function(code).apply(options); }
         //catch(err) { console.error("'" + err.message + "'", " in \n\nCode:\n", code, "\n"); }
         return result;
-    }
+    };
         
 	/**
      * Sets up the plugins prototype

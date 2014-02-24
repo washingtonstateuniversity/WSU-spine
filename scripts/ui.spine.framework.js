@@ -3,6 +3,7 @@
  * Depends:
  *		jquery.ui.v.js
  */
+/*jshint multistr: true */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
         framework_init: function(options) {

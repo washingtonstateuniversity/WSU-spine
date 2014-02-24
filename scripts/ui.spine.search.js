@@ -3,19 +3,21 @@
  * Depends:
  *		jquery.ui.v.js
  */
+/*jshint multistr: true */
 ( function($) {
 	"use strict";
 	$.extend($.ui.spine.prototype, {        
         search_init: function(options) {
             //alert('init search');
             //alert("this.search_options==>"+dump(this.search_options));
-            $.extend(this.search_options,options);
+            $.extend(options,self.search_options,options);
             //alert("options==>"+dump(this.search_options));
             this._set_globals(this.search_globals);
             this.create_search();
         },
         
         search_options:{
+            data:{},
             providers:{
                 nav:{
                     name:"From Navigation",
@@ -30,7 +32,6 @@
                     featureClass: "P",
                     style: "full",
                     maxRows: 12,
-                    minLength: 2,
                     termTemplate:"<strong><%this.term%></strong>",
                     resultTemplate:""
                 }
@@ -39,13 +40,13 @@
                 minLength: 2,
                 maxRows: 12,
                 getRelated:true,
-                tabTemplate: '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">'
-                    +'		<form id="default-search">'
-                    +'			<input name="term" type="text" value="" placeholder="search">'
-                    +'			<button>Submit</button>'
-                    +'		</form>'
-                    +'		<div id="spine-shortcuts"></div>'
-                    +'</section>',
+                tabTemplate: "<section id='wsu-search' class='spine-search tools closed' data-default='site-search'> \
+                                <form id='default-search'> \
+                                    <input name='term' type='text' value='' placeholder='search'> \
+                                    <button>Submit</button> \
+                                </form> \
+                                <div id='spine-shortcuts'></div> \
+                            </section>",
             },
             result:{
                 appendTo: "#spine-shortcuts",
@@ -70,54 +71,82 @@
             }   
         },
 
-        start_tab:function(){
-        
+        start_search:function(){
+            var self=this;//hold to preserve scop
+            var wsu_search = self._get_globals('wsu_search').refresh();
+            var term = wsu_search.find('input').val();
+            var responseData=[];
+            
+            $.when(
+                $.each(self.search_options.providers, function(i,provider){
+                    $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
+                    var proData=[];
+                    proData=self.run_query(term,provider);
+                    if(proData!==undefined)self.search_options.data=$.merge(self.search_options.data,proData);
+                })
+            ).done(function(){
+                return true;
+            });
         },
 
         run_query:function(term,provider){
-            
             var self=this;//hold to preserve scop
             var result = [];
-            if(typeof(provider.url)!="undefined"){
-                $.ajax({
-                    url: provider.url,
-                    dataType: provider.dataType,
-                    data: {
-                        featureClass: provider.featureClass,
-                        style: provider.style,
-                        maxRows: provider.maxRows,
-                        name_startsWith: term,
-                        related:self.search_options.search.getRelated
-                    },
-                    success: function( data, status, xhr  ) {
-                        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
-                        result = $.map( data, function( item ) {
-                            var text = item.label;
-                            if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
-                                
-                                var resultObj = {
-                                    label: item.label,
-                                    value: item.value,
-                                    searchKeywords: item.searchKeywords,
-                                    related: item.related
+            if(typeof(provider)!==undefined && typeof(provider.url)!==undefined && provider.nodes===undefined){
+                $.when(
+                    $.ajax({
+                        url: provider.url,
+                        async: false,
+                        dataType: provider.dataType,
+                        data: {
+                            featureClass: provider.featureClass,
+                            style: provider.style,
+                            maxRows: provider.maxRows,
+                            name_startsWith: term,
+                            related:self.search_options.search.getRelated
+                        },
+                        success: function( data, status, xhr  ) {
+                            var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
+                                result = $.map( data, function( item ) {
+                                var text = item.label;
+                                var value	= item.value;
+                                if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
+                                    
+                                    var termTemplate = typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
+    
+                                    var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
+                                        text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
+                                    
+                                    var resultObj = {
+                                        label: text,
+                                        value: item.value,
+                                        searchKeywords: item.searchKeywords,
+                                        related: item.related
+                                    };
+                                    return resultObj;
                                 }
-                                
-                                
-                                return resultObj;
-                            }
-                        });
-                       
-                    }
+                            });
+                            
+                        }
+                    })
+                ).done(function( x ) {
+                    return result;
                 });
             }else{
-                
+                //return result;
             }
-            return result;
         },
-/*
-                termTemplate:"<strong><%this.term%></strong>",
-                this.options.relatedHeader
-*/
+
+        format_result:function(){
+        
+        
+        
+        
+        
+        },
+        
+        
+        
         
         setup_search: function (){
             var self=this;//hold to preserve scop
@@ -127,6 +156,7 @@
             /* Search autocomplete */
             var cur_search = "";
             var term = "";
+            var data=self.search_options.data;
             search_input.autosearch({
                 
                 appendTo :              self.search_options.result.appendTo,
@@ -136,20 +166,14 @@
                 
                 
                 source : function( request, response ) {
-                    var autoSearchObj = this;
-                    term = request.term;
-                    var responseData=[];
-                    $.each(self.search_options.providers, function(i,provider){
-                        $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate!="") 
-                                                                    ? provider.termTemplate : undefined;
-                        var proData=self.run_query(term,provider);
-                        if(proData!==undefined)responseData=$.merge(responseData,proData);
-                    });
-                    alert(dump(responseData));
-                    return responseData;
+                    $.when( self.start_search() ).done(
+                        function(){
+                            return self.search_options.data;
+                        }
+                    );
                 },
                 search : function(event, ui) {
-                    /**/
+                    //self.start_search();
                 },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
