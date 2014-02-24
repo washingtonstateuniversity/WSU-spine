@@ -54,5 +54,5 @@
 /* darker */ .yellow-darker-back { background-color: #77580c; } .yellow-darker-text { color: #77580c; }
 /* darkest */ .yellow-darkest-back { background-color: #4f3a08; } .yellow-darkest-text { color: #4f3a08; }
 
-
-
+/* TRANSPARENT */ .transparent-back { background-color: rgba(255,255,255,.8); } .transparent-text { color: rgba(255,255,255,.8); }
+/* transparenter */ .transparent-er-back { background-color: #ffb81c; } .transparenter-er-text { color: #ffb81c; }
