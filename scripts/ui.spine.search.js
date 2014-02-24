@@ -17,24 +17,33 @@
         search_options:{
             providers:{
                 nav:{
+                    name:"From Navigation",
                     nodes: $("#spine nav"),
                     dataType: "html",
-                    maxRows: 12
+                    maxRows: 12,
                 },
                 atoz:{
+                    name:"WSU A to Z index",
                     url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
                     dataType: "jsonp",
                     featureClass: "P",
                     style: "full",
-                    maxRows: 12
+                    maxRows: 12,
+                    minLength: 2,
+                    termTemplate:"<strong><%this.term%></strong>",
+                    result_template:""
                 }
+            },
+            serach:{
+                minLength: 2,
+                maxRows: 12,
             },
             result:{
                 appendTo: "#spine-shortcuts",
                 showRelated:false,
-                relatedHeader:"<hr/>",
-                minLength: 2, 
-                template:"<li>%s</li>"
+                relatedHeader:"<b class='provider_header'>Related</b><hr/>",
+                termTemplate:"<b><%this.term%></b>",
+                template:"<li><%this.searchitem%></li>"
             } 
         },
         search_globals: {
