@@ -31,17 +31,27 @@
                     maxRows: 12,
                     minLength: 2,
                     termTemplate:"<strong><%this.term%></strong>",
-                    result_template:""
+                    resultTemplate:""
                 }
             },
             serach:{
                 minLength: 2,
                 maxRows: 12,
+                appendTo: "#spine-shortcuts",
+                showRelated:true,
+                tabTemplate: '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">'
+                    +'		<form id="default-search">'
+                    +'			<input name="term" type="text" value="" placeholder="search">'
+                    +'			<button>Submit</button>'
+                    +'		</form>'
+                    +'		<div id="spine-shortcuts"></div>'
+                    +'</section>',
             },
             result:{
                 appendTo: "#spine-shortcuts",
                 showRelated:false,
-                relatedHeader:"<b class='provider_header'>Related</b><hr/>",
+                relatedHeader:"<b class='related_sep'>Related</b><hr/>",
+                providerHeader:"<b class='provider_header'><%this.provider_name%></b><hr/>",
                 termTemplate:"<b><%this.term%></b>",
                 template:"<li><%this.searchitem%></li>"
             } 
@@ -53,13 +63,7 @@
             var self=this;//hold to preserve scop
             var wsu_search = self._get_globals('wsu_search').refresh();
             if (!wsu_search.length) {
-                var tabhtml  = '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">';
-                    tabhtml += '		<form id="default-search">';
-                    tabhtml += '			<input name="term" type="text" value="" placeholder="search">';
-                    tabhtml += '			<button>Submit</button>';
-                    tabhtml += '		</form>';
-                    tabhtml += '		<div id="spine-shortcuts"></div>';
-                    tabhtml += '</section>';
+                var tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
                 this.setup_tabs("search",tabhtml);
                 this.setup_search();
             }   
@@ -102,7 +106,10 @@
             }
             return result;
         },
-
+/*
+                termTemplate:"<strong><%this.term%></strong>",
+                this.options.relatedHeader
+*/
         
         setup_search: function (){
             var self=this;//hold to preserve scop
@@ -125,10 +132,10 @@
                 search: function(event, ui) {
                     /**/
                 },
-                appendTo: "#spine-shortcuts",
-                showRelated:true,
-                relatedHeader:"<hr/>",
-                minLength: 2,
+                appendTo:self.search_options.serach.appendTo,
+                showRelated:self.search_options.serach.showRelated,
+                relatedHeader:self.search_options.result.relatedHeader,
+                minLength:self.search_options.serach.minLength,
                 select: function( e, ui ) {
                     var id = ui.item.searchKeywords;
                     var term = ui.item.label;
