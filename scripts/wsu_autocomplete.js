@@ -1,3 +1,12 @@
+/*
+                termTemplate:"<strong><%this.term%></strong>",
+                this.options.relatedHeader
+                
+                termTemplate
+                autoSearchObj.options.provider.termTemplate
+                
+*/
+      
 (function($){
 	"use strict";
     $.widget( "ui.autosearch", $.ui.autocomplete, {
@@ -21,8 +30,11 @@
         _renderItem: function( ul, item ) {
             var text	= item.label;
             var value	= item.value;
+            var termTemplate = typeof(autoSearchObj.options.provider.termTemplate)!==undefined ? autoSearchObj.options.provider.termTemplate : "<strong>$1</strong>";
+            
+            
             var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)";
-                text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), "<strong>$1</strong>" )+"</a>";
+                text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
 
             return $( "<li></li>" ).data( "item.autocomplete", item ).append( text ).appendTo( ul );
         },
