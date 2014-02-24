@@ -34,11 +34,10 @@
                     resultTemplate:""
                 }
             },
-            serach:{
+            search:{
                 minLength: 2,
                 maxRows: 12,
-                appendTo: "#spine-shortcuts",
-                showRelated:true,
+                getRelated:true,
                 tabTemplate: '<section id="wsu-search" class="spine-search tools closed" data-default="site-search">'
                     +'		<form id="default-search">'
                     +'			<input name="term" type="text" value="" placeholder="search">'
@@ -58,6 +57,7 @@
         },
         search_globals: {
             'wsu_search': $('#wsu-search'),
+            'search_input':$( "#wsu-search input[type=text]" )
         },
         create_search: function(){
             var self=this;//hold to preserve scop
@@ -83,7 +83,8 @@
                         featureClass: provider.featureClass,
                         style: provider.style,
                         maxRows: provider.maxRows,
-                        name_startsWith: term
+                        name_startsWith: term,
+                        related:self.search_options.search.getRelated
                     },
                     success: function( data, status, xhr  ) {
                         var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
@@ -114,6 +115,8 @@
         setup_search: function (){
             var self=this;//hold to preserve scop
             var wsu_search = self._get_globals('wsu_search').refresh();
+            var search_input = self._get_globals('search_input').refresh();
+
             /* Search autocomplete */
             var cur_search = "";
             var termTemplate = "<strong>%s</strong>";
@@ -132,10 +135,10 @@
                 search: function(event, ui) {
                     /**/
                 },
-                appendTo:self.search_options.serach.appendTo,
-                showRelated:self.search_options.serach.showRelated,
+                appendTo:self.search_options.result.appendTo,
+                showRelated:self.search_options.result.showRelated,
                 relatedHeader:self.search_options.result.relatedHeader,
-                minLength:self.search_options.serach.minLength,
+                minLength:self.search_options.search.minLength,
                 select: function( e, ui ) {
                     var id = ui.item.searchKeywords;
                     var term = ui.item.label;
