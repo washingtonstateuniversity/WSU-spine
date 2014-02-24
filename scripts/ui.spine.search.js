@@ -17,7 +17,7 @@
         },
         
         search_options:{
-            data:{},
+            data:[],
             providers:{
                 nav:{
                     name:"From Navigation",
@@ -74,50 +74,50 @@
         start_search:function(){
             var self=this;//hold to preserve scop
             var wsu_search = self._get_globals('wsu_search').refresh();
+            var search_input = self._get_globals('search_input').refresh();
             var term = wsu_search.find('input').val();
-            var responseData=[];
-            
-            $.when(
-                $.each(self.search_options.providers, function(i,provider){
-                    $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
-                    var proData=[];
-                    proData=self.run_query(term,provider);
-                    if(proData!==undefined)self.search_options.data=$.merge(self.search_options.data,proData);
-                })
-            ).done(function(){
-                return true;
+            var queries = Array();
+            self.search_options.data=[];
+            $.each(self.search_options.providers, function(i,provider){
+                $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
+                queries.push(self.run_query(term,provider));
             });
+            //$.whenAll(queries)
+            var defer=$.when.apply($, queries).then(
+            function(){
+                return self.search_options.data;
+            });
+            
         },
 
         run_query:function(term,provider){
             var self=this;//hold to preserve scop
+            var search_input = self._get_globals('search_input').refresh();
             var result = [];
+
             if(typeof(provider)!==undefined && typeof(provider.url)!==undefined && provider.nodes===undefined){
-                $.when(
-                    $.ajax({
-                        url: provider.url,
-                        async: false,
-                        dataType: provider.dataType,
-                        data: {
-                            featureClass: provider.featureClass,
-                            style: provider.style,
-                            maxRows: provider.maxRows,
-                            name_startsWith: term,
-                            related:self.search_options.search.getRelated
-                        },
-                        success: function( data, status, xhr  ) {
-                            result = self.setup_result_obj(term,data);
-                        }
-                    })
-                ).done(function( x ) {
-                    return result;
+                $.ajax({
+                    url: provider.url,
+                    dataType: provider.dataType,
+                    data: {
+                        featureClass: provider.featureClass,
+                        style: provider.style,
+                        maxRows: provider.maxRows,
+                        name_startsWith: term,
+                        related:self.search_options.search.getRelated
+                    },
+                    success:function(data){
+                        var proData=self.setup_result_obj(term,data);
+                        $.merge(self.search_options.data,proData);
+                    }
                 });
             }else{
-                //return result;
+                //self.search_options.data.push(result);
             }
         },
 
-        format_result_text:function(text,value){
+        format_result_text:function(term,text,value){
+            var self=this;//hold to preserve scop
             var termTemplate = typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
             var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
@@ -126,12 +126,13 @@
         },
         
         setup_result_obj:function(term,data){
+            var self=this;//hold to preserve scop
             var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
             return $.map( data, function( item ) {
                 var text = item.label;
                 var value	= item.value;
                 if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
-                    text = self.format_result_text(text,value);
+                    text = self.format_result_text(term,text,value);
                     var resultObj = {
                         label: text,
                         value: item.value,
@@ -142,9 +143,7 @@
                 }
             });
         },        
-        
-        
-        
+
         setup_search: function (){
             var self=this;//hold to preserve scop
             var wsu_search = self._get_globals('wsu_search').refresh();
@@ -154,24 +153,19 @@
             var cur_search = "";
             var term = "";
             var data=self.search_options.data;
-            search_input.autosearch({
+            
+            search_input.bind( "keydown", function( event ) {
+                if ( event.keyCode === $.ui.keyCode.TAB && $( this ).data( "ui-autocomplete" ).menu.active ) {
+                    event.preventDefault();
+                }
+            }).autosearch({
                 
                 appendTo :              self.search_options.result.appendTo,
                 showRelated :           self.search_options.result.showRelated,
                 relatedHeader :         self.search_options.result.relatedHeader,
                 minLength :             self.search_options.search.minLength,
                 
-                
-                source : function( request, response ) {
-                    $.when( self.start_search() ).done(
-                        function(){
-                            return self.search_options.data;
-                        }
-                    );
-                },
-                search : function(event, ui) {
-                    //self.start_search();
-                },
+                source: function( request, response )  { response(self.start_search()) },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
                     var term = ui.item.label;

@@ -47,7 +47,9 @@
         //catch(err) { console.error("'" + err.message + "'", " in \n\nCode:\n", code, "\n"); }
         return result;
     };
-        
+    $.whenAll = function() {
+        return $.when.apply($, arguments);
+    };
 	/**
      * Sets up the plugins prototype
 	 * @param name:string
