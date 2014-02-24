@@ -75,6 +75,8 @@
         },
 
         run_query:function(term,provider){
+            
+            var self=this;//hold to preserve scop
             var result = [];
             if(typeof(provider.url)!="undefined"){
                 $.ajax({
@@ -126,26 +128,30 @@
             var cur_search = "";
             var term = "";
             search_input.autosearch({
-                source: function( request, response ) {
+                
+                appendTo :              self.search_options.result.appendTo,
+                showRelated :           self.search_options.result.showRelated,
+                relatedHeader :         self.search_options.result.relatedHeader,
+                minLength :             self.search_options.search.minLength,
+                
+                
+                source : function( request, response ) {
                     var autoSearchObj = this;
                     term = request.term;
                     var responseData=[];
                     $.each(self.search_options.providers, function(i,provider){
-                        autoSearchObj.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate!="") ? provider.termTemplate : undefined;
+                        $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate!="") 
+                                                                    ? provider.termTemplate : undefined;
                         var proData=self.run_query(term,provider);
                         if(proData!==undefined)responseData=$.merge(responseData,proData);
                     });
                     alert(dump(responseData));
                     return responseData;
                 },
-                search: function(event, ui) {
+                search : function(event, ui) {
                     /**/
                 },
-                appendTo:self.search_options.result.appendTo,
-                showRelated:self.search_options.result.showRelated,
-                relatedHeader:self.search_options.result.relatedHeader,
-                minLength:self.search_options.search.minLength,
-                select: function( e, ui ) {
+                select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
                     var term = ui.item.label;
                     $("#indices").empty();
@@ -159,12 +165,12 @@
                     */
                     search_input.autocomplete("close");
                 },
-                focus: function( event, ui ) {
+                focus : function( event, ui ) {
                     // to come back later to
                     //$( "#wsu-search input#searchterm[type=text]" ).val( ui.item.label );
                     //return false;
                 },
-                open: function(e,ui) {
+                open : function(e,ui) {
                     // to come back later to
                     //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
                 }
