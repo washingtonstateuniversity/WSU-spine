@@ -4,7 +4,7 @@ John Vleck: Concept and design
 Nate Jacobson: Execution and responsive skeleton
 Nicole Wood: Navigation and info architecture
 ---
-Stephen Locker: Fluidity and largesse
+Stephen Locker
 Jeremy Bass: Javascript refactoring
 Jeremy Felt: Javascript tweaks
 
@@ -16,6 +16,7 @@ Location: Pullman, Washington, USA.
 						
 • The IOBA for the most comprehensive and helpful rundown of book parts (http://www.ioba.org/pages/resources/book-terminology/). They have been liberally employed in our Spine framework.
 • "Lee" for the best "equalize columns in a row" solution (http://stackoverflow.com/users/887728/lee)
+• Stephen Shaw for a workable vertical centering solution (http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/)
 • HTML5 Boilerplate
 						
 /* SITE */

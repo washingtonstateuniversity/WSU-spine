@@ -416,6 +416,10 @@ main hr.tall {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	}
+main hr.short {
+	margin-top: 0;
+	margin-bottom: 0;
+	}
 
 
 /* Images
