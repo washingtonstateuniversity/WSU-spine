@@ -51,6 +51,7 @@
             result:{
                 appendTo: "#spine-shortcuts",
                 showRelated:false,
+                target:"_blank",
                 relatedHeader:"<b class='related_sep'>Related</b><hr/>",
                 providerHeader:"<b class='provider_header'><%this.provider_name%></b><hr/>",
                 termTemplate:"<b><%this.term%></b>",
