@@ -78,7 +78,7 @@
 		$.fn[name] = function(context) {
             //alert("$.fn[name] ==>"+dump(name));
             //alert("w/ context ==>"+dump(context));
-            var context_options={}
+            var context_options={};
             if(arguments[1])context_options=arguments[1];
             //alert("w/ arguments ==>"+dump(context_options));
             
@@ -154,9 +154,7 @@
             //alert('self.instance.spine==>'+dump(self.instance.spine));
 			self._call(self.options.callback, self.instance.spine);
 		},
-        
-<<<<<<< HEAD
-=======
+
         /**
          * Sets up values to the global spine obj
 		 * @param obj:object        e.g. {'foo':'bar'}
@@ -171,8 +169,7 @@
         _get_globals: function(context) {
             return this.globals[context];
         },
-        
->>>>>>> pr/26
+
 		/**
 		 * Clears by type
 		 * @param ctx:string	e.g. 'search', 'social', 'framework'
