@@ -124,13 +124,13 @@
                     var text = obj.text();
                     if(text.toLowerCase().indexOf(term.toLowerCase())>-1){
                         var localtmpObj = {
-                            lable:text,
+                            label:text,
                             value:obj.attr('href')
                         };
                         tmpObj.push(localtmpObj);
                     }
                 });
-                return tmpObj;
+                return [tmpObj];
             }else{
                 //self.search_options.data.push(result);
             }
