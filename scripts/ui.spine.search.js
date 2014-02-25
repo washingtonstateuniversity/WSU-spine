@@ -169,11 +169,7 @@
             var wsu_search = self._get_globals('wsu_search').refresh();
             var search_input = self._get_globals('search_input').refresh();
             var focuseitem={};
-            /* Search autocomplete */
-            var cur_search = "";
-            //var term = "";
-            //var data=self.search_options.data;
-            
+
             search_input.autosearch({
                 
                 appendTo :              self.search_options.result.appendTo,
@@ -193,15 +189,7 @@
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
                     var term = ui.item.label;
-                    $("#indices").empty();
-                    // to come back later to
-                    /*
-                    var url=siteroot+"public/get_place.castle";
-                    if ( e.which != 13 ){
-                        if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
-                        getSignlePlace(jObj,id);
-                    }
-                    */
+                    //$("#indices").empty();
                     search_input.autosearch("close");
                 },
                 focus : function( event, ui ) {
