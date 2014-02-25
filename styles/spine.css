@@ -23,13 +23,14 @@ II.5.0 Footer (of the Spine)
 @font-face {
 	font-family: "Iconography";
     src: url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.eot');
-    src: url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.eot?#iefix') format('embedded-opentype'),
-         url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.ttf') format('font/truetype')
-         url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.woff') format('woff');
+    src: url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.eot?#iefix') format("embedded-opentype"),
+         url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.ttf') format("font/truetype"),
+         url('http://repo.wsu.edu/spine/1/icons/wsu-icons-regular.woff') format("woff");
     font-weight: normal;
-    font-weight: 400;
     font-style: normal;
 	}
+	
+
 
 /* II.1.0 THE SPINE
 --------------------------------------------------------------------------- */
@@ -67,17 +68,10 @@ II.5.0 Footer (of the Spine)
 	width: 198px;
 	display: block;
 	}
-#spine.cracked.scrolled,
-#spine.cracked.scrolled {
-	xposition: fixed;
-	}
 #spine.cracked.scrolled #glue {
 	top: 0px;
 	bottom: 0;
-	/* Need to figure this out */
-	xposition: absolute;
 	width: 198px;
-	xoverflow-y: scroll;
 	}
 #spine.cracked footer {
 	position: relative !important;
@@ -96,7 +90,6 @@ II.5.0 Footer (of the Spine)
 	box-shadow: 0px 0px 5px rgba(66,74,79,0.5);
 	position: absolute;
 	top: 0px;
-	xoverflow: hidden;
 	}
 #spine.cropped nav,
 #spine.cropped footer {
@@ -339,7 +332,6 @@ x#spine #glue {
 	margin: 0px 0px -1px 0px;
 	position: relative;
 	line-height: 1em;
-	xxborder: 1px solid gray;
 	}
 #spine #wsu-search input[type="text"] {
 	font-size: 1.6em;
@@ -354,7 +346,6 @@ x#spine #glue {
 	border: none;
 	box-shadow: none;
 	border-bottom: 1px #b6bcbf solid;
-	xmargin-bottom: 3px;
 	}
 #spine #wsu-search input:focus {
 	color: #981e32;
@@ -371,7 +362,6 @@ x#spine #glue {
 	width: 50px;
 	text-indent: 110%;
 	overflow: hidden;
-	xxborder: 1px solid gray;
 	}
 #spine #wsu-search button::before {
 	content: "\25BB";
@@ -380,7 +370,6 @@ x#spine #glue {
 	left: auto;
 	display: inline-block;
 	text-align: right;
-	xheight: 40px;
 	top: auto;
 	bottom: 5px;
 	right: 20px;
@@ -406,13 +395,13 @@ x#spine #glue {
 	}
 	
 #spine #spine-shortcuts {
-	xoverflow: hidden;
 	max-height: 100%;
 	display: block;
 	position: relative;
 	padding: 0 2em;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	}
 
 #spine #spine-shortcuts ul li {
@@ -692,9 +681,6 @@ address[role="contact"],
 #spine #spine-sitenav ul li:not(.parent).dogeared > a {
 	color: #981e32;
 	font-weight: bold;
-	}
-#spine #spine-sitenav ul li.parent.active > a {
-	xxfont-weight: bold;
 	}
 #spine #spine-sitenav ul li.dogeared > a:hover {
 	cursor: default;

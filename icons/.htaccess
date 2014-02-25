@@ -9,11 +9,11 @@
 AddType application/vnd.ms-fontobject  eot
 AddType font/truetype                  ttf
 AddType font/opentype                  otf
-AddType application/octet-stream        woff 
+AddType application/octet-stream       woff 
 
 # webfonts and svg:
 <IfModule mod_deflate.c>
-  <FilesMatch "\.(ttf|otf|eot|svg)$" >
+  <FilesMatch "\.(ttf|otf|eot|woff|svg)$" >
     SetOutputFilter DEFLATE
   </FilesMatch>
 </IfModule>
