@@ -8,10 +8,7 @@
 	"use strict";
 	$.extend($.ui.spine.prototype, {        
         search_init: function(options) {
-            //alert('init search');
-            //alert("this.search_options==>"+dump(this.search_options));
             $.extend(options,self.search_options,options);
-            //alert("options==>"+dump(this.search_options));
             this._set_globals(this.search_globals);
             this.create_search();
         },
@@ -74,8 +71,7 @@
 
         start_search:function(request,callback){
             var self=this;//hold to preserve scop
-            //var wsu_search = self._get_globals('wsu_search').refresh();
-            //var search_input = self._get_globals('search_input').refresh();
+
             var term = request.term;
             var queries = [];
             self.search_options.data=[];
@@ -83,7 +79,7 @@
                 $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
                 queries.push(self.run_query(term,provider));
             });
-            //$.whenAll(queries)
+
             $.when.apply($, queries).done(
             function(){
                 var abreak="";
@@ -202,9 +198,6 @@
                 },
                 open : function(e,ui) {
                     var abreak="";
-                    //alert(dump(self.search_options.data));
-                    // to come back later to
-                    //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
                 },
                 close: function( event, ui ) {
                     return false;
