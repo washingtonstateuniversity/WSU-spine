@@ -21,7 +21,7 @@
             providers:{
                 nav:{
                     name:"From Navigation",
-                    nodes: $("#spine nav"),
+                    nodes: "#spine-navigation",
                     dataType: "html",
                     maxRows: 12,
                 },
@@ -89,8 +89,10 @@
                 $.each(arguments,function(i,v){
                     if(v!==undefined){
                         var data=v[0];
-                        var proData=self.setup_result_obj(term,data);
-                        $.merge(self.search_options.data,proData);
+                        if(data!==undefined && data.length>0){
+                            var proData=self.setup_result_obj(term,data);
+                            $.merge(self.search_options.data,proData);
+                        }
                     }
                 });
                 self._call(callback, self.search_options.data);
@@ -115,6 +117,20 @@
                         related:self.search_options.search.getRelated
                     }
                 });
+            }else if(typeof(provider)!==undefined && typeof(provider.nodes)!==undefined ){
+                var tmpObj = [];
+                $.each($(provider.nodes).find('a'),function(i,v){
+                    var obj = $(v);
+                    var text = obj.text();
+                    if(text.toLowerCase().indexOf(term.toLowerCase())>-1){
+                        var localtmpObj = {
+                            lable:text,
+                            value:obj.attr('href')
+                        };
+                        tmpObj.push(localtmpObj);
+                    }
+                });
+                return tmpObj;
             }else{
                 //self.search_options.data.push(result);
             }
