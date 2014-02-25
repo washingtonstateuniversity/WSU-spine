@@ -194,8 +194,16 @@
                     //alert(dump(self.search_options.data));
                     // to come back later to
                     //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
+                },
+                close: function( event, ui ) {
+                    return false;
                 }
             }).data( "autosearch" );
+            search_input.on( "keydown", function( e ) {
+                if ( e.keyCode === $.ui.keyCode.TAB && search_input.is($(":focus")) ) {
+                    e.preventDefault();
+                }
+            });
             
             $("#wsu-search form").submit( function() {
                 var scope = wsu_search.attr('data-default');
