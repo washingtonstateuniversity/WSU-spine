@@ -83,8 +83,16 @@
                 queries.push(self.run_query(term,provider));
             });
             //$.whenAll(queries)
-            var defer=$.when.apply($, queries).then(
+            $.when.apply($, queries).done(
             function(){
+                var abreak="";
+                $.each(arguments,function(i,v){
+                    if(v!==undefined){
+                        var data=v[0];
+                        var proData=self.setup_result_obj(term,data);
+                        $.merge(self.search_options.data,proData);
+                    }
+                });
                 return self.search_options.data;
             });
             
@@ -96,7 +104,7 @@
             var result = [];
 
             if(typeof(provider)!==undefined && typeof(provider.url)!==undefined && provider.nodes===undefined){
-                $.ajax({
+                return $.ajax({
                     url: provider.url,
                     dataType: provider.dataType,
                     data: {
@@ -105,10 +113,6 @@
                         maxRows: provider.maxRows,
                         name_startsWith: term,
                         related:self.search_options.search.getRelated
-                    },
-                    success:function(data){
-                        var proData=self.setup_result_obj(term,data);
-                        $.merge(self.search_options.data,proData);
                     }
                 });
             }else{
@@ -118,7 +122,7 @@
 
         format_result_text:function(term,text,value){
             var self=this;//hold to preserve scop
-            var termTemplate = typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
+            var termTemplate = "<strong>$1</strong>"; //typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
             var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
                 text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
@@ -165,7 +169,9 @@
                 relatedHeader :         self.search_options.result.relatedHeader,
                 minLength :             self.search_options.search.minLength,
                 
-                source: function( request, response )  { response(self.start_search()) },
+                source: function( request, response )  { 
+                    response(self.start_search());
+                },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
                     var term = ui.item.label;
@@ -186,6 +192,8 @@
                     //return false;
                 },
                 open : function(e,ui) {
+                    var abreak="";
+                    alert(dump(self.search_options.data));
                     // to come back later to
                     //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
                 }
