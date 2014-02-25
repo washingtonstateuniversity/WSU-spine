@@ -274,8 +274,9 @@
             // Disclosure
             $("#spine nav li.parent > a").on("click",function(e) { 
                 e.preventDefault();
-                $(this).parent("li").siblings().removeClass("opened");
-                $(this).parent("li").toggleClass("opened");
+                var tar=$(this);
+                tar.parent("li").siblings().removeClass("opened");
+                tar.parent("li").toggleClass("opened");
             });
     
             // Couplets
