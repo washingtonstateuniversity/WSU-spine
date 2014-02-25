@@ -124,9 +124,10 @@
 	};
     
     $.s('ui.spine', {
-
-        defaults: {
-			message: 'Hello world!'
+        
+        globals: {
+            version: '0.1.0',
+            current_url:window.location.href
 		},
         options: {
 		},
@@ -154,7 +155,7 @@
             //alert('self.instance.spine==>'+dump(self.instance.spine));
 			self._call(self.options.callback, self.instance.spine);
 		},
-
+        
         /**
          * Sets up values to the global spine obj
 		 * @param obj:object        e.g. {'foo':'bar'}
@@ -169,10 +170,10 @@
         _get_globals: function(context) {
             return this.globals[context];
         },
-
+        
 		/**
 		 * Clears by type
-		 * @param ctx:string	e.g. 'search', 'social', 'framework'
+		 * @param TAX:string	e.g. 'search', 'social', 'framework'
 		 */
 		clear: function(TAX) {
 			this._c(this.get(TAX));
