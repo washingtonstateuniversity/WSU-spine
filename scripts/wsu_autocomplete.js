@@ -12,16 +12,28 @@
     $.widget( "ui.autosearch", $.ui.autocomplete, {
         _renderMenu: function( ul, items ) {
             var that	= this;
-            var matched	= items.filter(function(obj, item) { if(obj.related=="false"){return item;} });//note this should be a single loop?
-            var related	= items.filter(function(obj, item) { if(obj.related!="false"){return item;} });
+            var matched	= items.filter(function(obj, item) { 
+                if(obj.related=="false"){
+                    return item;
+                } 
+            });//note this should be a single loop?
+            var related	= items.filter(function(obj, item) { 
+                if(obj.related!="false"){
+                    return item;
+                }
+            });
 
-            $.each(matched, function(i, item) { that._renderItemData( ul, item ); });
+            $.each(matched, function(i, item) { 
+                that._renderItemData( ul, item );
+            });
             
             if(this.options.showRelated && related.length){
                 if(this.options.relatedHeader){
                     that._renderHeader( ul, this.options.relatedHeader );
                 }
-                $.each( related, function(i, item) { that._renderItemData( ul, item ); });
+                $.each( related, function(i, item) { 
+                    that._renderItemData( ul, item );
+                });
             }
         },
         _renderItemData: function( ul, item ) {

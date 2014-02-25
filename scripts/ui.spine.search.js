@@ -156,8 +156,8 @@
                     var resultObj = {
                         label: text,
                         value: item.value,
-                        searchKeywords: item.searchKeywords,
-                        related: item.related
+                        searchKeywords: item.searchKeywords!==undefined?item.searchKeywords:"false",
+                        related: item.related!==undefined?item.related:"false"
                     };
                     return resultObj;
                 }
