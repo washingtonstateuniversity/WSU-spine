@@ -93,6 +93,7 @@
                         $.merge(self.search_options.data,proData);
                     }
                 });
+                alert(dump(self.search_options.data));
                 return self.search_options.data;
             });
             
@@ -158,11 +159,7 @@
             var term = "";
             var data=self.search_options.data;
             
-            search_input.bind( "keydown", function( event ) {
-                if ( event.keyCode === $.ui.keyCode.TAB && $( this ).data( "ui-autocomplete" ).menu.active ) {
-                    event.preventDefault();
-                }
-            }).autosearch({
+            search_input.autosearch({
                 
                 appendTo :              self.search_options.result.appendTo,
                 showRelated :           self.search_options.result.showRelated,
@@ -170,7 +167,8 @@
                 minLength :             self.search_options.search.minLength,
                 
                 source: function( request, response )  { 
-                    response(self.start_search());
+                    var data=self.start_search();
+                    response(data);
                 },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
