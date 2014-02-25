@@ -1,18 +1,18 @@
  /*!
  *
  * Depends:
- *		jquery.ui.v.js
+ *        jquery.ui.v.js
  */
 /*jshint multistr: true */
 ( function($) {
-	"use strict";
-	$.extend($.ui.spine.prototype, {        
+    "use strict";
+    $.extend($.ui.spine.prototype, {
         search_init: function(options) {
             $.extend(options,self.search_options,options);
             this._set_globals(this.search_globals);
             this.create_search();
         },
-        
+
         search_options:{
             data:[],
             providers:{
@@ -53,7 +53,7 @@
                 providerHeader:"<b class='provider_header'><%this.provider_name%></b><hr/>",
                 termTemplate:"<b><%this.term%></b>",
                 template:"<li><%this.searchitem%></li>"
-            } 
+            }
         },
         search_globals: {
             'wsu_search': $('#wsu-search'),
@@ -66,7 +66,7 @@
                 var tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
                 this.setup_tabs("search",tabhtml);
                 this.setup_search();
-            }   
+            }
         },
 
         start_search:function(request,callback){
@@ -136,17 +136,17 @@
             var self=this;//hold to preserve scop
             var termTemplate = "<strong>$1</strong>"; //typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
-            var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
-                text	= "<a href='"+value+"' target='"+self.search_options.result.target+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
+            var regex    = "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
+                text    = "<a href='"+value+"' target='"+self.search_options.result.target+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
             return text;
         },
-        
+
         setup_result_obj:function(term,data){
             var self=this;//hold to preserve scop
             var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
             return $.map( data, function( item ) {
                 var text = item.label;
-                var value	= item.value;
+                var value    = item.value;
                 if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
                     text = self.format_result_text(term,text,value);
                     var resultObj = {
@@ -158,7 +158,7 @@
                     return resultObj;
                 }
             });
-        },        
+        },
 
         setup_search: function (){
             var self=this;//hold to preserve scop
@@ -167,20 +167,19 @@
             var focuseitem={};
 
             search_input.autosearch({
-                
+
                 appendTo :              self.search_options.result.appendTo,
                 showRelated :           self.search_options.result.showRelated,
                 relatedHeader :         self.search_options.result.relatedHeader,
                 minLength :             self.search_options.search.minLength,
-                
-                source: function( request, response )  { 
+
+                source: function( request, response )  {
                     self.start_search(request,function(data){
                         response(data);
                     });
                 },
                 search: function(event, ui) {
                     focuseitem={};
-                    /**/
                 },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
@@ -189,7 +188,7 @@
                     search_input.autosearch("close");
                 },
                 focus : function( event, ui ) {
-                    event.preventDefault(); 
+                    event.preventDefault();
                     search_input.val( $(ui.item.label).text() );
                     focuseitem={
                         label:ui.item.label,
@@ -203,7 +202,7 @@
                     return false;
                 }
             }).data( "autosearch" );
-            
+
             search_input.on( "keydown", function( e ) {
                 if ( e.keyCode === $.ui.keyCode.TAB && search_input.is($(":focus")) ) {
                     e.preventDefault();
@@ -214,7 +213,7 @@
                     //if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
                     search_input.autosearch("close");
                     //getSignlePlace(jObj,id);
-                    
+
                 }
             });
 
@@ -228,7 +227,7 @@
             });
 
 
-            
+
             $("#wsu-search form").submit( function() {
                 var scope = wsu_search.attr('data-default');
                 var site = '';
@@ -242,9 +241,9 @@
                 window.location.href = search_url;
                 return false;
             });
-            
-            
+
+
         },
-        
-	});
+
+    });
 } (jQuery) );
