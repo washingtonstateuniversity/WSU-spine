@@ -142,7 +142,7 @@
             var termTemplate = "<strong>$1</strong>"; //typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
             var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
-                text	= "<a href='"+value+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
+                text	= "<a href='"+value+"' target='"+self.search_options.result.target+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
             return text;
         },
         
