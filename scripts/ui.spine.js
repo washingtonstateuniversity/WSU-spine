@@ -3,9 +3,10 @@
  *		"option":"value"
  *	});
 **/
+/*jshint -W054 */
 ;(function ( $, window, document, undefined ) {
     
-    
+    var cache = {};
     $.fn.stripClass = function (partialMatch, endOrBegin) {
         /// <summary>
         /// The way removeClass should have been implemented -- accepts a partialMatch (like "btn-") to search on and remove
@@ -22,9 +23,36 @@
         });
         return this;
     };
-    
-    
-    
+    $.fn.refresh = function() {
+        var elems = $(this.selector);
+        this.splice(0, this.length);
+        this.push.apply( this, elems );
+        return this;
+    };
+    $.runTemplate = function(html, options) {
+        var re = /<%(.+?)%>/g, reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g, code = 'var r=[];\n', cursor = 0, result;
+        var add = function(line, js) {
+                        if(js){
+                            code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n';
+                        }else{
+                            code += line !== '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '';
+                        }
+                        return add;
+                    };
+        while(match = re.exec(html)) {
+            add(html.slice(cursor, match.index))(match[1], true);
+            cursor = match.index + match[0].length;
+        }
+        add(html.substr(cursor, html.length - cursor));
+        code = (code + 'return r.join("");').replace(/[\r\t\n]/g, '');
+        result = new Function(code).apply(options);
+        //try { result = new Function(code).apply(options); }
+        //catch(err) { console.error("'" + err.message + "'", " in \n\nCode:\n", code, "\n"); }
+        return result;
+    };
+    $.whenAll = function() {
+        return $.when.apply($, arguments);
+    };
 	/**
      * Sets up the plugins prototype
 	 * @param name:string
@@ -127,6 +155,24 @@
 			self._call(self.options.callback, self.instance.spine);
 		},
         
+<<<<<<< HEAD
+=======
+        /**
+         * Sets up values to the global spine obj
+		 * @param obj:object        e.g. {'foo':'bar'}
+         * @param context:string    e.g. 'search', 'social', 'framework'
+         */
+        _set_globals: function(obj,context) {
+            //context will be done later
+            if(typeof(obj) != 'object')return;
+            $.extend(this.globals,obj);
+        },
+
+        _get_globals: function(context) {
+            return this.globals[context];
+        },
+        
+>>>>>>> pr/26
 		/**
 		 * Clears by type
 		 * @param ctx:string	e.g. 'search', 'social', 'framework'
@@ -154,7 +200,7 @@
 		 * @param options:object	property:string	the property to search within, value:string, operator:string (optional) (AND/OR)
 		 * @param callback:function(search:jObj, isFound:boolean)
 		 */
-		find: function(ctx, options, callback) {
+		find: function(TAX, options, callback) {
 			var obj = this.get(TAX);
 			options.value = $.isArray(options.value) ? options.value : [options.value];
 			for ( var property in obj ) {
@@ -220,6 +266,7 @@
 		_unwrap: function(obj) {
 			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $('#'+obj)[0]) );
 		},
+        
 		/**
 		 * Helper method for calling a function
 		 * @param callback

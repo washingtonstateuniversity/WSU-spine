@@ -3,6 +3,7 @@
  * Depends:
  *		jquery.ui.v.js
  */
+/*jshint multistr: true */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
         framework_init: function(options) {
@@ -13,8 +14,30 @@
             this.framework_create();
         },
         framework_options:{
-            equalizer_filter:".skip*"
+            equalizer_filter:".skip*",
+            contact_template:" <address itemscope itemtype='http://schema.org/Organization' class='hcard'> \
+                                    <% if (typeof(this.department) != 'undefined') { %><div class='organization-unit fn org'>\
+                                        <% if (typeof(this.url) != 'undefined') { %><a href='<%this.url%>' class='url'><% } %> \
+                                            <%this.department%> \
+                                        <% if (typeof(this.url) != 'undefined') { %></a><% } %> \
+                                    </div><% } %> \
+                                    <% if (typeof(this.name) != 'undefined') { %><div class='organization-name'><%this.name%></div><% } %> \
+                                    <div class='address'> \
+                                        <% if (typeof(this.streetAddress) != 'undefined') { %><div class='street-address'><%this.streetAddress%></div><% } %> \
+                                        <% if (typeof(this.addressLocality) != 'undefined' || typeof(this.postalCode) != 'undefined') { %><div class='locality'> \
+                                            <% if (typeof(this.addressLocality) != 'undefined' ) { %><%this.addressLocality%><% } %> \
+                                            <% if (typeof(this.postalCode) != 'undefined' ) { %><span class='postalcode'><%this.postalCode%></span><% } %> \
+                                        </div><% } %> \
+                                    </div> \
+                                    <% if (typeof(this.telephone) != 'undefined' ) { %><div class='tel'><%this.telephone%></div><% } %> \
+                                    <% if (typeof(this.email) != 'undefined' ) { %><div class='email' rel='email'><a href='mailto:<%this.email%>'>Email us</a></div><% } %> \
+                                         \
+                                    <% if (typeof(this.ContactPoint) != 'undefined' && typeof(this.ContactPointTitle) != 'undefined') { %> \
+                                        <div class='more'><a href='<%this.ContactPoint%>'><%this.ContactPointTitle%></a></div> \
+                                    <% } %> \
+                                </address>"
         },
+<<<<<<< HEAD
         framework_create: function(){
             //alert('framework_create');
             var self=this;
@@ -50,50 +73,37 @@
                 $wsu_actions.append(share);
             } // End Share Generation
     
+=======
+        framework_globals: {
+            'spine': $('#spine'),
+            'main': $('main'),
+            'wsu_actions':$('#wsu-actions')
+        },
+        framework_create: function(){
+            //alert('framework_create');
+            var self=this;//hold to preserve scop
+
+>>>>>>> pr/26
             // Section -> Contact
             if (!$("#wsu-contact").length) {
-    
-                // Can we loop through instead and set these on the fly?
-                var name = $('meta[itemprop="name"]').attr('content');
-                var department = $('meta[itemprop="department"]').attr('content');
-                var url = $('meta[itemprop="url"]').attr('content');
-                var streetAddress = $('meta[itemprop="streetAddress"]').attr('content');
-                var addressLocality = $('meta[itemprop="addressLocality"]').attr('content');
-                var postalCode = $('meta[itemprop="postalCode"]').attr('content');
-                var telephone = $('meta[itemprop="telephone"]').attr('content');
-                var email = $('meta[itemprop="email"]').attr('content');
-                var ContactPointTitle = $('meta[itemprop="ContactPoint"]').attr('title');
-                var ContactPoint = $('meta[itemprop="ContactPoint"]').attr('content');
-    
-                // We'll get to building these from declarations in the template
-                var contact  = '<section id="wsu-contact" class="spine-contact tools closed">';
-                    // contact += '<button id="shut-contact" class="shut">Close</button>';
-                    contact += '<address itemscope itemtype="http://schema.org/Organization" class="hcard">';
-                    contact += '	<div class="organization-unit fn org"><a href="'+url+'" class="url">'+department+'</a></div>';
-                    contact += '	<div class="organization-name">'+name+'</div>';
-                    contact += '	<div class="address">';
-                    contact += '		<div class="street-address">'+streetAddress+'</div>';
-                    contact += '		<div class="locality">'+addressLocality+' <span class="postalcode">'+postalCode+'</span></div>';
-                    contact += '	</div>';
-                    contact += '	<div class="tel"><i class="wsu-icon"></i>'+telephone+'</div>';
-                    contact += '	<div class="email" rel="email"><a href="mailto:'+email+'"><i class="wsu-icon"></i>Email us</a></div>';
-    
-                if (typeof ContactPoint != 'undefined') {
-                    contact += '	<div class="more"><a href="'+ContactPoint+'"><i class="wsu-icon"></i>'+ContactPointTitle+'</a></div>';
-                    }
-    
-                    contact += '</address>';
-                    contact += '</section>';
-    
-                $wsu_actions.append(contact);
+                var contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
+                var propmap={};
+                $.each($('[itemtype="http://schema.org/Organization"]'),function(){
+                    var tar = this;
+                    $.each($(tar).find('[itemprop]'),function(i,v){
+                        var tmp={};
+                        tmp[$(v).attr('itemprop')]=$(v).attr('content');
+                        $.extend(propmap,tmp);
+                    });
+                    contactHtml+=$.runTemplate(self.framework_options.contact_template,propmap);
+                });
+                contactHtml += "</section>";
+                self.setup_tabs("contact",contactHtml);
             } // End Contact Generation
-    
-
-    
 
             self.setup_nav();
-            self.setup_tabs();
             self.setup_spine();
+            self.setup_printing();
             $(window).on('resize', function(){  
                 self.sizing();
                 self.equalizing();
@@ -102,6 +112,7 @@
                 // Only run function if an unbound element exists
                 if( $('.unbound').length || $('#binder.broken').length ) {
                     var spread = $(window).width();
+<<<<<<< HEAD
                     var verso = $main.offset().left;
                     var page = $main.width();
                     var recto = spread - $main.offset().left;
@@ -109,6 +120,15 @@
                     if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
 					/* Broken Binding */ if ($('#binder').hasClass('broken')) { $('main').css('width',recto); }
                     var verso_width = verso + $main.width();
+=======
+                    var verso = self._get_globals('main').offset().left;
+                    var page = self._get_globals('main').width();
+                    var recto = spread - self._get_globals('main').offset().left;
+                    var recto_margin = "";
+                    if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
+					/* Broken Binding */ if ($('#binder').hasClass('broken')) { self._get_globals('main').css('width',recto); }
+                    var verso_width = verso + self._get_globals('main').width();
+>>>>>>> pr/26
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
                     $('.unbound.verso.recto').css('width',spread);
@@ -151,13 +171,24 @@
             }
         },        
         mainheight: function () {
+<<<<<<< HEAD
             var main_top = $('main').offset().top;
             var window_height = $(window).height();
             var main_height = window_height;
             if ($('#binder').hasClass('size-lt-large')) {
                 main_height -= 50;
+=======
+            var main = this._get_globals('main').refresh();
+            if(main.offset()){
+                var main_top = main.offset().top;
+                var window_height = $(window).height();
+                var main_height = window_height;
+                if ($('#binder').hasClass('size-lt-large')) {
+                    main_height -= 50;
+                }
+                $('main.fill-window-height').css('min-height',main_height);
+>>>>>>> pr/26
             }
-            $('main.fill-window-height').css('min-height',main_height);
         },
 
         /**
@@ -188,19 +219,32 @@
          * Sets up the spine area
          */
         setup_spine: function(){
+<<<<<<< HEAD
             // Cache the spine selector.
             var $spine = $('#spine');
+=======
+            var self=this;//hold to preserve scope
+            var spine = this._get_globals('spine').refresh();
+            var main = this._get_globals('main').refresh();
+>>>>>>> pr/26
             // Fixed/Sticky Horizontal Header
             $(document).scroll(function() {
                 var top = $(document).scrollTop();
                 if (top > 49) {
+<<<<<<< HEAD
                     $spine.not('.unshelved').addClass('scanned');
                 } else { 
                     $spine.removeClass('scanned');
+=======
+                    spine.not('.unshelved').addClass('scanned');
+                } else { 
+                    spine.removeClass('scanned');
+>>>>>>> pr/26
                 } 
             });
     
-
+            $("#glue > header").append('<button id="shelve"></button>');
+            $("#shelve").click(function() { $spine.toggleClass('unshelved shelved'); });
     
             // Clicking Outside Spine Closes It
             /* $(document).on('mouseup touchstart', function (e) {
@@ -208,9 +252,15 @@
                 if (container.has(e.target).length === 0)
                 { container.toggleClass('shelved unshelved'); }
             }); */
+<<<<<<< HEAD
             $('main').on('click swipeleft', function() {
                 if ( $spine.hasClass('unshelved') ) {
                     $spine.toggleClass('shelved unshelved');
+=======
+            main.on('click swipeleft', function() {
+                if ( spine.hasClass('unshelved') ) {
+                    spine.toggleClass('shelved unshelved');
+>>>>>>> pr/26
                 }
             });
     
@@ -221,9 +271,15 @@
                 var spineHeight = $("#glue").height();
                 //$('main').prepend(footerHeight);
                 if ( windowHeight < spineHeight ) {
+<<<<<<< HEAD
                     $spine.removeClass("uncracked").addClass("cracked");
                 } else { 
                     $spine.removeClass("cracked").addClass("uncracked");
+=======
+                    spine.removeClass("uncracked").addClass("cracked");
+                } else { 
+                    spine.removeClass("cracked").addClass("uncracked");
+>>>>>>> pr/26
                 }
             });
     
@@ -270,22 +326,15 @@
         /**
          * Sets up the tabs that will be able to be used by other extensions
          */
-        setup_tabs: function(){
-            // Tools tabs		
-            $("#wsu-share-tab button").on("click",function(e) {
+        setup_tabs: function(tab,html){
+            html=html||"";
+            var self=this;//hold to preserve scope
+            var wsu_actions = self._get_globals('wsu_actions').refresh();
+            wsu_actions.append(html);
+            $("#wsu-"+tab+"-tab button").on("click",function(e) {
                 e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-share,#wsu-share-tab').toggleClass('opened closed');
-                });
-            $("#wsu-search-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-search,#wsu-search-tab').toggleClass('opened closed');
-                $('#spine section#wsu-search input').focus();
-                });
-            $("#wsu-contact-tab button").on("click",function(e) {
-                e.preventDefault();
-                $('#wsu-actions *.opened,#wsu-contact,#wsu-contact-tab').toggleClass('opened closed');
-                });
-            this.setup_printing();
+                wsu_actions.find('*.opened,#wsu-'+tab+',#wsu-'+tab+'-tab').toggleClass('opened closed');
+            });            
         },
         
         /**
@@ -302,24 +351,26 @@
             // Disclosure
             $("#spine nav li.parent > a").on("click",function(e) { 
                 e.preventDefault();
-                $(this).parent("li").siblings().removeClass("opened");
-                $(this).parent("li").toggleClass("opened");
+                var tar=$(this);
+                tar.parent("li").siblings().removeClass("opened");
+                tar.parent("li").toggleClass("opened");
             });
     
             // Couplets
             $("#spine nav li.parent > a").each( function() {
+                var tar=$(this);
                 var title = 'Overview';
-                if ($(this).attr('title')) {
-                    var alt = $(this).attr('title').length;
-                    if ( alt > 0 ) { title = $(this).attr('title'); }
+                if (tar.attr('title')) {
+                    var alt = tar.attr('title').length;
+                    if ( alt > 0 ) { title = tar.attr('title'); }
                 }
                 var classes = "overview";
-                if ($(this).closest('.parent').hasClass('dogeared')) {
+                if (tar.closest('.parent').hasClass('dogeared')) {
                     classes += " dogeared";
                 }
-                var url = $(this).attr("href");
+                var url = tar.attr("href");
                 if ( url != '#' ) {
-                    $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
+                    tar.parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
                 }
             });
             // External Links in nav
@@ -329,9 +380,19 @@
             }).addClass("external");
         },
         
+        /**
+         * Sets up printing, not 100% this should live here
+         */        
         setup_printing: function(){
+<<<<<<< HEAD
             var $wsu_actions = $('#wsu-actions');
             var $spine = $('#spine');
+=======
+            var self=this;//hold to preserve scope
+            var spine = self._get_globals('spine').refresh();
+            var wsu_actions = self._get_globals('wsu_actions').refresh();
+
+>>>>>>> pr/26
             // Print & Print View
             var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
     
@@ -349,10 +410,15 @@
                 if ( undefined !== e ) {
                     e.preventDefault();
                 }
-                $wsu_actions.find('.opened').toggleClass('opened closed');
+                wsu_actions.find('.opened').toggleClass('opened closed');
                 $('html').toggleClass('print');
+<<<<<<< HEAD
                 $spine.find('header').prepend(print_controls);
                 $spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
+=======
+                spine.find('header').prepend(print_controls);
+                spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
+>>>>>>> pr/26
                 $("#print-invoke").on("click",function() { window.print(); });
                 $("#print-cancel").on("click",print_cancel);
                 setTimeout(function() { printPage(); }, 400);
@@ -362,7 +428,7 @@
             // Shut a tool section
             $("button.shut").on("click",function(e) {
                 e.preventDefault();
-                $wsu_actions.find('.opened').toggleClass('opened closed');
+                wsu_actions.find('.opened').toggleClass('opened closed');
             });
         }
         
