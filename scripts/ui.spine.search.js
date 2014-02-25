@@ -194,7 +194,7 @@
                     focuseitem={
                         label:ui.item.label,
                         //id:ui.item.place_id
-                    }
+                    };
                 },
                 open : function(e,ui) {
                     var abreak="";
