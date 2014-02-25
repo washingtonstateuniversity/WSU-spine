@@ -280,18 +280,19 @@
     
             // Couplets
             $("#spine nav li.parent > a").each( function() {
+                var tar=$(this);
                 var title = 'Overview';
-                if ($(this).attr('title')) {
-                    var alt = $(this).attr('title').length;
-                    if ( alt > 0 ) { title = $(this).attr('title'); }
+                if (tar.attr('title')) {
+                    var alt = tar.attr('title').length;
+                    if ( alt > 0 ) { title = tar.attr('title'); }
                 }
                 var classes = "overview";
-                if ($(this).closest('.parent').hasClass('dogeared')) {
+                if (tar.closest('.parent').hasClass('dogeared')) {
                     classes += " dogeared";
                 }
-                var url = $(this).attr("href");
+                var url = tar.attr("href");
                 if ( url != '#' ) {
-                    $(this).parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
+                    tar.parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
                 }
             });
             // External Links in nav

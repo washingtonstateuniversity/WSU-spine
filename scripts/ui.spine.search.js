@@ -203,6 +203,7 @@
                     return false;
                 }
             }).data( "autosearch" );
+            
             search_input.on( "keydown", function( e ) {
                 if ( e.keyCode === $.ui.keyCode.TAB && search_input.is($(":focus")) ) {
                     e.preventDefault();
