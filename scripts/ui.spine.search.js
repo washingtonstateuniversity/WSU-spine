@@ -186,13 +186,13 @@
                         getSignlePlace(jObj,id);
                     }
                     */
-                    search_input.autocomplete("close");
+                    search_input.autosearch("close");
                 },
                 focus : function( event, ui ) {
                     // to come back later to
                     //$( "#wsu-search input#searchterm[type=text]" ).val( ui.item.label );
                     //return false;
-                    search_input.val( ui.item.label. );
+                    search_input.val( $(ui.item.label).text() );
                     focuseitem={
                         label:ui.item.label,
                         //id:ui.item.place_id
@@ -213,19 +213,17 @@
                 if ( e.keyCode === $.ui.keyCode.TAB && search_input.is($(":focus")) ) {
                     e.preventDefault();
                 }
-            });
-
-            search_input.on('keyup',function(e) {
                 if ( e.which == 13){
                     //var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
                     //var url=siteroot+"public/get_place.castle";
                     //if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
-                    search_input.autocomplete("close");
+                    search_input.autosearch("close");
                     //getSignlePlace(jObj,id);
                     
                 }
-            });	
-            search_input.off().on('click',function(e){
+            });
+
+            search_input.off('click').on('click',function(e){
                 e.stopPropagation();
                 e.preventDefault();
                 var btn=$(this);
