@@ -152,7 +152,7 @@
             var self=this;//hold to preserve scop
             var wsu_search = self._get_globals('wsu_search').refresh();
             var search_input = self._get_globals('search_input').refresh();
-
+            var focuseitem={};
             /* Search autocomplete */
             var cur_search = "";
             //var term = "";
@@ -169,6 +169,10 @@
                     self.start_search(request,function(data){
                         response(data);
                     });
+                },
+                search: function(event, ui) {
+                    focuseitem={};
+                    /**/
                 },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
@@ -188,6 +192,12 @@
                     // to come back later to
                     //$( "#wsu-search input#searchterm[type=text]" ).val( ui.item.label );
                     //return false;
+                    search_input.val( ui.item.label. );
+                    focuseitem={
+                        label:ui.item.label,
+                        //id:ui.item.place_id
+                    }
+                    return false;
                 },
                 open : function(e,ui) {
                     var abreak="";
@@ -204,6 +214,27 @@
                     e.preventDefault();
                 }
             });
+
+            search_input.on('keyup',function(e) {
+                if ( e.which == 13){
+                    //var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
+                    //var url=siteroot+"public/get_place.castle";
+                    //if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
+                    search_input.autocomplete("close");
+                    //getSignlePlace(jObj,id);
+                    
+                }
+            });	
+            search_input.off().on('click',function(e){
+                e.stopPropagation();
+                e.preventDefault();
+                var btn=$(this);
+                //var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
+                //getSignlePlace(jObj,id);
+                //if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
+            });
+
+
             
             $("#wsu-search form").submit( function() {
                 var scope = wsu_search.attr('data-default');
