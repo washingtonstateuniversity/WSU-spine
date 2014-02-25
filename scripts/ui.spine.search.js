@@ -98,7 +98,6 @@
                 });
                 self._call(callback, self.search_options.data);
             });
-            
         },
 
         run_query:function(term,provider){
@@ -206,15 +205,12 @@
                     search_input.autosearch("close");
                 },
                 focus : function( event, ui ) {
-                    // to come back later to
-                    //$( "#wsu-search input#searchterm[type=text]" ).val( ui.item.label );
-                    //return false;
+                    event.preventDefault(); 
                     search_input.val( $(ui.item.label).text() );
                     focuseitem={
                         label:ui.item.label,
                         //id:ui.item.place_id
                     }
-                    return false;
                 },
                 open : function(e,ui) {
                     var abreak="";
