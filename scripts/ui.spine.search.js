@@ -71,12 +71,12 @@
             }   
         },
 
-        start_search:function(){
+        start_search:function(request,callback){
             var self=this;//hold to preserve scop
-            var wsu_search = self._get_globals('wsu_search').refresh();
-            var search_input = self._get_globals('search_input').refresh();
-            var term = wsu_search.find('input').val();
-            var queries = Array();
+            //var wsu_search = self._get_globals('wsu_search').refresh();
+            //var search_input = self._get_globals('search_input').refresh();
+            var term = request.term;
+            var queries = [];
             self.search_options.data=[];
             $.each(self.search_options.providers, function(i,provider){
                 $.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
@@ -93,8 +93,7 @@
                         $.merge(self.search_options.data,proData);
                     }
                 });
-                alert(dump(self.search_options.data));
-                return self.search_options.data;
+                self._call(callback, self.search_options.data);
             });
             
         },
@@ -156,8 +155,8 @@
 
             /* Search autocomplete */
             var cur_search = "";
-            var term = "";
-            var data=self.search_options.data;
+            //var term = "";
+            //var data=self.search_options.data;
             
             search_input.autosearch({
                 
@@ -167,8 +166,9 @@
                 minLength :             self.search_options.search.minLength,
                 
                 source: function( request, response )  { 
-                    var data=self.start_search();
-                    response(data);
+                    self.start_search(request,function(data){
+                        response(data);
+                    });
                 },
                 select : function( e, ui ) {
                     var id = ui.item.searchKeywords;
@@ -191,11 +191,11 @@
                 },
                 open : function(e,ui) {
                     var abreak="";
-                    alert(dump(self.search_options.data));
+                    //alert(dump(self.search_options.data));
                     // to come back later to
                     //$('.ui-autocomplete.ui-menu').removeClass( "ui-corner-all" );
                 }
-            }).data( "autocomplete" );
+            }).data( "autosearch" );
             
             $("#wsu-search form").submit( function() {
                 var scope = wsu_search.attr('data-default');

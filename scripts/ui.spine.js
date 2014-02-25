@@ -32,8 +32,11 @@
     $.runTemplate = function(html, options) {
         var re = /<%(.+?)%>/g, reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g, code = 'var r=[];\n', cursor = 0, result;
         var add = function(line, js) {
-                        js? (code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n') :
-                            (code += line !== '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
+                        if(js){
+                            code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n';
+                        }else{
+                            code += line !== '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '';
+                        }
                         return add;
                     };
         while(match = re.exec(html)) {
@@ -195,7 +198,7 @@
 		 * @param options:object	property:string	the property to search within, value:string, operator:string (optional) (AND/OR)
 		 * @param callback:function(search:jObj, isFound:boolean)
 		 */
-		find: function(ctx, options, callback) {
+		find: function(TAX, options, callback) {
 			var obj = this.get(TAX);
 			options.value = $.isArray(options.value) ? options.value : [options.value];
 			for ( var property in obj ) {
