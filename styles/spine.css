@@ -160,7 +160,6 @@ x#spine #glue {
 #spine a#wsu-signature {
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png')\9;
 	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
 	background-size: 150px auto;
 	height: 155px;
@@ -413,28 +412,38 @@ html.lt-ie9 #spine a#wsu-signature {
 	line-height: 1.2em;
 	padding: 0px;
 	list-style: none;
+	
 	}
 #spine #spine-shortcuts ul li a {
 	color: #5e6a71;
 	display: block;
-	padding: .6em 0px;
+	padding: .6em 0;
+	margin: 0;
 	border-bottom: 1px #c3cbcf solid;
-	margin-top: 0px;
-	margin-bottom: 0px;
+	}
+#spine #spine-shortcuts ul li a:hover,
+#spine #spine-shortcuts ul li a.ui-state-focus {
+	color: white;
+	background-color: #434d53;
+	margin: -1px -2em 0px -2em;
+	padding: .6em 2em .6em 2em;
+	border-bottom: 2px #434d53 solid;
+	}
+#spine #spine-shortcuts ul li:first-child a:hover,
+#spine #spine-shortcuts ul li:first-child a.ui-state-focus {
+	margin: 0px -2em 0px -2em;
+	border-bottom: 1px #434d53 solid;
+	}
+#spine #spine-shortcuts ul li:first-child a {
+	border-top: 1px transparent solid;
+	}
+#spine #spine-shortcuts ul li:last-child a {
+	border-bottom-color: transparent;
 	}
 #spine #spine-shortcuts ul li a:active,
 #spine #spine-shortcuts ul li a:hover,
 #spine #spine-shortcuts ul li a:focus {
 	outline: none;
-	}
-#spine #spine-shortcuts ul li a:hover {
-	color: white;
-	background-color: #434d53;
-	margin: -1px -2em 2px -2em;
-	padding: .6em 2em .6em 2em;
-	}
-#spine #spine-shortcuts ul li:last-child a {
-	border-bottom: none;
 	}
 	
 .ui-helper-hidden-accessible {
