@@ -1,11 +1,11 @@
  /*!
  *
  * Depends:
- *		jquery.ui.v.js
+ *        jquery.ui.v.js
  */
 /*jshint multistr: true */
 ( function($) {
-	$.extend($.ui.spine.prototype, {
+    $.extend($.ui.spine.prototype, {
         framework_init: function(options) {
             //alert('init framework');
             //alert("options==>"+dump(options));
@@ -67,7 +67,7 @@
             self.setup_nav();
             self.setup_spine();
             self.setup_printing();
-            $(window).on('resize', function(){  
+            $(window).on('resize', function(){
                 self.sizing();
                 self.equalizing();
                 self.mainheight();
@@ -79,7 +79,7 @@
                     var recto = spread - self._get_globals('main').offset().left;
                     var recto_margin = "";
                     if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-					/* Broken Binding */ if ($('#binder').hasClass('broken')) { self._get_globals('main').css('width',recto); }
+                    /* Broken Binding */ if ($('#binder').hasClass('broken')) { self._get_globals('main').css('width',recto); }
                     var verso_width = verso + self._get_globals('main').width();
                     $('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
                     $('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
@@ -123,7 +123,7 @@
                     $('section.equalize .column',this).css('min-height','auto');
                 });
             }
-        },        
+        },
         mainheight: function () {
             var main = this._get_globals('main').refresh();
             if(main.offset()){
@@ -141,26 +141,26 @@
          * Sets up framework html and other DOM attributes
          */
         setup_jacket: function(){
-            
-            
+
+
         },
-        
+
         /**
          * Sets up framework html and other DOM attributes
          */
         setup_binder: function(){
-            
-            
+
+
         },
-        
+
          /**
          * Sets up framework html and other DOM attributes
          */
         setup_content: function(){
-            
-            
-        },       
-        
+
+
+        },
+
         /**
          * Sets up the spine area
          */
@@ -173,14 +173,14 @@
                 var top = $(document).scrollTop();
                 if (top > 49) {
                     spine.not('.unshelved').addClass('scanned');
-                } else { 
+                } else {
                     spine.removeClass('scanned');
-                } 
+                }
             });
-    
+
             $("#glue > header").append('<button id="shelve"></button>');
             $("#shelve").click(function() { spine.toggleClass('unshelved shelved'); });
-    
+
             // Clicking Outside Spine Closes It
             /* $(document).on('mouseup touchstart', function (e) {
                 var container = $("#spine.unshelved");
@@ -192,7 +192,7 @@
                     spine.toggleClass('shelved unshelved');
                 }
             });
-    
+
             // Cracking the Spine for Short Windows
             $(window).on('load resize scroll mouseup touchend',function() {
                 var footerHeight = $("#spine footer").height();
@@ -201,11 +201,11 @@
                 //$('main').prepend(footerHeight);
                 if ( windowHeight < spineHeight ) {
                     spine.removeClass("uncracked").addClass("cracked");
-                } else { 
+                } else {
                     spine.removeClass("cracked").addClass("uncracked");
                 }
             });
-    
+
             // Moving the Spine for Short Windows
             /* $(document).scroll(function() {
                 var windowHeight = window.innerHeight;
@@ -215,7 +215,7 @@
                 if ( top > crack ) { $('#spine.cracked').addClass('pinned'); }
                 else { $('#spine.cracked').removeClass('pinned'); }
             }); */
-    
+
             // Moving the Spine for Short Windows
             $(document).scroll(function() {
                 var windowHeight = window.innerHeight;
@@ -227,8 +227,8 @@
                 } else {
                     $('#spine.cracked').removeClass('scrolled');
                 }
-            }); 
-    
+            });
+
             // Moving the Spine for Short Windows
             /*$(document).scroll(function() {
                 var windowHeight = window.innerHeight;
@@ -244,8 +244,8 @@
                 }
             });*/
         },
-        
-        
+
+
         /**
          * Sets up the tabs that will be able to be used by other extensions
          */
@@ -257,9 +257,9 @@
             $("#wsu-"+tab+"-tab button").on("click",function(e) {
                 e.preventDefault();
                 wsu_actions.find('*.opened,#wsu-'+tab+',#wsu-'+tab+'-tab').toggleClass('opened closed');
-            });            
+            });
         },
-        
+
         /**
          * Sets up navagation system
          */
@@ -270,15 +270,15 @@
             $("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
             $("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
             $("#spine .active").not(":has(.active)").addClass("dogeared");
-    
+
             // Disclosure
-            $("#spine nav li.parent > a").on("click",function(e) { 
+            $("#spine nav li.parent > a").on("click",function(e) {
                 e.preventDefault();
                 var tar=$(this);
                 tar.parent("li").siblings().removeClass("opened");
                 tar.parent("li").toggleClass("opened");
             });
-    
+
             // Couplets
             $("#spine nav li.parent > a").each( function() {
                 var tar=$(this);
@@ -302,10 +302,10 @@
                return this.hostname && this.hostname !== location.hostname;
             }).addClass("external");
         },
-        
+
         /**
          * Sets up printing, not 100% this should live here
-         */        
+         */
         setup_printing: function(){
             var self=this;//hold to preserve scope
             var spine = self._get_globals('spine').refresh();
@@ -313,16 +313,16 @@
 
             // Print & Print View
             var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
-    
+
             function printPage(){
                 window.print();
             }
-    
+
             function print_cancel() {
                 $('html').toggleClass('print');
                 $('.print-controls').remove();
             }
-    
+
             /* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
             function print(e) {
                 if ( undefined !== e ) {
@@ -337,13 +337,13 @@
                 setTimeout(function() { printPage(); }, 400);
             }
             $("#wsu-print-tab button").click(print);
-    
+
             // Shut a tool section
             $("button.shut").on("click",function(e) {
                 e.preventDefault();
                 wsu_actions.find('.opened').toggleClass('opened closed');
             });
         }
-        
-	});
+
+    });
 } (jQuery) );

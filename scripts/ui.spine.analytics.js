@@ -1,10 +1,10 @@
  /*!
  *
  * Depends:
- *		jquery.ui.spine.js
+ *        jquery.ui.spine.js
  */
 ( function($) {
-	$.extend($.ui.spine.prototype, {
+    $.extend($.ui.spine.prototype, {
         analytics_init: function(options) {
             var self=this;//hold to preserve scope
             //alert('init analytics');
@@ -13,7 +13,7 @@
             //alert("options==>"+dump(this.analytics_options));
             //self.analytics_create();
         },
-        analytics_options:{ 
+        analytics_options:{
             "google":{
                 analytics:{
                     "account_id":"UA-25040747-1",
@@ -37,7 +37,7 @@
         buildpackage:function(){
             var self=this;//hold to preserve scope
             var scriptArray = {
-                scriptArray:[ 
+                scriptArray:[
                 {
                     src:('https:' == document.location.protocol ? 'https://' : 'http://') + "images.wsu.edu/javascripts/jquery.jTrack.0.2.1.js",
                     exc:function(){
@@ -75,15 +75,14 @@
             var _DN    = self.analytics_options.google.analytics.domainName;
             var _CP    = self.analytics_options.google.analytics.cookiePath;
             $.extend($.jtrack.defaults.debug,self.analytics_options.google.analytics.debug);
-            $.jtrack({ 
+            $.jtrack({
                 load_analytics:{
                     account:self.analytics_options.google.analytics.account_id
                 },
                 options:$.extend({},(_DN!==false?{'domainName':_DN}:{}),(_CP!==false?{'cookiePath':_CP}:{})),
-                trackevents:rules 
+                trackevents:rules
             });
         }
-        
-        
-	});
+
+    });
 } (jQuery) );
