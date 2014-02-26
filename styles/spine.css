@@ -160,6 +160,7 @@ x#spine #glue {
 #spine a#wsu-signature {
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png')\9;
 	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
 	background-size: 150px auto;
 	height: 155px;
@@ -167,6 +168,9 @@ x#spine #glue {
 	text-indent: 100%;
 	overflow: hidden;
 	white-space: nowrap;
+	}
+html.lt-ie9 #spine a#wsu-signature {
+	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png');
 	}
 .spokane-signature #spine a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg'); }
 .tricities-signature #spine a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical.svg'); }

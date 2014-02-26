@@ -174,6 +174,7 @@
 	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
+	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png")\9;
 	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
@@ -305,6 +306,7 @@
 /* Logo */
 #binder.fluid #spine a#wsu-signature,
 html.print #spine a#wsu-signature {
+	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png")\9;
 	background-image: url("http://repo.wsu.edu/spine/1/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
