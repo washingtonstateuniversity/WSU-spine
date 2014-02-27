@@ -39,7 +39,7 @@
 					if(js){
 						code += line.match(reExp) ? line + "\n" : "r.push(" + line + ");\n";
 					}else{
-						code += line !== "" ? "r.push('" + line.replace(/"/g, "\\\"") + "');\n" : "";
+						code += line !== "" ? "r.push('" + line.replace(/'/g, "\"") + "');\n" : "";
 					}
 					return add;
 				};
