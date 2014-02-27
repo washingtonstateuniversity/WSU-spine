@@ -7,7 +7,7 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
 		framework_init: function(options) {
-			//alert('init framework');
+			//alert("init framework");
 			//alert("options==>"+dump(options));
 			$.extend(this.framework_options,options);
 			//alert("options==>"+dump(this.framework_options));
@@ -39,23 +39,24 @@
 								</address>"
 		},
 		framework_globals: {
-			'spine': $('#spine'),
-			'main': $('main'),
-			'wsu_actions':$('#wsu-actions')
+			spine: $("#spine"),
+			main: $("main"),
+			wsu_actions:$("#wsu-actions")
 		},
 		framework_create: function(){
-			//alert('framework_create');
-			var self=this;//hold to preserve scop
+			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width;
+			//alert("framework_create");
+			self=this;//hold to preserve scop
 
 			// Section -> Contact
 			if (!$("#wsu-contact").length) {
-				var contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
-				var propmap={};
-				$.each($('[itemtype="http://schema.org/Organization"]'),function(){
+				contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
+				propmap={};
+				$.each($("[itemtype='http://schema.org/Organization']"),function(){
 					var tar = this;
-					$.each($(tar).find('[itemprop]'),function(i,v){
+					$.each($(tar).find("[itemprop]"),function(i,v){
 						var tmp={};
-						tmp[$(v).attr('itemprop')]=$(v).attr('content');
+						tmp[$(v).attr("itemprop")]=$(v).attr("content");
 						$.extend(propmap,tmp);
 					});
 					contactHtml+=$.runTemplate(self.framework_options.contact_template,propmap);
@@ -67,73 +68,76 @@
 			self.setup_nav();
 			self.setup_spine();
 			self.setup_printing();
-			$(window).on('resize', function(){  
+			$(window).on("resize", function(){
 				self.sizing();
 				self.equalizing();
 				self.mainheight();
 				// Only run function if an unbound element exists
-				if( $('.unbound').length || $('#binder.broken').length ) {
-					var spread = $(window).width();
-					var verso = self._get_globals('main').offset().left;
-					var page = self._get_globals('main').width();
-					var recto = spread - self._get_globals('main').offset().left;
-					var recto_margin = "";
+				if( $(".unbound").length || $("#binder.broken").length ) {
+					spread = $(window).width();
+					verso = self._get_globals("main").offset().left;
+					page = self._get_globals("main").width();
+					recto = spread - self._get_globals("main").offset().left;
+					recto_margin = "";
 					if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-					/* Broken Binding */ if ($('#binder').hasClass('broken')) { self._get_globals('main').css('width',recto); }
-					var verso_width = verso + self._get_globals('main').width();
-					$('.unbound.recto').css('width',recto).css('margin-right',-(recto_margin));
-					$('.unbound.verso').css('width',verso_width).css('margin-left',-(verso));
-					$('.unbound.verso.recto').css('width',spread);
+					/* Broken Binding */ if ($("#binder").hasClass("broken")) { self._get_globals("main").css("width",recto); }
+					verso_width = verso + self._get_globals("main").width();
+					$(".unbound.recto").css("width",recto).css("margin-right",-(recto_margin));
+					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
+					$(".unbound.verso.recto").css("width",spread);
 				}
-			}).trigger('resize');
+			}).trigger("resize");
 		},
 		// Label #jacket with current window size
 		sizing: function (jacket) {
-			jacket=jacket||$('#jacket');
-			var current_width = $(window).width();
-			var ele_class="";
+			var current_width,ele_class;
+			jacket=jacket||$("#jacket");
+			current_width = $(window).width();
+			ele_class="";
 			if(current_width >= 1188) {
-				ele_class='size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large';
+				ele_class="size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large";
 			} else if(current_width >= 990) {
-				ele_class='size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium';
+				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
 			} else if(current_width < 990 && current_width >= 792) {
-				ele_class='size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small';
-			} else if((current_width >= 694 && current_width < 792) && ($('#binder').hasClass('fixed'))) {
-				ele_class='size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small';
+				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
+			} else if((current_width >= 694 && current_width < 792) && ($("#binder").hasClass("fixed"))) {
+				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
 			} else if(current_width < 792) {
-				ele_class='size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
+				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			} else if(current_width < 396) {
-				ele_class='size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge';
+				ele_class="size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			}
 			jacket.stripClass("size-").addClass(ele_class);
 		},
 		// Equalize Columns
 		equalizing: function () {
-			// come back to .. look to mage's eq'i
+			var obj;
+			// come back to .. look to mage"s eq"i
 			// all box attr not accounted for
-			if( $('.equalize').length ) {
-				var obj=$('.row.equalize');
-				obj.find('.column').css('min-height','');
+			if( $(".equalize").length ) {
+				obj=$(".row.equalize");
+				obj.find(".column").css("min-height","");
 				$.each(obj,function(){
 					var tallestBox = 0;
-					$.each($('.column', this),function(){
+					$.each($(".column", this),function(){
 						tallestBox = ($(this).height() > tallestBox) ? $(this).outerHeight() : tallestBox;
 					});
-					$('.column',this).not('.unequaled').css('min-height',tallestBox);
-					$('section.equalize .column',this).css('min-height','auto');
+					$(".column",this).not(".unequaled").css("min-height",tallestBox);
+					$("section.equalize .column",this).css("min-height","auto");
 				});
 			}
 		},
 		mainheight: function () {
-			var main = this._get_globals('main').refresh();
+			var main,main_top,window_height,main_height;
+			main = this._get_globals("main").refresh();
 			if(main.offset()){
-				var main_top = main.offset().top;
-				var window_height = $(window).height();
-				var main_height = window_height;
-				if ($('#binder').hasClass('size-lt-large')) {
+				main_top = main.offset().top;
+				window_height = $(window).height();
+				main_height = window_height;
+				if ($("#binder").hasClass("size-lt-large")) {
 					main_height -= 50;
 				}
-				$('main.fill-window-height').css('min-height',main_height);
+				$("main.fill-window-height").css("min-height",main_height);
 			}
 		},
 
@@ -162,43 +166,46 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self=this;//hold to preserve scope
-			var spine = this._get_globals('spine').refresh();
-			var main = this._get_globals('main').refresh();
+			var self,spine,main;
+			self=this;//hold to preserve scope
+			spine = this._get_globals("spine").refresh();
+			main = this._get_globals("main").refresh();
 			// Fixed/Sticky Horizontal Header
 			$(document).scroll(function() {
 				var top = $(document).scrollTop();
 				if (top > 49) {
-					spine.not('.unshelved').addClass('scanned');
-				} else { 
-					spine.removeClass('scanned');
-				} 
+					spine.not(".unshelved").addClass("scanned");
+				} else {
+					spine.removeClass("scanned");
+				}
 			});
 
-			$("#glue > header").append('<button id="shelve"></button>');
-			$("#shelve").click(function() { spine.toggleClass('unshelved shelved'); });
+			$("#glue > header").append("<button id='shelve'></button>");
+			$("#shelve").click(function() { spine.toggleClass("unshelved shelved"); });
 
 			// Clicking Outside Spine Closes It
-			/* $(document).on('mouseup touchstart', function (e) {
+			/* $(document).on("mouseup touchstart", function (e) {
 				var container = $("#spine.unshelved");
 				if (container.has(e.target).length === 0)
-				{ container.toggleClass('shelved unshelved'); }
+				{ container.toggleClass("shelved unshelved"); }
 			}); */
-			main.on('click swipeleft', function() {
-				if ( spine.hasClass('unshelved') ) {
-					spine.toggleClass('shelved unshelved');
+			main.on("click swipeleft", function() {
+				if ( spine.hasClass("unshelved") ) {
+					spine.toggleClass("shelved unshelved");
 				}
 			});
 
 			// Cracking the Spine for Short Windows
-			$(window).on('load resize scroll mouseup touchend',function() {
-				var footerHeight = $("#spine footer").height();
-				var windowHeight = window.innerHeight - footerHeight - 50;
-				var spineHeight = $("#glue").height();
-				//$('main').prepend(footerHeight);
+			$(window).on("load resize scroll mouseup touchend",function() {
+				var footerHeight, windowHeight, spineHeight;
+				
+				footerHeight = $("#spine footer").height();
+				windowHeight = window.innerHeight - footerHeight - 50;
+				spineHeight = $("#glue").height();
+				//$("main").prepend(footerHeight);
 				if ( windowHeight < spineHeight ) {
 					spine.removeClass("uncracked").addClass("cracked");
-				} else { 
+				} else {
 					spine.removeClass("cracked").addClass("uncracked");
 				}
 			});
@@ -209,22 +216,23 @@
 				var top = $(document).scrollTop();
 				var spineHeight = $("#glue").height();
 				var crack = spineHeight - windowHeight;
-				if ( top > crack ) { $('#spine.cracked').addClass('pinned'); }
-				else { $('#spine.cracked').removeClass('pinned'); }
+				if ( top > crack ) { $("#spine.cracked").addClass("pinned"); }
+				else { $("#spine.cracked").removeClass("pinned"); }
 			}); */
 
 			// Moving the Spine for Short Windows
 			$(document).scroll(function() {
-				var windowHeight = window.innerHeight;
-				var top = $(document).scrollTop();
-				var spineHeight = $("#glue").height();
-				var crack = spineHeight - windowHeight;
+				var windowHeight, top, spineHeight, crack;
+				windowHeight = window.innerHeight;
+				top = $(document).scrollTop();
+				spineHeight = $("#glue").height();
+				crack = spineHeight - windowHeight;
 				if ( top > crack ) {
-					$('#spine.cracked').addClass('scrolled');
+					$("#spine.cracked").addClass("scrolled");
 				} else {
-					$('#spine.cracked').removeClass('scrolled');
+					$("#spine.cracked").removeClass("scrolled");
 				}
-			}); 
+			});
 
 			// Moving the Spine for Short Windows
 			/*$(document).scroll(function() {
@@ -234,10 +242,10 @@
 				var crack = spineHeight - windowHeight;
 				if ( top > crack ) {
 					var top_pos = -(top);
-					$('#spine.cracked').addClass('pinned');
-					$('#spine.cracked #glue').css('top',top_pos);
+					$("#spine.cracked").addClass("pinned");
+					$("#spine.cracked #glue").css("top",top_pos);
 				} else {
-					$('#spine.cracked').removeClass('pinned');
+					$("#spine.cracked").removeClass("pinned");
 				}
 			});*/
 		},
@@ -246,13 +254,14 @@
 		 * Sets up the tabs that will be able to be used by other extensions
 		 */
 		setup_tabs: function(tab,html){
+			var self, wsu_actions;
 			html=html||"";
-			var self=this;//hold to preserve scope
-			var wsu_actions = self._get_globals('wsu_actions').refresh();
+			self=this;//hold to preserve scope
+			wsu_actions = self._get_globals("wsu_actions").refresh();
 			wsu_actions.append(html);
 			$("#wsu-"+tab+"-tab button").on("click",function(e) {
 				e.preventDefault();
-				wsu_actions.find('*.opened,#wsu-'+tab+',#wsu-'+tab+'-tab').toggleClass('opened closed');
+				wsu_actions.find("*.opened,#wsu-"+tab+",#wsu-"+tab+"-tab").toggleClass("opened closed");
 			});
 		},
 
@@ -268,7 +277,7 @@
 			$("#spine .active").not(":has(.active)").addClass("dogeared");
 	
 			// Disclosure
-			$("#spine nav li.parent > a").on("click",function(e) { 
+			$("#spine nav li.parent > a").on("click",function(e) {
 				e.preventDefault();
 				var tar=$(this);
 				tar.parent("li").siblings().removeClass("opened");
@@ -277,25 +286,26 @@
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
-				var tar=$(this);
-				var title = 'Overview';
-				if (tar.attr('title')) {
-					var alt = tar.attr('title').length;
-					if ( alt > 0 ) { title = tar.attr('title'); }
+				var tar, title, alt, classes, url;
+				tar=$(this);
+				title = "Overview";
+				if (tar.attr("title")) {
+					alt = tar.attr("title").length;
+					if ( alt > 0 ) { title = tar.attr("title"); }
 				}
-				var classes = "overview";
-				if (tar.closest('.parent').hasClass('dogeared')) {
+				classes = "overview";
+				if (tar.closest(".parent").hasClass("dogeared")) {
 					classes += " dogeared";
 				}
-				var url = tar.attr("href");
-				if ( url != '#' ) {
-					tar.parent("li").children("ul").prepend('<li class="' + classes + '"><a href="'  + url +  '">' + title + '</a></li>');
+				url = tar.attr("href");
+				if ( url !== "#" ) {
+					tar.parent("li").children("ul").prepend("<li class='" + classes + "'><a href='"  + url +  "'>" + title + "</a></li>");
 				}
 			});
 			// External Links in nav
-			// this shouldn't be done this way
-			$('nav#spine-sitenav a').filter(function() {
-				return this.hostname && this.hostname !== location.hostname;
+			// this shouldn"t be done this way
+			$("nav#spine-sitenav a").filter(function() {
+				return this.hostname && this.hostname !== window.location.hostname;
 			}).addClass("external");
 		},
 
@@ -303,20 +313,22 @@
 		 * Sets up printing, not 100% this should live here
 		 */
 		setup_printing: function(){
-			var self=this;//hold to preserve scope
-			var spine = self._get_globals('spine').refresh();
-			var wsu_actions = self._get_globals('wsu_actions').refresh();
+			var self, spine, wsu_actions, print_controls;
+			
+			self=this;//hold to preserve scope
+			spine = self._get_globals("spine").refresh();
+			wsu_actions = self._get_globals("wsu_actions").refresh();
 
 			// Print & Print View
-			var print_controls = '<span class="print-controls"><button id="print-invoke">Print</button><button id="print-cancel">Cancel</button></span>';
-	
+			print_controls = "<span class='print-controls'><button id='print-invoke'>Print</button><button id='print-cancel'>Cancel</button></span>";
+
 			function printPage(){
 				window.print();
 			}
 
 			function print_cancel() {
-				$('html').toggleClass('print');
-				$('.print-controls').remove();
+				$("html").toggleClass("print");
+				$(".print-controls").remove();
 			}
 
 			/* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
@@ -324,20 +336,20 @@
 				if ( undefined !== e ) {
 					e.preventDefault();
 				}
-				wsu_actions.find('.opened').toggleClass('opened closed');
-				$('html').toggleClass('print');
-				spine.find('header').prepend(print_controls);
-				spine.find('.unshelved').removeClass('unshelved').addClass('shelved');
+				wsu_actions.find(".opened").toggleClass("opened closed");
+				$("html").toggleClass("print");
+				spine.find("header").prepend(print_controls);
+				spine.find(".unshelved").removeClass("unshelved").addClass("shelved");
 				$("#print-invoke").on("click",function() { window.print(); });
 				$("#print-cancel").on("click",print_cancel);
-				setTimeout(function() { printPage(); }, 400);
+				window.setTimeout(function() { printPage(); }, 400);
 			}
 			$("#wsu-print-tab button").click(print);
 	
 			// Shut a tool section
 			$("button.shut").on("click",function(e) {
 				e.preventDefault();
-				wsu_actions.find('.opened').toggleClass('opened closed');
+				wsu_actions.find(".opened").toggleClass("opened closed");
 			});
 		}
 
