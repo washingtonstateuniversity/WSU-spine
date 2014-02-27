@@ -2,7 +2,7 @@
 -------------------------------------------------------- */
 
 /* CRIMSON */ .crimson-back { background-color: #981e32; } .crimson-text { color: #981e32; }
-/* crimsoner */ .crimson-er-back { background-color: #cf0a2f; } .crimson-er-text { color: #cf0a2f; }
+/* crimsoner */ .crimson-er-back { background-color: #c60c30; } .crimson-er-text { color: #c60c30; }
 
 /* GRAY */ .gray-back { background-color: #5E6A71; } .gray-text { color: #5E6A71; }
 /* grayer */ .gray-er-back, .er-back, .white-back { background-color: white; } .gray-er-text, .er-text, .white-text { color: white; }
