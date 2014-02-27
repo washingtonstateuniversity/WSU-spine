@@ -256,15 +256,15 @@ section.sidebar .rebound {
 .one-twelfth-tall, .twelfths-tall-1 { height: 66px; }
 .two-twelfths-tall, .twelfths-tall-2 { height: 132px; }
 .three-twelfths-tall, .twelfths-tall-3 { height: 198px; }
-.four-twelfths-tall, .twelfths-4-tall { width: 264px; }
-.five-twelfths-tall, .twelfths-5-tall { width: 330px; }
-.six-twelfths-tall, .twelfths-6 { width: 396px; }
-.seven-twelfths-tall, .twelfths-7-tall { width: 462px; }
-.eight-twelfths-tall, .twelfths-8-tall { width: 528px; }
-.nine-twelfths-tall, .twelfths-9-tall { width: 594px; }
-.ten-twelfths-tall, .twelfths-10-tall { width: 660px; }
-.eleven-twelfths-tall, .twelfths-11-tall { width: 726px; }
-.twelve-twelfths-tall, .twelfths-12-tall { width: 792px; }
+.four-twelfths-tall, .twelfths-4-tall { height: 264px; }
+.five-twelfths-tall, .twelfths-5-tall { height: 330px; }
+.six-twelfths-tall, .twelfths-6 { height: 396px; }
+.seven-twelfths-tall, .twelfths-7-tall { height: 462px; }
+.eight-twelfths-tall, .twelfths-8-tall { height: 528px; }
+.nine-twelfths-tall, .twelfths-9-tall { height: 594px; }
+.ten-twelfths-tall, .twelfths-10-tall { height: 660px; }
+.eleven-twelfths-tall, .twelfths-11-tall { height: 726px; }
+.twelve-twelfths-tall, .twelfths-12-tall { height: 792px; }
 
 :not(.fixed) .halves .two-twelfths { width: 33%; }
 :not(.fixed) .halves .four-twelfths { width: 67%; }
