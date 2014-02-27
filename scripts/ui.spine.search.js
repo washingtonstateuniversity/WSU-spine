@@ -56,12 +56,12 @@
 			} 
 		},
 		search_globals: {
-			'wsu_search': $('#wsu-search'),
-			'search_input':$( "#wsu-search input[type=text]" )
+			wsu_search: $("#wsu-search"),
+			search_input:$( "#wsu-search input[type=text]" )
 		},
 		create_search: function(){
 			var self=this;//hold to preserve scop
-			var wsu_search = self._get_globals('wsu_search').refresh();
+			var wsu_search = self._get_globals("wsu_search").refresh();
 			if (!wsu_search.length) {
 				var tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
 				this.setup_tabs("search",tabhtml);
@@ -97,9 +97,9 @@
 		},
 
 		run_query:function(term,provider){
-			var self=this;//hold to preserve scop
-			var search_input = self._get_globals('search_input').refresh();
-			var result = [];
+			var self, result = [], tmpObj = [];
+			self=this;//hold to preserve scop
+			result = [];
 
 			if(typeof(provider)!==undefined && typeof(provider.url)!==undefined && provider.nodes===undefined){
 				return $.ajax({
@@ -114,14 +114,14 @@
 					}
 				});
 			}else if(typeof(provider)!==undefined && typeof(provider.nodes)!==undefined ){
-				var tmpObj = [];
-				$.each($(provider.nodes).find('a'),function(i,v){
-					var obj = $(v);
-					var text = obj.text();
+				$.each($(provider.nodes).find("a"),function(i,v){
+					var obj,text, localtmpObj;
+					obj = $(v);
+					text = obj.text();
 					if(text.toLowerCase().indexOf(term.toLowerCase())>-1){
-						var localtmpObj = {
+						localtmpObj = {
 							label:text,
-							value:obj.attr('href')
+							value:obj.attr("href")
 						};
 						tmpObj.push(localtmpObj);
 					}
@@ -161,10 +161,13 @@
 		},
 
 		setup_search: function (){
-			var self=this;//hold to preserve scop
-			var wsu_search = self._get_globals('wsu_search').refresh();
-			var search_input = self._get_globals('search_input').refresh();
-			var focuseitem={};
+			
+			var self, wsu_search, search_input, focuseitem={};
+			
+			self=this;//hold to preserve scop
+			wsu_search = self._get_globals("wsu_search").refresh();
+			search_input = self._get_globals("search_input").refresh();
+			focuseitem={};
 
 			search_input.autosearch({
 				
@@ -178,18 +181,19 @@
 						response(data);
 					});
 				},
-				search: function(event, ui) {
+				search: function( ) {
 					focuseitem={};
 					/**/
 				},
 				select : function( e, ui ) {
-					var id = ui.item.searchKeywords;
-					var term = ui.item.label;
+					var id, term;
+					id = ui.item.searchKeywords;
+					term = ui.item.label;
 					//$("#indices").empty();
 					search_input.autosearch("close");
 				},
-				focus : function( event, ui ) {
-					event.preventDefault(); 
+				focus : function( e, ui ) {
+					e.preventDefault(); 
 					search_input.val( $(ui.item.label).text() );
 					focuseitem={
 						label:ui.item.label,
@@ -197,9 +201,9 @@
 					};
 				},
 				open : function(e,ui) {
-					var abreak="";
+					//var abreak="";
 				},
-				close: function( event, ui ) {
+				close: function( ) {
 					return false;
 				}
 			}).data( "autosearch" );
@@ -208,36 +212,37 @@
 				if ( e.keyCode === $.ui.keyCode.TAB && search_input.is($(":focus")) ) {
 					e.preventDefault();
 				}
-				if ( e.which == 13){
+				if ( e.which === 13){
 					//var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
 					//var url=siteroot+"public/get_place.castle";
-					//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
+					//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?"?id="+id:"")+(term!=""?"&term="+term:""));
 					search_input.autosearch("close");
 					//getSignlePlace(jObj,id);
 					
 				}
 			});
 
-			search_input.off('click').on('click',function(e){
+			search_input.off("click").on("click",function(e){
 				e.stopPropagation();
 				e.preventDefault();
-				var btn=$(this);
+				//var btn=$(this);
 				//var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
 				//getSignlePlace(jObj,id);
-				//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?'?id='+id:'')+(term!=""?'&term='+term:''));
+				//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?"?id="+id:"")+(term!=""?"&term="+term:""));
 			});
 
 			
 			$("#wsu-search form").submit( function() {
-				var scope = wsu_search.attr('data-default');
-				var site = '';
-				if ( scope == 'site-search' ) {
-					site = ' site:'+location.hostname;
+				var scope,site,cx,cof,search_term,search_url;
+				scope = wsu_search.attr("data-default");
+				site = "";
+				if ( scope == "site-search" ) {
+					site = " site:"+location.hostname;
 				}
-				var cx = 'cx=004677039204386950923:xvo7gapmrrg';
-				var cof = 'cof=FORID%3A11';
-				var search_term = search_input.val();
-				var search_url = 'http://search.wsu.edu/default.aspx?'+cx+'&'+cof+'&q='+search_term+site;
+				cx = "cx=004677039204386950923:xvo7gapmrrg";
+				cof = "cof=FORID%3A11";
+				search_term = search_input.val();
+				search_url = "http://search.wsu.edu/default.aspx?"+cx+"&"+cof+"&q="+search_term+site;
 				window.location.href = search_url;
 				return false;
 			});
