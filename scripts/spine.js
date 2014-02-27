@@ -1,6 +1,7 @@
 (function($){
 	"use strict";
 	$(document).ready(function(){
-        $.spine(typeof(spineoptions)!="undefined"? spineoptions : {});
+		var spineoptions=spineoptions||{};
+		$.spine(spineoptions);
 	});
 })(jQuery);
