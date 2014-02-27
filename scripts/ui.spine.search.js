@@ -8,6 +8,8 @@
 	"use strict";
 	$.extend($.ui.spine.prototype, {
 		search_init: function(options) {
+			var self;
+			self=this;//hold to preserve scop
 			$.extend(options,self.search_options,options);
 			this._set_globals(this.search_globals);
 			this.create_search();
@@ -53,27 +55,28 @@
 				providerHeader:"<b class='provider_header'><%this.provider_name%></b><hr/>",
 				termTemplate:"<b><%this.term%></b>",
 				template:"<li><%this.searchitem%></li>"
-			} 
+			}
 		},
 		search_globals: {
 			wsu_search: $("#wsu-search"),
 			search_input:$( "#wsu-search input[type=text]" )
 		},
 		create_search: function(){
-			var self=this;//hold to preserve scop
-			var wsu_search = self._get_globals("wsu_search").refresh();
+			var self, wsu_search,tabhtml;
+			self=this;//hold to preserve scop
+			wsu_search = self._get_globals("wsu_search").refresh();
 			if (!wsu_search.length) {
-				var tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
+				tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
 				this.setup_tabs("search",tabhtml);
 				this.setup_search();
-			}   
+			}
 		},
 
 		start_search:function(request,callback){
-			var self=this;//hold to preserve scop
+			var self,term,queries = [];
+			self=this;//hold to preserve scop
 
-			var term = request.term;
-			var queries = [];
+			term = request.term;
 			self.search_options.data=[];
 			$.each(self.search_options.providers, function(i,provider){
 				$.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
@@ -82,12 +85,13 @@
 
 			$.when.apply($, queries).done(
 			function(){
-				var abreak="";
+				//var abreak="";
 				$.each(arguments,function(i,v){
+					var data,proData;
 					if(v!==undefined){
-						var data=v[0];
+						data=v[0];
 						if(data!==undefined && data.length>0){
-							var proData=self.setup_result_obj(term,data);
+							proData=self.setup_result_obj(term,data);
 							$.merge(self.search_options.data,proData);
 						}
 					}
@@ -133,23 +137,28 @@
 		},
 
 		format_result_text:function(term,text,value){
-			var self=this;//hold to preserve scop
-			var termTemplate = "<strong>$1</strong>"; //typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
+			var self,termTemplate,regex;
+			self=this;//hold to preserve scope
+			
+			termTemplate = "<strong>$1</strong>"; //typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
-			var regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
-				text	= "<a href='"+value+"' target='"+self.search_options.result.target+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
+			regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
+			text	= "<a href='"+value+"' target='"+self.search_options.result.target+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
+			
 			return text;
 		},
 		
 		setup_result_obj:function(term,data){
-			var self=this;//hold to preserve scop
-			var matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
+			var self, matcher;
+			self=this;//hold to preserve scop
+			matcher = new RegExp( $.ui.autocomplete.escapeRegex(term), "i" );
 			return $.map( data, function( item ) {
-				var text = item.label;
-				var value	= item.value;
-				if ( (item.value && ( !term || matcher.test(text)) || item.related == "true" ) ){
+				var text,value,resultObj;
+				text = item.label;
+				value	= item.value;
+				if ( (item.value && ( !term || matcher.test(text)) || item.related === "true" ) ){
 					text = self.format_result_text(term,text,value);
-					var resultObj = {
+					resultObj = {
 						label: text,
 						value: item.value,
 						searchKeywords: item.searchKeywords!==undefined?item.searchKeywords:"false",
@@ -176,12 +185,13 @@
 				relatedHeader:		self.search_options.result.relatedHeader,
 				minLength:			self.search_options.search.minLength,
 				
-				source: function( request, response )  { 
+				source: function( request, response )  {
 					self.start_search(request,function(data){
 						response(data);
 					});
 				},
-				search: function( ) {
+				search: function( e ) {
+					e.preventDefault();
 					focuseitem={};
 					/**/
 				},
@@ -193,17 +203,19 @@
 					search_input.autosearch("close");
 				},
 				focus : function( e, ui ) {
-					e.preventDefault(); 
+					e.preventDefault();
 					search_input.val( $(ui.item.label).text() );
 					focuseitem={
 						label:ui.item.label,
 						//id:ui.item.place_id
 					};
 				},
-				open : function(e,ui) {
+				open : function( e ) {
+					e.preventDefault();
 					//var abreak="";
 				},
-				close: function( ) {
+				close: function( e ) {
+					e.preventDefault();
 					return false;
 				}
 			}).data( "autosearch" );
@@ -236,8 +248,8 @@
 				var scope,site,cx,cof,search_term,search_url;
 				scope = wsu_search.attr("data-default");
 				site = "";
-				if ( scope == "site-search" ) {
-					site = " site:"+location.hostname;
+				if ( scope === "site-search" ) {
+					site = " site:"+window.location.hostname;
 				}
 				cx = "cx=004677039204386950923:xvo7gapmrrg";
 				cof = "cof=FORID%3A11";
