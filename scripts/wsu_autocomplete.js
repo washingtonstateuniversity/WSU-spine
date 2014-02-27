@@ -5,23 +5,24 @@
 	termTemplate
 	autoSearchObj.options.provider.termTemplate
 */
+
+/* jshint onevar: false */
 (function($){
 	"use strict";
 	$.widget( "ui.autosearch", $.ui.autocomplete, {
 		_renderMenu: function( ul, items ) {
 			var that	= this;
-			var matched	= items.filter(function(obj, item) {
-				if(obj.related=="false"){
-					return item;
-				}
-			});//note this should be a single loop?
 			var related	= items.filter(function(obj, item) {
-				if(obj.related!="false"){
+				if(obj.related!=="false"){
 					return item;
 				}
 			});
 
-			$.each(matched, function(i, item) {
+			$.each(items.filter(function(obj, item) {
+				if(obj.related==="false"){
+					return item;
+				}
+			}), function(i, item) {
 				that._renderItemData( ul, item );
 			});
 
@@ -46,4 +47,4 @@
 			return $( "<li></li>" ).append( "<a href=''>"+text+"</a>" ).appendTo( ul );
 		}
 	});
-})(jQuery); 
+})(jQuery);
