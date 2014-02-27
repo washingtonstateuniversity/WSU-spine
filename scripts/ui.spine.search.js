@@ -190,8 +190,7 @@
 						response(data);
 					});
 				},
-				search: function( e ) {
-					e.preventDefault();
+				search: function( ) {
 					focuseitem={};
 					/**/
 				},
@@ -203,15 +202,14 @@
 					search_input.autosearch("close");
 				},
 				focus : function( e, ui ) {
-					e.preventDefault();
 					search_input.val( $(ui.item.label).text() );
 					focuseitem={
 						label:ui.item.label,
 						//id:ui.item.place_id
 					};
-				},
-				open : function( e ) {
 					e.preventDefault();
+				},
+				open : function( ) {
 					//var abreak="";
 				},
 				close: function( e ) {
