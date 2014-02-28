@@ -217,7 +217,7 @@ html.lt-ie9 #spine a#wsu-signature {
 	width: 100%;
 	height: 2.2em;
 	}
-#spine button::before {
+#spine button:before {
 	font-family: "Iconography";
 	text-indent: 0px;
 	position: absolute;
@@ -225,7 +225,7 @@ html.lt-ie9 #spine a#wsu-signature {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	}
-#spine #wsu-actions-tabs li button::before {
+#spine #wsu-actions-tabs li button:before {
 	top: .9em;
 	}
 #spine #wsu-actions {
@@ -317,15 +317,15 @@ html.lt-ie9 #spine a#wsu-signature {
 	color: #424a4f;
 	}
 	
-#wsu-actions-tabs #wsu-search-tab button::before { content: "$"; }
-#wsu-actions-tabs #wsu-contact-tab button::before { content: "\2709"; }
-#wsu-actions-tabs #wsu-share-tab button::before { content: "\F601"; }
-#wsu-actions-tabs #wsu-print-tab button::before { content: "\2399"; }
+#wsu-actions-tabs #wsu-search-tab button:before { content: "$"; }
+#wsu-actions-tabs #wsu-contact-tab button:before { content: "\2709"; }
+#wsu-actions-tabs #wsu-share-tab button:before { content: "\F601"; }
+#wsu-actions-tabs #wsu-print-tab button:before { content: "\2399"; }
 
-#wsu-actions-tabs #wsu-search-tab.opened button:hover::before,
-#wsu-actions-tabs #wsu-contact-tab.opened button:hover::before,
-#wsu-actions-tabs #wsu-share-tab.opened button:hover::before,
-#wsu-actions-tabs #wsu-print-tab.opened button:hover::before { content: "\2421"; }
+#wsu-actions-tabs #wsu-search-tab.opened button:hover:before,
+#wsu-actions-tabs #wsu-contact-tab.opened button:hover:before,
+#wsu-actions-tabs #wsu-share-tab.opened button:hover:before,
+#wsu-actions-tabs #wsu-print-tab.opened button:hover:before { content: "\2421"; }
 
 /* II.3.1 ACTIONS -> Search 
 --------------------------------------------------------------------------- */
@@ -366,7 +366,7 @@ html.lt-ie9 #spine a#wsu-signature {
 	text-indent: 110%;
 	overflow: hidden;
 	}
-#spine #wsu-search button::before {
+#spine #wsu-search button:before {
 	content: "\25BB";
 	color: #b6bcbf;
 	font-size: 1.3em;
@@ -377,7 +377,7 @@ html.lt-ie9 #spine a#wsu-signature {
 	bottom: 5px;
 	right: 20px;
 	}
-#spine #wsu-search button:hover::before {
+#spine #wsu-search button:hover:before {
 	color: #90979c;
 	color: #981e32;
 	}
@@ -385,6 +385,9 @@ html.lt-ie9 #spine a#wsu-signature {
 /* Index */
 
 /* Reset jQuery UI */
+#spine #spine-shortcuts {
+	padding-top: 2px;
+	}
 #spine #spine-shortcuts *,
 #spine #spine-shortcuts *:focus,
 #spine #spine-shortcuts *:hover {
@@ -571,7 +574,7 @@ address[role="contact"],
 #spine #wsu-share li a:hover {
 	color: white;
 	}
-#wsu-share li a::before {
+#wsu-share li a:before {
 	font-family: "Iconography" !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -579,12 +582,12 @@ address[role="contact"],
 	display: inline-block;
 	text-align: center;
 	}
-#wsu-share li.by-facebook a::before { content: "F"; }
-#wsu-share li.by-twitter a::before { content: "T"; }
-#wsu-share li.by-email a::before { content: "@"; }
-#wsu-share li.by-pinterest a::before { content: "P"; }
-#wsu-share li.by-linkedin a::before { content: "L"; }
-#wsu-share li.by-other a::before { content: ""; display: none; }
+#wsu-share li.by-facebook a:before { content: "F"; }
+#wsu-share li.by-twitter a:before { content: "T"; }
+#wsu-share li.by-email a:before { content: "@"; }
+#wsu-share li.by-pinterest a:before { content: "P"; }
+#wsu-share li.by-linkedin a:before { content: "L"; }
+#wsu-share li.by-other a:before { content: ""; display: none; }
 
 /* II.3.4 Print */
 
@@ -616,8 +619,8 @@ address[role="contact"],
 #spine nav ul li.parent.active > a {
 	padding-bottom: 3px;
 	}
-#spine nav ul li.parent > a::after,
-#spine nav ul li.parent.opened > a::after {
+#spine nav ul li.parent > a:after,
+#spine nav ul li.parent.opened > a:after {
 	font-family: "Iconography";
 	display: none;
 	position: absolute;
@@ -627,14 +630,14 @@ address[role="contact"],
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	}
-#spine nav ul li.parent:not(.active) > a::after {
+#spine nav ul li.parent:not(.active) > a:after {
 	content: "\F501";
 	}
-#spine nav ul li.parent.opened:not(.active) > a::after {
+#spine nav ul li.parent.opened:not(.active) > a:after {
 	content: "\F500";
 	}
-#spine nav ul li.parent > a:hover::after,
-#spine nav ul li.parent.opened > a:hover::after {
+#spine nav ul li.parent > a:hover:after,
+#spine nav ul li.parent.opened > a:hover:after {
 	display: block;
 	opacity: 1;
 	}
@@ -645,13 +648,13 @@ address[role="contact"],
 #spine #spine-sitenav > ul > li:nth-last-of-type(1) {
 	border-bottom-width: 1px;
 	}
-#spine #wsu-search ::-webkit-input-placeholder {
+#spine #wsu-search :-webkit-input-placeholder {
    text-indent: 3px;
 }
 #spine #wsu-search :-moz-placeholder {
    text-indent: 5px;
 }
-#spine #wsu-search ::-moz-placeholder{
+#spine #wsu-search :-moz-placeholder{
    text-indent: 5px;
 }
 #spine #wsu-search :-ms-input-placeholder {
@@ -899,7 +902,7 @@ nav#wsu-global-links ul li a:hover {
 main {
 	position: relative;
 	}
-#spine.bleed::before {
+#spine.bleed:before {
 	content: " ";
 	background-color: white;
 	width: 1000px;
@@ -909,7 +912,7 @@ main {
 	}
 
 /* LIGHTEST #e6e8e9, rgb(230,232,233) */
-#spine.lightest, #spine.lightest #glue > header,#spine.lightest.bleed::before { background: #e6e8e9; }
+#spine.lightest, #spine.lightest #glue > header,#spine.lightest.bleed:before { background: #e6e8e9; }
 #spine.lightest #wsu-actions li.opened button,
 #spine.lightest #wsu-actions li button,
 #spine.lightest #wsu-actions li.opened button:hover,
@@ -943,7 +946,7 @@ main {
 	background: white; }
 
 /* LIGHTER #B5BABE, rgb(186,191,194), rgba(186,191,194,1) */
-#spine.lighter, #spine.lighter #glue > header, #spine.lighter.bleed::before { background: #B5BABE; }
+#spine.lighter, #spine.lighter #glue > header, #spine.lighter.bleed:before { background: #B5BABE; }
 #spine.lighter #wsu-signature {
 	background-image: url('http://spine.nbj.me/spine/1/marks/wsu-signature-vertical-lightest.svg') }
 #spine.lighter:not(.homeless) #spine-sitenav > ul > li:first-child a {
@@ -983,7 +986,7 @@ main {
 	color: #981e32; }
 
 /* LIGHT #8b9399, rgb(139,147,153) */
-#spine.light, #spine.light #glue > header, #spine.light.bleed::before { background: #8D959A; }
+#spine.light, #spine.light #glue > header, #spine.light.bleed:before { background: #8D959A; }
 #spine.light #wsu-signature { background-image: url('http://spine.nbj.me/spine/1/marks/wsu-signature-vertical-lighter.svg') }
 #spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1021,7 +1024,7 @@ main {
 	color: white; }
 
 /* GRAY #5e6a71, rgb(94,106,113) */
-#spine.gray, #spine.gray #glue > header, #spine.gray.bleed::before { background: #5e6a71; }
+#spine.gray, #spine.gray #glue > header, #spine.gray.bleed:before { background: #5e6a71; }
 #spine.gray #wsu-signature { background-image: url('http://spine.nbj.me/spine/1/marks/wsu-signature-vertical-lightest.svg'); }
 #spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1062,7 +1065,7 @@ main {
 	color: black; }
 
 /* GRAY-DARK #383D42, rgb(75,85,90) */
-#spine.dark, #spine.dark #glue > header, #spine.dark.bleed::before { background: #383D42; }
+#spine.dark, #spine.dark #glue > header, #spine.dark.bleed:before { background: #383D42; }
 #spine.dark #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg'); }
 #spine.dark:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1100,7 +1103,7 @@ main {
 	color: white; }
 
 /* GRAY-DARKER #384044 #424a4f #212426, rgb(56,64,68) */
-#spine.darker, #spine.darker #glue > header, #spine.darker.bleed::before { background: #212426; }
+#spine.darker, #spine.darker #glue > header, #spine.darker.bleed:before { background: #212426; }
 #spine.darker #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg'); }
 #spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1136,7 +1139,7 @@ main {
 	color: white; }
 
 /* GRAY-DARKEST #000 */
-#spine.darkest, #spine.darkest #glue > header, #spine.darkest.bleed::before { background: black; }
+#spine.darkest, #spine.darkest #glue > header, #spine.darkest.bleed:before { background: black; }
 #spine.darkest #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg'); }
 #spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lighter.svg') }
@@ -1173,7 +1176,7 @@ main {
 	color: #981e32; }
 	
 /* CRIMSON #981e32 */
-#spine.crimson, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed::before { background-color: #981e32; }
+#spine.crimson, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed:before { background-color: #981e32; }
 #spine.crimson #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical-white.svg'); }
 #spine.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	color: #b6bcbf;
@@ -1216,5 +1219,5 @@ main {
 	color: white; }
 
 /* Transparent */
-#spine.velum, #spine.velum.bleed::before { background: rgba(255,255,255,0.9); }
-.size-lt-large #spine.velum header, .size-lt-large #spine.velum.bleed::before { background: rgba(255,255,255,0.9); }
+#spine.velum, #spine.velum.bleed:before { background: rgba(255,255,255,0.9); }
+.size-lt-large #spine.velum header, .size-lt-large #spine.velum.bleed:before { background: rgba(255,255,255,0.9); }

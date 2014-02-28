@@ -97,6 +97,7 @@ blockquote { padding-bottom: .8em; }
 ul, ol { padding-bottom: .8em; }
 ol li { list-style: decimal; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px;  }
 ul li { list-style: circle; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px; }
+pre, code { font-family: "Courier New", Courier, monospace; }
 
 input {
 	outline: none;
@@ -608,8 +609,8 @@ button.glassine {
 	}
 
 /* Fix for odd Mozilla border & padding issues */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button:-moz-focus-inner,
+input:-moz-focus-inner {
 	border: 0;
 	padding: 0;
 	}

@@ -12,7 +12,7 @@
     III.5.0 Print
     III.6.0 Targeting */
 
-#binder #spine.unshelved header::before {
+#binder #spine.unshelved header:before {
 	content: "";
 	position: absolute;
 	width: 900px;
@@ -174,13 +174,14 @@
 	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
-	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png")\9;
 	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
-
+html.lt-ie9 #spine a#wsu-signature {
+	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png');
+	}
 #binder:not(.fluid) #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg'); }
 #binder:not(.fluid) #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg'); }
 #binder:not(.fluid) #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-white.svg'); }
@@ -306,13 +307,14 @@
 /* Logo */
 #binder.fluid #spine a#wsu-signature,
 html.print #spine a#wsu-signature {
-	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png")\9;
 	background-image: url("http://repo.wsu.edu/spine/1/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
-
+html.lt-ie9 #spine a#wsu-signature {
+	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png');
+	}
 #binder.fluid #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
 #binder.fluid #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
 #binder.fluid #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
@@ -513,7 +515,8 @@ html.print #spine a#wsu-signature {
 .fluid .row.sideleft .column.two,
 .fluid .row.margin .column.one,
 .fluid .row.margin .column.two,
-.fluid .row.thirds .halves .column {
+.fluid .row.single .halves .column,
+xx.fluid .row.thirds .halves .column {
 	width: 100%;
 	float: none;
 	clear: both;
