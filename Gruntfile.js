@@ -2,6 +2,18 @@ module.exports = function(grunt) {
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		env : {
+			options : {
+				/* Shared Options Hash */
+				//globalOption : 'foo'
+			},
+			dev: {
+				NODE_ENV : 'DEVELOPMENT'
+			},
+			prod : {
+				NODE_ENV : 'PRODUCTION'
+			}
+		},
 		concat: {
 			styles: {
 				src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
@@ -84,20 +96,54 @@ module.exports = function(grunt) {
 				inline: true,
 				context : {
 					DEBUG: true,
-                    build_version : '<%= pkg.build_version %>'
+					build_version : '<%= pkg.build_version %>',
+					MALFORMED : 'skip', // true or false is what is tested for
+					filledSearchTab : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
 				src: 'build/<%= pkg.build_version %>/spine.js'
 			},
-            html : {
-                src : 'test/test.pre.html',
-                dest : 'test/test.html'
-            }
+			html : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/default.html',
+				options : {
+					context : {
+					}
+				}
+			},
+			tu_filledSearchTabs : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/filledSearchTabs.html',
+				options : {
+					context : {
+						filledSearchTab : 'true'
+					}
+				}
+			},
+			tu_malformedContact : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/malformedContact.html',
+				options : {
+					context : {
+						MALFORMED : 'true'
+					}
+				}
+			},
+			tu_filledContact : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/filledContact.html',
+				options : {
+					context : {
+						MALFORMED : 'false'
+					}
+				}
+			},
 		}
 	});
 
 	// Load the plugin that provides the "uglify" task.
+	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -106,5 +152,21 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	// Default task(s).
-	grunt.registerTask('default', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);
+	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('prod', ['jshint','env:prod', 'concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);	
+	
+	grunt.registerTask('dev', ['jshint',
+								'env:dev',
+								'concat',
+								'preprocess:js',
+								'cssmin',
+								'uglify',
+								'copy',
+								'preprocess:html',
+								'preprocess:tu_filledSearchTabs',
+								'preprocess:tu_malformedContact',
+								'preprocess:tu_filledContact'
+								]);
+		
+		
 };
