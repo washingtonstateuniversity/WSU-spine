@@ -120,7 +120,7 @@
 				$.each(obj,function(){
 					var tallestBox = 0;
 					$.each($(".column", this),function(){
-						tallestBox = ($(this).height() > tallestBox) ? $(this).outerHeight() : tallestBox;
+						tallestBox = ($(this).outerHeight() > tallestBox) ? $(this).outerHeight() : tallestBox;
 					});
 					$(".column",this).not(".unequaled").css("min-height",tallestBox);
 					$("section.equalize .column",this).css("min-height","auto");
