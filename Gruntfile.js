@@ -104,14 +104,19 @@ module.exports = function(grunt) {
 			},
 			html : {
 				src : 'test/preprocess/test.pre.html',
-				dest : 'test/default.html'
+				dest : 'test/default.html',
+				options : {
+					context : {
+						filledTabs : 'false',
+					}
+				}
 			},
 			testUnit_filledTabs : {
 				src : 'test/preprocess/test.pre.html',
 				dest : 'test/filledTabs.html',
 				options : {
 					context : {
-						filledTab : 'search',
+						filledTabs : 'true',
 					}
 				}
 			},

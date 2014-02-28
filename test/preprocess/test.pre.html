@@ -19,48 +19,48 @@
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script type="text/javascript">
-        var spineoptions={
-            search:{
-                providers:{
-                    local:{
-                        url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
-                        dataType: "jsonp",
-                        featureClass: "P",
-                        style: "full",
-                        maxRows: 12
-                    } 
-                },
-                result:{
-                    appendTo: "#spine-shortcuts",
-                    showRelated:true,
-                    relatedHeader:"<hr/>",
-                    minLength: 2, 
-                    template:"<li>%s</li>"
-                }
-            },
-            social:{
-                provider:"WSU_share",
-                script_url:"//repo.wsu.edu/wsu_share/1/",
-                channels:[
-                    "facebook",
-                    "twitter",
-                    "Pintrest"
-                ]
-            },
-            analytics:{ 
-                "google":{
-                    analytics:{
-                        "account_id":"UA-XXXXX-XX"
-                    },
-                    verification:"XXXXXXXXXXXXXXXXXXXXX"
-                },
-                "bing":{
-                    verification:"XXXXXXXXXXXXXXXXXXXXX"
-                }
-            }
-        };
-    </script>   
+	<script type="text/javascript">
+		var spineoptions={
+			search:{
+				providers:{
+					local:{
+						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+						dataType: "jsonp",
+						featureClass: "P",
+						style: "full",
+						maxRows: 12
+					} 
+				},
+				result:{
+					appendTo: "#spine-shortcuts",
+					showRelated:true,
+					relatedHeader:"<hr/>",
+					minLength: 2, 
+					template:"<li>%s</li>"
+				}
+			},
+			social:{
+				provider:"WSU_share",
+				script_url:"//repo.wsu.edu/wsu_share/1/",
+				channels:[
+					"facebook",
+					"twitter",
+					"Pintrest"
+				]
+			},
+			analytics:{ 
+				"google":{
+					analytics:{
+						"account_id":"UA-XXXXX-XX"
+					},
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				},
+				"bing":{
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				}
+			}
+		};
+	</script>   
 	<script src="../build/<!-- @echo build_version -->/spine.js"></script>
     <!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
 	
@@ -107,31 +107,28 @@
 			<p>Morbi gravida magna magna. Aliquam erat volutpat. Sed enim sem, laoreet a nisi sit amet, mattis venenatis est. Curabitur imperdiet, nibh et sagittis feugiat, nunc purus faucibus lacus, sodales auctor ipsum lorem eu lectus. Integer aliquet placerat metus, ut rhoncus augue congue quis. Duis feugiat augue nec elementum faucibus. Nam tincidunt dui elementum magna pretium luctus. Aenean fringilla lectus nulla, sit amet mollis neque tristique eu. Pellentesque justo ligula, auctor quis viverra vitae, accumsan vel nisl. Sed bibendum vel arcu vel aliquam. Donec sodales iaculis lobortis. Praesent ac feugiat sem. Duis non commodo dui. Integer consectetur erat et dignissim porttitor. Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</p>
 
 		</article>
-        <footer>
-            <!-- 
-            This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-            cms to generate this block and any rich data.  
-            -->
-            <div itemscope itemtype="http://schema.org/Organization"> 
-                <span itemprop="department"  content="University Unit"></span> 
-                <span itemprop="name" content="Washington State University"></span> 
-                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <span itemprop="location" content="French Administration Building"></span>
-                    <span itemprop="streetAddress" content="PO Box 555555"></span>
-                    <span itemprop="addressLocality" content="Pullman, WA"></span>
-                    <span itemprop="addressRegion"></span>
-                    <span itemprop="postalCode" content="99163"></span>
-                </div>
-                <span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-                <span itemprop="telephone" content="(509) 335-3564"></span>
-                <span itemprop="email" content="your-contact-email@wsu.edu"></span>
-                <span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-                <span itemprop="url" content="http://your-unit.wsu.edu"></span>
-            </div>	
-
-      
-            
-        </footer>
+		<footer>
+			<!-- 
+			This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+			cms to generate this block and any rich data.  
+			-->
+			<div itemscope itemtype="http://schema.org/Organization"> 
+				<span itemprop="department"  content="University Unit"></span> 
+				<span itemprop="name" content="Washington State University"></span> 
+				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<span itemprop="location" content="French Administration Building"></span>
+					<span itemprop="streetAddress" content="PO Box 555555"></span>
+					<span itemprop="addressLocality" content="Pullman, WA"></span>
+					<span itemprop="addressRegion"></span>
+					<span itemprop="postalCode" content="99163"></span>
+				</div>
+				<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+				<span itemprop="telephone" content="(509) 335-3564"></span>
+				<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+				<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+				<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+			</div>	
+		</footer>
 	</div><!--/column-->
 
 	<div class="column two">
@@ -176,6 +173,33 @@
 	</ul>
 	
 	<!-- Tools generated by spine.js here -->
+	<!-- @if filledTabs == 'true' -->
+	<!-- some cms apps will by default will put there own search html out or the implamentor
+		 will have missed the point that it is not needed to put the tab content in directly.
+		 since this happens we will run tests on broken and missplaces html for the spine nodes. -->
+	<section id="wsu-search" class="tools closed" data-default="site-search">
+		<!-- an example of generated search form -->
+		<form id="search_mini_form" action="http://demo.magentocommerce.com/catalogsearch/result/" method="get">
+			<div class="form-search">
+				<label for="search">Search:</label>
+				<input name="q" class="input-text" id="search" type="text" maxlength="128" value="" />
+				<button title="Search" class="button" type="submit"><span><span>Search</span></span></button>
+				<div class="search-autocomplete" id="search_autocomplete" style="display: none;"></div>
+				<script type="text/javascript">
+				//<![CDATA[
+					//javascript would be here
+				//]]>
+				</script>
+			</div>
+		</form>
+		<div id="wsu-search-results" class="spine-results">
+			<div id="index-search-results" class="active"></div>
+		</div>
+	</section>
+
+	<!-- @endif -->
+	
+	
 	
 </section><!--/#wsu-actions-->
 
@@ -258,27 +282,27 @@
 </div><!--/jacket-->
 <!-- /WRAPPING -->
 
-    <!-- 
-    This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-    cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
-    or something that will work to let you display one thing to a user but another to the search engines.
-    -->
-    <div itemscope itemtype="http://schema.org/Organization"> 
-        <span itemprop="department"  content="University Unit"></span> 
-        <span itemprop="name" content="Washington State University"></span> 
-        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="location" content="French Administration Building"></span>
-            <span itemprop="streetAddress" content="PO Box 555555"></span>
-            <span itemprop="addressLocality" content="Pullman, WA"></span>
-            <span itemprop="addressRegion"></span>
-            <span itemprop="postalCode" content="99163"></span>
-        </div>
-        <span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-        <span itemprop="telephone" content="(509) 335-3564"></span>
-        <span itemprop="email" content="your-contact-email@wsu.edu"></span>
-        <span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-        <span itemprop="url" content="http://your-unit.wsu.edu"></span>
-    </div>
+	<!-- 
+	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
+	or something that will work to let you display one thing to a user but another to the search engines.
+	-->
+	<div itemscope itemtype="http://schema.org/Organization"> 
+		<span itemprop="department"  content="University Unit"></span> 
+		<span itemprop="name" content="Washington State University"></span> 
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="location" content="French Administration Building"></span>
+			<span itemprop="streetAddress" content="PO Box 555555"></span>
+			<span itemprop="addressLocality" content="Pullman, WA"></span>
+			<span itemprop="addressRegion"></span>
+			<span itemprop="postalCode" content="99163"></span>
+		</div>
+		<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+		<span itemprop="telephone" content="(509) 335-3564"></span>
+		<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+		<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+		<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+	</div>
 
 </body>
 </html>
