@@ -39,7 +39,7 @@
 				minLength: 2,
 				maxRows: 12,
 				getRelated:true,
-				tabTemplate: "<section id='wsu-search' class='spine-search tools closed' data-default='site-search'> \
+				tabTemplate: "<section id='wsu-search' class='spine-search tools closed'> \
 								<form id='default-search'> \
 									<input name='term' type='text' value='' placeholder='search'> \
 									<button>Submit</button> \
@@ -67,12 +67,15 @@
 			wsu_search = self._get_globals("wsu_search").refresh();
 			if (!wsu_search.length) {
 				tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
-				this.setup_tabs("search",tabhtml);
-				$("#wsu-search-tab button").on("click",function() {
-					self._get_globals("search_input").refresh().focus();
-				});
-				this.setup_search();
+			}else{
+				tabhtml = "<section id='wsu-search' class='spine-search tools closed'>"+wsu_search.html()+"</section>";
+				wsu_search.remove();
 			}
+			this.setup_tabs("search",tabhtml);
+			$("#wsu-search-tab button").on("click",function() {
+				self._get_globals("search_input").refresh().focus();
+			});
+			this.setup_search();
 		},
 
 		start_search:function(request,callback){
