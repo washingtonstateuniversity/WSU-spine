@@ -133,8 +133,8 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('dev', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html','preprocess:testUnit_filledTabs']);
-	grunt.registerTask('prod', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);	
+	grunt.registerTask('dev', ['jshint','env:dev', 'concat','preprocess:js','cssmin','uglify','copy','preprocess:html','preprocess:testUnit_filledTabs']);
+	grunt.registerTask('prod', ['jshint','env:prod', 'concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);	
 		
 		
 };

@@ -10,8 +10,13 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	<link href="../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
+<!-- @endif -->
+<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
 	<!-- Your custom stylesheets here -->
+<!-- @endif -->
 	
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
@@ -21,6 +26,7 @@
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<script type="text/javascript">
 		var spineoptions={
+<!-- @if NODE_ENV == 'PRODUCTION' -->
 			search:{
 				providers:{
 					local:{
@@ -59,9 +65,19 @@
 					verification:"XXXXXXXXXXXXXXXXXXXXX"
 				}
 			}
+<!-- @endif -->
 		};
 	</script>   
+	
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	<script src="../build/<!-- @echo build_version -->/spine.js"></script>
+<!-- @endif -->
+<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
+<!-- @endif -->
+	
+	
+	
     <!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
 	
 	<!-- COMPATIBILITY -->
@@ -196,7 +212,27 @@
 			<div id="index-search-results" class="active"></div>
 		</div>
 	</section>
-
+	<!-- 
+	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
+	or something that will work to let you display one thing to a user but another to the search engines.
+	-->
+	<div itemscope itemtype="http://schema.org/Organization"> 
+		<span itemprop="department"  content="University Unit"></span> 
+		<span itemprop="name" content="Washington State University"></span> 
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="location" content="French Administration Building"></span>
+			<span itemprop="streetAddress" content="PO Box 555555"></span>
+			<span itemprop="addressLocality" content="Pullman, WA"></span>
+			<span itemprop="addressRegion"></span>
+			<span itemprop="postalCode" content="99163"></span>
+		</div>
+		<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+		<span itemprop="telephone" content="(509) 335-3564"></span>
+		<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+		<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+		<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+	</div>
 	<!-- @endif -->
 	
 	
