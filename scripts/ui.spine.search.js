@@ -68,7 +68,7 @@
 			if (!wsu_search.length) {
 				tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
 				this.setup_tabs("search",tabhtml);
-				$("#wsu-search-tab button").on("click",function(e) {
+				$("#wsu-search-tab button").on("click",function() {
 					self._get_globals("search_input").refresh().focus();
 				});
 				this.setup_search();
