@@ -2,6 +2,18 @@ module.exports = function(grunt) {
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		env : {
+			options : {
+				/* Shared Options Hash */
+				//globalOption : 'foo'
+			},
+			dev: {
+				NODE_ENV : 'DEVELOPMENT'
+			},
+			prod : {
+				NODE_ENV : 'PRODUCTION'
+			}
+		},
 		concat: {
 			styles: {
 				src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
@@ -84,16 +96,25 @@ module.exports = function(grunt) {
 				inline: true,
 				context : {
 					DEBUG: true,
-                    build_version : '<%= pkg.build_version %>'
+					build_version : '<%= pkg.build_version %>'
 				}
 			},
 			js : {
 				src: 'build/<%= pkg.build_version %>/spine.js'
 			},
-            html : {
-                src : 'test/test.pre.html',
-                dest : 'test/test.html'
-            }
+			html : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/default.html'
+			},
+			testUnit_filledTabs : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/filledTabs.html',
+				options : {
+					context : {
+						filledTab : 'search',
+					}
+				}
+			},
 		}
 	});
 
@@ -106,5 +127,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	// Default task(s).
-	grunt.registerTask('default', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);
+	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('dev', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html','preprocess:testUnit_filledTabs']);
+	grunt.registerTask('prod', ['concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);	
+		
+		
 };
