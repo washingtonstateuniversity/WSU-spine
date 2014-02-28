@@ -96,7 +96,9 @@ module.exports = function(grunt) {
 				inline: true,
 				context : {
 					DEBUG: true,
-					build_version : '<%= pkg.build_version %>'
+					build_version : '<%= pkg.build_version %>',
+					MALFORMED : 'skip', // true or false is what is tested for
+					filledSearchTab : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
@@ -107,16 +109,33 @@ module.exports = function(grunt) {
 				dest : 'test/default.html',
 				options : {
 					context : {
-						filledTabs : 'false',
 					}
 				}
 			},
-			testUnit_filledTabs : {
+			tu_filledSearchTabs : {
 				src : 'test/preprocess/test.pre.html',
-				dest : 'test/filledTabs.html',
+				dest : 'test/filledSearchTabs.html',
 				options : {
 					context : {
-						filledTabs : 'true',
+						filledSearchTab : 'true'
+					}
+				}
+			},
+			tu_malformedContact : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/malformedContact.html',
+				options : {
+					context : {
+						MALFORMED : 'true'
+					}
+				}
+			},
+			tu_filledContact : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/filledContact.html',
+				options : {
+					context : {
+						MALFORMED : 'false'
 					}
 				}
 			},
@@ -134,8 +153,20 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('dev', ['jshint','env:dev', 'concat','preprocess:js','cssmin','uglify','copy','preprocess:html','preprocess:testUnit_filledTabs']);
 	grunt.registerTask('prod', ['jshint','env:prod', 'concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);	
+	
+	grunt.registerTask('dev', ['jshint',
+								'env:dev',
+								'concat',
+								'preprocess:js',
+								'cssmin',
+								'uglify',
+								'copy',
+								'preprocess:html',
+								'preprocess:tu_filledSearchTabs',
+								'preprocess:tu_malformedContact',
+								'preprocess:tu_filledContact'
+								]);
 		
 		
 };
