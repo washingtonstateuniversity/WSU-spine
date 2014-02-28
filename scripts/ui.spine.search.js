@@ -23,10 +23,12 @@
 					nodes: "#spine-navigation",
 					dataType: "html",
 					maxRows: 12,
+					urlSpaces:"%20",
 				},
 				atoz:{
 					name:"WSU A to Z index",
 					url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+					urlSpaces:"+",
 					dataType: "jsonp",
 					featureClass: "P",
 					style: "full",
@@ -39,6 +41,7 @@
 				minLength: 2,
 				maxRows: 12,
 				getRelated:true,
+				urlSpaces:"+",
 				tabTemplate: "<section id='wsu-search' class='spine-search tools closed'> \
 								<form id='default-search'> \
 									<input name='term' type='text' value='' placeholder='search'> \
