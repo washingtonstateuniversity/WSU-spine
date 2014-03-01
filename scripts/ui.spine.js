@@ -27,9 +27,23 @@
 		return this;
 	};
 	$.fn.refresh = function() {
-		var elems = $(this.selector);
+		var elems;
+		elems = $(this.selector);
 		this.splice(0, this.length);
-		this.push.apply( this, elems );
+		
+		try {
+			this.push.apply(this, elems);
+		}
+		catch(err) {
+			//this.push.call(this, elems);
+			//window.alert("----"+$(this.selector).html()+"----");
+			if($(this.selector).html()!==""){
+				return $(this.selector);
+			}else{
+				return $("<div>");
+			}
+		}
+		//this.push.apply( this, elems );
 		return this;
 	};
 	$.runTemplate = function(html, options) {
