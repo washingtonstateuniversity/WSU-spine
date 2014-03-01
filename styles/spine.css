@@ -659,8 +659,11 @@ address[role="contact"],
    }
 
 /* NAVIGATION -> Disclosure */
-html.js:not(.lt-ie9) #spine #spine-sitenav ul ul li {
+html.js #spine #spine-sitenav ul ul li {
 	display: none;
+	}
+html.js.lt-ie9 #spine #spine-sitenav ul ul li {
+	display: block;
 	}
 #spine #spine-sitenav ul ul li {
 	line-height: 1.3em;
