@@ -20,6 +20,7 @@
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
 	<!-- Your custom stylesheets here -->
 <!-- @endif -->
+
 	
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
@@ -27,6 +28,10 @@
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<!-- COMPATIBILITY -->
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+	
+	
 	<script type="text/javascript">
 		var spineoptions={
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
@@ -83,9 +88,7 @@
 	
     <!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
 	
-	<!-- COMPATIBILITY -->
-	<!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">IE7_PNG_SUFFIX=".png";</script><![endif]--> 
-	
+
 	<!-- DOCS -->
 	<link rel="author" href="https://plus.google.com/109412257237874861202?rel=author">
 	<link type="text/plain" rel="authors" href="http://repo.wsu.edu/spine/1/authors.txt">
