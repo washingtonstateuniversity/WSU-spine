@@ -40,15 +40,18 @@ II.5.0 Footer (of the Spine)
 	width: 198px;
 	height: 100%;
 	top: 0;
-	z-index: 99163;
-	}
-html.js #spine {
+	z-index: 99164;
+	width: 198px;
 	position: fixed;
+	height: 100%;
+	min-height: 100%;
+	}
+html.lt-ie9 #spine {
+	position: absolute;
 	}
 #spine #glue {
 	margin-top: 0px;
 	}
-
 #spine a {
 	color: #5e6a71;
 	}
@@ -233,7 +236,8 @@ html.no-svg #spine a#wsu-signature {
 #spine #wsu-actions {
 	padding: 0px;
 	}
-.no-js #spine #wsu-actions {
+.no-js #spine #wsu-actions,
+html.lt-ie9 #spine #wsu-actions {
 	display: none;
 	}
 #spine #wsu-actions section {
@@ -659,18 +663,15 @@ address[role="contact"],
    }
 
 /* NAVIGATION -> Disclosure */
-html.js #spine #spine-sitenav ul ul li {
+html.js:not(.lt-ie9) #spine #spine-sitenav ul ul li {
 	display: none;
-	}
-html.js.lt-ie9 #spine #spine-sitenav ul ul li {
-	display: block;
 	}
 #spine #spine-sitenav ul ul li {
 	line-height: 1.3em;
 	}
-#spine #spine-sitenav ul li.active > ul > li,
-#spine #spine-sitenav ul li.opened > ul > li {
-	display: block;
+html #spine #spine-sitenav ul li.active > ul > li,
+html #spine #spine-sitenav ul li.opened > ul > li {
+	display: block !important;
 	}
 #spine #wsu-actions section {
 	z-index: 100;
@@ -770,6 +771,9 @@ html.js.lt-ie9 #spine #spine-sitenav ul ul li {
 	bottom: 0px;
 	padding: 1.75em 0px .75em 0px;
 	width: 160px;
+	}
+html.lt-ie9 #spine footer {
+	position: relative;
 	}
 
 /* Social */
