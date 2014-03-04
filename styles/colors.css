@@ -8,7 +8,7 @@
 /* grayer */ .gray-er-back, .er-back, .white-back { background-color: white; } .gray-er-text, .er-text, .white-text { color: white; }
 /* light */ .gray-light-back, .light-back { background-color: #8d959a; } .gray-light-text, .light-text { color: #8d959a; }
 /* lighter */ .gray-lighter-back, .lighter-back { background-color: #b5babe; } .gray-lighter-text, .lighter-text { color: #b5babe; }
-/* lightly */ .gray-lightly-back, .lightly-back { background-color: #d7dad8; } .gray-lightly-text, .lightly-text { color: #d7dad8; }
+/* lightly */ .gray-lightly-back, .lightly-back { background-color: #d7dadb; } .gray-lightly-text, .lightly-text { color: #d7dad8; }
 /* lightest */ .gray-lightest-back, .lightest-back { background-color: #eff0f1; } .gray-lightest-text, .lightest-text, .white-text { color: white; }
 /* dark */ .gray-dark-back, .dark-back { background-color: #464e54; } .gray-dark-text, .dark-text { color: #464e54; }
 /* darker */ .gray-darker-back, .darker-back { background-color: #2a3033; } .gray-darker-text, .darker-text { color: #2a3033; }
