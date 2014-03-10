@@ -875,7 +875,7 @@ html.print #spine .print-button {
 	}
 #spine button#print-invoke:before,
 #spine button#print-cancel:before {
-	font-family: "Iconography";
+	font-family: "Spine-Icons";
 	font-size: 12px;
 	width: 17px;
 	text-align: left;
