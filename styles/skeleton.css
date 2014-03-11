@@ -115,8 +115,8 @@ article img[align="left"] {
 
 /* Fonts
 -------------------------------------------------------- */
-.sans { font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif; }
-.serif { font: 14px/22px "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
+.sans { font-family: "Lucida Grande","Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+.serif { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
 
 
 /* Layout
@@ -124,7 +124,7 @@ article img[align="left"] {
 
 body {
 	color: #5e6a71;
-	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Arial", sans-serif;
+	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #f9f9f9;
@@ -444,7 +444,9 @@ main hr.short {
 	
 .max-width {
 	max-width: 100%;
-	height: auto;
+	height: auto !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
 	box-sizing: border-box;
 	}
 @media \0screen {
