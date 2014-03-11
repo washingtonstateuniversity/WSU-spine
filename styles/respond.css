@@ -102,9 +102,13 @@
 	min-height: 100%;
 	left: -298px;
 	top: 0;
-	overflow: visible;
+	xxoverflow: visible;
 	xxposition: fixed;
 	z-index: 99164;
+	}
+#binder:not(.fluid) #spine.unshelved {
+	xxposition: fixed;
+	xxoverflow-y: auto;
 	}
 #binder:not(.fluid) #glue,
 #binder:not(.fluid) #spine #glue,
@@ -170,9 +174,7 @@
 #spine #wsu-search button {
 	right: 10px;
 	}
-	
 
-	
 /* Signature */
 #binder:not(.fluid) #spine a#wsu-signature {
 	background-image: url("http://repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg");
@@ -208,6 +210,12 @@ html.lt-ie9 #spine a#wsu-signature {
 	screen
 	and ( max-width : 791px )
 	and ( orientation: portrait )
+	and ( max-device-width: 420px ),
+	
+	screen
+	and ( max-width : 791px )
+	and ( orientation: landscape )
+	and ( max-device-width: 480px )
 	
 	{
 
@@ -250,7 +258,6 @@ html.lt-ie9 #spine a#wsu-signature {
 	top: 0;
 	overflow: visible;
 	position: fixed;
-	position: absolute;
 	z-index: 99164;
 	}
 #binder #glue {
@@ -333,9 +340,6 @@ html.lt-ie9 #spine a#wsu-signature {
 .vancouver-signature #binder.fluid #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/marks/sig-h-vancouver.svg"); }
 
 /* Grid */
-.row > .column {
-	xxfloat: none;
-	}
 
 /* Hybrid Shift */
 .hybrid .row.halves .column { width: 50%; }
@@ -600,11 +604,16 @@ xx.fluid .row.thirds .halves .column {
 	
 @media 
 	only screen
-	and (max-width: 420px) /* 792px - 198px = 594px */
+	and (max-width: 420px),
+	
+	screen
+	and ( max-width: 360px )
+	and ( max-device-width: 480px )
+	and ( orientation: landscape )
 	{
 	
-#binder:not(.fluid) #spine a#wsu-signature,
 #binder.fluid #spine a#wsu-signature,
+#binder:not(.fluid) #spine a#wsu-signature
 .extension-signature #binder #spine a#wsu-signature,
 .globalcampus-signature  #binder #spine a#wsu-signature,
 .spokane-signature #binder #spine a#wsu-signature,
@@ -617,19 +626,25 @@ xx.fluid .row.thirds .halves .column {
 	
 @media 
 	only screen
-	and (max-width: 360px) /* 792px - 198px = 594px */
+	and (max-width: 360px),
+	
+	screen
+	and ( max-width: 360px )
+	and ( max-device-width: 480px )
+	and ( orientation: portrait )
 	{
 	
-#binder:not(.fluid) #spine a#wsu-signature,
-#binder.fluid #spine a#wsu-signature {
-	background-size: 270px auto;
+#binder.fluid #spine a#wsu-signature,
+#binder:not(.fluid) #spine a#wsu-signature {
+	background-size: 260px auto;
+	background-position: 65% 60%;
 	}
 .extension-signature #binder #spine a#wsu-signature,
 .globalcampus-signature  #binder #spine a#wsu-signature,
 .spokane-signature #binder #spine a#wsu-signature,
 .tricities-signature #binder #spine a#wsu-signature,
 .vancouver-signature #binder #spine a#wsu-signature {
-	background-size: 270px auto;
+	background-size: 260px auto;
 	background-position: center 60%;
 	}
 	
