@@ -43,9 +43,7 @@ II.5.0 Footer (of the Spine)
 	z-index: 99164;
 	width: 198px;
 	position: fixed;
-	xheight: 100%;
 	bottom: 0;
-	xmin-height: 100%;
 	}
 #spine,
 #spine * {
