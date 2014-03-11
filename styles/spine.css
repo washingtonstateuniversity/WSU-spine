@@ -157,7 +157,6 @@ footer.looseleaf #wsu-global-links li {
 #spine header {
 	z-index: 99631;
 	background: white;
-	
 	}
 x#spine #glue {
 	z-index: 99631;
@@ -169,7 +168,7 @@ x#spine #glue {
 	background-size: 150px auto;
 	height: 155px;
 	display: block;
-	text-indent: 100%;
+	text-indent: 120%;
 	overflow: hidden;
 	white-space: nowrap;
 	}
@@ -209,7 +208,7 @@ html.no-svg #spine a#wsu-signature {
 	background-color: transparent;
 	border: none;
 	border-radius: 0px;
-	text-indent: 100%;
+	text-indent: 120%;
 	white-space: nowrap;
 	overflow: hidden;
 	}
