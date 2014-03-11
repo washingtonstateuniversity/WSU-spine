@@ -115,16 +115,19 @@ article img[align="left"] {
 
 /* Fonts
 -------------------------------------------------------- */
-.sans { font-family: "Lucida Grande","Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+.sans { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 .serif { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
-
+/* IE9, IE10 */
+@media screen and (min-width:0\0) {
+    em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+}
 
 /* Layout
 -------------------------------------------------------- */
 
 body {
 	color: #5e6a71;
-	font: 14px/22px "Lucida Grande","Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #f9f9f9;
