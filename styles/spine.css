@@ -43,8 +43,15 @@ II.5.0 Footer (of the Spine)
 	z-index: 99164;
 	width: 198px;
 	position: fixed;
-	height: 100%;
-	min-height: 100%;
+	xheight: 100%;
+	bottom: 0;
+	xmin-height: 100%;
+	}
+#spine,
+#spine * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
 	}
 html.lt-ie9 #spine {
 	position: absolute;
@@ -70,14 +77,21 @@ html.lt-ie9 #spine {
 #spine.cracked {
 	position: absolute;
 	height: auto;
-	width: 198px;
-	display: block;
 	}
 #spine.cracked.scrolled #glue {
-	top: 0px;
 	bottom: 0;
+	top: auto;
+	position: fixed;
 	width: 198px;
 	}
+/*#spine.cracked.scrolled #glue {
+	height: auto;
+	}
+#spine.cracked.scrolled #spine-navigation {
+	height: 100%;
+	overflow-y: scroll;
+	}*/
+
 #spine.cracked footer {
 	position: relative !important;
 	padding: 5px 0px !important;
