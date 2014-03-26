@@ -24,8 +24,8 @@ II.5.0 Footer (of the Spine)
 	font-family: "Spine-Icons";
     src: url('http://repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.eot');
     src: url('http://repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.eot?#iefix') format("embedded-opentype"),
-         url('http://nbj.me/spine/1/icons/wsu-spine-icons-regular.ttf') format("font/truetype"),
-         url('http://nbj.me/spine/1/icons/wsu-spine-icons-regular.woff') format("woff");
+         url('http://repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.ttf') format("font/truetype"),
+         url('http://repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.woff') format("woff");
     font-weight: normal;
     font-style: normal;
 	}
