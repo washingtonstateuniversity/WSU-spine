@@ -130,6 +130,10 @@
 #binder:not(.fluid) #spine nav ul li {
 	line-height: 1.5em;
 	}
+#binder:not(.fluid) #spine nav ul li.parent > a:after,
+#binder:not(.fluid) #spine nav ul li.parent.opened > a:after {
+	display: block;
+	}
 	
 /* 1.3 Header */
 #binder:not(.fluid) #spine #glue > header {
@@ -277,6 +281,10 @@ html.lt-ie9 #spine a#wsu-signature {
 	}
 #binder #spine nav ul li {
 	line-height: 1.5em;
+	}
+#binder.fluid #spine nav ul li.parent > a:after,
+#binder.fluid #spine nav ul li.parent.opened > a:after {
+	display: block;
 	}
 	
 /* Header */
