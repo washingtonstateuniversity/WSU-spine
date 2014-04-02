@@ -184,6 +184,14 @@ section {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
+.recto.verso .rebound {
+	margin-left: auto;
+	margin-right: auto;
+	}
+.size-gt-large .recto.verso.center {
+	padding-left: 99px;
+	padding-right: 99px;
+	}
 section > .rebound,
 section.single .rebound { width: 792px; }
 section.sidebar .rebound {
