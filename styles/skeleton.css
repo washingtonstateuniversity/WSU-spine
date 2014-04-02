@@ -188,7 +188,7 @@ section {
 	margin-left: auto;
 	margin-right: auto;
 	}
-.size-gt-large .recto.verso {
+xx.recto.verso {
 	padding-left: 99px;
 	padding-right: 99px;
 	}
@@ -519,7 +519,9 @@ main:after,
 #binder:before,
 #binder:after,
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.rebound:before,
+.rebound:after {
   content: '\0020';
   display: block;
   overflow: hidden;
@@ -529,10 +531,12 @@ main:after,
 #binder:after,
 main:after,
 section.row:after,
-.clearfix:after {
+.clearfix:after,
+.rebound:after {
   clear: both; }
 main,
 section.row,
+.rebound,
 .clearfix {
   zoom: 1; }
   
