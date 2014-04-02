@@ -192,9 +192,8 @@ xx.recto.verso {
 	padding-left: 99px;
 	padding-right: 99px;
 	}
-section > .rebound,
-section.single .rebound { width: 792px; }
-section.sidebar .rebound {
+.rebound, { width: 792px; }
+.sidebar .rebound {
 	width: 594px;
 	}
 .spineless .rebound,
