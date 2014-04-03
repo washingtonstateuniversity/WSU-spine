@@ -225,6 +225,7 @@ html.lt-ie9 #spine a#wsu-signature {
 
 #binder,
 .rebound,
+.single
 .spineless .rebound,
 .fifteenths .rebound,
 .fifths .rebound {
@@ -830,15 +831,15 @@ html.print #binder #spine a#wsu-signature {
 html.print #spine #glue header ~ * {
 	display: none;
 	}
-html.print #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
-html.print #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
-html.print #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.lightest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
+html.print #spine.lighter a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
+html.print #spine.light a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
 html.print #spine.gray a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype-darkerchevron.svg'); }
-html.print #spine.dark a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
-html.print #spine.darker a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
-html.print #spine.darkest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
-html.print #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
-html.print #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/sig-horizontal-whitelogotype.svg'); }
+html.print #spine.dark a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
+html.print #spine.darker a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
+html.print #spine.darkest a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
+html.print #spine.black a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
+html.print #spine.crimson a#wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/signature-horizontal-white.svg'); }
 
 html.print .extension-signature #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/marks/sig-h-extension.svg"); }
 html.print .globalcampus-signature #spine a#wsu-signature { background-image: url("http://repo.wsu.edu/spine/1/marks/sig-h-globalcampus.svg"); }
