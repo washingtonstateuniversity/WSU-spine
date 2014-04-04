@@ -170,8 +170,9 @@ footer.looseleaf #wsu-global-links li {
 	z-index: 99631;
 	background: white;
 	}
-x#spine #glue {
-	z-index: 99631;
+#spine #glue {
+	xxz-index: 99631;
+	background: white;
 	}
 #spine a#wsu-signature {
 	background-repeat: no-repeat;
@@ -927,7 +928,7 @@ main {
 	}
 
 /* LIGHTEST #e6e8e9, rgb(230,232,233) */
-#spine.lightest, #spine.lightest #glue > header,#spine.lightest.bleed:before { background: #e6e8e9; }
+#spine.lightest, #spine.lightest #glue, #spine.lightest #glue > header,#spine.lightest.bleed:before { background: #e6e8e9; }
 #spine.lightest #wsu-actions li.opened button,
 #spine.lightest #wsu-actions li button,
 #spine.lightest #wsu-actions li.opened button:hover,
@@ -961,7 +962,7 @@ main {
 	background: white; }
 
 /* LIGHTER #B5BABE, rgb(186,191,194), rgba(186,191,194,1) */
-#spine.lighter, #spine.lighter #glue > header, #spine.lighter.bleed:before { background: #B5BABE; }
+#spine.lighter, #spine.lighter #glue, #spine.lighter #glue > header, #spine.lighter.bleed:before { background: #B5BABE; }
 #spine.lighter #wsu-signature {
 	background-image: url('http://spine.nbj.me/spine/1/marks/wsu-signature-vertical-lightest.svg') }
 #spine.lighter:not(.homeless) #spine-sitenav > ul > li:first-child a {
@@ -1001,7 +1002,7 @@ main {
 	color: #981e32; }
 
 /* LIGHT #8b9399, rgb(139,147,153) */
-#spine.light, #spine.light #glue > header, #spine.light.bleed:before { background: #8D959A; }
+#spine.light, #spine.light #glue, #spine.light #glue > header, #spine.light.bleed:before { background: #8D959A; }
 #spine.light #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg') }
 #spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1039,7 +1040,7 @@ main {
 	color: white; }
 
 /* GRAY #5e6a71, rgb(94,106,113) */
-#spine.gray, #spine.gray #glue > header, #spine.gray.bleed:before { background: #5e6a71; }
+#spine.gray, #spine.gray #glue, #spine.gray #glue > header, #spine.gray.bleed:before { background: #5e6a71; }
 #spine.gray #wsu-signature { background-image: url('http://spine.nbj.me/spine/1/marks/wsu-signature-vertical-lightest.svg'); }
 #spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1080,7 +1081,7 @@ main {
 	color: black; }
 
 /* GRAY-DARK #383D42, rgb(75,85,90) */
-#spine.dark, #spine.dark #glue > header, #spine.dark.bleed:before { background: #383D42; }
+#spine.dark, #spine.dark #glue, #spine.dark #glue > header, #spine.dark.bleed:before { background: #383D42; }
 #spine.dark #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg'); }
 #spine.dark:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1118,7 +1119,7 @@ main {
 	color: white; }
 
 /* GRAY-DARKER #384044 #424a4f #212426, rgb(56,64,68) */
-#spine.darker, #spine.darker #glue > header, #spine.darker.bleed:before { background: #212426; }
+#spine.darker, #spine.darker #glue, #spine.darker #glue > header, #spine.darker.bleed:before { background: #212426; }
 #spine.darker #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg'); }
 #spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
@@ -1154,7 +1155,7 @@ main {
 	color: white; }
 
 /* GRAY-DARKEST #000 */
-#spine.darkest, #spine.darkest #glue > header, #spine.darkest.bleed:before { background: black; }
+#spine.darkest, #spine.darkest #glue, #spine.darkest #glue > header, #spine.darkest.bleed:before { background: black; }
 #spine.darkest #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg'); }
 #spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lighter.svg') }
@@ -1191,7 +1192,7 @@ main {
 	color: #981e32; }
 	
 /* CRIMSON #981e32 */
-#spine.crimson, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed:before { background-color: #981e32; }
+#spine.crimson, #spine.crimson #glue, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed:before { background-color: #981e32; }
 #spine.crimson #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical-white.svg'); }
 #spine.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a {
 	color: #b6bcbf;
