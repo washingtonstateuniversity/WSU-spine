@@ -118,6 +118,7 @@ module.exports = function(grunt) {
 					doubledContact : 'skip',
 					fluidGrid : 'skip',
 					hybridGrid: 'skip',
+					fixedGrid: 'skip',
 				}
 			},
 			js : {
@@ -221,7 +222,16 @@ module.exports = function(grunt) {
 						hybridGrid : 'true'
 					}
 				}
-			},				
+			},		
+			tu_fixedGrid : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/fixedGrid.html',
+				options : {
+					context : {
+						fixedGrid : 'true'
+					}
+				}
+			},			
 		}
 	});
 
@@ -259,6 +269,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_doubledContact',
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
+								'preprocess:tu_fixedGrid',
 								]);
 		
 		
