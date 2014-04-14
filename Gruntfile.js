@@ -159,7 +159,16 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			
+			tu_overlyLinked_n_overlyLong : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/overlyLinked_n_overlyLong.html',
+				options : {
+					context : {
+						manyLinks : 'true',
+						showLong : 'true'
+					}
+				}
+			},			
 			
 			
 		}
@@ -190,7 +199,8 @@ module.exports = function(grunt) {
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
 								'preprocess:tu_overlyLong',
-								'preprocess:tu_overlyLinked'
+								'preprocess:tu_overlyLinked',
+								'preprocess:tu_overlyLinked_n_overlyLong'
 								]);
 		
 		
