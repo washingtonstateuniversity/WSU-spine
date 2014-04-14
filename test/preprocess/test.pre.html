@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]><html class="no-js no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]><html class="no-js no-svg lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
 
 <head>
 
@@ -21,15 +21,12 @@
 	<!-- Your custom stylesheets here -->
 <!-- @endif -->
 
-	
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
 	<!-- SCRIPTS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	<!-- COMPATIBILITY -->
-	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	
 	
 	<script type="text/javascript">
@@ -84,15 +81,15 @@
 	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
 <!-- @endif -->
 	
+	<!-- COMPATIBILITY -->
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
 	
-	
-    <!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
-	
-
 	<!-- DOCS -->
-	<link rel="author" href="https://plus.google.com/109412257237874861202?rel=author">
-	<link type="text/plain" rel="authors" href="http://repo.wsu.edu/spine/1/authors.txt">
-	<link type="text/html" rel="docs" href="http://brand.wsu.edu">
+	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
+	<link type="text/html" rel="help" href="http://brand.wsu.edu">
+	
+	<!-- ANALYTICS -->
 
 </head>
 
@@ -285,13 +282,13 @@
 				</ul>
 			</li>
 		</ul>
-		<li>
-			<a href="link">Another first order link</a>
-			<ul>
-				<li><a href="link">A subpage link</a></li>
-				<li><a href="link">Table of Context</a></li>
-			</ul>
-		</li>
+	</li>
+	<li>
+		<a href="link">Another first order link</a>
+		<ul>
+			<li><a href="link">A subpage link</a></li>
+			<li><a href="link">Table of Context</a></li>
+		</ul>
 	</li>
 	<li><a href="link">Short links</a></li>
 	<li><a href="link">Are often best</a></li>
