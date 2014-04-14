@@ -100,6 +100,7 @@ module.exports = function(grunt) {
 					MALFORMED : 'skip', // true or false is what is tested for
 					filledSearchTab : 'skip', // true or false is what is tested for
 					showLong : 'skip', // true or false is what is tested for
+					manyLinks : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
@@ -149,6 +150,18 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+			tu_overlyLinked : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/overlyLinked.html',
+				options : {
+					context : {
+						manyLinks : 'true'
+					}
+				}
+			},
+			
+			
+			
 		}
 	});
 
@@ -176,7 +189,8 @@ module.exports = function(grunt) {
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
-								'preprocess:tu_overlyLong'
+								'preprocess:tu_overlyLong',
+								'preprocess:tu_overlyLinked'
 								]);
 		
 		
