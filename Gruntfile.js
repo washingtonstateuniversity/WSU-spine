@@ -101,6 +101,7 @@ module.exports = function(grunt) {
 					filledSearchTab : 'skip', // true or false is what is tested for
 					showLong : 'skip', // true or false is what is tested for
 					manyLinks : 'skip', // true or false is what is tested for
+					cropped : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
@@ -169,7 +170,15 @@ module.exports = function(grunt) {
 					}
 				}
 			},			
-			
+			tu_cropped : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/cropped.html',
+				options : {
+					context : {
+						cropped : 'true'
+					}
+				}
+			},				
 			
 		}
 	});
@@ -200,7 +209,8 @@ module.exports = function(grunt) {
 								'preprocess:tu_filledContact',
 								'preprocess:tu_overlyLong',
 								'preprocess:tu_overlyLinked',
-								'preprocess:tu_overlyLinked_n_overlyLong'
+								'preprocess:tu_overlyLinked_n_overlyLong',
+								'preprocess:tu_cropped'
 								]);
 		
 		
