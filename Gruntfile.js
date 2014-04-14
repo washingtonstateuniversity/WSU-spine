@@ -115,6 +115,7 @@ module.exports = function(grunt) {
 					showLong : 'skip', // true or false is what is tested for
 					manyLinks : 'skip', // true or false is what is tested for
 					cropped : 'skip', // true or false is what is tested for
+					doubledContact : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
@@ -191,7 +192,16 @@ module.exports = function(grunt) {
 						cropped : 'true'
 					}
 				}
-			},				
+			},		
+			tu_doubledContact : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/doubledContact.html',
+				options : {
+					context : {
+						doubledContact : 'true'
+					}
+				}
+			},			
 			
 		}
 	});

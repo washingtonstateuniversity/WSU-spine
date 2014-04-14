@@ -308,13 +308,13 @@
 <!-- /WRAPPING -->
 
 
-
+<!-- @if doubledContact='true' -->
 	<!-- 
 	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
 	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
 	or something that will work to let you display one thing to a user but another to the search engines.
 	-->
 	@@include('blocks/normal_contact_block.html', {})
-
+<!-- @endif -->
 </body>
 </html>
