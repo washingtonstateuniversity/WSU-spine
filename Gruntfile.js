@@ -111,11 +111,14 @@ module.exports = function(grunt) {
 					DEBUG: true,
 					build_version : '<%= pkg.build_version %>',
 					MALFORMED : 'skip', // true or false is what is tested for
-					filledSearchTab : 'skip', // true or false is what is tested for
-					showLong : 'skip', // true or false is what is tested for
-					manyLinks : 'skip', // true or false is what is tested for
-					cropped : 'skip', // true or false is what is tested for
-					doubledContact : 'skip', // true or false is what is tested for
+					filledSearchTab : 'skip',
+					showLong : 'skip',
+					manyLinks : 'skip',
+					cropped : 'skip',
+					doubledContact : 'skip',
+					fluidGrid : 'skip',
+					hybridGrid: 'skip',
+					fixedGrid: 'skip',
 				}
 			},
 			js : {
@@ -202,7 +205,33 @@ module.exports = function(grunt) {
 					}
 				}
 			},			
-			
+			tu_fluidGrid : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/fluidGrid.html',
+				options : {
+					context : {
+						fluidGrid : 'true'
+					}
+				}
+			},		
+			tu_hybridGrid : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/hybridGrid.html',
+				options : {
+					context : {
+						hybridGrid : 'true'
+					}
+				}
+			},		
+			tu_fixedGrid : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/fixedGrid.html',
+				options : {
+					context : {
+						fixedGrid : 'true'
+					}
+				}
+			},			
 		}
 	});
 
@@ -236,7 +265,11 @@ module.exports = function(grunt) {
 								'preprocess:tu_overlyLong',
 								'preprocess:tu_overlyLinked',
 								'preprocess:tu_overlyLinked_n_overlyLong',
-								'preprocess:tu_cropped'
+								'preprocess:tu_cropped',
+								'preprocess:tu_doubledContact',
+								'preprocess:tu_fluidGrid',
+								'preprocess:tu_hybridGrid',
+								'preprocess:tu_fixedGrid',
 								]);
 		
 		
