@@ -117,6 +117,7 @@ module.exports = function(grunt) {
 					cropped : 'skip',
 					doubledContact : 'skip',
 					fluidGrid : 'skip',
+					hybridGrid: 'skip',
 				}
 			},
 			js : {
@@ -212,7 +213,15 @@ module.exports = function(grunt) {
 					}
 				}
 			},		
-			
+			tu_hybridGrid : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/hybridGrid.html',
+				options : {
+					context : {
+						hybridGrid : 'true'
+					}
+				}
+			},				
 		}
 	});
 
@@ -248,7 +257,8 @@ module.exports = function(grunt) {
 								'preprocess:tu_overlyLinked_n_overlyLong',
 								'preprocess:tu_cropped',
 								'preprocess:tu_doubledContact',
-								'preprocess:tu_fluidGrid'
+								'preprocess:tu_fluidGrid',
+								'preprocess:tu_hybridGrid',
 								]);
 		
 		
