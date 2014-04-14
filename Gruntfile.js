@@ -99,6 +99,9 @@ module.exports = function(grunt) {
 					build_version : '<%= pkg.build_version %>',
 					MALFORMED : 'skip', // true or false is what is tested for
 					filledSearchTab : 'skip', // true or false is what is tested for
+					showLong : 'skip', // true or false is what is tested for
+					manyLinks : 'skip', // true or false is what is tested for
+					cropped : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
@@ -139,6 +142,44 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+			tu_overlyLong : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/overlyLong.html',
+				options : {
+					context : {
+						showLong : 'true'
+					}
+				}
+			},
+			tu_overlyLinked : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/overlyLinked.html',
+				options : {
+					context : {
+						manyLinks : 'true'
+					}
+				}
+			},
+			tu_overlyLinked_n_overlyLong : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/overlyLinked_n_overlyLong.html',
+				options : {
+					context : {
+						manyLinks : 'true',
+						showLong : 'true'
+					}
+				}
+			},			
+			tu_cropped : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/cropped.html',
+				options : {
+					context : {
+						cropped : 'true'
+					}
+				}
+			},				
+			
 		}
 	});
 
@@ -165,7 +206,11 @@ module.exports = function(grunt) {
 								'preprocess:html',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
-								'preprocess:tu_filledContact'
+								'preprocess:tu_filledContact',
+								'preprocess:tu_overlyLong',
+								'preprocess:tu_overlyLinked',
+								'preprocess:tu_overlyLinked_n_overlyLong',
+								'preprocess:tu_cropped'
 								]);
 		
 		
