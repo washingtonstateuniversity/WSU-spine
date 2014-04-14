@@ -3,4 +3,4 @@ node_modules
 /build
 /test
 !/test/preprocess
-!/test/preprocess/**/*
+!/test/preprocess/blocks
