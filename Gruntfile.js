@@ -99,6 +99,7 @@ module.exports = function(grunt) {
 					build_version : '<%= pkg.build_version %>',
 					MALFORMED : 'skip', // true or false is what is tested for
 					filledSearchTab : 'skip', // true or false is what is tested for
+					showLong : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
@@ -139,6 +140,15 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+			tu_overlyLong : {
+				src : 'test/preprocess/test.pre.html',
+				dest : 'test/overlyLong.html',
+				options : {
+					context : {
+						showLong : 'true'
+					}
+				}
+			},
 		}
 	});
 
@@ -165,7 +175,8 @@ module.exports = function(grunt) {
 								'preprocess:html',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
-								'preprocess:tu_filledContact'
+								'preprocess:tu_filledContact',
+								'preprocess:tu_overlyLong'
 								]);
 		
 		
