@@ -140,22 +140,7 @@
 			This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
 			cms to generate this block and any rich data.  
 			-->
-			<div itemscope itemtype="http://schema.org/Organization"> 
-				<span itemprop="department"  content="University Unit"></span> 
-				<span itemprop="name" content="Washington State University"></span> 
-				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span itemprop="location" content="French Administration Building"></span>
-					<span itemprop="streetAddress" content="PO Box 555555"></span>
-					<span itemprop="addressLocality" content="Pullman, WA"></span>
-					<span itemprop="addressRegion"></span>
-					<span itemprop="postalCode" content="99163"></span>
-				</div>
-				<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-				<span itemprop="telephone" content="(509) 335-3564"></span>
-				<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-				<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-				<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-			</div>	
+			@@include('blocks/normal_contact_block.html', {})
 		</footer>
 	</div><!--/column-->
 
@@ -233,22 +218,7 @@
 		<!-- @if MALFORMED='false' -->
 			<!-- NOTE: a normal working contact tab, just could have been better placed 
 				 then in the spine directly -->
-			<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
-				<span itemprop="department"  content="University Unit"></span> 
-				<span itemprop="name" content="Washington State University"></span> 
-				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span itemprop="location" content="French Administration Building"></span>
-					<span itemprop="streetAddress" content="PO Box 555555"></span>
-					<span itemprop="addressLocality" content="Pullman, WA"></span>
-					<span itemprop="addressRegion"></span>
-					<span itemprop="postalCode" content="99163"></span>
-				</div>
-				<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-				<span itemprop="telephone" content="(509) 335-3564"></span>
-				<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-				<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-				<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-			</div>
+			@@include('blocks/normal_contact_block.html', {})
 		<!-- @endif -->
 
 	
