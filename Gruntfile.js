@@ -91,6 +91,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		includereplace: {
+			dist: {
+				options: {
+					globals: {
+						var1: 'one',
+						var2: 'two',
+						var3: 'three'
+					},
+				},
+				src: 'test/preprocess/test.pre.html',
+				dest: 'test/preprocess/test.cat.pre.html'
+			}
+		},
 		preprocess : {
 			options: {
 				inline: true,
@@ -102,13 +115,14 @@ module.exports = function(grunt) {
 					showLong : 'skip', // true or false is what is tested for
 					manyLinks : 'skip', // true or false is what is tested for
 					cropped : 'skip', // true or false is what is tested for
+					doubledContact : 'skip', // true or false is what is tested for
 				}
 			},
 			js : {
 				src: 'build/<%= pkg.build_version %>/spine.js'
 			},
 			html : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/default.html',
 				options : {
 					context : {
@@ -116,7 +130,7 @@ module.exports = function(grunt) {
 				}
 			},
 			tu_filledSearchTabs : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/filledSearchTabs.html',
 				options : {
 					context : {
@@ -125,7 +139,7 @@ module.exports = function(grunt) {
 				}
 			},
 			tu_malformedContact : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/malformedContact.html',
 				options : {
 					context : {
@@ -134,7 +148,7 @@ module.exports = function(grunt) {
 				}
 			},
 			tu_filledContact : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/filledContact.html',
 				options : {
 					context : {
@@ -143,7 +157,7 @@ module.exports = function(grunt) {
 				}
 			},
 			tu_overlyLong : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/overlyLong.html',
 				options : {
 					context : {
@@ -152,7 +166,7 @@ module.exports = function(grunt) {
 				}
 			},
 			tu_overlyLinked : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/overlyLinked.html',
 				options : {
 					context : {
@@ -161,7 +175,7 @@ module.exports = function(grunt) {
 				}
 			},
 			tu_overlyLinked_n_overlyLong : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/overlyLinked_n_overlyLong.html',
 				options : {
 					context : {
@@ -171,20 +185,31 @@ module.exports = function(grunt) {
 				}
 			},			
 			tu_cropped : {
-				src : 'test/preprocess/test.pre.html',
+				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/cropped.html',
 				options : {
 					context : {
 						cropped : 'true'
 					}
 				}
-			},				
+			},		
+			tu_doubledContact : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/doubledContact.html',
+				options : {
+					context : {
+						doubledContact : 'true'
+					}
+				}
+			},			
 			
 		}
 	});
 
 	// Load the plugin that provides the "uglify" task.
 	grunt.loadNpmTasks('grunt-env');
+	grunt.loadNpmTasks('grunt-include-replace');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -194,7 +219,7 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('prod', ['env:prod', 'concat','preprocess:js','cssmin','uglify','copy','preprocess:html']);	
+	grunt.registerTask('prod', ['env:prod', 'concat','preprocess:js','cssmin','uglify','copy','includereplace','preprocess:html']);	
 	
 	grunt.registerTask('dev', ['jshint',
 								'env:dev',
@@ -203,6 +228,7 @@ module.exports = function(grunt) {
 								'cssmin',
 								'uglify',
 								'copy',
+								'includereplace',
 								'preprocess:html',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
