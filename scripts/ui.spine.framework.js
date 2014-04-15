@@ -40,8 +40,9 @@
 		},
 		framework_globals: {
 			spine: $("#spine"),
+			glue: $("#glue"),
 			main: $("main"),
-			wsu_actions:$("#wsu-actions")
+			wsu_actions:$("#wsu-actions"),
 		},
 		framework_create: function(){
 			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width;
@@ -166,18 +167,72 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,main;
+			var self,spine,glue,main,pos_scroll,scroll_top,scroll_diff,windowHeight,positionLock;
+			
+			windowHeight=$(window).height();
+			scroll_diff=0;
+			positionLock=0;
+			scroll_top=0;
+			
+			console.log("starting positionLock::" + positionLock);
+			
 			self=this;//hold to preserve scope
 			spine = this._get_globals("spine").refresh();
+			glue = this._get_globals("glue").refresh();
 			main = this._get_globals("main").refresh();
 			// Fixed/Sticky Horizontal Header
 			$(document).scroll(function() {
-				var top = $(document).scrollTop();
+				var top,spineHeight,heightDif;
+				console.log("-------------------------------------#//");
+				
+				top = $(document).scrollTop();
+				
+				
+				scroll_diff = scroll_top-top;
+				pos_scroll = scroll_diff>0?false:true;
+				console.log("scroll_top::"+scroll_top);
+				scroll_top = top;
+				
+				spineHeight = glue.height();
+				heightDif= spineHeight - windowHeight;
+				
+				
+				console.log("top::"+top);
+				
+				console.log("scroll_diff::"+scroll_diff);
+				console.log("heightDif::"+heightDif);
+				console.log("positionLock::" + positionLock);
+				
+				if(pos_scroll){
+					console.log("moving DOWN the page");
+					if( positionLock <= -(heightDif) ){
+						console.log("should be locked to the bottom");
+						positionLock=-(heightDif);
+					}else{ //moving and locked
+						positionLock = positionLock+scroll_diff;
+						console.log("not locked to the bottom yet");
+					}
+				}else{
+					console.log("moving UP the page");
+					if( positionLock >= 0 ){ //
+						console.log("should be locked to the top");
+						positionLock=0;
+					}else{
+						console.log("not locked to the top yet");
+						positionLock = positionLock+scroll_diff;
+					}
+				}
+				
+				console.log("positionLock"+positionLock);
+				glue.css({"position":"fixed","top":positionLock+"px"});
+				
+				
+				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
 				} else {
 					spine.removeClass("scanned");
-				}
+				}*/
 			});
 
 			$("#glue > header").append("<button id='shelve'></button>");
@@ -221,7 +276,7 @@
 			}); */
 
 			// Moving the Spine for Short Windows
-			$(document).scroll(function() {
+			/*$(document).scroll(function() {
 				var windowHeight, top, spineHeight, crack;
 				windowHeight = window.innerHeight;
 				top = $(document).scrollTop();
@@ -232,7 +287,7 @@
 				} else {
 					$("#spine.cracked").removeClass("scrolled");
 				}
-			});
+			});*/
 
 			// Moving the Spine for Short Windows
 			/*$(document).scroll(function() {
