@@ -183,20 +183,22 @@
 			// Fixed/Sticky Horizontal Header
 			$(document).scroll(function() {
 				var top,spineHeight,heightDif;
-
-				top = $(document).scrollTop();
-				scroll_diff = scroll_top-top;
-				scroll_top = top;
-				
 				spineHeight = glue.height();
-				heightDif= spineHeight - windowHeight;
+				
+				if( spineHeight>windowHeight ){
+					top = $(document).scrollTop();
+					scroll_diff = scroll_top-top;
+					scroll_top = top;
 
-				if( (scroll_diff>0?false:true) ){//down
-					positionLock= ( positionLock <= -(heightDif) ) ? -(heightDif) : positionLock+scroll_diff;
-				}else{//up
-					positionLock= (positionLock >= 0) ? 0 : positionLock+scroll_diff;
+					heightDif= spineHeight - windowHeight;
+
+					if( (scroll_diff>0?false:true) ){//down
+						positionLock= ( positionLock <= -(heightDif) ) ? -(heightDif) : positionLock+scroll_diff;
+					}else{//up
+						positionLock= (positionLock >= 0) ? 0 : positionLock+scroll_diff;
+					}
+					glue.css({"position":"fixed","top":positionLock+"px"});
 				}
-				glue.css({"position":"fixed","top":positionLock+"px"});
 				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
