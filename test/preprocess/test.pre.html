@@ -101,49 +101,49 @@
 
 <!-- CONTENT -->
 <main>
-
-<!-- Responsive Sections -->
-<section class="row sidebar">
-
-	<div class="column one">
-		<article>
-			@@include('blocks/short_text_block.html', {})
-
-		<!-- @if showLong='true' -->
-			@@include('blocks/long_text_block.html', {})
+	<!-- Responsive Sections -->
+	<section class="row sidebar">
+		<!-- @if fullGridExample='true' -->
+			@@include('content/full_grid_example.html', {})
 		<!-- @endif -->
+		<div class="column one">
+			<article>
+				@@include('blocks/short_text_block.html', {})
 
-		</article>
-		<footer>
-			<!-- 
-			This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-			cms to generate this block and any rich data.  
-			-->
-			@@include('blocks/normal_contact_block.html', {})
-		</footer>
-	</div><!--/column-->
+			<!-- @if showLong='true' -->
+				@@include('blocks/long_text_block.html', {})
+			<!-- @endif -->
+			</article>
 
-	<div class="column two">
-		<aside>
-			<section>
-			<h2>You could have a sidebar here.</h2>
-			<ul>
-				<li>Sed bibendum vel arcu vel aliquam.</li>
-				<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
-				<li>Duis non commodo dui.</li>
-				<li>Integer consectetur erat et dignissim porttitor.</li>
-				<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
-			</ul>
-			</section>
-			<section>
-				<h2>I could be a widget</h2>
-				<p>Pellentesque auctor euismod magna</p>
-			</section>
-		</aside>
-	</div><!--/column-->
+			<footer>
+				<!-- 
+				This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+				cms to generate this block and any rich data.  
+				-->
+				@@include('blocks/normal_contact_block.html', {})
+			</footer>
+		</div><!--/column-->
 
-</section>
+		<div class="column two">
+			<aside>
+				<section>
+				<h2>You could have a sidebar here.</h2>
+				<ul>
+					<li>Sed bibendum vel arcu vel aliquam.</li>
+					<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
+					<li>Duis non commodo dui.</li>
+					<li>Integer consectetur erat et dignissim porttitor.</li>
+					<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
+				</ul>
+				</section>
+				<section>
+					<h2>I could be a widget</h2>
+					<p>Pellentesque auctor euismod magna</p>
+				</section>
+			</aside>
+		</div><!--/column-->
 
+	</section>
 </main>
 <!-- /CONTENT -->
 
