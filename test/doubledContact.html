@@ -205,63 +205,6 @@
 			</li>
 		</ul>
 	</li>
-	
-	<li><a href="/">zero depth link [1]</a></li>
-	<li><a href="/">zero depth link [2]</a></li>
-	<li><a href="/">zero depth link [3]</a></li>
-	<li><a href="/">zero depth link [4]</a></li>
-	<li>
-		<a href="link">Another first order link [1]</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="link">Another first order link [2]</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="link">Another first order link [3]</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="link">Another first order link [4]</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
 	<li>
 		<a href="link">Another first order link</a>
 		<ul>
@@ -318,5 +261,26 @@
 <!-- /WRAPPING -->
 
 
+	<!-- 
+	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
+	or something that will work to let you display one thing to a user but another to the search engines.
+	-->
+	<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+	<span itemprop="department"  content="University Unit"></span> 
+	<span itemprop="name" content="Washington State University"></span> 
+	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="location" content="French Administration Building"></span>
+		<span itemprop="streetAddress" content="PO Box 555555"></span>
+		<span itemprop="addressLocality" content="Pullman, WA"></span>
+		<span itemprop="addressRegion"></span>
+		<span itemprop="postalCode" content="99163"></span>
+	</div>
+	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+	<span itemprop="telephone" content="(509) 335-3564"></span>
+	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+</div>
 </body>
 </html>

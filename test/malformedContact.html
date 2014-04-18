@@ -83,18 +83,15 @@
 
 <!-- WRAPPING -->
 <div id="jacket">
-<div id="binder" class="hybrid">
+<div id="binder" class="">
 
 <!-- CONTENT -->
 <main>
-
-<!-- Responsive Sections -->
-<section class="row sidebar">
-
-	<div class="column one">
-		<article>
-			
-			<h1>Heading using the h1tag</h1>
+	<!-- Responsive Sections -->
+	<section class="row sidebar">
+		<div class="column one">
+			<article>
+				<h1>Heading using the h1tag</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet porttitor enim, et porttitor sem auctor ac. Aliquam posuere facilisis tempus. Phasellus consectetur eu risus non dignissim. Mauris suscipit, nulla quis eleifend rhoncus, felis ligula euismod ligula, in pulvinar eros quam sed neque. Integer enim mauris, eleifend id tellus ut, laoreet rhoncus eros. Proin ultricies suscipit mi eget placerat. Quisque ultrices ultricies sem non varius.</p>
 			
 			<p>Nulla leo mi, vestibulum ut ornare nec, gravida at odio. Ut dignissim molestie velit. Etiam quis porta orci, id congue lacus. Nam quis elit rutrum eros mollis venenatis. Ut volutpat arcu in interdum hendrerit. Pellentesque at diam elit. Praesent turpis metus, tincidunt nec consectetur ut, porta vitae odio. Sed urna metus, tincidunt ac elementum euismod, adipiscing in nunc. Mauris fringilla feugiat nunc, at imperdiet arcu interdum sed. Aliquam malesuada ornare libero, a euismod ligula laoreet posuere.</p>
@@ -111,58 +108,52 @@
 			
 			<p>Morbi gravida magna magna. Aliquam erat volutpat. Sed enim sem, laoreet a nisi sit amet, mattis venenatis est. Curabitur imperdiet, nibh et sagittis feugiat, nunc purus faucibus lacus, sodales auctor ipsum lorem eu lectus. Integer aliquet placerat metus, ut rhoncus augue congue quis. Duis feugiat augue nec elementum faucibus. Nam tincidunt dui elementum magna pretium luctus. Aenean fringilla lectus nulla, sit amet mollis neque tristique eu. Pellentesque justo ligula, auctor quis viverra vitae, accumsan vel nisl. Sed bibendum vel arcu vel aliquam. Donec sodales iaculis lobortis. Praesent ac feugiat sem. Duis non commodo dui. Integer consectetur erat et dignissim porttitor. Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</p>
 
-	
+			</article>
 
+			<footer>
+				<!-- 
+				This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+				cms to generate this block and any rich data.  
+				-->
+				<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+	<span itemprop="department"  content="University Unit"></span> 
+	<span itemprop="name" content="Washington State University"></span> 
+	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="location" content="French Administration Building"></span>
+		<span itemprop="streetAddress" content="PO Box 555555"></span>
+		<span itemprop="addressLocality" content="Pullman, WA"></span>
+		<span itemprop="addressRegion"></span>
+		<span itemprop="postalCode" content="99163"></span>
+	</div>
+	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+	<span itemprop="telephone" content="(509) 335-3564"></span>
+	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+</div>
+			</footer>
+		</div><!--/column-->
 
+		<div class="column two">
+			<aside>
+				<section>
+				<h2>You could have a sidebar here.</h2>
+				<ul>
+					<li>Sed bibendum vel arcu vel aliquam.</li>
+					<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
+					<li>Duis non commodo dui.</li>
+					<li>Integer consectetur erat et dignissim porttitor.</li>
+					<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
+				</ul>
+				</section>
+				<section>
+					<h2>I could be a widget</h2>
+					<p>Pellentesque auctor euismod magna</p>
+				</section>
+			</aside>
+		</div><!--/column-->
 
-
-
-		</article>
-		<footer>
-			<!-- 
-			This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-			cms to generate this block and any rich data.  
-			-->
-			<div itemscope itemtype="http://schema.org/Organization"> 
-				<span itemprop="department"  content="University Unit"></span> 
-				<span itemprop="name" content="Washington State University"></span> 
-				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span itemprop="location" content="French Administration Building"></span>
-					<span itemprop="streetAddress" content="PO Box 555555"></span>
-					<span itemprop="addressLocality" content="Pullman, WA"></span>
-					<span itemprop="addressRegion"></span>
-					<span itemprop="postalCode" content="99163"></span>
-				</div>
-				<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-				<span itemprop="telephone" content="(509) 335-3564"></span>
-				<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-				<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-				<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-			</div>	
-		</footer>
-	</div><!--/column-->
-
-	<div class="column two">
-		<aside>
-			<section>
-			<h2>You could have a sidebar here.</h2>
-			<ul>
-				<li>Sed bibendum vel arcu vel aliquam.</li>
-				<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
-				<li>Duis non commodo dui.</li>
-				<li>Integer consectetur erat et dignissim porttitor.</li>
-				<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
-			</ul>
-			</section>
-			<section>
-				<h2>I could be a widget</h2>
-				<p>Pellentesque auctor euismod magna</p>
-			</section>
-		</aside>
-	</div><!--/column-->
-
-</section>
-
+	</section>
 </main>
 <!-- /CONTENT -->
 
@@ -185,20 +176,20 @@
 	
 	<!-- Tools generated by spine.js here | Note it is not needed to add any of the tabs -->
 	
-			<!-- NOTE: This normaly wouldn't have been here but in this cause it's also
-				 malformed to the degree it's failing the Google Rich Data testing -->
-			<address id="contact-details" itemscope itemtype="http://schema.org/Organization">
-				<meta itemprop="name" class="required" content="Washington State University">
-				<meta itemprop="department" class="required" content="The Edward R. Murrow College of Communication">
-				<meta itemprop="url" class="required" content="http://murrow.wsu.edu">
-				<meta itemprop="location" class="optional" content="101 Communication Addition">
-				<meta itemprop="streetAddress" class="optional" content="PO Box 642520">
-				<meta itemprop="addressLocality" class="optional" content="Pullman, WA">
-				<meta itemprop="postalCode" class="required" content="99164-2520">
-				<meta itemprop="telephone" class="required" content="<br>General Inquiries:<br>(509) 335-1556<br><br>Student Services:<br>(509) 335-7333">
-				<meta itemprop="email" class="required" content="murrow.college@wsu.edu">
-				<meta itemprop="ContactPoint" title="Contact Page" class="optional" content="http://murrow.wsu.edu/directory/">
-			</address>
+				<!-- NOTE: This normaly wouldn't have been here but in this cause it's also
+		 malformed to the degree it's failing the Google Rich Data testing -->
+	<address id="contact-details" itemscope itemtype="http://schema.org/Organization">
+		<meta itemprop="name" class="required" content="Washington State University">
+		<meta itemprop="department" class="required" content="The Edward R. Murrow College of Communication">
+		<meta itemprop="url" class="required" content="http://murrow.wsu.edu">
+		<meta itemprop="location" class="optional" content="101 Communication Addition">
+		<meta itemprop="streetAddress" class="optional" content="PO Box 642520">
+		<meta itemprop="addressLocality" class="optional" content="Pullman, WA">
+		<meta itemprop="postalCode" class="required" content="99164-2520">
+		<meta itemprop="telephone" class="required" content="<br>General Inquiries:<br>(509) 335-1556<br><br>Student Services:<br>(509) 335-7333">
+		<meta itemprop="email" class="required" content="murrow.college@wsu.edu">
+		<meta itemprop="ContactPoint" title="Contact Page" class="optional" content="http://murrow.wsu.edu/directory/">
+	</address>
 	
 	
 	
@@ -283,27 +274,6 @@
 </div><!--/jacket-->
 <!-- /WRAPPING -->
 
-	<!-- 
-	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
-	or something that will work to let you display one thing to a user but another to the search engines.
-	-->
-	<div itemscope itemtype="http://schema.org/Organization"> 
-		<span itemprop="department"  content="University Unit"></span> 
-		<span itemprop="name" content="Washington State University"></span> 
-		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-			<span itemprop="location" content="French Administration Building"></span>
-			<span itemprop="streetAddress" content="PO Box 555555"></span>
-			<span itemprop="addressLocality" content="Pullman, WA"></span>
-			<span itemprop="addressRegion"></span>
-			<span itemprop="postalCode" content="99163"></span>
-		</div>
-		<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-		<span itemprop="telephone" content="(509) 335-3564"></span>
-		<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-		<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-		<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-	</div>
 
 </body>
 </html>
