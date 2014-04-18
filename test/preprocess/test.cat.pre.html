@@ -166,7 +166,7 @@
 			<dd><button data-grid="hybrid">hybrid</button></dd>
 		</dl>
 		
-		<dl class="spine-sizes clearfix wireframe-only">
+		<dl class="spine-sizes clearfix ">
 			<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
 			<dd><button data-max="max-990">default</button></dd>
 			<dd><button data-max="max-1188">1188</button></dd>
@@ -224,26 +224,26 @@
 </section>
 
 <section class="row sidebar equalize " id="cropping-bleeding">
-	<div class="column one" style="min-height: 261px;">
+	<div class="column one">
 		<article>
 		<header><h2>cropping or bleeding</h2></header>
 		<p><b>It's gruesome</b>, but for site cover pages, the Spine's head can be "severed" or cropped for an even blanker slate for your design. Alternatively, the spine &mdash; which by default is 198px wide and the full height of the browser's window &mdash; can be bled off the left side of the window, as it is here.</p>
 		</article>
 	</div>
-	<div class="column two" style="min-height: 261px;">
-		<br>
+	<div class="column two">
+		<br/>
 	</div>
 	
 </section>
 
 <section class="row sideleft equalize " id="tool-belt">
 	
-	<div style="background: url(&quot;/wp-content/themes/brand/images/pages/web/tools.png&quot;) no-repeat scroll 70% center / 80% auto transparent; min-height: 281px;" class="column one">
+	<div class="column one">
 	</div>
 	<div class="column two">
 		<article>
 		<header><h2>tool belt included</h2></header>
-		<p>Out-of-the-box, the Spine includes local and WSU-wide <strong>search</strong>, a consistent presentation of <strong>contact</strong> information, easy <strong>sharing</strong> via the most popular social networks, and a <strong>print</strong> tool that automatically formats the page for letter-sized paper. <span class="wireframe-only"><code>Search solution can be customized with alternate sources or even replaced entirely.</code></span></p>
+		<p>Out-of-the-box, the Spine includes local and WSU-wide <strong>search</strong>, a consistent presentation of <strong>contact</strong> information, easy <strong>sharing</strong> via the most popular social networks, and a <strong>print</strong> tool that automatically formats the page for letter-sized paper. <span class=""><code>Search solution can be customized with alternate sources or even replaced entirely.</code></span></p>
 		</article>
 	</div>
 	
@@ -251,7 +251,7 @@
 
 <section class="row sidebar equalize  hidden" id="spine-sizes">
 	
-	<div style="min-height: 0px;" class="column one">
+	<div class="column one">
 		<article>
 		<header><h2>your goldilocks</h2></header>
 		<p></p>
@@ -264,7 +264,6 @@
 </section>
 
 <section class="row sidebar equalize  hidden" id="spine-sizes">
-	
 	<div class="column one">
 		<article>
 		<header><h2>your goldilocks</h2></header>
@@ -290,23 +289,12 @@
 		<div class="column one orange-back four-twelfths-tall"></div>
 		<div class="column two green-back four-twelfths-tall"></div>
 		<div class="column three blue-back four-twelfths-tall"></div>
-		<!--<div class="column four yellow-back three-twelfths-tall"></div>-->
 	</div>
 	</div>
 	
 </section>
 
-<section class="row sidebar gutter wide" id="resolution">
-	<style>
-	#resolution .column.two {
-		background: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg') center center no-repeat;
-		background-size: auto; 
-		}
-	#resolution:hover .column.two {
-		background-position: center 10px;
-		background-size: 300%;
-		}
-	</style>
+<section class="row sidebar " id="resolution">
 	<article class="padless">
 	<div class="column one marginalized">
 		<header><h2>resolution independence</h2></header>
@@ -318,14 +306,14 @@
 	</article>
 </section>
 
-<section class="row quarters wireframe-only">
+<section class="row quarters ">
 	<div class="column one picture-frame"><img class="fill-width" src="/wp-content/themes/brand/images/pages/wireframe/1.png"></div>
 	<div class="column two picture-frame"><img class="fill-width" src="/wp-content/themes/brand/images/pages/wireframe/2.png"></div>
 	<div class="column three picture-frame"><img class="fill-width" src="/wp-content/themes/brand/images/pages/wireframe/3.png"></div>
 	<div class="column four picture-frame"><img class="fill-width" src="/wp-content/themes/brand/images/pages/wireframe/4.png"></div>
 </section>
 
-<section class="row halves  wireframe-only">
+<section class="row halves  ">
 	<div class="column one">
 
 	</div>
@@ -335,32 +323,32 @@
 	</div>
 </section>
 
-<section class="row sideleft equalize " id="campus-ready">
-	<div class="column one" style="min-height: 229px;">
+<section class="row equalize " id="campus-ready">
+	<div class="column one">
 		<br>
 	</div>
-	<div class="column two" style="min-height: 229px;">
+	<div class="column two">
 		
 		<article>
 		<header><h2>campus ready</h2></header>
-		<p>The signatures for each urban campus and for other top level units are pre-baked into the Spine, both the vertical signature for large devices and the horizontal for small. </p><pre>The campus signatures are activated by adding, for example , a <code>.wsu-vancouver-signature</code> or <code>.wsu-tricities-signature</code> class to html or body.</pre><p></p>
+		<p>The signatures for each urban campus and for other top level units are pre-baked into the Spine, both the vertical signature for large devices and the horizontal for small. </p>The campus signatures are activated by adding, for example , a <pre><code>.wsu-vancouver-signature</code></pre> or <pre><code>.wsu-tricities-signature</code></pre> class to html or body.
 		</article>
 	</div>
 	
 </section>
 
-<section class="row thirds gutter equalize wireframe-only">
+<section class="row thirds equalize ">
 	<div class="column one">
 		<article>
 		<strong>The skeleton grid eschews padding and margins by default to allow for seamless designs. However, adding a "gutter" class, as in this section, provides gutters for equally spaced column interior content (30px).</strong><hr>
 		These columns have also been equalized with the "equalize" class to allow for aligning background images. Were using "border-box" box-sizing on our columns to enable padding without breaking our responsive math.<hr>
 		<p>Vestibulum cursus ultricies tellus, sed fermentum mauris mattis vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam condimentum ligula ut dictum scelerisque. Aenean mattis erat ac tortor accumsan, vitae tincidunt dui feugiat. Vestibulum hendrerit metus id justo tristique, a pharetra nibh lobortis. Sed eu dolor nec metus blandit egestas ac at elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus ac mollis mauris. Sed aliquet ipsum in dapibus euismod.</p></article>
 	</div>
-	<div class="marginalized column two">
+	<div class="column two">
 		<article><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor neque, scelerisque quis mauris quis, fringilla eleifend est. Phasellus purus leo, commodo sit amet ipsum ac, lacinia auctor nulla. Nam sed nunc fermentum, condimentum ligula sit amet, facilisis urna. Vestibulum pharetra dui turpis, vitae elementum dui gravida in. Quisque ut lectus aliquet, lobortis risus vitae, placerat metus. Duis nisl eros, mattis non fermentum eget, luctus sed tortor. Nunc tempus nulla eget erat ornare, quis mattis turpis tincidunt. Vivamus semper elit at metus consequat, vitae dapibus urna posuere. Nunc iaculis arcu sed ante mollis, vitae varius orci rhoncus. Nullam luctus tristique pretium. Ut tincidunt, velit ullamcorper aliquet molestie, nisl lectus interdum felis, quis blandit nisi tortor non elit. Ut sit amet ipsum consectetur, tempor tellus at, ultrices elit. Sed a mauris enim. Sed vitae odio vestibulum massa vulputate lacinia.</p></article>
 	</div>
 	<div class="column three">
-		<article><p>Nam a dolor diam. Sed bibendum sit amet arcu id vehicula. Duis dictum rhoncus velit vel porttitor. Nullam scelerisque fermentum massa. Proin suscipit facilisis tincidunt. Aenean et tempor augue. Nullam gravida feugiat diam, vel blandit turpis ornare et. Sed sed arcu quis augue ultricies porta id vitae ante. Donec at ante sed mauris mollis rutrum eu sit amet lectus. </p><hr> .equalize makes columns equally tall... or short<p></p></article>
+		<article><p>Nam a dolor diam. Sed bibendum sit amet arcu id vehicula. Duis dictum rhoncus velit vel porttitor. Nullam scelerisque fermentum massa. Proin suscipit facilisis tincidunt. Aenean et tempor augue. Nullam gravida feugiat diam, vel blandit turpis ornare et. Sed sed arcu quis augue ultricies porta id vitae ante. Donec at ante sed mauris mollis rutrum eu sit amet lectus. </p><hr> <p><pre><code>.equalize</code></pre> makes columns equally tall... or short</p></article>
 	</div>
 </section>
 
