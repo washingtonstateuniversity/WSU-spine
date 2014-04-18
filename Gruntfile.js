@@ -119,6 +119,7 @@ module.exports = function(grunt) {
 					fluidGrid : 'skip',
 					hybridGrid: 'skip',
 					fixedGrid: 'skip',
+					fullGridExample: 'skip',
 				}
 			},
 			js : {
@@ -186,7 +187,7 @@ module.exports = function(grunt) {
 						showLong : 'true'
 					}
 				}
-			},			
+			},
 			tu_cropped : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/cropped.html',
@@ -195,7 +196,7 @@ module.exports = function(grunt) {
 						cropped : 'true'
 					}
 				}
-			},		
+			},
 			tu_doubledContact : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/doubledContact.html',
@@ -204,7 +205,7 @@ module.exports = function(grunt) {
 						doubledContact : 'true'
 					}
 				}
-			},			
+			},
 			tu_fluidGrid : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/fluidGrid.html',
@@ -213,7 +214,7 @@ module.exports = function(grunt) {
 						fluidGrid : 'true'
 					}
 				}
-			},		
+			},
 			tu_hybridGrid : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/hybridGrid.html',
@@ -222,7 +223,7 @@ module.exports = function(grunt) {
 						hybridGrid : 'true'
 					}
 				}
-			},		
+			},
 			tu_fixedGrid : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'test/fixedGrid.html',
@@ -231,7 +232,16 @@ module.exports = function(grunt) {
 						fixedGrid : 'true'
 					}
 				}
-			},			
+			},
+			tu_fullGridExample : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/fullGridExample.html',
+				options : {
+					context : {
+						fullGridExample : 'true'
+					}
+				}
+			},
 		}
 	});
 
@@ -270,6 +280,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
+								'preprocess:tu_fullGridExample',
 								]);
 		
 		
