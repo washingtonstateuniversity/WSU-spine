@@ -185,32 +185,18 @@
 				var top,spineHeight,heightDif;
 
 				top = $(document).scrollTop();
-
 				scroll_diff = scroll_top-top;
-
 				scroll_top = top;
 				
 				spineHeight = glue.height();
 				heightDif= spineHeight - windowHeight;
 
 				if( (scroll_diff>0?false:true) ){//down
-					if( positionLock <= -(heightDif) ){
-						positionLock=-(heightDif);
-					}else{ //moving and locked
-						positionLock = positionLock+scroll_diff;
-					}
+					positionLock= ( positionLock <= -(heightDif) ) ? -(heightDif) : positionLock+scroll_diff;
 				}else{//up
-					if( positionLock >= 0 ){ //
-						positionLock=0;
-					}else{
-						positionLock = positionLock+scroll_diff;
-					}
+					positionLock= (positionLock >= 0) ? 0 : positionLock+scroll_diff;
 				}
-				
-				console.log("positionLock"+positionLock);
 				glue.css({"position":"fixed","top":positionLock+"px"});
-				
-				
 				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
