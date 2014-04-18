@@ -45,7 +45,7 @@
 			wsu_actions:$("#wsu-actions"),
 		},
 		framework_create: function(){
-			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width;
+			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width,svg_imgs;
 			//alert("framework_create");
 			self=this;//hold to preserve scop
 
@@ -65,6 +65,16 @@
 				contactHtml += "</section>";
 				self.setup_tabs("contact",contactHtml);
 			} // End Contact Generation
+
+
+			svg_imgs = $(".lt-ie9 img[src$='.svg']");
+			if(svg_imgs.lenght){
+				$.each(svg_imgs,function(){
+					$(this).attr("src",$(this).attr("src").replace(".svg",".png"));
+				});
+			}
+			
+
 
 			self.setup_nav();
 			self.setup_spine();
