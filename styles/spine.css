@@ -305,8 +305,8 @@ html.lt-ie9 #spine #wsu-actions {
 #spine #wsu-actions > ul li#wsu-tab-search button:hover {
 	color: #5e6a71;
 	}
-#spine ul#wsu-actions-tabs {
-	margin: 0px 20px;
+ul#wsu-actions-tabs {
+	margin: 0px 20px !important; /* tmp note this is need as the #spine ul is lower in cascade order and IE8 doesn't like the invalid #id #id selector, to the order must change to drop the !important*/
 	}
 #spine ul#wsu-actions-tabs li button {
 	font-weight: normal;
