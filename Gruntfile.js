@@ -43,6 +43,17 @@ module.exports = function(grunt) {
 				dest: 'build/<%= pkg.build_version %>/spine.min.js'
 			}
 		},
+		less: {
+			dev: {
+				options: {
+					relativeUrls: true
+				},
+				// Files to perform replacements and includes with
+				src: 'styles/less/*.less',
+				// Destination directory to copy files to
+				dest: 'build/tmp/less/'
+			},
+		},
 		cssmin: {
 			combine: {
 				files: {
@@ -264,6 +275,7 @@ module.exports = function(grunt) {
 								'env:dev',
 								'concat',
 								'preprocess:js',
+								'less:dev',
 								'cssmin',
 								'uglify',
 								'copy',
