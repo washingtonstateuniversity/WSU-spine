@@ -281,7 +281,7 @@ html.lt-ie9 #spine #wsu-actions {
 	display: block;
 	float: left;
 	}
-#spine #wsu-actions > ul li button {
+ul#wsu-actions-tabs li button{ /* this is not crossbrowser #spine #wsu-actions > ul li button { */
 	color: #D7DADB;
 	width: 100%;
 	padding: .8em 0 .4em 0;
