@@ -43,11 +43,10 @@
 			glue: $("#glue"),
 			main: $("main"),
 			wsu_actions:$("#wsu-actions"),
-			viewport_ht:$(window).height()
 		},
 		framework_create: function(){
 			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width,
-				svg_imgs,viewport_ht,spine_ht,spine,glue,main;
+				svg_imgs,viewport_ht,spine,glue,main;
 			//alert("framework_create");
 			self=this;//hold to preserve scop
 
@@ -105,15 +104,13 @@
 					$(".unbound.verso.recto").css("width",spread);
 				}
 				
-				viewport_ht	= this._get_globals("viewport_ht");
-				spine_ht		= spine[0].scrollHeight;
-				heightDif		= viewport_ht - spine_ht;
+				viewport_ht		= $(window).height();
+
 				glue.css("min-height",viewport_ht);
 				spine.css("min-height",viewport_ht);
 				
-				console.log("window-resize | viewport_ht::" + viewport_ht);
-				console.log("window-resize | spine_ht::" + spine_ht);
-				console.log("window-resize | heightDif::" + heightDif);
+				//console.log("window-resize | viewport_ht::" + viewport_ht);
+				$(document).trigger("scroll");
 				
 			}).trigger("resize");
 		},
@@ -195,10 +192,10 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_diff,viewport_Ht,positionLock,spineHeight,heightDif;
+			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,height_dif;
 			
 			
-			scroll_diff=0;
+			scroll_dif=0;
 			positionLock=0;
 			scroll_top=0;
 			
@@ -224,27 +221,32 @@
 				var top;
 				
 					top				= $(document).scrollTop();
-					scroll_diff		= scroll_top-top;
+					scroll_dif		= scroll_top-top;
 					scroll_top		= top;
-				
-					viewport_ht		= self._get_globals("viewport_ht");
-					//windowHeight	= $(window).height();
-					spineHeight		= spine[0].scrollHeight;
-					heightDif		= viewport_ht - spineHeight;
 
-					if( (scroll_diff>0?false:true) ){//down
-						positionLock= ( positionLock >= heightDif ) ? heightDif : positionLock+scroll_diff;
-					}else{//up
-						positionLock= (positionLock >= 0) ? 0 : positionLock+scroll_diff;
-					}
+					viewport_ht		= $(window).height();
+					spine_ht		= spine[0].scrollHeight;
+					height_dif		= viewport_ht - spine_ht;
+					//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
+					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+					//console.log("SCROLLING || spine_ht::" + spine_ht);
+					//console.log("SCROLLING || height_dif::" + height_dif);
+					//console.log("SCROLLING || positionLock::" + positionLock);
+					//console.log("|---------------------------------------------");
 					
-					//console.log("windowHeight::" + windowHeight);
-					//console.log("spineHeight::" + spineHeight);
-					//console.log("heightDif::" + heightDif);
-					//console.log("positionLock::" + positionLock);
+						if( (scroll_dif>0?false:true) ){//down
+							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+						}else{//up
+							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+						}
+					if( spine_ht>viewport_ht ){}
+					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+					//console.log("SCROLLING || spine_ht::" + spine_ht);
+					//console.log("SCROLLING || height_dif::" + height_dif);
+					//console.log("SCROLLING || positionLock::" + positionLock);
 					
 					spine.css({"position":"fixed","top":positionLock+"px"});
-				if( spineHeight>viewport_Ht ){}
+				
 				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
