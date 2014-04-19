@@ -43,12 +43,19 @@
 			glue: $("#glue"),
 			main: $("main"),
 			wsu_actions:$("#wsu-actions"),
+			viewport_ht:$(window).height()
 		},
 		framework_create: function(){
-			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width,svg_imgs;
+			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width,
+				svg_imgs,viewport_ht,spine_ht,spine,glue,main;
 			//alert("framework_create");
 			self=this;//hold to preserve scop
 
+			spine = self._get_globals("spine").refresh();
+			glue = self._get_globals("glue").refresh();
+			main = self._get_globals("main").refresh();
+			
+			
 			// Section -> Contact
 			if (!$("#wsu-contact").length) {
 				contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
@@ -97,6 +104,17 @@
 					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
 					$(".unbound.verso.recto").css("width",spread);
 				}
+				
+				viewport_ht	= this._get_globals("viewport_ht");
+				spine_ht		= spine[0].scrollHeight;
+				heightDif		= viewport_ht - spine_ht;
+				glue.css("min-height",viewport_ht);
+				spine.css("min-height",viewport_ht);
+				
+				console.log("window-resize | viewport_ht::" + viewport_ht);
+				console.log("window-resize | spine_ht::" + spine_ht);
+				console.log("window-resize | heightDif::" + heightDif);
+				
 			}).trigger("resize");
 		},
 		// Label #jacket with current window size
@@ -177,7 +195,7 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_diff,windowHeight,positionLock,spineHeight,heightDif;
+			var self,spine,glue,main,scroll_top,scroll_diff,viewport_Ht,positionLock,spineHeight,heightDif;
 			
 			
 			scroll_diff=0;
@@ -190,7 +208,7 @@
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			$( window ).on("resize", function() {
+			/*$( window ).on("resize", function() {
 				windowHeight	= $(window).height();
 				spineHeight		= spine[0].scrollHeight;
 				heightDif		= windowHeight - spineHeight;
@@ -199,7 +217,7 @@
 				//console.log("window-resize | windowHeight::" + windowHeight);
 				//console.log("window-resize | spineHeight::" + spineHeight);
 				//console.log("window-resize | heightDif::" + heightDif);
-			}).trigger("resize");
+			}).trigger("resize");*/
 
 			// Fixed/Sticky Horizontal Header
 			$(document).scroll(function() {
@@ -208,10 +226,11 @@
 					top				= $(document).scrollTop();
 					scroll_diff		= scroll_top-top;
 					scroll_top		= top;
-
-					windowHeight	= $(window).height();
+				
+					viewport_ht		= self._get_globals("viewport_ht");
+					//windowHeight	= $(window).height();
 					spineHeight		= spine[0].scrollHeight;
-					heightDif		= windowHeight - spineHeight;
+					heightDif		= viewport_ht - spineHeight;
 
 					if( (scroll_diff>0?false:true) ){//down
 						positionLock= ( positionLock >= heightDif ) ? heightDif : positionLock+scroll_diff;
@@ -225,7 +244,7 @@
 					//console.log("positionLock::" + positionLock);
 					
 					spine.css({"position":"fixed","top":positionLock+"px"});
-				if( spineHeight>windowHeight ){}
+				if( spineHeight>viewport_Ht ){}
 				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
