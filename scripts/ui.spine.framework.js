@@ -177,9 +177,9 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_diff,windowHeight,positionLock;
+			var self,spine,glue,main,scroll_top,scroll_diff,windowHeight,positionLock,spineHeight,heightDif;
 			
-			windowHeight=$(window).height();
+			
 			scroll_diff=0;
 			positionLock=0;
 			scroll_top=0;
@@ -190,25 +190,42 @@
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
+			$( window ).on("resize", function() {
+				windowHeight	= $(window).height();
+				spineHeight		= spine[0].scrollHeight;
+				heightDif		= windowHeight - spineHeight;
+				glue.css("min-height",windowHeight);
+				spine.css("min-height",windowHeight);
+				//console.log("window-resize | windowHeight::" + windowHeight);
+				//console.log("window-resize | spineHeight::" + spineHeight);
+				//console.log("window-resize | heightDif::" + heightDif);
+			}).trigger("resize");
+
 			// Fixed/Sticky Horizontal Header
 			$(document).scroll(function() {
-				var top,spineHeight,heightDif;
-				spineHeight = glue.height();
+				var top;
 				
-				if( spineHeight>windowHeight ){
-					top = $(document).scrollTop();
-					scroll_diff = scroll_top-top;
-					scroll_top = top;
+					top				= $(document).scrollTop();
+					scroll_diff		= scroll_top-top;
+					scroll_top		= top;
 
-					heightDif= spineHeight - windowHeight;
+					windowHeight	= $(window).height();
+					spineHeight		= spine[0].scrollHeight;
+					heightDif		= windowHeight - spineHeight;
 
 					if( (scroll_diff>0?false:true) ){//down
-						positionLock= ( positionLock <= -(heightDif) ) ? -(heightDif) : positionLock+scroll_diff;
+						positionLock= ( positionLock >= heightDif ) ? heightDif : positionLock+scroll_diff;
 					}else{//up
 						positionLock= (positionLock >= 0) ? 0 : positionLock+scroll_diff;
 					}
-					glue.css({"position":"fixed","top":positionLock+"px"});
-				}
+					
+					//console.log("windowHeight::" + windowHeight);
+					//console.log("spineHeight::" + spineHeight);
+					//console.log("heightDif::" + heightDif);
+					//console.log("positionLock::" + positionLock);
+					
+					spine.css({"position":"fixed","top":positionLock+"px"});
+				if( spineHeight>windowHeight ){}
 				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
@@ -218,7 +235,7 @@
 			});
 
 			$("#glue > header").append("<button id='shelve' />");
-			$("#shelve").on('click',function(e) {
+			$("#shelve").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
 			});
