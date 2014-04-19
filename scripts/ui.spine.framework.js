@@ -218,7 +218,7 @@
 			});
 
 			$("#glue > header").append("<button id='shelve' />");
-			$("#shelve").click(function(e) {
+			$("#shelve").on('click',function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
 			});
