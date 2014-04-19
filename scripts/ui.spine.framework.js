@@ -217,8 +217,11 @@
 				}*/
 			});
 
-			$("#glue > header").append("<button id='shelve'></button>");
-			$("#shelve").click(function() { spine.toggleClass("unshelved shelved"); });
+			$("#glue > header").append("<button id='shelve' />");
+			$("#shelve").click(function(e) {
+				e.preventDefault();
+				spine.toggleClass("unshelved shelved");
+			});
 
 			// Clicking Outside Spine Closes It
 			/* $(document).on("mouseup touchstart", function (e) {
