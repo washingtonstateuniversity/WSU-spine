@@ -26,7 +26,7 @@
 									<div class='address'> \
 										<% if (typeof(this.streetAddress) != 'undefined') { %><div class='street-address'><%this.streetAddress%></div><% } %> \
 										<% if (typeof(this.addressLocality) != 'undefined' || typeof(this.postalCode) != 'undefined') { %><div class='locality'> \
-											<% if (typeof(this.addressLocality) != 'undefined' ) { %><%this.addressLocality%><% } %> \
+											<% if (typeof(this.addressLocality) != 'undefined' ) { %><%this.addressLocality%><% } %> <% if (typeof(this.addressRegion) != 'undefined' ) { %>, <%this.addressRegion%><% } %> \
 											<% if (typeof(this.postalCode) != 'undefined' ) { %><span class='postalcode'><%this.postalCode%></span><% } %> \
 										</div><% } %> \
 									</div> \
@@ -40,14 +40,21 @@
 		},
 		framework_globals: {
 			spine: $("#spine"),
+			glue: $("#glue"),
 			main: $("main"),
-			wsu_actions:$("#wsu-actions")
+			wsu_actions:$("#wsu-actions"),
 		},
 		framework_create: function(){
-			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width;
+			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width,
+				svg_imgs,viewport_ht,spine,glue,main;
 			//alert("framework_create");
 			self=this;//hold to preserve scop
 
+			spine = self._get_globals("spine").refresh();
+			glue = self._get_globals("glue").refresh();
+			main = self._get_globals("main").refresh();
+			
+			
 			// Section -> Contact
 			if (!$("#wsu-contact").length) {
 				contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
@@ -64,6 +71,16 @@
 				contactHtml += "</section>";
 				self.setup_tabs("contact",contactHtml);
 			} // End Contact Generation
+
+
+			svg_imgs = $(".lt-ie9 img[src$='.svg']");
+			if(svg_imgs.lenght){
+				$.each(svg_imgs,function(){
+					$(this).attr("src",$(this).attr("src").replace(".svg",".png"));
+				});
+			}
+			
+
 
 			self.setup_nav();
 			self.setup_spine();
@@ -86,6 +103,15 @@
 					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
 					$(".unbound.verso.recto").css("width",spread);
 				}
+				
+				viewport_ht		= $(window).height();
+
+				glue.css("min-height",viewport_ht);
+				spine.css("min-height",viewport_ht);
+				
+				//console.log("window-resize | viewport_ht::" + viewport_ht);
+				$(document).trigger("scroll");
+				
 			}).trigger("resize");
 		},
 		// Label #jacket with current window size
@@ -166,22 +192,74 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,main;
-			self=this;//hold to preserve scope
-			spine = this._get_globals("spine").refresh();
-			main = this._get_globals("main").refresh();
+			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,height_dif;
+			
+			
+			scroll_dif=0;
+			positionLock=0;
+			scroll_top=0;
+			
+			console.log("starting positionLock::" + positionLock);
+			
+			self=this;
+			spine = self._get_globals("spine").refresh();
+			glue = self._get_globals("glue").refresh();
+			main = self._get_globals("main").refresh();
+			/*$( window ).on("resize", function() {
+				windowHeight	= $(window).height();
+				spineHeight		= spine[0].scrollHeight;
+				heightDif		= windowHeight - spineHeight;
+				glue.css("min-height",windowHeight);
+				spine.css("min-height",windowHeight);
+				//console.log("window-resize | windowHeight::" + windowHeight);
+				//console.log("window-resize | spineHeight::" + spineHeight);
+				//console.log("window-resize | heightDif::" + heightDif);
+			}).trigger("resize");*/
+
 			// Fixed/Sticky Horizontal Header
 			$(document).scroll(function() {
-				var top = $(document).scrollTop();
+				var top;
+				
+					top				= $(document).scrollTop();
+					scroll_dif		= scroll_top-top;
+					scroll_top		= top;
+
+					viewport_ht		= $(window).height();
+					spine_ht		= spine[0].scrollHeight;
+					height_dif		= viewport_ht - spine_ht;
+					//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
+					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+					//console.log("SCROLLING || spine_ht::" + spine_ht);
+					//console.log("SCROLLING || height_dif::" + height_dif);
+					//console.log("SCROLLING || positionLock::" + positionLock);
+					//console.log("|---------------------------------------------");
+					
+						if( (scroll_dif>0?false:true) ){//down
+							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+						}else{//up
+							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+						}
+					if( spine_ht>viewport_ht ){}
+					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+					//console.log("SCROLLING || spine_ht::" + spine_ht);
+					//console.log("SCROLLING || height_dif::" + height_dif);
+					//console.log("SCROLLING || positionLock::" + positionLock);
+					
+					spine.css({"position":"fixed","top":positionLock+"px"});
+				
+				/*
 				if (top > 49) {
 					spine.not(".unshelved").addClass("scanned");
 				} else {
 					spine.removeClass("scanned");
-				}
+				}*/
 			});
 
-			$("#glue > header").append("<button id='shelve'></button>");
-			$("#shelve").click(function() { spine.toggleClass("unshelved shelved"); });
+			$("#glue > header").append("<button id='shelve' />");
+			$("#shelve").on("click",function(e) {
+				e.preventDefault();
+				spine.toggleClass("unshelved shelved");
+			});
 
 			// Clicking Outside Spine Closes It
 			/* $(document).on("mouseup touchstart", function (e) {
@@ -221,7 +299,7 @@
 			}); */
 
 			// Moving the Spine for Short Windows
-			$(document).scroll(function() {
+			/*$(document).scroll(function() {
 				var windowHeight, top, spineHeight, crack;
 				windowHeight = window.innerHeight;
 				top = $(document).scrollTop();
@@ -232,7 +310,7 @@
 				} else {
 					$("#spine.cracked").removeClass("scrolled");
 				}
-			});
+			});*/
 
 			// Moving the Spine for Short Windows
 			/*$(document).scroll(function() {
