@@ -123,6 +123,14 @@ body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Ge
     em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 }
 
+.wsu-icon, .wsu-icons {
+	font-family: "Spine-Icons";
+	font-style: normal;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	}
+
 /* Layout
 -------------------------------------------------------- */
 
