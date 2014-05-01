@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 /* Table of Contents
 ==================================================
@@ -503,7 +503,7 @@ img.grayscale {
 
 ul + h1, ul + h2, ul + h3, ul + h4,
 ol + h1, ol + h2, ol + h3, ol + h4 {
-	margin-top: .8;
+	margin-top: .8em;
 	}
 
 
