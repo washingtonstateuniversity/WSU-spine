@@ -7,14 +7,15 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Page Title | Unit at Washington State University</title>
+	<title>Page Title | Unit or Department at WSU</title>
 	
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<link href="../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
+	<!--<link href="../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />-->
+	<link href="../styles/styles.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 <!-- @if NODE_ENV == 'PRODUCTION' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
@@ -141,6 +142,9 @@
 					<p>Pellentesque auctor euismod magna</p>
 				</section>
 			</aside>
+			
+			@@include('blocks/switches.html', {})
+			
 		</div><!--/column-->
 
 	</section>
@@ -148,13 +152,13 @@
 <!-- /CONTENT -->
 
 <!-- SPINE -->
-<div id="spine" class="shelved  <!-- @if cropped='true' --> cropped <!-- @endif -->">
-<div id="glue">
+<div id="spine" class="spine-column shelved  <!-- @if cropped='true' --> cropped <!-- @endif -->">
+<div id="glue" class="spine-glue">
 
-<header><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
+<header class="spine-header"><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
 
 <!-- ACTIONS -->
-<section id="wsu-actions">
+<section id="wsu-actions" class="spine-actions">
 
 	<!-- Tabs -->
 	<ul id="wsu-actions-tabs" class="spine-tabs clearfix">
@@ -183,7 +187,7 @@
 	
 </section><!--/#wsu-actions-->
 
-<nav id="spine-navigation">
+<nav id="spine-navigation" class="spine-navigation">
 
 <nav id="spine-sitenav">
 <!-- Your navigation list here
@@ -200,9 +204,9 @@
 			<li><a href="">The first link in a list of links</a></li>
 			<li class="current"><a href="link">A secondary link</a></li>
 			<li>
-				<a href="link">A third link</a>
+				<a href="link">A second level link</a>
 				<ul>
-					<li><a href="link">A second level link</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Book_binding">An external link</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -211,29 +215,29 @@
 	@@include('blocks/extra_nav_link_blocks.html', {})
 <!-- @endif -->
 	<li>
-		<a href="link">Another first order link</a>
+		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
 		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
+			<li><a href="/test/overlyLinked.html">Overly Linked</a></li>
+			<li><a href="/test/overlyLong.html">Overly Long</a></li>
 		</ul>
 	</li>
-	<li><a href="link">Short links</a></li>
-	<li><a href="link">Are often best</a></li>
+	<li><a href="">Short links</a></li>
+	<li><a href="">Are often best</a></li>
 </ul>
 
 </nav>
 
 <nav id="spine-offsitenav">
 	<ul>
-		<li><a href="">Offsite Link</a></li>
-		<li><a href="">Another</a></li>
+		<li><a href="http://www.example.com">Offsite Link</a></li>
+		<li><a href="http://fonts.wsu.edu">Another</a></li>
 	</ul>
 </nav>
 
 </nav><!-- #navigation -->
 
 <!-- Social and Global Links -->
-<footer>
+<footer class="spine-footer">
 	<nav id="wsu-social-channels">
 		<ul>
 			<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>

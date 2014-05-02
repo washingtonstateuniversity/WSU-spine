@@ -7,13 +7,14 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Page Title | Unit at Washington State University</title>
+	<title>Page Title | Unit or Department at WSU</title>
 	
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-	<link href="../build/1/spine.css" rel="stylesheet" type="text/css" />
+	<!--<link href="../build/1/spine.css" rel="stylesheet" type="text/css" />-->
+	<link href="../styles/styles.css" rel="stylesheet" type="text/css" />
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
@@ -151,6 +152,386 @@
 					<p>Pellentesque auctor euismod magna</p>
 				</section>
 			</aside>
+			
+			<style>
+
+.wireframe .row .column {
+	min-height: 198px;
+	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+	}
+.inset {
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+	}
+	
+/* GRID */
+
+/* ------------------- */
+
+#binder {
+	position: relative;
+	}	
+button {
+	width: auto;
+	}	
+
+#grid {
+	display: none;
+	}
+.grid #grid {
+	position: absolute;
+	width: 990px;
+	left: 0;
+	top: 0;
+	display: block;
+	height: 3000px;
+	z-index: 99999;
+	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid.png') repeat-y left top;
+	}
+.grid12 #grid {
+	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid12.png') repeat-y left top;
+	}
+	
+main:not(.wireframe) .wireframe-only {
+	display: none;
+	}
+
+.wireframe section.row::before {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .5;
+	position: absolute;
+	right: 0px;
+	width: 75px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	}
+.wireframe .row.eighths::before { content: "eighths"; }
+.wireframe .row.twelfths::before { content: "twelfths"; }
+.wireframe .row.quarters::before { content: "quarters"; }
+.wireframe .row.single::before { content: "single"; }
+.wireframe .row.halves::before { content: "halves"; }
+.wireframe .row.sidebar::before { content: "sidebar"; }
+.wireframe .row.triptych::before { content: "triptych"; }
+.wireframe .row.thirds::before { content: "thirds"; }
+.wireframe .row.margin::before { content: "margin"; }
+
+	
+/* Column Numbering */
+.wireframe .column:not(.note)::after { 
+	color: rgba(255,255,255,0.5);
+	background-color: rgba(182,188,191,0.5);
+	padding: 5px 10px;
+	position: absolute;
+	right: 0; bottom: 0;
+	}
+.wireframe .row:not(.nest) .column.one::after { content:"1"; }
+.wireframe .row:not(.nest) .column.two::after { content:"2"; }
+.wireframe .row:not(.nest) .column.three::after { content:"3"; }
+.wireframe .row:not(.nest) .column.four::after { content:"4"; }
+.wireframe .row:not(.nest) .column.five::after { content:"5"; }
+.wireframe .row:not(.nest) .column.six::after { content:"6"; }
+.wireframe .row:not(.nest) .column.seven::after { content:"7"; }
+.wireframe :not(.nest) .column.eight::after { content:"8"; }
+.wireframe :not(.nest) .column.nine::after { content:"9"; }
+.wireframe :not(.nest) .column.ten::after { content:"10"; }
+.wireframe :not(.nest) .column.eleven::after { content:"11"; }
+.wireframe :not(.nest) .column.twelve::after { content:"12"; }
+
+.wireframe .row .column.one-twelfth::after { content:"1/12"; }
+.wireframe .row .column.two-twelfths::after { content:"2/12"; }
+.wireframe .row .column.three-twelfths::after { content:"3/12"; }
+.wireframe .row .column.six-twelfths::after { content:"6/12"; }
+
+/* Column Measurements */
+.column::before { 
+	color: black;
+	padding: 2px 4px;
+	position: absolute;
+	opacity: .2;
+	font-size: 10px;
+	top: 0;	left: 0;
+	width: 95%;
+	margin: 0px auto;
+	text-align: center;
+	}
+.wireframe .single .column::before { content:"\2190 792 \2192"; }
+.wireframe .sidebar .column.one::before { content:"\2190 528 \2192"; }
+.wireframe .sidebar .column.two::before,
+.wireframe .thirds .column::before { content:"\2190 264 \2192"; }
+.wireframe .margin .column.one::before { content:"\2190 594 \2192"; }
+.wireframe .margin .column.two::before,
+.wireframe .quarters .column::before,
+.wireframe .triptych .column.one::before,
+.wireframe .triptych .column.three::before,
+.wireframe .halves .halves .column::before { content:"\2190 198 \2192"; }
+.wireframe .halves .column::before,
+.wireframe .triptych .column.two::before { content:"\2190 396 \2192"; }
+.wireframe .halves .quarters .column::before { content:"\2190 99 \2192"; }
+.wireframe .quarters .thirds .column::before { content:"\2190 66 \2192"; }
+.wireframe .halves .thirds .column::before { content:"\2190 132 \2192"; }
+
+.wireframe .row .row::after {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .2;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	bottom: 50%;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	margin-left: -25px;
+	width: 50px;
+	height: 20px;
+	xbottom: 0px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	content:"nested";
+	}
+	
+.sidebar .column.two ul {
+	padding: 0px; margin: 0px;
+	}
+.sidebar .column.two li {
+	list-style: none;
+	padding: 10px 0px;
+	margin: 0px;
+	}
+.sidebar .column.two li:last-of-type {
+	border-bottom: none;
+	}
+	
+.thirds.gutter .column {
+   background-color: white; 
+   border: none;
+   }
+.thirds.gutter .column article {
+	padding: 0px;
+	background: #f2f4f5;
+	}
+
+.gutter article p { opacity: .3em; }
+	
+#binder main .note::after {
+	color: black;
+	padding: 6px 10px;
+	position: absolute;
+	font-size: 12px;
+	opacity: .8;
+	top: 5px;
+	left: 5px;
+	width: auto;
+	height: auto;
+	text-align: left;
+	display: none;
+	z-index: 999631;
+	line-height: 1em;
+	background: white;
+	visibility: visible !important;
+	}
+#binder main .note:hover::after {
+	display: block;
+	}
+section > big {
+	padding: 100px 100px 10px 100px;
+	font-size: 2em;
+	line-height: 1.1em;
+	display: block;
+	}
+#unprecedented .column.one {
+	padding-top: 100px;
+	}
+#unprecedented .column.two {
+	position: relative;
+	}
+button {
+	padding: 2px 4px;
+	}
+.size-lt-small #controls dl:first-of-type {
+	margin-top: 150px;
+	}
+
+#controls dl {
+	margin-top: 15px;
+	padding-top: 5px;
+	}
+#controls dl ~ dl {
+	border-top: 1px #D7DAD8 solid;
+	}
+#controls dl dt {
+	display: block;
+	}
+dt a:hover {
+	
+	}
+#switches dl dd {
+	display: block; float: left;
+	padding: 0px; margin: 0px 0px 2px 0px;
+	}
+#switches dl a.info {
+	float: right;
+	display: block;
+	xtext-indent: -9000px;
+	overflow: hidden;
+	position: relative;
+	color: white;
+	opacity: .3;
+	}
+#switches dl a.info::before {
+	font-family: "Iconography";
+	content: "\2139";
+	font-size: 1.4em;
+	color: #b5babe;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 16px;
+	width: 30px;
+	text-align: center;
+	}
+#switches dl a.info:hover::before {
+	color: #5e6a71;
+	}
+.spine-colors dd {
+	display: block;
+	float: left;
+	padding: 2px 0px;
+	xwidth: 33%;
+	}
+.spine-wireframe button::before {
+	content: "show ";
+	}
+.wireframe .spine-wireframe button::before {
+	content: "hide ";
+	}
+pre,code {
+	display: none;
+	}
+.wirefram pre, .wireframe code {
+	display: block;
+	}
+pre {
+	white-space: normal;
+	}
+pre code {
+	font-style: italic;
+	}
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+	// 
+	$('.spine-behavior button').on('click', function() {
+		var grid = $(this).attr('data-grid');
+		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
+		return false;
+	});
+	
+	// Change Spine color
+	$('.spine-colors button').on('click', function() {
+		var color = $(this).attr('data-color');
+		$('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
+		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		$('#spine').addClass(color);
+		return false;
+	});
+	
+	// Folio Sizes
+	$('.spine-sizes button').on('click', function() {
+		var max = $(this).attr('data-max');
+		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
+		$('#binder').addClass('folio').addClass(max);
+		return false;
+	});
+	
+	// Change Campus
+	$('.spine-campuses button').on('click', function() {
+		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		var campus = $(this).attr('data-campus');
+			campus = campus + '-signature';
+		$('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		return false;
+	});
+	
+	});
+
+</script>
+
+
+<aside id="switches">
+	
+	<dl class="spine-colors clearfix">
+		<dt>spine colors <a href="#spine-colors" class="info">info</a></dt>
+		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd> 
+		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
+		<dd><button data-color="lightly" class="lightly-back gray-dark-text inset">Lightly</button></dd>
+		<dd><button data-color="lighter" class="lighter-back gray-text">Lighter</button></dd>
+		<dd><button data-color="light" class="light-back lightly-text">Light</button></dd>
+		<dd><button data-color="gray" class="gray-back lighter-text">Gray</button></dd>
+		<dd><button data-color="dark" class="dark-back lighter-text">Dark</button></dd>
+		<dd><button data-color="darker" class="darker-back light-text">Darker</button></dd>
+		<dd><button data-color="darkest" class="darkest-back light-text">Darkest</button></dd>
+		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
+		<dd><button data-color="transparent" class="transparent-back gray-lighter-text">Transparent</button></dd>
+	</dl>
+	
+	<dl class="spine-column-options clearfix">
+		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
+		<dd><button onclick="$('#spine').removeClass('cropped').toggleClass('bleed');">bleeding</button></dd>
+		<dd><button onclick="location.href = '#cropping-bleeding';">cropped</button></dd> 
+	</dl>
+	
+	<dl class="spine-campuses clearfix">
+		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
+		<dd><button data-campus="spokane">Spokane</button></dd>
+		<dd><button data-campus="tricities">Tri-Cities</button></dd>
+		<dd><button data-campus="vancouver">Vancouver</button></dd>
+		<dd><button data-campus="globalcampus">Global Campus</button></dd>
+		<dd><button data-campus="extension">Extension</button></dd>
+	</dl>
+	
+
+	<dl class="spine-behavior clearfix">
+		<dt>grid behavior <a href="#responsive" class="info">info</a></dt>
+		<dd><button data-grid="fluid">fluid</button></dd>
+		<dd><button data-grid="fixed">fixed</button></dd>
+		<dd><button data-grid="hybrid">hybrid</button></dd>
+	</dl>
+	
+	<dl class="spine-sizes clearfix ">
+		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
+		<dd><button data-max="max-990">default</button></dd>
+		<dd><button data-max="max-1188">1188</button></dd>
+		<dd><button data-max="max-1386">1386</button></dd>
+		<dd><button data-max="max-1584">1584</button></dd>
+		<dd><button data-max="max-1782">1782</button></dd>
+		<dd><button data-max="max-1980">1980</button></dd>
+	</dl>
+	
+	<dl class="spine-wireframe">
+		<dt>under the hood</dt>
+		<dd><button onclick="$('main').toggleClass('wireframe');">framework</button></dd>
+	</dl>
+				
+</aside>
+
+
+			
 		</div><!--/column-->
 
 	</section>
@@ -158,13 +539,13 @@
 <!-- /CONTENT -->
 
 <!-- SPINE -->
-<div id="spine" class="shelved">
-<div id="glue">
+<div id="spine" class="spine-column shelved">
+<div id="glue" class="spine-glue">
 
-<header><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
+<header class="spine-header"><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
 
 <!-- ACTIONS -->
-<section id="wsu-actions">
+<section id="wsu-actions" class="spine-actions">
 
 	<!-- Tabs -->
 	<ul id="wsu-actions-tabs" class="spine-tabs clearfix">
@@ -181,7 +562,7 @@
 	
 </section><!--/#wsu-actions-->
 
-<nav id="spine-navigation">
+<nav id="spine-navigation" class="spine-navigation">
 
 <nav id="spine-sitenav">
 <!-- Your navigation list here
@@ -198,37 +579,37 @@
 			<li><a href="">The first link in a list of links</a></li>
 			<li class="current"><a href="link">A secondary link</a></li>
 			<li>
-				<a href="link">A third link</a>
+				<a href="link">A second level link</a>
 				<ul>
-					<li><a href="link">A second level link</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Book_binding">An external link</a></li>
 				</ul>
 			</li>
 		</ul>
 	</li>
 	<li>
-		<a href="link">Another first order link</a>
+		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
 		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
+			<li><a href="/test/overlyLinked.html">Overly Linked</a></li>
+			<li><a href="/test/overlyLong.html">Overly Long</a></li>
 		</ul>
 	</li>
-	<li><a href="link">Short links</a></li>
-	<li><a href="link">Are often best</a></li>
+	<li><a href="">Short links</a></li>
+	<li><a href="">Are often best</a></li>
 </ul>
 
 </nav>
 
 <nav id="spine-offsitenav">
 	<ul>
-		<li><a href="">Offsite Link</a></li>
-		<li><a href="">Another</a></li>
+		<li><a href="http://www.example.com">Offsite Link</a></li>
+		<li><a href="http://fonts.wsu.edu">Another</a></li>
 	</ul>
 </nav>
 
 </nav><!-- #navigation -->
 
 <!-- Social and Global Links -->
-<footer>
+<footer class="spine-footer">
 	<nav id="wsu-social-channels">
 		<ul>
 			<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>

@@ -48,10 +48,12 @@ module.exports = function(grunt) {
 				options: {
 					relativeUrls: true
 				},
+				files: [
 				// Files to perform replacements and includes with
-				src: 'styles/less/*.less',
-				// Destination directory to copy files to
-				dest: 'build/tmp/less/'
+				{ src: 'styles/less/colors.less', dest: 'build/tmp/less/colors.css' },
+				{ src: 'styles/less/spine.less', dest: 'styles/spine.css' },
+				{ src: 'styles/less/respond.less', dest: 'styles/respond.css' }
+				]
 			},
 		},
 		cssmin: {
@@ -253,7 +255,16 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-		}
+		},
+		watch: {
+	      html: {
+	        files: ['test/*.html'],
+	        tasks: ['dev'],
+	        options: {
+	          livereload: true,
+	        }
+	      },
+	    }
 	});
 
 	// Load the plugin that provides the "uglify" task.
@@ -265,7 +276,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-preprocess');
+	
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
@@ -292,7 +305,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
-								'preprocess:tu_fullGridExample',
+								'preprocess:tu_fullGridExample'
 								]);
 		
 		
