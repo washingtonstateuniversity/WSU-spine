@@ -51,7 +51,8 @@ module.exports = function(grunt) {
 				files: [
 				// Files to perform replacements and includes with
 				{ src: 'styles/less/colors.less', dest: 'build/tmp/less/colors.css' },
-				{ src: 'styles/less/spine.less', dest: 'styles/spine.css' }
+				{ src: 'styles/less/spine.less', dest: 'styles/spine.css' },
+				{ src: 'styles/less/respond.less', dest: 'styles/respond.css' }
 				]
 			},
 		},
