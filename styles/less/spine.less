@@ -1,3 +1,4 @@
+@import (reference) "vars.less";
 @import (reference) "colors.less";
 
 /* II Spine */
@@ -12,7 +13,6 @@
     font-weight: normal;
     font-style: normal;
 	}
-	
 
 
 /* II.1.0 THE SPINE
@@ -41,6 +41,7 @@ html.lt-ie9 #spine {
 #glue {
 	margin-top: 0px;
 	width:198px;
+	position: relative;
 	}
 #spine button {
 	background-color: transparent;
@@ -56,7 +57,6 @@ html.lt-ie9 #spine {
 #spine a:hover {
 	color: #981e32;
 	}
-
 	
 /* II.1.1 Cracked */
 #spine.cracked {
@@ -95,51 +95,54 @@ html.lt-ie9 #spine {
 .size-lt-large #spine.cropped footer {
 	display: block;
 	}
+	
 footer.looseleaf {
 	padding-top: 10px;
-	}
-footer.looseleaf nav,
-footer.looseleaf small {
-	position: absolute;
-	white-space: nowrap;
-	}
-footer.looseleaf #wsu-global-links {
-	right: 50%;
-	padding-right: 45px;
-	}
-footer.looseleaf .copyright-link {
-	left: 50%;
-	padding-left: 43px;
-	padding-top: 4px;
-	}
-footer.looseleaf #wsu-social-channels {
-	float: right;
-	display: block;
-	left: 50%;
-	z-index: 500;
-	width: 1px;
-	overflow: visible;
-	}
-footer.looseleaf #wsu-social-channels ul {
-	position: relative;
-	left: -42px;
-	}
-footer.looseleaf #wsu-social-channels ul li {
-	display: inline-block;
-	width: auto;
-	padding: 0px 0px 0px 1px;
-	margin: 0px;
-	width: 20px;
-	white-space: nowrap;
-	}
-footer.looseleaf #wsu-social-channels li a {
-	font-size: 16px;
-	}
-footer.looseleaf #wsu-global-links li {
-	width: auto;
-	display: inline-block;
-	margin: 0px;
-	padding-left: 10px;
+	
+	nav,
+	small {
+		position: absolute;
+		white-space: nowrap;
+		}
+	#wsu-global-links {
+		right: 50%;
+		padding-right: 45px;
+		}
+	.copyright-link {
+		left: 50%;
+		padding-left: 43px;
+		padding-top: 4px;
+		}
+	#wsu-social-channels {
+		float: right;
+		display: block;
+		left: 50%;
+		z-index: 500;
+		width: 1px;
+		overflow: visible;
+		}
+	#wsu-social-channels ul {
+		position: relative;
+		left: -42px;
+		}
+	#wsu-social-channels ul li {
+		display: inline-block;
+		width: auto;
+		padding: 0px 0px 0px 1px;
+		margin: 0px;
+		width: 20px;
+		white-space: nowrap;
+		}
+	#wsu-social-channels li a {
+		font-size: 16px;
+		}
+	#wsu-global-links li {
+		width: auto;
+		display: inline-block;
+		margin: 0px;
+		padding-left: 10px;
+		}
+	
 	}
 
 /* II.2.0 HEADER (Spine)
@@ -151,7 +154,7 @@ footer.looseleaf #wsu-global-links li {
 #wsu-signature {
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
+	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
 	background-size: 150px auto;
 	height: 155px;
 	display: block;
@@ -160,13 +163,9 @@ footer.looseleaf #wsu-global-links li {
 	white-space: nowrap;
 	}
 html.no-svg #wsu-signature {
-	background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png');
+	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png');
 	}
-.spokane-signature #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg'); }
-.tricities-signature #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical.svg'); }
-.globalcampus-signature #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-vertical.svg'); }
-.vancouver-signature #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-vertical.svg'); }
-.extension-signature #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical.svg'); }
+
 
 /* Spine Menu Button (Shelve and Unshelve) */
 button#shelve {
@@ -186,7 +185,9 @@ button#shelve {
 button#shelve:hover {
 	color: #5e6a71;
 	}
-#spine button:before {
+.spine-tabs button:before,
+.spine-nav button:before,
+.spine-footer button:before {
 	font-family: "Spine-Icons";
 	text-indent: 0px;
 	position: absolute;
@@ -198,11 +199,11 @@ button#shelve:hover {
 /* II.3.0 NAVIGATION
 --------------------------------------------------------------------------- */
 
-#spine ul {
+#spine nav ul {
 	margin: 0px;
 	padding: 0px;
 	}
-#spine li {
+#spine nav li {
 	list-style: none;
 	}
 #spine nav ul li {
@@ -235,32 +236,36 @@ button#shelve:hover {
 #spine nav ul li.parent > a {
 	padding-right: 15px;
 	}
-#spine nav ul li.parent.opened > a,
-#spine nav ul li.parent.active > a {
+#spine li.parent.opened > a,
+#spine li.parent.active > a {
 	padding-bottom: 3px;
 	}
-#spine nav ul li.parent > a:after,
-#spine nav ul li.parent.opened > a:after {
+#spine li.parent > a:after,
+#spine li.parent.opened > a:after {
 	font-family: "Spine-Icons";
 	display: none;
 	position: absolute;
-	top: .6em;
+	top: .5em;
 	right: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	}
-#spine nav ul li.parent:not(.active) > a:after {
+#spine .active li.parent > a:after,
+#spine .active li.parent.opened > a:hover:after {
+	top: .4em;
+	}
+#spine li.parent:not(.active) > a:after {
 	content: "\F501";
 	}
-#spine nav ul li.parent.opened:not(.active) > a:after {
+#spine li.parent.opened:not(.active) > a:after {
 	content: "\F500";
 	}
-#spine nav ul li.parent > a:hover:after,
-#spine nav ul li.parent.opened > a:hover:after {
+#spine li.parent > a:hover:after,
+#spine li.parent.opened > a:hover:after {
 	display: block;
 	}
-#spine nav ul li.parent.opened li:last-child a,
-#spine nav ul li.parent.active li:last-child a {
+#spine li.parent.opened li:last-child a,
+#spine li.parent.active li:last-child a {
 	padding-bottom: 8px;
 	}
 
@@ -288,16 +293,18 @@ button#shelve:hover {
 
 /* Home Icon */
 
-#spine-sitenav:not(.homeless) > ul > li:first-of-type > a {
+#spine-sitenav:not(.homeless) > ul > li:first-child > a {
 	padding-left: 1.4em;
-	background: transparent url('//repo.wsu.edu/spine/1/icons/home-gray.svg') no-repeat left center;
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray.svg');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left center;
 	background-size: 1em auto;
 	}
-#spine-sitenav:not(.homeless) > ul > li.active:first-of-type > a,
-#spine-sitenav:not(.homeless) > ul > li:first-of-type > a:hover,
-#spine-sitenav:not(.homeless) > ul > li:first-of-type > a:before {
-	background: transparent url('//repo.wsu.edu/spine/1/icons/home-crimson.svg') no-repeat left center;
-	background-size: 1em auto;
+#spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
+#spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
+#spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
 	}
 	
 /* Active, Current, "Dogeared" */
@@ -389,35 +396,38 @@ html.lt-ie9 #wsu-actions {
 	
 /* II.3.2 Actions -> Tabs */
 
-ul#wsu-actions-tabs {
-	margin: 0px 20px;
+.spine-tabs {
+	margin: 0px 2em;
+	padding: 0px;
 	}
-ul#wsu-actions-tabs button {
-	outline: none;
-	}
-ul#wsu-actions-tabs li {
-	width: 25%;
-	display: inline-block;
-    margin: 0;
-    padding: 0;
-	}
-ul#wsu-actions-tabs li button {
-	position: relative;
-	width: 100%;
-	height: 2.2em;
-	font-weight: normal;
-	font-size: 1.2em;
-	line-height: 1em;
-	text-shadow: none;
-	width: 100%;
-	padding: .8em 0 .4em 0;
-	display: block;
-	}
-#wsu-actions-tabs button:before {
-	text-align: center;
-	}
-#wsu-actions-tabs li button:before {
-	top: .9em;
+.spine-tabs {
+	
+	button {
+		outline: none;
+		}
+	li {
+		width: 25%;
+		display: inline-block;
+	    margin: 0;
+	    padding: 0;
+		}
+	li button {
+		position: relative;
+		width: 100%;
+		height: 2.2em;
+		font-weight: normal;
+		font-size: 1.2em;
+		line-height: 1em;
+		text-shadow: none;
+		width: 100%;
+		padding: .8em 0 .8em 0;
+		display: block;
+		}
+	li button:before {
+		text-align: center;
+		top: .9em;
+		}
+	
 	}
 	
 #wsu-search-tab button:before { content: "$"; }
@@ -433,31 +443,61 @@ ul#wsu-actions-tabs li button {
 /* II.3.1 ACTIONS -> Search 
 --------------------------------------------------------------------------- */
 
-#wsu-search form {
-	padding: 1em 2em 0 2em;
-	margin: 0px 0px -1px 0px;
-	position: relative;
-	line-height: 1em;
+.spine-search {
+
+	form {
+		padding: 1em 2em 0 2em;
+		margin: 0px 0px -1px 0px;
+		position: relative;
+		line-height: 1em;
+		}
+	input[type="text"] {
+		font-size: 1.6em;
+		color: #5e6a71;
+		background-color: transparent;
+		border-radius: 0px;
+		padding: .5em 15px 5px 0;
+		text-indent: 0px;
+		height: 1.7em;
+		width: 100%;
+		margin: 0px;
+		border: none;
+		box-shadow: none;
+		border-bottom: 1px #b6bcbf solid;
+		}
+	input:focus {
+		color: #981e32;
+		border: none;
+		border-bottom: 1px #981e32 solid;
+		}
+	button {
+		position: absolute;
+		left: auto;
+		bottom: 0px;
+		right: 0px;
+		padding: 0px;
+		height: 40px;
+		width: 50px;
+		text-indent: 110%;
+		overflow: hidden;
+		}
+	button:before {
+		content: "\25BB";
+		color: #b6bcbf;
+		font-size: 1.3em;
+		display: inline-block;
+		text-align: right;
+		left: auto !important;
+		top: auto !important;
+		bottom: 5px !important;
+		right: 20px !important;
+		}
+	button:hover:before {
+		color: @crimson;
+		}
+	
 	}
-#wsu-search input[type="text"] {
-	font-size: 1.6em;
-	color: #5e6a71;
-	background-color: transparent;
-	border-radius: 0px;
-	padding: .5em 15px 5px 0;
-	text-indent: 0px;
-	height: 1.7em;
-	width: 100%;
-	margin: 0px;
-	border: none;
-	box-shadow: none;
-	border-bottom: 1px #b6bcbf solid;
-	}
-#wsu-search input:focus {
-	color: #981e32;
-	border: none;
-	border-bottom: 1px #981e32 solid;
-	}
+	
 #wsu-search :-webkit-input-placeholder {
    text-indent: 3px;
    }
@@ -465,37 +505,16 @@ ul#wsu-actions-tabs li button {
 #wsu-search :-ms-input-placeholder {
    text-indent: 5px;
    }
-#wsu-search button {
-	position: absolute;
-	left: auto;
-	bottom: 0px;
-	right: 0px;
-	padding: 0px;
-	height: 40px;
-	width: 50px;
-	text-indent: 110%;
-	overflow: hidden;
-	}
-#wsu-search button:before {
-	content: "\25BB";
-	color: #b6bcbf;
-	font-size: 1.3em;
-	left: auto;
-	display: inline-block;
-	text-align: right;
-	top: auto;
-	bottom: 5px;
-	right: 20px;
-	}
-#wsu-search button:hover:before {
-	color: @crimson;
-	}
 	
 /* Index */
 
 /* Reset jQuery UI */
 #spine-shortcuts {
 	padding-top: 2px;
+	max-height: 100%;
+	display: block;
+	position: relative;
+	padding: 0 2em;
 	}
 #spine-shortcuts *,
 #spine-shortcuts *:focus,
@@ -508,49 +527,44 @@ ul#wsu-actions-tabs li button {
 	line-height: 1.1em;
 	box-shadow: none;
 	}
-	
+
 #spine-shortcuts {
-	max-height: 100%;
-	display: block;
-	position: relative;
-	padding: 0 2em;
-	}
-#spine-shortcuts ul li {
-	font-size: .9em;
-	line-height: 1.2em;
-	padding: 0px;
-	list-style: none;
-	}
-#spine #spine-shortcuts ul li a {
-	color: #5e6a71;
-	display: block;
-	padding: .6em 0;
-	margin: 0;
-	border-bottom: 1px #c3cbcf solid;
-	}
-#spine-shortcuts ul li a:hover,
-#spine-shortcuts ul li a.ui-state-focus {
-	color: white;
-	background-color: #434d53;
-	margin: -1px -2em 0px -2em;
-	padding: .6em 2em .6em 2em;
-	border-bottom: 2px #434d53 solid;
-	}
-#spine-shortcuts ul li:first-child a:hover,
-#spine-shortcuts ul li:first-child a.ui-state-focus {
-	margin: 0px -2em 0px -2em;
-	border-bottom: 1px #434d53 solid;
-	}
-#spine-shortcuts ul li:first-child a {
-	border-top: 1px transparent solid;
-	}
-#spine-shortcuts ul li:last-child a {
-	border-bottom-color: transparent;
-	}
-#spine-shortcuts ul li a:active,
-#spine-shortcuts ul li a:hover,
-#spine-shortcuts ul li a:focus {
-	outline: none;
+
+	li {
+		padding: 0px;
+		list-style: none;
+		}
+	li a {
+		color: #5e6a71;
+		display: block;
+		padding: .6em 0;
+		margin: 0;
+		border-bottom: 1px #c3cbcf solid;
+		}
+	li a:hover,
+	li a.ui-state-focus {
+		color: white;
+		background-color: #434d53;
+		margin: -1px -2em 0px -2em;
+		padding: .6em 2em .6em 2em;
+		border-bottom: 2px #434d53 solid;
+		}
+	li:first-child a:hover,
+	li:first-child a.ui-state-focus {
+		margin: 0px -2em 0px -2em;
+		border-bottom: 1px #434d53 solid;
+		}
+	li:first-child a {
+		border-top: 1px transparent solid;
+		}
+	li:last-child a {
+		border-bottom-color: transparent;
+		}
+	li a:active,
+	li a:hover,
+	li a:focus {
+		outline: none;
+		}
 	}
 	
 .ui-helper-hidden-accessible {
@@ -567,131 +581,121 @@ ul#wsu-actions-tabs li button {
 /* II.3.2 ACTIONS -> Contact 
 --------------------------------------------------------------------------- */
 
-address[role="contact"],
-#wsu-actions > address {
-	display: none;
-	}
+.spine-contact {
 
-#wsu-contact address {
-	color: #384044;
-	margin: 2em;
-	display: block;
-	}
-
-#wsu-contact div {
-	padding: .75em 0;
-	border-bottom: 1px #c3cbcf solid;
-	line-height: 1.4em;
-	}
-#wsu-contact div div {
-	padding: 0;
-	line-height: 1.1em;
-	border-bottom: none;
-	}
-#wsu-contact .organization  {
-	font-weight: bold;
-	padding-bottom: .5em;
-	}
-#wsu-contact i.wsu-icon {
-	width: 1.7em;
-	display: inline-block;
-	text-align: center;
-	}
-#wsu-contact div.adr {
-	border: none;
-	padding: 0px;
-	}
-#wsu-contact .organization-unit  {
-	font-size: 1.3em;
-	padding-bottom: .3em;
-	border-bottom: none;
-	}
-#wsu-contact .organization-unit a,
-#wsu-contact .organization-unit a:hover {
-	color: black;
-	}
-#wsu-contact .organization-name  {
-	xfont-size: .9em;
-	white-space: nowrap;
-	padding: 0;
-	border-bottom: none;
-	}
-#wsu-contact .street-address {
-	border-bottom: none;
-	padding: 0;
-	}
-#spine .coupled > a {
-	font-weight: bold;
-	}
-#spine .coupled > a:hover {
-	color: #5e6a71;
-	}
-#wsu-contact .more {
-	border-bottom: none;
-	}
-#wsu-contact .area {
-	padding-top: 0;
-	}
-#wsu-contact i.wsu-icon:before {
-	font-family: "Spine-Icons";
-	width: 1.7em;
-	display: inline-block;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	}
-#wsu-contact .tel i.wsu-icon:before { content: "\1F4DE"; }
-#wsu-contact .email i.wsu-icon:before { content: "\0040"; }
-#wsu-contact .more i.wsu-icon:before { content: "\2139"; }
-
-#wsu-contact .postalcode {
-	white-space: nowrap;
+	address {
+		color: #384044;
+		margin: 2em;
+		display: block;
+		}
+	div {
+		padding: .75em 0;
+		border-bottom: 1px #c3cbcf solid;
+		line-height: 1.4em;
+		}
+	div div {
+		padding: 0;
+		line-height: 1.1em;
+		border-bottom: none;
+		}
+	.organization  {
+		font-weight: bold;
+		padding-bottom: .5em;
+		}
+	.organization-unit  {
+		font-size: 1.3em;
+		padding-bottom: .3em;
+		border-bottom: none;
+		}
+	.organization-unit a,
+	.organization-unit a:hover {
+		color: black;
+		}
+	.organization-name  {
+		white-space: nowrap;
+		padding: 0;
+		border-bottom: none;
+		}
+	.adr {
+		border: none;
+		padding: 0px;
+		}
+	.street-address {
+		border-bottom: none;
+		padding: 0;
+		}
+	.more {
+		border-bottom: none;
+		}
+	.area {
+		padding-top: 0;
+		}
+	div:before {
+		font-family: "Spine-Icons";
+		width: 1.7em;
+		display: inline-block;
+		text-align: center;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		}
+	.tel:before { content: "\1F4DE"; }
+	.email:before { content: "\0040"; }
+	.more:before { content: "\2139"; }
+	
+	.postalcode {
+		white-space: nowrap;
+		}
+		
 	}
 
 /* 3.3 Share */
-#wsu-share ul {
-	margin: 2em;
-	}
-#wsu-share li a {
-	display: block;
-	padding-top: .75em;
-	padding-bottom: .75em;
-	border-bottom: 1px #c3cbcf solid;
-	}
-#wsu-share li a span {
-	display: none;
-	}
-#wsu-share ul li:last-of-type a  {
-	border-bottom: none;
-	}
 
-#wsu-share li a:hover {
-	color: white;
-	background: #434d53;
-	padding-left: 2em;
-	padding-right: 2em;
-	margin: -1px -2em 1px -2em;
+.spine-share {
+
+	ul {
+		margin: 2em !important;
+		}
+	li a {
+		display: block;
+		padding-top: .75em;
+		padding-bottom: .75em;
+		border-bottom: 1px #c3cbcf solid;
+		}
+	li a span {
+		display: none;
+		}
+	ul li:last-of-type a  {
+		border-bottom: none;
+		}
+	li a:hover {
+		color: white !important;
+		background: #434d53;
+		padding-left: 2em;
+		padding-right: 2em;
+		margin: -1px -2em 1px -2em;
+		}
+	li a:active {
+		background: #981e32;
+		}
+	li a:hover {
+		color: white;
+		}
+	li a:before {
+		font-family: "Spine-Icons" !important;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		width: 1.8em;
+		display: inline-block;
+		text-align: center;
+		}
+	li.by-facebook a:before { content: "F"; }
+	li.by-twitter a:before { content: "T"; }
+	li.by-email a:before { content: "@"; }
+	li.by-pinterest a:before { content: "P"; }
+	li.by-linkedin a:before { content: "L"; }
+	li.by-other a:before { content: ""; display: none; }
+
 	}
-#wsu-share li a:active {
-	background: #981e32;
-	}
-#wsu-share li a:hover {
-	color: white;
-	}
-#wsu-share li a:before {
-	font-family: "Spine-Icons" !important;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	width: 1.8em;
-	display: inline-block;
-	text-align: center;
-	}
-#wsu-share li.by-facebook a:before { content: "F"; }
-#wsu-share li.by-twitter a:before { content: "T"; }
-#wsu-share li.by-email a:before { content: "@"; }
-#wsu-share li.by-pinterest a:before { content: "P"; }
-#wsu-share li.by-linkedin a:before { content: "L"; }
-#wsu-share li.by-other a:before { content: ""; display: none; }
 
 /* II.3.4 Print */
 
@@ -718,94 +722,99 @@ html.lt-ie9 #spine footer {
 #wsu-social-channels {
 	margin-bottom: .6em;
 	width: 100%;
-	}
-#wsu-social-channels ul {
-	text-align: center;
-	}
-#wsu-social-channels ul li {
-	color: #b6bcbf;
-	background-position: center center;
-	background-repeat: no-repeat;
-	width: 2.5em;
-	display: inline-block;
-	margin: 0px;
-	padding: 0px;
-	}
-#wsu-social-channels ul li a {
-	color: #e0e5e8;
-	color: #D7DADB;
-	text-indent: -9000px;
-	font-size: 1.8em;
-	line-height: .8em;
-	height: 1.2em;
-	padding: 0px;
-	display: block;
-	position: relative;
-	text-transform: none;
-	}
-#wsu-social-channels ul li a:before {
-	font-family: "Spine-Icons";
-	position: absolute;
-	top: 0;
-	left: 0;
-	text-indent: 0;
-	text-align: center;
-	width: 30px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	
+	ul {
+		text-align: center;
+		}
+	ul li {
+		color: #b6bcbf;
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 2.5em;
+		display: inline-block;
+		margin: 0px;
+		padding: 0px;
+		}
+	ul li a {
+		color: #e0e5e8;
+		color: #D7DADB;
+		text-indent: -9000px;
+		font-size: 1.8em;
+		line-height: .8em;
+		height: 1.2em;
+		padding: 0px;
+		display: block;
+		position: relative;
+		text-transform: none;
+		}
+	ul li a:before {
+		font-family: "Spine-Icons";
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-indent: 0;
+		text-align: center;
+		width: 30px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		}
+	
 	}
 
-li.facebook-channel a:before { content: "F"; } #spine li.facebook-channel a:hover { color: #3b5998; }
-li.twitter-channel a:before { content: "T"; } #spine li.twitter-channel a:hover { color: #00aced; }
-li.youtube-channel a:before { content: "Y"; } #spine li.youtube-channel a:hover { color: #bb0000; }
+li.facebook-channel a:before { content: "F"; } #spine li.facebook-channel a:hover { color: @facebook-blue; }
+li.twitter-channel a:before { content: "T"; } #spine li.twitter-channel a:hover { color: @twitter-blue; }
+li.youtube-channel a:before { content: "Y"; } #spine li.youtube-channel a:hover { color: @youtube-red; }
 li.directory-channel a:before { content: "s"; } li.directory-channel a:hover:before { content: "S"; } #spine li.directory-channel a:hover { color: #b6bcbf; }
-li.linkedin-channel a:before { content: "L"; } #spine li.linkedin-channel a:hover { color: #007bb6; }
-li.pinterest-channel a:before { content: "P"; } #spine li.pinterest-channel a:hover { color: #cb2027; }
-li.gplus-channel a:before { content: "G"; } #spine li.gplus-channel a:hover { color: #b6bcbf; }
-li.flickr-channel a:before { content: "R"; } #spine li.flickr-channel a:hover { color: #b6bcbf; }
-li.tumblr-channel a:before { content: "B"; } #spine li.tumblr-channel a:hover { color: #32506d; }
+li.linkedin-channel a:before { content: "L"; } #spine li.linkedin-channel a:hover { color: @linkedin-blue; }
+li.pinterest-channel a:before { content: "P"; } #spine li.pinterest-channel a:hover { color: @pinterest-red; }
+li.gplus-channel a:before { content: "G"; } #spine li.gplus-channel a:hover { color: @gplus-orange; }
+li.flickr-channel a:before { content: "R"; } #spine li.flickr-channel a:hover { color: @flickr-pink; }
+li.tumblr-channel a:before { content: "B"; } #spine li.tumblr-channel a:hover { color: @tumblr-blue; }
 
-/* Global Navigation */
-nav#wsu-global-links {
+/* II.5.2 FOOTER -> Global Navigation */
+
+#wsu-global-links {
 	font-size: .9em;
 	border-top-width: 1px;
 	border-top-style: solid;
 	padding-top: 5px;
 	margin-top: 5px;
 	width: 100%;
-	}
-nav#wsu-global-links ul {
-	display: table;
-	width: 100%;
-	}
-nav#wsu-global-links ul li {
-	font-size: .8em;
-	line-height: 1em;
-	display: table-cell;
-	text-transform: uppercase;
-	text-align: left;
-	}
-nav#wsu-global-links ul li:nth-of-type(1) { text-align: left; width: 29%; }
-nav#wsu-global-links ul li:nth-of-type(2) { text-align: left; width: 31%; }
-nav#wsu-global-links ul li:nth-of-type(3) { text-align: left; width: 30%; }
-nav#wsu-global-links ul li:nth-of-type(4) {	text-align: right; width: 10%; }
-
-#spine footer small {
-	font-size: .7em;
-	line-height: 1em;
-	color: #b6bcbf;
-	display: block;
-	text-align: center;
-	margin: 0px 0px;
-	padding: 6px 0px;
-	}
-#spine .copyright-link a,
-.looseleaf .copyright-link a {
-	color: #8b9399;
-	}
-#spine .copyright-link a:hover,
-.looseleaf .copyright-link a:hover {
-	color: #5f6b71;
+	
+	ul {
+		display: table;
+		width: 100%;
+		}
+	ul li {
+		font-size: .8em;
+		line-height: 1em;
+		display: table-cell;
+		text-transform: uppercase;
+		text-align: left;
+		}
+	ul li:nth-of-type(1) { text-align: left; width: 29%; }
+	ul li:nth-of-type(2) { text-align: left; width: 31%; }
+	ul li:nth-of-type(3) { text-align: left; width: 30%; }
+	ul li:nth-of-type(4) {	text-align: right; width: 10%; }
+	
+	small {
+		font-size: .7em;
+		line-height: 1em;
+		color: #b6bcbf;
+		display: block;
+		text-align: center;
+		margin: 0px 0px;
+		padding: 6px 0px;
+		}
+	.copyright-link a,
+	.looseleaf .copyright-link a {
+		color: #8b9399;
+		}
+	.copyright-link a:hover,
+	.looseleaf .copyright-link a:hover {
+		color: #5f6b71;
+		}
+	
 	}
 	
 /* II.6.0 COLORS - Spinal Column */
@@ -999,26 +1008,21 @@ nav#wsu-global-links a:hover {
 .lighter #spine-sitenav li.dogeared > a {
 	color: @crimson;
 	}
-.lighter #wsu-actions li.opened,
-.lighter #wsu-actions li.opened:hover,
-.lighter #wsu-actions section {
-	background-color: white;
-	}
 
 /* LIGHT #8b9399, rgb(139,147,153) */
 #spine.light,
 #spine.light.bleed:before {
 	background-color: @gray-light;
 	}
-#spine.light #wsu-signature {
+.light #wsu-signature {
 	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
 	}
 #spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
 	}
 .light:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-#spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-white.svg');
+.light:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
 	}
 .light nav#spine-sitenav a,
 .light nav#spine-offsitenav a:hover {
@@ -1044,7 +1048,6 @@ nav#wsu-global-links a:hover {
 	color: @gray-lightly;
 	}
 .light #wsu-actions-tabs button:hover,
-.light #spine-sitenav a,
 .light #spine-offsitenav a:hover,
 .light #wsu-global-links a:hover {
 	color: @gray-lightest;
@@ -1053,69 +1056,72 @@ nav#wsu-global-links a:hover {
 .light #spine-sitenav li.dogeared > a {
 	color: white;
 	}
-.light #wsu-actions li.opened,
-.light #wsu-actions li.opened:hover,
-.light #wsu-actions section {
-	background-color: white;
-	}
 
 /* GRAY #5e6a71, rgb(94,106,113) */
-#spine.gray, #spine.gray #glue, #spine.gray #glue > header, #spine.gray.bleed:before { background: #5e6a71; }
-#spine.gray #wsu-signature { background-image: url('http://spine.nbj.me/spine/1/marks/wsu-signature-vertical-lightest.svg'); }
-#spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
-#spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-#spine.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-white.svg') }
-#spine.gray #wsu-actions li.opened button,
-#spine.gray #wsu-actions li#wsu-tab-search.opened button {
-	color: #5e6a71; }
-#spine.gray #wsu-actions li button,
-#spine.gray #wsu-actions li.opened button:hover,
-#spine.gray #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.gray #wsu-social-channels ul li a,
-#spine.gray footer small,
-#spine.gray footer small a {
-	color: #424a4f; }
-#spine.gray #wsu-global-links ul li a {
-	color: #8b9399; }
-#spine.gray #spine-sitenav ul li,
-#spine.gray #spine-offsitenav ul li,
-#spine.gray #wsu-global-links {
-	border-color: #424a4f; }
-#spine.gray #spine-sitenav ul li a,
-#spine.gray #spine-offsitenav ul li a:hover {
-	color: #e6e8e9; }
-#spine.gray #spine-offsitenav ul li a,
-#spine.gray #wsu-global-links ul li a:hover {
-	color: #babfc2; }
-#spine.gray #wsu-actions li button:hover,
-#spine.gray #wsu-actions li#wsu-tab-search button {
-	color: #262a2d; }
+#spine.gray,
+#spine.gray.bleed:before {
+	background: @gray;
+	}
+.gray #wsu-signature {
+	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+	}
+.gray:not(.homeless) #spine-sitenav > ul > li:first-child a {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
+	}
+.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+	}
+.gray nav#spine-sitenav a,
+.gray nav#spine-offsitenav a:hover {
+	color: @gray-lightly;
+	}
+.gray #wsu-actions li.opened button,
+.gray #wsu-actions li button,
+.gray #wsu-actions li.opened button:hover,
+.gray #wsu-social-channels a,
+.gray footer small a {
+	color: darken(@gray-dark, 2%);
+	}
+.gray #spine-sitenav ul li,
+.gray #wsu-global-links {
+	border-color: @gray-dark;
+	}
+.gray #wsu-tab-search.opened button,
+.gray #wsu-tab-search.opened button:hover {
+	color: @gray-darker;
+	}
+.gray #spine-offsitenav a,
+.gray #wsu-global-links a {
+	color: @gray-lighter;
+	}
+.gray #wsu-actions-tabs button:hover,
+.gray #spine-offsitenav a:hover,
+.gray #wsu-global-links a:hover {
+	color: @gray-lightly;
+	} 
 #spine.gray li.facebook-channel a:hover {
-	color: #eeeff4;	}
-#spine.gray #spine-sitenav ul li a:hover,
-#spine.gray #spine-sitenav ul li.dogeared > a {
-	color: white; }
-#spine.gray #wsu-actions li#wsu-tab-search button:hover {
-	color: black; }
+	color: @facebook-lightblue;
+	}
+.gray #spine-sitenav a:hover,
+.gray #spine-sitenav li.dogeared > a {
+	color: white;
+	}
 
 /* GRAY-DARK #383D42, rgb(75,85,90) */
 #spine.dark,
 #spine.dark.bleed:before {
 	background-color: @gray-dark;
 	}
-
-
-#spine.dark #wsu-signature {
+.dark #wsu-signature {
 	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
 	}
 .dark:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
 	}
 .dark:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
 .dark:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-white.svg');
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
 	}
 .dark nav#spine-sitenav a,
 .dark nav#spine-offsitenav a:hover {
@@ -1146,133 +1152,169 @@ nav#wsu-global-links a:hover {
 .dark #wsu-global-links a:hover,
 .dark #wsu-social-channels li[class*="-channel"] a:hover {
 	color: @gray-lightly;
-	} 
+	}
+
 .dark #spine-sitenav a:hover,
 .dark #spine-sitenav li.dogeared > a {
 	color: white;
 	}
-.dark #wsu-actions li.opened,
-.dark #wsu-actions li.opened:hover,
-.dark #wsu-actions section {
-	background-color: white;
+
+/* GRAY-DARKER #2a3033, rgb(42 48 51) */
+#spine.darker,
+#spine.darker.bleed:before {
+	background-color: darken(@gray-darker, 3%);
+	}
+.darker:not(.homeless) #spine-sitenav > ul > li:first-child a {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
+	}
+.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+	}
+.darker nav#spine-sitenav a,
+.darker nav#spine-offsitenav a:hover {
+	color: @gray-lighter;
+	}
+.darker #wsu-actions li.opened button,
+.darker #wsu-actions li button,
+.darker #wsu-actions li.opened button:hover,
+.darker #wsu-social-channels a,
+.darker footer small a {
+	color: @gray;
+	}
+.darker #spine-sitenav ul li,
+.darker #wsu-global-links {
+	border-color: @gray-dark;
+	}
+.darker #wsu-tab-search.opened button,
+.darker #wsu-tab-search.opened button:hover {
+	color: @gray-darker;
+	}
+.darker #spine-offsitenav a,
+.darker #wsu-global-links a {
+	color: @gray-light;
+	}
+.darker #wsu-actions-tabs button:hover,
+.darker #spine-sitenav a,
+.darker #spine-offsitenav a:hover,
+.darker #wsu-global-links a:hover{
+	color: @gray-lightly;
+	}
+.darker #spine-sitenav a:hover,
+.darker #spine-sitenav li.dogeared > a {
+	color: white;
 	}
 
-/* GRAY-DARKER #384044 #424a4f #212426, rgb(56,64,68) */
-#spine.darker, #spine.darker #glue, #spine.darker #glue > header, #spine.darker.bleed:before { background: #212426; }
-#spine.darker #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg'); }
-#spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lightest.svg') }
-#spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-#spine.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-white.svg') }
-#spine.darker #wsu-actions li.opened button,
-#spine.darker #wsu-actions li#wsu-tab-search.opened button {
-	color: #5e6a71; }
-#spine.darker #wsu-actions li button,
-#spine.darker #wsu-actions li.opened button:hover,
-#spine.darker #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.darker #wsu-social-channels ul li a,
-#spine.darker #wsu-global-links ul li a,
-#spine.darker footer small,
-#spine.darker footer small a {
-	color: #5e6a71; }
-#spine.darker #spine-sitenav ul li,
-#spine.darker #spine-offsitenav ul li,
-#spine.darker #wsu-global-links {
-	border-color: #5e6a71; }
-#spine.darker #spine-offsitenav ul li a,
-#spine.darker #wsu-global-links ul li a:hover {
-	color: #8b9399; }
-#spine.darker #wsu-actions li#wsu-tab-search button,
-#spine.darker #spine-sitenav ul li a,
-#spine.darker #spine-offsitenav ul li a:hover {
-	color: #babfc2; }
-#spine.darker #spine-sitenav ul li a:hover,
-#spine.darker #spine-sitenav ul li.dogeared > a,
-#spine.darker #wsu-actions li button:hover,
-#spine.darker #wsu-actions li#wsu-tab-search button:hover {
-	color: white; }
-
 /* GRAY-DARKEST #000 */
-#spine.darkest, #spine.darkest #glue, #spine.darkest #glue > header, #spine.darkest.bleed:before { background: black; }
-#spine.darkest #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg'); }
-#spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lighter.svg') }
-#spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-#spine.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-crimson.svg') }
-#spine.darkest #wsu-actions li.opened button,
-#spine.darkest #wsu-actions li#wsu-tab-search.opened button {
-	color: #262a2d; }
-#spine.darkest #wsu-actions li button,
-#spine.darkest #wsu-actions li.opened button:hover,
-#spine.darkest #wsu-actions li#wsu-tab-search.opened button:hover,
-#spine.darkest #wsu-social-channels ul li a,
-#spine.darkest #wsu-global-links ul li a,
-#spine.darkest footer small,
-#spine.darkest footer small a {
-	color: #4b555a; }
-#spine.darkest #spine-sitenav ul li,
-#spine.darkest #spine-offsitenav ul li,
-#spine.darkest #wsu-global-links {
-	border-color: #4b555a; }
-#spine.darkest #spine-offsitenav ul li a {
-	color: #5e6a71; }
-#spine.darkest #wsu-actions li#wsu-tab-search button,
-#spine.darkest #spine-offsitenav ul li a:hover,
-#spine.darkest #wsu-global-links ul li a:hover,
-#spine.darkest #wsu-actions li button:hover {
-	color: #8b9399; }
-#spine.darkest #spine-sitenav ul li a,
-#spine.darkest #wsu-actions li#wsu-tab-search button:hover {
-	color: #babfc2; }
-#spine.darkest #spine-sitenav ul li a:hover,
-#spine.darkest #spine-sitenav ul li.dogeared > a {
-	color: #981e32; }
-	
-/* CRIMSON #981e32 */
-#spine.crimson, #spine.crimson #glue, #spine.crimson #glue > header, #spine.crimson > header, #spine.crimson.bleed:before { background-color: @crimson; }
-#spine.crimson #wsu-signature { background-image: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical-white.svg'); }
-#spine.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	color: #b6bcbf;
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-gray-lighter.svg') }
-#spine.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a:hover,
-#spine.crimson #spine-sitenav > ul > li:first-child a:before {
+#spine.darkest,
+#spine.darkest.bleed:before {
+	background-color: @gray-darkest;
+	}
+.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
+	}
+.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+	}
+.darkest nav#spine-sitenav a,
+.darkest nav#spine-offsitenav a:hover {
+	color: @gray-lighter;
+	}
+.darkest #wsu-actions li.opened button,
+.darkest #wsu-actions li button,
+.darkest #wsu-actions li.opened button:hover,
+.darkest #wsu-social-channels a,
+.darkest footer small a {
+	color: @gray;
+	}
+.darkest #spine-sitenav ul li,
+.darkest #wsu-global-links {
+	border-color: @gray-dark;
+	}
+.darkest #wsu-tab-search.opened button,
+.darkest #wsu-tab-search.opened button:hover {
+	color: @gray-darker;
+	}
+.darkest #spine-offsitenav a,
+.darkest #wsu-global-links a {
+	color: @gray-light;
+	}
+.darkest #wsu-actions-tabs button:hover,
+.darkest #spine-sitenav a,
+.darkest #spine-offsitenav a:hover,
+.darkest #wsu-global-links a:hover{
+	color: @gray-lightly;
+	}
+.darkest #spine-sitenav a:hover,
+.darkest #spine-sitenav li.dogeared > a {
+	color: @crimson;
+	}
+
+/* CRIMSON #981e32 */	
+#spine.crimson,
+#spine.crimson.bleed:before {
+	background-color: @crimson;
+	}
+.crimson #wsu-signature {
+	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg');
+	}
+.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
+	}
+.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
+.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
+	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+	}
+.crimson nav#spine-sitenav a {
+	color: @gray-lighter;
+	}
+.crimson #wsu-actions li.opened button,
+.crimson #wsu-actions li button,
+.crimson #wsu-actions li.opened button:hover,
+.crimson #wsu-social-channels a,
+.crimson footer small a {
+	color: @crimson-darkest;
+	}
+.crimson #spine-sitenav ul li,
+.crimson #wsu-global-links {
+	border-color: @crimson-dark;
+	}
+.crimson #spine-offsitenav a,
+.crimson #wsu-global-links a {
+	color: @crimson-darkest;
+	}
+.crimson #wsu-actions-tabs button:hover,
+.crimson #spine-offsitenav a:hover,
+.crimson #wsu-global-links a:hover,
+.crimson #wsu-social-channels li[class*="-channel"] a:hover {
+	color: black;
+	}
+.crimson #spine-sitenav a:hover,
+.crimson #spine-sitenav li.dogeared > a {
 	color: white;
-	background-image: url('http://repo.wsu.edu/spine/1/icons/home-white.svg'); }
-#spine.crimson #wsu-actions li button { color: #490e18; }
-#spine.crimson #wsu-actions li button:hover {
-	color: black; }
-#spine.crimson #wsu-actions li#wsu-tab-search button {
-	color: #37141a; }
-#spine.crimson #wsu-actions li#wsu-tab-search button:hover {
-	color: black; }
-#spine.crimson #spine-sitenav ul li,
-#spine.crimson #spine-offsitenav ul li,
-#spine.crimson nav#wsu-global-links {
-	border-color: #6b1523; }
-#spine.crimson #spine-sitenav ul li a {
-	color: #b6bcbf; }
-#spine.crimson #spine-sitenav ul li a:hover {
-	color: #e7e9ea; }
-#spine.crimson #spine-sitenav ul li.active.parent > a {
-	color: white; }
-#spine.crimson #spine-offsitenav ul li a {
-	color: #3d0c14; }
-#spine.crimson #wsu-social-channels ul li a {
-	color: #490e18; }
-#spine.crimson #wsu-global-links ul li a { color: black; }
-#spine.crimson #wsu-global-links ul li a:hover,
-#spine.crimson #wsu-social-channels ul li a:hover,
-#spine.crimson #spine-offsitenav ul li a:hover {
-	color: black; }
-#spine.crimson footer small,
-#spine.crimson footer small a {
-	color: #490e18; }
-#spine.crimson #spine-sitenav ul li a:hover,
-#spine.crimson #spine-sitenav ul li.dogeared > a {
-	color: white; }
+	}
+
 
 /* Transparent */
-#spine.velum, #spine.velum.bleed:before { background: rgba(255,255,255,0.9); }
+#spine.velum, #spine.velum.bleed:before { background: rgba(255,255,255,0.8); }
 .size-lt-large #spine.velum header, .size-lt-large #spine.velum.bleed:before { background: rgba(255,255,255,0.9); }
+
+
+/* Campus Signature Variant */
+
+.for(@campuses); .-each(@campus) {
+    &.@{campus}-signature #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-@{campus}-signature-vertical.svg'); }
+	}
+.for(@campuses); .-each(@campus) {
+    &.@{campus}-signature .gray #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-@{campus}-signature-vertical-lightest.svg'); }
+	}
+.for(@campuses); .-each(@campus) {
+    &.@{campus}-signature .light #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-@{campus}-signature-vertical-lightest.svg'); }
+	}
+.for(@campuses); .-each(@campus) {
+    &.@{campus}-signature .dark #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-@{campus}-signature-vertical-lightest.svg'); }
+	}
+.for(@campuses); .-each(@campus) {
+    &.@{campus}-signature .crimson #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-@{campus}-signature-vertical-lightest.svg'); }
+	}
