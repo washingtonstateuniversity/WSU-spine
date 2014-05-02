@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Spine-Icons";
   src: url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.eot');
-  src: url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.eot?#iefix') format("embedded-opentype"), url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.ttf') format("font/truetype"), url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.woff') format("woff");
+  src: url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.eot?#iefix') format("embedded-opentype"), url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.woff') format("application/font-woff"), url('//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.ttf') format("font/truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -130,7 +130,7 @@ footer.looseleaf #wsu-global-links li {
   margin: 0px;
   padding-left: 10px;
 }
-/* II.2.0 HEADER (Spine)
+/* II.2.0 HEADER (#spine)
 --------------------------------------------------------------------------- */
 #spine header {
   z-index: 99164;

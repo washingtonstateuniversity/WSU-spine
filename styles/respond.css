@@ -101,7 +101,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-width: 320px;
     position: fixed;
     height: 50px;
     background: white;
@@ -391,31 +390,31 @@
 ----------------------------------------------------- */
 /* Medium and Desktop - Small */
 @media only screen and (min-width: 694px) and (max-width: 791px) and (max-device-width: 990px), (min-width: 694px) and (max-width: 791px) and (min-device-width: 990px) {
-  #binder.fixed {
+  .fixed {
     width: 694px;
   }
-  #binder.fixed main {
+  .fixed main {
     width: 396px;
     margin-top: 0px;
     margin-left: 298px;
   }
-  #binder.fixed #spine {
+  .fixed #spine {
     left: auto;
   }
-  #binder.fixed #glue {
+  .fixed #glue {
     margin-top: 0px;
   }
   /* Header */
-  #binder.fixed #spine #glue > header {
+  .fixed #spine #glue > header {
     top: 0;
     left: 0;
     position: relative;
     height: 198px;
   }
-  #binder.fixed #spine.unshelved,
-  #binder.fixed #spine.shelved,
-  #binder.fixed #spine.scanned header,
-  #binder.fixed #spine.unshelved header {
+  .fixed #spine.unshelved,
+  .fixed #spine.shelved,
+  .fixed #spine.scanned header,
+  .fixed #spine.unshelved header {
     box-shadow: none;
     -webkit-transition: none;
     left: auto;
@@ -423,18 +422,22 @@
   #binder.fixed #spine button#shelve {
     display: none;
   }
+  .fixed .row.sidebar .column.one,
+  .fixed .row.sidebar .column.two {
+    width: 396px;
+  }
   /* Logo */
-  #binder.fixed #wsu-signature {
+  .fixed #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg");
     background-position: center;
     background-size: 180px auto;
     height: 197px;
     margin-left: 0px;
   }
-  #binder.fixed .light #wsu-signature,
-  #binder.fixed .gray #wsu-signature,
-  #binder.fixed .dark #wsu-signature,
-  #binder.fixed .crimson #wsu-signature {
+  .fixed .light #wsu-signature,
+  .fixed .gray #wsu-signature,
+  .fixed .dark #wsu-signature,
+  .fixed .crimson #wsu-signature {
     background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
   }
   html.print .spokane-signature #wsu-signature {
@@ -468,30 +471,30 @@
     min-width: 396px;
     margin: 0px auto;
   }
-  #binder main {
+  main {
     width: 396px;
     margin: 0px;
     padding-top: 50px;
   }
-  #binder.fixed main {
+  .fixed main {
     margin-top: 50px;
     margin-left: 0px;
   }
-  #binder.fluid,
-  #binder.hybrid {
+  .fluid,
+  .hybrid {
     width: 100%;
   }
-  #binder.fluid main,
-  #binder.hybrid main {
+  .fluid main,
+  .hybrid main {
     width: auto;
     margin-left: 0px;
   }
   /* Logo */
-  .extension-signature #binder #spine a#wsu-signature,
-  .globalcampus-signature #binder #spine a#wsu-signature,
-  .spokane-signature #binder #spine a#wsu-signature,
-  .tricities-signature #binder #spine a#wsu-signature,
-  .vancouver-signature #binder #spine a#wsu-signature {
+  .extension-signature #wsu-signature,
+  .globalcampus-signature #wsu-signature,
+  .spokane-signature #wsu-signature,
+  .tricities-signature #wsu-signature,
+  .vancouver-signature #wsu-signature {
     background-size: 340px auto;
     background-position: center 14px;
     margin-left: 40px;
