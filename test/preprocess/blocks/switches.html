@@ -164,7 +164,6 @@ main:not(.wireframe) .wireframe-only {
    }
 .thirds.gutter .column article {
 	padding: 0px;
-	xborder: 1px #f2f4f5 solid;
 	background: #f2f4f5;
 	}
 
@@ -222,11 +221,11 @@ button {
 dt a:hover {
 	
 	}
-#controls dl dd {
+#switches dl dd {
 	display: block; float: left;
 	padding: 0px; margin: 0px 0px 2px 0px;
 	}
-#controls dl a.info {
+#switches dl a.info {
 	float: right;
 	display: block;
 	xtext-indent: -9000px;
@@ -235,7 +234,7 @@ dt a:hover {
 	color: white;
 	opacity: .3;
 	}
-#controls dl a.info::before {
+#switches dl a.info::before {
 	font-family: "Iconography";
 	content: "\2139";
 	font-size: 1.4em;
@@ -247,7 +246,7 @@ dt a:hover {
 	width: 30px;
 	text-align: center;
 	}
-#controls dl a.info:hover::before {
+#switches dl a.info:hover::before {
 	color: #5e6a71;
 	}
 .spine-colors dd {
@@ -291,7 +290,7 @@ pre code {
 	// Change Spine color
 	$('.spine-colors button').on('click', function() {
 		var color = $(this).attr('data-color');
-		$('html').removeClass('spokane-signtaure tricities-signature vancouver-signature globalcampus-signature extension-signature');
+		$('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
 		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
 		$('#spine').addClass(color);
 		return false;
@@ -305,14 +304,12 @@ pre code {
 		return false;
 	});
 	
-	
-	
 	// Change Campus
 	$('.spine-campuses button').on('click', function() {
-		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
-		$('html').removeClass('spokane-signtaure tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		$('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		return false;
 	});
 	
@@ -340,7 +337,7 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button onclick="$('#spine').removeClass('cropped').addClass('gray').toggleClass('bleed');">bleeding</button></dd>
+		<dd><button onclick="$('#spine').removeClass('cropped').toggleClass('bleed');">bleeding</button></dd>
 		<dd><button onclick="location.href = '#cropping-bleeding';">cropped</button></dd> 
 	</dl>
 	
