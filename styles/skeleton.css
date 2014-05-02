@@ -1,0 +1,1285 @@
+@charset "UTF-8";
+/* Table of Contents
+==================================================
+    I.1.0 Reset
+    I.2.0 Set Defaults
+    
+    
+    #Clearing */
+/* 1.0 RESET
+-------------------------------------------------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+figure {
+  /* Hmmmm */
+  xxline-height: 0px;
+}
+figcaption {
+  line-height: 1em;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* I.2.0 DEFAULTS (feel free to override)
+-------------------------------------------------------- */
+sup,
+sub {
+  font-size: .7em;
+  line-height: .7em;
+}
+sup {
+  vertical-align: super;
+  margin-top: -6px;
+}
+sub {
+  vertical-align: sub;
+}
+small {
+  font-size: .8em;
+  line-height: .8em;
+}
+nav ul li,
+.widget ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #981e32;
+}
+a:hover {
+  color: #c60c30;
+}
+strong,
+b {
+  font-weight: bold;
+}
+em,
+i {
+  font-style: italic;
+}
+hr {
+  border-width: 0px;
+  border-style: solid;
+  border-color: black;
+  margin: 10px 0px;
+  height: 2px;
+  background-color: rgba(93, 105, 112, 0.5);
+  display: block;
+  clear: both;
+}
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  margin: 0px 0px 3px 0px;
+  line-height: 1.1em;
+  letter-spacing: 0em;
+  font-weight: bold;
+  /* Maybe... -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; */
+}
+h1 {
+  font-size: 2em;
+  padding: 0px 0px .2em 0px;
+}
+h2 {
+  font-size: 1.8em;
+  margin: 0px;
+  padding: .5em 0px .2em 0px;
+}
+h3 {
+  font-size: 1.6em;
+  margin: 0px;
+  padding: .5em 0px .2em 0px;
+}
+h4 {
+  font-size: 1.4em;
+  margin: 0px;
+  padding: .5em 0px .2em 0px;
+}
+h5 {
+  font-size: 1.2em;
+  margin: 0px;
+  padding: .5em 0px .2em 0px;
+}
+h6 {
+  font-size: 1.0em;
+  margin: 0px;
+  padding: .5em 0px .2em 0px;
+}
+p {
+  margin: 0px;
+  padding-bottom: .8em;
+}
+blockquote {
+  padding-bottom: .8em;
+}
+ul,
+ol {
+  padding-bottom: .8em;
+}
+ol li {
+  list-style: decimal;
+  margin: 0px 0px 0px 20px;
+  padding: 0px 0px .8em 0px;
+}
+ul li {
+  list-style: circle;
+  margin: 0px 0px 0px 20px;
+  padding: 0px 0px .8em 0px;
+}
+pre,
+code {
+  font-family: "Courier New", Courier, monospace;
+}
+input {
+  outline: none;
+}
+/* These may be too heavy-handed */
+/*article img {
+	margin: 10px;
+	}*/
+article img[align="right"] {
+  margin: 0px 0px 10px 10px;
+}
+article img[align="left"] {
+  margin: 0px 10px 10px 0px;
+}
+/* Fonts
+-------------------------------------------------------- */
+body {
+  font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+.sans {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+.serif {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+/* IE9, IE10 */
+@media screen and \0screen {
+  em,
+  i,
+  bold,
+  big,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+}
+.wsu-icon,
+.wsu-icons {
+  font-family: "Spine-Icons";
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Layout
+-------------------------------------------------------- */
+body {
+  color: #5e6a71;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #f9f9f9;
+}
+#binder {
+  width: 990px;
+  margin: 0px auto;
+}
+#binder.fluid.folio {
+  width: 100%;
+  max-width: 1980px;
+  /* 990 x 2 */
+}
+main {
+  margin-left: 198px;
+  width: 792px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.spineless main {
+  margin-left: 0px;
+  width: 990px;
+}
+section {
+  position: relative;
+  clear: both;
+}
+/* I.4.0 GRID
+-------------------------------------------------------- */
+.row {
+  width: 100%;
+}
+.row .column {
+  position: relative;
+  display: block;
+  overflow: visible;
+  z-index: auto;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.row.reverse .column {
+  float: right;
+}
+.row.unbound,
+.unbound {
+  position: relative;
+}
+.rebound {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.recto.verso .rebound {
+  margin-left: auto;
+  margin-right: auto;
+}
+xx.recto.verso {
+  padding-left: 99px;
+  padding-right: 99px;
+}
+.rebound {
+  width: 792px;
+}
+.sidebar .rebound {
+  width: 594px;
+}
+.spineless .rebound,
+.fifteenths .rebound,
+.fifths .rebound {
+  width: 990px;
+}
+/* single */
+.row.single .column {
+  width: 792px;
+  display: block;
+}
+/* halves */
+.row.halves .column {
+  width: 396px;
+}
+.fluid .row.halves .column {
+  width: 50%;
+}
+/* thirds */
+.row.thirds .column {
+  width: 264px;
+}
+.fluid .row.thirds .column {
+  width: 33%;
+}
+.fluid .row.thirds .column.two {
+  width: 34%;
+}
+/* quarters */
+.row.quarters .column {
+  width: 198px;
+}
+.fluid .row.quarters .column {
+  width: 25%;
+}
+/* eighths */
+.row.eighths .column {
+  width: 99px;
+}
+.hybrid .row.eighths .column,
+.fluid .row.eighths .column {
+  width: 12.5%;
+}
+/* ninths */
+.row.ninths .column {
+  width: 99px;
+}
+.hybrid .row.ninths .column,
+.fluid .row.ninths .column {
+  width: 12.5%;
+}
+/* twelfths */
+.twelfths .column {
+  width: 8.33%;
+}
+.fixed .twelfths .column {
+  width: 66px;
+}
+.one-twelfth,
+.twelfths-1 {
+  width: 8.33%;
+}
+.hybrid .one-twelfth,
+.hybrid .twelfths-1,
+.fixed .one-twelfth,
+.fixed .twelfths-1 {
+  width: 66px;
+}
+.two-twelfths,
+.twelfths-2 {
+  width: 16.66%;
+}
+.hybrid .two-twelfths,
+.hybrid .twelfths-2,
+.fixed .two-twelfths,
+.fixed .twelfths-2 {
+  width: 132px;
+}
+.three-twelfths,
+.twelfths-3 {
+  width: 25%;
+}
+.hybrid .three-twelfths,
+.hybrid .twelfths-3,
+.fixed .three-twelfths,
+.fixed .twelfths-3 {
+  width: 198px;
+}
+.four-twelfths,
+.twelfths-4 {
+  width: 33.33%;
+}
+.hybrid .four-twelfths,
+.hybrid .twelfths-4,
+.fixed .four-twelfths,
+.fixed .twelfths-4 {
+  width: 264px;
+}
+.five-twelfths,
+.twelfths-5 {
+  width: 41.66%;
+}
+.hybrid .five-twelfths,
+.hybrid .twelfths-5,
+.fixed .five-twelfths,
+.fixed .twelfths-5 {
+  width: 330px;
+}
+.six-twelfths,
+.twelfths-6 {
+  width: 50%;
+}
+.hybrid .six-twelfths,
+.hybrid .twelfths-6,
+.fixed .six-twelfths,
+.fixed .twelfths-6 {
+  width: 396px;
+}
+.seven-twelfths,
+.twelfths-7 {
+  width: 58.33%;
+}
+.hybrid .seven-twelfths,
+.hybrid .twelfths-7,
+.fixed .seven-twelfths,
+.fixed .twelfths-7 {
+  width: 462px;
+}
+.eight-twelfths,
+.twelfths-8 {
+  width: 64.66%;
+}
+.hybrid .eight-twelfths,
+.hybrid .twelfths-8,
+.fixed .eight-twelfths,
+.fixed .twelfths-8 {
+  width: 528px;
+}
+.nine-twelfths,
+.twelfths-9 {
+  width: 75%;
+}
+.hybrid .nine-twelfths,
+.hybrid .twelfths-9,
+.fixed .nine-twelfths,
+.fixed .twelfths-9 {
+  width: 594px;
+}
+.ten-twelfths,
+.twelfths-10 {
+  width: 83.33%;
+}
+.hybrid .ten-twelfths,
+.hybrid .twelfths-10,
+.fixed .ten-twelfths,
+.fixed .twelfths-10 {
+  width: 660px;
+}
+.eleven-twelfths,
+.twelfths-11 {
+  width: 91.66%;
+}
+.hybrid .eleven-twelfths,
+.hybrid .twelfths-11,
+.fixed .eleven-twelfths,
+.fixed .twelfths-11 {
+  width: 726px;
+}
+.twelve-twelfths,
+.twelfths-12 {
+  width: 100%;
+}
+.hybrid .twelve-twelfths,
+.hybrid .twelfths-12,
+.fixed .twelve-twelfths,
+.fixed .twelfths-12 {
+  width: 792px;
+}
+.one-twelfth-max,
+.twelfths-1-max {
+  max-width: 66px;
+}
+.two-twelfths-max,
+.twelfths-2-max {
+  max-width: 132px;
+}
+.three-twelfths-max,
+.twelfths-3-max {
+  max-width: 198px;
+}
+.four-twelfths-max,
+.twelfths-4-max {
+  max-width: 264px;
+}
+.five-twelfths-max,
+.twelfths-5-max {
+  max-width: 330px;
+}
+.six-twelfths-max,
+.twelfths-6-max {
+  max-width: 396px;
+}
+.seven-twelfths-max,
+.twelfths-7-max {
+  max-width: 462px;
+}
+.eight-twelfths-max,
+.twelfths-8-max {
+  max-width: 528px;
+}
+.nine-twelfths-max,
+.twelfths-9-max {
+  max-width: 594px;
+}
+.ten-twelfths-max,
+.twelfths-10-max {
+  max-width: 660px;
+}
+.eleven-twelfths-max,
+.twelfths-11-max {
+  max-width: 726px;
+}
+.twelve-twelfths-max,
+.twelfths-12-max {
+  max-width: 792px;
+}
+.one-twelfth-tall,
+.twelfths-tall-1 {
+  height: 66px;
+}
+.two-twelfths-tall,
+.twelfths-tall-2 {
+  height: 132px;
+}
+.three-twelfths-tall,
+.twelfths-tall-3 {
+  height: 198px;
+}
+.four-twelfths-tall,
+.twelfths-4-tall {
+  height: 264px;
+}
+.five-twelfths-tall,
+.twelfths-5-tall {
+  height: 330px;
+}
+.six-twelfths-tall,
+.twelfths-6 {
+  height: 396px;
+}
+.seven-twelfths-tall,
+.twelfths-7-tall {
+  height: 462px;
+}
+.eight-twelfths-tall,
+.twelfths-8-tall {
+  height: 528px;
+}
+.nine-twelfths-tall,
+.twelfths-9-tall {
+  height: 594px;
+}
+.ten-twelfths-tall,
+.twelfths-10-tall {
+  height: 660px;
+}
+.eleven-twelfths-tall,
+.twelfths-11-tall {
+  height: 726px;
+}
+.twelve-twelfths-tall,
+.twelfths-12-tall {
+  height: 792px;
+}
+:not(.fixed) .halves .two-twelfths {
+  width: 33%;
+}
+:not(.fixed) .halves .four-twelfths {
+  width: 67%;
+}
+/* Triptych */
+.row.triptych .column {
+  width: 198px;
+}
+.row.triptych .column.two {
+  width: 396px;
+}
+/* Margin */
+.row.margin .column.one {
+  width: 594px;
+}
+.row.margin .column.two {
+  width: 198px;
+}
+.hybrid .row.margin .column.one,
+.fluid .row.margin .column.one {
+  width: 75%;
+}
+.hybrid .row.margin .column.two,
+.fluid .row.margin .column.two {
+  width: 25%;
+}
+/* Sidebar, Sideleft */
+.row.sidebar .column.one,
+.row.sideleft .column.two {
+  width: 528px;
+}
+.row.sidebar .column.two,
+.row.sideleft .column.one {
+  width: 264px;
+}
+.fluid .row.sidebar .column.one,
+.fluid .row.sideleft .column.two {
+  width: 67%;
+}
+.fluid .row.sidebar .column.two,
+.fluid .row.sideleft .column.one {
+  width: 33%;
+}
+/* Automatic Clearing (awesome but questionable) */
+.row.halves .column:nth-of-type(odd) {
+  clear: both;
+}
+.row.halves .column:nth-of-type(1),
+.row.halves .row .column:nth-of-type(odd) {
+  clear: none;
+}
+/* I.4.1 NESTING
+-------------------------------------------------------- */
+.row.single row.halves .column {
+  width: 396px;
+}
+.fluid .row.single .halves .column {
+  width: 50%;
+}
+/* halves then halves */
+.row.halves .halves .column {
+  width: 198px;
+}
+.hybrid .row.halves .halves .column,
+.fluid .row.halves .halves .column {
+  width: 50%;
+}
+/* halves then thirds */
+.row .row.thirds .column {
+  width: 132px;
+}
+.row.quarters .row.thirds .column {
+  width: 66px;
+}
+.fluid .row .row.thirds .column {
+  width: 33%;
+}
+.fluid .row .row.thirds .column.two {
+  width: 34%;
+}
+/* halves then quarters */
+.row .row.quarters .column {
+  width: 99px;
+}
+.hybrid .row .row.quarters .column,
+.fluid .row .row.quarters .column {
+  width: 25%;
+}
+/* thirds then halves */
+.row.thirds .row.halves .column {
+  width: 132px;
+}
+.fluid .row.thirds .halves .column {
+  width: 50%;
+}
+/* I.4.2 Spineless Units
+-------------------------------------------------------- */
+/* Fifteenths */
+.one-fifteenth {
+  width: 66px;
+}
+.fluid .one-fifteenth {
+  width: 6.66%;
+}
+.two-fifteenths {
+  width: 132px;
+}
+.fluid .one-fifteenth {
+  width: 13.33%;
+}
+.three-fifteenths,
+.one-fifth {
+  width: 198px;
+}
+.fluid .one-fifteenth {
+  width: 20%;
+}
+.four-fifteenths {
+  width: 264px;
+}
+.fluid .one-fifteenth {
+  width: 26.66%;
+}
+.five-fifteenths {
+  width: 330px;
+}
+.fluid .one-fifteenth {
+  width: 33.33%;
+}
+.six-fifteenths,
+.two-fifths {
+  width: 396px;
+}
+.fluid .one-fifteenth {
+  width: 40%;
+}
+.seven-fifteenths {
+  width: 462px;
+}
+.fluid .one-fifteenth {
+  width: 46.66%;
+}
+.eight-fifteenths {
+  width: 528px;
+}
+.fluid .one-fifteenth {
+  width: 53.33%;
+}
+.nine-fifteenths,
+.three-fifths {
+  width: 594px;
+}
+.fluid .one-fifteenth {
+  width: 60%;
+}
+.ten-fifteenths {
+  width: 660px;
+}
+.fluid .one-fifteenth {
+  width: 66.66%;
+}
+.eleven-fifteenths {
+  width: 726px;
+}
+.fluid .one-fifteenth {
+  width: 72.33%;
+}
+.twelve-fifteenths,
+.four-fifths {
+  width: 792px;
+}
+.fluid .one-fifteenth {
+  width: 80%;
+}
+.thirteen-fifteenths {
+  width: 858px;
+}
+.fluid .one-fifteenth {
+  width: 86.66%;
+}
+.fourteen-fifteenths {
+  width: 924px;
+}
+.fluid .one-fifteenth {
+  width: 92.33%;
+}
+.fifteen-fifteenths,
+.five-fifths {
+  width: 990px;
+}
+.fluid .one-fifteenth {
+  width: 100%;
+}
+/* I.4.3 Spineless
+-------------------------------------------------------- */
+.row.fifths .column {
+  width: 198px;
+}
+.fluid .row.fifths .column {
+  width: 20%;
+}
+/* I.5.0  CONTENT
+-------------------------------------------------------- */
+.column > article,
+.column > aside {
+  padding: 2em 2em 1em 2em;
+}
+.column > article ~ article {
+  padding: .75em 2em;
+}
+.column > article ~ article p {
+  padding-bottom: 0px;
+}
+.column > aside {
+  padding: .75em 2em;
+}
+.column > aside > header {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.column > aside ul li {
+  list-style: none;
+  padding: 5px 0px;
+  margin: 0px;
+  border-top: 1px gray dotted;
+}
+/* Margins */
+.marginalize .column,
+.marginalized {
+  padding: 2em;
+}
+.marginalize-top .column,
+.marginalized-top {
+  padding-top: 2em;
+}
+.marginalize-right .column,
+.marginalized-right {
+  padding-right: 2em;
+}
+.marginalize-bottom .column,
+.marginalized-bottom {
+  padding-bottom: 2em;
+}
+.marginalize-left .column,
+.marginalized-left {
+  padding-left: 2em;
+}
+.marginalize.wide .column,
+.marginalized.wide {
+  padding: 4em;
+}
+.marginalize-top.wide .column,
+.marginalized-top.wide {
+  padding-top: 4em;
+}
+.marginalize-right.wide .column,
+.marginalized-right.wide {
+  padding-right: 4em;
+}
+.marginalize-bottom.wide .column,
+.marginalized-bottom.wide {
+  padding-bottom: 4em;
+}
+.marginalize-left.wide .column,
+.marginalized-left.wide {
+  padding-left: 4em;
+}
+/* Gutters */
+.guttered {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.guttered.wide {
+  padding-left: 4em;
+  padding-right: 4em;
+}
+.single.gutter .column {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.single.gutter.wide .column {
+  padding-left: 4em;
+  padding-right: 4em;
+}
+.sidebar.gutter .column:nth-of-type(odd),
+.halves.gutter .column:nth-of-type(odd) {
+  padding-left: 2em;
+  padding-right: 1em;
+}
+.sidebar.gutter .column:nth-of-type(even),
+.halves.gutter .column:nth-of-type(even) {
+  padding-left: 1em;
+  padding-right: 2em;
+}
+.sidebar.gutter.wide .column:nth-of-type(odd),
+.halves.gutter.wide .column:nth-of-type(odd) {
+  padding-left: 4em;
+  padding-right: 2em;
+}
+.sidebar.gutter.wide .column:nth-of-type(even),
+.halves.gutter.wide .column:nth-of-type(even) {
+  padding-left: 2em;
+  padding-right: 4em;
+}
+.thirds.gutter .column:nth-of-type(3n+1) {
+  padding-left: 2em;
+  padding-right: 1em;
+}
+.thirds.gutter .column:nth-of-type(3n+2) {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.thirds.gutter .column:nth-of-type(3n+3) {
+  padding-left: 1em;
+  padding-right: 2em;
+}
+.fifths.gutter .column {
+  padding: 1em;
+}
+.fifths.gutter .column:nth-of-type(5n+1) {
+  padding-left: 2em;
+}
+.fifths.gutter .column:nth-of-type(5n+5) {
+  padding-right: 2em;
+}
+/* Block Level Styles
+-------------------------------------------------------- */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  xxpadding-top: 0;
+}
+main hr.tall {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+main hr.short {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Images
+-------------------------------------------------------- */
+.fluid .column img {
+  max-width: 100%;
+  height: auto;
+}
+.fill-width,
+.full-width {
+  width: 100%;
+  height: auto;
+}
+.fill-height {
+  height: 100%;
+  width: auto;
+}
+.max-width {
+  max-width: 100%;
+  height: auto !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media \0screen {
+  img.max-width {
+    width: auto;
+    /* for ie 8 */
+  }
+}
+.hybrid.small figure.fill-width {
+  width: 100%;
+}
+.picture-frame {
+  line-height: 0px;
+}
+img.grayscale {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+/* Pseudo Responsive Images */
+.center.vertically:before {
+  content: '';
+  display: inline-block;
+  height: 50%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* Adjusts for spacing */
+}
+.center.vertically > * {
+  vertical-align: middle;
+  display: inline-block;
+}
+.centered.absolutely,
+.center.absolutely > *:first-of-type {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/* Character Styles
+-------------------------------------------------------- */
+ul + h1,
+ul + h2,
+ul + h3,
+ul + h4,
+ol + h1,
+ol + h2,
+ol + h3,
+ol + h4 {
+  margin-top: .8;
+}
+/* #Clearing
+-------------------------------------------------------- */
+/* Self Clearing */
+section.row:before,
+section.row:after,
+main:before,
+main:after,
+#binder:before,
+#binder:after,
+.clearfix:before,
+.clearfix:after,
+.rebound:before,
+.rebound:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+#binder:after,
+main:after,
+section.row:after,
+.clearfix:after,
+.rebound:after {
+  clear: both;
+}
+main,
+section.row,
+.rebound,
+.clearfix {
+  zoom: 1;
+}
+/* or */
+.cf:before,
+.cf:after,
+.clear:before,
+.clear:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.cf:after,
+.clear:after {
+  clear: both;
+}
+/* BUTTONS
+-------------------------------------------------------- */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background: #eee;
+  border: 1px solid #aaa;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #444;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  margin-bottom: 0px;
+  line-height: normal;
+  padding: 6px 8px;
+}
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  color: #222;
+  background: #ddd;
+  border: 1px solid #888;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+  border: 1px solid #666;
+  background: #ccc;
+}
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
+}
+button.functional,
+button.glassine {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  background: transparent;
+  border-radius: 0px;
+}
+/* Fix for odd Mozilla border & padding issues */
+button:-moz-focus-inner,
+input:-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/* I.5.0 FORMS
+-------------------------------------------------------- */
+/* This could be a wee bit controversial */
+form,
+fieldset,
+input,
+textarea,
+legend,
+label {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+form {
+  margin-bottom: 5px;
+  padding: 10px;
+}
+fieldset {
+  margin-bottom: 5px;
+  padding: 0px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  border: 1px solid #ccc;
+  padding: 6px 4px;
+  outline: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #777;
+  margin: 0;
+  background: #fff;
+}
+select {
+  padding: 0;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border: 1px solid #aaa;
+  color: #444;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+textarea {
+  min-height: 60px;
+}
+label,
+legend {
+  font-weight: bold;
+  font-size: 13px;
+}
+input[type="checkbox"] {
+  display: inline;
+}
+label span,
+legend span {
+  font-weight: normal;
+  font-size: 13px;
+  color: #444;
+}
+fieldset {
+  position: relative;
+}
+/* MISC */
+code textarea,
+code textarea:focus {
+  width: 100%;
+  padding: 15px;
+  height: auto;
+  color: white;
+  background-color: rgba(94, 106, 113, 0.5);
+}
+.padless {
+  padding: 0px !important;
+}
+.marginless {
+  margin: 0px !important;
+}
+.center {
+  text-align: center;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+.invisible {
+  visibility: hidden;
+}
+.nowrap {
+  white-space: nowrap;
+}
