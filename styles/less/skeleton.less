@@ -119,7 +119,8 @@ body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Ge
 .sans { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 .serif { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
 /* IE9, IE10 */
-@media screen and (min-width:0\0) {
+@iehack: '(min-width:0\0)';
+@media screen and @iehack {
     em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 }
 
@@ -208,6 +209,7 @@ xx.recto.verso {
 .fifteenths .rebound,
 .fifths .rebound { width: 990px; }
 
+@layouts: 'single','halves','thirds','sidebar','sideright','sideleft','quarters','eighths';
 
 /* single */
 .row.single .column {
@@ -237,6 +239,8 @@ xx.recto.verso {
 .row.ninths .column { width: 99px; }
 .hybrid .row.ninths .column,
 .fluid .row.ninths .column { width: 12.5%; }
+
+@divisions: 'twelfths','fifteenths';
 
 /* twelfths */
 .twelfths .column { width: 8.33%; } .fixed .twelfths .column { width: 66px; }
@@ -467,11 +471,12 @@ main hr.short {
 	-moz-box-sizing: border-box; 
 	box-sizing: border-box;
 	}
-@media \0screen {
+@iehack: \0screen;
+@media @iehack {
   img.max-width { 
   	width: auto; /* for ie 8 */
-  }
-  }
+  } 
+  } 
 	
 .hybrid.small figure.fill-width {
 	width: 100%;
