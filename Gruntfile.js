@@ -52,8 +52,18 @@ module.exports = function(grunt) {
 				// Files to perform replacements and includes with
 				{ src: 'styles/less/skeleton.less', dest: 'styles/skeleton.css' },
 				{ src: 'styles/less/colors.less', dest: 'build/tmp/less/colors.css' },
-				{ src: 'styles/less/spine.less', dest: 'styles/spine.css' },
 				{ src: 'styles/less/respond.less', dest: 'styles/respond.css' }
+				]
+			},
+		},
+		sass: {
+			dev: {
+				files: [
+				// Files to perform replacements and includes with
+				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
+				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
+				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
+				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' }
 				]
 			},
 		},
@@ -133,7 +143,7 @@ module.exports = function(grunt) {
 					fluidGrid : 'skip',
 					hybridGrid: 'skip',
 					fixedGrid: 'skip',
-					fullGridExample: 'skip',
+					sections: 'skip',
 				}
 			},
 			js : {
@@ -141,7 +151,7 @@ module.exports = function(grunt) {
 			},
 			html : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/default.html',
+				dest : 'test/spine.html',
 				options : {
 					context : {
 					}
@@ -247,9 +257,9 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_fullGridExample : {
+			tu_sections : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/fullGridExample.html',
+				dest : 'test/sections.html',
 				options : {
 					context : {
 						fullGridExample : 'true'
@@ -272,6 +282,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -290,6 +301,7 @@ module.exports = function(grunt) {
 								'concat',
 								'preprocess:js',
 								'less:dev',
+								'sass:dev',
 								'cssmin',
 								'uglify',
 								'copy',
@@ -306,7 +318,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
-								'preprocess:tu_fullGridExample'
+								'preprocess:tu_sections'
 								]);
 		
 		
