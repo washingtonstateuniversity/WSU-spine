@@ -13,15 +13,8 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-<!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<!--<link href="../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />-->
+	<!--<link href="../build/1/spine.css" rel="stylesheet" type="text/css" />-->
 	<link href="../styles/styles.css" rel="stylesheet" type="text/css" />
-<!-- @endif -->
-<!-- @if NODE_ENV == 'PRODUCTION' -->
-	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
-	<!-- Your custom stylesheets here -->
-<!-- @endif -->
-
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
@@ -32,7 +25,6 @@
 	
 	<script type="text/javascript">
 		var spineoptions={
-<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 			search:{
 				providers:{
 					local:{
@@ -71,16 +63,10 @@
 					verification:"XXXXXXXXXXXXXXXXXXXXX"
 				}
 			}
-<!-- @endif -->
 		};
 	</script>   
 	
-<!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<script src="../build/<!-- @echo build_version -->/spine.js"></script>
-<!-- @endif -->
-<!-- @if NODE_ENV == 'PRODUCTION' -->
-	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
-<!-- @endif -->
+	<script src="../build/1/spine.js"></script>
 	
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -98,13 +84,12 @@
 
 <!-- WRAPPING -->
 <div id="jacket">
-<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if hybridGrid='true' --> hybrid <!-- @endif -->">
+<div id="binder" class="">
 
 <!-- CONTENT -->
 <main>
 	<!-- Responsive Sections -->
 	<section class="row sidebar">
-		<!-- @if layouts='true' -->
 			<section class="row sidebar equalize" >
 	<h3>test of dev build</h3>
 	
@@ -354,7 +339,6 @@
 	</div>
 </section>
 
-		<!-- @endif -->
 		<div class="column one">
 			<article>
 				<h1>Heading using the h1tag</h1>
@@ -374,212 +358,6 @@
 			
 			<p>Morbi gravida magna magna. Aliquam erat volutpat. Sed enim sem, laoreet a nisi sit amet, mattis venenatis est. Curabitur imperdiet, nibh et sagittis feugiat, nunc purus faucibus lacus, sodales auctor ipsum lorem eu lectus. Integer aliquet placerat metus, ut rhoncus augue congue quis. Duis feugiat augue nec elementum faucibus. Nam tincidunt dui elementum magna pretium luctus. Aenean fringilla lectus nulla, sit amet mollis neque tristique eu. Pellentesque justo ligula, auctor quis viverra vitae, accumsan vel nisl. Sed bibendum vel arcu vel aliquam. Donec sodales iaculis lobortis. Praesent ac feugiat sem. Duis non commodo dui. Integer consectetur erat et dignissim porttitor. Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</p>
 
-			<!-- @if showLong='true' -->
-				
-			<p>De noster nisi summis pariatur, se dolore multos non cupidatat qui do irure 
-			varias nam deserunt, elit laboris ea nisi irure. Sunt non nescius. Duis ea 
-			litteris, a hic anim aliqua multos est o malis arbitror non si qui multos 
-			pariatur do quo lorem ingeniis exercitation, nostrud legam consequat iudicem si 
-			arbitror ita aliquip, in ab duis mentitum. Excepteur sint admodum si nostrud o 
-			esse. Illum arbitror comprehenderit, ab eram esse eu offendit. Pariatur illum 
-			incididunt aliquip, veniam si qui tamen tempor, a ipsum nescius, de ubi quis 
-			fugiat esse.</p>
-			
-			<p>E eram id esse. Labore proident e culpa quis. Ab quid amet ex eiusmod. Senserit 
-			sed quae non minim occaecat et nisi sint, an nulla quem quis aliquip quo iudicem 
-			domesticarum sed commodo, doctrina noster tempor iudicem, nescius si fugiat 
-			offendit, eram efflorescere vidisse quorum quibusdam iis ex quis ea magna. 
-			Laborum magna eiusmod vidisse. Malis ubi commodo an sint, elit ut expetendis.</p>
-			
-			<p>Appellat eu sunt o legam philosophari iudicem enim occaecat, noster est aliquip 
-			aut quorum, quis litteris ut reprehenderit. Consequat tamen aut incididunt 
-			tractavissent, ex ne veniam fore fugiat. Ut cillum se sint. Quem coniunctione 
-			deserunt minim aliquip, a ab tamen nulla quae. Eu hic lorem quae sunt. Eiusmod 
-			labore consequat. Ubi aut arbitrantur, ab do praetermissum.</p>
-			
-			<p>Fugiat te arbitror et quem. Occaecat de offendit et aliquip tamen an expetendis 
-			distinguantur est nescius quorum aute cupidatat quis, ut ne tamen malis varias, 
-			occaecat exercitation a nescius, sed cupidatat imitarentur, tamen possumus 
-			concursionibus iis fore o qui summis admodum. Eu varias exquisitaque. Eiusmod 
-			tamen laboris offendit in qui dolore irure si ingeniis, ad anim de aute aut enim 
-			iis appellat. Admodum ad tamen. Nam qui distinguantur.</p>
-			
-			<p>Ubi fore officia cernantur in velit se arbitror an a singulis eruditionem, ipsum 
-			quamquam hic familiaritatem, laborum aute varias ad elit, velit in fabulas nam 
-			elit, occaecat aute labore vidisse malis de ubi dolore malis dolore commodo. 
-			Singulis quorum sint aut tamen hic ad eram amet velit vidisse, quae offendit 
-			laboris quo si lorem laborum praetermissum. Aliquip de quem iudicem, nostrud 
-			quem quorum te quae, iis eiusmod id arbitror, eiusmod magna sint deserunt culpa. 
-			Est nisi efflorescere, fugiat est incurreret. Ab veniam vidisse laboris si 
-			cernantur ipsum dolore ad amet ne probant distinguantur ea tempor ad ut noster 
-			esse quo incurreret. Malis singulis ut concursionibus, elit admodum hic eram 
-			quem, elit id occaecat si aliqua quo velit admodum id eram ipsum se quorum 
-			mentitum coniunctione, hic ipsum se lorem qui iis cillum noster anim laborum, 
-			consequat amet quo quamquam exquisitaque.</p>
-			
-			<p>Quo do magna quamquam, aliqua exercitation ingeniis eram deserunt eu nostrud 
-			esse ut ullamco firmissimum, do irure despicationes. In tamen ipsum magna 
-			singulis qui fugiat mandaremus cernantur, quae admodum est dolore sunt qui enim 
-			sed quibusdam an quae. Qui elit commodo incurreret ad do dolore quorum ita 
-			nostrud, cillum consequat occaecat e nam arbitror concursionibus, nam ipsum 
-			admodum occaecat se aliqua expetendis de minim fugiat, te labore commodo 
-			familiaritatem, elit adipisicing admodum noster senserit. Si lorem lorem ex 
-			laborum, cernantur nisi singulis, vidisse a quibusdam an varias quibusdam se 
-			elit irure. Iudicem quem eiusmod occaecat, iudicem elit legam laboris varias, ea 
-			legam laborum tractavissent, nostrud legam aliqua ne malis. Se quid nostrud aut 
-			aut summis cillum ut possumus ad nescius noster multos excepteur cillum, ab 
-			cillum irure iis deserunt.</p>
-			
-			<p>Summis officia si familiaritatem. Si te exercitation, elit et sed elit 
-			incididunt. Aute probant tractavissent, fugiat quibusdam o veniam tamen, enim 
-			exquisitaque deserunt quae cupidatat o officia nisi incurreret consequat. Nam 
-			senserit quo excepteur, id te sempiternum id sed ipsum summis quae expetendis, 
-			eu fugiat familiaritatem. Sint tempor si veniam anim, est hic exquisitaque. Nam 
-			amet consequat offendit, de eram consequat ingeniis.</p>
-			
-			<p>Quae voluptate se graviterque id mentitum est admodum. Ubi aute minim culpa 
-			incididunt ad cupidatat iis quis. Iis an exercitation o ullamco iis vidisse. 
-			Probant reprehenderit ad laboris id singulis nisi malis in anim, mentitum et 
-			expetendis id doctrina ubi anim expetendis. Sunt voluptate et domesticarum, 
-			expetendis consectetur est senserit, ab ex distinguantur, ingeniis eram culpa an 
-			quae hic laborum ut labore, eu litteris consectetur, est occaecat sed ullamco a 
-			de mandaremus cohaerescant. Quo dolore nulla fore cernantur. A quae velit sint 
-			ingeniis quo e quae pariatur, aut in amet expetendis, non multos aliquip 
-			philosophari.</p>
-			
-			<p>Ut qui fugiat expetendis. Quibusdam ex lorem pariatur. Ea e efflorescere. Ut te 
-			voluptatibus. An possumus domesticarum nam a nulla ad dolor ne consequat sed 
-			proident, elit proident praetermissum. Lorem excepteur ex nulla aliqua, si non 
-			anim velit cillum de incurreret malis eiusmod incurreret, summis iudicem nam 
-			fabulas. Est malis incididunt philosophari, iudicem quo sunt possumus ea nam 
-			labore incididunt, voluptate ad proident, cillum cupidatat appellat, esse eu 
-			litteris hic summis et enim aut ullamco, summis singulis quibusdam. Nisi ab 
-			nescius se doctrina quae legam te ipsum, anim et ita quis quamquam, e fore quis 
-			iis voluptate, lorem concursionibus consequat cillum incurreret an voluptate qui 
-			ullamco o elit e quibusdam qui sint id id esse expetendis transferrem.</p>
-			
-			<p>Aliqua efflorescere mentitum multos vidisse. Ubi minim eiusmod efflorescere quo 
-			cernantur ea anim ingeniis. Elit do et multos arbitror, anim id sed ipsum 
-			mentitum, quid cernantur fidelissimae, tamen expetendis distinguantur, iis 
-			varias quem quid probant ab ab est domesticarum, cernantur fore ita possumus 
-			praetermissum ubi laboris ubi summis. Amet arbitrantur pariatur duis doctrina, 
-			quo deserunt praesentibus do ad eram ut eram an non aute cernantur. Veniam 
-			pariatur ex singulis in ne ea voluptatibus non proident noster aute se sunt nam 
-			excepteur irure qui eiusmod cohaerescant. Id pariatur tractavissent a quo a 
-			lorem irure quae, eiusmod aliqua officia officia, arbitror veniam nam expetendis 
-			relinqueret iis ea amet tempor eiusmod, quis eiusmod sempiternum, a ita 
-			reprehenderit, possumus elit lorem ab duis. Incididunt sint varias ea nisi, id 
-			ipsum cernantur ne ipsum te ullamco est dolor, an magna quamquam despicationes.</p>
-			
-			<p>Ne proident id litteris, cillum arbitror praesentibus. Est arbitror se 
-			voluptate. Varias arbitror transferrem ab legam nostrud efflorescere, fugiat 
-			coniunctione expetendis veniam senserit ea quorum nostrud ut quem legam. Nescius 
-			amet proident singulis, iis minim dolore fore vidisse, proident eram litteris, 
-			nulla in non quis iudicem, excepteur veniam sint o esse, dolore nostrud ut dolor 
-			minim, ab aut quis aute velit, eram in occaecat. Eu velit possumus 
-			praetermissum, sint pariatur et familiaritatem ad proident aut summis eiusmod, e 
-			legam aliqua in litteris. Vidisse si pariatur, malis pariatur adipisicing, ita 
-			illum laboris laborum, qui amet fidelissimae.</p>
-			
-			<p>Consequat varias eram excepteur fugiat, minim arbitrantur appellat sint 
-			arbitror. Sed noster cillum o pariatur, quae mandaremus ut lorem quem o amet 
-			incididunt o singulis eu irure mandaremus de labore quem ut culpa despicationes 
-			eiusmod nisi eiusmod ita eiusmod duis te fabulas fidelissimae ubi hic nostrud 
-			qui tempor ex magna senserit id quamquam. Eu in lorem quem lorem ea laboris e 
-			commodo, deserunt amet sunt e multos eu sunt officia o efflorescere si duis se 
-			qui nulla mentitum, aute laborum eu proident, noster vidisse exquisitaque, legam 
-			iis cupidatat. Probant ex magna deserunt hic duis excepteur iis despicationes, 
-			arbitror an elit te litteris quem fabulas officia. A quae irure elit mandaremus 
-			ita ipsum appellat ingeniis an ita malis cernantur occaecat ita magna hic 
-			offendit. Occaecat aute sunt te aliqua a eiusmod sunt eu fabulas illustriora, de 
-			aliqua laboris ab varias ullamco efflorescere, hic aut familiaritatem qui 
-			excepteur do excepteur, admodum ab minim ea quibusdam tamen eram officia irure.</p>
-			
-			<p>Ab summis expetendis, in eram reprehenderit, cillum est offendit, eiusmod noster 
-			quid a minim. Quae ingeniis transferrem, te ita nisi pariatur. Legam incurreret 
-			ut aute legam. Dolore cernantur quo expetendis, se sunt deserunt comprehenderit, 
-			non et reprehenderit qui an quae transferrem. Mandaremus o anim fabulas. Eiusmod 
-			malis doctrina e arbitror irure ullamco o multos ingeniis aut distinguantur, 
-			dolore fabulas eu mandaremus, an excepteur ex expetendis te tempor coniunctione 
-			ubi tempor, mandaremus esse laboris offendit eu mandaremus arbitrantur id 
-			commodo. Cernantur quid cillum senserit amet. Ne illum consectetur e senserit 
-			exquisitaque ne appellat, an dolor noster illum laborum iis doctrina aute elit 
-			possumus dolore, dolor expetendis se pariatur, laboris a laboris, et an sunt 
-			voluptate quo possumus fugiat laboris.</p>
-			
-			<p>Culpa iis e malis aliquip, te ab lorem elit sint. Excepteur do quem si ita aut 
-			esse cillum fore a ullamco ipsum aliquip, excepteur enim deserunt nescius. Quem 
-			cernantur ex summis quid do sed arbitror ab officia est iis enim fabulas 
-			offendit est varias do eu illum eiusmod. Culpa consequat despicationes an quem 
-			ea excepteur a anim qui iis enim nam varias, do id concursionibus, et amet 
-			ingeniis officia de quibusdam illum arbitror proident id cernantur ab minim, 
-			minim singulis offendit. Iudicem fore excepteur litteris, irure ut appellat id 
-			aute aut ne quorum culpa ut occaecat et eram qui an varias pariatur. Est malis 
-			in dolore. Quid cernantur quo familiaritatem. Consequat irure de laborum 
-			voluptatibus.</p>
-			
-			<p>Senserit qui tempor iis expetendis dolor do incurreret comprehenderit a 
-			quibusdam malis amet arbitror eram, et nam arbitrantur ita o mandaremus 
-			exercitation, hic non illustriora, litteris iis veniam probant, quamquam 
-			coniunctione quo excepteur. Excepteur si quorum. Singulis quo eiusmod, in quis 
-			nescius arbitror, quibusdam et legam iudicem iis veniam non quibusdam. Fugiat 
-			appellat do distinguantur. Quorum hic excepteur, quamquam varias eram ad nisi, 
-			possumus efflorescere do vidisse, cernantur aliqua doctrina quamquam, aliqua 
-			aliquip quamquam, ut ne tamen occaecat, sed culpa quamquam, amet ex ubi fore 
-			doctrina. Culpa eu de eram ullamco in ea fugiat dolor an probant ex esse tempor 
-			adipisicing a nostrud aliqua non laboris efflorescere, e in enim iudicem qui 
-			laboris quae proident laborum est qui incurreret graviterque, est legam do sunt. 
-			A eiusmod eruditionem ita labore de id quis occaecat aut qui iis quid voluptate, 
-			ipsum qui mandaremus te summis, admodum ipsum officia probant, o quo enim dolor 
-			noster, offendit quorum deserunt litteris, hic labore doctrina arbitrantur.</p>
-			
-			<p>Fore tractavissent expetendis malis admodum, dolor si cernantur a quid ad do 
-			labore eram multos offendit, se voluptate iis laborum, si tamen cillum non 
-			proident, ullamco amet aut offendit distinguantur est irure eruditionem appellat 
-			legam nostrud, quem et laboris. Vidisse summis lorem id quis, cupidatat amet ex 
-			ullamco transferrem ab offendit est legam non ne malis singulis cernantur. 
-			Voluptate veniam quorum nam duis. Cupidatat te amet, se legam mentitum 
-			consectetur, ullamco in quis ingeniis hic commodo ea multos. Aliqua iis non anim 
-			appellat iis ne lorem instituendarum, nescius o labore occaecat quo litteris 
-			quorum eiusmod mandaremus, quis fidelissimae laboris varias laboris, mandaremus 
-			ad eram iudicem de litteris te noster ut in quem esse quid consequat. Aliqua 
-			officia aut offendit, o labore laborum excepteur. Eu multos cohaerescant, o 
-			ingeniis praetermissum aut laborum se ingeniis nam in varias exquisitaque, e 
-			veniam proident voluptate, proident noster quis ubi minim de si enim possumus 
-			sempiternum ad nisi aut ubi eram nescius. Dolor excepteur nescius.</p>
-			
-			<p>Fore expetendis praesentibus te fore nostrud ea lorem dolore. Dolore non e 
-			fugiat tempor, mandaremus amet dolor incididunt esse, quid admodum cupidatat, 
-			incididunt lorem labore iis quid. Si quid deserunt doctrina nam iudicem elit 
-			litteris excepteur. Dolor in eu fore singulis, ab cillum velit ne proident, sunt 
-			do quo eram arbitror, ingeniis sempiternum sed occaecat qui minim cupidatat 
-			graviterque, aliqua aut quamquam ita quae incurreret non tamen fore, mandaremus 
-			ubi nisi incididunt. Appellat ad mentitum. Quis arbitrantur probant enim 
-			incurreret, id id aliqua nulla cillum aut ex ea dolore ingeniis, ea eram 
-			efflorescere quo o malis tractavissent, ex summis cernantur, sint quo offendit 
-			iis fore, officia labore summis doctrina malis. Sunt si non noster ullamco.</p>
-			
-			<p>Minim qui singulis ad fugiat, aute de et dolor expetendis ea iis noster occaecat 
-			tractavissent, varias ingeniis est domesticarum. Incurreret ad amet, deserunt 
-			dolor duis non malis. Non lorem do illum. Amet commodo ullamco, summis do 
-			doctrina. Te culpa multos cillum vidisse iis et officia est deserunt, qui quid 
-			aliquip ad hic mentitum consectetur. In veniam proident eiusmod quo ipsum 
-			laboris eu graviterque. Quis pariatur iis magna sunt se noster mandaremus o 
-			sempiternum ex tempor eram incurreret mandaremus, sint ea litteris id esse.</p>
-			
-			<p>Officia non dolor litteris, nam tamen ita tamen, te multos nescius exquisitaque, 
-			non anim aut ipsum, magna arbitror ea efflorescere ut minim voluptate quamquam, 
-			ullamco fugiat quamquam, admodum illum anim officia ipsum. Enim sed iis elit 
-			proident, malis familiaritatem tempor multos possumus ad do se dolor ullamco, 
-			sed litteris an aliquip. Consequat velit incididunt, cupidatat malis velit hic 
-			magna e singulis culpa te ingeniis philosophari eu qui nisi occaecat. Aliquip ut 
-			dolor consequat et do laboris familiaritatem ita de iudicem voluptatibus aut ne 
-			multos laboris. Tempor dolor veniam sed dolore, quis senserit ab fabulas de sunt 
-			hic si multos nostrud, dolore ne deserunt, do summis mandaremus cupidatat a 
-			fabulas ita elit voluptate, a culpa firmissimum id esse admodum ita cupidatat. 
-			Litteris sint quorum aliquip cillum aut ea eu sunt culpa sunt. Summis possumus 
-			eruditionem.</p>
-			<!-- @endif -->
 			</article>
 
 			<footer>
@@ -1007,7 +785,7 @@ pre code {
 <!-- /CONTENT -->
 
 <!-- SPINE -->
-<div id="spine" class="spine-column shelved  <!-- @if cropped='true' --> cropped <!-- @endif -->">
+<div id="spine" class="spine-column shelved">
 <div id="glue" class="spine-glue">
 
 <header class="spine-header"><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
@@ -1024,69 +802,8 @@ pre code {
 	</ul>
 	
 	<!-- Tools generated by spine.js here | Note it is not needed to add any of the tabs -->
-		<!-- @if filledSearchTab='true' -->
-			<!-- some cms apps will by default will put there own search html out or the implamentor
-	 will have missed the point that it is not needed to put the tab content in directly.
-	 since this happens we will run tests on broken and missplaces html for the spine nodes. -->
-<section id='wsu-search' class='spine-search tools closed'>
-	<!-- an example of generated search form -->
-	<form id="search_mini_form" action="http://demo.magentocommerce.com/catalogsearch/result/" method="get">
-		<div class="form-search">
-			<label for="search">Search:</label>
-			<input name="q" class="input-text" id="search" type="text" maxlength="128" value="" />
-			<button title="Search" class="button" type="submit"><span><span>Search</span></span></button>
-			<div class="search-autocomplete" id="search_autocomplete" style="display: none;"></div>
-			<script type="text/javascript">
-			//<![CDATA[
-				//javascript would be here
-			//]]>
-			</script>
-		</div>
-	</form>
-	<div id="wsu-search-results" class="spine-results">
-		<div id="index-search-results" class="active"></div>
-	</div>
-</section>
-		<!-- @endif -->
 	
-		<!-- @if MALFORMED='true' -->
-				<!-- NOTE: This normaly wouldn't have been here but in this cause it's also
-		 malformed to the degree it's failing the Google Rich Data testing -->
-	<address id="contact-details" itemscope itemtype="http://schema.org/Organization">
-		<meta itemprop="name" class="required" content="Washington State University">
-		<meta itemprop="department" class="required" content="The Edward R. Murrow College of Communication">
-		<meta itemprop="url" class="required" content="http://murrow.wsu.edu">
-		<meta itemprop="location" class="optional" content="101 Communication Addition">
-		<meta itemprop="streetAddress" class="optional" content="PO Box 642520">
-		<meta itemprop="addressLocality" class="optional" content="Pullman, WA">
-		<meta itemprop="postalCode" class="required" content="99164-2520">
-		<meta itemprop="telephone" class="required" content="<br>General Inquiries:<br>(509) 335-1556<br><br>Student Services:<br>(509) 335-7333">
-		<meta itemprop="email" class="required" content="murrow.college@wsu.edu">
-		<meta itemprop="ContactPoint" title="Contact Page" class="optional" content="http://murrow.wsu.edu/directory/">
-	</address>
-		<!-- @endif -->
 	
-		<!-- @if MALFORMED='false' -->
-			<!-- NOTE: a normal working contact tab, just could have been better placed 
-				 then in the spine directly -->
-			<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
-	<span itemprop="department"  content="University Unit"></span> 
-	<span itemprop="name" content="Washington State University"></span> 
-	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<span itemprop="location" content="French Administration Building"></span>
-		<span itemprop="streetAddress" content="PO Box 555555"></span>
-		<span itemprop="addressLocality" content="Pullman"></span>
-		<span itemprop="addressRegion" content="WA"></span>
-		<span itemprop="postalCode" content="99163"></span>
-	</div>
-	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-	<span itemprop="telephone" content="(509) 335-3564"></span>
-	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-</div>
-		<!-- @endif -->
-
 	
 	
 </section><!--/#wsu-actions-->
@@ -1117,63 +834,6 @@ pre code {
 			</li>
 		</ul>
 	</li>
-<!-- @if manyLinks='true' -->
-	
-	
-	<li><a href="/">Fee, Fi, Fourth</a></li>
-	<li>
-		<a href="link">A first first order link</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="link">A second token of the same type in a list</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="link">One, twice, three times a lady</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="link">Fourth and Main</a>
-		<ul>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-			<li><a href="link">A subpage link</a></li>
-			<li><a href="link">Table of Context</a></li>
-		</ul>
-	</li>
-<!-- @endif -->
 	<li>
 		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
 		<ul>
@@ -1230,28 +890,5 @@ pre code {
 <!-- /WRAPPING -->
 
 
-<!-- @if doubledContact='true' -->
-	<!-- 
-	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
-	or something that will work to let you display one thing to a user but another to the search engines.
-	-->
-	<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
-	<span itemprop="department"  content="University Unit"></span> 
-	<span itemprop="name" content="Washington State University"></span> 
-	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<span itemprop="location" content="French Administration Building"></span>
-		<span itemprop="streetAddress" content="PO Box 555555"></span>
-		<span itemprop="addressLocality" content="Pullman"></span>
-		<span itemprop="addressRegion" content="WA"></span>
-		<span itemprop="postalCode" content="99163"></span>
-	</div>
-	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-	<span itemprop="telephone" content="(509) 335-3564"></span>
-	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-</div>
-<!-- @endif -->
 </body>
 </html>

@@ -143,7 +143,7 @@ module.exports = function(grunt) {
 					fluidGrid : 'skip',
 					hybridGrid: 'skip',
 					fixedGrid: 'skip',
-					sections: 'skip',
+					layouts: 'skip',
 				}
 			},
 			js : {
@@ -257,12 +257,12 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_sections : {
+			tu_layouts : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/sections.html',
+				dest : 'test/layouts.html',
 				options : {
 					context : {
-						fullGridExample : 'true'
+						layouts : 'true'
 					}
 				}
 			},
@@ -318,7 +318,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
-								'preprocess:tu_sections'
+								'preprocess:tu_layouts'
 								]);
 		
 		
