@@ -1313,3 +1313,12 @@ nav#wsu-global-links a:hover {
     .#{$campus}-signature #{nth($lightest-signatures,$i)} #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
 	$i: $i+1;
 	}
+@each $campus in $campuses {
+    .#{$campus}-signature .light #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
+	}
+@each $campus in $campuses {
+    .#{$campus}-signature .dark #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
+	}
+@each $campus in $campuses {
+    .#{$campus}-signature .crimson #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
+	}
