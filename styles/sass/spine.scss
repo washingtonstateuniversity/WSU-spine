@@ -18,7 +18,15 @@
 /* II.1.0 THE SPINE
 --------------------------------------------------------------------------- */
 
+#spine,
+#spine * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+	}
+
 #spine {
+	
 	font-size: 12px;
 	width: 198px;
 	height: 100%;
@@ -26,71 +34,72 @@
 	z-index: 99164;
 	position: fixed;
 	bottom: 0;
-	}
-#spine,
-#spine * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box; 
-	}
-/*
-html.lt-ie9 #spine {
-	position: absolute;
-	}
-*/
-#glue {
-	margin-top: 0px;
-	width:198px;
-	position: relative;
-	}
-#spine button {
-	background-color: transparent;
-	border: none;
-	border-radius: 0px;
-	text-indent: 120%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-#spine a {
-	color: #5e6a71;
-	}
-#spine a:hover {
-	color: #981e32;
+	
+	#glue {
+		margin-top: 0px;
+		width:198px;
+		position: relative;
+		}
+	button {
+		background-color: transparent;
+		border: none;
+		border-radius: 0px;
+		text-indent: 120%;
+		white-space: nowrap;
+		overflow: hidden;
+		}
+	a {
+		color: #5e6a71;
+		}
+	a:hover {
+		color: #981e32;
+		}
+		
+	/* II.1.1 Cracked */
+	
+	&.cracked {
+	
+		position: absolute;
+		height: auto;
+		
+		&.scrolled #glue {
+			bottom: 0;
+			top: auto;
+			position: fixed;
+			width: 198px;
+			}
+		footer {
+			position: relative !important;
+			position: absolute;
+			bottom: 0;
+			padding: 5px 0px !important;
+			}
+		.spine-social-channels ul {
+			margin-top: 10px;
+			padding-top: 15px;
+			}
+		
+		}
+	
+	/* II.1.2 Cropped */
+	
+	&.cropped {
+		font-size: 12px;
+		height: 198px;
+		min-height: 198px;
+		box-shadow: 0px 0px 5px rgba(66,74,79,0.5);
+		position: absolute;
+		top: 0px;
+		
+		nav,
+		footer {
+			display: none;
+			}
+		
+		}
+	
 	}
 	
-/* II.1.1 Cracked */
-#spine.cracked {
-	position: absolute;
-	height: auto;
-	}
-#spine.cracked.scrolled #glue {
-	bottom: 0;
-	top: auto;
-	position: fixed;
-	width: 198px;
-	}
-#spine.cracked footer {
-	position: relative !important;
-	padding: 5px 0px !important;
-	}
-#spine.cracked #wsu-social-channels ul {
-	margin-top: 10px;
-	padding-top: 15px;
-	}
-
-/* II.1.2 Cropped */
-#spine.cropped {
-	font-size: 12px;
-	height: 198px;
-	min-height: 198px;
-	box-shadow: 0px 0px 5px rgba(66,74,79,0.5);
-	position: absolute;
-	top: 0px;
-	}
-#spine.cropped nav,
-#spine.cropped footer {
-	display: none;
-	}
 .size-lt-large #spine.cropped nav,
 .size-lt-large #spine.cropped footer {
 	display: block;
@@ -104,7 +113,7 @@ footer.looseleaf {
 		position: absolute;
 		white-space: nowrap;
 		}
-	#wsu-global-links {
+	.spine-global-links {
 		right: 50%;
 		padding-right: 45px;
 		}
@@ -113,7 +122,7 @@ footer.looseleaf {
 		padding-left: 43px;
 		padding-top: 4px;
 		}
-	#wsu-social-channels {
+	.spine-social-channels {
 		float: right;
 		display: block;
 		left: 50%;
@@ -121,11 +130,11 @@ footer.looseleaf {
 		width: 1px;
 		overflow: visible;
 		}
-	#wsu-social-channels ul {
+	.spine-social-channels ul {
 		position: relative;
 		left: -42px;
 		}
-	#wsu-social-channels ul li {
+	.spine-social-channels ul li {
 		display: inline-block;
 		width: auto;
 		padding: 0px 0px 0px 1px;
@@ -133,10 +142,10 @@ footer.looseleaf {
 		width: 20px;
 		white-space: nowrap;
 		}
-	#wsu-social-channels li a {
+	.spine-social-channels li a {
 		font-size: 16px;
 		}
-	#wsu-global-links li {
+	.spine-global-links li {
 		width: auto;
 		display: inline-block;
 		margin: 0px;
@@ -185,7 +194,7 @@ button#shelve {
 button#shelve:hover {
 	color: #5e6a71;
 	}
-.spine-tabs button:before,
+.spine-actions-tabs button:before,
 .spine-nav button:before,
 .spine-footer button:before {
 	font-family: "Spine-Icons";
@@ -201,46 +210,48 @@ button#shelve:hover {
 
 #spine {
 
-	nav ul {
+	nav {
+
+	ul {
 		margin: 0px;
 		padding: 0px;
 		}
-	nav li {
+	li {
 		list-style: none;
 		}
-	nav ul li {
+	ul li {
 		position: relative;
 		margin: 0px; padding: 0px;
 		border-width: 1px 0px 0px 0px;
 		border-style: solid;
 		line-height: 1.1em;
 		}
-	nav ul li a {
+	ul li a {
 		display: block;
 		padding: 6px 0px;
 		}
-	nav ul li li,
-	nav ul li li:hover {
+	ul li li,
+	ul li li:hover {
 		border-top: none;
 		}
-	nav ul ul li a {
+	ul ul li a {
 		text-transform: none;
 		padding: .4em 0;
 		}
-	nav ul ul li {
+	ul ul li {
 		margin-left: 1.25em;
 		}
-	nav ul ul ul li a {
+	ul ul ul li a {
 		padding: .25em 0;
 		}
 	
 	/* Parents */
-	nav ul li.parent > a {
-		padding-right: 15px;
-		}
 	
 	li.parent {
 	
+		> a {
+			padding-right: 15px;
+			}
 		&.opened > a,
 		&.active > a {
 			padding-bottom: 3px;
@@ -282,47 +293,49 @@ button#shelve:hover {
 		}
 		
 	/* II.2.2 NAVIGATION -> Disclosure */
-	nav ul ul li {
+	ul ul li {
 		display: none;
 		}
-	nav ul ul li {
+	ul ul li {
 		line-height: 1.3em;
 		}
-	nav ul li.active > ul > li,
-	nav ul li.opened > ul > li {
+	ul li.active > ul > li,
+	ul li.opened > ul > li {
 		display: block;
 		}
+		
+	}
 	
 	}
 
 /* II.2.3 NAVIGATION -> SECTIONS -> Site */
 
-#spine-sitenav {
-	margin: 10px 20px;
-	}
-#spine-sitenav > ul > li:nth-last-of-type(1) {
-	border-bottom-width: 1px;
-	}
-
-/* Home Icon */
-
-#spine-sitenav:not(.homeless) > ul > li:first-child > a {
-	padding-left: 1.4em;
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray.svg');
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 1em auto;
-	}
-#spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
-#spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
-#spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
-	}
-	
-/* "Dogeared" Link */
-
 #spine {
+
+	.spine-sitenav {
+		margin: 10px 20px;
+		}
+	.spine-sitenav > ul > li:nth-last-of-type(1) {
+		border-bottom-width: 1px;
+		}
+	
+	/* Home Icon */
+	
+	.spine-sitenav:not(.homeless) > ul > li:first-child > a {
+		padding-left: 1.4em;
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray.svg');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 1em auto;
+		}
+	.spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
+	.spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
+	.spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
+		}
+		
+	/* "Dogeared" Link */
 
 	li:not(.parent).dogeared > a {
 		color: #981e32;
@@ -332,6 +345,8 @@ button#shelve:hover {
 	li.parent.dogeared > a:hover {
 		cursor: default;
 		}
+		
+	/* External Links */
 	
 	nav a.external:hover:after {
 		font-family: "Spine-Icons";
@@ -346,7 +361,7 @@ button#shelve:hover {
 	
 /* II.2.4 NAVIGATION -> SECTIONS -> Offsite  */
 
-#spine-offsitenav {
+.spine-offsitenav {
 	
 	margin: 20px 20px 0px 20px;
 	
@@ -371,93 +386,97 @@ button#shelve:hover {
 /* II.3.0 ACTIONS 
 --------------------------------------------------------------------------- */
 
-.no-js #spine #wsu-actions,
-html.lt-ie9 #wsu-actions {
+.no-js #spine .spine-actions,
+html.lt-ie9 #spine .spine-actions {
 	display: none;
 	}
 	
-#wsu-actions {
-	
-	padding: 0px;
-	
-	section {
-		z-index: 100;
-		height: 100%;
-		width: auto;
-		position: fixed;
-		display: block;
+#spine	{
+
+	.spine-actions {
+		
 		padding: 0px;
-		margin: 0px;
-		width: 198px;
+		
+		section {
+			z-index: 100;
+			height: 100%;
+			width: auto;
+			position: fixed;
+			display: block;
+			padding: 0px;
+			margin: 0px;
+			width: 198px;
+			}
+		section.closed {
+			display: none;
+			}
+		section.opened {
+			display: block;
+			}
+		> ul {
+			display: block;
+			}
+		ul li {
+			padding: 0px; margin: 0px;
+			list-style: none;
+			}
+		> ul li {
+			display: block;
+			width: 25%;
+			text-align: center;
+			list-style: none;
+			display: block;
+			float: left;
+			}
+	
 		}
-	section.closed {
-		display: none;
+		
+	/* II.3.2 Actions -> Tabs */
+	
+	.spine-actions-tabs {
+		
+		margin: 0px 2em;
+		padding: 0px;
+		
+		button {
+			outline: none;
+			}
+		li {
+			width: 25%;
+			display: inline-block;
+		    margin: 0;
+		    padding: 0;
+			}
+		li button {
+			position: relative;
+			width: 100%;
+			height: 2.2em;
+			font-weight: normal;
+			font-size: 1.2em;
+			line-height: 1em;
+			text-shadow: none;
+			width: 100%;
+			padding: .8em 0 .8em 0;
+			display: block;
+			}
+		li button:before {
+			text-align: center;
+			top: .9em;
+			}
+		
 		}
-	section.opened {
-		display: block;
-		}
-	> ul {
-		display: block;
-		}
-	ul li {
-		padding: 0px; margin: 0px;
-		list-style: none;
-		}
-	> ul li {
-		display: block;
-		width: 25%;
-		text-align: center;
-		list-style: none;
-		display: block;
-		float: left;
-		}
+		
+	.spine-search-tab button:before { content: "$"; }
+	.spine-contact-tab button:before { content: "\2709"; }
+	.spine-share-tab button:before { content: "\F601"; }
+	.spine-print-tab button:before { content: "\2399"; }
+	
+	.spine-search-tab.opened button:hover:before,
+	.spine-contact-tab.opened button:hover:before,
+	.spine-share-tab.opened button:hover:before,
+	.spine-print-tab.opened button:hover:before { content: "\2421"; }
 
-	}
-	
-/* II.3.2 Actions -> Tabs */
-
-.spine-tabs {
-	
-	margin: 0px 2em;
-	padding: 0px;
-	
-	button {
-		outline: none;
-		}
-	li {
-		width: 25%;
-		display: inline-block;
-	    margin: 0;
-	    padding: 0;
-		}
-	li button {
-		position: relative;
-		width: 100%;
-		height: 2.2em;
-		font-weight: normal;
-		font-size: 1.2em;
-		line-height: 1em;
-		text-shadow: none;
-		width: 100%;
-		padding: .8em 0 .8em 0;
-		display: block;
-		}
-	li button:before {
-		text-align: center;
-		top: .9em;
-		}
-	
-	}
-	
-#wsu-search-tab button:before { content: "$"; }
-#wsu-contact-tab button:before { content: "\2709"; }
-#wsu-share-tab button:before { content: "\F601"; }
-#wsu-print-tab button:before { content: "\2399"; }
-
-#wsu-search-tab.opened button:hover:before,
-#wsu-contact-tab.opened button:hover:before,
-#wsu-share-tab.opened button:hover:before,
-#wsu-print-tab.opened button:hover:before { content: "\2421"; }
+} // end #spine
 
 /* II.3.1 ACTIONS -> Search 
 --------------------------------------------------------------------------- */
@@ -517,11 +536,11 @@ html.lt-ie9 #wsu-actions {
 	
 	}
 	
-#wsu-search :-webkit-input-placeholder {
+.spine-search :-webkit-input-placeholder {
    text-indent: 3px;
    }
-#wsu-search :-moz-placeholder,
-#wsu-search :-ms-input-placeholder {
+.spine-search :-moz-placeholder,
+.spine-search :-ms-input-placeholder {
    text-indent: 5px;
    }
 	
@@ -600,7 +619,7 @@ html.lt-ie9 #wsu-actions {
 /* II.3.2 ACTIONS -> Contact 
 --------------------------------------------------------------------------- */
 
-.spine-contact {
+#spine .spine-contact {
 
 	address {
 		color: #384044;
@@ -669,50 +688,57 @@ html.lt-ie9 #wsu-actions {
 
 /* 3.3 Share */
 
-.spine-share {
+#spine .spine-share {
 
 	ul {
 		margin: 2em !important;
+		
+		li {
+		
+			a {
+				display: block;
+				padding-top: .75em;
+				padding-bottom: .75em;
+				border-bottom: 1px #c3cbcf solid;
+				}
+			a:hover {
+				color: white !important;
+				background: #434d53;
+				padding-left: 2em;
+				padding-right: 2em;
+				margin: -1px -2em 1px -2em;
+				}
+			a:active {
+				background: #981e32;
+				}
+			a:hover {
+				color: white;
+				}
+			a:before {
+				font-family: "Spine-Icons" !important;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				width: 1.8em;
+				display: inline-block;
+				text-align: center;
+				}
+			&:last-of-type a  {
+				border-bottom: none;
+				}
+			a span {
+				display: none;
+				}
+			
+			&.by-facebook a:before { content: "F"; }
+			&.by-twitter a:before { content: "T"; }
+			&.by-email a:before { content: "@"; }
+			&.by-pinterest a:before { content: "P"; }
+			&.by-linkedin a:before { content: "L"; }
+			&.by-other a:before { content: ""; display: none; }
+		
+			}
+		
 		}
-	li a {
-		display: block;
-		padding-top: .75em;
-		padding-bottom: .75em;
-		border-bottom: 1px #c3cbcf solid;
-		}
-	li a span {
-		display: none;
-		}
-	ul li:last-of-type a  {
-		border-bottom: none;
-		}
-	li a:hover {
-		color: white !important;
-		background: #434d53;
-		padding-left: 2em;
-		padding-right: 2em;
-		margin: -1px -2em 1px -2em;
-		}
-	li a:active {
-		background: #981e32;
-		}
-	li a:hover {
-		color: white;
-		}
-	li a:before {
-		font-family: "Spine-Icons" !important;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		width: 1.8em;
-		display: inline-block;
-		text-align: center;
-		}
-	li.by-facebook a:before { content: "F"; }
-	li.by-twitter a:before { content: "T"; }
-	li.by-email a:before { content: "@"; }
-	li.by-pinterest a:before { content: "P"; }
-	li.by-linkedin a:before { content: "L"; }
-	li.by-other a:before { content: ""; display: none; }
 
 	}
 
@@ -734,65 +760,97 @@ html.lt-ie9 #spine footer {
 
 /* II.5.1 FOOTER -> Social */
 
-#spine footer nav ul li {
-	border-top: none;
+.spine-footer nav ul li {
+	border-top: none !important;
 	text-align: center;
 	}
-#wsu-social-channels {
+
+#spine .spine-social-channels {
+	
 	margin-bottom: .6em;
 	width: 100%;
 	
 	ul {
 		text-align: center;
-		}
-	ul li {
-		color: #b6bcbf;
-		background-position: center center;
-		background-repeat: no-repeat;
-		width: 2.5em;
-		display: inline-block;
-		margin: 0px;
-		padding: 0px;
-		}
-	ul li a {
-		color: #e0e5e8;
-		color: #D7DADB;
-		text-indent: -9000px;
-		font-size: 1.8em;
-		line-height: .8em;
-		height: 1.2em;
-		padding: 0px;
-		display: block;
-		position: relative;
-		text-transform: none;
-		}
-	ul li a:before {
-		font-family: "Spine-Icons";
-		position: absolute;
-		top: 0;
-		left: 0;
-		text-indent: 0;
-		text-align: center;
-		width: 30px;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		}
-	
-	}
+		
+		li {
+			color: #b6bcbf;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: 2.5em;
+			display: inline-block;
+			margin: 0px;
+			padding: 0px;
+			}
+		li a {
+			color: #e0e5e8;
+			color: #D7DADB;
+			text-indent: -9000px;
+			font-size: 1.8em;
+			line-height: .8em;
+			height: 1.2em;
+			padding: 0px;
+			display: block;
+			position: relative;
+			text-transform: none;
+			}
+		li a:before {
+			font-family: "Spine-Icons";
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-indent: 0;
+			text-align: center;
+			width: 30px;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			}
 
-li.facebook-channel a:before { content: "F"; } #spine li.facebook-channel a:hover { color: $facebook-blue; }
-li.twitter-channel a:before { content: "T"; } #spine li.twitter-channel a:hover { color: $twitter-blue; }
-li.youtube-channel a:before { content: "Y"; } #spine li.youtube-channel a:hover { color: $youtube-red; }
-li.directory-channel a:before { content: "s"; } li.directory-channel a:hover:before { content: "S"; } #spine li.directory-channel a:hover { color: #b6bcbf; }
-li.linkedin-channel a:before { content: "L"; } #spine li.linkedin-channel a:hover { color: $linkedin-blue; }
-li.pinterest-channel a:before { content: "P"; } #spine li.pinterest-channel a:hover { color: $pinterest-red; }
-li.gplus-channel a:before { content: "G"; } #spine li.gplus-channel a:hover { color: $gplus-orange; }
-li.flickr-channel a:before { content: "R"; } #spine li.flickr-channel a:hover { color: $flickr-pink; }
-li.tumblr-channel a:before { content: "B"; } #spine li.tumblr-channel a:hover { color: $tumblr-blue; }
+		.facebook-channel {
+			a:before { content: "F"; }
+			a:hover { color: $facebook-blue; }
+			}
+		.twitter-channel {
+			a:before { content: "T"; }
+			a:hover { color: $twitter-blue; }
+			}
+		.youtube-channel {
+			a:before { content: "Y"; }
+			a:hover { color: $youtube-red; }
+			}
+		.directory-channel {
+			a:before { content: "s"; }
+			a:hover:before { content: "S"; }
+			a:hover { color: #b6bcbf; }
+			}
+		.linkedin-channel {
+			a:before { content: "L"; }
+			a:hover { color: $linkedin-blue; }
+			}
+		.pinterest-channel {
+			a:before { content: "P"; }
+			a:hover { color: $pinterest-red; }
+			}
+		.gplus-channel {
+			a:before { content: "G"; }
+			a:hover { color: $gplus-orange; }
+			}
+		.flickr-channel {
+			a:before { content: "R"; }
+			a:hover { color: $flickr-pink; }
+			}
+		.tumblr-channel {
+			a:before { content: "B"; }
+			a:hover { color: $tumblr-blue; }
+			}
+		
+		}
+
+	}
 
 /* II.5.2 FOOTER -> Global Navigation */
 
-#wsu-global-links {
+.spine-global-links {
 	
 	font-size: .9em;
 	border-top-width: 1px;
@@ -840,492 +898,555 @@ li.tumblr-channel a:before { content: "B"; } #spine li.tumblr-channel a:hover { 
 main {
 	position: relative;
 	}
-#spine.bleed:before {
-	content: " ";
-	background-color: white;
-	width: 1000px;
-	position: absolute;
-	min-height: 100%;
-	left: -1000px;
-	}
 
-/* DEFAULT white */
-#spine,
-#spine.bleed:before {
+#spine {
+
 	background-color: $gray-er;
-	}
-nav#spine-sitenav a {
-	color: $gray;
-	}
-#wsu-actions-tabs button,
-#wsu-social-channels a,
-#spine footer small a {
-	color: $gray-lightly;
-	}
-#spine-sitenav ul li,
-nav#wsu-global-links {
-	border-color: lighten($gray-lightly, 5%);
-	}
-#spine nav a:hover,
-#spine-sitenav a:hover,
-#spine-sitenav li.dogeared > a {
-	color: $crimson;
-	}
-#wsu-tab-search.opened button,
-#wsu-tab-search.opened button:hover,
-#spine-offsitenav a,
-#wsu-global-links a {
-	color: $gray-light;
-	}
-#wsu-actions-tabs li.opened button,
-#wsu-actions-tabs li button:hover,
-#wsu-actions-tabs li.opened button:hover {
-	color: $gray-light;
-	}
-nav#spine-offsitenav a:hover,
-nav#wsu-global-links a:hover {
-	color: $gray;
-	}
-#wsu-actions-tabs li.opened,
-#wsu-actions-tabs li.opened:hover,
-#wsu-actions section {
-	background-color: $gray-lightest;
-	}
-#wsu-actions li:hover i {
-	color: $crimson;
-	}
-#wsu-tab-search button {
-	color: $gray-light;
-	}
+	
+	&.bleed:before {
+		content: " ";
+		background-color: white;
+		width: 1000px;
+		position: absolute;
+		min-height: 100%;
+		left: -1000px;
+		background-color: $gray-er;
+		}
+	.spine-sitenav a {
+		color: $gray;
+		}
+	.spine-actions-tabs button,
+	.spine-social-channels a,
+	.spine-footer small a {
+		color: $gray-lightly;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: lighten($gray-lightly, 5%);
+		}
+	nav a:hover,
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: $crimson;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover,
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-light;
+		}
+	.spine-actions-tabs li.opened button,
+	.spine-actions-tabs li button:hover,
+	.spine-actions-tabs li.opened button:hover {
+		color: $gray-light;
+		}
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover {
+		color: $gray;
+		}
+	.spine-actions-tabs li.opened,
+	.spine-actions-tabs li.opened:hover,
+	.spine-actions section {
+		background-color: $gray-lightest;
+		}
+	.spine-actions li:hover i {
+		color: $crimson;
+		}
+	.spine-search-tab button {
+		color: $gray-light;
+		}
 
 /* LIGHTEST #e6e8e9, rgb(230,232,233) */
-#spine.lightest,
-#spine.lightest.bleed:before {
+
+&.lightest {
+
 	background-color: $gray-lightest;
-	}
-.lightest nav#spine-sitenav a,
-.lightest nav#spine-offsitenav a:hover {
-	color: $gray-dark;
-	}
-.lightest #wsu-actions-tabs li.opened button,
-.lightest #wsu-actions-tabs li button,
-.lightest #wsu-actions-tabs li.opened button:hover,
-.lightest #wsu-social-channels a,
-.lightest footer small a {
-	color: $gray-lighter;
-	}
-.lightest #spine-sitenav ul li,
-.lightest #wsu-global-links {
-	border-color: $gray-lightly;
-	}
-.lightest #wsu-tab-search.opened button,
-.lightest #wsu-tab-search.opened button:hover {
-	color: $gray-dark;
-	}
-.lightest #spine-offsitenav a,
-.lightest #wsu-global-links a {
-	color: $gray-light;
-	}
-.lightest #wsu-actions-tabs button:hover,
-.lightest #spine-sitenav a,
-.lightest #spine-offsitenav a:hover,
-.lightest #wsu-global-links a:hover {
-	color: $gray;
-	} 
-.lightest #spine-sitenav a:hover,
-.lightest #spine-sitenav li.dogeared > a {
-	color: $crimson;
-	}
-.lightest #wsu-actions-tabs li.opened,
-.lightest #wsu-actions-tabs li.opened:hover,
-.lightest #wsu-actions section {
-	background-color: white;
+	
+	&.bleed:before {
+		background-color: $gray-lightest;
+		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
+		color: $gray-dark;
+		}
+	.spine-actions-tabs li.opened button,
+	.spine-actions-tabs li button,
+	.spine-actions-tabs li.opened button:hover,
+	.spine-social-channels a,
+	.spine-footer small a {
+		color: $gray-lighter;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-lightly;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-dark;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-light;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover {
+		color: $gray;
+		} 
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: $crimson;
+		}
+	.spine-actions-tabs li.opened,
+	.spine-actions-tabs li.opened:hover,
+	.spine-actions section {
+		background-color: white;
+		}
+			
 	}
 	
 /* LIGHTLY #d7dadb, rgb(215 218 219) */
-#spine.lightly,
-#spine.lightly.bleed:before {
+
+&.lightly {
+
 	background-color: $gray-lightly;
-	}
-.lightly nav#spine-sitenav a,
-.lightly nav#spine-offsitenav a:hover {
-	color: $gray-darker;
-	}
-.lightly #wsu-actions-tabs li.opened button,
-.lightly #wsu-actions-tabs li button,
-.lightly #wsu-actions-tabs li.opened button:hover,
-.lightly #wsu-social-channels .directory-channel a:hover,
-.lightly #wsu-social-channels a,
-.lightly footer small a {
-	color: $gray-light;
-	}
-.lightly #spine-sitenav ul li,
-.lightly #wsu-global-links {
-	border-color: $gray-lighter;
-	}
-.lightly #wsu-tab-search.opened button,
-.lightly #wsu-tab-search.opened button:hover {
-	color: $gray-darker;
-	}
-.lightly #spine-offsitenav a,
-.lightly #wsu-global-links a {
-	color: $gray;
-	}
-.lightly #wsu-actions-tabs button:hover,
-.lightly #spine-sitenav a,
-.lightly #spine-offsitenav a:hover,
-.lightly #wsu-global-links a:hover {
-	color: $gray-dark;
-	} 
-.lightly #spine-sitenav a:hover,
-.lightly #spine-sitenav li.dogeared > a {
-	color: $crimson;
-	}
-.lightly #wsu-actions-tabs li.opened,
-.lightly #wsu-actions-tabs li.opened:hover,
-.lightly #wsu-actions section {
-	background-color: white;
+	
+	&.bleed:before {
+		background-color: $gray-lightly;
+		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
+		color: $gray-darker;
+		}
+	.spine-actions-tabs li.opened button,
+	.spine-actions-tabs li button,
+	.spine-actions-tabs li.opened button:hover,
+	.spine-social-channels .directory-channel a:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $gray-light;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-lighter;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darker;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover {
+		color: $gray-dark;
+		} 
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: $crimson;
+		}
+	.spine-actions-tabs li.opened,
+	.spine-actions-tabs li.opened:hover,
+	.spine-actions section {
+		background-color: white;
+		}
+	
 	}
 
 /* LIGHTER #b5babe, rgb(181 186 190) */
-#spine.lighter,
-#spine.lighter.bleed:before {
+
+&.lighter {
+
 	background-color: $gray-lighter;
-	}
-.lighter nav#spine-sitenav a,
-.lighter nav#spine-offsitenav a:hover {
-	color: $gray-darker;
-	}
-.lighter #wsu-actions-tabs li.opened button,
-.lighter #wsu-actions-tabs button,
-.lighter #wsu-actions-tabs li.opened button:hover,
-.lighter #wsu-social-channels .directory-channel a:hover,
-.lighter #wsu-social-channels a,
-.lighter footer small a {
-	color: $gray-light;
-	}
-.lighter #spine-sitenav ul li,
-.lighter #wsu-global-links {
-	border-color: $gray-light;
-	}
-.lighter #wsu-tab-search.opened button,
-.lighter #wsu-tab-search.opened button:hover {
-	color: $gray-darkest;
-	}
-.lighter #spine-offsitenav a,
-.lighter #wsu-global-links a {
-	color: $gray-dark;
-	}
-.lighter #wsu-actions-tabs button:hover,
-.lighter #spine-sitenav a,
-.lighter #spine-offsitenav a:hover,
-.lighter #wsu-global-links a:hover {
-	color: $gray-darkest;
-	} 
-.lighter #spine-sitenav a:hover,
-.lighter #spine-sitenav li.dogeared > a {
-	color: $crimson;
+	
+	&.bleed:before {
+		background-color: $gray-lighter;
+		}
+	nav.spine-sitenav a,
+	nav.spine-offsitenav a:hover {
+		color: $gray-darker;
+		}
+	.spine-actions-tabs li.opened button,
+	.spine-actions-tabs button,
+	.spine-actions-tabs li.opened button:hover,
+	.spine-social-channels .directory-channel a:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $gray-light;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-light;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darkest;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-dark;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover {
+		color: $gray-darkest;
+		} 
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: $crimson;
+		}
+	
 	}
 
 /* LIGHT #8b9399, rgb(139,147,153) */
-#spine.light,
-#spine.light.bleed:before {
+
+&.light {
+
 	background-color: $gray-light;
-	}
-.light #wsu-signature {
-	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
-	}
-#spine.light:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
-	}
-.light:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-.light:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
-	}
-.light nav#spine-sitenav a,
-.light nav#spine-offsitenav a:hover {
-	color: $gray-lightest;
-	}
-.light #wsu-actions li.opened button,
-.light #wsu-actions li button,
-.light #wsu-actions li.opened button:hover,
-.light #wsu-social-channels a,
-.light footer small a {
-	color: $gray-lighter;
-	}
-.light #spine-sitenav ul li,
-.light #wsu-global-links {
-	border-color: $gray-lighter;
-	}
-.light #wsu-tab-search.opened button,
-.light #wsu-tab-search.opened button:hover {
-	color: $gray-darker;
-	}
-.light #spine-offsitenav a,
-.light #wsu-global-links a {
-	color: $gray-lightly;
-	}
-.light #wsu-actions-tabs button:hover,
-.light #spine-offsitenav a:hover,
-.light #wsu-global-links a:hover {
-	color: $gray-lightest;
-	} 
-.light #spine-sitenav a:hover,
-.light #spine-sitenav li.dogeared > a {
-	color: white;
+	
+	&.bleed:before {
+		background-color: $gray-light;
+		}
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+		}
+	nav.spine-sitenav a,
+	nav.spine-offsitenav a:hover {
+		color: $gray-lightest;
+		}
+	.spine-actions li.opened button,
+	.spine-actions li button,
+	.spine-actions li.opened button:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $gray-lighter;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-lighter;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darker;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-lightly;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover {
+		color: $gray-lightest;
+		} 
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: white;
+		}
+	
 	}
 
 /* GRAY #5e6a71, rgb(94,106,113) */
-#spine.gray,
-#spine.gray.bleed:before {
+
+
+&.gray {
+
 	background: $gray;
-	}
-.gray #wsu-signature {
-	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
-	}
-.gray:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
-	}
-.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-.gray:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
-	}
-.gray nav#spine-sitenav a,
-.gray nav#spine-offsitenav a:hover {
-	color: $gray-lightly;
-	}
-.gray #wsu-actions li.opened button,
-.gray #wsu-actions li button,
-.gray #wsu-actions li.opened button:hover,
-.gray #wsu-social-channels a,
-.gray footer small a {
-	color: darken($gray-dark, 2%);
-	}
-.gray #spine-sitenav ul li,
-.gray #wsu-global-links {
-	border-color: $gray-dark;
-	}
-.gray #wsu-tab-search.opened button,
-.gray #wsu-tab-search.opened button:hover {
-	color: $gray-darker;
-	}
-.gray #spine-offsitenav a,
-.gray #wsu-global-links a {
-	color: $gray-lighter;
-	}
-.gray #wsu-actions-tabs button:hover,
-.gray #spine-offsitenav a:hover,
-.gray #wsu-global-links a:hover {
-	color: $gray-lightly;
-	} 
-#spine.gray li.facebook-channel a:hover {
-	color: $facebook-lightblue;
-	}
-.gray #spine-sitenav a:hover,
-.gray #spine-sitenav li.dogeared > a {
-	color: white;
+	
+	&.bleed:before {
+		background: $gray;
+		}
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
+		color: $gray-lightly;
+		}
+	.spine-actions li.opened button,
+	.spine-actions li button,
+	.spine-actions li.opened button:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: darken($gray-dark, 2%);
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-dark;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darker;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-lighter;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover {
+		color: $gray-lightly;
+		} 
+	li.facebook-channel a:hover {
+		color: $facebook-lightblue;
+		}
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: white;
+		}
+	
 	}
 
 /* GRAY-DARK #383D42, rgb(75,85,90) */
-#spine.dark,
-#spine.dark.bleed:before {
-	background-color: $gray-dark;
-	}
-.dark #wsu-signature {
-	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
-	}
-.dark:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
-	}
-.dark:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-.dark:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
-	}
-.dark nav#spine-sitenav a,
-.dark nav#spine-offsitenav a:hover {
-	color: $gray-lightly;
-	}
-.dark #wsu-actions li.opened button,
-.dark #wsu-actions li button,
-.dark #wsu-actions li.opened button:hover,
-.dark #wsu-social-channels a,
-.dark footer small a {
-	color: $gray-light;
-	}
-.dark #spine-sitenav ul li,
-.dark #wsu-global-links {
-	border-color: $gray;
-	}
-.dark #wsu-tab-search.opened button,
-.dark #wsu-tab-search.opened button:hover {
-	color: $gray-darker;
-	}
-.dark #spine-offsitenav a,
-.dark #wsu-global-links a {
-	color: $gray-light;
-	}
-.dark #wsu-actions-tabs button:hover,
-.dark #spine-sitenav a,
-.dark #spine-offsitenav a:hover,
-.dark #wsu-global-links a:hover,
-.dark #wsu-social-channels li[class*="-channel"] a:hover {
-	color: $gray-lightly;
-	}
 
-.dark #spine-sitenav a:hover,
-.dark #spine-sitenav li.dogeared > a {
-	color: white;
+&.dark {
+
+	background-color: $gray-dark;
+	
+	&.bleed:before {
+		background-color: $gray-dark;
+		}
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+		}
+	.dark:not(.homeless) .spine-sitenav > ul > li:first-child a {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
+		}
+	.dark:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
+	.dark:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+		}
+	nav.spine-sitenav a,
+	nav.spine-offsitenav a:hover {
+		color: $gray-lightly;
+		}
+	.spine-actions li.opened button,
+	.spine-actions li button,
+	.spine-actions li.opened button:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $gray-light;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darker;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-light;
+		}
+	.spine-actions-tabs button:hover,
+	.dark .spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover,
+	.spine-social-channels li[class*="-channel"] a:hover {
+		color: $gray-lightly;
+		}
+	
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: white;
+		}
+	
 	}
 
 /* GRAY-DARKER #2a3033, rgb(42 48 51) */
-#spine.darker,
-#spine.darker.bleed:before {
+
+
+&.darker {
+
 	background-color: darken($gray-darker, 3%);
-	}
-.darker:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
-	}
-.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-.darker:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
-	}
-.darker nav#spine-sitenav a,
-.darker nav#spine-offsitenav a:hover {
-	color: $gray-lighter;
-	}
-.darker #wsu-actions li.opened button,
-.darker #wsu-actions li button,
-.darker #wsu-actions li.opened button:hover,
-.darker #wsu-social-channels a,
-.darker footer small a {
-	color: $gray;
-	}
-.darker #spine-sitenav ul li,
-.darker #wsu-global-links {
-	border-color: $gray-dark;
-	}
-.darker #wsu-tab-search.opened button,
-.darker #wsu-tab-search.opened button:hover {
-	color: $gray-darker;
-	}
-.darker #spine-offsitenav a,
-.darker #wsu-global-links a {
-	color: $gray-light;
-	}
-.darker #wsu-actions-tabs button:hover,
-.darker #spine-sitenav a,
-.darker #spine-offsitenav a:hover,
-.darker #wsu-global-links a:hover{
-	color: $gray-lightly;
-	}
-.darker #spine-sitenav a:hover,
-.darker #spine-sitenav li.dogeared > a {
-	color: white;
+	
+	&.bleed:before {
+		background-color: darken($gray-darker, 3%);
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
+		color: $gray-lighter;
+		}
+	.spine-actions li.opened button,
+	.spine-actions li button,
+	.spine-actions li.opened button:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $gray;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-dark;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darker;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-light;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover{
+		color: $gray-lightly;
+		}
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: white;
+		}
+	
 	}
 
-/* GRAY-DARKEST #000 */
-#spine.darkest,
-#spine.darkest.bleed:before {
+/* GRAY-DARKEST #000, rgb 0,0,0 */
+
+&.darkest {
+	
 	background-color: $gray-darkest;
-	}
-.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
-	}
-.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-.darkest:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
-	}
-.darkest nav#spine-sitenav a,
-.darkest nav#spine-offsitenav a:hover {
-	color: $gray-lighter;
-	}
-.darkest #wsu-actions li.opened button,
-.darkest #wsu-actions li button,
-.darkest #wsu-actions li.opened button:hover,
-.darkest #wsu-social-channels a,
-.darkest footer small a {
-	color: $gray;
-	}
-.darkest #spine-sitenav ul li,
-.darkest #wsu-global-links {
-	border-color: $gray-dark;
-	}
-.darkest #wsu-tab-search.opened button,
-.darkest #wsu-tab-search.opened button:hover {
-	color: $gray-darker;
-	}
-.darkest #spine-offsitenav a,
-.darkest #wsu-global-links a {
-	color: $gray-light;
-	}
-.darkest #wsu-actions-tabs button:hover,
-.darkest #spine-sitenav a,
-.darkest #spine-offsitenav a:hover,
-.darkest #wsu-global-links a:hover{
-	color: $gray-lightly;
-	}
-.darkest #spine-sitenav a:hover,
-.darkest #spine-sitenav li.dogeared > a {
-	color: $crimson;
+	
+	&.bleed:before {
+		background-color: $gray-darkest;
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+		}
+	nav.spine-sitenav a,
+	nav.spine-offsitenav a:hover {
+		color: $gray-lighter;
+		}
+	.spine-actions li.opened button,
+	.spine-actions li button,
+	.spine-actions li.opened button:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $gray;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $gray-dark;
+		}
+	.spine-search-tab.opened button,
+	.spine-search-tab.opened button:hover {
+		color: $gray-darker;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $gray-light;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover{
+		color: $gray-lightly;
+		}
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: $crimson;
+		}
+	
 	}
 
 /* CRIMSON #981e32 */	
-#spine.crimson,
-#spine.crimson.bleed:before {
+
+&.crimson {
+
 	background-color: $crimson;
+	
+	&.bleed:before {
+		background-color: $crimson;
+		}
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
+		}
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
+	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
+		}
+	nav.spine-sitenav a {
+		color: $gray-lighter;
+		}
+	.spine-actions li.opened button,
+	.spine-actions li button,
+	.spine-actions li.opened button:hover,
+	.spine-social-channels a,
+	footer small a {
+		color: $crimson-darkest;
+		}
+	.spine-sitenav ul li,
+	.spine-global-links {
+		border-color: $crimson-dark;
+		}
+	.spine-offsitenav a,
+	.spine-global-links a {
+		color: $crimson-darkest;
+		}
+	.spine-actions-tabs button:hover,
+	.spine-offsitenav a:hover,
+	.spine-global-links a:hover,
+	.spine-social-channels li[class*="-channel"] a:hover {
+		color: black;
+		}
+	.spine-sitenav a:hover,
+	.spine-sitenav li.dogeared > a {
+		color: white;
+		}
+	
 	}
-.crimson #wsu-signature {
-	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg');
-	}
-.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
-	}
-.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a:before,
-.crimson:not(.homeless) #spine-sitenav > ul > li:first-child a:hover {
-	background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
-	}
-.crimson nav#spine-sitenav a {
-	color: $gray-lighter;
-	}
-.crimson #wsu-actions li.opened button,
-.crimson #wsu-actions li button,
-.crimson #wsu-actions li.opened button:hover,
-.crimson #wsu-social-channels a,
-.crimson footer small a {
-	color: $crimson-darkest;
-	}
-.crimson #spine-sitenav ul li,
-.crimson #wsu-global-links {
-	border-color: $crimson-dark;
-	}
-.crimson #spine-offsitenav a,
-.crimson #wsu-global-links a {
-	color: $crimson-darkest;
-	}
-.crimson #wsu-actions-tabs button:hover,
-.crimson #spine-offsitenav a:hover,
-.crimson #wsu-global-links a:hover,
-.crimson #wsu-social-channels li[class*="-channel"] a:hover {
-	color: black;
-	}
-.crimson #spine-sitenav a:hover,
-.crimson #spine-sitenav li.dogeared > a {
-	color: white;
+	
 	}
 
 /* Transparent */
-#spine.velum, #spine.velum.bleed:before { background: rgba(255,255,255,0.8); }
-.size-lt-large #spine.velum header, .size-lt-large #spine.velum.bleed:before { background: rgba(255,255,255,0.9); }
+#spine.velum, #spine.velum.bleed:before {
+	background: rgba(255,255,255,0.8);
+	}
+.size-lt-large #spine.velum header, 
+.size-lt-large #spine.velum.bleed:before {
+	background: rgba(255,255,255,0.9);
+	}
 
 /* Campus Signature Versions */
 
 @each $campus in $campuses {
-    .#{$campus}-signature #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical.svg'); }
+    .#{$campus}-signature #spine #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical.svg'); }
 	}
 	
 @each $campus in $campuses {
     $i:1; @while $i < 5 {
-	    .#{$campus}-signature .#{nth($lightest-signature-classes,$i)} #wsu-signature {
+	    .#{$campus}-signature #spine.#{nth($lightest-signature-classes,$i)} #wsu-signature {
 	    	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg');
 	    	}
 		$i: $i+1;

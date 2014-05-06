@@ -60,8 +60,18 @@ $transparent: rgba(255,255,255,.8);
 	$transparent-er: rgba(255,255,255,.5);
 	
 // Spine Colors
-$spine-colors-names: 'lightest','lightly','lighter','light','gray','dark','darker','darkest','crimson';
-$spine-colors-values: $gray-lightest,$gray-lightly,$gray-lighter,$gray-light,$gray,$gray-dark,darken($gray-darker,3%),$gray-darkest,$crimson;
+
+$spine-colors: (
+	lightest: $gray-lightest,
+	lightly: $gray-lightly,
+	lighter: $gray-lighter,
+	light: $gray-light,
+	gray: $gray,
+	dark: $gray-dark,
+	darker: darken($gray-darker,3%),
+	darkest: $gray-darkest,
+	crimson: $crimson
+	);
 	
 // Social Channel Colors
 $facebook-blue: #3B5998;
