@@ -8,4 +8,36 @@ $extension: extension;
 $healthsciences: healthsciences;
 $foundation: foundation;
 
-$campuses: $spokane,$vancouver,$tricities,$globalcampus,$extension,$healthsciences,$foundation;
+$campuses: $spokane,$vancouver,$tricities,$globalcampus,$extension,$foundation;
+
+$lightest-signature-classes: 'gray', 'light', 'dark', 'crimson';
+
+@mixin horizontal-signatures($path) {
+
+	#{$path} #wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg');
+		}
+	html.lt-ie9 #{$path} #wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png');
+		}
+	@each $class in $lightest-signature-classes {
+		#{$path} .#{$class} #wsu-signature {
+			background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg');
+			}
+		}
+	@each $campus in $campuses {
+	    .#{$campus}-signature #{$path} #wsu-signature {
+	    	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-horizontal.svg');
+	    	}
+		}
+	@each $campus in $campuses {
+	    $i:1;
+		@while $i < 5 {
+	    	.#{$campus}-signature #{$path} .#{nth($lightest-signature-classes,$i)} #wsu-signature {
+	    		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-horizontal-lightest.svg');
+	    	}
+		$i: $i+1;
+		}
+		}
+	
+	}

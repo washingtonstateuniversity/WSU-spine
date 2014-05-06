@@ -199,90 +199,103 @@ button#shelve:hover {
 /* II.3.0 NAVIGATION
 --------------------------------------------------------------------------- */
 
-#spine nav ul {
-	margin: 0px;
-	padding: 0px;
-	}
-#spine nav li {
-	list-style: none;
-	}
-#spine nav ul li {
-	position: relative;
-	margin: 0px; padding: 0px;
-	border-width: 1px 0px 0px 0px;
-	border-style: solid;
-	line-height: 1.1em;
-	}
-#spine nav ul li a {
-	display: block;
-	padding: 6px 0px;
-	}
-#spine nav ul li li,
-#spine nav ul li li:hover {
-	border-top: none;
-	}
-#spine nav ul ul li a {
-	text-transform: none;
-	padding: .4em 0;
-	}
-#spine nav ul ul li {
-	margin-left: 1.25em;
-	}
-#spine nav ul ul ul li a {
-	padding: .25em 0;
-	}
+#spine {
+
+	nav ul {
+		margin: 0px;
+		padding: 0px;
+		}
+	nav li {
+		list-style: none;
+		}
+	nav ul li {
+		position: relative;
+		margin: 0px; padding: 0px;
+		border-width: 1px 0px 0px 0px;
+		border-style: solid;
+		line-height: 1.1em;
+		}
+	nav ul li a {
+		display: block;
+		padding: 6px 0px;
+		}
+	nav ul li li,
+	nav ul li li:hover {
+		border-top: none;
+		}
+	nav ul ul li a {
+		text-transform: none;
+		padding: .4em 0;
+		}
+	nav ul ul li {
+		margin-left: 1.25em;
+		}
+	nav ul ul ul li a {
+		padding: .25em 0;
+		}
 	
-/* Parents */
-#spine nav ul li.parent > a {
-	padding-right: 15px;
-	}
-#spine li.parent.opened > a,
-#spine li.parent.active > a {
-	padding-bottom: 3px;
-	}
-#spine li.parent > a:after,
-#spine li.parent.opened > a:after {
-	font-family: "Spine-Icons";
-	display: none;
-	position: absolute;
-	top: .5em;
-	right: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	}
-#spine .active li.parent > a:after,
-#spine .active li.parent.opened > a:hover:after {
-	top: .4em;
-	}
-#spine li.parent:not(.active) > a:after {
-	content: "\F501";
-	}
-#spine li.parent.opened:not(.active) > a:after {
-	content: "\F500";
-	}
-#spine li.parent > a:hover:after,
-#spine li.parent.opened > a:hover:after {
-	display: block;
-	}
-#spine li.parent.opened li:last-child a,
-#spine li.parent.active li:last-child a {
-	padding-bottom: 8px;
+	/* Parents */
+	nav ul li.parent > a {
+		padding-right: 15px;
+		}
+	
+	li.parent {
+	
+		&.opened > a,
+		&.active > a {
+			padding-bottom: 3px;
+			}
+		> a:after,
+		&.opened > a:after {
+			font-family: "Spine-Icons";
+			display: none;
+			position: absolute;
+			top: .5em;
+			right: 0;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			}
+		&:not(.active) > a:after {
+			content: "\F501";
+			}
+		&.opened:not(.active) > a:after {
+			content: "\F500";
+			}
+		> a:hover:after,
+		&.opened > a:hover:after {
+			display: block;
+			}
+		&.opened li:last-child a,
+		&.active li:last-child a {
+			padding-bottom: 8px;
+			}
+			
+		&.active > a:hover {
+		cursor: default;
+		}
+		
+		}
+		
+	.active li.parent > a:after,
+	.active li.parent.opened > a:hover:after {
+		top: .4em;
+		}
+		
+	/* II.2.2 NAVIGATION -> Disclosure */
+	nav ul ul li {
+		display: none;
+		}
+	nav ul ul li {
+		line-height: 1.3em;
+		}
+	nav ul li.active > ul > li,
+	nav ul li.opened > ul > li {
+		display: block;
+		}
+	
 	}
 
-/* II.2.2 NAVIGATION -> Disclosure */
-
-#spine nav ul ul li {
-	display: none;
-	}
-#spine nav ul ul li {
-	line-height: 1.3em;
-	}
-#spine nav ul li.active > ul > li,
-#spine nav ul li.opened > ul > li {
-	display: block;
-	}
-
-/* II.2.3 NAVIGATION -> Site Nav */
+/* II.2.3 NAVIGATION -> SECTIONS -> Site */
 
 #spine-sitenav {
 	margin: 10px 20px;
@@ -307,100 +320,106 @@ button#shelve:hover {
 	background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
 	}
 	
-/* Active, Current, "Dogeared" */
+/* "Dogeared" Link */
 
-#spine li:not(.parent).dogeared > a {
-	color: #981e32;
-	font-weight: bold;
-	}
-#spine li.dogeared > a:hover {
-	cursor: default;
-	}
-#spine li.parent.active > a:hover,
-#spine li.parent.dogeared > a:hover {
-	cursor: default;
+#spine {
+
+	li:not(.parent).dogeared > a {
+		color: #981e32;
+		font-weight: bold;
+		}
+	li.dogeared > a:hover,
+	li.parent.dogeared > a:hover {
+		cursor: default;
+		}
+	
+	nav a.external:hover:after {
+		font-family: "Spine-Icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		position: absolute;
+		margin-left: 3px;
+		content: "\21AA";
+		}
+	
 	}
 	
-#spine nav a.external:hover:after {
-	font-family: "Spine-Icons";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	position: absolute;
-	margin-left: 3px;
-	content: "\21AA";
-	}
-	
-/* II.2.4 NAVIGATION -> Offsite Nav  */
+/* II.2.4 NAVIGATION -> SECTIONS -> Offsite  */
 
 #spine-offsitenav {
+	
 	margin: 20px 20px 0px 20px;
+	
+	ul li {
+		border: none !important;
+		line-height: 1.3em;
+		}
+	a {
+		text-transform: none;
+		padding: .35em 0px;
+		}
+	a i {
+		display: none;
+		}
+	a:hover i {
+		display: inline;
+		}
+	
 	}
-#spine #spine-offsitenav ul li {
-	border: none;
-	line-height: 1.3em;
-	}
-#spine-offsitenav a {
-	text-transform: none;
-	padding: .35em 0px;
-	}
-#spine-offsitenav a i {
-	display: none;
-	}
-#spine-offsitenav a:hover i {
-	display: inline;
-	}
-
 
 
 /* II.3.0 ACTIONS 
 --------------------------------------------------------------------------- */
 
-#wsu-actions {
-	padding: 0px;
-	}
 .no-js #spine #wsu-actions,
 html.lt-ie9 #wsu-actions {
 	display: none;
 	}
-#wsu-actions section {
-	z-index: 100;
-	height: 100%;
-	width: auto;
-	position: fixed;
-	display: block;
+	
+#wsu-actions {
+	
 	padding: 0px;
-	margin: 0px;
-	width: 198px;
-	}
-#wsu-actions section.closed {
-	display: none;
-	}
-#wsu-actions section.opened {
-	display: block;
-	}
-#wsu-actions > ul {
-	display: block;
-	}
-#wsu-actions ul li {
-	padding: 0px; margin: 0px;
-	list-style: none;
-	}
-#wsu-actions > ul li {
-	display: block;
-	width: 25%;
-	text-align: center;
-	list-style: none;
-	display: block;
-	float: left;
+	
+	section {
+		z-index: 100;
+		height: 100%;
+		width: auto;
+		position: fixed;
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		width: 198px;
+		}
+	section.closed {
+		display: none;
+		}
+	section.opened {
+		display: block;
+		}
+	> ul {
+		display: block;
+		}
+	ul li {
+		padding: 0px; margin: 0px;
+		list-style: none;
+		}
+	> ul li {
+		display: block;
+		width: 25%;
+		text-align: center;
+		list-style: none;
+		display: block;
+		float: left;
+		}
+
 	}
 	
 /* II.3.2 Actions -> Tabs */
 
 .spine-tabs {
+	
 	margin: 0px 2em;
 	padding: 0px;
-	}
-.spine-tabs {
 	
 	button {
 		outline: none;
@@ -774,6 +793,7 @@ li.tumblr-channel a:before { content: "B"; } #spine li.tumblr-channel a:hover { 
 /* II.5.2 FOOTER -> Global Navigation */
 
 #wsu-global-links {
+	
 	font-size: .9em;
 	border-top-width: 1px;
 	border-top-style: solid;
@@ -806,13 +826,11 @@ li.tumblr-channel a:before { content: "B"; } #spine li.tumblr-channel a:hover { 
 		margin: 0px 0px;
 		padding: 6px 0px;
 		}
-	.copyright-link a,
-	.looseleaf .copyright-link a {
+	.copyright-link a {
 		color: #8b9399;
 		}
-	.copyright-link a:hover,
-	.looseleaf .copyright-link a:hover {
-		color: #5f6b71;
+	.copyright-link a:hover {
+		color: $gray;
 		}
 	
 	}
@@ -1295,11 +1313,9 @@ nav#wsu-global-links a:hover {
 	color: white;
 	}
 
-
 /* Transparent */
 #spine.velum, #spine.velum.bleed:before { background: rgba(255,255,255,0.8); }
 .size-lt-large #spine.velum header, .size-lt-large #spine.velum.bleed:before { background: rgba(255,255,255,0.9); }
-
 
 /* Campus Signature Versions */
 
@@ -1308,17 +1324,11 @@ nav#wsu-global-links a:hover {
 	}
 	
 @each $campus in $campuses {
-	$lightest-signatures: '.gray', '.light', '.dark', '.crimson';
-    $i:1;
-    .#{$campus}-signature #{nth($lightest-signatures,$i)} #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
-	$i: $i+1;
+    $i:1; @while $i < 5 {
+	    .#{$campus}-signature .#{nth($lightest-signature-classes,$i)} #wsu-signature {
+	    	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg');
+	    	}
+		$i: $i+1;
+		}
 	}
-@each $campus in $campuses {
-    .#{$campus}-signature .light #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
-	}
-@each $campus in $campuses {
-    .#{$campus}-signature .dark #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
-	}
-@each $campus in $campuses {
-    .#{$campus}-signature .crimson #wsu-signature { background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg'); }
-	}
+
