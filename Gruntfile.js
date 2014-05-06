@@ -43,19 +43,6 @@ module.exports = function(grunt) {
 				dest: 'build/<%= pkg.build_version %>/spine.min.js'
 			}
 		},
-		less: {
-			dev: {
-				options: {
-					relativeUrls: true
-				},
-				files: [
-				// Files to perform replacements and includes with
-				{ src: 'styles/less/skeleton.less', dest: 'styles/skeleton.css' },
-				{ src: 'styles/less/colors.less', dest: 'build/tmp/less/colors.css' },
-				{ src: 'styles/less/respond.less', dest: 'styles/respond.css' }
-				]
-			},
-		},
 		sass: {
 			dev: {
 				files: [
@@ -281,7 +268,6 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the "uglify" task.
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-include-replace');
-	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -300,7 +286,6 @@ module.exports = function(grunt) {
 								'env:dev',
 								'concat',
 								'preprocess:js',
-								'less:dev',
 								'sass:dev',
 								'cssmin',
 								'uglify',
