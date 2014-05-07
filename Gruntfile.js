@@ -138,7 +138,7 @@ module.exports = function(grunt) {
 			},
 			html : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/spine.html',
+				dest : 'spine.html',
 				options : {
 					context : {
 					}
