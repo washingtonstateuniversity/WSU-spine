@@ -274,7 +274,7 @@
 			});
 
 			// Cracking the Spine for Short Windows
-			$(window).on("load resize scroll mouseup touchend",function() {
+			/* $(window).on("load resize scroll mouseup touchend",function() {
 				var footerHeight, windowHeight, spineHeight;
 				
 				footerHeight = $("#spine footer").height();
@@ -286,7 +286,7 @@
 				} else {
 					spine.removeClass("cracked").addClass("uncracked");
 				}
-			});
+			}); */
 
 			// Moving the Spine for Short Windows
 			/* $(document).scroll(function() {
