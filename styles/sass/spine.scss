@@ -39,6 +39,7 @@
 		margin-top: 0px;
 		width:198px;
 		position: relative;
+		padding-bottom: 100px;
 		}
 	button {
 		background-color: transparent;
@@ -55,28 +56,11 @@
 		color: #981e32;
 		}
 		
-	/* II.1.1 Cracked */
-	
-	&.cracked {
-	
-		position: absolute;
-		height: auto;
-		
-		&.scrolled #glue {
-			bottom: 0;
-			top: auto;
-			position: fixed;
-			width: 198px;
-			}
-		footer {
-			position: relative !important;
-			padding: 5px 0px !important;
-			}
-		.spine-social-channels ul {
-			margin-top: 10px;
-			padding-top: 15px;
-			}
-		
+	&.scrolled #glue {
+		bottom: 0;
+		top: auto;
+		position: fixed;
+		width: 198px;
 		}
 	
 	/* II.1.2 Cropped */
@@ -97,6 +81,8 @@
 		}
 	
 	}
+	
+/* II.1.1 Cracked (Deprecated) */
 	
 .size-lt-large #spine.cropped nav,
 .size-lt-large #spine.cropped footer {
