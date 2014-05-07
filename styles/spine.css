@@ -22,12 +22,12 @@
   z-index: 99164;
   position: fixed;
   bottom: 0;
-  /* II.1.1 Cracked */
   /* II.1.2 Cropped */ }
   #spine #glue {
     margin-top: 0px;
     width: 198px;
-    position: relative; }
+    position: relative;
+    padding-bottom: 100px; }
   #spine button {
     background-color: transparent;
     border: none;
@@ -39,20 +39,11 @@
     color: #5e6a71; }
   #spine a:hover {
     color: #981e32; }
-  #spine.cracked {
-    position: absolute;
-    height: auto; }
-    #spine.cracked.scrolled #glue {
-      bottom: 0;
-      top: auto;
-      position: fixed;
-      width: 198px; }
-    #spine.cracked footer {
-      position: relative !important;
-      padding: 5px 0px !important; }
-    #spine.cracked .spine-social-channels ul {
-      margin-top: 10px;
-      padding-top: 15px; }
+  #spine.scrolled #glue {
+    bottom: 0;
+    top: auto;
+    position: fixed;
+    width: 198px; }
   #spine.cropped {
     font-size: 12px;
     height: 198px;
@@ -64,6 +55,7 @@
     #spine.cropped footer {
       display: none; }
 
+/* II.1.1 Cracked (Deprecated) */
 .size-lt-large #spine.cropped nav,
 .size-lt-large #spine.cropped footer {
   display: block; }
