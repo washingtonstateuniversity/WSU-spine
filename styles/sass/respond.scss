@@ -1,5 +1,6 @@
 @import 'vars/global';
 @import 'vars/colors';
+@import 'vars/grid';
 
 #binder #spine.unshelved header:before {
 	content: "";
@@ -67,12 +68,18 @@
 	width: 792px;
 	}
 
-
 #binder:not(.fluid) {
 
 	main {
 		margin-left: 0px;
 		padding-top: 50px;
+		}
+		
+	#wsu-signature {
+		background-position: 40% center;
+		background-size: 200px auto;
+		height: 50px;
+		margin-left: 40px;
 		}
 	
 	#spine {
@@ -117,12 +124,6 @@
 		height: 50px;
 		background: white;
 		}
-	#wsu-signature {
-		background-position: 40% center;
-		background-size: 200px auto;
-		height: 50px;
-		margin-left: 40px;
-		}
 	&.unshelved {
 		-webkit-transition: left 0.1s ease-in-out;
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -147,30 +148,31 @@
 		}
 
 	}
-	
+
+/* Fluid after first break */
 #binder.fluid {
 	width: 100%;
 	}
-	
-.spineless #binder main {
-		width: auto;
-		margin-left: 0px;
-		}
 	
 #binder.fluid main {
 	width: auto;
 	margin-left: 198px;
 	}
+	
+.spineless main {
+		width: auto;
+		margin-left: 0px;
+		}
 
 /* Adjust Search */
-#wsu-search input[type="text"] {
+.spine-search input[type="text"] {
 	padding-right: 18px;
 	}
-#wsu-search button {
+.spine-search button {
 	right: 10px;
 	}
 
-/* Header Colors */
+/* Header Colors and Signatures */
 
 #binder:not(.fluid) #spine {
 	@each $spine-color, $color in $spine-colors {
@@ -179,7 +181,7 @@
 	}
 
 /* Signature */
-#binder:not(.fluid) #spine #wsu-signature {
+#binder:not(.fluid) #wsu-signature {
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
@@ -190,7 +192,7 @@
 	}
 
 
-/* SMALL
+/* SMALL (max 791px)
 ------------------------------------------ */
 @media screen
 	and ( max-width : 791px )
@@ -222,7 +224,7 @@
 	}
 #binder.fixed main {
 	width: 396px;
-	margin-left: 298px;
+	margin-left: 0px;
 	}
 
 #binder main {
@@ -315,26 +317,33 @@
 	}
 	
 /* Logo */
-.fluid #wsu-signature,
+#binder.fluid #wsu-signature,
 html.print #wsu-signature {
 	background-image: url("//repo.wsu.edu/spine/1/marks/sig-horizontal.svg");
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
 	}
-html.lt-ie9 #spine a#wsu-signature {
+html.lt-ie9 #binder.fluid #wsu-signature {
 	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png');
 	}
 
-@each $campus in $campuses {
-    $i:1;
-	@while $i < 5 {
-    	.#{$campus}-signature .#{nth($lightest-signature-classes,$i)} #wsu-signature {
-    		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-horizontal-lightest.svg');
-    	}
-	$i: $i+1;
+/* Header Colors and Signatures */
+
+#binder.fluid #spine {
+	@each $spine-color, $color in $spine-colors {
+		&.#{$spine-color} header { background-color: $color; }
+		}
 	}
+
+/* Signature */
+#binder.fluid #wsu-signature {
+	background-position: center 14px;
+	background-size: auto 30px;
+	height: 49px;
 	}
+	
+@include horizontal-signatures('.fluid');
 
 /* Grid */
 
@@ -350,7 +359,6 @@ html.lt-ie9 #spine a#wsu-signature {
 .hybrid .row.triptych .column.two,
 .hybrid .row.sidebar .column.one,
 .hybrid .row.sidebar .column.two,
-/* .row.thirds .column, */
 .hybrid .row.margin .column.one,
 .hybrid .row.margin .column.two {
 	width: 100%;
@@ -387,72 +395,7 @@ html.lt-ie9 #spine a#wsu-signature {
 
 	}
 
-/* SMALL-MED (Fixed Only)
------------------------------------------------------ */
-/* Medium and Desktop - Small */
-
-@media
-	only screen
-	and (min-width: 694px) and
-	(max-width: 791px) and
-	(max-device-width : 990px),
-	
-	(min-width: 694px) and
-	(max-width: 791px) and
-	(min-device-width : 990px)
-	{
-
-#binder.fixed {
-	width: 694px;
-	}
-#binder.fixed main {
-	width: 396px;
-	margin-top: 0px;
-	margin-left: 298px;
-	}
-#binder.fixed #spine {
-	left: auto;
-	}
-#binder.fixed #glue {
-	margin-top: 0px;
-	}
-
-/* Header */
-#binder.fixed #spine #glue > header {
-	top: 0;
-	left: 0;
-	position: relative;
-	height: 198px;
-	}
-#binder.fixed #spine.unshelved,
-#binder.fixed #spine.shelved,
-#binder.fixed #spine.scanned header,
-#binder.fixed #spine.unshelved header {
-	box-shadow: none;
-	-webkit-transition: none;
-	left: auto;
-	}
-#binder.fixed #spine button#shelve {
-	display: none;
-	}
-	
-.fixed .row.sidebar .column {
-	width: 100%;
-	}
-
-/* Logo */
-.fixed #wsu-signature {
-	background-position: center;
-	background-size: 180px auto;
-	height: 197px;
-	margin-left: 0px;
-	}
-
-@include horizontal-signatures('.fixed')
-
-	}
-
-/* SMALL
+/* SMALL (max 693)
 ----------------------------------------------------- */
 /* 792px - 198px = 594px */
 
@@ -461,29 +404,42 @@ html.lt-ie9 #spine a#wsu-signature {
 	and (max-width: 693px)
 	{
 
-#binder.fixed {
-	width: 396px;
-	min-width: 396px;
-	margin: 0px auto;
+#binder {
+	
+	&.fixed {
+	
+		width: 396px;
+		min-width: 396px;
+		margin: 0px auto;
+		
+		main {
+			margin-top: 50px;
+			margin-left: 0px;
+			}
+		
+		}
+		
+	&.fluid,
+	&.hybrid {
+	
+		width: 100%;
+		
+		main {
+			width: auto;
+			margin-left: 0px;
+			}
+		
+		}
+
 	}
+	
+/*
 main {
-	width: 396px;
-	margin: 0px;
-	padding-top: 50px;
-	}
-.fixed main {
-	margin-top: 50px;
-	margin-left: 0px;
-	}
-.fluid,
-.hybrid {
-	width: 100%;
-	}
-.fluid main,
-.hybrid main {
-	width: auto;
-	margin-left: 0px;
-	}
+		width: 396px;
+		margin: 0px;
+		padding-top: 50px;
+		}
+*/
 
 /* Logo */
 .extension-signature #wsu-signature,
@@ -497,6 +453,28 @@ main {
 	}
 	
 /* Grid */
+.fixed .row {
+
+	&.single .column,
+	&.halves .column,
+	&.thirds .column,
+	&.triptych .column,
+	&.sidebar .column.one,
+	&.sidebar .column.two,
+	&.sideleft .column.one,
+	&.sideleft .column.two,
+	&.margin .column.one,
+	&.margin .column.two,
+	&.single .halves .column {
+		width: 100%;
+		float: none;
+		clear: both;
+		}
+		
+	}
+
+
+/* Grid */
 .fluid .row.single .column,
 .fluid .row.halves .column,
 .fluid .row.thirds .column.one,
@@ -509,8 +487,7 @@ main {
 .fluid .row.sideleft .column.two,
 .fluid .row.margin .column.one,
 .fluid .row.margin .column.two,
-.fluid .row.single .halves .column,
-xx.fluid .row.thirds .halves .column {
+.fluid .row.single .halves .column {
 	width: 100%;
 	float: none;
 	clear: both;
@@ -591,6 +568,71 @@ xx.fluid .row.thirds .halves .column {
 
 	}
 	
+/* SMALL-MED (Fixed Only)
+----------------------------------------------------- */
+/* Medium and Desktop - Small */
+
+@media
+	only screen
+	and (min-width: 694px) and
+	(max-width: 791px) and
+	(max-device-width : 990px),
+	
+	(min-width: 694px) and
+	(max-width: 791px) and
+	(min-device-width : 990px)
+	{
+
+#binder.fixed {
+	width: 694px;
+	}
+#binder.fixed main {
+	width: 396px;
+	margin-top: 0px;
+	margin-left: 298px;
+	}
+#binder.fixed #spine {
+	left: auto;
+	}
+#binder.fixed #glue {
+	margin-top: 0px;
+	}
+
+/* Header */
+#binder.fixed #spine #glue > header {
+	top: 0;
+	left: 0;
+	position: relative;
+	height: 198px;
+	}
+#binder.fixed #spine.unshelved,
+#binder.fixed #spine.shelved,
+#binder.fixed #spine.scanned header,
+#binder.fixed #spine.unshelved header {
+	box-shadow: none;
+	-webkit-transition: none;
+	left: auto;
+	}
+#binder.fixed #spine button#shelve {
+	display: none;
+	}
+	
+.fixed .row.sidebar .column {
+	width: 100%;
+	}
+
+/* Logo */
+#binder.fixed #wsu-signature {
+	background-position: center;
+	background-size: 180px auto;
+	height: 197px;
+	margin-left: 0px;
+	}
+
+@include vertical-signatures('.fixed');
+
+}
+	
 @media 
 	only screen
 	and (max-width: 420px),
@@ -601,13 +643,13 @@ xx.fluid .row.thirds .halves .column {
 	and ( orientation: landscape )
 	{
 	
-#binder.fluid #spine a#wsu-signature,
-#binder:not(.fluid) #spine a#wsu-signature
-.extension-signature #binder #spine a#wsu-signature,
-.globalcampus-signature  #binder #spine a#wsu-signature,
-.spokane-signature #binder #spine a#wsu-signature,
-.tricities-signature #binder #spine a#wsu-signature,
-.vancouver-signature #binder #spine a#wsu-signature {
+.fluid a#wsu-signature,
+:not(.fluid) #wsu-signature,
+.extension-signature #wsu-signature,
+.globalcampus-signature #wsu-signature,
+.spokane-signature #wsu-signature,
+.tricities-signature #wsu-signature,
+.vancouver-signature #wsu-signature {
 	background-size: 320px auto;
 	}
 	
@@ -899,5 +941,3 @@ html.print #spine .print-button {
 	}
 #spine button#print-invoke:before { content: "⎙"; }
 #spine button#print-cancel:before { content: "␡"; }
-
-

@@ -166,8 +166,18 @@
 #binder {
 	position: relative;
 	}	
-button {
+#switches button {
 	width: auto;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.3);
+	text-shadow: none;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: none;
+	border-color: #d7dadb #b5babe #b5babe #d7dadb;
+	padding: 3px 6px;
+	}
+#switches button:active {
+	border-color: #b5babe #d7dadb #d7dadb #b5babe;
 	}	
 
 #grid {
@@ -350,9 +360,6 @@ section > big {
 	}
 #unprecedented .column.two {
 	position: relative;
-	}
-button {
-	padding: 2px 4px;
 	}
 .size-lt-small #controls dl:first-of-type {
 	margin-top: 150px;
@@ -559,7 +566,7 @@ pre code {
 	
 </section><!--/#wsu-actions-->
 
-<nav class="spine-navigation">
+<section class="spine-navigation">
 
 <nav class="spine-sitenav">
 <!-- Your navigation list here
@@ -580,7 +587,7 @@ pre code {
 				<ul>
 					<li><a href="/test/fluidGrid.html">The Spine can be fluid and flex</a></li>
 					<li><a href="/test/fixedGrid.html">It can be fixed and fold</a></li>
-					<li><a href="/test/hyrbridGrid.html">Or a little of this and that</a></li>
+					<li><a href="/test/hybridGrid.html">Or a hybrid of a little of this and of that</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -605,7 +612,7 @@ pre code {
 	</ul>
 </nav>
 
-</nav><!-- #navigation -->
+</section><!-- #navigation -->
 
 <!-- Social and Global Links -->
 <footer class="spine-footer">

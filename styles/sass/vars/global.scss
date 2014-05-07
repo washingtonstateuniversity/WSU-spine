@@ -12,32 +12,62 @@ $campuses: $spokane,$vancouver,$tricities,$globalcampus,$extension,$foundation;
 
 $lightest-signature-classes: 'gray', 'light', 'dark', 'crimson';
 
-@mixin horizontal-signatures($path) {
+@mixin horizontal-signatures($grid) {
 
-	#{$path} #wsu-signature {
+	#binder#{$grid} #wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg');
 		}
-	html.lt-ie9 #{$path} #wsu-signature {
+	html.lt-ie9 #binder#{$grid} #wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png');
 		}
 	@each $class in $lightest-signature-classes {
-		#{$path} .#{$class} #wsu-signature {
+		#binder#{$grid} .#{$class} #wsu-signature {
 			background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg');
 			}
 		}
 	@each $campus in $campuses {
-	    .#{$campus}-signature #{$path} #wsu-signature {
+	    .#{$campus}-signature #binder#{$grid} #wsu-signature {
 	    	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-horizontal.svg');
 	    	}
 		}
 	@each $campus in $campuses {
 	    $i:1;
 		@while $i < 5 {
-	    	.#{$campus}-signature #{$path} .#{nth($lightest-signature-classes,$i)} #wsu-signature {
+	    	.#{$campus}-signature #{$grid} .#{nth($lightest-signature-classes,$i)} #wsu-signature {
 	    		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-horizontal-lightest.svg');
 	    	}
 		$i: $i+1;
 		}
 		}
 	
+	}
+	
+@mixin vertical-signatures($grid) {
+
+#binder#{$grid} #wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
+		}
+	html.lt-ie9 #binder#{$grid} #wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png');
+		}
+	@each $class in $lightest-signature-classes {
+		#binder#{$grid} .#{$class} #wsu-signature {
+			background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg');
+			}
+		}
+	@each $campus in $campuses {
+	    .#{$campus}-signature #binder#{$grid} #wsu-signature {
+	    	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical.svg');
+	    	}
+		}
+	@each $campus in $campuses {
+	    $i:1;
+		@while $i < 5 {
+	    	.#{$campus}-signature #{$grid} .#{nth($lightest-signature-classes,$i)} #wsu-signature {
+	    		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-#{$campus}-signature-vertical-lightest.svg');
+	    	}
+		$i: $i+1;
+		}
+		}
+
 	}

@@ -16,8 +16,18 @@
 #binder {
 	position: relative;
 	}	
-button {
+#switches button {
 	width: auto;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.3);
+	text-shadow: none;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: none;
+	border-color: #d7dadb #b5babe #b5babe #d7dadb;
+	padding: 3px 6px;
+	}
+#switches button:active {
+	border-color: #b5babe #d7dadb #d7dadb #b5babe;
 	}	
 
 #grid {
@@ -200,9 +210,6 @@ section > big {
 	}
 #unprecedented .column.two {
 	position: relative;
-	}
-button {
-	padding: 2px 4px;
 	}
 .size-lt-small #controls dl:first-of-type {
 	margin-top: 150px;
