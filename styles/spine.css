@@ -25,9 +25,8 @@
   /* II.1.2 Cropped */ }
   #spine #glue {
     margin-top: 0px;
-    width: 198px;
-    position: relative;
-    padding-bottom: 100px; }
+    xxwidth: 198px;
+    position: relative; }
   #spine button {
     background-color: transparent;
     border: none;
@@ -39,11 +38,11 @@
     color: #5e6a71; }
   #spine a:hover {
     color: #981e32; }
-  #spine.scrolled #glue {
+  #spine.scrolled {
     bottom: 0;
     top: auto;
     position: fixed;
-    width: 198px; }
+    xxwidth: 198px; }
   #spine.cropped {
     font-size: 12px;
     height: 198px;
@@ -54,6 +53,11 @@
     #spine.cropped nav,
     #spine.cropped footer {
       display: none; }
+
+#spine nav,
+#spine footer {
+  margin-left: 1.75em;
+  margin-right: 1.75em; }
 
 /* II.1.1 Cracked (Deprecated) */
 .size-lt-large #spine.cropped nav,
@@ -150,6 +154,8 @@ button#shelve:hover {
 
 /* II.3.0 NAVIGATION
 --------------------------------------------------------------------------- */
+#spine .spine-navigation {
+  padding-bottom: 100px; }
 #spine nav {
   /* Parents */
   /* II.2.2 NAVIGATION -> Disclosure */ }
@@ -217,7 +223,8 @@ button#shelve:hover {
   /* "Dogeared" Link */
   /* External Links */ }
   #spine .spine-sitenav {
-    margin: 10px 20px; }
+    margin-top: 1em;
+    margin-bottom: 1em; }
   #spine .spine-sitenav > ul > li:nth-last-of-type(1) {
     border-bottom-width: 1px; }
   #spine .spine-sitenav:not(.homeless) > ul > li:first-child > a {
@@ -247,7 +254,7 @@ button#shelve:hover {
 
 /* II.2.4 NAVIGATION -> SECTIONS -> Offsite  */
 .spine-offsitenav {
-  margin: 20px 20px 0px 20px; }
+  margin-top: 20px; }
   .spine-offsitenav ul li {
     border: none !important;
     line-height: 1.3em; }
@@ -270,13 +277,10 @@ html.lt-ie9 #spine .spine-actions {
   #spine .spine-actions {
     padding: 0px; }
     #spine .spine-actions section {
-      z-index: 100;
+      z-index: 99164;
       height: 100%;
-      width: auto;
       position: fixed;
       display: block;
-      padding: 0px;
-      margin: 0px;
       width: 198px; }
     #spine .spine-actions section.closed {
       display: none; }
@@ -296,8 +300,11 @@ html.lt-ie9 #spine .spine-actions {
       display: block;
       float: left; }
   #spine .spine-actions-tabs {
-    margin: 0px 2em;
-    padding: 0px; }
+    padding: 0px;
+    margin-top: 0;
+    margin-right: 1.75em;
+    margin-bottom: 0;
+    margin-left: 1.75em; }
     #spine .spine-actions-tabs button {
       outline: none; }
     #spine .spine-actions-tabs li {
@@ -336,7 +343,7 @@ html.lt-ie9 #spine .spine-actions {
 /* II.3.1 ACTIONS -> Search 
 --------------------------------------------------------------------------- */
 .spine-search form {
-  padding: 1em 2em 0 2em;
+  padding: 1em 1.75em 0 1.75em;
   margin: 0px 0px -1px 0px;
   position: relative;
   line-height: 1em; }
@@ -394,7 +401,7 @@ html.lt-ie9 #spine .spine-actions {
   max-height: 100%;
   display: block;
   position: relative;
-  padding: 0 2em; }
+  padding: 0 1.75em; }
 
 #spine-shortcuts *,
 #spine-shortcuts *:focus,
@@ -420,12 +427,12 @@ html.lt-ie9 #spine .spine-actions {
 #spine-shortcuts li a.ui-state-focus {
   color: white;
   background-color: #434d53;
-  margin: -1px -2em 0px -2em;
-  padding: .6em 2em .6em 2em;
+  margin: -1px -1.75em 0px -1.75em;
+  padding: .6em 1.75em .6em 1.75em;
   border-bottom: 2px #434d53 solid; }
 #spine-shortcuts li:first-child a:hover,
 #spine-shortcuts li:first-child a.ui-state-focus {
-  margin: 0px -2em 0px -2em;
+  margin: 0px -1.75em 0px -1.75em;
   border-bottom: 1px #434d53 solid; }
 #spine-shortcuts li:first-child a {
   border-top: 1px transparent solid; }
@@ -450,11 +457,11 @@ html.lt-ie9 #spine .spine-actions {
 --------------------------------------------------------------------------- */
 #spine .spine-contact address {
   color: #384044;
-  margin: 2em;
+  margin: 1.75em;
   display: block; }
 #spine .spine-contact div {
-  padding: .75em 0;
-  border-bottom: 1px #c3cbcf solid;
+  padding: 0.75em 0;
+  border-bottom: 1px #d7dadb solid;
   line-height: 1.4em; }
 #spine .spine-contact div div {
   padding: 0;
@@ -502,7 +509,7 @@ html.lt-ie9 #spine .spine-actions {
 
 /* 3.3 Share */
 #spine .spine-share ul {
-  margin: 2em !important; }
+  margin: 1.75em !important; }
   #spine .spine-share ul li a {
     display: block;
     padding-top: .75em;
@@ -511,9 +518,9 @@ html.lt-ie9 #spine .spine-actions {
   #spine .spine-share ul li a:hover {
     color: white !important;
     background: #434d53;
-    padding-left: 2em;
-    padding-right: 2em;
-    margin: -1px -2em 1px -2em; }
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+    margin: -1px -1.75em 1px -1.75em; }
   #spine .spine-share ul li a:active {
     background: #981e32; }
   #spine .spine-share ul li a:hover {
@@ -546,14 +553,16 @@ html.lt-ie9 #spine .spine-actions {
 /* II.3.4 Print */
 /* II.5.0 FOOTER-Spine */
 #spine footer {
-  margin: 0px 20px;
   position: absolute;
   bottom: 0px;
-  padding: 1.75em 0px .75em 0px;
-  width: 160px; }
+  padding: 1.75em 0 0.75em 0;
+  width: 156px; }
 
 html.lt-ie9 #spine footer {
   position: relative; }
+
+#spine footer nav {
+  margin: 0; }
 
 /* II.5.1 FOOTER -> Social */
 .spine-footer nav ul li {
