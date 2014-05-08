@@ -121,6 +121,7 @@ module.exports = function(grunt) {
 				context : {
 					DEBUG: true,
 					build_version : '<%= pkg.build_version %>',
+					markup: 'skip',
 					MALFORMED : 'skip', // true or false is what is tested for
 					filledSearchTab : 'skip',
 					showLong : 'skip',
@@ -141,6 +142,15 @@ module.exports = function(grunt) {
 				dest : 'spine.html',
 				options : {
 					context : {
+					}
+				}
+			},
+			tu_markup : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'spine.html',
+				options : {
+					context : {
+						markup : 'true'
 					}
 				}
 			},
@@ -292,6 +302,7 @@ module.exports = function(grunt) {
 								'copy',
 								'includereplace',
 								'preprocess:html',
+								'preprocess:tu_markup',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
