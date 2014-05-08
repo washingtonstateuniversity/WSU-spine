@@ -20,7 +20,7 @@
 			providers:{
 				nav:{
 					name:"From Navigation",
-					nodes: "#spine-navigation",
+					nodes: ".spine-navigation",
 					dataType: "html",
 					maxRows: 12,
 					urlSpaces:"%20",
@@ -47,7 +47,7 @@
 									<input name='term' type='text' value='' placeholder='search'> \
 									<button>Submit</button> \
 								</form> \
-								<div id='spine-shortcuts'></div> \
+								<div id='spine-shortcuts' class='spine-shortcuts'></div> \
 							</section>",
 			},
 			result:{
