@@ -44,7 +44,7 @@ $lightest-signature-classes: 'gray', 'light', 'dark', 'crimson';
 	
 @mixin vertical-signatures($grid) {
 
-#binder#{$grid} #wsu-signature {
+	#binder#{$grid} #wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
 		}
 	html.lt-ie9 #binder#{$grid} #wsu-signature {
@@ -70,4 +70,14 @@ $lightest-signature-classes: 'gray', 'light', 'dark', 'crimson';
 		}
 		}
 
+	}
+	
+@mixin header-colors {
+	
+	#binder #spine {
+		header { background-color: white; }
+		@each $spine-color, $color in $spine-colors {
+			&.#{$spine-color} header { background-color: $color; }
+			}
+		}
 	}
