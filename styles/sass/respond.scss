@@ -74,7 +74,6 @@
 		margin-left: 0px;
 		padding-top: 50px;
 		}
-		
 	#wsu-signature {
 		background-position: 40% center;
 		background-size: 200px auto;
@@ -92,7 +91,7 @@
 		font-size: 16px;
 		
 	#glue {
-		width: 298px;
+		xxwidth: 298px;
 		margin-top: 50px;
 		}
 	section {
@@ -101,11 +100,9 @@
 		}
 		
 	/* 1.2 Navigation */
-	nav.spine-offsitenav,
 	footer {
-		width: 238px;
-		margin-left: 30px;
-		margin-right: 30px;
+		width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
+		padding-bottom: 50px;
 		}
 	nav ul li {
 		line-height: 1.5em;
@@ -241,7 +238,7 @@
 #binder #spine,
 #binder #spine .spine-actions section {
 	font-size: 16px;
-	width: 298px;
+	xxwidth: 298px;
 	}
 #binder #spine {
 	width: 298px;
@@ -267,9 +264,7 @@
 		.spine-sitenav,
 		.spine-offsitenav,
 		.spine-footer {
-			width: 238px;
-			margin-left: 30px;
-			margin-right: 30px;
+			width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
 			}
 		nav ul li {
 			line-height: 1.5em;
@@ -277,6 +272,9 @@
 		nav ul li.parent > a:after,
 		nav ul li.parent.opened > a:after {
 			display: block;
+			}
+		footer {
+			padding-bottom: 50px;
 			}
 			
 		/* Header */
@@ -316,35 +314,6 @@
 		}
 	}
 	
-/* Logo */
-#binder.fluid #wsu-signature,
-html.print #wsu-signature {
-	background-image: url("//repo.wsu.edu/spine/1/marks/sig-horizontal.svg");
-	background-position: center 14px;
-	background-size: auto 30px;
-	height: 49px;
-	}
-html.lt-ie9 #binder.fluid #wsu-signature {
-	background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png');
-	}
-
-/* Header Colors and Signatures */
-
-#binder.fluid #spine {
-	@each $spine-color, $color in $spine-colors {
-		&.#{$spine-color} header { background-color: $color; }
-		}
-	}
-
-/* Signature */
-#binder.fluid #wsu-signature {
-	background-position: center 14px;
-	background-size: auto 30px;
-	height: 49px;
-	}
-	
-@include horizontal-signatures('.fluid');
-
 /* Grid */
 
 /* Hybrid Shift */
@@ -392,6 +361,17 @@ html.lt-ie9 #binder.fluid #wsu-signature {
 .hybrid .row .row.thirds .column.two {
 	width: 34%;
 	}
+	
+/* Signature */
+#binder.fluid #spine #wsu-signature {
+	background-position: center 14px;
+	background-size: auto 30px;
+	height: 49px;
+	}
+
+/* Header Colors and Signatures */
+@include header-colors;
+@include horizontal-signatures('.fluid');
 
 	}
 
@@ -565,6 +545,17 @@ main {
 .halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 1.5em 4em; }
 .halves.gutter.wide .column ~ .column { padding: 0em 4em 1.5em 4em; }
 
+
+/* Signature */
+#binder.fluid #spine #wsu-signature {
+	background-position: center 14px;
+	background-size: auto 30px;
+	height: 49px;
+	}
+
+/* Header Colors and Signatures */
+@include header-colors;
+@include horizontal-signatures('.fluid');
 
 	}
 	
