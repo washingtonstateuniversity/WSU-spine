@@ -35,7 +35,7 @@
 				share_text = encodeURIComponent(this.social_options.share_text);
 				current_url = self._get_globals("current_url");
 				wsu_actions = self._get_globals("wsu_actions").refresh();
-				sharehtml  = "<section id='wsu-share' class='spine-share tools closed'> \
+				sharehtml  = "<section id='wsu-share' class='spine-share spine-action closed'> \
 									<ul> \
 										<li class='by-facebook'><a href='http://www.facebook.com/sharer/sharer.php?u="+current_url+"'>Facebook</a></li> \
 										<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text="+share_text+"&url="+current_url+"&via=wsupullman' target='_blank'>Twitter</a></li> \

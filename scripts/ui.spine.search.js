@@ -42,7 +42,7 @@
 				maxRows: 12,
 				getRelated:true,
 				urlSpaces:"+",
-				tabTemplate: "<section id='wsu-search' class='spine-search tools closed'> \
+				tabTemplate: "<section id='wsu-search' class='spine-search spine-action closed'> \
 								<form id='default-search'> \
 									<input name='term' type='text' value='' placeholder='search'> \
 									<button>Submit</button> \
@@ -71,7 +71,7 @@
 			if (!wsu_search.length) {
 				tabhtml = $.runTemplate(self.search_options.search.tabTemplate,{});
 			}else{
-				tabhtml = "<section id='wsu-search' class='spine-search tools closed'>"+wsu_search.html()+"</section>";
+				tabhtml = "<section id='wsu-search' class='spine-search spine-action closed'>"+wsu_search.html()+"</section>";
 				wsu_search.remove();
 			}
 			this.setup_tabs("search",tabhtml);

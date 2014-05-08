@@ -57,7 +57,7 @@
 			
 			// Section -> Contact
 			if (!$("#wsu-contact").length) {
-				contactHtml = "<section id='wsu-contact' class='spine-contact tools closed'>";
+				contactHtml = "<section id='wsu-contact' class='spine-contact spine-action closed'>";
 				propmap={};
 				$.each($("[itemtype='http://schema.org/Organization']"),function(){
 					var tar = this;
