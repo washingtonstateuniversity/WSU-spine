@@ -1021,22 +1021,14 @@
     max-width: 1980px; } }
 /* !LARGE FORMAT -> 1188 */
 @media only screen and (min-width: 1188px) and (min-device-width: 990px) {
-  #binder:not(.fluid).folio.max-1188,
-  #binder:not(.fluid).folio.max-1386,
-  #binder:not(.fluid).folio.max-1584,
-  #binder:not(.fluid).folio.max-1782,
-  #binder:not(.fluid).folio.max-1980 {
+  #binder:not(.fluid).folio.max-1188, #binder:not(.fluid).folio.max-1386, #binder:not(.fluid).folio.max-1584, #binder:not(.fluid).folio.max-1782, #binder:not(.fluid).folio.max-1980 {
     width: 1188px; }
 
-  #binder:not(.fluid).folio.max-1188 main,
-  #binder:not(.fluid).folio.max-1386 main,
-  #binder:not(.fluid).folio.max-1584 main,
-  #binder:not(.fluid).folio.max-1782 main,
-  #binder:not(.fluid).folio.max-1980 main {
+  #binder:not(.fluid).folio.max-1188 main, #binder:not(.fluid).folio.max-1386 main, #binder:not(.fluid).folio.max-1584 main, #binder:not(.fluid).folio.max-1782 main, #binder:not(.fluid).folio.max-1980 main {
     width: 990px; }
 
-  .folio-only {
-    display: block; } }
+  #binder.folio.max-1188 main .row, #binder.folio.max-1386 main .row, #binder.folio.max-1584 main .row, #binder.folio.max-1782 main .row, #binder.folio.max-1980 main .row {
+    max-width: 990px; } }
 /* !LARGE FORMAT -> 1386 */
 @media only screen and (min-width: 1386px) and (min-device-width: 990px) {
   #binder:not(.fluid).folio.max-1386,
@@ -1051,8 +1043,8 @@
   #binder:not(.fluid).folio.max-1980 main {
     width: 1188px; }
 
-  .max-1386-only {
-    display: block; } }
+  #binder.folio.max-1386 main .row, #binder.folio.max-1584 main .row, #binder.folio.max-1782 main .row, #binder.folio.max-1980 main .row {
+    max-width: 1188px; } }
 /* !LARGE FORMAT -> 1584  */
 @media only screen and (min-width: 1584px) and (min-device-width: 990px) {
   #binder:not(.fluid).folio.max-1584,
@@ -1065,8 +1057,8 @@
   #binder:not(.fluid).folio.max-1980 main {
     width: 1386px; }
 
-  .max-1584-only {
-    display: block; } }
+  #binder.folio.max-1584 main .row, #binder.folio.max-1782 main .row, #binder.folio.max-1980 main .row {
+    max-width: 1386px; } }
 /* !LARGE FORMAT -> 1782  */
 @media only screen and (min-width: 1782px) and (min-device-width: 990px) {
   #binder:not(.fluid).folio.max-1782,
@@ -1075,7 +1067,10 @@
 
   #binder:not(.fluid).folio.max-1782 main,
   #binder:not(.fluid).folio.max-1980 main {
-    width: 1584px; } }
+    width: 1584px; }
+
+  #binder.folio.max-1782 main .row, #binder.folio.max-1980 main .row {
+    max-width: 1584px; } }
 /* !LARGE FORMAT -> 1980  */
 @media only screen and (min-width: 1980px) and (min-device-width: 990px) {
   #binder:not(.fluid).folio.max-1980 {
@@ -1084,8 +1079,8 @@
   #binder:not(.fluid).folio.max-1980 main {
     width: 1782px; }
 
-  .max-1980-only {
-    display: block; } }
+  #binder.folio.max-1980 main .row {
+    max-width: 1782px; } }
 /* III.5.0 PRINT
 ----------------------------------------------------------------- */
 html.print #binder main {

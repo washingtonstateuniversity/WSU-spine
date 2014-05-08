@@ -709,21 +709,36 @@ main {
 	and ( min-device-width : 990px )
 	{
 
-#binder:not(.fluid).folio.max-1188,
-#binder:not(.fluid).folio.max-1386,
-#binder:not(.fluid).folio.max-1584,
-#binder:not(.fluid).folio.max-1782,
-#binder:not(.fluid).folio.max-1980 { width: 1188px; }
-
-#binder:not(.fluid).folio.max-1188 main,
-#binder:not(.fluid).folio.max-1386 main,
-#binder:not(.fluid).folio.max-1584 main,
-#binder:not(.fluid).folio.max-1782 main,
-#binder:not(.fluid).folio.max-1980 main { width: 990px; }
-
-.folio-only {
-	display: block;
+#binder:not(.fluid).folio {
+	&.max-1188,
+	&.max-1386,
+	&.max-1584,
+	&.max-1782,
+	&.max-1980 {
+		width: 1188px;
+		}
 	}
+		
+#binder:not(.fluid).folio {
+	&.max-1188 main,
+	&.max-1386 main,
+	&.max-1584 main,
+	&.max-1782 main,
+	&.max-1980 main {
+		width: 990px;
+		}
+	}
+
+#binder.folio {
+	&.max-1188 main .row,
+	&.max-1386 main .row,
+	&.max-1584 main .row,
+	&.max-1782 main .row,
+	&.max-1980 main .row {
+		max-width: 990px;
+		}
+	}
+		
 	}
 
 /* !LARGE FORMAT -> 1386 */
@@ -743,9 +758,15 @@ main {
 #binder:not(.fluid).folio.max-1782 main,
 #binder:not(.fluid).folio.max-1980 main { width: 1188px; }
 
-.max-1386-only {
-	display: block;
+#binder.folio {
+	&.max-1386 main .row,
+	&.max-1584 main .row,
+	&.max-1782 main .row,
+	&.max-1980 main .row {
+		max-width: 1188px;
+		}
 	}
+
 	}
 	
 /* !LARGE FORMAT -> 1584  */
@@ -762,9 +783,14 @@ main {
 #binder:not(.fluid).folio.max-1782 main,
 #binder:not(.fluid).folio.max-1980 main { width: 1386px; }
 
-.max-1584-only {
-	display: block;
+#binder.folio {
+	&.max-1584 main .row,
+	&.max-1782 main .row,
+	&.max-1980 main .row {
+		max-width: 1386px;
+		}
 	}
+
 	}
 	
 /* !LARGE FORMAT -> 1782  */
@@ -780,6 +806,13 @@ main {
 #binder:not(.fluid).folio.max-1782 main,
 #binder:not(.fluid).folio.max-1980 main { width: 1584px; }
 
+#binder.folio {
+	&.max-1782 main .row,
+	&.max-1980 main .row {
+		max-width: 1584px;
+		}
+	}
+
 	}
 
 /* !LARGE FORMAT -> 1980  */
@@ -792,8 +825,10 @@ main {
 #binder:not(.fluid).folio.max-1980 { width: 1980px;	}
 #binder:not(.fluid).folio.max-1980 main { width: 1782px; }
 	
-.max-1980-only {
-	display: block;
+#binder.folio {
+	&.max-1980 main .row {
+		max-width: 1782px;
+		}
 	}
 
 	}
