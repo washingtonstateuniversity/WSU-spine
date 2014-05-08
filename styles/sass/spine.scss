@@ -37,9 +37,8 @@
 	
 	#glue {
 		margin-top: 0px;
-		width:198px;
+		xxwidth:198px;
 		position: relative;
-		padding-bottom: 100px;
 		}
 	button {
 		background-color: transparent;
@@ -56,11 +55,11 @@
 		color: #981e32;
 		}
 		
-	&.scrolled #glue {
+	&.scrolled {
 		bottom: 0;
 		top: auto;
 		position: fixed;
-		width: 198px;
+		xxwidth: 198px;
 		}
 	
 	/* II.1.2 Cropped */
@@ -78,6 +77,16 @@
 			display: none;
 			}
 		
+		}
+	
+	}
+	
+#spine {
+	
+	nav,
+	footer {
+		margin-left: 1.75em;
+		margin-right: 1.75em;
 		}
 	
 	}
@@ -194,6 +203,10 @@ button#shelve:hover {
 
 #spine {
 
+	.spine-navigation {
+		padding-bottom: 100px;
+		}
+	
 	nav {
 
 	ul {
@@ -297,7 +310,8 @@ button#shelve:hover {
 #spine {
 
 	.spine-sitenav {
-		margin: 10px 20px;
+		margin-top: 1em;
+		margin-bottom: 1em;
 		}
 	.spine-sitenav > ul > li:nth-last-of-type(1) {
 		border-bottom-width: 1px;
@@ -347,7 +361,7 @@ button#shelve:hover {
 
 .spine-offsitenav {
 	
-	margin: 20px 20px 0px 20px;
+	margin-top: 20px;
 	
 	ul li {
 		border: none !important;
@@ -382,13 +396,10 @@ html.lt-ie9 #spine .spine-actions {
 		padding: 0px;
 		
 		section {
-			z-index: 100;
+			z-index: 99164;
 			height: 100%;
-			width: auto;
 			position: fixed;
 			display: block;
-			padding: 0px;
-			margin: 0px;
 			width: 198px;
 			}
 		section.closed {
@@ -419,8 +430,11 @@ html.lt-ie9 #spine .spine-actions {
 	
 	.spine-actions-tabs {
 		
-		margin: 0px 2em;
 		padding: 0px;
+		margin-top: 0;
+		margin-right: 1.75em;
+		margin-bottom: 0;
+		margin-left: 1.75em;
 		
 		button {
 			outline: none;
@@ -468,7 +482,7 @@ html.lt-ie9 #spine .spine-actions {
 .spine-search {
 
 	form {
-		padding: 1em 2em 0 2em;
+		padding: 1em 1.75em 0 1.75em;
 		margin: 0px 0px -1px 0px;
 		position: relative;
 		line-height: 1em;
@@ -488,9 +502,9 @@ html.lt-ie9 #spine .spine-actions {
 		border-bottom: 1px #b6bcbf solid;
 		}
 	input:focus {
-		color: #981e32;
+		color: $crimson;
 		border: none;
-		border-bottom: 1px #981e32 solid;
+		border-bottom: 1px $crimson solid;
 		}
 	button {
 		position: absolute;
@@ -536,7 +550,7 @@ html.lt-ie9 #spine .spine-actions {
 	max-height: 100%;
 	display: block;
 	position: relative;
-	padding: 0 2em;
+	padding: 0 1.75em;
 	}
 #spine-shortcuts *,
 #spine-shortcuts *:focus,
@@ -567,13 +581,13 @@ html.lt-ie9 #spine .spine-actions {
 	li a.ui-state-focus {
 		color: white;
 		background-color: #434d53;
-		margin: -1px -2em 0px -2em;
-		padding: .6em 2em .6em 2em;
+		margin: -1px -1.75em 0px -1.75em;
+		padding: .6em 1.75em .6em 1.75em;
 		border-bottom: 2px #434d53 solid;
 		}
 	li:first-child a:hover,
 	li:first-child a.ui-state-focus {
-		margin: 0px -2em 0px -2em;
+		margin: 0px -1.75em 0px -1.75em;
 		border-bottom: 1px #434d53 solid;
 		}
 	li:first-child a {
@@ -607,12 +621,12 @@ html.lt-ie9 #spine .spine-actions {
 
 	address {
 		color: #384044;
-		margin: 2em;
+		margin: 1.75em;
 		display: block;
 		}
 	div {
-		padding: .75em 0;
-		border-bottom: 1px #c3cbcf solid;
+		padding: 0.75em 0;
+		border-bottom: 1px $gray-lightly solid;
 		line-height: 1.4em;
 		}
 	div div {
@@ -675,7 +689,7 @@ html.lt-ie9 #spine .spine-actions {
 #spine .spine-share {
 
 	ul {
-		margin: 2em !important;
+		margin: 1.75em !important;
 		
 		li {
 		
@@ -688,9 +702,9 @@ html.lt-ie9 #spine .spine-actions {
 			a:hover {
 				color: white !important;
 				background: #434d53;
-				padding-left: 2em;
-				padding-right: 2em;
-				margin: -1px -2em 1px -2em;
+				padding-left: 1.75em;
+				padding-right: 1.75em;
+				margin: -1px -1.75em 1px -1.75em;
 				}
 			a:active {
 				background: #981e32;
@@ -732,14 +746,16 @@ html.lt-ie9 #spine .spine-actions {
 /* II.5.0 FOOTER-Spine */
 
 #spine footer {
-	margin: 0px 20px;
 	position: absolute;
 	bottom: 0px;
-	padding: 1.75em 0px .75em 0px;
-	width: 160px;
+	padding: 1.75em 0 0.75em 0;
+	width: 156px; // 198px - ( ( 1.75em x 12px ) x 2 = 42 )
 	}
 html.lt-ie9 #spine footer {
 	position: relative;
+	}
+#spine footer nav {
+	margin: 0;
 	}
 
 /* II.5.1 FOOTER -> Social */
@@ -1137,7 +1153,6 @@ main {
 
 /* GRAY #5e6a71, rgb(94,106,113) */
 
-
 &.gray {
 
 	background: $gray;
@@ -1251,7 +1266,6 @@ main {
 	}
 
 /* GRAY-DARKER #2a3033, rgb(42 48 51) */
-
 
 &.darker {
 
