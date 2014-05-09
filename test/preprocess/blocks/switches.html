@@ -303,6 +303,14 @@ pre code {
 		return false;
 	});
 	
+	// Change Spine color
+	$('.spine-transparency button').on('click', function() {
+		var transparency = $(this).attr('data-transparency');
+		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
+		$('#spine').addClass(transparency);
+		return false;
+	});
+	
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
@@ -340,7 +348,16 @@ pre code {
 		<dd><button data-color="darker" class="darker-back light-text">Darker</button></dd>
 		<dd><button data-color="darkest" class="darkest-back light-text">Darkest</button></dd>
 		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
-		<dd><button data-color="transparent" class="transparent-back gray-lighter-text">Transparent</button></dd>
+	</dl>
+	
+	<dl class="spine-transparency clearfix">
+		<dt>spine transparency <a href="#spine-transparency" class="info">info</a></dt>
+		<dd><button data-transparency="">0</button></dd> 
+		<dd><button data-transparency="vellum-05">5</button></dd> 
+		<dd><button data-transparency="vellum-10">10</button></dd>
+		<dd><button data-transparency="vellum-15">15</button></dd>
+		<dd><button data-transparency="vellum-20">20</button></dd>
+		<dd><button data-transparency="vellum-25">25</button></dd>
 	</dl>
 	
 	<dl class="spine-column-options clearfix">

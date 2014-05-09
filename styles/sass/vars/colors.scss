@@ -72,6 +72,19 @@ $spine-colors: (
 	darkest: $gray-darkest,
 	crimson: $crimson
 	);
+
+// Spine Transparency
+@mixin vellum($color) {
+	$transparencies: ('05':.05, '10':.10, '15':.15, '20':.2, '25':.25);
+	@each $transparency, $percent in $transparencies {
+		&.vellum-#{$transparency} {
+			background-color: transparentize($color,$percent);
+			}
+		&.vellum-#{$transparency}.bleed:before {
+			background-color: transparentize($color,$percent);
+			}
+		}
+	}
 	
 // Social Channel Colors
 $facebook-blue: #3B5998;

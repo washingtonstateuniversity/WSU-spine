@@ -519,7 +519,7 @@ html.lt-ie9 #spine .spine-actions {
 		}
 	button:before {
 		content: "\25BB";
-		color: #b6bcbf;
+		color: $gray-light;
 		font-size: 1.3em;
 		display: inline-block;
 		text-align: right;
@@ -912,7 +912,11 @@ main {
 		left: -1000px;
 		background-color: $gray-er;
 		}
-	.spine-sitenav a {
+
+	@include vellum($gray-lightest);
+
+	.spine-sitenav a,
+	.spine-search-tab button {
 		color: $gray;
 		}
 	.spine-actions-tabs button,
@@ -955,15 +959,18 @@ main {
 		color: $gray-light;
 		}
 
-/* LIGHTEST #e6e8e9, rgb(230,232,233) */
-
 &.lightest {
+
+	/* LIGHTEST #e6e8e9, rgb(230,232,233) */
 
 	background-color: $gray-lightest;
 	
 	&.bleed:before {
 		background-color: $gray-lightest;
 		}
+
+	@include vellum($gray-lightest);
+
 	.spine-sitenav a,
 	.spine-offsitenav a:hover {
 		color: $gray-dark;
@@ -1005,15 +1012,18 @@ main {
 			
 	}
 	
-/* LIGHTLY #d7dadb, rgb(215 218 219) */
-
 &.lightly {
 
+	/* LIGHTLY #d7dadb, rgb(215 218 219) */
+
 	background-color: $gray-lightly;
-	
+
 	&.bleed:before {
 		background-color: $gray-lightly;
 		}
+
+	@include vellum($gray-lightly);
+
 	.spine-sitenav a,
 	.spine-offsitenav a:hover {
 		color: $gray-darker;
@@ -1051,15 +1061,22 @@ main {
 	
 	}
 
-/* LIGHTER #b5babe, rgb(181 186 190) */
-
 &.lighter {
 
+	/* LIGHTER #b5babe, rgb(181 186 190) */
+
 	background-color: $gray-lighter;
-	
+		
 	&.bleed:before {
 		background-color: $gray-lighter;
 		}
+
+	@include vellum($gray-lighter);
+	
+	button#shelve {
+		background-image: url('//repo.wsu.edu/spine/1/icons/menu-white.svg');
+		}
+
 	.spine-sitenav a,
 	.spine-offsitenav a:hover {
 		color: $gray-darker;
@@ -1097,15 +1114,18 @@ main {
 	
 	}
 
-/* LIGHT #8b9399, rgb(139,147,153) */
-
 &.light {
+
+	/* LIGHT #8b9399, rgb(139,147,153) */
 
 	background-color: $gray-light;
 	
 	&.bleed:before {
 		background-color: $gray-light;
 		}
+		
+	@include vellum($gray-light);
+	
 	#wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
 		}
@@ -1151,15 +1171,18 @@ main {
 	
 	}
 
-/* GRAY #5e6a71, rgb(94,106,113) */
-
 &.gray {
+	
+	/* GRAY #5e6a71, rgb(94,106,113) */
 
-	background: $gray;
+	background-color: $gray;
 	
 	&.bleed:before {
 		background: $gray;
 		}
+	
+	@include vellum($gray);
+	
 	#wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
 		}
@@ -1208,15 +1231,18 @@ main {
 	
 	}
 
-/* GRAY-DARK #383D42, rgb(75,85,90) */
-
 &.dark {
+
+	/* GRAY-DARK #383D42, rgb(75,85,90) */
 
 	background-color: $gray-dark;
 	
 	&.bleed:before {
 		background-color: $gray-dark;
 		}
+	
+	@include vellum($gray-dark);
+	
 	#wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
 		}
@@ -1265,15 +1291,18 @@ main {
 	
 	}
 
-/* GRAY-DARKER #2a3033, rgb(42 48 51) */
-
 &.darker {
+
+	/* GRAY-DARKER #2a3033, rgb(42 48 51) */
 
 	background-color: darken($gray-darker, 3%);
 	
 	&.bleed:before {
 		background-color: darken($gray-darker, 3%);
 		}
+	
+	@include vellum(darken($gray-darker, 3%));
+
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
 		}
@@ -1317,15 +1346,18 @@ main {
 	
 	}
 
-/* GRAY-DARKEST #000, rgb 0,0,0 */
-
 &.darkest {
+
+	/* GRAY-DARKEST #000, rgb 0,0,0 */
 	
 	background-color: $gray-darkest;
 	
 	&.bleed:before {
 		background-color: $gray-darkest;
 		}
+	
+	@include vellum($gray-darkest);
+	
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
 		}
@@ -1369,15 +1401,18 @@ main {
 	
 	}
 
-/* CRIMSON #981e32 */	
-
 &.crimson {
+
+	/* CRIMSON #981e32 */
 
 	background-color: $crimson;
 	
 	&.bleed:before {
 		background-color: $crimson;
 		}
+	
+	@include vellum($crimson);
+	
 	#wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lightest.svg');
 		}
@@ -1419,15 +1454,6 @@ main {
 	
 	}
 	
-	}
-
-/* Transparent */
-#spine.velum, #spine.velum.bleed:before {
-	background: rgba(255,255,255,0.8);
-	}
-.size-lt-large #spine.velum header, 
-.size-lt-large #spine.velum.bleed:before {
-	background: rgba(255,255,255,0.9);
 	}
 
 /* Campus Signature Versions */
