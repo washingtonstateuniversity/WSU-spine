@@ -13,8 +13,8 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-	<!--<link href="../build/1/spine.css" rel="stylesheet" type="text/css" />-->
-	<link href="../styles/styles.css" rel="stylesheet" type="text/css" />
+	<link href="../build/1/spine.css" rel="stylesheet" type="text/css" />
+	<!--<link href="../styles/styles.css" rel="stylesheet" type="text/css" />-->
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
@@ -84,13 +84,15 @@
 
 <!-- WRAPPING -->
 <div id="jacket">
-<div id="binder" class="">
+<div id="binder" class=" hybrid">
 
 <!-- CONTENT -->
 <main>
 	<!-- Responsive Sections -->
 	<section class="row sidebar">
+
 		<div class="column one">
+
 			<article>
 				<h1>Heading using the h1tag</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet porttitor enim, et porttitor sem auctor ac. Aliquam posuere facilisis tempus. Phasellus consectetur eu risus non dignissim. Mauris suscipit, nulla quis eleifend rhoncus, felis ligula euismod ligula, in pulvinar eros quam sed neque. Integer enim mauris, eleifend id tellus ut, laoreet rhoncus eros. Proin ultricies suscipit mi eget placerat. Quisque ultrices ultricies sem non varius.</p>
@@ -111,44 +113,22 @@
 
 			</article>
 
-			<footer>
-				<!-- 
-				This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
-				cms to generate this block and any rich data.  
-				-->
-				<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
-	<span itemprop="department"  content="University Unit"></span> 
-	<span itemprop="name" content="Washington State University"></span> 
-	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<span itemprop="location" content="French Administration Building"></span>
-		<span itemprop="streetAddress" content="PO Box 555555"></span>
-		<span itemprop="addressLocality" content="Pullman"></span>
-		<span itemprop="addressRegion" content="WA"></span>
-		<span itemprop="postalCode" content="99163"></span>
-	</div>
-	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
-	<span itemprop="telephone" content="(509) 335-3564"></span>
-	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
-	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
-</div>
-			</footer>
 		</div><!--/column-->
 
 		<div class="column two">
+		
 			<aside>
 				<section>
-				<h2>Sidebar</h2>
-				<ul>
-					<li>Fight, fight, fight for Washington State! Win the victory!</li>
-					<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
-					<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
-					<li>Fight, fight, fight for Washington State and victory!</li>
-					<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
-				</ul>
-				<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
-				</section>
-				<section>
+	<h2>Sidebar</h2>
+	<ul>
+		<li>Fight, fight, fight for Washington State! Win the victory!</li>
+		<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
+		<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
+		<li>Fight, fight, fight for Washington State and victory!</li>
+		<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
+	</ul>
+	<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
+</section>
 					<style>
 
 .wireframe .row .column {
@@ -454,6 +434,14 @@ pre code {
 		return false;
 	});
 	
+	// Change Spine color
+	$('.spine-transparency button').on('click', function() {
+		var transparency = $(this).attr('data-transparency');
+		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
+		$('#spine').addClass(transparency);
+		return false;
+	});
+	
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
@@ -475,6 +463,7 @@ pre code {
 
 </script>
 
+<section>
 
 <aside id="switches">
 	
@@ -490,7 +479,16 @@ pre code {
 		<dd><button data-color="darker" class="darker-back light-text">Darker</button></dd>
 		<dd><button data-color="darkest" class="darkest-back light-text">Darkest</button></dd>
 		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
-		<dd><button data-color="transparent" class="transparent-back gray-lighter-text">Transparent</button></dd>
+	</dl>
+	
+	<dl class="spine-transparency clearfix">
+		<dt>spine transparency <a href="#spine-transparency" class="info">info</a></dt>
+		<dd><button data-transparency="vellum-00">0</button></dd> 
+		<dd><button data-transparency="vellum-05">5</button></dd> 
+		<dd><button data-transparency="vellum-10">10</button></dd>
+		<dd><button data-transparency="vellum-15">15</button></dd>
+		<dd><button data-transparency="vellum-20">20</button></dd>
+		<dd><button data-transparency="vellum-25">25</button></dd>
 	</dl>
 	
 	<dl class="spine-column-options clearfix">
@@ -533,13 +531,16 @@ pre code {
 				
 </aside>
 
+</section>
 
-				</section>
+
 			</aside>
 			
 		</div><!--/column-->
 
 	</section>
+	
+	
 </main>
 <!-- /CONTENT -->
 
@@ -547,7 +548,9 @@ pre code {
 <div id="spine" class="spine-column shelved">
 <div id="glue" class="spine-glue">
 
-<header class="spine-header"><a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a></header>
+<header class="spine-header">
+	<a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a>
+</header>
 
 <!-- ACTIONS -->
 <section id="wsu-actions" class="spine-actions">
@@ -562,10 +565,9 @@ pre code {
 	
 	<!-- Actions generated by spine.js here -->
 	
-	
-			<!-- NOTE: a normal working contact tab, just could have been better placed 
-				 then in the spine directly -->
-			<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+		<!-- NOTE: a normal working contact tab, just could have been better placed 
+			 then in the spine directly -->
+		<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
 	<span itemprop="department"  content="University Unit"></span> 
 	<span itemprop="name" content="Washington State University"></span> 
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
@@ -581,13 +583,11 @@ pre code {
 	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
 	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
 </div>
-	
-	
 </section><!--/#wsu-actions-->
 
 <section class="spine-navigation">
 
-<nav class="spine-sitenav">
+	<nav class="spine-sitenav">
 <!-- Your navigation list here
 	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
 	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
@@ -618,13 +618,12 @@ pre code {
 			<li><a href="/test/overlyLong.html">Overly Long</a></li>
 		</ul>
 	</li>
-	<li><a href="/test/">Available Layouts</a></li>
-	<li><a href="">Columns</a></li>
+	<li><a href="/test/layouts.html">Available Layouts</a></li>
+	<li><a href="/test/columns.html">Columns</a></li>
 </ul>
 
 </nav>
-
-<nav class="spine-offsitenav">
+	<nav class="spine-offsitenav">
 	<ul>
 		<li><a href="http://www.example.com">Offsite Link</a></li>
 		<li><a href="http://fonts.wsu.edu">Another</a></li>
@@ -666,6 +665,27 @@ pre code {
 </div><!--/jacket-->
 <!-- /WRAPPING -->
 
-
+	<!-- 
+	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
+	or something that will work to let you display one thing to a user but another to the search engines.
+	-->
+	<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+	<span itemprop="department"  content="University Unit"></span> 
+	<span itemprop="name" content="Washington State University"></span> 
+	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="location" content="French Administration Building"></span>
+		<span itemprop="streetAddress" content="PO Box 555555"></span>
+		<span itemprop="addressLocality" content="Pullman"></span>
+		<span itemprop="addressRegion" content="WA"></span>
+		<span itemprop="postalCode" content="99163"></span>
+	</div>
+	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+	<span itemprop="telephone" content="(509) 335-3564"></span>
+	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+</div>
+	
 </body>
 </html>
