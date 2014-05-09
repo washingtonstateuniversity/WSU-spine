@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 			},
 			html : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'spine.html',
+				dest : 'test/tests/html.html',
 				options : {
 					context : {
 					}
@@ -156,7 +156,7 @@ module.exports = function(grunt) {
 			},
 			tu_filledSearchTabs : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/filledSearchTabs.html',
+				dest : 'test/tests/filledSearchTabs.html',
 				options : {
 					context : {
 						filledSearchTab : 'true'
@@ -165,7 +165,7 @@ module.exports = function(grunt) {
 			},
 			tu_malformedContact : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/malformedContact.html',
+				dest : 'test/tests/malformedContact.html',
 				options : {
 					context : {
 						MALFORMED : 'true'
@@ -174,7 +174,7 @@ module.exports = function(grunt) {
 			},
 			tu_filledContact : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/filledContact.html',
+				dest : 'test/tests/filledContact.html',
 				options : {
 					context : {
 						MALFORMED : 'false'
@@ -183,7 +183,7 @@ module.exports = function(grunt) {
 			},
 			tu_overlyLong : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/overlyLong.html',
+				dest : 'test/tests/overlyLong.html',
 				options : {
 					context : {
 						showLong : 'true'
@@ -192,7 +192,7 @@ module.exports = function(grunt) {
 			},
 			tu_overlyLinked : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/overlyLinked.html',
+				dest : 'test/tests/overlyLinked.html',
 				options : {
 					context : {
 						manyLinks : 'true'
@@ -201,7 +201,7 @@ module.exports = function(grunt) {
 			},
 			tu_overlyLinked_n_overlyLong : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/overlyLinked_n_overlyLong.html',
+				dest : 'test/tests/overlyLinked_n_overlyLong.html',
 				options : {
 					context : {
 						manyLinks : 'true',
@@ -211,7 +211,7 @@ module.exports = function(grunt) {
 			},
 			tu_cropped : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/cropped.html',
+				dest : 'test/tests/cropped.html',
 				options : {
 					context : {
 						cropped : 'true'
@@ -220,7 +220,7 @@ module.exports = function(grunt) {
 			},
 			tu_doubledContact : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/doubledContact.html',
+				dest : 'test/tests/doubledContact.html',
 				options : {
 					context : {
 						doubledContact : 'true'
@@ -229,7 +229,7 @@ module.exports = function(grunt) {
 			},
 			tu_fluidGrid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/fluidGrid.html',
+				dest : 'test/tests/fluidGrid.html',
 				options : {
 					context : {
 						fluidGrid : 'true'
@@ -238,7 +238,7 @@ module.exports = function(grunt) {
 			},
 			tu_hybridGrid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/hybridGrid.html',
+				dest : 'test/tests/hybridGrid.html',
 				options : {
 					context : {
 						hybridGrid : 'true'
@@ -247,7 +247,7 @@ module.exports = function(grunt) {
 			},
 			tu_fixedGrid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/fixedGrid.html',
+				dest : 'test/tests/fixedGrid.html',
 				options : {
 					context : {
 						fixedGrid : 'true'
@@ -256,7 +256,7 @@ module.exports = function(grunt) {
 			},
 			tu_layouts : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/layouts.html',
+				dest : 'test/tests/layouts.html',
 				options : {
 					context : {
 						layouts : 'true'
@@ -290,7 +290,16 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('prod', ['env:prod', 'concat','preprocess:js','cssmin','uglify','copy','includereplace','preprocess:html']);	
+	grunt.registerTask('prod', ['env:prod',
+								'concat',
+								'preprocess:js',
+								'cssmin',
+								'uglify',
+								'copy',
+								'includereplace',
+								'preprocess:html',
+								'preprocess:tu_markup'
+								]);	
 	
 	grunt.registerTask('dev', ['jshint',
 								'env:dev',
@@ -302,7 +311,6 @@ module.exports = function(grunt) {
 								'copy',
 								'includereplace',
 								'preprocess:html',
-								'preprocess:tu_markup',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
