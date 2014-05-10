@@ -468,9 +468,17 @@ $divisions: 'twelfths','fifteenths';
 .sidebar.gutter.wide .column:nth-of-type(even),
 .halves.gutter.wide .column:nth-of-type(even) { padding-left: 2em; padding-right: 4em; } 
 
-.thirds.gutter .column:nth-of-type(3n+1) { padding-left: 2em; padding-right: 1em; } 
-.thirds.gutter .column:nth-of-type(3n+2) { padding-left: 1em; padding-right: 1em; } 
-.thirds.gutter .column:nth-of-type(3n+3) { padding-left: 1em; padding-right: 2em; }
+
+.thirds.gutter {
+	.column:nth-of-type(3n+1) { padding-left: 2em; padding-right: 1em; } 
+	.column:nth-of-type(3n+2) { padding-left: 1em; padding-right: 1em; } 
+	.column:nth-of-type(3n+3) { padding-left: 1em; padding-right: 2em; }
+	}
+.thirds.gutter.wide {
+	.column:nth-of-type(3n+1) { padding-left: 4em; padding-right: 2em; } 
+	.column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
+	.column:nth-of-type(3n+3) { padding-left: 2em; padding-right: 4em; }
+	}
 
 .fifths.gutter .column { padding: 1em; }
 .fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
