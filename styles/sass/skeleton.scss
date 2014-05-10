@@ -243,50 +243,8 @@ $layouts: 'single','halves','thirds','sidebar','sideright','sideleft','quarters'
 .hybrid .row.ninths .column,
 .fluid .row.ninths .column { width: 12.5%; }
 
-$divisions: 'twelfths','fifteenths';
-
-/* twelfths */
-.twelfths .column { width: 8.33%; } .fixed .twelfths .column { width: 66px; }
-.one-twelfth, .twelfths-1 { width: 8.33% } .hybrid .one-twelfth, .hybrid .twelfths-1, .fixed .one-twelfth, .fixed .twelfths-1 { width: 66px; }
-.two-twelfths, .twelfths-2 { width: 16.66% } .hybrid .two-twelfths, .hybrid .twelfths-2, .fixed .two-twelfths, .fixed .twelfths-2 { width: 132px; }
-.three-twelfths, .twelfths-3 { width: 25% } .hybrid .three-twelfths, .hybrid .twelfths-3, .fixed .three-twelfths, .fixed .twelfths-3 { width: 198px; }
-.four-twelfths, .twelfths-4 { width: 33.33% } .hybrid .four-twelfths, .hybrid .twelfths-4, .fixed .four-twelfths, .fixed .twelfths-4 { width: 264px; }
-.five-twelfths, .twelfths-5 { width: 41.66% } .hybrid .five-twelfths, .hybrid .twelfths-5, .fixed .five-twelfths, .fixed .twelfths-5 { width: 330px; }
-.six-twelfths, .twelfths-6 { width: 50% } .hybrid .six-twelfths, .hybrid .twelfths-6, .fixed .six-twelfths, .fixed .twelfths-6 { width: 396px; }
-.seven-twelfths, .twelfths-7 { width: 58.33% } .hybrid .seven-twelfths, .hybrid .twelfths-7, .fixed .seven-twelfths, .fixed .twelfths-7 { width: 462px; }
-.eight-twelfths, .twelfths-8 { width: 64.66% } .hybrid .eight-twelfths, .hybrid .twelfths-8, .fixed .eight-twelfths, .fixed .twelfths-8 { width: 528px; }
-.nine-twelfths, .twelfths-9 { width: 75% } .hybrid .nine-twelfths, .hybrid .twelfths-9, .fixed .nine-twelfths, .fixed .twelfths-9 { width: 594px; }
-.ten-twelfths, .twelfths-10 { width: 83.33% } .hybrid .ten-twelfths, .hybrid .twelfths-10, .fixed .ten-twelfths, .fixed .twelfths-10 { width: 660px; }
-.eleven-twelfths, .twelfths-11 { width: 91.66% } .hybrid .eleven-twelfths, .hybrid .twelfths-11, .fixed .eleven-twelfths, .fixed .twelfths-11 { width: 726px; }
-.twelve-twelfths, .twelfths-12 { width: 100% } .hybrid .twelve-twelfths, .hybrid .twelfths-12, .fixed .twelve-twelfths, .fixed .twelfths-12 { width: 792px; }
 
 
-
-.one-twelfth-max, .twelfths-1-max { max-width: 66px; }
-.two-twelfths-max, .twelfths-2-max { max-width: 132px; }
-.three-twelfths-max, .twelfths-3-max { max-width: 198px; }
-.four-twelfths-max, .twelfths-4-max { max-width: 264px; }
-.five-twelfths-max, .twelfths-5-max { max-width: 330px; }
-.six-twelfths-max, .twelfths-6-max { max-width: 396px; }
-.seven-twelfths-max, .twelfths-7-max { max-width: 462px; }
-.eight-twelfths-max, .twelfths-8-max { max-width: 528px; }
-.nine-twelfths-max, .twelfths-9-max { max-width: 594px; }
-.ten-twelfths-max, .twelfths-10-max { max-width: 660px; }
-.eleven-twelfths-max, .twelfths-11-max { max-width: 726px; }
-.twelve-twelfths-max, .twelfths-12-max { max-width: 792px; }
-
-.one-twelfth-tall, .twelfths-tall-1 { height: 66px; }
-.two-twelfths-tall, .twelfths-tall-2 { height: 132px; }
-.three-twelfths-tall, .twelfths-tall-3 { height: 198px; }
-.four-twelfths-tall, .twelfths-4-tall { height: 264px; }
-.five-twelfths-tall, .twelfths-5-tall { height: 330px; }
-.six-twelfths-tall, .twelfths-6 { height: 396px; }
-.seven-twelfths-tall, .twelfths-7-tall { height: 462px; }
-.eight-twelfths-tall, .twelfths-8-tall { height: 528px; }
-.nine-twelfths-tall, .twelfths-9-tall { height: 594px; }
-.ten-twelfths-tall, .twelfths-10-tall { height: 660px; }
-.eleven-twelfths-tall, .twelfths-11-tall { height: 726px; }
-.twelve-twelfths-tall, .twelfths-12-tall { height: 792px; }
 
 :not(.fixed) .halves .two-twelfths { width: 33%; }
 :not(.fixed) .halves .four-twelfths { width: 67%; }
@@ -310,12 +268,6 @@ $divisions: 'twelfths','fifteenths';
 .fluid .row.sideleft .column.two { width: 67%; }
 .fluid .row.sidebar .column.two,
 .fluid .row.sideleft .column.one { width: 33%; }
-
-/* Automatic Clearing (awesome but questionable) */
-
-.row.halves .column:nth-of-type(odd) { clear: both; }
-.row.halves .column:nth-of-type(1),
-.row.halves .row .column:nth-of-type(odd) { clear: none; }
 
 /* I.4.1 NESTING
 -------------------------------------------------------- */
@@ -343,6 +295,14 @@ $divisions: 'twelfths','fifteenths';
 .row.thirds .row.halves .column { width: 132px; }
 .fluid .row.thirds .halves .column { width: 50%; }
 
+/* quarters then ... */
+.row .column.row.single,
+.row .column.row.single .column {
+	width: 792px;
+	}
+	
+/* I.4.1 Clearing
+-------------------------------------------------------- */
 
 /* Automatic Clearing (awesome but questionable) */
 
@@ -361,6 +321,7 @@ $divisions: 'twelfths','fifteenths';
 
 /* I.4.2 Columnar Units
 -------------------------------------------------------- */
+
 /* twelfths */
 
 @each $count, $name in $counter {
@@ -441,6 +402,11 @@ $divisions: 'twelfths','fifteenths';
 	margin: 0px;
 	border-top: 1px gray dotted;
 	}
+	
+
+$default: 2em;
+$wide: $default * 2;
+$spacing: $default, $wide;
 
 /* Margins */
 .marginalize .column, .marginalized { padding: 2em; }
@@ -625,29 +591,23 @@ section.row,
 /* BUTTONS
 -------------------------------------------------------- */
 
-.button,
+.spine-button,
 button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	background: #eee;
-	border: 1px solid #aaa;
-	border: none;
-	border-top: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	color: #444;
+	background: $gray-lightest;
+	border-style: solid;
+	border-width: 1px;
+	border-color: $gray-lightly $gray-light $gray-light $gray-lightly;
+	border-radius: 0.5em;
+	color: $gray-dark;
 	display: inline-block;
-	font-size: 11px;
-	font-weight: bold;
 	text-decoration: none;
-	text-shadow: 0 1px rgba(255, 255, 255, .75);
 	cursor: pointer;
 	margin-bottom: 0px;
 	line-height: normal;
-	padding: 6px 8px;
+	padding: 0.5em 1em;
 	}
 
 .button:hover,
@@ -655,19 +615,27 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-	color: #222;
-	background: #ddd;
-	border: 1px solid #888;
-	border-top: 1px solid #aaa;
-	border-left: 1px solid #aaa; }
+	color: $gray-dark;
+	background: $gray-er;
+	border-color: $gray-light;
+	border-width: 0px 2px 2px 0px;
+	}
 
 .button:active,
 button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
-input[type="button"]:active {
-	border: 1px solid #666;
-	background: #ccc; }
+input[type="button"]:active,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+	color: $gray-lighter;
+	border-color: $gray-darkest;
+	background: $gray-dark;
+	border-width: 2px 0px 0px 2px;
+	}
 
 .button.full-width,
 button.full-width,
