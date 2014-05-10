@@ -340,7 +340,22 @@ $divisions: 'twelfths','fifteenths';
 .fluid .row.thirds .halves .column { width: 50%; }
 
 
-/* I.4.2 Spineless Units
+/* Automatic Clearing (awesome but questionable) */
+
+/*
+.row.halves .column:nth-of-type(2n),
+.row.quarters .column:nth-of-type(4n) {
+	clear: both;
+	}
+.row.halves .row .column:nth-of-type(2n),
+.row.quarters .row .column:nth-of-type(4n) {
+	clear: none;
+	}
+*/
+
+
+
+/* I.4.2 Columnar Units
 -------------------------------------------------------- */
 /* twelfths */
 
