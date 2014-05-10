@@ -382,7 +382,7 @@
 			});
 			// External Links in nav
 			// this shouldn"t be done this way
-			$("nav#spine-sitenav a").filter(function() {
+			$(".spine-sitenav a").filter(function() {
 				return this.hostname && this.hostname !== window.location.hostname;
 			}).addClass("external");
 		},
