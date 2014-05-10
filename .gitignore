@@ -3,5 +3,6 @@ node_modules
 /build
 .sass-cache
 #/test
+test/tests
 #!/test/preprocess
 #!/test/preprocess/blocks
