@@ -346,35 +346,35 @@
 
   /* Grid */
   /* Hybrid Shift */
-  .hybrid .row.halves .column {
-    width: 50%; }
+  .hybrid .row {
+    	/*
+    .column,
+    	&.quarters .column,
+    	&.halves .column,
+    	&.halves .thirds .column {
+    		float: left;
+    		}
+    */ }
+    .hybrid .row.halves .column, .hybrid .row.triptych .column.two {
+      width: 50%; }
+    .hybrid .row.thirds .column {
+      width: 33%; }
+    .hybrid .row.thirds .column.two {
+      width: 34%; }
+    .hybrid .row.quarters .column, .hybrid .row.triptych .column.one, .hybrid .row.triptych .column.three {
+      width: 25%; }
+    .hybrid .row.sidebar .column.one, .hybrid .row.sideleft .column.two {
+      width: 66%; }
+    .hybrid .row.sidebar .column.two, .hybrid .row.sideleft .column.one {
+      width: 34%; }
+    .hybrid .row.single .column, .hybrid .row.margin .column.one, .hybrid .row.margin .column.two {
+      width: 100%; }
 
-  .hybrid .row.thirds .column {
-    width: 33%; }
-
-  .hybrid .row.thirds .column.two {
-    width: 34%; }
-
-  .hybrid .row.quarters .column {
-    width: 25%; }
-
-  .hybrid .row.single .column,
-  .hybrid .row.halves .column,
-  .hybrid .row.triptych .column,
-  .hybrid .row.triptych .column.two,
-  .hybrid .row.sidebar .column.one,
-  .hybrid .row.sidebar .column.two,
-  .hybrid .row.margin .column.one,
-  .hybrid .row.margin .column.two {
-    width: 100%; }
-
-  .row.quarters .column,
   .fluid .row .column,
   .fluid .row.halves .column,
-  .fluid .row.halves .thirds .column,
-  .hybrid .row .column,
-  .hybrid .row.halves .column,
-  .hybrid .row.halves .thirds .column,
+  .fluid .row.halves .thirds .column {
+    float: left; }
+
   .row.twelfths {
     float: left; }
 
@@ -396,287 +396,6 @@
 
   .hybrid .row .row.thirds .column.two {
     width: 34%; }
-
-  /* Signature */
-  #binder.fluid #spine #wsu-signature {
-    background-position: center 14px;
-    background-size: auto 30px;
-    height: 49px; }
-
-  /* Header Colors and Signatures */
-  #binder #spine header {
-    background-color: white; }
-  #binder #spine.lightest header {
-    background-color: #eff0f1; }
-  #binder #spine.lightly header {
-    background-color: #d7dadb; }
-  #binder #spine.lighter header {
-    background-color: #b5babe; }
-  #binder #spine.light header {
-    background-color: #8d959a; }
-  #binder #spine.gray header {
-    background-color: #5e6a71; }
-  #binder #spine.dark header {
-    background-color: #464e54; }
-  #binder #spine.darker header {
-    background-color: #23282b; }
-  #binder #spine.darkest header {
-    background-color: black; }
-  #binder #spine.crimson header {
-    background-color: #981e32; }
-
-  #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg"); }
-
-  html.lt-ie9 #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); }
-
-  #binder.fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
-
-  #binder.fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
-
-  #binder.fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
-
-  #binder.fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
-
-  .spokane-signature #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal.svg"); }
-
-  .vancouver-signature #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal.svg"); }
-
-  .tricities-signature #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal.svg"); }
-
-  .globalcampus-signature #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal.svg"); }
-
-  .extension-signature #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal.svg"); }
-
-  .foundation-signature #binder.fluid #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal.svg"); }
-
-  .spokane-signature .fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
-
-  .spokane-signature .fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
-
-  .spokane-signature .fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
-
-  .spokane-signature .fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
-
-  .vancouver-signature .fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
-
-  .vancouver-signature .fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
-
-  .vancouver-signature .fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
-
-  .vancouver-signature .fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
-
-  .tricities-signature .fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
-
-  .tricities-signature .fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
-
-  .tricities-signature .fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
-
-  .tricities-signature .fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
-
-  .globalcampus-signature .fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
-
-  .globalcampus-signature .fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
-
-  .globalcampus-signature .fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
-
-  .globalcampus-signature .fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
-
-  .extension-signature .fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
-
-  .extension-signature .fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
-
-  .extension-signature .fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
-
-  .extension-signature .fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
-
-  .foundation-signature .fluid .gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); }
-
-  .foundation-signature .fluid .light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); }
-
-  .foundation-signature .fluid .dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); }
-
-  .foundation-signature .fluid .crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); } }
-/* SMALL (max 693)
------------------------------------------------------ */
-/* 792px - 198px = 594px */
-@media only screen and (max-width: 693px) {
-  #binder.fixed {
-    width: 396px;
-    min-width: 396px;
-    margin: 0px auto; }
-    #binder.fixed main {
-      margin-top: 50px;
-      margin-left: 0px; }
-  #binder.fluid, #binder.hybrid {
-    width: 100%; }
-    #binder.fluid main, #binder.hybrid main {
-      width: auto;
-      margin-left: 0px; }
-
-  /*
-  main {
-  		width: 396px;
-  		margin: 0px;
-  		padding-top: 50px;
-  		}
-  */
-  /* Logo */
-  .extension-signature #wsu-signature,
-  .globalcampus-signature #wsu-signature,
-  .spokane-signature #wsu-signature,
-  .tricities-signature #wsu-signature,
-  .vancouver-signature #wsu-signature {
-    background-size: 340px auto;
-    background-position: center 14px;
-    margin-left: 40px; }
-
-  /* Grid */
-  .fixed .row.single .column, .fixed .row.halves .column, .fixed .row.thirds .column, .fixed .row.triptych .column, .fixed .row.sidebar .column.one, .fixed .row.sidebar .column.two, .fixed .row.sideleft .column.one, .fixed .row.sideleft .column.two, .fixed .row.margin .column.one, .fixed .row.margin .column.two, .fixed .row.single .halves .column {
-    width: 100%;
-    float: none;
-    clear: both; }
-
-  /* Grid */
-  .fluid .row.single .column,
-  .fluid .row.halves .column,
-  .fluid .row.thirds .column.one,
-  .fluid .row.thirds .column.two,
-  .fluid .row.thirds .column.three,
-  .fluid .row.triptych .column,
-  .fluid .row.sidebar .column.one,
-  .fluid .row.sidebar .column.two,
-  .fluid .row.sideleft .column.one,
-  .fluid .row.sideleft .column.two,
-  .fluid .row.margin .column.one,
-  .fluid .row.margin .column.two,
-  .fluid .row.single .halves .column {
-    width: 100%;
-    float: none;
-    clear: both; }
-
-  .fluid .row.quarters .column {
-    width: 50%; }
-
-  .hybrid .row.single .column,
-  .hybrid .row.halves .column,
-  .hybrid .row.thirds .column.one,
-  .hybrid .row.thirds .column.two,
-  .hybrid .row.thirds .column.three,
-  .hybrid .row.triptych .column,
-  .hybrid .row.sidebar .column.one,
-  .hybrid .row.sidebar .column.two,
-  .hybrid .row.sideleft .column.one,
-  .hybrid .row.sideleft .column.two,
-  .hybrid .row.margin .column.one,
-  .hybrid .row.margin .column.two,
-  .hybrid .row.thirds .halves .column,
-  .hybrid .row.fifteenths .four-fifteenths,
-  .hybrid .row.fifteenths .five-fifteenths,
-  .hybrid .row.fifteenths .six-fifteenths,
-  .hybrid .row.fifteenths .seven-fifteenths {
-    width: 100%;
-    float: none;
-    clear: both; }
-
-  .hybrid .row.quarters .column,
-  .hybrid .row.fifteenths .two-fifteenths,
-  .hybrid .row.fifteenths .three-fifteenths {
-    width: 50%; }
-
-  .hybrid .row .row.thirds .column {
-    width: 33%; }
-
-  .hybrid .row .row.thirds .column.two {
-    width: 34%; }
-
-  /* nesting */
-  .hybrid .row .row.quarters .column,
-  .fluid .row .row.quarters .column,
-  .hybrid .row .row.thirds .column,
-  .hybrid .row .row.thirds .column.two,
-  .hybrid .row .row.halves .column,
-  .hybrid .row .row.halves .column {
-    clear: none;
-    float: left; }
-
-  /* Gutters */
-  .halves.gutter .column:nth-of-type(odd),
-  .halves.gutter .column:nth-of-type(even) {
-    padding: 2em 2em 0 2em; }
-
-  .halves.gutter.wide .column:nth-of-type(odd),
-  .halves.gutter.wide .column:nth-of-type(even) {
-    padding: 4em 4em 0 4em; }
-
-  .halves.gutter.wide .column ~ .column {
-    padding: 0em 4em 0 4em; }
-
-  .thirds.gutter .column:nth-of-type(3n+1) {
-    padding-left: 2em; }
-
-  .thirds.gutter .column:nth-of-type(3n+2) {
-    padding-left: 2em;
-    padding-right: 2em; }
-
-  .thirds.gutter .column:nth-of-type(3n+3) {
-    padding-right: 2em; }
-
-  .fifths.gutter .column {
-    padding: 1em; }
-
-  .fifths.gutter .column:nth-of-type(5n+1) {
-    padding-left: 2em; }
-
-  .fifths.gutter .column:nth-of-type(5n+5) {
-    padding-right: 2em; }
-
-  /* Gutters */
-  .halves.gutter .column:nth-of-type(odd),
-  .halves.gutter .column:nth-of-type(even) {
-    padding: 2em 2em 1em 2em; }
-
-  .halves.gutter.wide .column:nth-of-type(odd),
-  .halves.gutter.wide .column:nth-of-type(even) {
-    padding: 4em 4em 1.5em 4em; }
-
-  .halves.gutter.wide .column ~ .column {
-    padding: 0em 4em 1.5em 4em; }
 
   /* Signature */
   #binder.fluid #spine #wsu-signature {
@@ -966,28 +685,321 @@
 
   .foundation-signature .fixed .crimson #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-lightest.svg"); } }
-@media only screen and (max-width: 420px), screen and (max-width: 360px) and (max-device-width: 480px) and (orientation: landscape) {
-  .fluid a#wsu-signature,
-  :not(.fluid) #wsu-signature,
-  .extension-signature #wsu-signature,
-  .globalcampus-signature #wsu-signature,
-  .spokane-signature #wsu-signature,
-  .tricities-signature #wsu-signature,
-  .vancouver-signature #wsu-signature {
-    background-size: 320px auto; } }
-@media only screen and (max-width: 360px), screen and (max-width: 360px) and (max-device-width: 480px) and (orientation: portrait) {
-  #binder.fluid #spine a#wsu-signature,
-  #binder:not(.fluid) #spine a#wsu-signature {
-    background-size: 260px auto;
-    background-position: 65% 60%; }
+/* SMALL (max 693)
+----------------------------------------------------- */
+/* 792px - 198px = 594px */
+@media only screen and (max-width: 693px) {
+  #binder.fixed {
+    width: 396px;
+    min-width: 396px;
+    margin: 0px auto; }
+    #binder.fixed main {
+      margin-top: 50px;
+      margin-left: 0px; }
+  #binder.fluid, #binder.hybrid {
+    width: 100%; }
+    #binder.fluid main, #binder.hybrid main {
+      width: auto;
+      margin-left: 0px; }
 
-  .extension-signature #binder #spine a#wsu-signature,
-  .globalcampus-signature #binder #spine a#wsu-signature,
-  .spokane-signature #binder #spine a#wsu-signature,
-  .tricities-signature #binder #spine a#wsu-signature,
-  .vancouver-signature #binder #spine a#wsu-signature {
-    background-size: 260px auto;
-    background-position: center 60%; } }
+  /*
+  main {
+  		width: 396px;
+  		margin: 0px;
+  		padding-top: 50px;
+  		}
+  */
+  /* Logo */
+  [class*="-signature"] #wsu-signature {
+    background-size: 340px auto !important;
+    background-position: center 14px !important;
+    margin-left: 40px !important; }
+
+  /* GRID BEHAVIOR */
+  .row .column {
+    width: 100% !important;
+    float: none;
+    clear: both; }
+
+  .fluid .row.quarters .column {
+    width: 50%; }
+
+  /*
+  .fixed .row {
+  
+  	&.single .column,
+  	&.halves .column,
+  	&.thirds .column,
+  	&.triptych .column,
+  	&.sidebar .column.one,
+  	&.sidebar .column.two,
+  	&.sideleft .column.one,
+  	&.sideleft .column.two,
+  	&.margin .column.one,
+  	&.margin .column.two,
+  	&.single .halves .column {
+  		width: 100%;
+  		float: none;
+  		clear: both;
+  		}
+  		
+  	}
+  
+  
+  /* Grid */
+  /*
+  .fluid .row.single .column,
+  .fluid .row.halves .column,
+  .fluid .row.thirds .column.one,
+  .fluid .row.thirds .column.two,
+  .fluid .row.thirds .column.three,
+  .fluid .row.triptych .column,
+  .fluid .row.sidebar .column.one,
+  .fluid .row.sidebar .column.two,
+  .fluid .row.sideleft .column.one,
+  .fluid .row.sideleft .column.two,
+  .fluid .row.margin .column.one,
+  .fluid .row.margin .column.two,
+  .fluid .row.single .halves .column {
+  	width: 100%;
+  	float: none;
+  	clear: both;
+  	}
+  */
+  /* Unfortunately, this doesn't work --> .hybrid .row.halves *:not(.row) .column, */
+  /*
+  .hybrid .row.single .column,
+  .hybrid .row.halves .column,
+  
+  .hybrid .row.thirds .column.one,
+  .hybrid .row.thirds .column.two,
+  .hybrid .row.thirds .column.three,
+  .hybrid .row.triptych .column,
+  .hybrid .row.sidebar .column.one,
+  .hybrid .row.sidebar .column.two,
+  .hybrid .row.sideleft .column.one,
+  .hybrid .row.sideleft .column.two,
+  .hybrid .row.margin .column.one,
+  .hybrid .row.margin .column.two,
+  .hybrid .row.thirds .halves .column,
+  .hybrid .row.fifteenths .four-fifteenths,
+  .hybrid .row.fifteenths .five-fifteenths,
+  .hybrid .row.fifteenths .six-fifteenths,
+  .hybrid .row.fifteenths .seven-fifteenths {
+  	width: 100%;
+  	float: none;
+  	clear: both;
+  	}
+  */
+  .hybrid .row.quarters .column,
+  .hybrid .row.fifteenths .two-fifteenths,
+  .hybrid .row.fifteenths .three-fifteenths {
+    width: 50%; }
+
+  .hybrid .row .row.thirds .column {
+    width: 33%; }
+
+  .hybrid .row .row.thirds .column.two {
+    width: 34%; }
+
+  /* nesting */
+  .hybrid .row .row.quarters .column,
+  .fluid .row .row.quarters .column,
+  .hybrid .row .row.thirds .column,
+  .hybrid .row .row.thirds .column.two,
+  .hybrid .row .row.halves .column,
+  .hybrid .row .row.halves .column {
+    clear: none;
+    float: left; }
+
+  /* Gutters */
+  .halves.gutter .column:nth-of-type(odd),
+  .halves.gutter .column:nth-of-type(even) {
+    padding: 2em 2em 0 2em; }
+
+  .halves.gutter.wide .column:nth-of-type(odd),
+  .halves.gutter.wide .column:nth-of-type(even) {
+    padding: 4em 4em 0 4em; }
+
+  .halves.gutter.wide .column ~ .column {
+    padding: 0em 4em 0 4em; }
+
+  .thirds.gutter .column:nth-of-type(3n+1) {
+    padding-left: 2em; }
+
+  .thirds.gutter .column:nth-of-type(3n+2) {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .thirds.gutter .column:nth-of-type(3n+3) {
+    padding-right: 2em; }
+
+  .fifths.gutter .column {
+    padding: 1em; }
+
+  .fifths.gutter .column:nth-of-type(5n+1) {
+    padding-left: 2em; }
+
+  .fifths.gutter .column:nth-of-type(5n+5) {
+    padding-right: 2em; }
+
+  /* Gutters */
+  .halves.gutter .column:nth-of-type(odd),
+  .halves.gutter .column:nth-of-type(even) {
+    padding: 2em 2em 1em 2em; }
+
+  .halves.gutter.wide .column:nth-of-type(odd),
+  .halves.gutter.wide .column:nth-of-type(even) {
+    padding: 4em 4em 1.5em 4em; }
+
+  .halves.gutter.wide .column ~ .column {
+    padding: 0em 4em 1.5em 4em; }
+
+  /* Signature */
+  #wsu-signature {
+    background-position: center 14px !important;
+    background-size: auto 30px !important;
+    height: 49px !important; }
+
+  [class*="-signature"] #wsu-signature {
+    background-size: 320px auto !important; }
+
+  /* Header Colors and Signatures */
+  #binder #spine header {
+    background-color: white; }
+  #binder #spine.lightest header {
+    background-color: #eff0f1; }
+  #binder #spine.lightly header {
+    background-color: #d7dadb; }
+  #binder #spine.lighter header {
+    background-color: #b5babe; }
+  #binder #spine.light header {
+    background-color: #8d959a; }
+  #binder #spine.gray header {
+    background-color: #5e6a71; }
+  #binder #spine.dark header {
+    background-color: #464e54; }
+  #binder #spine.darker header {
+    background-color: #23282b; }
+  #binder #spine.darkest header {
+    background-color: black; }
+  #binder #spine.crimson header {
+    background-color: #981e32; }
+
+  #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg"); }
+
+  html.lt-ie9 #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); }
+
+  #binder.fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
+
+  #binder.fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
+
+  #binder.fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
+
+  #binder.fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lightest.svg"); }
+
+  .spokane-signature #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal.svg"); }
+
+  .vancouver-signature #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal.svg"); }
+
+  .tricities-signature #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal.svg"); }
+
+  .globalcampus-signature #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal.svg"); }
+
+  .extension-signature #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal.svg"); }
+
+  .foundation-signature #binder.fluid #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal.svg"); }
+
+  .spokane-signature .fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
+
+  .spokane-signature .fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
+
+  .spokane-signature .fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
+
+  .spokane-signature .fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-lightest.svg"); }
+
+  .vancouver-signature .fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
+
+  .vancouver-signature .fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
+
+  .vancouver-signature .fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
+
+  .vancouver-signature .fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-lightest.svg"); }
+
+  .tricities-signature .fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
+
+  .tricities-signature .fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
+
+  .tricities-signature .fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
+
+  .tricities-signature .fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-lightest.svg"); }
+
+  .globalcampus-signature .fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
+
+  .globalcampus-signature .fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
+
+  .globalcampus-signature .fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
+
+  .globalcampus-signature .fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-lightest.svg"); }
+
+  .extension-signature .fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
+
+  .extension-signature .fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
+
+  .extension-signature .fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
+
+  .extension-signature .fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-lightest.svg"); }
+
+  .foundation-signature .fluid .gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); }
+
+  .foundation-signature .fluid .light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); }
+
+  .foundation-signature .fluid .dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); }
+
+  .foundation-signature .fluid .crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-lightest.svg"); } }
+@media only screen and (max-width: 420px), screen and (max-width: 360px) and (max-device-width: 480px) and (orientation: landscape) {
+  #wsu-signature {
+    background-size: 320px auto !important; } }
+@media only screen and (max-width: 360px), screen and (max-width: 360px) and (max-device-width: 480px) and (orientation: portrait) {
+  #wsu-signature {
+    background-size: 260px auto !important;
+    background-position: center 60% !important; } }
 /* LARGE FORMAT (Folio)
 ---------------------------------------------------------- */
 .folio-only {
