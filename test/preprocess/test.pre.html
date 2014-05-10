@@ -14,8 +14,8 @@
 	
 	<!-- STYLESHEETS -->
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<link href="../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
-	<!--<link href="../styles/styles.css" rel="stylesheet" type="text/css" />-->
+	<link href="../../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
+	<!--<link href="/styles/styles.css" rel="stylesheet" type="text/css" />-->
 <!-- @endif -->
 <!-- @if NODE_ENV == 'PRODUCTION' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
@@ -76,7 +76,7 @@
 	</script>   
 	
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<script src="../build/<!-- @echo build_version -->/spine.js"></script>
+	<script src="../../build/<!-- @echo build_version -->/spine.js"></script>
 <!-- @endif -->
 <!-- @if NODE_ENV == 'PRODUCTION' -->
 	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
@@ -94,7 +94,7 @@
 
 </head>
 
-<body>
+<body class="<!-- @if layouts='true' --> wireframe <!-- @endif -->">
 
 <!-- WRAPPING -->
 <div id="jacket">
@@ -108,7 +108,7 @@
 		<div class="column one">
 
 			<article>
-				@@include('blocks/short_text_block.html', {})
+				@@include('content/intro.html', {})
 
 			<!-- @if showLong='true' -->
 				@@include('blocks/long_text_block.html', {})
@@ -120,7 +120,9 @@
 		<div class="column two">
 		
 			<aside>
-				@@include('blocks/aside-fightsong.html', {})
+				<!-- @if layouts!='true' -->
+					@@include('blocks/aside-fightsong.html', {})
+				<!-- @endif -->
 				<!-- @if markup!='true' -->
 					@@include('blocks/switches.html', {})
 				<!-- @endif -->
@@ -174,9 +176,9 @@
 
 </section><!--/#wsu-actions-->
 
-<section class="spine-navigation">
-
-	@@include('blocks/nav-site.html', {})
+<section id="spine-navigation" class="spine-navigation">
+	
+	@@include('blocks/nav-site-tests.html', {})
 	@@include('blocks/nav-offsite.html', {})
 
 </section><!-- #navigation -->

@@ -14,8 +14,8 @@
 	
 	<!-- STYLESHEETS -->
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<link href="../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
-	<!--<link href="../styles/styles.css" rel="stylesheet" type="text/css" />-->
+	<link href="../../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
+	<!--<link href="/styles/styles.css" rel="stylesheet" type="text/css" />-->
 <!-- @endif -->
 <!-- @if NODE_ENV == 'PRODUCTION' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
@@ -76,7 +76,7 @@
 	</script>   
 	
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
-	<script src="../build/<!-- @echo build_version -->/spine.js"></script>
+	<script src="../../build/<!-- @echo build_version -->/spine.js"></script>
 <!-- @endif -->
 <!-- @if NODE_ENV == 'PRODUCTION' -->
 	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
@@ -94,7 +94,7 @@
 
 </head>
 
-<body>
+<body class="<!-- @if layouts='true' --> wireframe <!-- @endif -->">
 
 <!-- WRAPPING -->
 <div id="jacket">
@@ -108,22 +108,19 @@
 		<div class="column one">
 
 			<article>
-				<h1>Heading using the h1tag</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet porttitor enim, et porttitor sem auctor ac. Aliquam posuere facilisis tempus. Phasellus consectetur eu risus non dignissim. Mauris suscipit, nulla quis eleifend rhoncus, felis ligula euismod ligula, in pulvinar eros quam sed neque. Integer enim mauris, eleifend id tellus ut, laoreet rhoncus eros. Proin ultricies suscipit mi eget placerat. Quisque ultrices ultricies sem non varius.</p>
-			
-			<p>Nulla leo mi, vestibulum ut ornare nec, gravida at odio. Ut dignissim molestie velit. Etiam quis porta orci, id congue lacus. Nam quis elit rutrum eros mollis venenatis. Ut volutpat arcu in interdum hendrerit. Pellentesque at diam elit. Praesent turpis metus, tincidunt nec consectetur ut, porta vitae odio. Sed urna metus, tincidunt ac elementum euismod, adipiscing in nunc. Mauris fringilla feugiat nunc, at imperdiet arcu interdum sed. Aliquam malesuada ornare libero, a euismod ligula laoreet posuere.</p>
-			
-			<ul>
-				<li>Sed bibendum vel arcu vel aliquam.</li>
-				<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
-				<li>Duis non commodo dui.</li>
-				<li>Integer consectetur erat et dignissim porttitor.</li>
-				<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
-			</ul>
-			
-			<p>Vivamus cursus nec nibh nec ullamcorper. Nulla consequat ipsum et erat volutpat, non fringilla massa ultrices. Phasellus placerat sem in nibh vehicula lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ut ligula in odio pharetra pretium. Pellentesque auctor euismod magna dictum suscipit. Nam euismod, ipsum in mattis imperdiet, elit mi accumsan tellus, eu accumsan lorem dui rhoncus felis. Fusce eleifend placerat est, eget consectetur lorem dignissim et.</p>
-			
-			<p>Morbi gravida magna magna. Aliquam erat volutpat. Sed enim sem, laoreet a nisi sit amet, mattis venenatis est. Curabitur imperdiet, nibh et sagittis feugiat, nunc purus faucibus lacus, sodales auctor ipsum lorem eu lectus. Integer aliquet placerat metus, ut rhoncus augue congue quis. Duis feugiat augue nec elementum faucibus. Nam tincidunt dui elementum magna pretium luctus. Aenean fringilla lectus nulla, sit amet mollis neque tristique eu. Pellentesque justo ligula, auctor quis viverra vitae, accumsan vel nisl. Sed bibendum vel arcu vel aliquam. Donec sodales iaculis lobortis. Praesent ac feugiat sem. Duis non commodo dui. Integer consectetur erat et dignissim porttitor. Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</p>
+				<article class="post-15 page type-page status-publish hentry" id="post-15">
+	<header class="article-header">
+		<h1 class="article-title">The Spine Framework</h1>
+	</header>
+	<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
+	<h3>concept</h3>
+	<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
+	<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
+	<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
+	<h3>timeline</h3>
+	<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
+	<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
+</article>
 
 			<!-- @if showLong='true' -->
 				
@@ -338,7 +335,8 @@
 		<div class="column two">
 		
 			<aside>
-				<section>
+				<!-- @if layouts!='true' -->
+					<section>
 	<h2>Sidebar</h2>
 	<ul>
 		<li>Fight, fight, fight for Washington State! Win the victory!</li>
@@ -349,6 +347,7 @@
 	</ul>
 	<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
 </section>
+				<!-- @endif -->
 				<!-- @if markup!='true' -->
 					<style>
 
@@ -367,19 +366,6 @@
 
 #binder {
 	position: relative;
-	}	
-#switches button {
-	width: auto;
-	text-shadow: -1px -1px 1px rgba(0,0,0,0.3);
-	text-shadow: none;
-	border-width: 1px;
-	border-style: solid;
-	box-shadow: none;
-	border-color: #d7dadb #b5babe #b5babe #d7dadb;
-	padding: 3px 6px;
-	}
-#switches button:active {
-	border-color: #b5babe #d7dadb #d7dadb #b5babe;
 	}	
 
 #grid {
@@ -519,17 +505,6 @@ main:not(.wireframe) .wireframe-only {
 .sidebar .column.two li:last-of-type {
 	border-bottom: none;
 	}
-	
-.thirds.gutter .column {
-   background-color: white; 
-   border: none;
-   }
-.thirds.gutter .column article {
-	padding: 0px;
-	background: #f2f4f5;
-	}
-
-.gutter article p { opacity: .3em; }
 	
 #binder main .note::after {
 	color: black;
@@ -704,7 +679,7 @@ pre code {
 	
 	<dl class="spine-transparency clearfix">
 		<dt>spine transparency <a href="#spine-transparency" class="info">info</a></dt>
-		<dd><button data-transparency="vellum-00">0</button></dd> 
+		<dd><button data-transparency="">0</button></dd> 
 		<dd><button data-transparency="vellum-05">5</button></dd> 
 		<dd><button data-transparency="vellum-10">10</button></dd>
 		<dd><button data-transparency="vellum-15">15</button></dd>
@@ -747,7 +722,7 @@ pre code {
 	
 	<dl class="spine-wireframe">
 		<dt>under the hood</dt>
-		<dd><button onclick="$('main').toggleClass('wireframe');">framework</button></dd>
+		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
 	</dl>
 				
 </aside>
@@ -763,87 +738,40 @@ pre code {
 	</section>
 	
 	<!-- @if layouts='true' -->
-		<section id="unprecedented" class="row sidebar equalize gutter marginalize wide">
+		<section id="spine-behavior" class="row sideleft gutter wide equalize">
 
-	<div class="column one">
-
-			<article class="post-15 page type-page status-publish hentry" id="post-15">
-			<header class="article-header">
-				<h1 class="article-title">Web</h1>
-			</header>
-			<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
-			<h3>concept</h3>
-			<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
-			<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
-			<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
-			<h3>timeline</h3>
-			<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
-			<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
-		</article>
-
-	</div><!--/column-->
-
-	<div id="controls" class="column two" style="background: url('/wp-content/themes/brand/images/pages/web/www.png') 0% -10px no-repeat;">
-		
-					
-	</div><!--/column-->
-
-</section>
-
-<section id="spine-behavior" class="row sideleft marginalize gutter wide equalize">
-	<style>
-		#spine-behavior .column.one {
-			background: url('/wp-content/themes/brand/images/pages/web/squarecircle.png') right center no-repeat;
-			background-size: auto 60%; 
-			}
-		.size-lt-medium #spine-behavior .column.one {
-			background-position: center bottom;
-			background-size: auto 231px;
-			}
-	</style>
-	<div class="column one">
+	<div class="column one gray-back">
 		<br>
 	</div>
-	<div class="column two">
+	
+	<div class="column two gray-lightly-back">
 		<article class="marginalize">
 		<header><h2>consistency and flexibility</h2></header>
 		<p>The framework makes every effort to achieve consistent positioning, graphics, and behavior within the Spine's vertical column while at the same time preserving the greatest degree of flexibility besides. For example, with a switch, the Spine supports three kinds of commonly used grids: <strong>Fluid</strong>, <strong>Fixed</strong>, and <strong>Hybrid</strong>. Feel free to click one above and observe the page's behavior as you shrink your window size. The default is "hybrid".</p>
 		</article>
 	</div>
+	
 </section>
 
-<section id="responsive" class="row sidebar equalize marginalize gutter wide">
+<section id="responsive" class="row halves equalize">
 	<div class="column one">
 	<article class="marginalize">
 	<header><h2>responsive</h2></header>
 	<p><b>Big brother, meet your kid brother, the smartphone. We love him too.</b> The Spine framework provides a responsive grid that enables sites to flex and fold to fit whatever device. The default width is comprised of fifteen 66 pixel columns, the main content area being twelve of those.</p>
 	</article>
 	</div>
-	<div class="column two" style="background: url('/wp-content/themes/brand/images/pages/web/folds.png') center 10px no-repeat; background-size: auto 105%;"></div>
-</section>
-
-<section id="spine-colors" class="row sidebar equalize reverse marginalize gutter wide">
-	<style>
-		#spine-palettes dd { padding: .25em .5em; margin-bottom: .25em; }
-		#spine-palettes dd:hover { color: white; background-color: #A6192E; }
-	</style>
-	<div class="twelve-twelfths-max">
-	<div class="column one">
-		<article>
-			<header><h2>spine colors</h2></header>
-			<p><b>A chameleon of sorts</b>, to complement the style and tone of your design, the spine can be easily switched between several sets of tints and shades within our primary colors of gray and crimson.</p> <code>Notice that the column order at full size is 2 -> 1. A .reverse class on the parent section switches the float direction to right at full-size, but flips it back left at mobile sizes for an alternative ordering. One day this will be supplanted by flexbox order.</code>
-		</article>
-	</div>
-	<div class="column two" style="background: url('/wp-content/themes/brand/images/pages/web/darkspine.png') right 20px no-repeat; background-size: 100%;">
-		<br>
-	</div>
+	<div class="column two" style="height: 350px;">
+		<div class="gray-back" style="height: 33%;"><br></div>
+		<div class="gray-light-back" style="height: 33%;"><br></div>
+		<div class="gray-lighter-back" style="height: 34%;"><br></div>
 	</div>
 </section>
 
-<section id="tool-belt" class="row sideleft equalize marginalize gutter wide">
+<section id="tool-belt" class="row thirds equalize marginalize gutter wide">
 	
-	<div class="column one" style="background: url('/wp-content/themes/brand/images/pages/web/tools.png') 70% center no-repeat; background-size: 80% auto;">
+	<div class="column one">
 	</div>
+	
 	<div class="column two">
 		<article>
 		<header><h2>tool belt included</h2></header>
@@ -851,21 +779,48 @@ pre code {
 		</article>
 	</div>
 	
+	<div class="column three">
+		<br>
+	</div>
+	
 </section>
 
-<section id="spine-sizes" class="row sidebar equalize marginalize gutter wide hidden">
-	
-	<div class="column one" style="">
-		<article>
-		<header><h2>your goldilocks</h2></header>
-		<p></p>
-		</article>
+<section class="row quarters">
+	<div class="column one center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg" width="150px"></div>
+	<div class="column two gray-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-lightest.svg" width="150px"></div>
+	<div class="column three crimson-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-vertical-lightest.svg" width="150px"></div>
+	<div class="column four gray-lightly-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-vertical.svg" width="150px"></div>
+	<div class="column five row single">
+		<div class="column one">
+			<article>
+			<header><h2>campus ready</h2></header>
+			<p>The signatures for each urban campus and for other top level units are pre-baked into the Spine, both the vertical signature for large devices and the horizontal for small. <pre>The campus signatures are activated by adding, for example , a <code>.wsu-vancouver-signature</code> or <code>.wsu-tricities-signature</code> class to html or body.</pre></p>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section id="spine-colors" class="row triptych reverse equalize gutter wide">
+	<style>
+		#spine-palettes dd { padding: .25em .5em; margin-bottom: .25em; }
+		#spine-palettes dd:hover { color: white; background-color: #A6192E; }
+	</style>
+	<div class="column one">
+		<br>
 	</div>
 	<div class="column two">
-		
+		<article>
+			<header><h2>spine colors</h2></header>
+			<p><b>A chameleon of sorts</b>, to complement the style and tone of your design, the spine can be easily switched between several sets of tints and shades within our primary colors of gray and crimson.</p> <code><strong>Reverse Order</strong><br>
+			Notice that the column order at full size is 3 -> 2 -> 1. A .reverse class on the parent section switches the float direction to right at full-size, but flips it back left at mobile sizes for an alternative ordering. One day this will be supplanted by flexbox order.</code>
+		</article>
 	</div>
-	
+	<div class="column three">
+		<br>
+	</div>
 </section>
+
+
 
 <section id="spine-sizes" class="row sidebar equalize marginalize gutter wide hidden">
 	
@@ -922,12 +877,7 @@ pre code {
 	</article>
 </section>
 
-<section class="row quarters wireframe-only">
-	<div class="column one picture-frame"><img src="/wp-content/themes/brand/images/pages/wireframe/1.png" class="fill-width"></div>
-	<div class="column two picture-frame"><img src="/wp-content/themes/brand/images/pages/wireframe/2.png" class="fill-width"></div>
-	<div class="column three picture-frame"><img src="/wp-content/themes/brand/images/pages/wireframe/3.png" class="fill-width"></div>
-	<div class="column four picture-frame"><img src="/wp-content/themes/brand/images/pages/wireframe/4.png" class="fill-width"></div>
-</section>
+
 
 <section class="row halves  wireframe-only">
 	<div class="column one">
@@ -939,44 +889,26 @@ pre code {
 	</div>
 </section>
 
-<section id="campus-ready" class="row sideleft equalize marginalize gutter wide">
 
-	<style>
-		#campus-ready .column.one {
-			background: url('http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg') center center no-repeat;
-			background-size: auto; 
-			}
-		#campus-ready::before,
-		#campus-ready:hover .column.one {
-			background: url('http://repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-vertical.svg') center center no-repeat;
-			}
-	</style>
-	
+<section id="text-columns" class="row thirds gutter equalize">
 	<div class="column one">
-		<br>
-	</div>
-	<div class="column two">
-		
-		<article>
-		<header><h2>campus ready</h2></header>
-		<p>The signatures for each urban campus and for other top level units are pre-baked into the Spine, both the vertical signature for large devices and the horizontal for small. <pre>The campus signatures are activated by adding, for example , a <code>.wsu-vancouver-signature</code> or <code>.wsu-tricities-signature</code> class to html or body.</pre></p>
-		</article>
-	</div>
-	
-</section>
-
-<section class="row thirds gutter equalize wireframe-only">
-	<div class="column one">
-		<article>
-		<strong>The skeleton grid eschews padding and margins by default to allow for seamless designs. However, adding a "gutter" class, as in this section, provides gutters for equally spaced column interior content (30px).</strong><hr>
-		These columns have also been equalized with the "equalize" class to allow for aligning background images. Were using "border-box" box-sizing on our columns to enable padding without breaking our responsive math.<hr>
+		<article class="gray-lightest-back">
+		<h2>Gutters</h2>
+		<strong>The skeleton grid eschews padding and margins by default to allow for seamless designs. However, adding a "gutter" class, as in this section, provides gutters for equally spaced column interior content (30px).</strong>
+		<hr><button class="centered" onclick="$('#text-columns').toggleClass('wide');">Wide/Narrow</button><hr>
 		<p>Vestibulum cursus ultricies tellus, sed fermentum mauris mattis vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam condimentum ligula ut dictum scelerisque. Aenean mattis erat ac tortor accumsan, vitae tincidunt dui feugiat. Vestibulum hendrerit metus id justo tristique, a pharetra nibh lobortis. Sed eu dolor nec metus blandit egestas ac at elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus ac mollis mauris. Sed aliquet ipsum in dapibus euismod.</p></article>
 	</div>
-	<div class="marginalized column two">
-		<article><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor neque, scelerisque quis mauris quis, fringilla eleifend est. Phasellus purus leo, commodo sit amet ipsum ac, lacinia auctor nulla. Nam sed nunc fermentum, condimentum ligula sit amet, facilisis urna. Vestibulum pharetra dui turpis, vitae elementum dui gravida in. Quisque ut lectus aliquet, lobortis risus vitae, placerat metus. Duis nisl eros, mattis non fermentum eget, luctus sed tortor. Nunc tempus nulla eget erat ornare, quis mattis turpis tincidunt. Vivamus semper elit at metus consequat, vitae dapibus urna posuere. Nunc iaculis arcu sed ante mollis, vitae varius orci rhoncus. Nullam luctus tristique pretium. Ut tincidunt, velit ullamcorper aliquet molestie, nisl lectus interdum felis, quis blandit nisi tortor non elit. Ut sit amet ipsum consectetur, tempor tellus at, ultrices elit. Sed a mauris enim. Sed vitae odio vestibulum massa vulputate lacinia.</p></article>
+	<div class="column two">
+		<article class="gray-lightest-back">
+		<h2>Margins</h2>
+		<p>Class naming logic... Passive and active, object and subject.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor neque, scelerisque quis mauris quis, fringilla eleifend est.</p>
+		<hr><button class="centered" onclick="$('#text-columns').toggleClass('marginalize');">Marginalize</button><hr>
+		<p>Phasellus purus leo, commodo sit amet ipsum ac, lacinia auctor nulla. Nam sed nunc fermentum, condimentum ligula sit amet, facilisis urna. Vestibulum pharetra dui turpis, vitae elementum dui gravida in. Quisque ut lectus aliquet, lobortis risus vitae, placerat metus. Duis nisl eros, mattis non fermentum eget, luctus sed tortor. Nunc tempus nulla eget erat ornare, quis mattis turpis tincidunt. Vivamus semper elit at metus consequat, vitae dapibus urna posuere. Nunc iaculis arcu sed ante mollis, vitae varius orci rhoncus. Nullam luctus tristique pretium. Ut tincidunt, velit ullamcorper aliquet molestie, nisl lectus interdum felis, quis blandit nisi tortor non elit. Ut sit amet ipsum consectetur, tempor tellus at, ultrices elit. Sed a mauris enim. Sed vitae odio vestibulum massa vulputate lacinia.</p></article>
 	</div>
 	<div class="column three">
-		<article><p>Nam a dolor diam. Sed bibendum sit amet arcu id vehicula. Duis dictum rhoncus velit vel porttitor. Nullam scelerisque fermentum massa. Proin suscipit facilisis tincidunt. Aenean et tempor augue. Nullam gravida feugiat diam, vel blandit turpis ornare et. Sed sed arcu quis augue ultricies porta id vitae ante. Donec at ante sed mauris mollis rutrum eu sit amet lectus. <hr> .equalize makes columns equally tall... or short</p></article>
+		<article class="gray-lightest-back">
+		<h2>Equalizing</h2>
+		<p>These columns have also been equalized with the "equalize" class to allow for aligning background images. Were using "border-box" box-sizing on our columns to enable padding without breaking our responsive math. Nam a dolor diam. Sed bibendum sit amet arcu id vehicula. Duis dictum rhoncus velit vel porttitor. Nullam scelerisque fermentum massa. Proin suscipit facilisis tincidunt. Aenean et tempor augue. Nullam gravida feugiat diam, vel blandit turpis ornare et. Sed sed arcu quis augue ultricies porta id vitae ante. Donec at ante sed mauris mollis rutrum eu sit amet lectus. <hr> .equalize makes columns equally tall... or short</p></article>
 	</div>
 </section>
 
@@ -1070,8 +1002,8 @@ pre code {
 
 </section><!--/#wsu-actions-->
 
-<section class="spine-navigation">
-
+<section id="spine-navigation" class="spine-navigation">
+	
 	<nav class="spine-sitenav">
 <!-- Your navigation list here
 	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
@@ -1089,9 +1021,9 @@ pre code {
 			<li>
 				<a href="#">Kinds of responsive behavior</a>
 				<ul>
-					<li><a href="/test/fluidGrid.html">The Spine can be fluid and flex</a></li>
-					<li><a href="/test/fixedGrid.html">It can be fixed and fold</a></li>
-					<li><a href="/test/hybridGrid.html">Or a hybrid of a little of this and of that</a></li>
+					<li><a href="/test/tests/fluidGrid.html">The Spine can be fluid and flex</a></li>
+					<li><a href="/test/tests/fixedGrid.html">It can be fixed and fold</a></li>
+					<li><a href="/test/tests/hybridGrid.html">Or a hybrid of a little of this and of that</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -1154,12 +1086,12 @@ pre code {
 	<li>
 		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
 		<ul>
-			<li><a href="/test/overlyLinked.html">Overly Linked</a></li>
-			<li><a href="/test/overlyLong.html">Overly Long</a></li>
+			<li><a href="/test/tests/overlyLinked.html">Overly Linked</a></li>
+			<li><a href="/test/tests/overlyLong.html">Overly Long</a></li>
 		</ul>
 	</li>
-	<li><a href="/test/layouts.html">Available Layouts</a></li>
-	<li><a href="/test/columns.html">Columns</a></li>
+	<li><a href="/test/tests/layouts.html">Available Layouts</a></li>
+	<li><a href="/test/tests/columns.html">Columns</a></li>
 </ul>
 
 </nav>

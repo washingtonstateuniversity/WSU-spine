@@ -13,8 +13,8 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-	<link href="../build/1/spine.css" rel="stylesheet" type="text/css" />
-	<!--<link href="../styles/styles.css" rel="stylesheet" type="text/css" />-->
+	<link href="http://repo.wsu.edu/spine/1/spine.min.css" rel="stylesheet" type="text/css" />
+	<!-- Your custom stylesheets here -->
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
@@ -25,48 +25,10 @@
 	
 	<script type="text/javascript">
 		var spineoptions={
-			search:{
-				providers:{
-					local:{
-						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
-						dataType: "jsonp",
-						featureClass: "P",
-						style: "full",
-						maxRows: 12
-					} 
-				},
-				result:{
-					appendTo: "#spine-shortcuts",
-					showRelated:true,
-					relatedHeader:"<hr/>",
-					minLength: 2, 
-					template:"<li>%s</li>"
-				}
-			},
-			social:{
-				provider:"WSU_share",
-				script_url:"//repo.wsu.edu/wsu_share/1/",
-				channels:[
-					"facebook",
-					"twitter",
-					"Pintrest"
-				]
-			},
-			analytics:{ 
-				"google":{
-					analytics:{
-						"account_id":"UA-XXXXX-XX"
-					},
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				},
-				"bing":{
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				}
-			}
 		};
 	</script>   
 	
-	<script src="../build/1/spine.js"></script>
+	<script src="http://repo.wsu.edu/spine/1/spine.min.js"></script>
 	
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -80,7 +42,7 @@
 
 </head>
 
-<body>
+<body class="">
 
 <!-- WRAPPING -->
 <div id="jacket">
@@ -94,22 +56,19 @@
 		<div class="column one">
 
 			<article>
-				<h1>Heading using the h1tag</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet porttitor enim, et porttitor sem auctor ac. Aliquam posuere facilisis tempus. Phasellus consectetur eu risus non dignissim. Mauris suscipit, nulla quis eleifend rhoncus, felis ligula euismod ligula, in pulvinar eros quam sed neque. Integer enim mauris, eleifend id tellus ut, laoreet rhoncus eros. Proin ultricies suscipit mi eget placerat. Quisque ultrices ultricies sem non varius.</p>
-			
-			<p>Nulla leo mi, vestibulum ut ornare nec, gravida at odio. Ut dignissim molestie velit. Etiam quis porta orci, id congue lacus. Nam quis elit rutrum eros mollis venenatis. Ut volutpat arcu in interdum hendrerit. Pellentesque at diam elit. Praesent turpis metus, tincidunt nec consectetur ut, porta vitae odio. Sed urna metus, tincidunt ac elementum euismod, adipiscing in nunc. Mauris fringilla feugiat nunc, at imperdiet arcu interdum sed. Aliquam malesuada ornare libero, a euismod ligula laoreet posuere.</p>
-			
-			<ul>
-				<li>Sed bibendum vel arcu vel aliquam.</li>
-				<li>Donec sodales iaculis lobortis. Praesent ac feugiat sem.</li>
-				<li>Duis non commodo dui.</li>
-				<li>Integer consectetur erat et dignissim porttitor.</li>
-				<li>Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</li>
-			</ul>
-			
-			<p>Vivamus cursus nec nibh nec ullamcorper. Nulla consequat ipsum et erat volutpat, non fringilla massa ultrices. Phasellus placerat sem in nibh vehicula lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ut ligula in odio pharetra pretium. Pellentesque auctor euismod magna dictum suscipit. Nam euismod, ipsum in mattis imperdiet, elit mi accumsan tellus, eu accumsan lorem dui rhoncus felis. Fusce eleifend placerat est, eget consectetur lorem dignissim et.</p>
-			
-			<p>Morbi gravida magna magna. Aliquam erat volutpat. Sed enim sem, laoreet a nisi sit amet, mattis venenatis est. Curabitur imperdiet, nibh et sagittis feugiat, nunc purus faucibus lacus, sodales auctor ipsum lorem eu lectus. Integer aliquet placerat metus, ut rhoncus augue congue quis. Duis feugiat augue nec elementum faucibus. Nam tincidunt dui elementum magna pretium luctus. Aenean fringilla lectus nulla, sit amet mollis neque tristique eu. Pellentesque justo ligula, auctor quis viverra vitae, accumsan vel nisl. Sed bibendum vel arcu vel aliquam. Donec sodales iaculis lobortis. Praesent ac feugiat sem. Duis non commodo dui. Integer consectetur erat et dignissim porttitor. Quisque convallis sodales mauris, sed commodo eros bibendum vitae.</p>
+				<article class="post-15 page type-page status-publish hentry" id="post-15">
+	<header class="article-header">
+		<h1 class="article-title">The Spine Framework</h1>
+	</header>
+	<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
+	<h3>concept</h3>
+	<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
+	<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
+	<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
+	<h3>timeline</h3>
+	<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
+	<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
+</article>
 
 			</article>
 
@@ -118,7 +77,7 @@
 		<div class="column two">
 		
 			<aside>
-				<section>
+					<section>
 	<h2>Sidebar</h2>
 	<ul>
 		<li>Fight, fight, fight for Washington State! Win the victory!</li>
@@ -162,8 +121,8 @@
 	
 </section><!--/#wsu-actions-->
 
-<section class="spine-navigation">
-
+<section id="spine-navigation" class="spine-navigation">
+	
 	<nav class="spine-sitenav">
 <!-- Your navigation list here
 	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
@@ -181,9 +140,9 @@
 			<li>
 				<a href="#">Kinds of responsive behavior</a>
 				<ul>
-					<li><a href="/test/fluidGrid.html">The Spine can be fluid and flex</a></li>
-					<li><a href="/test/fixedGrid.html">It can be fixed and fold</a></li>
-					<li><a href="/test/hybridGrid.html">Or a hybrid of a little of this and of that</a></li>
+					<li><a href="/test/tests/fluidGrid.html">The Spine can be fluid and flex</a></li>
+					<li><a href="/test/tests/fixedGrid.html">It can be fixed and fold</a></li>
+					<li><a href="/test/tests/hybridGrid.html">Or a hybrid of a little of this and of that</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -191,12 +150,12 @@
 	<li>
 		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
 		<ul>
-			<li><a href="/test/overlyLinked.html">Overly Linked</a></li>
-			<li><a href="/test/overlyLong.html">Overly Long</a></li>
+			<li><a href="/test/tests/overlyLinked.html">Overly Linked</a></li>
+			<li><a href="/test/tests/overlyLong.html">Overly Long</a></li>
 		</ul>
 	</li>
-	<li><a href="/test/layouts.html">Available Layouts</a></li>
-	<li><a href="/test/columns.html">Columns</a></li>
+	<li><a href="/test/tests/layouts.html">Available Layouts</a></li>
+	<li><a href="/test/tests/columns.html">Columns</a></li>
 </ul>
 
 </nav>

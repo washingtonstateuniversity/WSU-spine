@@ -145,7 +145,7 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_markup : {
+			markup : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'spine.html',
 				options : {
@@ -298,7 +298,7 @@ module.exports = function(grunt) {
 								'copy',
 								'includereplace',
 								'preprocess:html',
-								'preprocess:tu_markup'
+								'preprocess:markup'
 								]);	
 	
 	grunt.registerTask('dev', ['jshint',

@@ -16,19 +16,6 @@
 #binder {
 	position: relative;
 	}	
-#switches button {
-	width: auto;
-	text-shadow: -1px -1px 1px rgba(0,0,0,0.3);
-	text-shadow: none;
-	border-width: 1px;
-	border-style: solid;
-	box-shadow: none;
-	border-color: #d7dadb #b5babe #b5babe #d7dadb;
-	padding: 3px 6px;
-	}
-#switches button:active {
-	border-color: #b5babe #d7dadb #d7dadb #b5babe;
-	}	
 
 #grid {
 	display: none;
@@ -167,17 +154,6 @@ main:not(.wireframe) .wireframe-only {
 .sidebar .column.two li:last-of-type {
 	border-bottom: none;
 	}
-	
-.thirds.gutter .column {
-   background-color: white; 
-   border: none;
-   }
-.thirds.gutter .column article {
-	padding: 0px;
-	background: #f2f4f5;
-	}
-
-.gutter article p { opacity: .3em; }
 	
 #binder main .note::after {
 	color: black;
@@ -395,7 +371,7 @@ pre code {
 	
 	<dl class="spine-wireframe">
 		<dt>under the hood</dt>
-		<dd><button onclick="$('main').toggleClass('wireframe');">framework</button></dd>
+		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
 	</dl>
 				
 </aside>
