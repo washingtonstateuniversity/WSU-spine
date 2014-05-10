@@ -343,6 +343,29 @@ $divisions: 'twelfths','fifteenths';
 /* I.4.2 Spineless Units
 -------------------------------------------------------- */
 /* twelfths */
+
+@each $count, $name in $counter {
+	@if $count <= 24 {
+		$width: 66*$count;
+		// @if $count == '01' { $plurality: 'count'; }
+		// @else { $plurality: 'counts'; }
+		.#{$name}-twelfths, .twelfths-#{$count} { width: #{$width}px; }
+		.#{$name}-twelfths-max, .twelfths-#{$count}-max { max-width: #{$width}px; }
+		.#{$name}-twelfths-tall, .twelfths-#{$count}-tall { height: #{$width}px; }
+		}
+	}
+
+.fluid {
+	
+	$percentage: 8.333333%;
+	@each $count, $name in $counter {
+	@if $count <= 12 {
+			 .#{$name}-twelfths, .twelfths-#{$count} { width: #{$percentage}; }
+			$percentage: 8.333333% + $percentage;
+			}
+		}
+	}
+
 /* Fifteenths */
 .one-fifteenth { width: 66px; } .fluid .one-fifteenth { width: 6.66%; }
 .two-fifteenths { width: 132px; } .fluid .one-fifteenth { width: 13.33%; }
