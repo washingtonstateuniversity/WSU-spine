@@ -382,21 +382,26 @@ $divisions: 'twelfths','fifteenths';
 	}
 
 /* Fifteenths */
-.one-fifteenth { width: 66px; } .fluid .one-fifteenth { width: 6.66%; }
-.two-fifteenths { width: 132px; } .fluid .one-fifteenth { width: 13.33%; }
-.three-fifteenths, .one-fifth { width: 198px; } .fluid .one-fifteenth { width: 20%; }
-.four-fifteenths { width: 264px; } .fluid .one-fifteenth { width: 26.66%; }
-.five-fifteenths { width: 330px; } .fluid .one-fifteenth { width: 33.33%; }
-.six-fifteenths, .two-fifths { width: 396px; } .fluid .one-fifteenth { width: 40%; }
-.seven-fifteenths { width: 462px; } .fluid .one-fifteenth { width: 46.66%; }
-.eight-fifteenths { width: 528px; } .fluid .one-fifteenth { width: 53.33%; }
-.nine-fifteenths, .three-fifths { width: 594px; } .fluid .one-fifteenth { width: 60%; }
-.ten-fifteenths { width: 660px; } .fluid .one-fifteenth { width: 66.66%; }
-.eleven-fifteenths { width: 726px; } .fluid .one-fifteenth { width: 72.33%; }
-.twelve-fifteenths, .four-fifths { width: 792px; } .fluid .one-fifteenth { width: 80%; }
-.thirteen-fifteenths { width: 858px; } .fluid .one-fifteenth { width: 86.66%; }
-.fourteen-fifteenths { width: 924px; } .fluid .one-fifteenth { width: 92.33%; }
-.fifteen-fifteenths, .five-fifths { width: 990px; } .fluid .one-fifteenth { width: 100%; }
+
+@each $count, $name in $counter {
+	@if $count <= 15 {
+		$width: 66*$count;
+		.#{$name}-fifteenths, .fifteenths-#{$count} { width: #{$width}px; }
+		.#{$name}-fifteenths-max, .fifteenths-#{$count}-max { max-width: #{$width}px; }
+		.#{$name}-fifteenths-tall, .fifteenths-#{$count}-tall { height: #{$width}px; }
+		}
+	}
+
+.fluid {
+	
+	$percentage: 6.6666667%;
+	@each $count, $name in $counter {
+	@if $count <= 15 {
+			 .#{$name}-fifteenths, .fifteenths-#{$count} { width: #{$percentage}; }
+			$percentage: 6.6666667% + $percentage;
+			}
+		}
+	}
 
 /* I.4.3 Spineless
 -------------------------------------------------------- */
