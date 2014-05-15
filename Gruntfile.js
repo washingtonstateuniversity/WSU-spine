@@ -50,7 +50,8 @@ module.exports = function(grunt) {
 				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
 				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
 				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
-				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' }
+				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' },
+				{ src: 'styles/sass/opensans.scss', dest: 'styles/opensans.css' }
 				]
 			},
 		},
