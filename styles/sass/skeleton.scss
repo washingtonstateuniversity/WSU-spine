@@ -173,6 +173,7 @@ section {
 -------------------------------------------------------- */
 .row {
 	width: 100%;
+	max-width: 792px;
 	}
 .row .column {
 	position: relative;
@@ -212,7 +213,7 @@ xx.recto.verso {
 .fifteenths .rebound,
 .fifths .rebound { width: 990px; }
 
-$layouts: 'single','halves','thirds','sidebar','sideright','sideleft','quarters','eighths';
+$layouts: 'single','halves','thirds','sidebar','sideright','sideleft','triptych','quarters','eighths';
 
 /* single */
 .row.single .column {
@@ -426,7 +427,7 @@ $spacing: $default, $wide;
 .guttered.wide { padding-left: 4em; padding-right: 4em; }
 
 .single.gutter .column { padding-left: 2em; padding-right:  2em; } 
-.single.gutter.wide .column { padding-left: 4em; padding-right:  4em; } 
+.single.gutter.wide .column { padding-left: 4em; padding-right:  4em; }
 
 .sidebar.gutter .column:nth-of-type(odd),
 .halves.gutter .column:nth-of-type(odd) { padding-left: 2em; padding-right:  1em; } 
@@ -621,8 +622,8 @@ input[type="button"]:hover {
 	border-width: 0px 2px 2px 0px;
 	}
 
-.button:active,
-button:active,
+.button:active, .button.active,
+button:active, button.active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active,

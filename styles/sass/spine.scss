@@ -899,7 +899,7 @@ main {
 	position: relative;
 	}
 
-#spine {
+#spine  {
 
 	background-color: $gray-er;
 	
@@ -915,7 +915,7 @@ main {
 
 	@include vellum($gray-lightest);
 
-	.spine-sitenav a,
+	.spine-sitenav a, 
 	.spine-search-tab button {
 		color: $gray;
 		}
@@ -932,23 +932,21 @@ main {
 	.spine-sitenav li.dogeared > a {
 		color: $crimson;
 		}
-	.spine-search-tab.opened button,
-	.spine-search-tab.opened button:hover,
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-light;
+		color: $gray-lighter;
 		}
-	.spine-actions-tabs li.opened button,
-	.spine-actions-tabs li button:hover,
-	.spine-actions-tabs li.opened button:hover {
+	.spine-actions-tabs .opened button,
+	.spine-actions-tabs button:hover,
+	.spine-actions-tabs .opened button:hover {
 		color: $gray-light;
 		}
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
-		color: $gray;
+		color: $gray; 
 		}
-	.spine-actions-tabs li.opened,
-	.spine-actions-tabs li.opened:hover,
+	.spine-actions-tabs .opened,
+	.spine-actions-tabs .opened:hover,
 	.spine-actions section {
 		background-color: $gray-lightest;
 		}
@@ -957,6 +955,9 @@ main {
 		}
 	.spine-search-tab button {
 		color: $gray-light;
+		}
+	.spine-search-tab button:hover {
+		color: $gray; 
 		}
 
 &.lightest {
@@ -972,12 +973,14 @@ main {
 	@include vellum($gray-lightest);
 
 	.spine-sitenav a,
-	.spine-offsitenav a:hover {
+	.spine-offsitenav a:hover,
+	.spine-search-tab button {
 		color: $gray-dark;
 		}
-	.spine-actions-tabs li.opened button,
+	.spine-sitenav a:hover {
+		color: $crimson;
+		}
 	.spine-actions-tabs li button,
-	.spine-actions-tabs li.opened button:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray-lighter;
@@ -986,29 +989,27 @@ main {
 	.spine-global-links {
 		border-color: $gray-lightly;
 		}
-	.spine-search-tab.opened button,
-	.spine-search-tab.opened button:hover {
-		color: $gray-dark;
-		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-light;
+		color: lighten($gray-light,2%);
 		}
 	.spine-actions-tabs button:hover,
-	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
 		color: $gray;
-		} 
-	.spine-sitenav a:hover,
-	.spine-sitenav li.dogeared > a {
-		color: $crimson;
+		}
+	.spine-search-tab:not(.opened) button {
+		color: $gray-light;
+		}
+	.spine-search-tab:not(.opened) button:hover {
+		color: $gray;
 		}
 	.spine-actions-tabs li.opened,
 	.spine-actions-tabs li.opened:hover,
 	.spine-actions section {
 		background-color: white;
 		}
+	
 			
 	}
 	
@@ -1024,40 +1025,40 @@ main {
 
 	@include vellum($gray-lightly);
 
+	.spine-actions-tabs button,
+	.spine-social-channels a:hover,
+	.spine-social-channels a,
+	.spine-footer small a {
+		color: $gray-lighter;
+		}
 	.spine-sitenav a,
 	.spine-offsitenav a:hover {
 		color: $gray-darker;
 		}
-	.spine-actions-tabs li.opened button,
-	.spine-actions-tabs li button,
-	.spine-actions-tabs li.opened button:hover,
-	.spine-social-channels .directory-channel a:hover,
-	.spine-social-channels a,
-	.spine-footer small a {
-		color: $gray-light;
-		}
 	.spine-sitenav ul li,
 	.spine-global-links {
-		border-color: $gray-lighter;
-		}
-	.spine-search-tab.opened button,
-	.spine-search-tab.opened button:hover {
-		color: $gray-darker;
+		border-color: lighten($gray-lighter,2%);
 		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray;
+		color: $gray-light;
 		}
 	.spine-actions-tabs button:hover,
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
-		color: $gray-dark;
-		} 
+		color: $gray;
+		}
+	.spine-search-tab button {
+		color: $gray-light;
+		}
+	.spine-search-tab button:hover {
+		color: $gray; 
+		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: $crimson;
-		}
+		} 
 	
 	}
 
@@ -1073,40 +1074,49 @@ main {
 
 	@include vellum($gray-lighter);
 	
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-gray-graydarker.svg');
+		}
+	
 	button#shelve {
 		background-image: url('//repo.wsu.edu/spine/1/icons/menu-white.svg');
 		}
 
-	.spine-sitenav a,
-	.spine-offsitenav a:hover {
-		color: $gray-darker;
-		}
-	.spine-actions-tabs li.opened button,
+	.spine-actions-tabs .opened button,
 	.spine-actions-tabs button,
-	.spine-actions-tabs li.opened button:hover,
+	.spine-actions-tabs .opened button:hover,
 	.spine-social-channels .directory-channel a:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray-light;
 		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
+		color: $gray-darker;
+		}
 	.spine-sitenav ul li,
 	.spine-global-links {
 		border-color: $gray-light;
 		}
-	.spine-search-tab.opened button,
 	.spine-search-tab.opened button:hover {
 		color: $gray-darkest;
 		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-dark;
+		color: $gray;
 		}
 	.spine-actions-tabs button:hover,
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
+		color: $gray-darker;
+		}
+	.spine-search-tab button {
+		color: lighten($gray-darker,25%); /* 3% */
+		}
+	.spine-search-tab button:hover {
 		color: $gray-darkest;
-		} 
+		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: $crimson;
@@ -1127,7 +1137,7 @@ main {
 	@include vellum($gray-light);
 	
 	#wsu-signature {
-		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-gray-white.svg');
 		}
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
@@ -1136,34 +1146,39 @@ main {
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
 		}
-	nav.spine-sitenav a,
-	nav.spine-offsitenav a:hover {
-		color: $gray-lightest;
-		}
-	.spine-actions li.opened button,
-	.spine-actions li button,
-	.spine-actions li.opened button:hover,
+	.spine-actions .opened button,
+	.spine-actions button,
+	.spine-actions .opened button:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray-lighter;
+		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
+		color: $gray-lightly;
 		}
 	.spine-sitenav ul li,
 	.spine-global-links {
 		border-color: $gray-lighter;
 		}
-	.spine-search-tab.opened button,
-	.spine-search-tab.opened button:hover {
-		color: $gray-darker;
-		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-lightly;
+		color: lighten($gray-lighter,2%);
 		}
 	.spine-actions-tabs button:hover,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
+		color: $gray-lightly;
+		}
+	.spine-search-tab:not(.opened) button {
+		color: $gray-lightly;
+		}
+	.spine-search-tab:not(.opened) button:hover {
 		color: $gray-lightest;
-		} 
+		}
+	.spine-social-channels .twitter-channel a:hover {
+		color: $twitter-light;
+		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: white;
@@ -1184,7 +1199,7 @@ main {
 	@include vellum($gray);
 	
 	#wsu-signature {
-		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-graydark-graylighter.svg');
 		}
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
@@ -1193,36 +1208,41 @@ main {
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
 		}
-	.spine-sitenav a,
-	.spine-offsitenav a:hover {
-		color: $gray-lightly;
-		}
-	.spine-actions li.opened button,
-	.spine-actions li button,
-	.spine-actions li.opened button:hover,
+	.spine-actions .opened button,
+	.spine-actions button,
+	.spine-actions .opened button:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: darken($gray-dark, 2%);
+		}
+	.spine-sitenav a,
+	.spine-offsitenav a:hover,
+	.spine-search-tab button {
+		color: $gray-lightly;
 		}
 	.spine-sitenav ul li,
 	.spine-global-links {
 		border-color: $gray-dark;
 		}
-	.spine-search-tab.opened button,
-	.spine-search-tab.opened button:hover {
-		color: $gray-darker;
+	.spine-offsitenav a {
+		color: darken($gray-darker,4%);
 		}
-	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-lighter;
+		color: darken($gray-dark, 8%);
 		}
-	.spine-actions-tabs button:hover,
+	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
 		color: $gray-lightly;
-		} 
-	.facebook-channel a:hover {
-		color: $facebook-lightblue;
+		}
+	.spine-search-tab button {
+		color: $gray-darker;
+		}
+	.spine-search-tab button:hover {
+		color: $gray-darkest;
+		}
+	.spine-social-channels .facebook-channel a:hover {
+		color: $facebook-light;
 		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
@@ -1244,7 +1264,7 @@ main {
 	@include vellum($gray-dark);
 	
 	#wsu-signature {
-		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-lighter.svg');
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-7d868c-graylightly.svg');
 		}
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg');
@@ -1257,12 +1277,12 @@ main {
 	.spine-offsitenav a:hover {
 		color: $gray-lightly;
 		}
-	.spine-actions li.opened button,
-	.spine-actions li button,
-	.spine-actions li.opened button:hover,
+	.spine-actions .opened button,
+	.spine-actions button,
+	.spine-actions .opened button:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
-		color: $gray-light;
+		color: darken($gray-light,6%);
 		}
 	.spine-sitenav ul li,
 	.spine-global-links {
@@ -1276,11 +1296,17 @@ main {
 	.spine-global-links a {
 		color: $gray-light;
 		}
-	.spine-actions-tabs button:hover,
-	.dark .spine-sitenav a,
+	.spine-actions-tabs :not(.opened) button:hover,
+	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover,
 	.spine-social-channels li[class*="-channel"] a:hover {
+		color: $gray-lightly;
+		}
+	.spine-search-tab button {
+		color: darken($gray-lighter,4%);
+		}
+	.spine-search-tab button:hover {
 		color: $gray-lightly;
 		}
 	
@@ -1302,7 +1328,10 @@ main {
 		}
 	
 	@include vellum(darken($gray-darker, 3%));
-
+	
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-gray-graylighter.svg');
+		}
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
 		}
@@ -1314,9 +1343,9 @@ main {
 	.spine-offsitenav a:hover {
 		color: $gray-lighter;
 		}
-	.spine-actions li.opened button,
-	.spine-actions li button,
-	.spine-actions li.opened button:hover,
+	.spine-actions .opened button,
+	.spine-actions button,
+	.spine-actions .opened button:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray;
@@ -1333,11 +1362,17 @@ main {
 	.spine-global-links a {
 		color: $gray-light;
 		}
-	.spine-actions-tabs button:hover,
+	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover{
 		color: $gray-lightly;
+		}
+	.spine-search-tab button {
+		color: $gray-light;
+		}
+	.spine-search-tab button:hover {
+		color: $gray-lighter;
 		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
@@ -1358,6 +1393,9 @@ main {
 	
 	@include vellum($gray-darkest);
 	
+	#wsu-signature {
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-gray-graylighter.svg');
+		}
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg');
 		}
@@ -1365,13 +1403,11 @@ main {
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
 		}
-	nav.spine-sitenav a,
-	nav.spine-offsitenav a:hover {
+	.spine-sitenav a,
+	.spine-offsitenav a:hover {
 		color: $gray-lighter;
 		}
-	.spine-actions li.opened button,
-	.spine-actions li button,
-	.spine-actions li.opened button:hover,
+	.spine-actions button,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray;
@@ -1380,23 +1416,25 @@ main {
 	.spine-global-links {
 		border-color: $gray-dark;
 		}
-	.spine-search-tab.opened button,
-	.spine-search-tab.opened button:hover {
-		color: $gray-darker;
-		}
 	.spine-offsitenav a,
 	.spine-global-links a {
 		color: $gray-light;
 		}
-	.spine-actions-tabs button:hover,
+	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover{
 		color: $gray-lightly;
 		}
+	.spine-search-tab:not(.opened) button {
+		color: $gray-light;
+		}
+	.spine-search-tab:not(.opened) button:hover {
+		color: $gray-lighter;
+		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
-		color: $crimson;
+		color: $crimson-er;
 		}
 	
 	}
@@ -1423,15 +1461,15 @@ main {
 	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-white.svg');
 		}
-	nav.spine-sitenav a {
+	.spine-sitenav a {
 		color: $gray-lighter;
 		}
-	.spine-actions li.opened button,
-	.spine-actions li button,
-	.spine-actions li.opened button:hover,
+	.spine-actions-tabs button,
 	.spine-social-channels a,
-	footer small a {
-		color: $crimson-darkest;
+	.spine-footer small a {
+		xcolor: black;
+		color: $crimson-dark;
+		color: darken($crimson-dark,4%);
 		}
 	.spine-sitenav ul li,
 	.spine-global-links {
@@ -1439,12 +1477,20 @@ main {
 		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $crimson-darkest;
+		color: darken($crimson-darkest,6%);
+		color: black;
 		}
-	.spine-actions-tabs button:hover,
+	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover,
 	.spine-social-channels li[class*="-channel"] a:hover {
+		color: black;
+		color: $crimson-darkest;
+		}
+	.spine-search-tab:not(.opened) button {
+		color: darken($crimson-darkest,10%);
+		}
+	.spine-search-tab:not(.opened) button:hover {
 		color: black;
 		}
 	.spine-sitenav a:hover,

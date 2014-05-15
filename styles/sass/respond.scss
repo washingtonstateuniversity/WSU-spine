@@ -717,32 +717,40 @@ main {
 	}
 
 @media
+	
 	only screen
 	and ( min-width : 990px )
+	
 	{
 
-#binder.fluid.folio {
+#binder.fluid {
 	width: 100%;
 	}		
-#binder.fluid.folio main {
+#binder.fluid main {
 	width: auto;
 	margin: 0px 0px 0px 198px;
 	}
-#binder.fluid.folio.max-1188 { max-width: 1188px; }
-#binder.fluid.folio.max-1386 { max-width: 1386px; }
-#binder.fluid.folio.max-1584 { max-width: 1584px; }
-#binder.fluid.folio.max-1782 { max-width: 1782px; }
-#binder.fluid.folio.max-1980 { max-width: 1980px; }
+	
+#binder.fluid {
+	&.max-1188 { max-width: 1188px; }
+	&.max-1386 { max-width: 1386px; }
+	&.max-1584 { max-width: 1584px; }
+	&.max-1782 { max-width: 1782px; }
+	&.max-1980 { max-width: 1980px; }
+	}
+	
 	}
 
 /* !LARGE FORMAT -> 1188 */
 @media
+	
 	only screen
 	and ( min-width : 1188px )
 	and ( min-device-width : 990px )
+	
 	{
 
-#binder:not(.fluid).folio {
+#binder:not(.fluid) {
 	&.max-1188,
 	&.max-1386,
 	&.max-1584,
@@ -752,7 +760,7 @@ main {
 		}
 	}
 		
-#binder:not(.fluid).folio {
+#binder:not(.fluid) {
 	&.max-1188 main,
 	&.max-1386 main,
 	&.max-1584 main,
@@ -762,40 +770,45 @@ main {
 		}
 	}
 
-#binder.folio {
-	&.max-1188 main .row,
-	&.max-1386 main .row,
-	&.max-1584 main .row,
-	&.max-1782 main .row,
-	&.max-1980 main .row {
+#binder {
+	&.max-1188 .row,
+	&.max-1386 .row,
+	&.max-1584 .row,
+	&.max-1782 .row,
+	&.max-1980 .row {
 		max-width: 990px;
 		}
 	}
 		
 	}
 
-/* !LARGE FORMAT -> 1386 */
+/* XLARGE -> 1386 */
 @media
+	
 	only screen
 	and ( min-width : 1386px )
-	and ( min-device-width : 990px )
+	
 	{
 
-#binder:not(.fluid).folio.max-1386,
-#binder:not(.fluid).folio.max-1584,
-#binder:not(.fluid).folio.max-1782,
-#binder:not(.fluid).folio.max-1980 { width: 1386px; }
+#binder:not(.fluid) {
+	&.max-1386,
+	&.max-1584,
+	&.max-1782,
+	&.max-1980 {
+		width: 1386px;
+		}
+	}
 
 #binder:not(.fluid).folio.max-1386 main,
 #binder:not(.fluid).folio.max-1584 main,
 #binder:not(.fluid).folio.max-1782 main,
 #binder:not(.fluid).folio.max-1980 main { width: 1188px; }
 
-#binder.folio {
-	&.max-1386 main .row,
-	&.max-1584 main .row,
-	&.max-1782 main .row,
-	&.max-1980 main .row {
+#binder {
+	&.max-1386 .row,
+	&.max-1584 .row,
+	&.max-1782 .row,
+	&.max-1980 .row {
 		max-width: 1188px;
 		}
 	}
@@ -806,7 +819,6 @@ main {
 @media
 	only screen
 	and ( min-width : 1584px )
-	and ( min-device-width : 990px )
 	{
 #binder:not(.fluid).folio.max-1584,
 #binder:not(.fluid).folio.max-1782,
@@ -817,9 +829,9 @@ main {
 #binder:not(.fluid).folio.max-1980 main { width: 1386px; }
 
 #binder.folio {
-	&.max-1584 main .row,
-	&.max-1782 main .row,
-	&.max-1980 main .row {
+	&.max-1584 .row,
+	&.max-1782 .row,
+	&.max-1980 .row {
 		max-width: 1386px;
 		}
 	}
@@ -828,20 +840,25 @@ main {
 	
 /* !LARGE FORMAT -> 1782  */
 @media
+	
 	only screen
 	and ( min-width : 1782px )
-	and ( min-device-width : 990px )
+	
 	{
 
-#binder:not(.fluid).folio.max-1782,
-#binder:not(.fluid).folio.max-1980 { width: 1782px;	}
+#binder:not(.fluid) {
+	&.max-1782,
+	&.max-1980 {
+		width: 1782px;
+		}
+	}
 
 #binder:not(.fluid).folio.max-1782 main,
 #binder:not(.fluid).folio.max-1980 main { width: 1584px; }
 
 #binder.folio {
-	&.max-1782 main .row,
-	&.max-1980 main .row {
+	&.max-1782 .row,
+	&.max-1980 .row {
 		max-width: 1584px;
 		}
 	}
@@ -850,16 +867,17 @@ main {
 
 /* !LARGE FORMAT -> 1980  */
 @media
+	
 	only screen
 	and ( min-width : 1980px )
-	and ( min-device-width : 990px )
+	
 	{
 
 #binder:not(.fluid).folio.max-1980 { width: 1980px;	}
 #binder:not(.fluid).folio.max-1980 main { width: 1782px; }
 	
 #binder.folio {
-	&.max-1980 main .row {
+	&.max-1980 .row {
 		max-width: 1782px;
 		}
 	}
