@@ -231,7 +231,8 @@ section {
 /* I.4.0 GRID
 -------------------------------------------------------- */
 .row {
-  width: 100%; }
+  width: 100%;
+  max-width: 792px; }
 
 .row .column {
   position: relative;
@@ -1125,8 +1126,8 @@ input[type="button"]:hover {
   border-color: #8d959a;
   border-width: 0px 2px 2px 0px; }
 
-.button:active,
-button:active,
+.button:active, .button.active,
+button:active, button.active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active,
