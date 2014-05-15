@@ -59,6 +59,7 @@ main:not(.wireframe) .wireframe-only {
 .wireframe .row.single::before { content: "single"; }
 .wireframe .row.halves::before { content: "halves"; }
 .wireframe .row.sidebar::before { content: "sidebar"; }
+.wireframe .row.sideleft::before { content: "sideleft"; }
 .wireframe .row.triptych::before { content: "triptych"; }
 .wireframe .row.thirds::before { content: "thirds"; }
 .wireframe .row.margin::before { content: "margin"; }
@@ -265,6 +266,7 @@ pre code {
 
 	// 
 	$('.spine-behavior button').on('click', function() {
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		var grid = $(this).attr('data-grid');
 		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
 		return false;
@@ -273,8 +275,10 @@ pre code {
 	// Change Spine color
 	$('.spine-colors button').on('click', function() {
 		var color = $(this).attr('data-color');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		// $('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
 		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		
 		$('#spine').addClass(color);
 		return false;
 	});
@@ -282,6 +286,7 @@ pre code {
 	// Change Spine color
 	$('.spine-transparency button').on('click', function() {
 		var transparency = $(this).attr('data-transparency');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
 		$('#spine').addClass(transparency);
 		return false;
@@ -290,6 +295,7 @@ pre code {
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
 		$('#binder').addClass('folio').addClass(max);
 		return false;
@@ -298,9 +304,10 @@ pre code {
 	// Change Campus
 	$('.spine-campuses button').on('click', function() {
 		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
-		$('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		return false;
 	});
 	
@@ -332,8 +339,6 @@ pre code {
 		<dd><button data-transparency="vellum-05">5</button></dd> 
 		<dd><button data-transparency="vellum-10">10</button></dd>
 		<dd><button data-transparency="vellum-15">15</button></dd>
-		<dd><button data-transparency="vellum-20">20</button></dd>
-		<dd><button data-transparency="vellum-25">25</button></dd>
 	</dl>
 	
 	<dl class="spine-column-options clearfix">
@@ -344,6 +349,7 @@ pre code {
 	
 	<dl class="spine-campuses clearfix">
 		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
+		<dd><button data-campus="system">System</button></dd>
 		<dd><button data-campus="spokane">Spokane</button></dd>
 		<dd><button data-campus="tricities">Tri-Cities</button></dd>
 		<dd><button data-campus="vancouver">Vancouver</button></dd>
