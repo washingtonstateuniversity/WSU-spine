@@ -184,7 +184,7 @@
 	height: 49px;
 	}
 	
-@include horizontal-signatures(':not(.fluid)')
+@include signatures('horizontal',':not(.fluid)')
 	
 	}
 
@@ -398,7 +398,7 @@
 
 /* Header Colors and Signatures */
 @include header-colors;
-@include horizontal-signatures('.fluid');
+@include signatures('horizontal','.fluid');
 
 	}
 
@@ -464,7 +464,7 @@
 	margin-left: 0px;
 	}
 
-@include vertical-signatures('.fixed');
+@include signatures('horizontal','.fixed');
 
 }
 
@@ -663,7 +663,7 @@ main {
 
 /* Header Colors and Signatures */
 @include header-colors;
-@include horizontal-signatures('.fluid');
+@include signatures('horizontal','.fluid');
 
 	}
 
