@@ -81,20 +81,20 @@
 <!-- @if NODE_ENV == 'PRODUCTION' -->
 	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
 <!-- @endif -->
-	
+
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
-	
+
 	<!-- DOCS -->
 	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="help" href="http://brand.wsu.edu">
-	
+
 	<!-- ANALYTICS -->
 
 </head>
 
-<body class="<!-- @if layouts='true' --> wireframe <!-- @endif -->">
+<body class="<!-- @if demo='true' --> wireframe <!-- @endif -->">
 
 <!-- WRAPPING -->
 <div id="jacket">
@@ -103,7 +103,7 @@
 <!-- CONTENT -->
 <main>
 	<!-- Responsive Sections -->
-	<section class="row sidebar">
+	<section class="row side-right">
 
 		<div class="column one">
 
@@ -120,7 +120,7 @@
 		<div class="column two">
 		
 			<aside>
-				<!-- @if layouts!='true' -->
+				<!-- @if demo!='true' -->
 					@@include('blocks/aside-fightsong.html', {})
 				<!-- @endif -->
 				<!-- @if markup!='true' -->
@@ -132,15 +132,15 @@
 
 	</section>
 	
-	<!-- @if layouts='true' -->
-		@@include('content/layouts.html', {})
+	<!-- @if demo='true' -->
+		@@include('content/demo.html', {})
 	<!-- @endif -->
 	
 </main>
 <!-- /CONTENT -->
 
 <!-- SPINE -->
-<div id="spine" class="spine-column shelved  <!-- @if cropped='true' --> cropped <!-- @endif -->">
+<div id="spine" class="spine-column shelved bleed  <!-- @if cropped='true' --> cropped <!-- @endif -->">
 <div id="glue" class="spine-glue">
 
 <header class="spine-header">
