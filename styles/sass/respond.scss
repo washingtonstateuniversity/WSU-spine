@@ -33,6 +33,15 @@
 .size-xlarge-only {
 	display: none !important;
 	}
+	
+.folio-only,
+.min-1188-only, .max-1188-only,
+.min-1386-only, .max-1386-only,
+.min-1584-only, .max-1584-only,
+.min-1782-only, .max-1782-only,
+.min-1980-only, .max-1980-only {
+	display: none !important;	
+	}
 
 /* Show */
 .size-small .size-small-only,

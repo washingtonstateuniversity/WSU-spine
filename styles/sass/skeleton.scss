@@ -212,59 +212,68 @@ section {
 $layouts: 'single','halves','thirds','sidebar','sideright','sideleft','triptych','quarters','eighths';
 
 /* single */
-.row.single .column {
-	width: 792px;	
-	display: block;
-	}
+
+	   .row.single .column { width: 792px; }
+.fluid .row.single .column { width: 100%; }
+
+       .column.singled { width: 792px !important; }
+.fluid .column.singled { width: 100% !important; }
 
 /* halves */
-.row.halves .column { width: 396px; }
+
+	   .row.halves .column { width: 396px; }
 .fluid .row.halves .column { width: 50%; }
+
+	   .column.half { width: 396px !important; }
+.fluid .column.half { width: 50% !important; }
 	
 /* thirds */
-.row.thirds .column { width: 264px; }
+
+	   .row.thirds .column { width: 264px; }
 .fluid .row.thirds .column { width: 33%; }
 .fluid .row.thirds .column.two { width: 34%; }
 
+	   .column.third { width: 264px !important; }
+.fluid .column.third { width: 33.33333% !important; }
+
 /* quarters */
-.row.quarters .column { width: 198px; }
+
+	   .row.quarters .column { width: 198px; }
 .fluid .row.quarters .column { width: 25%; }
 
-/* eighths */
-.row.eighths .column { width: 99px; }
-.hybrid .row.eighths .column,
-.fluid .row.eighths .column { width: 12.5%; }
+		.column.quarter { width: 198px !important; }
+.fluid 	.column.quarter { width: 25% !important; }
 
-/* ninths */
-.row.ninths .column { width: 99px; }
-.hybrid .row.ninths .column,
-.fluid .row.ninths .column { width: 12.5%; }
-
-
-
-
-:not(.fixed) .halves .two-twelfths { width: 33%; }
-:not(.fixed) .halves .four-twelfths { width: 67%; }
-	
 /* Triptych */
-.row.triptych .column { width: 198px; }
-.row.triptych .column.two { width: 396px; }
 
-/* Margin */
-.row.margin .column.one { width: 594px; }
-.row.margin .column.two { width: 198px; }
-.hybrid .row.margin .column.one,
-.fluid .row.margin .column.one { width: 75%; }
-.hybrid .row.margin .column.two,
-.fluid .row.margin .column.two { width: 25%; }
+.fixed 	.row.triptych .column { width: 198px; }
+.fixed 	.row.triptych .column.two { width: 396px; }
+		.row.triptych .column { width: 25%; }
+		.row.triptych .column.two { width: 50%; }
 
-/* Sidebar, Sideleft */
-.row.sidebar .column.one, .row.sideleft .column.two { width: 528px; }
-.row.sidebar .column.two, .row.sideleft .column.one { width: 264px; }
-.fluid .row.sidebar .column.one,
-.fluid .row.sideleft .column.two { width: 67%; }
-.fluid .row.sidebar .column.two,
-.fluid .row.sideleft .column.one { width: 33%; }
+
+/* Margin - Right & Left */
+
+.fixed 	.row.margin-right .column.one,
+.fixed 	.row.margin-left .column.two { width: 594px; }
+.fixed 	.row.margin-right .column.two,
+.fixed 	.row.margin-left .column.one { width: 198px; }
+		.row.margin-right .column.one,
+		.row.margin-left .column.two { width: 75%; }
+		.row.margin-right .column.two,
+		.row.margin-left .column.one { width: 25%; }
+
+/*  Side - Right & Left */
+
+.fixed 	.row.side-right .column.one,
+.fixed 	.row.side-left .column.two { width: 528px; }
+.fixed 	.row.side-right .column.two,
+.fixed 	.row.side-left .column.one { width: 264px; }
+		.row.side-right .column.one,
+		.row.side-left .column.two { width: 67%; }
+		.row.side-right .column.two,
+		.row.side-left .column.one { width: 33%; }
+
 
 /* I.4.1 NESTING
 -------------------------------------------------------- */
@@ -297,6 +306,8 @@ $layouts: 'single','halves','thirds','sidebar','sideright','sideleft','triptych'
 .row .column.row.single .column {
 	width: 792px;
 	}
+
+
 	
 /* I.4.1 Clearing
 -------------------------------------------------------- */
