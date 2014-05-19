@@ -1217,10 +1217,6 @@
   #binder.fluid {
     width: 100%; }
 
-  #binder.fluid main {
-    width: auto;
-    margin: 0px 0px 0px 198px; }
-
   #binder.fluid.max-1188 {
     max-width: 1188px; }
   #binder.fluid.max-1386 {
