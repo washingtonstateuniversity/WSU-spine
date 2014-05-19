@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Page Title | Unit or Department at WSU</title>
+	
+	<!-- FAVICON -->
+	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
+	
+	<!-- STYLESHEETS -->
+	<!--<link href="../../build/1/spine.css" rel="stylesheet" type="text/css" />-->
+	<link href="/styles/styles.css" rel="stylesheet" type="text/css" />
+	<!-- RESPOND -->
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	
+	<!-- SCRIPTS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	
+	
+	<script type="text/javascript">
+		var spineoptions={
+			search:{
+				providers:{
+					local:{
+						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+						dataType: "jsonp",
+						featureClass: "P",
+						style: "full",
+						maxRows: 12
+					} 
+				},
+				result:{
+					appendTo: "#spine-shortcuts",
+					showRelated:true,
+					relatedHeader:"<hr/>",
+					minLength: 2, 
+					template:"<li>%s</li>"
+				}
+			},
+			social:{
+				provider:"WSU_share",
+				script_url:"//repo.wsu.edu/wsu_share/1/",
+				channels:[
+					"facebook",
+					"twitter",
+					"Pintrest"
+				]
+			},
+			analytics:{ 
+				"google":{
+					analytics:{
+						"account_id":"UA-XXXXX-XX"
+					},
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				},
+				"bing":{
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				}
+			}
+		};
+	</script>   
+	
+	<script src="../../build/1/spine.js"></script>
+	<!-- COMPATIBILITY -->
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
+
+	<!-- DOCS -->
+	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
+	<link type="text/html" rel="help" href="http://brand.wsu.edu">
+
+	<!-- ANALYTICS -->
+
+</head>
+
+<body class=" wireframe">
+
+<!-- WRAPPING -->
+<div id="jacket">
+<div id="binder" class=" hybrid">
+
+<!-- CONTENT -->
+<main>
+	<!-- Responsive Sections -->
+	<section class="row side-right">
+
+		<div class="column one">
+
+			<article>
+				<article class="post-15 page type-page status-publish hentry" id="post-15">
+	<header class="article-header">
+		<h1 class="article-title">The Spine Framework</h1>
+	</header>
+	<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
+	<h3>concept</h3>
+	<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
+	<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
+	<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
+	<h3>timeline</h3>
+	<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
+	<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
+</article>
+
+			</article>
+
+		</div><!--/column-->
+
+		<div class="column two">
+		
+			<aside>
+					<style>
+
+.wireframe .row .column {
+	min-height: 198px;
+	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+	}
+.inset {
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+	}
+	
+/* GRID */
+
+/* ------------------- */
+
+#binder {
+	position: relative;
+	}	
+
+#grid {
+	display: none;
+	}
+.grid #grid {
+	position: absolute;
+	width: 990px;
+	left: 0;
+	top: 0;
+	display: block;
+	height: 3000px;
+	z-index: 99999;
+	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid.png') repeat-y left top;
+	}
+.grid12 #grid {
+	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid12.png') repeat-y left top;
+	}
+	
+main:not(.wireframe) .wireframe-only {
+	display: none;
+	}
+
+.wireframe section.row::before {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .5;
+	position: absolute;
+	right: 0px;
+	width: 75px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	}
+.wireframe .row.eighths::before { content: "eighths"; }
+.wireframe .row.twelfths::before { content: "twelfths"; }
+.wireframe .row.quarters::before { content: "quarters"; }
+.wireframe .row.single::before { content: "single"; }
+.wireframe .row.halves::before { content: "halves"; }
+.wireframe .row.sidebar::before { content: "sidebar"; }
+.wireframe .row.sideleft::before { content: "sideleft"; }
+.wireframe .row.triptych::before { content: "triptych"; }
+.wireframe .row.thirds::before { content: "thirds"; }
+.wireframe .row.margin::before { content: "margin"; }
+
+	
+/* Column Numbering */
+.wireframe .column:not(.note)::after { 
+	color: rgba(255,255,255,0.5);
+	background-color: rgba(182,188,191,0.5);
+	padding: 5px 10px;
+	position: absolute;
+	right: 0; bottom: 0;
+	}
+.wireframe .row:not(.nest) .column.one::after { content:"1"; }
+.wireframe .row:not(.nest) .column.two::after { content:"2"; }
+.wireframe .row:not(.nest) .column.three::after { content:"3"; }
+.wireframe .row:not(.nest) .column.four::after { content:"4"; }
+.wireframe .row:not(.nest) .column.five::after { content:"5"; }
+.wireframe .row:not(.nest) .column.six::after { content:"6"; }
+.wireframe .row:not(.nest) .column.seven::after { content:"7"; }
+.wireframe :not(.nest) .column.eight::after { content:"8"; }
+.wireframe :not(.nest) .column.nine::after { content:"9"; }
+.wireframe :not(.nest) .column.ten::after { content:"10"; }
+.wireframe :not(.nest) .column.eleven::after { content:"11"; }
+.wireframe :not(.nest) .column.twelve::after { content:"12"; }
+
+.wireframe .row .column.one-twelfth::after { content:"1/12"; }
+.wireframe .row .column.two-twelfths::after { content:"2/12"; }
+.wireframe .row .column.three-twelfths::after { content:"3/12"; }
+.wireframe .row .column.six-twelfths::after { content:"6/12"; }
+
+/* Column Measurements */
+.column::before { 
+	color: black;
+	padding: 2px 4px;
+	position: absolute;
+	opacity: .2;
+	font-size: 10px;
+	top: 0;	left: 0;
+	width: 95%;
+	margin: 0px auto;
+	text-align: center;
+	}
+.wireframe .single .column::before { content:"\2190 792 \2192"; }
+.wireframe .sidebar .column.one::before { content:"\2190 528 \2192"; }
+.wireframe .sidebar .column.two::before,
+.wireframe .thirds .column::before { content:"\2190 264 \2192"; }
+.wireframe .margin .column.one::before { content:"\2190 594 \2192"; }
+.wireframe .margin .column.two::before,
+.wireframe .quarters .column::before,
+.wireframe .triptych .column.one::before,
+.wireframe .triptych .column.three::before,
+.wireframe .halves .halves .column::before { content:"\2190 198 \2192"; }
+.wireframe .halves .column::before,
+.wireframe .triptych .column.two::before { content:"\2190 396 \2192"; }
+.wireframe .halves .quarters .column::before { content:"\2190 99 \2192"; }
+.wireframe .quarters .thirds .column::before { content:"\2190 66 \2192"; }
+.wireframe .halves .thirds .column::before { content:"\2190 132 \2192"; }
+
+.wireframe .row .row::after {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .2;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	bottom: 50%;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	margin-left: -25px;
+	width: 50px;
+	height: 20px;
+	xbottom: 0px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	content:"nested";
+	}
+	
+.sidebar .column.two ul {
+	padding: 0px; margin: 0px;
+	}
+.sidebar .column.two li {
+	list-style: none;
+	padding: 10px 0px;
+	margin: 0px;
+	}
+.sidebar .column.two li:last-of-type {
+	border-bottom: none;
+	}
+	
+#binder main .note::after {
+	color: black;
+	padding: 6px 10px;
+	position: absolute;
+	font-size: 12px;
+	opacity: .8;
+	top: 5px;
+	left: 5px;
+	width: auto;
+	height: auto;
+	text-align: left;
+	display: none;
+	z-index: 999631;
+	line-height: 1em;
+	background: white;
+	visibility: visible !important;
+	}
+#binder main .note:hover::after {
+	display: block;
+	}
+section > big {
+	padding: 100px 100px 10px 100px;
+	font-size: 2em;
+	line-height: 1.1em;
+	display: block;
+	}
+#unprecedented .column.one {
+	padding-top: 100px;
+	}
+#unprecedented .column.two {
+	position: relative;
+	}
+.size-lt-small #controls dl:first-of-type {
+	margin-top: 150px;
+	}
+
+#controls dl {
+	margin-top: 15px;
+	padding-top: 5px;
+	}
+#controls dl ~ dl {
+	border-top: 1px #D7DAD8 solid;
+	}
+#controls dl dt {
+	display: block;
+	}
+dt a:hover {
+	
+	}
+#switches dl dd {
+	display: block; float: left;
+	padding: 0px; margin: 0px 0px 2px 0px;
+	}
+#switches dl a.info {
+	float: right;
+	display: block;
+	xtext-indent: -9000px;
+	overflow: hidden;
+	position: relative;
+	color: white;
+	opacity: .3;
+	}
+#switches dl a.info::before {
+	font-family: "Iconography";
+	content: "\2139";
+	font-size: 1.4em;
+	color: #b5babe;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 16px;
+	width: 30px;
+	text-align: center;
+	}
+#switches dl a.info:hover::before {
+	color: #5e6a71;
+	}
+.spine-colors dd {
+	display: block;
+	float: left;
+	padding: 2px 0px;
+	xwidth: 33%;
+	}
+.spine-wireframe button::before {
+	content: "show ";
+	}
+.wireframe .spine-wireframe button::before {
+	content: "hide ";
+	}
+pre,code {
+	display: none;
+	}
+.wirefram pre, .wireframe code {
+	display: block;
+	}
+pre {
+	white-space: normal;
+	}
+pre code {
+	font-style: italic;
+	}
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+	// 
+	$('.spine-behavior button').on('click', function() {
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		var grid = $(this).attr('data-grid');
+		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
+		return false;
+	});
+	
+	// Change Spine color
+	$('.spine-colors button').on('click', function() {
+		var color = $(this).attr('data-color');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		// $('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
+		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		
+		$('#spine').addClass(color);
+		return false;
+	});
+	
+	// Change Spine color
+	$('.spine-transparency button').on('click', function() {
+		var transparency = $(this).attr('data-transparency');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
+		$('#spine').addClass(transparency);
+		return false;
+	});
+	
+	// Folio Sizes
+	$('.spine-sizes button').on('click', function() {
+		var max = $(this).attr('data-max');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
+		$('#binder').addClass('folio').addClass(max);
+		return false;
+	});
+	
+	// Change Campus
+	$('.spine-campuses button').on('click', function() {
+		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		var campus = $(this).attr('data-campus');
+			campus = campus + '-signature';
+		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		return false;
+	});
+	
+	});
+
+</script>
+
+<section>
+
+<aside id="switches">
+	
+	<dl class="spine-colors clearfix">
+		<dt>spine colors <a href="#spine-colors" class="info">info</a></dt>
+		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd> 
+		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
+		<dd><button data-color="lightly" class="lightly-back gray-dark-text inset">Lightly</button></dd>
+		<dd><button data-color="lighter" class="lighter-back gray-text">Lighter</button></dd>
+		<dd><button data-color="light" class="light-back lightly-text">Light</button></dd>
+		<dd><button data-color="gray" class="gray-back lighter-text">Gray</button></dd>
+		<dd><button data-color="dark" class="dark-back lighter-text">Dark</button></dd>
+		<dd><button data-color="darker" class="darker-back light-text">Darker</button></dd>
+		<dd><button data-color="darkest" class="darkest-back light-text">Darkest</button></dd>
+		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
+	</dl>
+	
+	<dl class="spine-transparency clearfix">
+		<dt>spine transparency <a href="#spine-transparency" class="info">info</a></dt>
+		<dd><button data-transparency="">0</button></dd> 
+		<dd><button data-transparency="vellum-05">5</button></dd> 
+		<dd><button data-transparency="vellum-10">10</button></dd>
+		<dd><button data-transparency="vellum-15">15</button></dd>
+	</dl>
+	
+	<dl class="spine-column-options clearfix">
+		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
+		<dd><button onclick="$('#spine').removeClass('cropped').toggleClass('bleed');">bleeding</button></dd>
+		<dd><button onclick="location.href = '#cropping-bleeding';">cropped</button></dd> 
+	</dl>
+	
+	<dl class="spine-campuses clearfix">
+		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
+		<dd><button data-campus="system">System</button></dd>
+		<dd><button data-campus="spokane">Spokane</button></dd>
+		<dd><button data-campus="tricities">Tri-Cities</button></dd>
+		<dd><button data-campus="vancouver">Vancouver</button></dd>
+		<dd><button data-campus="globalcampus">Global Campus</button></dd>
+		<dd><button data-campus="extension">Extension</button></dd>
+	</dl>
+	
+	<dl class="spine-behavior clearfix">
+		<dt>grid behavior <a href="#responsive" class="info">info</a></dt>
+		<dd><button data-grid="fluid">fluid</button></dd>
+		<dd><button data-grid="fixed">fixed</button></dd>
+		<dd><button data-grid="hybrid">hybrid</button></dd>
+	</dl>
+	
+	<dl class="spine-sizes clearfix ">
+		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
+		<dd><button data-max="max-990">default</button></dd>
+		<dd><button data-max="max-1188">1188</button></dd>
+		<dd><button data-max="max-1386">1386</button></dd>
+		<dd><button data-max="max-1584">1584</button></dd>
+		<dd><button data-max="max-1782">1782</button></dd>
+		<dd><button data-max="max-1980">1980</button></dd>
+	</dl>
+	
+	<dl class="spine-wireframe">
+		<dt>under the hood</dt>
+		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
+	</dl>
+				
+</aside>
+
+</section>
+
+
+			</aside>
+			
+		</div><!--/column-->
+
+	</section>
+	
+		<section id="spine-behavior" class="row side-left gutter wide equalize">
+
+	<div class="column one gray-back">
+		<br>
+	</div>
+	
+	<div class="column two gray-lightly-back xxunbound xxrecto">
+		<article class="marginalize">
+		<header><h2>consistency and flexibility</h2></header>
+		<p>The framework makes every effort to achieve consistent positioning, graphics, and behavior within the Spine's vertical column while at the same time preserving the greatest degree of flexibility besides. For example, with a switch, the Spine supports three kinds of commonly used grids: <strong>Fluid</strong>, <strong>Fixed</strong>, and <strong>Hybrid</strong>. Feel free to click one above and observe the page's behavior as you shrink your window size. The default is "hybrid".</p>
+		</article>
+	</div>
+	
+</section>
+
+<section id="responsive" class="row halves equalize">
+	<div class="column one">
+	<article class="marginalize">
+	<header><h2>responsive</h2></header>
+	<p><b>Big brother, meet your kid brother, the smartphone. We love him too.</b> The Spine framework provides a responsive grid that enables sites to flex and fold to fit whatever device. The default width is comprised of fifteen 66 pixel columns, the main content area being twelve of those.</p>
+	</article>
+	</div>
+	<div class="column two" style="height: 350px;">
+		<div class="gray-back" style="height: 33%;"><br></div>
+		<div class="gray-light-back" style="height: 33%;"><br></div>
+		<div class="gray-lighter-back" style="height: 34%;"><br></div>
+	</div>
+</section>
+
+<section id="text-columns" class="row thirds gutter equalize">
+	<div class="column one">
+		<article class="gray-lightest-back">
+		<h2>Gutters</h2>
+		<strong>The skeleton grid eschews padding and margins by default to allow for seamless designs. However, adding a "gutter" class, as in this section, provides gutters for equally spaced column interior content (30px).</strong>
+		<hr><button class="centered" onclick="$('#text-columns').toggleClass('wide');">Wide/Narrow</button><hr>
+		<p>Vestibulum cursus ultricies tellus, sed fermentum mauris mattis vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam condimentum ligula ut dictum scelerisque. Aenean mattis erat ac tortor accumsan, vitae tincidunt dui feugiat. Vestibulum hendrerit metus id justo tristique, a pharetra nibh lobortis. Sed eu dolor nec metus blandit egestas ac at elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus ac mollis mauris. Sed aliquet ipsum in dapibus euismod.</p></article>
+	</div>
+	<div class="column two">
+		<article class="gray-lightest-back">
+		<h2>Margins</h2>
+		<p>Class naming logic... Passive and active, object and subject.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor neque, scelerisque quis mauris quis, fringilla eleifend est.</p>
+		<hr><button class="centered" onclick="$('#text-columns').toggleClass('marginalize');">Marginalize</button><hr>
+		<p>Phasellus purus leo, commodo sit amet ipsum ac, lacinia auctor nulla. Nam sed nunc fermentum, condimentum ligula sit amet, facilisis urna. Vestibulum pharetra dui turpis, vitae elementum dui gravida in. Quisque ut lectus aliquet, lobortis risus vitae, placerat metus. Duis nisl eros, mattis non fermentum eget, luctus sed tortor. Nunc tempus nulla eget erat ornare, quis mattis turpis tincidunt. Vivamus semper elit at metus consequat, vitae dapibus urna posuere. Nunc iaculis arcu sed ante mollis, vitae varius orci rhoncus. Nullam luctus tristique pretium. Ut tincidunt, velit ullamcorper aliquet molestie, nisl lectus interdum felis, quis blandit nisi tortor non elit. Ut sit amet ipsum consectetur, tempor tellus at, ultrices elit. Sed a mauris enim. Sed vitae odio vestibulum massa vulputate lacinia.</p></article>
+	</div>
+	<div class="column three">
+		<article class="gray-lightest-back">
+		<h2>Equalizing</h2>
+		<p>These columns have also been equalized with the "equalize" class to allow for aligning background images. Were using "border-box" box-sizing on our columns to enable padding without breaking our responsive math. Nam a dolor diam. Sed bibendum sit amet arcu id vehicula. Duis dictum rhoncus velit vel porttitor. Nullam scelerisque fermentum massa. Proin suscipit facilisis tincidunt. Aenean et tempor augue. Nullam gravida feugiat diam, vel blandit turpis ornare et. Sed sed arcu quis augue ultricies porta id vitae ante. Donec at ante sed mauris mollis rutrum eu sit amet lectus. <hr> .equalize makes columns equally tall... or short</p></article>
+	</div>
+</section>
+
+<section class="row quarters">
+	<div class="column one center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg" width="150px"></div>
+	<div class="column two gray-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-lightest.svg" width="150px"></div>
+	<div class="column three crimson-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-vertical-lightest.svg" width="150px"></div>
+	<div class="column four gray-lightly-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-vertical.svg" width="150px"></div>
+	<div class="column five gray-lightly-back center absolutely three-twelfths-tall size-xlarge-only"><img src="http://repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical.svg" width="150px"></div>
+	<div class="column five row single">
+		<div class="column one">
+			<article>
+			<header><h2>campus ready</h2></header>
+			<p>The signatures for each urban campus and for other top level units are pre-baked into the Spine, both the vertical signature for large devices and the horizontal for small. <pre>The campus signatures are activated by adding, for example , a <code>.wsu-vancouver-signature</code> or <code>.wsu-tricities-signature</code> class to html or body.</pre></p>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section id="spine-colors" class="row triptych reverse equalize gutter wide">
+	<style>
+		#spine-palettes dd { padding: .25em .5em; margin-bottom: .25em; }
+		#spine-palettes dd:hover { color: white; background-color: #A6192E; }
+	</style>
+	<div class="column one">
+		<br>
+	</div>
+	<div class="column two">
+		<article>
+			<header><h2>spine colors</h2></header>
+			<p><b>A chameleon of sorts</b>, to complement the style and tone of your design, the spine can be easily switched between several sets of tints and shades within our primary colors of gray and crimson.</p> <code><strong>Reverse Order</strong><br>
+			Notice that the column order at full size is 3 -> 2 -> 1. A .reverse class on the parent section switches the float direction to right at full-size, but flips it back left at mobile sizes for an alternative ordering. One day this will be supplanted by flexbox order.</code>
+		</article>
+	</div>
+	<div class="column three">
+		<br>
+	</div>
+</section>
+
+<section id="spine-sizes" class="row sidebar equalize marginalize gutter wide hidden">
+	
+	<div class="column one" style="">
+		<article>
+		<header><h2>your goldilocks</h2></header>
+		<p></p>
+		</article>
+	</div>
+	<div class="column two">
+		
+	</div>
+	
+</section>
+
+<section id="nesting" class="row halves reverse marginalize gutter wide">
+	
+	<div class="twelve-twelfths-max">
+	<div class="column one">
+		<article>
+		<header><h2>nesting and grouping</h2></header>
+		<p>Related articles and images can be nested so that they hang together in groups when the page flexes and folds for mobile. Notice how these nested color blocks hang together if you pull your browser window to a narrow width.</p>
+		</article>
+	</div>
+	<div class="column two row thirds padless">
+		<div class="column one orange-back four-twelfths-tall"></div>
+		<div class="column two green-back four-twelfths-tall"></div>
+		<div class="column three blue-back four-twelfths-tall"></div>
+		<!--<div class="column four yellow-back three-twelfths-tall"></div>-->
+	</div>
+	</div>
+	
+</section>
+
+<section id="resolution" class="row side-right gutter wide">
+	<style>
+	#resolution .column.two {
+		background: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg') center center no-repeat;
+		background-size: auto; 
+		}
+	</style>
+	<article class="padless">
+	<div class="column one marginalized">
+		<header><h2>resolution independence</h2></header>
+		<p><b>Those whiskers are ticklish at life size.</b> The Spine is built entirely with vector based graphics so that it is prepared for high resolution displays and zooming.</p>
+	</div>
+	<div class="column two three-twelfths-tall min-height" style="xxoverflow: hidden;">
+		<figure></figure>
+	</div>
+	</article>
+</section>
+
+<section class="row halves  wireframe-only">
+	<div class="column one">
+
+	</div>
+	<div class="column two row">
+		<div class="column four-twelfths"></div>
+		<div class="column two-twelfths"></div>
+	</div>
+</section>
+
+<section id="tool-belt" class="row thirds equalize marginalize gutter wide">
+	
+	<div class="column one">
+	</div>
+	
+	<div class="column two">
+		<article>
+		<header><h2>tool belt included</h2></header>
+		<p>Out-of-the-box, the Spine includes local and WSU-wide <strong>search</strong>, a consistent presentation of <strong>contact</strong> information, easy <strong>sharing</strong> via the most popular social networks, and a <strong>print</strong> tool that automatically formats the page for letter-sized paper. <span class="wireframe-only"><code>Search solution can be customized with alternate sources or even replaced entirely.</code></span></p>
+		</article>
+	</div>
+	
+	<div class="column three">
+		<br>
+	</div>
+	
+</section>
+
+	
+</main>
+<!-- /CONTENT -->
+
+<!-- SPINE -->
+<div id="spine" class="spine-column shelved bleed">
+<div id="glue" class="spine-glue">
+
+<header class="spine-header">
+	<a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a>
+</header>
+
+<!-- ACTIONS -->
+<section id="wsu-actions" class="spine-actions">
+
+	<!-- Tabs -->
+	<ul id="wsu-actions-tabs" class="spine-actions-tabs clearfix">
+		<li id="wsu-search-tab" class="spine-search-tab" class="closed"><button>Search</button></li>
+		<li id="wsu-contact-tab" class="spine-contact-tab" class="closed"><button>Contact</button></li>
+		<li id="wsu-share-tab" class="spine-share-tab" class="closed"><button>Share</button></li>
+		<li id="wsu-print-tab" class="spine-print-tab" class="closed"><button>Print</button></li>
+	</ul>
+	
+	<!-- Actions generated by spine.js here -->
+	
+</section><!--/#wsu-actions-->
+
+<section id="spine-navigation" class="spine-navigation">
+	
+	<nav class="spine-sitenav">
+<!-- Your navigation list here
+	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
+	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
+	• Replace example navigation list below
+-->
+
+<ul>
+	<li><a href="/">Site Home</a></li>
+	<li>
+		<a href="link">About</a>
+		<ul>
+			<li><a href="">The first link in a list of links</a></li>
+			<li class="current"><a href="link">A secondary link</a></li>
+			<li>
+				<a href="#">Kinds of responsive behavior</a>
+				<ul>
+					<li><a href="/test/tests/fluidGrid.html">The Spine can be fluid and flex</a></li>
+					<li><a href="/test/tests/fixedGrid.html">It can be fixed and fold</a></li>
+					<li><a href="/test/tests/hybridGrid.html">Or a hybrid of a little of this and of that</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
+		<ul>
+			<li><a href="/test/tests/overlyLinked.html">Overly Linked</a></li>
+			<li><a href="/test/tests/overlyLong.html">Overly Long</a></li>
+		</ul>
+	</li>
+	<li><a href="/test/tests/layouts.html">Available Layouts</a></li>
+	<li><a href="/test/tests/columns.html">Columns</a></li>
+</ul>
+
+</nav>
+	<nav class="spine-offsitenav">
+	<ul>
+		<li><a href="http://www.example.com">Offsite Link</a></li>
+		<li><a href="http://fonts.wsu.edu">Another</a></li>
+	</ul>
+</nav>
+
+</section><!-- #navigation -->
+
+<!-- Social and Global Links -->
+<footer class="spine-footer">
+	<nav id="wsu-social-channels" class="spine-social-channels">
+		<ul>
+			<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>
+			<li class="twitter-channel"><a href="http://twitter.com/wsupullman">Twitter</a></li>
+			<li class="youtube-channel"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+			<li class="directory-channel"><a href="http://social.wsu.edu">Directory</a></li>
+			<!-- You can replace default social channels with your own. Available channels are:
+				• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
+				• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
+				• Maximum number of channels is four
+			-->
+		</ul>
+	</nav>
+	<nav id="wsu-global-links" class="spine-global-links">
+		<ul>
+			<li class="zzusis-link"><a href="http://zzusis.wsu.edu/">Zzusis</a></li>
+			<li class="access-link"><a href="http://access.wsu.edu/">Access</a></li>
+			<li class="policies-link"><a href="http://policies.wsu.edu/">Policies</a></li>
+			<li class="copyright-link"><a href="http://copyright.wsu.edu">&copy;</a></li>
+		</ul>
+	</nav>	
+</footer>
+
+</div><!--/glue-->
+</div><!--/spine-->
+<!-- /SPINE -->
+
+</div><!--/cover-->
+</div><!--/jacket-->
+<!-- /WRAPPING -->
+
+	<!-- 
+	This would be an automated output for SEO and Rich data.  You could hand code this but it's best to leave it to your
+	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
+	or something that will work to let you display one thing to a user but another to the search engines.
+	-->
+	<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+	<span itemprop="department"  content="University Unit"></span> 
+	<span itemprop="name" content="Washington State University"></span> 
+	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="location" content="French Administration Building"></span>
+		<span itemprop="streetAddress" content="PO Box 555555"></span>
+		<span itemprop="addressLocality" content="Pullman"></span>
+		<span itemprop="addressRegion" content="WA"></span>
+		<span itemprop="postalCode" content="99163"></span>
+	</div>
+	<span itemprop="logo" content="http://www.example.com/logo.png" ></span>
+	<span itemprop="telephone" content="(509) 335-3564"></span>
+	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
+	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
+</div>
+	
+</body>
+</html>
