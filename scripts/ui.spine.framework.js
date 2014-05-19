@@ -45,7 +45,7 @@
 			wsu_actions:$("#wsu-actions"),
 		},
 		framework_create: function(){
-			var self,contactHtml,propmap={},spread,verso,page,recto,recto_margin,verso_width,
+			var self,contactHtml,propmap={},spread,verso,page,para,recto,recto_margin,verso_width,
 				svg_imgs,viewport_ht,spine,glue,main;
 			//alert("framework_create");
 			self=this;//hold to preserve scop
@@ -99,7 +99,12 @@
 					if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
 					/* Broken Binding */ if ($("#binder").hasClass("broken")) { self._get_globals("main").css("width",recto); }
 					verso_width = verso + self._get_globals("main").width();
-					$(".unbound.recto").css("width",recto).css("margin-right",-(recto_margin));
+					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
+					/* @jeremybass, help. Would like to be able to unbind any element, but this multiplies exponentially on resize. Would need to grab initial size and then keep that fixed for every time function runs. */
+					$(".unbound.element.recto").each( function() {
+						para = $(this).width();
+						$(this).css("width",para+recto_margin).css("margin-right",-(recto_margin));
+						});
 					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
 					$(".unbound.verso.recto").css("width",spread);
 				}
