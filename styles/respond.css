@@ -1214,9 +1214,6 @@
   float: left; }
 
 @media only screen and (min-width: 990px) {
-  #binder.fluid {
-    width: 100%; }
-
   #binder.fluid.max-1188 {
     max-width: 1188px; }
   #binder.fluid.max-1386 {
