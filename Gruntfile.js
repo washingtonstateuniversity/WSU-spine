@@ -43,18 +43,32 @@ module.exports = function(grunt) {
 				dest: 'build/<%= pkg.build_version %>/spine.min.js'
 			}
 		},
+		/*
 		sass: {
-			dev: {
-				files: [
-				// Files to compile
-				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
-				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
-				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
-				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' },
-				{ src: 'styles/sass/opensans.scss', dest: 'styles/opensans.css' }
-				]
-			},
-		},
+					dev: {
+						files: {
+						// Files to compile
+						'styles/skeleton.css': 'styles/sass/skeleton.scss',
+						'styles/colors.css': 'styles/sass/colors.scss' ,
+						'styles/respond.css': 'styles/sass/respond.scss',
+						'styles/spine.css': 'styles/sass/spine.scss',
+						'styles/opensans.css': 'styles/sass/opensans.scss'
+						}
+					},
+				},
+		*/
+		sass: {
+  			dev: {
+  				files: [
+ 				// Files to compile
+  				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
+  				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
+  				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
+  				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' },
+  				{ src: 'styles/sass/opensans.scss', dest: 'styles/opensans.css' }
+  				]
+  			},
+  		},
 		cssmin: {
 			combine: {
 				files: {
@@ -279,6 +293,7 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the "uglify" task.
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-include-replace');
+	// grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');

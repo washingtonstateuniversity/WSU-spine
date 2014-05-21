@@ -100,7 +100,6 @@
 					/* Broken Binding */ if ($("#binder").hasClass("broken")) { self._get_globals("main").css("width",recto); }
 					verso_width = verso + self._get_globals("main").width();
 					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
-					/* @jeremybass, help. Would like to be able to unbind any element, but this multiplies exponentially on resize. Would need to grab initial size and then keep that fixed for every time function runs. */
 					$(".unbound.element.recto").each( function() {
 						para = $(this).width();
 						$(this).css("width",para+recto_margin).css("margin-right",-(recto_margin));
