@@ -83,8 +83,7 @@
       font-size: 16px;
       width: 298px; }
     #binder:not(.fluid) #spine footer {
-      width: 242px;
-      padding-bottom: 50px; }
+      width: 242px; }
     #binder:not(.fluid) #spine nav ul li {
       line-height: 1.5em; }
     #binder:not(.fluid) #spine nav ul li.parent > a:after,
@@ -373,8 +372,6 @@
     #binder.fluid #spine nav ul li.parent > a:after,
     #binder.fluid #spine nav ul li.parent.opened > a:after {
       display: block; }
-    #binder.fluid #spine footer {
-      padding-bottom: 50px; }
     #binder.fluid #spine #glue > header {
       top: 0;
       left: 0;
@@ -855,13 +852,6 @@
       width: auto;
       margin-left: 0px; }
 
-  /*
-  main {
-  		width: 396px;
-  		margin: 0px;
-  		padding-top: 50px;
-  		}
-  */
   /* Logo */
   [class*="-signature"] #wsu-signature {
     background-size: 340px auto !important;
