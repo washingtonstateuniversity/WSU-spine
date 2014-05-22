@@ -99,7 +99,6 @@
       background: white; }
     #binder:not(.fluid) #spine.unshelved {
       -webkit-transition: left 0.1s ease-in-out;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
       left: 0; }
     #binder:not(.fluid) #spine.scanned header {
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
@@ -388,7 +387,6 @@
       height: 49px; }
     #binder.fluid #spine.unshelved {
       -webkit-transition: left 0.1s ease-in-out;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
       left: 0; }
     #binder.fluid #spine.scanned header {
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
