@@ -112,7 +112,9 @@
 
 				glue.css("min-height",viewport_ht);
 				spine.css("min-height",viewport_ht);
-				
+				if($(".spine-header").height()>50){
+					spine.removeClass("unshelved");
+				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
 				$(document).trigger("scroll");
 				
@@ -238,11 +240,11 @@
 					//console.log("SCROLLING || positionLock::" + positionLock);
 					//console.log("|---------------------------------------------");
 					
-						if( (scroll_dif>0?false:true) ){//down
-							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-						}else{//up
-							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-						}
+					if( (scroll_dif>0?false:true) ){//down
+						positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+					}else{//up
+						positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+					}
 					if( spine_ht>viewport_ht ){}
 					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
 					//console.log("SCROLLING || spine_ht::" + spine_ht);
