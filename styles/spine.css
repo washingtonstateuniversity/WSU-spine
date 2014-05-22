@@ -14,6 +14,17 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+#spine.bleed:before {
+  display: none;
+  height: 0px;
+  width: 0px; }
+
+#binder #spine.unshelved {
+  box-shadow: none; }
+
+#binder #spine.unshelved footer {
+  padding-bottom: 0; }
+
 #spine {
   font-size: 12px;
   width: 198px;
@@ -23,10 +34,6 @@
   position: fixed;
   bottom: 0;
   /* II.1.2 Cropped */ }
-  #spine #glue {
-    margin-top: 0px;
-    xxwidth: 198px;
-    position: relative; }
   #spine button {
     background-color: transparent;
     border: none;
@@ -54,16 +61,32 @@
     #spine.cropped footer {
       display: none; }
 
+#glue {
+  margin-top: 0px;
+  xxwidth: 198px;
+  position: relative; }
+
+#glue:before {
+  background-color: #FFFFFF;
+  content: " ";
+  min-height: 100%;
+  position: absolute;
+  display: none; }
+
+.bleed #glue:before {
+  left: -802px;
+  width: 1000px;
+  display: block; }
+.bleed.unshelved #glue:before {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  left: -702px; }
+
 #spine nav,
 #spine footer {
   margin-left: 1.75em;
   margin-right: 1.75em; }
 
-/* II.1.1 Cracked (Deprecated) */
-.size-lt-large #spine.cropped nav,
-.size-lt-large #spine.cropped footer {
-  display: block; }
-
+/* II.1.1 Spine Looseleaf */
 footer.looseleaf {
   padding-top: 10px; }
   footer.looseleaf nav,
@@ -689,14 +712,18 @@ main {
   position: relative; }
 
 #spine {
-  background-color: white; }
-  #spine.bleed:before {
-    content: " ";
-    background-color: white;
-    width: 1000px;
-    position: absolute;
-    min-height: 100%;
-    left: -1000px;
+  	/*
+  &.bleed:before {
+  		content: " ";
+  		background-color: white;
+  		width: 1000px;
+  		position: absolute;
+  		min-height: 100%;
+  		left: -1000px;
+  		background-color: $gray-er;
+  		}
+  */ }
+  #spine #glue {
     background-color: white; }
   #spine.vellum-05 {
     background-color: rgba(239, 240, 241, 0.95); }
@@ -752,9 +779,8 @@ main {
   #spine .spine-search-tab button:hover {
     color: #5e6a71; }
   #spine.lightest {
-    /* LIGHTEST #e6e8e9, rgb(230,232,233) */
-    background-color: #eff0f1; }
-    #spine.lightest.bleed:before {
+    /* LIGHTEST #e6e8e9, rgb(230,232,233) */ }
+    #spine.lightest #glue:before {
       background-color: #eff0f1; }
     #spine.lightest.vellum-05 {
       background-color: rgba(239, 240, 241, 0.95); }
@@ -805,9 +831,8 @@ main {
     #spine.lightest .spine-actions section {
       background-color: white; }
   #spine.lightly {
-    /* LIGHTLY #d7dadb, rgb(215 218 219) */
-    background-color: #d7dadb; }
-    #spine.lightly.bleed:before {
+    /* LIGHTLY #d7dadb, rgb(215 218 219) */ }
+    #spine.lightly #glue:before {
       background-color: #d7dadb; }
     #spine.lightly.vellum-05 {
       background-color: rgba(215, 218, 219, 0.95); }
@@ -856,9 +881,8 @@ main {
     #spine.lightly .spine-sitenav li.dogeared > a {
       color: #981e32; }
   #spine.lighter {
-    /* LIGHTER #b5babe, rgb(181 186 190) */
-    background-color: #b5babe; }
-    #spine.lighter.bleed:before {
+    /* LIGHTER #b5babe, rgb(181 186 190) */ }
+    #spine.lighter #glue:before {
       background-color: #b5babe; }
     #spine.lighter.vellum-05 {
       background-color: rgba(181, 186, 190, 0.95); }
@@ -914,9 +938,8 @@ main {
     #spine.lighter .spine-sitenav li.dogeared > a {
       color: #981e32; }
   #spine.light {
-    /* LIGHT #8b9399, rgb(139,147,153) */
-    background-color: #8d959a; }
-    #spine.light.bleed:before {
+    /* LIGHT #8b9399, rgb(139,147,153) */ }
+    #spine.light #glue:before {
       background-color: #8d959a; }
     #spine.light.vellum-05 {
       background-color: rgba(141, 149, 154, 0.95); }
@@ -971,9 +994,8 @@ main {
     #spine.light .spine-sitenav li.dogeared > a {
       color: white; }
   #spine.gray {
-    /* GRAY #5e6a71, rgb(94,106,113) */
-    background-color: #5e6a71; }
-    #spine.gray.bleed:before {
+    /* GRAY #5e6a71, rgb(94,106,113) */ }
+    #spine.gray #glue:before {
       background: #5e6a71; }
     #spine.gray.vellum-05 {
       background-color: rgba(94, 106, 113, 0.95); }
@@ -1030,9 +1052,8 @@ main {
     #spine.gray .spine-sitenav li.dogeared > a {
       color: white; }
   #spine.dark {
-    /* GRAY-DARK #383D42, rgb(75,85,90) */
-    background-color: #464e54; }
-    #spine.dark.bleed:before {
+    /* GRAY-DARK #383D42, rgb(75,85,90) */ }
+    #spine.dark #glue:before {
       background-color: #464e54; }
     #spine.dark.vellum-05 {
       background-color: rgba(70, 78, 84, 0.95); }
@@ -1090,9 +1111,8 @@ main {
     #spine.dark .spine-sitenav li.dogeared > a {
       color: white; }
   #spine.darker {
-    /* GRAY-DARKER #2a3033, rgb(42 48 51) */
-    background-color: #23282b; }
-    #spine.darker.bleed:before {
+    /* GRAY-DARKER #2a3033, rgb(42 48 51) */ }
+    #spine.darker #glue:before {
       background-color: #23282b; }
     #spine.darker.vellum-05 {
       background-color: rgba(35, 40, 43, 0.95); }
@@ -1149,9 +1169,8 @@ main {
     #spine.darker .spine-sitenav li.dogeared > a {
       color: white; }
   #spine.darkest {
-    /* GRAY-DARKEST #000, rgb 0,0,0 */
-    background-color: black; }
-    #spine.darkest.bleed:before {
+    /* GRAY-DARKEST #000, rgb 0,0,0 */ }
+    #spine.darkest #glue:before {
       background-color: black; }
     #spine.darkest.vellum-05 {
       background-color: rgba(0, 0, 0, 0.95); }
@@ -1203,9 +1222,8 @@ main {
     #spine.darkest .spine-sitenav li.dogeared > a {
       color: #c60c30; }
   #spine.crimson {
-    /* CRIMSON #981e32 */
-    background-color: #981e32; }
-    #spine.crimson.bleed:before {
+    /* CRIMSON #981e32 */ }
+    #spine.crimson #glue:before {
       background-color: #981e32; }
     #spine.crimson.vellum-05 {
       background-color: rgba(152, 30, 50, 0.95); }
