@@ -14,17 +14,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-#spine.bleed:before {
-  display: none;
-  height: 0px;
-  width: 0px; }
-
-#binder #spine.unshelved {
-  box-shadow: none; }
-
-#binder #spine.unshelved footer {
-  padding-bottom: 0; }
-
 #spine {
   font-size: 12px;
   width: 198px;

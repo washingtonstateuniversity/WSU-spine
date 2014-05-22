@@ -198,18 +198,11 @@ body {
 
 /* Layout
 -------------------------------------------------------- */
-html {
-  /* min-height: 100%; */ }
-
 body {
   color: #5e6a71;
   background-repeat: no-repeat;
   background-position: center top;
-  background-color: #f9f9f9;
-  /* min-height: 100%; */ }
-
-#jacket {
-  /* min-height: 100%; */ }
+  background-color: #f9f9f9; }
 
 #binder {
   width: 990px;
