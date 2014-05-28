@@ -751,7 +751,7 @@
 		}
 	}
 		
-#binder {
+#binder:not(.fluid) {
 	&.max-1188 main,
 	&.max-1386 main,
 	&.max-1584 main,
@@ -760,7 +760,7 @@
 		width: 990px;
 		}
 	}
-
+	
 #binder {
 	&.max-1188 .row,
 	&.max-1386 .row,
