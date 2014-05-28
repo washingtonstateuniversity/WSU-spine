@@ -610,16 +610,16 @@ html.lt-ie9 #spine footer {
       display: block;
       position: relative;
       text-transform: none; }
-    #spine .spine-social-channels ul li a:before {
-      font-family: "Spine-Icons";
-      position: absolute;
-      top: 0;
-      left: 0;
-      text-indent: 0;
-      text-align: center;
-      width: 30px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
+  #spine .spine-social-channels .spine-social-channels li a:before {
+    font-family: "Spine-Icons";
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 0;
+    text-align: center;
+    width: 30px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   #spine .spine-social-channels .spine-social-channels .facebook-channel a:before {
     content: "F"; }
   #spine .spine-social-channels .spine-social-channels .facebook-channel a:hover {
