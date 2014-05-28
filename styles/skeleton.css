@@ -275,7 +275,7 @@ section {
 .rebound {
   width: 792px; }
 
-.sidebar .rebound {
+.side-right .rebound {
   width: 594px; }
 
 .spineless .rebound,
@@ -941,22 +941,22 @@ section {
   padding-left: 4em;
   padding-right: 4em; }
 
-.sidebar.gutter .column:nth-of-type(odd),
+.side-right.gutter .column:nth-of-type(odd),
 .halves.gutter .column:nth-of-type(odd) {
   padding-left: 2em;
   padding-right: 1em; }
 
-.sidebar.gutter .column:nth-of-type(even),
+.side-right.gutter .column:nth-of-type(even),
 .halves.gutter .column:nth-of-type(even) {
   padding-left: 1em;
   padding-right: 2em; }
 
-.sidebar.gutter.wide .column:nth-of-type(odd),
+.side-right.gutter.wide .column:nth-of-type(odd),
 .halves.gutter.wide .column:nth-of-type(odd) {
   padding-left: 4em;
   padding-right: 2em; }
 
-.sidebar.gutter.wide .column:nth-of-type(even),
+.side-right.gutter.wide .column:nth-of-type(even),
 .halves.gutter.wide .column:nth-of-type(even) {
   padding-left: 2em;
   padding-right: 4em; }
