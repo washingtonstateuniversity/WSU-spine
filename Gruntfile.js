@@ -300,9 +300,9 @@ module.exports = function(grunt) {
 								'uglify',
 								'copy',
 								'includereplace',
-								'preprocess:html',
-								'preprocess:markup',
-								'preprocess:demo'
+								//'preprocess:html',
+								//'preprocess:markup',
+								//'preprocess:demo'
 								]);	
 	
 	grunt.registerTask('dev', ['jshint',
