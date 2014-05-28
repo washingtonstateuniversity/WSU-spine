@@ -41,13 +41,15 @@
     xxwidth: 198px; }
   #spine.cropped {
     xxfont-size: 12px;
+    height: 198px;
+    min-height: 198px;
     top: 0px; }
     #spine.cropped #glue {
       width: 198px;
       height: 198px;
       min-height: 198px;
       xxbox-shadow: 0px 0px 5px rgba(66, 74, 79, 0.5);
-      position: absolute; }
+      xxposition: absolute; }
     #spine.cropped nav,
     #spine.cropped footer {
       display: none; }
