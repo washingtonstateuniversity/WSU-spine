@@ -299,7 +299,7 @@ module.exports = function(grunt) {
 								'cssmin',
 								'uglify',
 								'copy',
-								'includereplace',
+								//'includereplace',
 								//'preprocess:html',
 								//'preprocess:markup',
 								//'preprocess:demo'
