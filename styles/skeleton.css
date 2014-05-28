@@ -1061,9 +1061,8 @@ ol + h1, ol + h2, ol + h3, ol + h4 {
 
 /* #Clearing
 -------------------------------------------------------- */
-/* Self Clearing */
-section.row:before,
-section.row:after,
+.row:before,
+.row:after,
 main:before,
 main:after,
 #binder:before,
@@ -1081,13 +1080,13 @@ main:after,
 
 #binder:after,
 main:after,
-section.row:after,
+.row:after,
 .clearfix:after,
 .rebound:after {
   clear: both; }
 
 main,
-section.row,
+.row,
 .rebound,
 .clearfix {
   zoom: 1; }

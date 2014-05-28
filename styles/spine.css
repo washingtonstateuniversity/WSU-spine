@@ -128,7 +128,8 @@ footer.looseleaf {
   display: block;
   text-indent: 120%;
   overflow: hidden;
-  white-space: nowrap; }
+  white-space: nowrap;
+  position: relative; }
 
 html.no-svg #wsu-signature {
   xxbackground-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png"); }
