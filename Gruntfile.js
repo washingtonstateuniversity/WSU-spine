@@ -43,7 +43,6 @@ module.exports = function(grunt) {
 				dest: 'build/<%= pkg.build_version %>/spine.min.js'
 			}
 		},
-		/*
 		sass: {
 		  			dev: {
 		  				files: [
@@ -56,7 +55,6 @@ module.exports = function(grunt) {
 		  				]
 		  			},
 		  		},
-		*/
 		cssmin: {
 			combine: {
 				files: {
@@ -148,8 +146,7 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			/*
-markup : {
+			markup : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'spine.html',
 				options : {
@@ -158,7 +155,6 @@ markup : {
 					}
 				}
 			},
-*/
 			demo : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'demo.html',
@@ -304,9 +300,9 @@ markup : {
 								'uglify',
 								'copy',
 								'includereplace',
-								//'preprocess:html',
-								//'preprocess:markup',
-								//'preprocess:demo'
+								'preprocess:html',
+								'preprocess:markup',
+								'preprocess:demo'
 								]);	
 	
 	grunt.registerTask('dev', ['jshint',
@@ -318,8 +314,7 @@ markup : {
 								'uglify',
 								'copy',
 								'includereplace',
-								/*
-'preprocess:html',
+								'preprocess:html',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
@@ -332,7 +327,6 @@ markup : {
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
 								'preprocess:demo'
-*/
 								]);
 		
 		
