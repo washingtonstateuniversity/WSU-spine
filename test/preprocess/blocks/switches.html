@@ -343,8 +343,8 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button onclick="$('#spine').removeClass('cropped').toggleClass('bleed');">bleeding</button></dd>
-		<dd><button onclick="location.href = '#cropping-bleeding';">cropped</button></dd> 
+		<dd><button onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleeding</button></dd>
+		<dd><button onclick="$('#spine').toggleClass('cropped'); $(this).toggleClass('active');">cropped</button></dd> 
 	</dl>
 	
 	<dl class="spine-campuses clearfix">
