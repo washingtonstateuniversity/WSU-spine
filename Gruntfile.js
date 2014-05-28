@@ -299,10 +299,10 @@ module.exports = function(grunt) {
 								'cssmin',
 								'uglify',
 								'copy',
-								//'includereplace',
-								//'preprocess:html',
-								//'preprocess:markup',
-								//'preprocess:demo'
+								'includereplace',
+								'preprocess:html',
+								'preprocess:markup',
+								'preprocess:demo'
 								]);	
 	
 	grunt.registerTask('dev', ['jshint',
