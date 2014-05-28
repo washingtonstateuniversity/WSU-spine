@@ -1214,10 +1214,10 @@
     max-width: 1980px; } }
 /* !LARGE FORMAT -> 1188 */
 @media only screen and (min-width: 1188px) and (min-device-width: 990px) {
-  #binder.max-1188, #binder.max-1386, #binder.max-1584, #binder.max-1782, #binder.max-1980 {
+  #binder:not(.fluid).max-1188, #binder:not(.fluid).max-1386, #binder:not(.fluid).max-1584, #binder:not(.fluid).max-1782, #binder:not(.fluid).max-1980 {
     width: 1188px; }
 
-  #binder:not(.fluid).max-1188 main, #binder:not(.fluid).max-1386 main, #binder:not(.fluid).max-1584 main, #binder:not(.fluid).max-1782 main, #binder:not(.fluid).max-1980 main {
+  #binder.max-1188 main, #binder.max-1386 main, #binder.max-1584 main, #binder.max-1782 main, #binder.max-1980 main {
     width: 990px; }
 
   #binder.max-1188 .row, #binder.max-1386 .row, #binder.max-1584 .row, #binder.max-1782 .row, #binder.max-1980 .row {
