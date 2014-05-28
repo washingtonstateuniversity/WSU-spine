@@ -157,17 +157,19 @@ body {
 	}
 main {
 	margin-left: 198px;
-	width: 792px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
-main.fluid {
-	width: auto;
+:not(.fluid) main {
+	width: 792px;
 	}
 .spineless main {
 	margin-left: 0px;
 	width: 990px;
+	}
+.fluid main {
+	width: auto;
 	}
 section {
 	position: relative;
