@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 					{expand: true, src: ['marks/*'], dest: 'build/<%= pkg.build_version %>/'},
 					{expand: true, src: ['scripts/*'], dest: 'build/<%= pkg.build_version %>/'},
 					{expand: true, src: ['styles/*'], dest: 'build/<%= pkg.build_version %>/'},
-					// {expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/<%= pkg.build_version %>/'},
+					{expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/<%= pkg.build_version %>/'},
 				]
 			}
 		},
