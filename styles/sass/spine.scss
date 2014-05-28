@@ -819,6 +819,12 @@ html.lt-ie9 #spine footer {
 			position: relative;
 			text-transform: none;
 			}
+		
+			
+			}
+			
+.spine-social-channels {
+
 		li a:before {
 			font-family: "Spine-Icons";
 			position: absolute;
@@ -830,10 +836,6 @@ html.lt-ie9 #spine footer {
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			}
-			
-			}
-			
-.spine-social-channels {
 
 		.facebook-channel {
 			a:before { content: "F"; }
