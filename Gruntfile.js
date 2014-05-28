@@ -148,7 +148,8 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			markup : {
+			/*
+markup : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'spine.html',
 				options : {
@@ -157,6 +158,7 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+*/
 			demo : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'demo.html',
