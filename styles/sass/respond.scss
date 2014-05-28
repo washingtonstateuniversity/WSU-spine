@@ -741,7 +741,7 @@
 	
 	{
 
-#binder {
+#binder:not(.fluid) {
 	&.max-1188,
 	&.max-1386,
 	&.max-1584,
@@ -751,7 +751,7 @@
 		}
 	}
 		
-#binder:not(.fluid) {
+#binder {
 	&.max-1188 main,
 	&.max-1386 main,
 	&.max-1584 main,
