@@ -43,20 +43,6 @@ module.exports = function(grunt) {
 				dest: 'build/<%= pkg.build_version %>/spine.min.js'
 			}
 		},
-		/*
-		sass: {
-					dev: {
-						files: {
-						// Files to compile
-						'styles/skeleton.css': 'styles/sass/skeleton.scss',
-						'styles/colors.css': 'styles/sass/colors.scss' ,
-						'styles/respond.css': 'styles/sass/respond.scss',
-						'styles/spine.css': 'styles/sass/spine.scss',
-						'styles/opensans.css': 'styles/sass/opensans.scss'
-						}
-					},
-				},
-		*/
 		sass: {
   			dev: {
   				files: [
@@ -307,7 +293,7 @@ module.exports = function(grunt) {
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
 	grunt.registerTask('prod', ['env:prod',
-								'sass:dev',
+								//'sass:dev',
 								'concat',
 								'preprocess:js',
 								'cssmin',
@@ -321,7 +307,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['jshint',
 								'env:dev',
-								'sass:dev',
+								//'sass:dev',
 								'concat',
 								'preprocess:js',
 								'cssmin',
