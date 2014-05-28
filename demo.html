@@ -13,7 +13,8 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-	<link href="../../build/1/spine.css" rel="stylesheet" type="text/css" />
+	<link href="http://repo.wsu.edu/spine/1/spine.min.css" rel="stylesheet" type="text/css" />
+	<!-- Your custom stylesheets here -->
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 	
@@ -24,48 +25,10 @@
 	
 	<script type="text/javascript">
 		var spineoptions={
-			search:{
-				providers:{
-					local:{
-						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
-						dataType: "jsonp",
-						featureClass: "P",
-						style: "full",
-						maxRows: 12
-					} 
-				},
-				result:{
-					appendTo: "#spine-shortcuts",
-					showRelated:true,
-					relatedHeader:"<hr/>",
-					minLength: 2, 
-					template:"<li>%s</li>"
-				}
-			},
-			social:{
-				provider:"WSU_share",
-				script_url:"//repo.wsu.edu/wsu_share/1/",
-				channels:[
-					"facebook",
-					"twitter",
-					"Pintrest"
-				]
-			},
-			analytics:{ 
-				"google":{
-					analytics:{
-						"account_id":"UA-XXXXX-XX"
-					},
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				},
-				"bing":{
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				}
-			}
 		};
 	</script>   
 	
-	<script src="../../build/1/spine.js"></script>
+	<script src="http://repo.wsu.edu/spine/1/spine.min.js"></script>
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
