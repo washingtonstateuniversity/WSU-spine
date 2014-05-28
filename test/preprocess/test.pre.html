@@ -13,12 +13,13 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 	
 	<!-- STYLESHEETS -->
-<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+<!-- @if markup != 'true' -->
 	<link href="../../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
-<!-- @if NODE_ENV == 'PRODUCTION' -->
+<!-- @if markup == 'true' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
 	<!-- Your custom stylesheets here -->
+	
 <!-- @endif -->
 
 	<!-- RESPOND -->
