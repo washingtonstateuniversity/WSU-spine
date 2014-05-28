@@ -219,7 +219,7 @@ main {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
 
-xx:not(.fluid) main {
+:not(.fluid) main {
   width: 792px; }
 
 .spineless main {
