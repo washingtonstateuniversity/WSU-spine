@@ -44,17 +44,17 @@ module.exports = function(grunt) {
 			}
 		},
 		sass: {
-		  			dev: {
-		  				files: [
-		 				// Files to compile
-		  				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
-		  				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
-		  				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
-		  				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' },
-		  				{ src: 'styles/sass/opensans.scss', dest: 'styles/opensans.css' }
-		  				]
-		  			},
-		  		},
+  			dev: {
+  				files: [
+ 				// Files to compile
+  				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
+  				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
+  				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
+  				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' },
+  				{ src: 'styles/sass/opensans.scss', dest: 'styles/opensans.css' }
+  				]
+  			},
+  		},
 		cssmin: {
 			combine: {
 				files: {
@@ -293,7 +293,7 @@ module.exports = function(grunt) {
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
 	grunt.registerTask('prod', ['env:prod',
-								//'sass:dev',
+								'sass:dev',
 								'concat',
 								'preprocess:js',
 								'cssmin',
@@ -307,7 +307,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['jshint',
 								'env:dev',
-								//'sass:dev',
+								'sass:dev',
 								'concat',
 								'preprocess:js',
 								'cssmin',
