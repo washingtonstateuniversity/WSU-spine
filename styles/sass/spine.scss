@@ -920,7 +920,8 @@ main {
 
 #spine  {
 
-	#glue {
+	#glue,
+	#glue:before {
 		background-color: $gray-er;
 		}
 	
@@ -987,6 +988,7 @@ main {
 
 	/* LIGHTEST #e6e8e9, rgb(230,232,233) */
 
+	#glue,
 	#glue:before {
 		background-color: $gray-lightest;
 		}
@@ -1038,6 +1040,7 @@ main {
 
 	/* LIGHTLY #d7dadb, rgb(215 218 219) */
 
+	#glue,
 	#glue:before {
 		background-color: $gray-lightly;
 		}	
@@ -1085,6 +1088,7 @@ main {
 
 	/* LIGHTER #b5babe, rgb(181 186 190) */
 
+	#glue,
 	#glue:before {
 		background-color: $gray-lighter;
 		}	
@@ -1141,6 +1145,7 @@ main {
 
 	/* LIGHT #8b9399, rgb(139,147,153) */
 	
+	#glue,
 	#glue:before {
 		background-color: $gray-light;
 		}
@@ -1198,6 +1203,7 @@ main {
 	
 	/* GRAY #5e6a71, rgb(94,106,113) */
 
+	#glue,
 	#glue:before {
 		background: $gray;
 		}
@@ -1258,6 +1264,7 @@ main {
 
 	/* GRAY-DARK #383D42, rgb(75,85,90) */
 
+	#glue,
 	#glue:before {
 		background-color: $gray-dark;
 		}
@@ -1319,6 +1326,7 @@ main {
 
 	/* GRAY-DARKER #2a3033, rgb(42 48 51) */
 
+	#glue,
 	#glue:before {
 		background-color: darken($gray-darker, 3%);
 		}
@@ -1378,6 +1386,7 @@ main {
 
 	/* GRAY-DARKEST #000, rgb 0,0,0 */
 	
+	#glue,
 	#glue:before {
 		background-color: $gray-darkest;
 		}
@@ -1431,6 +1440,7 @@ main {
 
 	/* CRIMSON #981e32 */
 
+	#glue,
 	#glue:before {
 		background-color: $crimson;
 		}
