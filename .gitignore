@@ -8,5 +8,3 @@ config
 test/tests
 #!/test/preprocess
 #!/test/preprocess/blocks
-spine.html
-spine.min.html
