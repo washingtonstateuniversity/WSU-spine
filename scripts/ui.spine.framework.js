@@ -108,10 +108,11 @@
 					$(".unbound.verso.recto").css("width",spread);
 				}
 				
-				viewport_ht		= $(window).height();
-
-				glue.css("min-height",viewport_ht);
-				spine.css("min-height",viewport_ht);
+				if($(".cropped").length<=0){
+					viewport_ht		= $(window).height();
+					glue.css("min-height",viewport_ht);
+					spine.css("min-height",viewport_ht);
+				}
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
 				}
@@ -200,7 +201,6 @@
 		setup_spine: function(){
 			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,height_dif;
 			
-			
 			scroll_dif=0;
 			positionLock=0;
 			scroll_top=0;
@@ -211,56 +211,59 @@
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			/*$( window ).on("resize", function() {
-				windowHeight	= $(window).height();
-				spineHeight		= spine[0].scrollHeight;
-				heightDif		= windowHeight - spineHeight;
-				glue.css("min-height",windowHeight);
-				spine.css("min-height",windowHeight);
-				//console.log("window-resize | windowHeight::" + windowHeight);
-				//console.log("window-resize | spineHeight::" + spineHeight);
-				//console.log("window-resize | heightDif::" + heightDif);
-			}).trigger("resize");*/
+		
+			if($(".cropped").length<=0){
 
-			// Fixed/Sticky Horizontal Header
-			$(document).scroll(function() {
-				var top;
-				
-					top				= $(document).scrollTop();
-					scroll_dif		= scroll_top-top;
-					scroll_top		= top;
-
-					viewport_ht		= $(window).height();
-					spine_ht		= spine[0].scrollHeight;
-					height_dif		= viewport_ht - spine_ht;
-					//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
-					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-					//console.log("SCROLLING || spine_ht::" + spine_ht);
-					//console.log("SCROLLING || height_dif::" + height_dif);
-					//console.log("SCROLLING || positionLock::" + positionLock);
-					//console.log("|---------------------------------------------");
+				/*$( window ).on("resize", function() {
+					windowHeight	= $(window).height();
+					spineHeight		= spine[0].scrollHeight;
+					heightDif		= windowHeight - spineHeight;
+					glue.css("min-height",windowHeight);
+					spine.css("min-height",windowHeight);
+					//console.log("window-resize | windowHeight::" + windowHeight);
+					//console.log("window-resize | spineHeight::" + spineHeight);
+					//console.log("window-resize | heightDif::" + heightDif);
+				}).trigger("resize");*/
+	
+				// Fixed/Sticky Horizontal Header
+				$(document).scroll(function() {
+					var top;
 					
-					if( (scroll_dif>0?false:true) ){//down
-						positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-					}else{//up
-						positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-					}
-					if( spine_ht>viewport_ht ){}
-					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-					//console.log("SCROLLING || spine_ht::" + spine_ht);
-					//console.log("SCROLLING || height_dif::" + height_dif);
-					//console.log("SCROLLING || positionLock::" + positionLock);
+						top				= $(document).scrollTop();
+						scroll_dif		= scroll_top-top;
+						scroll_top		= top;
+	
+						viewport_ht		= $(window).height();
+						spine_ht		= spine[0].scrollHeight;
+						height_dif		= viewport_ht - spine_ht;
+						//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
+						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+						//console.log("SCROLLING || spine_ht::" + spine_ht);
+						//console.log("SCROLLING || height_dif::" + height_dif);
+						//console.log("SCROLLING || positionLock::" + positionLock);
+						//console.log("|---------------------------------------------");
+						
+						if( (scroll_dif>0?false:true) ){//down
+							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+						}else{//up
+							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+						}
+						if( spine_ht>viewport_ht ){}
+						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+						//console.log("SCROLLING || spine_ht::" + spine_ht);
+						//console.log("SCROLLING || height_dif::" + height_dif);
+						//console.log("SCROLLING || positionLock::" + positionLock);
+						
+						spine.css({"position":"fixed","top":positionLock+"px"});
 					
-					spine.css({"position":"fixed","top":positionLock+"px"});
-				
-				/*
-				if (top > 49) {
-					spine.not(".unshelved").addClass("scanned");
-				} else {
-					spine.removeClass("scanned");
-				}*/
-			});
-
+					/*
+					if (top > 49) {
+						spine.not(".unshelved").addClass("scanned");
+					} else {
+						spine.removeClass("scanned");
+					}*/
+				});
+			}
 			$("#glue > header").append("<button id='shelve' />");
 			$("#shelve").on("click",function(e) {
 				e.preventDefault();
