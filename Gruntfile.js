@@ -326,6 +326,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
+								'preprocess:markup',
 								'preprocess:demo'
 								]);
 		
