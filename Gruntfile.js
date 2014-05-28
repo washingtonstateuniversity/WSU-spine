@@ -304,9 +304,9 @@ markup : {
 								'uglify',
 								'copy',
 								'includereplace',
-								'preprocess:html',
-								'preprocess:markup',
-								'preprocess:demo'
+								//'preprocess:html',
+								//'preprocess:markup',
+								//'preprocess:demo'
 								]);	
 	
 	grunt.registerTask('dev', ['jshint',
@@ -318,7 +318,8 @@ markup : {
 								'uglify',
 								'copy',
 								'includereplace',
-								'preprocess:html',
+								/*
+'preprocess:html',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
@@ -331,6 +332,7 @@ markup : {
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
 								'preprocess:demo'
+*/
 								]);
 		
 		
