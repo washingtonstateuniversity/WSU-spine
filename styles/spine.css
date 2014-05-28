@@ -610,54 +610,54 @@ html.lt-ie9 #spine footer {
       display: block;
       position: relative;
       text-transform: none; }
-  #spine .spine-social-channels #spine .spine-social-channels li a:before {
-    font-family: "Spine-Icons";
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-indent: 0;
-    text-align: center;
-    width: 30px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  #spine .spine-social-channels #spine .spine-social-channels .facebook-channel a:before {
-    content: "F"; }
-  #spine .spine-social-channels #spine .spine-social-channels .facebook-channel a:hover {
-    color: #3b5998; }
-  #spine .spine-social-channels #spine .spine-social-channels .twitter-channel a:before {
-    content: "T"; }
-  #spine .spine-social-channels #spine .spine-social-channels .twitter-channel a:hover {
-    color: #55acee; }
-  #spine .spine-social-channels #spine .spine-social-channels .youtube-channel a:before {
-    content: "Y"; }
-  #spine .spine-social-channels #spine .spine-social-channels .youtube-channel a:hover {
-    color: #cc181e; }
-  #spine .spine-social-channels #spine .spine-social-channels .directory-channel a:before {
-    content: "s"; }
-  #spine .spine-social-channels #spine .spine-social-channels .directory-channel a:hover:before {
-    content: "S"; }
-  #spine .spine-social-channels #spine .spine-social-channels .directory-channel a:hover {
-    color: #b6bcbf; }
-  #spine .spine-social-channels #spine .spine-social-channels .linkedin-channel a:before {
-    content: "L"; }
-  #spine .spine-social-channels #spine .spine-social-channels .linkedin-channel a:hover {
-    color: #007bb6; }
-  #spine .spine-social-channels #spine .spine-social-channels .pinterest-channel a:before {
-    content: "P"; }
-  #spine .spine-social-channels #spine .spine-social-channels .pinterest-channel a:hover {
-    color: #cb2027; }
-  #spine .spine-social-channels #spine .spine-social-channels .gplus-channel a:before {
-    content: "G"; }
-  #spine .spine-social-channels #spine .spine-social-channels .gplus-channel a:hover {
-    color: #dd4b39; }
-  #spine .spine-social-channels #spine .spine-social-channels .flickr-channel a:before {
-    content: "R"; }
-  #spine .spine-social-channels #spine .spine-social-channels .flickr-channel a:hover {
-    color: #ff0084; }
-  #spine .spine-social-channels #spine .spine-social-channels .tumblr-channel a:before {
-    content: "B"; }
-  #spine .spine-social-channels #spine .spine-social-channels .tumblr-channel a:hover {
-    color: #34526f; }
+    #spine .spine-social-channels ul li a:before {
+      font-family: "Spine-Icons";
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-indent: 0;
+      text-align: center;
+      width: 30px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+    #spine .spine-social-channels ul .facebook-channel a:before {
+      content: "F"; }
+    #spine .spine-social-channels ul .facebook-channel a:hover {
+      color: #3b5998; }
+    #spine .spine-social-channels ul .twitter-channel a:before {
+      content: "T"; }
+    #spine .spine-social-channels ul .twitter-channel a:hover {
+      color: #55acee; }
+    #spine .spine-social-channels ul .youtube-channel a:before {
+      content: "Y"; }
+    #spine .spine-social-channels ul .youtube-channel a:hover {
+      color: #cc181e; }
+    #spine .spine-social-channels ul .directory-channel a:before {
+      content: "s"; }
+    #spine .spine-social-channels ul .directory-channel a:hover:before {
+      content: "S"; }
+    #spine .spine-social-channels ul .directory-channel a:hover {
+      color: #b6bcbf; }
+    #spine .spine-social-channels ul .linkedin-channel a:before {
+      content: "L"; }
+    #spine .spine-social-channels ul .linkedin-channel a:hover {
+      color: #007bb6; }
+    #spine .spine-social-channels ul .pinterest-channel a:before {
+      content: "P"; }
+    #spine .spine-social-channels ul .pinterest-channel a:hover {
+      color: #cb2027; }
+    #spine .spine-social-channels ul .gplus-channel a:before {
+      content: "G"; }
+    #spine .spine-social-channels ul .gplus-channel a:hover {
+      color: #dd4b39; }
+    #spine .spine-social-channels ul .flickr-channel a:before {
+      content: "R"; }
+    #spine .spine-social-channels ul .flickr-channel a:hover {
+      color: #ff0084; }
+    #spine .spine-social-channels ul .tumblr-channel a:before {
+      content: "B"; }
+    #spine .spine-social-channels ul .tumblr-channel a:hover {
+      color: #34526f; }
 
 /* II.5.2 FOOTER -> Global Navigation */
 .spine-global-links {
