@@ -162,6 +162,9 @@ main {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
+main.fluid {
+	width: auto;
+	}
 .spineless main {
 	margin-left: 0px;
 	width: 990px;
