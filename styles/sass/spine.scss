@@ -357,7 +357,7 @@ button#shelve:hover {
 	}
 
 
-/* II.3.0 ACTIONS 
+/* ## ACTIONS 
 --------------------------------------------------------------------------- */
 
 .no-js #spine .spine-actions,
@@ -402,7 +402,7 @@ html.lt-ie9 #spine .spine-actions {
 	
 		}
 		
-	/* II.3.2 Actions -> Tabs */
+	/* ### Tabs */
 	
 	.spine-actions-tabs {
 		
@@ -450,9 +450,9 @@ html.lt-ie9 #spine .spine-actions {
 	.spine-share-tab.opened button:hover:before,
 	.spine-print-tab.opened button:hover:before { content: "\2421"; }
 
-} // end #spine
+}
 
-/* II.3.1 ACTIONS -> Search 
+/* ### Search 
 --------------------------------------------------------------------------- */
 
 .spine-search {
@@ -518,9 +518,8 @@ html.lt-ie9 #spine .spine-actions {
    text-indent: 5px;
    }
 	
-/* Index */
+/* ### Index */
 
-/* Reset jQuery UI */
 #spine-shortcuts {
 	padding-top: 2px;
 	max-height: 100%;
@@ -590,7 +589,7 @@ html.lt-ie9 #spine .spine-actions {
 	  width: 1px;
 	}
 
-/* II.3.2 ACTIONS -> Contact 
+/* ### Contact 
 --------------------------------------------------------------------------- */
 
 #spine .spine-contact {
@@ -660,7 +659,7 @@ html.lt-ie9 #spine .spine-actions {
 		
 	}
 
-/* 3.3 Share */
+/* ### Share */
 
 #spine .spine-share {
 
@@ -716,7 +715,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	}
 
-/* ## FOOTER (Spine) */
+/* ## FOOTER */
 
 #spine footer {
 	position: absolute;
@@ -839,23 +838,25 @@ html.lt-ie9 #spine footer {
 	ul {
 		padding: 0px;
 		}
-	li {
+	ul li {
 		display: inline-block;
 		margin: 0px;
 		padding: 0px;
 		width: auto;
 		}
+	ul li a {
+		color: $gray-lighter;
+		}
 
 	.spine-social-channels {
 		
-		border-right: 1px solid $gray-lighter;
+		border-right: 1px solid $gray-lightly;
 		padding-right: 25px;
 
 		ul {
 			text-align: right;
 			}
 		ul li a {
-			color: $gray-light;
 			font-size: 20px;
 			line-height: 22px;
 			width: 30px;
@@ -873,6 +874,9 @@ html.lt-ie9 #spine footer {
 			}
 		li a {
 			padding-left: 10px;
+			}
+		ul li a:hover {
+			color: $gray-light;
 			}
 		.copyright-link {
 			padding-top: 4px;
@@ -998,7 +1002,7 @@ html.lt-ie9 #spine footer {
 
 &.lightest {
 
-	/* LIGHTEST #e6e8e9, rgb(230,232,233) */
+	/* ### LIGHTEST #e6e8e9, rgb(230,232,233) */
 
 	#glue,
 	#glue:before {
@@ -1050,7 +1054,7 @@ html.lt-ie9 #spine footer {
 	
 &.lightly {
 
-	/* LIGHTLY #d7dadb, rgb(215 218 219) */
+	/* ### LIGHTLY #d7dadb, rgb(215 218 219) */
 
 	#glue,
 	#glue:before {

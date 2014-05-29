@@ -244,14 +244,14 @@ button#shelve:hover {
   .spine-offsitenav a:hover i {
     display: inline; }
 
-/* II.3.0 ACTIONS 
+/* ## ACTIONS 
 --------------------------------------------------------------------------- */
 .no-js #spine .spine-actions,
 html.lt-ie9 #spine .spine-actions {
   display: none; }
 
 #spine {
-  /* II.3.2 Actions -> Tabs */ }
+  /* ### Tabs */ }
   #spine .spine-actions {
     padding: 0px; }
     #spine .spine-actions section {
@@ -318,7 +318,7 @@ html.lt-ie9 #spine .spine-actions {
   #spine .spine-print-tab.opened button:hover:before {
     content: "\2421"; }
 
-/* II.3.1 ACTIONS -> Search 
+/* ### Search 
 --------------------------------------------------------------------------- */
 .spine-search form {
   padding: 1em 1.75em 0 1.75em;
@@ -372,8 +372,7 @@ html.lt-ie9 #spine .spine-actions {
 .spine-search :-ms-input-placeholder {
   text-indent: 5px; }
 
-/* Index */
-/* Reset jQuery UI */
+/* ### Index */
 #spine-shortcuts {
   padding-top: 2px;
   max-height: 100%;
@@ -431,7 +430,7 @@ html.lt-ie9 #spine .spine-actions {
   position: absolute;
   width: 1px; }
 
-/* II.3.2 ACTIONS -> Contact 
+/* ### Contact 
 --------------------------------------------------------------------------- */
 #spine .spine-contact address {
   color: #384044;
@@ -485,7 +484,7 @@ html.lt-ie9 #spine .spine-actions {
 #spine .spine-contact .postalcode {
   white-space: nowrap; }
 
-/* 3.3 Share */
+/* ### Share */
 #spine .spine-share ul {
   margin: 1.75em !important; }
   #spine .spine-share ul li a {
@@ -528,7 +527,7 @@ html.lt-ie9 #spine .spine-actions {
     content: "";
     display: none; }
 
-/* ## FOOTER (Spine) */
+/* ## FOOTER */
 #spine footer {
   position: absolute;
   bottom: 0px;
@@ -629,18 +628,19 @@ html.lt-ie9 #spine footer {
   -moz-box-sizing: border-box; }
 .spine-footer.looseleaf ul {
   padding: 0px; }
-.spine-footer.looseleaf li {
+.spine-footer.looseleaf ul li {
   display: inline-block;
   margin: 0px;
   padding: 0px;
   width: auto; }
+.spine-footer.looseleaf ul li a {
+  color: #b5babe; }
 .spine-footer.looseleaf .spine-social-channels {
-  border-right: 1px solid #b5babe;
+  border-right: 1px solid #d7dadb;
   padding-right: 25px; }
   .spine-footer.looseleaf .spine-social-channels ul {
     text-align: right; }
   .spine-footer.looseleaf .spine-social-channels ul li a {
-    color: #8d959a;
     font-size: 20px;
     line-height: 22px;
     width: 30px; }
@@ -651,6 +651,8 @@ html.lt-ie9 #spine footer {
     width: auto; }
   .spine-footer.looseleaf .spine-global-links li a {
     padding-left: 10px; }
+  .spine-footer.looseleaf .spine-global-links ul li a:hover {
+    color: #8d959a; }
   .spine-footer.looseleaf .spine-global-links .copyright-link {
     padding-top: 4px; }
 
@@ -766,7 +768,7 @@ html.lt-ie9 #spine footer {
   #spine .spine-search-tab button:hover {
     color: #5e6a71; }
   #spine.lightest {
-    /* LIGHTEST #e6e8e9, rgb(230,232,233) */ }
+    /* ### LIGHTEST #e6e8e9, rgb(230,232,233) */ }
     #spine.lightest #glue,
     #spine.lightest #glue:before {
       background-color: #eff0f1; }
@@ -819,7 +821,7 @@ html.lt-ie9 #spine footer {
     #spine.lightest .spine-actions section {
       background-color: white; }
   #spine.lightly {
-    /* LIGHTLY #d7dadb, rgb(215 218 219) */ }
+    /* ### LIGHTLY #d7dadb, rgb(215 218 219) */ }
     #spine.lightly #glue,
     #spine.lightly #glue:before {
       background-color: #d7dadb; }
