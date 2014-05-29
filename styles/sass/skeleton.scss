@@ -568,28 +568,25 @@ ol + h1, ol + h2, ol + h3, ol + h4 {
 /* #Clearing
 -------------------------------------------------------- */
 
-.row:before,
-.row:after,
-main:before,
-main:after,
-#binder:before,
-#binder:after,
-.clearfix:before,
-.clearfix:after,
-.rebound:before,
-.rebound:after {
+.row:before, .row:after,
+main:before, main:after,
+#binder:before, #binder:after,
+.clearfix:before, .clearfix:after,
+.rebound:before, .rebound:after {
   content: '\0020';
   display: block;
   overflow: hidden;
   visibility: hidden;
   width: 0;
-  height: 0; }
+  height: 0;
+  }
 #binder:after,
 main:after,
 .row:after,
 .clearfix:after,
 .rebound:after {
-  clear: both; }
+  clear: both;
+  }
 main,
 .row,
 .rebound,
@@ -603,12 +600,12 @@ main,
 .clear:after {
     content: " "; /* 1 */
     display: table; /* 2 */
-}
+	}
 
 .cf:after,
 .clear:after {
     clear: both;
-}
+	}
 
 /* BUTTONS
 -------------------------------------------------------- */

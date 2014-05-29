@@ -613,44 +613,46 @@ html.lt-ie9 #spine footer {
       color: #34526f !important; }
 
 /* ### Looseleaf Footer */
-.spine-footer.looseleaf {
-  padding-top: 10px;
-  width: 100%; }
-  .spine-footer.looseleaf nav {
-    display: block;
-    width: 50%;
-    float: left;
-    padding: 10px 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; }
-  .spine-footer.looseleaf ul {
-    padding: 0px; }
-  .spine-footer.looseleaf li {
-    display: inline-block;
-    margin: 0px;
-    padding: 0px;
+.spine-footer.looseleaf:before, .spine-footer.looseleaf:after {
+  content: " ";
+  display: table; }
+.spine-footer.looseleaf:after {
+  clear: both; }
+.spine-footer.looseleaf nav {
+  display: block;
+  width: 50%;
+  float: left;
+  padding: 10px 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+.spine-footer.looseleaf ul {
+  padding: 0px; }
+.spine-footer.looseleaf li {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: auto; }
+.spine-footer.looseleaf .spine-social-channels {
+  border-right: 1px solid #b5babe;
+  padding-right: 25px; }
+  .spine-footer.looseleaf .spine-social-channels ul {
+    text-align: right; }
+  .spine-footer.looseleaf .spine-social-channels ul li a {
+    color: #8d959a;
+    font-size: 20px;
+    line-height: 22px;
+    width: 30px; }
+.spine-footer.looseleaf .spine-global-links {
+  padding-left: 15px;
+  border-top: none; }
+  .spine-footer.looseleaf .spine-global-links li {
     width: auto; }
-  .spine-footer.looseleaf .spine-social-channels {
-    border-right: 1px solid #b5babe;
-    padding-right: 25px; }
-    .spine-footer.looseleaf .spine-social-channels ul {
-      text-align: right; }
-    .spine-footer.looseleaf .spine-social-channels ul li a {
-      color: #8d959a;
-      font-size: 20px;
-      line-height: 22px;
-      width: 30px; }
-  .spine-footer.looseleaf .spine-global-links {
-    padding-left: 15px;
-    border-top: none; }
-    .spine-footer.looseleaf .spine-global-links li {
-      width: auto; }
-    .spine-footer.looseleaf .spine-global-links li a {
-      padding-left: 10px; }
-    .spine-footer.looseleaf .spine-global-links .copyright-link {
-      padding-top: 4px; }
+  .spine-footer.looseleaf .spine-global-links li a {
+    padding-left: 10px; }
+  .spine-footer.looseleaf .spine-global-links .copyright-link {
+    padding-top: 4px; }
 
 /* ### Global Links */
 .spine-global-links {

@@ -817,8 +817,14 @@ html.lt-ie9 #spine footer {
 	
 .spine-footer.looseleaf {
 	
-	padding-top: 10px;
-	width: 100%;
+	&:before,
+	&:after {
+	    content: " ";
+	    display: table;
+		}
+	&:after {
+	    clear: both;
+		}
 	
 	nav {
 		display: block;
@@ -923,8 +929,6 @@ html.lt-ie9 #spine footer {
 	}
 	
 /* ## COLORS - Spinal Column Colors */
-
-
 
 #spine  {
 
