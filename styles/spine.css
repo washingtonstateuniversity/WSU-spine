@@ -20,7 +20,7 @@
   height: 100%;
   top: 0;
   z-index: 99164;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   /* II.1.2 Cropped */ }
   #spine button {
