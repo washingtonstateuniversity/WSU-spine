@@ -29,52 +29,68 @@
   color: white; }
 
 /* light */
-.gray-light-back, .light-back {
+.gray-light-back,
+.light-back {
   background-color: #8d959a; }
 
 .gray-light-text, .light-text {
   color: #8d959a; }
 
 /* lighter */
-.gray-lighter-back, .lighter-back {
+.gray-lighter-back,
+.lighter-back {
   background-color: #b5babe; }
 
-.gray-lighter-text, .lighter-text {
+.gray-lighter-text,
+.lighter-text {
   color: #b5babe; }
 
 /* lightly */
-.gray-lightly-back, .lightly-back {
+.gray-lightly-back,
+.lightly-back {
   background-color: #d7dadb; }
 
-.gray-lightly-text, .lightly-text {
+.gray-lightly-text,
+.lightly-text {
   color: #d7dadb; }
 
 /* lightest */
-.gray-lightest-back, .lightest-back {
+.gray-lightest-back,
+.lightest-back {
   background-color: #eff0f1; }
 
-.gray-lightest-text, .lightest-text, .white-text {
+.gray-lightest-text,
+.lightest-text,
+.white-text {
   color: #eff0f1; }
 
 /* dark */
-.gray-dark-back, .dark-back {
+.gray-dark-back,
+.dark-back {
   background-color: #464e54; }
 
-.gray-dark-text, .dark-text {
+.gray-dark-text,
+.dark-text {
   color: #464e54; }
 
 /* darker */
-.gray-darker-back, .darker-back {
+.gray-darker-back,
+.darker-back {
   background-color: #2a3033; }
 
-.gray-darker-text, .darker-text {
+.gray-darker-text,
+.darker-text {
   color: #2a3033; }
 
 /* darkest */
-.gray-darkest-back, .darkest-back, .black-back {
+.gray-darkest-back,
+.darkest-back,
+.black-back {
   background-color: black; }
 
-.gray-darkest-text, .darkest-text, .black-text {
+.gray-darkest-text,
+.darkest-text,
+.black-text {
   color: black; }
 
 /* ORANGE */
@@ -93,52 +109,52 @@
 
 /* light */
 .orange-light-back {
-  background-color: #8d959a; }
+  background-color: #cb9b6e; }
 
 .orange-light-text {
-  color: #8d959a; }
+  color: #cb9b6e; }
 
 /* lighter */
 .orange-lighter-back {
-  background-color: #b5babe; }
+  background-color: #ddbea1; }
 
 .orange-lighter-text {
-  color: #b5babe; }
+  color: #ddbea1; }
 
 /* lightly */
 .orange-lightly-back {
-  background-color: #d7dadb; }
+  background-color: #eddccc; }
 
 .orange-lightly-text {
-  color: #d7dadb; }
+  color: #eddccc; }
 
 /* lightest */
 .orange-lightest-back {
-  background-color: #eff0f1; }
+  background-color: #f8f1eb; }
 
 .orange-lightest-text {
-  color: #eff0f1; }
+  color: #f8f1eb; }
 
 /* dark */
 .orange-dark-back {
-  background-color: #464e54; }
+  background-color: #925b29; }
 
 .orange-dark-text {
-  color: #464e54; }
+  color: #925b29; }
 
 /* darker */
 .orange-darker-back {
-  background-color: #2a3033; }
+  background-color: #6d441f; }
 
 .orange-darker-text {
-  color: #2a3033; }
+  color: #6d441f; }
 
 /* darkest */
 .orange-darkest-back {
-  background-color: black; }
+  background-color: #492e14; }
 
 .orange-darkest-text {
-  color: black; }
+  color: #492e14; }
 
 /* GREEN */
 .green-back {
@@ -156,52 +172,52 @@
 
 /* light */
 .green-light-back {
-  background-color: #8d959a; }
+  background-color: #afa370; }
 
 .green-light-text {
-  color: #8d959a; }
+  color: #afa370; }
 
 /* lighter */
 .green-lighter-back {
-  background-color: #b5babe; }
+  background-color: #cbc4a2; }
 
 .green-lighter-text {
-  color: #b5babe; }
+  color: #cbc4a2; }
 
 /* lightly */
 .green-lightly-back {
-  background-color: #d7dadb; }
+  background-color: #e3dfcd; }
 
 .green-lightly-text {
-  color: #d7dadb; }
+  color: #e3dfcd; }
 
 /* lightest */
 .green-lightest-back {
-  background-color: #eff0f1; }
+  background-color: #f4f2eb; }
 
 .green-lightest-text {
-  color: #eff0f1; }
+  color: #f4f2eb; }
 
 /* dark */
 .green-dark-back {
-  background-color: #464e54; }
+  background-color: #72652a; }
 
 .green-dark-text {
-  color: #464e54; }
+  color: #72652a; }
 
 /* darker */
 .green-darker-back {
-  background-color: #2a3033; }
+  background-color: #564c20; }
 
 .green-darker-text {
-  color: #2a3033; }
+  color: #564c20; }
 
 /* darkest */
 .green-darkest-back {
-  background-color: black; }
+  background-color: #393215; }
 
 .green-darkest-text {
-  color: black; }
+  color: #393215; }
 
 /* BLUE */
 .blue-back {
@@ -328,17 +344,3 @@
 
 .yellow-darkest-text {
   color: black; }
-
-/* TRANSPARENT */
-.transparent-back {
-  background-color: rgba(255, 255, 255, 0.8); }
-
-.transparent-text {
-  color: rgba(255, 255, 255, 0.8); }
-
-/* transparenter */
-.transparent-er-back {
-  background-color: rgba(255, 255, 255, 0.5); }
-
-.transparenter-er-text {
-  color: rgba(255, 255, 255, 0.5); }
