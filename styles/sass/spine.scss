@@ -120,58 +120,9 @@
 	
 	}
 	
-/* II.1.1 Spine Looseleaf */
-	
-footer.looseleaf {
-	padding-top: 10px;
-	
-	nav,
-	small {
-		position: absolute;
-		white-space: nowrap;
-		}
-	.spine-global-links {
-		right: 50%;
-		padding-right: 45px;
-		}
-	.copyright-link {
-		left: 50%;
-		padding-left: 43px;
-		padding-top: 4px;
-		}
-	.spine-social-channels {
-		float: right;
-		display: block;
-		left: 50%;
-		z-index: 500;
-		width: 1px;
-		overflow: visible;
-		}
-	.spine-social-channels ul {
-		position: relative;
-		left: -42px;
-		}
-	.spine-social-channels ul li {
-		display: inline-block;
-		width: auto;
-		padding: 0px 0px 0px 1px;
-		margin: 0px;
-		width: 20px;
-		white-space: nowrap;
-		}
-	.spine-social-channels li a {
-		font-size: 16px;
-		}
-	.spine-global-links li {
-		width: auto;
-		display: inline-block;
-		margin: 0px;
-		padding-left: 10px;
-		}
-	
-	}
 
-/* II.2.0 HEADER (#spine)
+
+/* ## HEADER (#spine)
 --------------------------------------------------------------------------- */
 
 #spine header {
@@ -223,7 +174,7 @@ button#shelve:hover {
 	-moz-osx-font-smoothing: grayscale;
 	}
 	
-/* II.3.0 NAVIGATION
+/* ## NAVIGATION
 --------------------------------------------------------------------------- */
 
 #spine {
@@ -765,10 +716,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	}
 
-/* II.3.4 Print */
-
-
-/* II.5.0 FOOTER-Spine */
+/* ## FOOTER (Spine) */
 
 #spine footer {
 	position: absolute;
@@ -782,15 +730,14 @@ html.lt-ie9 #spine footer {
 #spine footer nav {
 	margin: 0;
 	}
-
-/* II.5.1 FOOTER -> Social */
-
 .spine-footer nav ul li {
 	border-top: none !important;
 	text-align: center;
 	}
 
-#spine .spine-social-channels {
+/* ### Social */
+
+.spine-social-channels {
 	
 	margin-bottom: .6em;
 	width: 100%;
@@ -799,18 +746,11 @@ html.lt-ie9 #spine footer {
 		text-align: center;
 		
 		li {
-			color: #b6bcbf;
-			background-position: center center;
-			background-repeat: no-repeat;
 			width: 2.3em;
 			display: inline-block;
-			margin: 0px;
-			padding: 0px;
 			}
 		li a {
-			color: #e0e5e8;
-			color: #D7DADB;
-			text-indent: -9000px;
+			text-indent: -99164px;
 			font-size: 1.8em;
 			line-height: .8em;
 			height: 1.2em;
@@ -872,8 +812,59 @@ html.lt-ie9 #spine footer {
 		}
 
 	}
+	
+/* ### Looseleaf Footer */
+	
+.spine-footer.looseleaf {
+	padding-top: 10px;
+	
+	nav,
+	small {
+		position: absolute;
+		white-space: nowrap;
+		}
+	.spine-global-links {
+		right: 50%;
+		padding-right: 45px;
+		}
+	.copyright-link {
+		left: 50%;
+		padding-left: 43px;
+		padding-top: 4px;
+		}
+	.spine-social-channels {
+		float: right;
+		display: block;
+		left: 50%;
+		z-index: 500;
+		width: 1px;
+		overflow: visible;
+		}
+	.spine-social-channels ul {
+		position: relative;
+		left: -42px;
+		}
+	.spine-social-channels ul li {
+		display: inline-block;
+		width: auto;
+		padding: 0px 0px 0px 1px;
+		margin: 0px;
+		width: 20px;
+		white-space: nowrap;
+		}
+	.spine-social-channels li a {
+		font-size: 16px;
+		}
+	.spine-global-links li {
+		width: auto;
+		display: inline-block;
+		margin: 0px;
+		padding-left: 10px;
+		}
+	
+	}
 
-/* II.5.2 FOOTER -> Global Navigation */
+/* ### Global Navigation */
 
 .spine-global-links {
 	
