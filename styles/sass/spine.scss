@@ -773,40 +773,40 @@ html.lt-ie9 #spine footer {
 
 		.facebook-channel {
 			a:before { content: "F"; }
-			a:hover { color: $facebook-blue; }
+			a:hover { color: $facebook-blue !important; }
 			}
 		.twitter-channel {
 			a:before { content: "T"; }
-			a:hover { color: $twitter-blue; }
+			a:hover { color: $twitter-blue !important; }
 			}
 		.youtube-channel {
 			a:before { content: "Y"; }
-			a:hover { color: $youtube-red; }
+			a:hover { color: $youtube-red !important; }
 			}
 		.directory-channel {
 			a:before { content: "s"; }
 			a:hover:before { content: "S"; }
-			a:hover { color: #b6bcbf; }
+			a:hover { color: $gray-light !important; }
 			}
 		.linkedin-channel {
 			a:before { content: "L"; }
-			a:hover { color: $linkedin-blue; }
+			a:hover { color: $linkedin-blue !important; }
 			}
 		.pinterest-channel {
 			a:before { content: "P"; }
-			a:hover { color: $pinterest-red; }
+			a:hover { color: $pinterest-red !important; }
 			}
 		.gplus-channel {
 			a:before { content: "G"; }
-			a:hover { color: $gplus-orange; }
+			a:hover { color: $gplus-orange !important; }
 			}
 		.flickr-channel {
 			a:before { content: "R"; }
-			a:hover { color: $flickr-pink; }
+			a:hover { color: $flickr-pink !important; }
 			}
 		.tumblr-channel {
 			a:before { content: "B"; }
-			a:hover { color: $tumblr-blue; }
+			a:hover { color: $tumblr-blue !important; }
 			}
 		
 		}
@@ -816,55 +816,68 @@ html.lt-ie9 #spine footer {
 /* ### Looseleaf Footer */
 	
 .spine-footer.looseleaf {
+	
 	padding-top: 10px;
+	width: 100%;
 	
-	nav,
-	small {
-		position: absolute;
-		white-space: nowrap;
-		}
-	.spine-global-links {
-		right: 50%;
-		padding-right: 45px;
-		}
-	.copyright-link {
-		left: 50%;
-		padding-left: 43px;
-		padding-top: 4px;
-		}
-	.spine-social-channels {
-		float: right;
+	nav {
 		display: block;
-		left: 50%;
-		z-index: 500;
-		width: 1px;
-		overflow: visible;
-		}
-	.spine-social-channels ul {
-		position: relative;
-		left: -42px;
-		}
-	.spine-social-channels ul li {
-		display: inline-block;
-		width: auto;
-		padding: 0px 0px 0px 1px;
+		width: 50%;
+		float: left;
+		padding: 10px 0px;
 		margin: 0px;
-		width: 20px;
-		white-space: nowrap;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
 		}
-	.spine-social-channels li a {
-		font-size: 16px;
+	ul {
+		padding: 0px;
 		}
-	.spine-global-links li {
-		width: auto;
+	li {
 		display: inline-block;
 		margin: 0px;
-		padding-left: 10px;
+		padding: 0px;
+		width: auto;
 		}
-	
+
+	.spine-social-channels {
+		
+		border-right: 1px solid $gray-lighter;
+		padding-right: 25px;
+
+		ul {
+			text-align: right;
+			}
+		ul li a {
+			color: $gray-light;
+			font-size: 20px;
+			line-height: 22px;
+			width: 30px;
+			}
+
+		}		
+
+	.spine-global-links {
+
+		padding-left: 15px;
+		border-top: none;
+		
+		li {
+			width: auto;
+			}
+		li a {
+			padding-left: 10px;
+			}
+		.copyright-link {
+			padding-top: 4px;
+			}
+
+		}
+
+
 	}
 
-/* ### Global Navigation */
+/* ### Global Links */
 
 .spine-global-links {
 	
@@ -909,17 +922,15 @@ html.lt-ie9 #spine footer {
 	
 	}
 	
-/* II.6.0 COLORS - Spinal Column */
+/* ## COLORS - Spinal Column Colors */
 
-main {
-	position: relative;
-	}
+
 
 #spine  {
 
 	#glue,
 	#glue:before {
-		background-color: $gray-er;
+		background-color: white;
 		}
 	
 		/*
@@ -934,7 +945,7 @@ main {
 			}
 	*/
 
-	@include vellum($gray-lightest);
+	@include vellum($gray-er);
 
 	.spine-sitenav a, 
 	.spine-search-tab button {
@@ -1187,7 +1198,7 @@ main {
 		color: $gray-lightest;
 		}
 	.spine-social-channels .twitter-channel a:hover {
-		color: $twitter-light;
+		color: $twitter-light !important;
 		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
@@ -1248,7 +1259,7 @@ main {
 		color: $gray-darkest;
 		}
 	.spine-social-channels .facebook-channel a:hover {
-		color: $facebook-light;
+		color: $facebook-light !important;
 		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
@@ -1301,10 +1312,12 @@ main {
 	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
-	.spine-global-links a:hover,
-	.spine-social-channels li[class*="-channel"] a:hover {
+	.spine-global-links a:hover {
 		color: $gray-lightly;
 		}
+	.spine-social-channels li[class*="-channel"] a:hover {
+		color: $gray-lightly !important;
+		}	
 	.spine-search-tab button {
 		color: darken($gray-lighter,4%);
 		}
@@ -1358,7 +1371,7 @@ main {
 		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-light;
+		color: $gray;
 		}
 	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
@@ -1412,7 +1425,7 @@ main {
 		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-light;
+		color: $gray;
 		}
 	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
@@ -1472,10 +1485,12 @@ main {
 		}
 	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-offsitenav a:hover,
-	.spine-global-links a:hover,
-	.spine-social-channels li[class*="-channel"] a:hover {
+	.spine-global-links a:hover {
 		color: black;
 		color: $crimson-darkest;
+		}
+	.spine-social-channels li[class*="-channel"] a:hover {
+		color: $crimson-darkest !important;
 		}
 	.spine-search-tab:not(.opened) button {
 		color: darken($crimson-darkest,10%);

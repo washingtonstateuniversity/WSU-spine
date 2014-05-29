@@ -528,8 +528,7 @@ html.lt-ie9 #spine .spine-actions {
     content: "";
     display: none; }
 
-/* II.3.4 Print */
-/* II.5.0 FOOTER-Spine */
+/* ## FOOTER (Spine) */
 #spine footer {
   position: absolute;
   bottom: 0px;
@@ -542,11 +541,11 @@ html.lt-ie9 #spine footer {
 #spine footer nav {
   margin: 0; }
 
-/* II.5.1 FOOTER -> Social */
 .spine-footer nav ul li {
   border-top: none !important;
   text-align: center; }
 
+/* ### Social */
 .spine-social-channels {
   margin-bottom: .6em;
   width: 100%; }
@@ -577,82 +576,83 @@ html.lt-ie9 #spine footer {
     .spine-social-channels ul .facebook-channel a:before {
       content: "F"; }
     .spine-social-channels ul .facebook-channel a:hover {
-      color: #3b5998; }
+      color: #3b5998 !important; }
     .spine-social-channels ul .twitter-channel a:before {
       content: "T"; }
     .spine-social-channels ul .twitter-channel a:hover {
-      color: #55acee; }
+      color: #55acee !important; }
     .spine-social-channels ul .youtube-channel a:before {
       content: "Y"; }
     .spine-social-channels ul .youtube-channel a:hover {
-      color: #cc181e; }
+      color: #cc181e !important; }
     .spine-social-channels ul .directory-channel a:before {
       content: "s"; }
     .spine-social-channels ul .directory-channel a:hover:before {
       content: "S"; }
     .spine-social-channels ul .directory-channel a:hover {
-      color: #b6bcbf; }
+      color: #8d959a !important; }
     .spine-social-channels ul .linkedin-channel a:before {
       content: "L"; }
     .spine-social-channels ul .linkedin-channel a:hover {
-      color: #007bb6; }
+      color: #007bb6 !important; }
     .spine-social-channels ul .pinterest-channel a:before {
       content: "P"; }
     .spine-social-channels ul .pinterest-channel a:hover {
-      color: #cb2027; }
+      color: #cb2027 !important; }
     .spine-social-channels ul .gplus-channel a:before {
       content: "G"; }
     .spine-social-channels ul .gplus-channel a:hover {
-      color: #dd4b39; }
+      color: #dd4b39 !important; }
     .spine-social-channels ul .flickr-channel a:before {
       content: "R"; }
     .spine-social-channels ul .flickr-channel a:hover {
-      color: #ff0084; }
+      color: #ff0084 !important; }
     .spine-social-channels ul .tumblr-channel a:before {
       content: "B"; }
     .spine-social-channels ul .tumblr-channel a:hover {
-      color: #34526f; }
+      color: #34526f !important; }
 
-/* II.1.1 Spine Looseleaf */
+/* ### Looseleaf Footer */
 .spine-footer.looseleaf {
-  padding-top: 10px; }
-  .spine-footer.looseleaf nav,
-  .spine-footer.looseleaf small {
-    position: absolute;
-    white-space: nowrap; }
-  .spine-footer.looseleaf .spine-global-links {
-    right: 50%;
-    padding-right: 45px; }
-  .spine-footer.looseleaf .copyright-link {
-    left: 50%;
-    padding-left: 43px;
-    padding-top: 4px; }
-  .spine-footer.looseleaf .spine-social-channels {
-    float: right;
+  padding-top: 10px;
+  width: 100%; }
+  .spine-footer.looseleaf nav {
     display: block;
-    left: 50%;
-    z-index: 500;
-    width: 1px;
-    overflow: visible; }
-  .spine-footer.looseleaf .spine-social-channels ul {
-    position: relative;
-    left: -42px; }
-  .spine-footer.looseleaf .spine-social-channels ul li {
-    display: inline-block;
-    width: auto;
-    padding: 0px 0px 0px 1px;
+    width: 50%;
+    float: left;
+    padding: 10px 0px;
     margin: 0px;
-    width: 20px;
-    white-space: nowrap; }
-  .spine-footer.looseleaf .spine-social-channels li a {
-    font-size: 16px; }
-  .spine-footer.looseleaf .spine-global-links li {
-    width: auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; }
+  .spine-footer.looseleaf ul {
+    padding: 0px; }
+  .spine-footer.looseleaf li {
     display: inline-block;
     margin: 0px;
-    padding-left: 10px; }
+    padding: 0px;
+    width: auto; }
+  .spine-footer.looseleaf .spine-social-channels {
+    border-right: 1px solid #b5babe;
+    padding-right: 25px; }
+    .spine-footer.looseleaf .spine-social-channels ul {
+      text-align: right; }
+    .spine-footer.looseleaf .spine-social-channels ul li a {
+      color: #8d959a;
+      font-size: 20px;
+      line-height: 22px;
+      width: 30px; }
+  .spine-footer.looseleaf .spine-global-links {
+    padding-left: 15px;
+    border-top: none; }
+    .spine-footer.looseleaf .spine-global-links li {
+      width: auto; }
+    .spine-footer.looseleaf .spine-global-links li a {
+      padding-left: 10px; }
+    .spine-footer.looseleaf .spine-global-links .copyright-link {
+      padding-top: 4px; }
 
-/* II.5.2 FOOTER -> Global Navigation */
+/* ### Global Links */
 .spine-global-links {
   font-size: .9em;
   border-top-width: 1px;
@@ -694,10 +694,7 @@ html.lt-ie9 #spine footer {
   .spine-global-links .copyright-link a:hover {
     color: #5e6a71; }
 
-/* II.6.0 COLORS - Spinal Column */
-main {
-  position: relative; }
-
+/* ## COLORS - Spinal Column Colors */
 #spine {
   	/*
   &.bleed:before {
@@ -714,25 +711,25 @@ main {
   #spine #glue:before {
     background-color: white; }
   #spine.vellum-05 {
-    background-color: rgba(239, 240, 241, 0.95); }
+    background-color: rgba(255, 255, 255, 0.95); }
   #spine.vellum-05.bleed:before {
-    background-color: rgba(239, 240, 241, 0.95); }
+    background-color: rgba(255, 255, 255, 0.95); }
   #spine.vellum-10 {
-    background-color: rgba(239, 240, 241, 0.9); }
+    background-color: rgba(255, 255, 255, 0.9); }
   #spine.vellum-10.bleed:before {
-    background-color: rgba(239, 240, 241, 0.9); }
+    background-color: rgba(255, 255, 255, 0.9); }
   #spine.vellum-15 {
-    background-color: rgba(239, 240, 241, 0.85); }
+    background-color: rgba(255, 255, 255, 0.85); }
   #spine.vellum-15.bleed:before {
-    background-color: rgba(239, 240, 241, 0.85); }
+    background-color: rgba(255, 255, 255, 0.85); }
   #spine.vellum-20 {
-    background-color: rgba(239, 240, 241, 0.8); }
+    background-color: rgba(255, 255, 255, 0.8); }
   #spine.vellum-20.bleed:before {
-    background-color: rgba(239, 240, 241, 0.8); }
+    background-color: rgba(255, 255, 255, 0.8); }
   #spine.vellum-25 {
-    background-color: rgba(239, 240, 241, 0.75); }
+    background-color: rgba(255, 255, 255, 0.75); }
   #spine.vellum-25.bleed:before {
-    background-color: rgba(239, 240, 241, 0.75); }
+    background-color: rgba(255, 255, 255, 0.75); }
   #spine .spine-sitenav a,
   #spine .spine-search-tab button {
     color: #5e6a71; }
@@ -981,7 +978,7 @@ main {
     #spine.light .spine-search-tab:not(.opened) button:hover {
       color: #eff0f1; }
     #spine.light .spine-social-channels .twitter-channel a:hover {
-      color: #e1e8ed; }
+      color: #e1e8ed !important; }
     #spine.light .spine-sitenav a:hover,
     #spine.light .spine-sitenav li.dogeared > a {
       color: white; }
@@ -1040,7 +1037,7 @@ main {
     #spine.gray .spine-search-tab button:hover {
       color: black; }
     #spine.gray .spine-social-channels .facebook-channel a:hover {
-      color: #d3d8e8; }
+      color: #d3d8e8 !important; }
     #spine.gray .spine-sitenav a:hover,
     #spine.gray .spine-sitenav li.dogeared > a {
       color: white; }
@@ -1094,9 +1091,10 @@ main {
     #spine.dark .spine-actions-tabs :not(.opened) button:hover,
     #spine.dark .spine-sitenav a,
     #spine.dark .spine-offsitenav a:hover,
-    #spine.dark .spine-global-links a:hover,
-    #spine.dark .spine-social-channels li[class*="-channel"] a:hover {
+    #spine.dark .spine-global-links a:hover {
       color: #d7dadb; }
+    #spine.dark .spine-social-channels li[class*="-channel"] a:hover {
+      color: #d7dadb !important; }
     #spine.dark .spine-search-tab button {
       color: #aab0b4; }
     #spine.dark .spine-search-tab button:hover {
@@ -1150,7 +1148,7 @@ main {
       color: #2a3033; }
     #spine.darker .spine-offsitenav a,
     #spine.darker .spine-global-links a {
-      color: #8d959a; }
+      color: #5e6a71; }
     #spine.darker .spine-actions-tabs :not(.opened) button:hover,
     #spine.darker .spine-sitenav a,
     #spine.darker .spine-offsitenav a:hover,
@@ -1204,7 +1202,7 @@ main {
       border-color: #464e54; }
     #spine.darkest .spine-offsitenav a,
     #spine.darkest .spine-global-links a {
-      color: #8d959a; }
+      color: #5e6a71; }
     #spine.darkest .spine-actions-tabs :not(.opened) button:hover,
     #spine.darkest .spine-sitenav a,
     #spine.darkest .spine-offsitenav a:hover,
@@ -1263,10 +1261,11 @@ main {
       color: black; }
     #spine.crimson .spine-actions-tabs :not(.opened) button:hover,
     #spine.crimson .spine-offsitenav a:hover,
-    #spine.crimson .spine-global-links a:hover,
-    #spine.crimson .spine-social-channels li[class*="-channel"] a:hover {
+    #spine.crimson .spine-global-links a:hover {
       color: black;
       color: #490e18; }
+    #spine.crimson .spine-social-channels li[class*="-channel"] a:hover {
+      color: #490e18 !important; }
     #spine.crimson .spine-search-tab:not(.opened) button {
       color: #1e060a; }
     #spine.crimson .spine-search-tab:not(.opened) button:hover {
