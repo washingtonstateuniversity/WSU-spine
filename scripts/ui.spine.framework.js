@@ -199,7 +199,7 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,height_dif;
+			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,glue_ht,height_dif;
 			
 			scroll_dif=0;
 			positionLock=0;
@@ -235,6 +235,7 @@
 	
 						viewport_ht		= $(window).height();
 						spine_ht		= spine[0].scrollHeight;
+						glue_ht			= glue.height();
 						height_dif		= viewport_ht - spine_ht;
 						//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
 						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
@@ -242,20 +243,20 @@
 						//console.log("SCROLLING || height_dif::" + height_dif);
 						//console.log("SCROLLING || positionLock::" + positionLock);
 						//console.log("|---------------------------------------------");
-						
-						if( (scroll_dif>0?false:true) ){//down
-							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-						}else{//up
-							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+						if( main.height()>glue_ht ){
+							if( (scroll_dif>0?false:true) ){//down
+								positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+							}else{//up
+								positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+							}
+							
+							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+							//console.log("SCROLLING || spine_ht::" + spine_ht);
+							//console.log("SCROLLING || height_dif::" + height_dif);
+							//console.log("SCROLLING || positionLock::" + positionLock);
+							
+							spine.css({"position":"fixed","top":positionLock+"px"});
 						}
-						if( spine_ht>viewport_ht ){}
-						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-						//console.log("SCROLLING || spine_ht::" + spine_ht);
-						//console.log("SCROLLING || height_dif::" + height_dif);
-						//console.log("SCROLLING || positionLock::" + positionLock);
-						
-						spine.css({"position":"fixed","top":positionLock+"px"});
-					
 					/*
 					if (top > 49) {
 						spine.not(".unshelved").addClass("scanned");
