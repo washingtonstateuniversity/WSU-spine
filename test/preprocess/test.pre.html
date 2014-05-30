@@ -18,8 +18,13 @@
 <!-- @endif -->
 <!-- @if markup == 'true' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
+<!-- @endif -->
 	<!-- Your custom stylesheets here -->
-	
+<!-- @if opensans == 'true' -->
+	<link href="../../build/<!-- @echo build_version -->/styles/opensans.css" rel="stylesheet" type="text/css" />
+	<style>
+	@@include('blocks/opensans-styles.css', {})
+	</style>
 <!-- @endif -->
 
 	<!-- RESPOND -->

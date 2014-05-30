@@ -18,8 +18,26 @@
 <!-- @endif -->
 <!-- @if markup == 'true' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
+<!-- @endif -->
 	<!-- Your custom stylesheets here -->
-	
+<!-- @if opensans == 'true' -->
+	<link href="../../build/<!-- @echo build_version -->/styles/opensans.css" rel="stylesheet" type="text/css" />
+	<style>
+	body {
+	font-family: "OpenSans";
+	}
+h1 {
+	font-size: 3em;
+	font-family: "OpenSans-CondBold";
+	}
+h2,
+main h3 {
+	font-size: 2.5em;
+	font-family: "OpenSans-CondLight";
+}
+
+
+	</style>
 <!-- @endif -->
 
 	<!-- RESPOND -->
@@ -796,8 +814,8 @@ pre code {
 
 <section class="row quarters">
 	<div class="column one center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg" width="150px"></div>
-	<div class="column two gray-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-lightest.svg" width="150px"></div>
-	<div class="column three crimson-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-vertical-lightest.svg" width="150px"></div>
+	<div class="column two gray-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-crimson-graydark-graylighter.svg" width="150px"></div>
+	<div class="column three crimson-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-white-graylightly-white.svg" width="150px"></div>
 	<div class="column four gray-lightly-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-vertical.svg" width="150px"></div>
 	<div class="column five gray-lightly-back center absolutely three-twelfths-tall size-xlarge-only"><img src="http://repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical.svg" width="150px"></div>
 	<div class="column five row single">
@@ -1148,7 +1166,7 @@ pre code {
 	<li><a href="link">35 over link</a></li>
 <!-- @endif -->
 	<li>
-		<a href="/test/overlyLinked_n_overlyLong.html">Lots and lots</a>
+		<a href="/test/tests/overlyLinked_n_overlyLong.html">Lots and lots</a>
 		<ul>
 			<li><a href="/test/tests/overlyLinked.html">Overly Linked</a></li>
 			<li><a href="/test/tests/overlyLong.html">Overly Long</a></li>
