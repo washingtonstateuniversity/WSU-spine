@@ -393,7 +393,9 @@
 				}
 				url = tar.attr("href");
 				if ( url !== "#" ) {
-					tar.parent("li").children("ul").prepend("<li class='" + classes + "'><a href='"  + url +  "'>" + title + "</a></li>");
+					tar.parent("li").children("ul").prepend("<li class='" + classes + "'></li>");
+					tar.clone(true).appendTo( tar.parent("li").find("ul .overview:first") );
+					tar.parent("li").find("ul .overview:first a").html(title);
 				}
 			});
 			// External Links in nav

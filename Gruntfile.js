@@ -134,6 +134,7 @@ module.exports = function(grunt) {
 					fluidGrid : 'skip',
 					hybridGrid: 'skip',
 					fixedGrid: 'skip',
+					navdata:'skip',
 				}
 			},
 			js : {
@@ -207,6 +208,15 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						showLong : 'true'
+					}
+				}
+			},
+			tu_navdata : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/tests/nav-data-links.html',
+				options : {
+					context : {
+						navdata : 'true'
 					}
 				}
 			},
@@ -337,6 +347,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_fluidGrid',
 								'preprocess:tu_hybridGrid',
 								'preprocess:tu_fixedGrid',
+								'preprocess:tu_navdata',
 								'preprocess:markup',
 								'preprocess:demo'
 								]);
