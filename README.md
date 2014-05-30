@@ -32,7 +32,7 @@ The spine is a "skeleton" framework in order to keep global requirement to a min
  
 ### Styles
  
- 	<link href="http://repo.wsu.edu/spine/1/spine.css" />
+ 	<link href="//repo.wsu.edu/spine/1/spine.css" />
  	
 This single CSS file includes a CSS reset, default styles, responsive styles, and finally the styling for the spinal column itself.
  
@@ -41,11 +41,11 @@ This single CSS file includes a CSS reset, default styles, responsive styles, an
 First, the Spine relies on jQuery and jQuery UI. For the time being, we're sticking with jQuery 1.10.2 to preserve support for IE7 and IE8. Additional scripts needed for a specific site can be added, including libraries like Modernizr.
 
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	 <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 Secondly, we need the Spine-specific javascript.
 
-	 <script src="http://repo.wsu.edu/spine/1/spine.js"></script>
+	 <script src="//repo.wsu.edu/spine/1/spine.js"></script>
 
 Finally, additional site-specific scripts can be added.
 
