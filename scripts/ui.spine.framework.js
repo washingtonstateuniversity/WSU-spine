@@ -342,7 +342,7 @@
 		 * Sets up the tabs that will be able to be used by other extensions
 		 */
 		setup_tabs: function(tab,html){
-			var self, wsu_actions;
+			var self, wsu_actions,action_ht;
 			html=html||"";
 			self=this;//hold to preserve scope
 			wsu_actions = self._get_globals("wsu_actions").refresh();
@@ -350,6 +350,12 @@
 			$("#wsu-"+tab+"-tab button").on("click",function(e) {
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-"+tab+",#wsu-"+tab+"-tab").toggleClass("opened closed");
+				if($(".cropped").length<=0){
+					action_ht = $("#spine-navigation").outerHeight() + $(".spine-footer").outerHeight();
+				}else{
+					action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
+				}
+				$(".spine-action.opened").height( action_ht );
 			});
 		},
 
