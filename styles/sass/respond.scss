@@ -191,7 +191,7 @@
 	height: 49px;
 	}
 	
-@include signatures('horizontal',':not(.fluid)')
+@include signatures('horizontal','#binder:not(.fluid)')
 	
 	}
 
