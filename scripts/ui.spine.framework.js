@@ -254,7 +254,9 @@
 							//console.log("SCROLLING || spine_ht::" + spine_ht);
 							//console.log("SCROLLING || height_dif::" + height_dif);
 							//console.log("SCROLLING || positionLock::" + positionLock);
-							
+							if(top<=0){
+								positionLock=0;
+							}
 							spine.css({"position":"fixed","top":positionLock+"px"});
 						}
 					/*
