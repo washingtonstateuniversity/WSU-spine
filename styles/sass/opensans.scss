@@ -29,7 +29,7 @@ $opensans-fonts: (
 		font-style: normal;
 		}
 	.opensans#{to-lower-case($fontname)},
-	.opensans#{$opensans-font} {
+	.#{$opensans-font} {
 		font-family: "OpenSans#{$fontname}", #{$stack};
 		}
 	}

@@ -5,7 +5,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans,
-.opensansopensans {
+.opensans {
   font-family: "OpenSans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -15,7 +15,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-bold,
-.opensansopensans-b {
+.opensans-b {
   font-family: "OpenSans-Bold", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -25,7 +25,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-bolditalic,
-.opensansopensans-bi {
+.opensans-bi {
   font-family: "OpenSans-BoldItalic", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -35,7 +35,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-condbold,
-.opensansopensans-cb {
+.opensans-cb {
   font-family: "OpenSans-CondBold", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -45,7 +45,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-condlight,
-.opensansopensans-cl {
+.opensans-cl {
   font-family: "OpenSans-CondLight", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -55,7 +55,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-condlightitalic,
-.opensansopensans-cli {
+.opensans-cli {
   font-family: "OpenSans-CondLightItalic", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -65,7 +65,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-extrabold,
-.opensansopensans-eb {
+.opensans-eb {
   font-family: "OpenSans-ExtraBold", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -75,7 +75,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-extrabolditalic,
-.opensansopensans-ebi {
+.opensans-ebi {
   font-family: "OpenSans-ExtraBoldItalic", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -85,7 +85,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-italic,
-.opensansopensans-i {
+.opensans-i {
   font-family: "OpenSans-Italic", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -95,7 +95,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-light,
-.opensansopensans-l {
+.opensans-l {
   font-family: "OpenSans-Light", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -105,7 +105,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-lightitalic,
-.opensansopensans-li {
+.opensans-li {
   font-family: "OpenSans-LightItalic", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -115,7 +115,7 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-semibold,
-.opensansopensans-sb {
+.opensans-sb {
   font-family: "OpenSans-Semibold", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 
 @font-face {
@@ -125,5 +125,5 @@
   font-weight: normal;
   font-style: normal; }
 .opensans-semibolditalic,
-.opensansopensans-sbi {
+.opensans-sbi {
   font-family: "OpenSans-SemiBoldItalic", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
