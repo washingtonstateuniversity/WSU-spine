@@ -227,9 +227,10 @@
 	
 				// Fixed/Sticky Horizontal Header
 				$(document).scroll(function() {
-					var top;
+					var top,bottom;
 					
 						top				= $(document).scrollTop();
+						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
 						scroll_dif		= scroll_top-top;
 						scroll_top		= top;
 	
@@ -254,7 +255,12 @@
 							//console.log("SCROLLING || spine_ht::" + spine_ht);
 							//console.log("SCROLLING || height_dif::" + height_dif);
 							//console.log("SCROLLING || positionLock::" + positionLock);
-							
+							if(top<=0){
+								positionLock=0;
+							}
+							if(bottom<=0){
+								positionLock=height_dif;
+							}
 							spine.css({"position":"fixed","top":positionLock+"px"});
 						}
 					/*
