@@ -1,4 +1,3 @@
-/* II Spine */
 /* Icons Font */
 @font-face {
   font-family: "Spine-Icons";
@@ -6,7 +5,7 @@
   src: url("//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.ttf") format("font/truetype"), url("//repo.wsu.edu/spine/1/icons/wsu-spine-icons-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-/* II.1.0 THE SPINE
+/* # THE SPINE
 --------------------------------------------------------------------------- */
 #spine,
 #spine * {
@@ -40,16 +39,12 @@
     position: fixed;
     xxwidth: 198px; }
   #spine.cropped {
-    xxfont-size: 12px;
     height: 198px;
-    min-height: 198px;
-    top: 0px; }
+    min-height: 198px; }
     #spine.cropped #glue {
       width: 198px;
       height: 198px;
-      min-height: 198px;
-      xxbox-shadow: 0px 0px 5px rgba(66, 74, 79, 0.5);
-      xxposition: absolute; }
+      min-height: 198px; }
     #spine.cropped nav,
     #spine.cropped footer {
       display: none; }
@@ -79,7 +74,7 @@
   margin-left: 1.75em;
   margin-right: 1.75em; }
 
-/* ## HEADER (#spine)
+/* ## HEADER
 --------------------------------------------------------------------------- */
 #spine header {
   z-index: 99164; }
@@ -99,7 +94,7 @@
 html.no-svg #wsu-signature {
   xxbackground-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png"); }
 
-/* Spine Menu Button (Shelve and Unshelve) */
+/* ### Spine Menu Button (Shelve and Unshelve) */
 button#shelve {
   height: 50px;
   width: 100px;
@@ -108,14 +103,9 @@ button#shelve {
   left: 0px;
   top: 0px;
   z-index: 100;
-  font-size: 24px;
-  color: #b6bcbf;
   display: none;
   background: transparent url("http://repo.wsu.edu/spine/1/icons/menu.svg") 20px center no-repeat;
   outline: none; }
-
-button#shelve:hover {
-  color: #5e6a71; }
 
 .spine-actions-tabs button:before,
 .spine-nav button:before,
@@ -136,7 +126,7 @@ button#shelve:hover {
   padding-bottom: 100px; }
 #spine nav {
   /* Parents */
-  /* II.2.2 NAVIGATION -> Disclosure */ }
+  /* ### Disclosure */ }
   #spine nav ul {
     margin: 0px;
     padding: 0px; }
@@ -195,11 +185,11 @@ button#shelve:hover {
   #spine nav ul li.opened > ul > li {
     display: block; }
 
-/* II.2.3 NAVIGATION -> SECTIONS -> Site */
+/* ### Site Navigation */
 #spine {
-  /* Home Icon */
-  /* "Dogeared" Link */
-  /* External Links */ }
+  /* #### Home Icon */
+  /* #### "Dogeared" Link */
+  /* #### External Links */ }
   #spine .spine-sitenav {
     margin-top: 1em;
     margin-bottom: 1em; }
@@ -230,7 +220,7 @@ button#shelve:hover {
     margin-left: 3px;
     content: "\21AA"; }
 
-/* II.2.4 NAVIGATION -> SECTIONS -> Offsite  */
+/* ### Offsite Navigation  */
 .spine-offsitenav {
   margin-top: 20px; }
   .spine-offsitenav ul li {

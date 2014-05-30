@@ -1,8 +1,6 @@
 @import 'vars/global';
 @import 'vars/colors';
 
-/* II Spine */
-
 /* Icons Font */
 @font-face {
 	font-family: "Spine-Icons";
@@ -15,7 +13,7 @@
 	}
 
 
-/* II.1.0 THE SPINE
+/* # THE SPINE
 --------------------------------------------------------------------------- */
 
 #spine,
@@ -59,17 +57,14 @@
 	/* II.1.2 Cropped */
 	
 	&.cropped {
-		xxfont-size: 12px;
+	
 		height: 198px;
 		min-height: 198px;
-		top: 0px;
 		
 		#glue {
 			width: 198px;
 			height: 198px;
 			min-height: 198px;
-			xxbox-shadow: 0px 0px 5px rgba(66,74,79,0.5);
-			xxposition: absolute;
 			}
 		
 		nav,
@@ -122,7 +117,7 @@
 	
 
 
-/* ## HEADER (#spine)
+/* ## HEADER
 --------------------------------------------------------------------------- */
 
 #spine header {
@@ -144,8 +139,8 @@ html.no-svg #wsu-signature {
 	xxbackground-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png');
 	}
 
+/* ### Spine Menu Button (Shelve and Unshelve) */
 
-/* Spine Menu Button (Shelve and Unshelve) */
 button#shelve {
 	height: 50px;
 	width: 100px;
@@ -154,24 +149,24 @@ button#shelve {
 	left: 0px;
 	top: 0px;
 	z-index: 100;
-	font-size: 24px;
-	color: #b6bcbf;
 	display: none;
 	background: transparent url('http://repo.wsu.edu/spine/1/icons/menu.svg') 20px center no-repeat;
 	outline: none;
 	}
-button#shelve:hover {
-	color: #5e6a71;
-	}
-.spine-actions-tabs button:before,
-.spine-nav button:before,
-.spine-footer button:before {
-	font-family: "Spine-Icons";
-	text-indent: 0px;
-	position: absolute;
-	left: 0px;	top: 0em; right: 0px; bottom: 0px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	
+.spine-actions-tabs,
+.spine-nav,
+.spine-footer  {
+
+	button:before {
+		font-family: "Spine-Icons";
+		text-indent: 0px;
+		position: absolute;
+		left: 0px;	top: 0em; right: 0px; bottom: 0px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		}
+	
 	}
 	
 /* ## NAVIGATION
@@ -265,7 +260,8 @@ button#shelve:hover {
 		top: .4em;
 		}
 		
-	/* II.2.2 NAVIGATION -> Disclosure */
+	/* ### Disclosure */
+	
 	ul ul li {
 		display: none;
 		}
@@ -281,7 +277,7 @@ button#shelve:hover {
 	
 	}
 
-/* II.2.3 NAVIGATION -> SECTIONS -> Site */
+/* ### Site Navigation */
 
 #spine {
 
@@ -293,7 +289,7 @@ button#shelve:hover {
 		border-bottom-width: 1px;
 		}
 	
-	/* Home Icon */
+	/* #### Home Icon */
 	
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a {
 		padding-left: 1.4em;
@@ -309,7 +305,7 @@ button#shelve:hover {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
 		}
 		
-	/* "Dogeared" Link */
+	/* #### "Dogeared" Link */
 
 	li:not(.parent).dogeared > a {
 		color: #981e32;
@@ -320,7 +316,7 @@ button#shelve:hover {
 		cursor: default;
 		}
 		
-	/* External Links */
+	/* #### External Links */
 	
 	nav a.external:hover:after {
 		font-family: "Spine-Icons";
@@ -333,7 +329,7 @@ button#shelve:hover {
 	
 	}
 	
-/* II.2.4 NAVIGATION -> SECTIONS -> Offsite  */
+/* ### Offsite Navigation  */
 
 .spine-offsitenav {
 	
@@ -883,7 +879,6 @@ html.lt-ie9 #spine footer {
 			}
 
 		}
-
 
 	}
 
