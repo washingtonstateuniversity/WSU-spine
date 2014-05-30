@@ -125,6 +125,7 @@ module.exports = function(grunt) {
 					markup: 'skip',
 					MALFORMED : 'skip', // true or false is what is tested for
 					demo: 'skip',
+					opensans: 'skip',
 					filledSearchTab : 'skip',
 					showLong : 'skip',
 					manyLinks : 'skip',
@@ -161,6 +162,15 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						demo : 'true'
+					}
+				}
+			},
+			opensans : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/tests/opensans.html',
+				options : {
+					context : {
+						opensans : 'true'
 					}
 				}
 			},
@@ -315,6 +325,7 @@ module.exports = function(grunt) {
 								'copy',
 								'includereplace',
 								'preprocess:html',
+								'preprocess:opensans',
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
