@@ -246,15 +246,21 @@
 						//console.log("|---------------------------------------------");
 						if( main.height()>glue_ht ){
 							if( (scroll_dif>0?false:true) ){//down
-								positionLock = ( positionLock <= height_dif || bottom<=0) ? height_dif : positionLock + scroll_dif;
+								positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
 							}else{//up
-								positionLock = ( positionLock >= 0 || top<=0) ? 0 : positionLock + scroll_dif;
+								positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
 							}
 							
 							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
 							//console.log("SCROLLING || spine_ht::" + spine_ht);
 							//console.log("SCROLLING || height_dif::" + height_dif);
 							//console.log("SCROLLING || positionLock::" + positionLock);
+							if(top<=0){
+								positionLock=0;
+							}
+							if(bottom<=0){
+								positionLock=height_dif;
+							}
 							spine.css({"position":"fixed","top":positionLock+"px"});
 						}
 					/*
