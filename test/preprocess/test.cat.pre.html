@@ -31,7 +31,7 @@ h1 {
 	font-family: "OpenSans-CondBold";
 	}
 h2,
-main h3 {
+h3 {
 	font-size: 2.5em;
 	font-family: "OpenSans-CondLight";
 }
@@ -1057,7 +1057,12 @@ pre code {
 <ul>
 	<li><a href="/">Site Home</a></li>
 	<li>
+		<!-- @if navdata='true' -->
+		<a href="link" data-foo="bar" >About</a>
+		<!-- @endif -->
+		<!-- @if navdata!='true' -->
 		<a href="link">About</a>
+		<!-- @endif -->
 		<ul>
 			<li><a href="">The first link in a list of links</a></li>
 			<li class="current"><a href="link">A secondary link</a></li>
