@@ -245,9 +245,9 @@ html.lt-ie9 #spine .spine-actions {
   #spine .spine-actions {
     padding: 0px; }
     #spine .spine-actions section {
-      z-index: 99164;
+      z-index: 99163;
       height: 100%;
-      position: fixed;
+      position: absolute;
       display: block;
       width: 198px; }
     #spine .spine-actions section.closed {
