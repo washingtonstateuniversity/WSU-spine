@@ -358,7 +358,7 @@ html.lt-ie9 #spine .spine-actions {
   right: 20px !important; }
 .spine-search button:hover:before {
   color: #981e32; }
-.spine-search lable {
+.spine-search label {
   position: absolute;
   left: -999em;
   top: -999em; }
