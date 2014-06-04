@@ -72,4 +72,4 @@ In addition to these assets, the Spine requires some minimal markup.
 		</body>
 	</html>
 	
-The "#jacket" is the outermost wrapper and fills the window width. The "#binder" is a container that serves to constrain the maximum width of content. Both are necessary for Spine positioning and responsive behavior.
+The `#jacket` is the outermost wrapper and fills the window width. The `#binder` is a container that serves to constrain the maximum width of content. Both are necessary for Spine positioning and responsive behavior.
