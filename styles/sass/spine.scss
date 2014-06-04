@@ -507,7 +507,12 @@ html.lt-ie9 #spine .spine-actions {
 	button:hover:before {
 		color: $crimson;
 		}
-	
+	label {
+		position:absolute;
+		left: -999em;
+		top:-999em;
+		}
+
 	}
 	
 .spine-search :-webkit-input-placeholder {
