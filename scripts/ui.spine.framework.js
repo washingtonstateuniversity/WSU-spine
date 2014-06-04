@@ -205,7 +205,7 @@
 			positionLock=0;
 			scroll_top=0;
 			
-			console.log("starting positionLock::" + positionLock);
+			//console.log("starting positionLock::" + positionLock);
 			
 			self=this;
 			spine = self._get_globals("spine").refresh();
