@@ -75,6 +75,11 @@
 				wsu_search.remove();
 			}
 			this.setup_tabs("search",tabhtml);
+			
+			if($("#spine-shortcuts").length<=0){
+				$("#wsu-search").append("<div id='spine-shortcuts' class='spine-shortcuts'></div>");
+			}
+			
 			$("#wsu-search-tab button").on("click",function() {
 				self._get_globals("search_input").refresh().focus();
 			});
