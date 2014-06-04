@@ -356,12 +356,10 @@
 			$("#wsu-"+tab+"-tab button").on("click",function(e) {
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-"+tab+",#wsu-"+tab+"-tab").toggleClass("opened closed");
-				if($(".cropped").length<=0){
-					action_ht = $("#spine-navigation").outerHeight() + $(".spine-footer").outerHeight();
-				}else{
-					action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
-				}
-				$(".spine-action.opened").height( action_ht );
+				
+				action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
+				
+				$(".spine-action.opened").css( "min-height", action_ht );
 			});
 		},
 
