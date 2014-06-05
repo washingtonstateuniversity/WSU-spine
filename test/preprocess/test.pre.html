@@ -174,13 +174,13 @@
 	<!-- @endif -->
 
 	<!-- @if MALFORMED='true' -->
-		@@include('blocks/malformed_contact_block.html', {})
+		@@include('blocks/contact_malformed.html', {})
 	<!-- @endif -->
 
 	<!-- @if MALFORMED='false' -->
 		<!-- NOTE: a normal working contact tab, just could have been better placed 
 			 then in the spine directly -->
-		@@include('blocks/normal_contact_block.html', {})
+		@@include('blocks/contact_normal.html', {})
 	<!-- @endif -->
 
 </section><!--/#wsu-actions-->
@@ -230,7 +230,7 @@
 	cms to generate this block and any rich data. If you do hand code it is worth noting that you can put this in a footer
 	or something that will work to let you display one thing to a user but another to the search engines.
 	-->
-	@@include('blocks/normal_contact_block.html', {})
+	@@include('blocks/contact_normal.html', {})
 	
 </body>
 </html>
