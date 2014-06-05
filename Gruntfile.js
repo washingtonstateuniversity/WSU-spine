@@ -202,12 +202,12 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_overlyLong : {
+			tu_doubledContact : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/overlyLong.html',
+				dest : 'test/tests/doubledContact.html',
 				options : {
 					context : {
-						showLong : 'true'
+						doubledContact : 'true'
 					}
 				}
 			},
@@ -220,22 +220,31 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_overlyLinked : {
+			tu_overly : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/overlyLinked.html',
-				options : {
-					context : {
-						manyLinks : 'true'
-					}
-				}
-			},
-			tu_overlyLinked_n_overlyLong : {
-				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/overlyLinked_n_overlyLong.html',
+				dest : 'test/tests/overly.html',
 				options : {
 					context : {
 						manyLinks : 'true',
 						showLong : 'true'
+					}
+				}
+			},
+			tu_overly_long : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/tests/overly_long.html',
+				options : {
+					context : {
+						showLong : 'true'
+					}
+				}
+			},
+			tu_overly_linked : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'test/tests/overly_linked.html',
+				options : {
+					context : {
+						manyLinks : 'true'
 					}
 				}
 			},
@@ -248,36 +257,27 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_doubledContact : {
+			tu_grid_fluid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/doubledContact.html',
-				options : {
-					context : {
-						doubledContact : 'true'
-					}
-				}
-			},
-			tu_fluidGrid : {
-				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/fluidGrid.html',
+				dest : 'test/tests/grid_fluid.html',
 				options : {
 					context : {
 						fluidGrid : 'true'
 					}
 				}
 			},
-			tu_hybridGrid : {
+			tu_grid_hybrid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/hybridGrid.html',
+				dest : 'test/tests/grid_hybrid.html',
 				options : {
 					context : {
 						hybridGrid : 'true'
 					}
 				}
 			},
-			tu_fixedGrid : {
+			tu_grid_fixed : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/fixedGrid.html',
+				dest : 'test/tests/grid_fixed.html',
 				options : {
 					context : {
 						fixedGrid : 'true'
@@ -339,14 +339,14 @@ module.exports = function(grunt) {
 								'preprocess:tu_filledSearchTabs',
 								'preprocess:tu_malformedContact',
 								'preprocess:tu_filledContact',
-								'preprocess:tu_overlyLong',
-								'preprocess:tu_overlyLinked',
-								'preprocess:tu_overlyLinked_n_overlyLong',
+								'preprocess:tu_overly',
+								'preprocess:tu_overly_long',
+								'preprocess:tu_overly_linked',
 								'preprocess:tu_cropped',
 								'preprocess:tu_doubledContact',
-								'preprocess:tu_fluidGrid',
-								'preprocess:tu_hybridGrid',
-								'preprocess:tu_fixedGrid',
+								'preprocess:tu_grid_fluid',
+								'preprocess:tu_grid_hybrid',
+								'preprocess:tu_grid_fixed',
 								'preprocess:tu_navdata',
 								'preprocess:markup',
 								'preprocess:demo'
