@@ -175,36 +175,36 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			tu_filledSearchTabs : {
+			tu_search_tabs : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/filledSearchTabs.html',
+				dest : 'test/tests/search_tabs.html',
 				options : {
 					context : {
 						filledSearchTab : 'true'
 					}
 				}
 			},
-			tu_malformedContact : {
+			tu_contact_malformed : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/malformedContact.html',
+				dest : 'test/tests/contact_malformed.html',
 				options : {
 					context : {
 						MALFORMED : 'true'
 					}
 				}
 			},
-			tu_filledContact : {
+			tu_contact_filled : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/filledContact.html',
+				dest : 'test/tests/contact_filled.html',
 				options : {
 					context : {
 						MALFORMED : 'false'
 					}
 				}
 			},
-			tu_doubledContact : {
+			tu_contact_double : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/doubledContact.html',
+				dest : 'test/tests/contact_double.html',
 				options : {
 					context : {
 						doubledContact : 'true'
@@ -336,14 +336,15 @@ module.exports = function(grunt) {
 								'includereplace',
 								'preprocess:html',
 								'preprocess:opensans',
-								'preprocess:tu_filledSearchTabs',
-								'preprocess:tu_malformedContact',
-								'preprocess:tu_filledContact',
+								'preprocess:tu_search_tabs',
+								'preprocess:tu_contact_malformed',
+								'preprocess:tu_contact_filled',
+								'preprocess:tu_contact_double',
 								'preprocess:tu_overly',
 								'preprocess:tu_overly_long',
 								'preprocess:tu_overly_linked',
 								'preprocess:tu_cropped',
-								'preprocess:tu_doubledContact',
+								
 								'preprocess:tu_grid_fluid',
 								'preprocess:tu_grid_hybrid',
 								'preprocess:tu_grid_fixed',
