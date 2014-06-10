@@ -278,6 +278,24 @@
 						spine.removeClass("scanned");
 					}*/
 				});
+				
+				
+				$(document).keydown(function(e) {
+					if(e.which === 35 || e.which === 36) {
+						viewport_ht		= $(window).height();
+						spine_ht		= spine[0].scrollHeight;
+						height_dif		= viewport_ht - spine_ht;
+						if(e.which === 35) {
+							positionLock=height_dif;
+						} else if(e.which === 36) {
+							positionLock=0;
+						}
+						spine.css({"position":"fixed","top":positionLock+"px"});
+					}
+				});
+				
+				
+				
 			}
 			$("#glue > header").append("<button id='shelve' />");
 			$("#shelve").on("click",function(e) {
