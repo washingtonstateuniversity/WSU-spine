@@ -894,38 +894,82 @@ section {
   margin: 0px;
   border-top: 1px gray dotted; }
 
-/* Margins */
-.marginalize .column, .marginalized {
+/* ## Spacing
+-------------------------------------------------------- */
+/* ### Margins (Uses padding) */
+.marginalize .column,
+.marginalized {
   padding: 2em; }
 
-.marginalize-top .column, .marginalized-top {
+.marginalize-top .column,
+.marginalized-top {
   padding-top: 2em; }
 
-.marginalize-right .column, .marginalized-right {
+.marginalize-right .column,
+.marginalized-right {
   padding-right: 2em; }
 
-.marginalize-bottom .column, .marginalized-bottom {
+.marginalize-bottom .column,
+.marginalized-bottom {
   padding-bottom: 2em; }
 
-.marginalize-left .column, .marginalized-left {
+.marginalize-left .column,
+.marginalized-left {
   padding-left: 2em; }
 
-.marginalize.wide .column, .marginalized.wide {
-  padding: 4em; }
-
-.marginalize-top.wide .column, .marginalized-top.wide {
-  padding-top: 4em; }
-
-.marginalize-right.wide .column, .marginalized-right.wide {
+.marginalize.wide .column,
+.marginalized.wide {
+  padding-left: 4em;
   padding-right: 4em; }
 
-.marginalize-bottom.wide .column, .marginalized-bottom.wide {
-  padding-bottom: 4em; }
+.marginalize-right.wide .column,
+.marginalized-right.wide {
+  padding-right: 4em; }
 
-.marginalize-left.wide .column, .marginalized-left.wide {
+.marginalize-left.wide .column,
+.marginalized-left.wide {
   padding-left: 4em; }
 
-/* Gutters */
+.marginalize.narrow .column,
+.marginalized.narrow {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.marginalize-right.narrow .column,
+.marginalized-right.narrow {
+  padding-right: 1em; }
+
+.marginalize-left.narrow .column,
+.marginalized-left.narrow {
+  padding-left: 1em; }
+
+.marginalize.tall .column,
+.marginalized.tall {
+  padding-top: 4em;
+  padding-bottom: 4em; }
+
+.marginalize-top.tall .column,
+.marginalized-top.tall {
+  padding-top: 4em; }
+
+.marginalize-bottom.tall .column,
+.marginalized-bottom.tall {
+  padding-bottom: 4em; }
+
+.marginalize.short .column,
+.marginalized.short {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.marginalize-top.short .column,
+.marginalized-top.short {
+  padding-top: 1em; }
+
+.marginalize-bottom.short .column,
+.marginalized-bottom.short {
+  padding-bottom: 1em; }
+
+/* ### Gutters */
 .guttered {
   padding-left: 2em;
   padding-right: 2em; }

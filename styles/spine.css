@@ -21,6 +21,14 @@
   z-index: 99164;
   position: absolute;
   bottom: 0;
+  	/*
+  &.scrolled {
+  		bottom: 0;
+  		top: auto;
+  		position: fixed;
+  		xxwidth: 198px;
+  		}
+  */
   /* II.1.2 Cropped */ }
   #spine button {
     background-color: transparent;
@@ -33,11 +41,6 @@
     color: #5e6a71; }
   #spine a:hover {
     color: #981e32; }
-  #spine.scrolled {
-    bottom: 0;
-    top: auto;
-    position: fixed;
-    xxwidth: 198px; }
   #spine.cropped {
     height: 198px;
     min-height: 198px; }

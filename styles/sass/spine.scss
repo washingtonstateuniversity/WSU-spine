@@ -47,12 +47,14 @@
 		color: #981e32;
 		}
 		
-	&.scrolled {
+	/*
+&.scrolled {
 		bottom: 0;
 		top: auto;
 		position: fixed;
 		xxwidth: 198px;
 		}
+*/
 	
 	/* II.1.2 Cropped */
 	
@@ -60,6 +62,7 @@
 	
 		height: 198px;
 		min-height: 198px;
+		position: fixed;
 		
 		#glue {
 			width: 198px;
