@@ -247,8 +247,16 @@
 						if( main.height()>glue_ht ){
 							if( (scroll_dif>0?false:true) ){//down
 								positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+								if(bottom<=0 && positionLock >= height_dif){
+									positionLock=height_dif;
+								}
 							}else{//up
 								positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+								
+								if(top>0 && positionLock>0){
+									positionLock=0;
+								}
+								
 							}
 							
 							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
