@@ -340,19 +340,16 @@
 				else { $("#spine.cracked").removeClass("pinned"); }
 			}); */
 
-			// Moving the Spine for Short Windows
-			/*$(document).scroll(function() {
-				var windowHeight, top, spineHeight, crack;
-				windowHeight = window.innerHeight;
+			// Add skimming
+			$(document).scroll(function() {
+				var top;
 				top = $(document).scrollTop();
-				spineHeight = $("#glue").height();
-				crack = spineHeight - windowHeight;
-				if ( top > crack ) {
-					$("#spine.cracked").addClass("scrolled");
+				if ( top > 148 ) {
+					$("#spine").addClass("skimmed");
 				} else {
-					$("#spine.cracked").removeClass("scrolled");
+					$("#spine").removeClass("skimmed");
 				}
-			});*/
+			});
 
 			// Moving the Spine for Short Windows
 			/*$(document).scroll(function() {
