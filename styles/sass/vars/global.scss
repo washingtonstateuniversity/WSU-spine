@@ -56,96 +56,104 @@ $lightest-signature-classes: 'gray', 'light', 'dark', 'crimson';
 $locality: '//repo.wsu.edu/spine/1';
 // $locality: '';
 
-@mixin signatures($directionality,$grid) {	
+@mixin signatures($directionality,$path) {
+
+	@if $directionality == 'horizontal' {
+		#xxwsu-signature {
+			background-position: center 14px;
+			background-size: auto 30px;
+			height: 49px;
+			}
+		}
 
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} #wsu-signature {
+			#{$path} #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}.svg');
 		    	}
 	    	}
 		@else { 
-			.#{$campus}-signature #{$grid} #wsu-signature {
+			.#{$campus}-signature #{$path} #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} .lighter #wsu-signature {
+			#{$path}.lighter #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-gray-graydarker.svg');
 		    	}
 	    	}
 		@else {
-	    	.#{$campus}-signature #{$grid} .lighter #wsu-signature {
+	    	.#{$campus}-signature #{$path}.lighter #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}-crimson-gray-graydarker.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} .light #wsu-signature {
+			#{$path}.light #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-gray-white.svg');
 		    	}
 	    	}
 		@else {
-	    	.#{$campus}-signature #{$grid} .light #wsu-signature {
+	    	.#{$campus}-signature #{$path}.light #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}-crimson-gray-white.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} .gray #wsu-signature {
+			#{$path}.gray #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-graydark-graylighter.svg');
 		    	}
 	    	}
 		@else {
-	    	.#{$campus}-signature #{$grid} .gray #wsu-signature {
+	    	.#{$campus}-signature #{$path}.gray #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}-crimson-graydark-graylighter.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} .dark #wsu-signature {
+			#{$path}.dark #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-7d868c-graylightly.svg');
 		    	}
 	    	}
 		@else {
-	    	.#{$campus}-signature #{$grid} .dark #wsu-signature {
+	    	.#{$campus}-signature #{$path}.dark #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}-crimson-7d868c-graylightly.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} .darker #wsu-signature,
-			#{$grid} .darkest #wsu-signature {
+			#{$path} .darker #wsu-signature,
+			#{$path} .darkest #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-gray-graylighter.svg');
 		    	}
 	    	}
 		@else {
-	    	.#{$campus}-signature #{$grid} .darker #wsu-signature,
-	    	.#{$campus}-signature #{$grid} .darkest #wsu-signature {
+	    	.#{$campus}-signature #{$path}.darker #wsu-signature,
+	    	.#{$campus}-signature #{$path}.darkest #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}-crimson-gray-graylighter.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
 		@if $campus == 'pullman' { 
-			#{$grid} .crimson #wsu-signature {
+			#{$path}.crimson #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-white-graylightly-white.svg');
 		    	}
 	    	}
 		@else {
-	    	.#{$campus}-signature #{$grid} .crimson #wsu-signature {
+	    	.#{$campus}-signature #{$path}.crimson #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}-white-graylightly-white.svg');
 				}
 			}
 		}
 	
-	html.lt-ie9 #binder#{$grid} #wsu-signature {
+	html.lt-ie9 #{$path} #wsu-signature {
 		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-#{$directionality}.png');
 		}
 	

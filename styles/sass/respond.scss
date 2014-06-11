@@ -152,6 +152,15 @@
 		}
 
 	}
+	
+nav a.external:after {
+	font-family: "Spine-Icons";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+	margin-left: 3px;
+	content: "\21AA";
+	}
 
 /* Fluid after first break */
 #binder.fluid {
@@ -185,13 +194,9 @@
 	}
 
 /* Signature */
-#binder:not(.fluid) #wsu-signature {
-	background-position: center 14px;
-	background-size: auto 30px;
-	height: 49px;
-	}
+
 	
-@include signatures('horizontal','#binder:not(.fluid)')
+@include signatures('horizontal','#binder:not(.fluid) ')
 	
 	}
 
@@ -404,7 +409,7 @@
 
 /* Header Colors and Signatures */
 @include header-colors;
-@include signatures('horizontal','.fluid');
+@include signatures('horizontal','.fluid ');
 
 	}
 
@@ -470,7 +475,7 @@
 	margin-left: 0px;
 	}
 
-@include signatures('horizontal','.fixed');
+@include signatures('horizontal','.fixed ');
 
 }
 
@@ -661,7 +666,7 @@
 
 /* Header Colors and Signatures */
 @include header-colors;
-@include signatures('horizontal','.fluid');
+@include signatures('horizontal','.fluid ');
 
 	}
 
