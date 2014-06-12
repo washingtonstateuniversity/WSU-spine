@@ -410,11 +410,10 @@
 			$("#spine nav li.parent > a").each( function() {
 				var tar, title, alt, classes, url;
 				tar=$(this);
-				title = "Overview";
-				if (tar.attr("title")) {
-					alt = tar.attr("title").length;
-					if ( alt > 0 ) { title = tar.attr("title"); }
-				}
+				
+				title = ( tar.attr("title").length > 0 ) ?tar.attr("title") : "Overview";
+				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
+				
 				classes = "overview";
 				if (tar.closest(".parent").hasClass("dogeared")) {
 					classes += " dogeared";
