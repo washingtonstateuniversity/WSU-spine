@@ -224,12 +224,12 @@
 					//console.log("window-resize | spineHeight::" + spineHeight);
 					//console.log("window-resize | heightDif::" + heightDif);
 				}).trigger("resize");*/
-	
+
 				// Fixed/Sticky Horizontal Header
-				$(document).scroll(function() {
+				$(document).on("scroll touchmove",function() {
 					var top,bottom;
-						$(document).css("-webkit-overflow-scrolling","touch");
-						$(window).css("-webkit-overflow-scrolling","touch");
+						//$(document).css("-webkit-overflow-scrolling","touch");
+						//$(window).css("-webkit-overflow-scrolling","touch");
 						top				= $(document).scrollTop();
 						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
 						scroll_dif		= scroll_top-top;
