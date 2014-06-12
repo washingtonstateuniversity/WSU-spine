@@ -224,11 +224,13 @@
 					//console.log("window-resize | spineHeight::" + spineHeight);
 					//console.log("window-resize | heightDif::" + heightDif);
 				}).trigger("resize");*/
-	
+
 				// Fixed/Sticky Horizontal Header
-				$(document).scroll(function() {
+				$(document).on("scroll touchmove",function() {
 					var top,bottom;
-					
+						//$(document).css("-webkit-overflow-scrolling","touch");
+						//$(window).css("-webkit-overflow-scrolling","touch");
+						//$("body").css("-webkit-overflow-scrolling","touch");
 						top				= $(document).scrollTop();
 						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
 						scroll_dif		= scroll_top-top;
@@ -407,13 +409,13 @@
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
-				var tar, title, alt, classes, url;
+				var tar, title, classes, url;
 				tar=$(this);
-				title = "Overview";
-				if (tar.attr("title")) {
-					alt = tar.attr("title").length;
-					if ( alt > 0 ) { title = tar.attr("title"); }
-				}
+				
+				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
+				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
+				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
+				
 				classes = "overview";
 				if (tar.closest(".parent").hasClass("dogeared")) {
 					classes += " dogeared";
