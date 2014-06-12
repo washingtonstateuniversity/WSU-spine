@@ -115,7 +115,7 @@
 			<article>
 				@@include('content/intro.html', {})
 
-			<!-- @if showLong='true' -->
+			<!-- @if showLong='true' || cropped='true' -->
 				@@include('blocks/long_text_block.html', {})
 			<!-- @endif -->
 			</article>
@@ -187,7 +187,14 @@
 
 <section id="spine-navigation" class="spine-navigation">
 	
+	<!-- @if markup == 'true' -->
+	@@include('blocks/nav-site.html', {})
+	<!-- @endif -->
+	
+	<!-- @if markup != 'true' -->
 	@@include('blocks/nav-site-tests.html', {})
+	<!-- @endif -->
+	
 	@@include('blocks/nav-offsite.html', {})
 
 </section><!-- #navigation -->
