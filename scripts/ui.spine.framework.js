@@ -408,7 +408,7 @@
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
-				var tar, title, alt, classes, url;
+				var tar, title, classes, url;
 				tar=$(this);
 				
 				title = ( tar.attr("title").length > 0 ) ?tar.attr("title") : "Overview";
