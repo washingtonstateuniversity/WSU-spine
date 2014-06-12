@@ -411,8 +411,9 @@
 				var tar, title, classes, url;
 				tar=$(this);
 				
-				title = ( tar.attr("title").length > 0 ) ?tar.attr("title") : "Overview";
+				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
 				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
+				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
 				
 				classes = "overview";
 				if (tar.closest(".parent").hasClass("dogeared")) {
