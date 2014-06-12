@@ -149,7 +149,7 @@
 		
 		globals: {
 			version: "0.1.0",
-			current_url:window.location.href
+			current_url:window.location.href,
 		},
 		options: {
 		},
