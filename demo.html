@@ -459,7 +459,7 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleeding</button></dd>
+		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleeding</button></dd>
 		<dd><button onclick="$('#spine').toggleClass('cropped'); $('#glue').removeAttr('style'); $(this).toggleClass('active');">cropped</button></dd> 
 	</dl>
 	
@@ -702,16 +702,14 @@ pre code {
 
 <section id="spine-navigation" class="spine-navigation">
 	
+	
 	<nav class="spine-sitenav">
-<!-- Your navigation list here
-	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
-	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
-	• Replace example navigation list below
--->
 
 <ul>
 	<li><a href="/">Site Home</a></li>
 	<li>
+		<!-- @if navdata='true' -->
+		<a href="link" data-foo="bar" >About</a>
 		<a href="link">About</a>
 		<ul>
 			<li><a href="">Options</a>
@@ -726,8 +724,10 @@ pre code {
 					<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
 					<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
 					<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
 				</ul>
 			</li>
+			
 		</ul>
 	</li>
 	<li>
@@ -748,6 +748,8 @@ pre code {
 </ul>
 
 </nav>
+	<!-- @endif -->
+	
 	<nav class="spine-offsitenav">
 	<ul>
 		<li><a href="http://www.example.com">Offsite Link</a></li>
