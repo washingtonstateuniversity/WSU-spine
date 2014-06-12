@@ -1,0 +1,119 @@
+
+@mixin shelved {
+	
+	#wsu-signature {
+		background-position: center 14px;
+		background-size: auto 30px;
+		height: 50px;
+		margin-left: 40px;
+		}
+	
+	#spine {
+
+		width: 298px;
+		min-height: 100%;
+		left: -298px;
+		top: 0;
+		z-index: 99164;
+		font-size: 16px;
+		
+		#glue {
+			width: 298px;
+			xxpadding-top: 50px;
+			xxmargin-bottom: -50px;
+			}
+		#glue:before {
+			left: -702px;
+			}
+			
+		button#shelve {
+			display: block;
+			}	
+		&.shelved {
+			-webkit-transition: left 0.2s ease-in-out;
+			transition: left 0.4s ease-in-out;
+			left: -500px;
+			}
+		&.unshelved {
+			-webkit-transition: left 0.2s ease-in-out;
+			left: 0;
+			}
+		header {
+			top: 0;
+			left: 0;
+			width: 100%;
+			position: fixed;
+			height: 50px;
+			}
+		.spine-actions {
+			padding-top: 50px;
+			}
+		.spine-navigation {
+			padding-bottom: 100px;
+			}
+		&.xxskimmed header {
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			}
+		nav ul li {
+			line-height: 1.5em;
+			}
+		nav ul li.parent > a:after,
+		nav ul li.parent.opened > a:after {
+			display: block;
+			}
+		footer {
+			width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
+			}
+			
+		}
+	
+	}
+	
+@mixin unshelved {
+	
+	#spine {
+		
+		left: auto;
+		
+		button#shelve {
+			display: none;
+			}
+		&.unshelved,
+		&.shelved,
+		&.skimmed header,
+		&.unshelved header {
+			box-shadow: none;
+			-webkit-transition: none;
+			left: auto;
+			}
+		#glue header {
+			top: 0;
+			left: 0;
+			position: relative;
+			height: 198px;
+			}
+		#wsu-actions {
+			padding-top: 0px;
+			}
+		#glue {
+			margin-top: 0px;
+			}
+		
+		
+		}
+	
+	
+		
+	.row.side-right .column {
+		width: 100%;
+		}
+	
+	#wsu-signature {
+		background-position: center;
+		background-size: 180px auto;
+		height: 197px;
+		margin-left: 0px;
+		}
+	
+	
+	}

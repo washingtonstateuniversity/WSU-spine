@@ -1,6 +1,7 @@
 @import 'vars/global';
 @import 'vars/colors';
-@import 'vars/grid';
+@import 'respond/states';
+@import 'respond/grid';
 
 #binder #spine.unshelved header:before {
 	content: "";
@@ -76,97 +77,14 @@
 #binder {
 	width: 792px;
 	}
-
-#binder:not(.fluid) {
-
-	main {
-		margin-left: 0px;
-		padding-top: 50px;
-		}
-	#wsu-signature {
-		background-position: 40% center;
-		background-size: 200px auto;
-		height: 50px;
-		margin-left: 40px;
-		}
-	
-	#spine {
-
-		width: 298px;
-		min-height: 100%;
-		left: -298px;
-		top: 0;
-		z-index: 99164;
-		font-size: 16px;
-		
-	#glue {
-		xxwidth: 298px;
-		margin-top: 50px;
-		}
-	section {
-		font-size: 16px;
-		width: 298px;
-		}
-		
-	/* 1.2 Navigation */
-	footer {
-		width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
-		}
-	nav ul li {
-		line-height: 1.5em;
-		}
-	nav ul li.parent > a:after,
-	nav ul li.parent.opened > a:after {
-		display: block;
-		}
-		
-	/* 1.3 Header */
-	header {
-		top: 0;
-		left: 0;
-		width: 100%;
-		position: fixed;
-		height: 50px;
-		background: white;
-		}
-	&.unshelved {
-		-webkit-transition: left 0.2s ease-in-out;
-		left: 0;
-		}
-	
-	&.scanned header {
-		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-		}
-	&.unshelved header {
-		box-shadow: none;
-		}
-	&.shelved {
-		-webkit-transition: left 0.2s ease-in-out;
-		transition: left 0.4s ease-in-out;
-		left: -500px;
-		}
-	button#shelve {
-		display: block;
-		}
-		
-		}
-
+main {
+	margin-left: 0px;
+	padding-top: 50px;
 	}
-	
-nav a.external:after {
-	font-family: "Spine-Icons";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	position: absolute;
-	margin-left: 3px;
-	content: "\21AA";
-	}
-
-/* Fluid after first break */
+			
 #binder.fluid {
 	width: 100%;
 	}
-	
 #binder.fluid main {
 	width: auto;
 	margin-left: 198px;
@@ -176,6 +94,13 @@ nav a.external:after {
 		width: auto;
 		margin-left: 0px;
 		}
+		
+/* Shelving */
+#binder:not(.fluid) {
+
+	@include shelved;
+			
+	}
 
 /* Adjust Search */
 .spine-search input[type="text"] {
@@ -195,8 +120,18 @@ nav a.external:after {
 
 /* Signature */
 
-	
-@include signatures('horizontal','#binder:not(.fluid) ')
+
+nav a.external:after {
+	font-family: "Spine-Icons";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+	margin-left: 3px;
+	content: "\21AA";
+	}
+
+@include header-colors;
+@include signatures('horizontal','#binder:not(.fluid) ');
 	
 	}
 
@@ -231,14 +166,13 @@ nav a.external:after {
 #binder.fixed {
 	width: 694px;
 	}
-#binder.fixed main {
-	width: 396px;
-	margin-left: 0px;
-	}
-
 #binder main {
 	width: auto;
 	padding-top: 50px;
+	margin-left: 0px;
+	}
+#binder.fixed main {
+	width: 396px;
 	margin-left: 0px;
 	}
 #binder.hybrid main,
@@ -247,82 +181,12 @@ nav a.external:after {
 	line-height: 26px;
 	margin-left: 0px;
 	}
-#binder #spine,
-#binder #spine .spine-actions section {
-	font-size: 16px;
-	xxwidth: 298px;
-	}
-#binder #spine {
-	width: 298px;
-	min-height: 100%;
-	left: -298px;
-	top: 0;
-	overflow: visible;
-	position: absolute;
-	z-index: 99164;
-	}
-#binder #glue {
-	margin-top: 50px;
-	}
-#spine button#shelve {
-	display: block;
-	}
-	
-/* Navigation */
+
+/* Shelving */
 #binder.fluid {
 
-	#spine {
+	@include shelved;
 	
-		.spine-sitenav,
-		.spine-offsitenav,
-		.spine-footer {
-			width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
-			}
-		nav ul li {
-			line-height: 1.5em;
-			}
-		nav ul li.parent > a:after,
-		nav ul li.parent.opened > a:after {
-			display: block;
-			}
-		footer {
-			
-			}
-			
-		/* Header */
-		#glue > header {
-			top: 0;
-			left: 0;
-			width: 100%;
-			position: fixed;
-			height: 50px;
-			}
-		#wsu-signature {
-			background-position: center center;
-			background-size: 200px auto;
-			height: 49px;
-			}
-		
-		&.unshelved {
-			-webkit-transition: left 0.1s ease-in-out;
-			left: 0;
-			}
-		&.scanned header {
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-			}
-		&.unshelved header {
-			box-shadow: none;
-			}
-		&.shelved {
-			-webkit-transition: left 0.2s ease-in-out;
-			transition: left 0.2s ease-in-out;
-			left: -298px;
-			}
-		#button#shelve {
-			display: block;
-			}
-	
-		}
 	}
 	
 /* Grid */
@@ -401,7 +265,7 @@ nav a.external:after {
 	}
 	
 /* Signature */
-#binder.fluid #spine #wsu-signature {
+#binder.fluid #wsu-signature {
 	background-position: center 14px;
 	background-size: auto 30px;
 	height: 49px;
@@ -430,52 +294,24 @@ nav a.external:after {
 	{
 
 #binder.fixed {
-	width: 694px;
+	width: 694px; /* 298px + 396px */
 	}
 #binder.fixed main {
 	width: 396px;
-	margin-top: 0px;
+	padding-top: 0px;
 	margin-left: 298px;
 	}
-#binder.fixed #spine {
-	left: auto;
-	}
-#binder.fixed #glue {
-	margin-top: 0px;
-	}
-
-/* Header */
-#binder.fixed #spine #glue > header {
-	top: 0;
-	left: 0;
-	position: relative;
-	height: 198px;
-	}
-#binder.fixed #spine.unshelved,
-#binder.fixed #spine.shelved,
-#binder.fixed #spine.scanned header,
-#binder.fixed #spine.unshelved header {
-	box-shadow: none;
-	-webkit-transition: none;
-	left: auto;
-	}
-#binder.fixed #spine button#shelve {
-	display: none;
-	}
 	
-.fixed .row.sidebar .column {
-	width: 100%;
+/* Shelving */
+
+#binder.fixed {
+	@include unshelved;
 	}
 
-/* Logo */
-#binder.fixed #wsu-signature {
-	background-position: center;
-	background-size: 180px auto;
-	height: 197px;
-	margin-left: 0px;
-	}
+/* Header Colors and Signatures */
 
-@include signatures('horizontal','.fixed ');
+@include header-colors;
+@include signatures('vertical','#binder.fixed ');
 
 }
 
@@ -497,7 +333,7 @@ nav a.external:after {
 		margin: 0px auto;
 		
 		main {
-			margin-top: 50px;
+			padding-top: 50px;
 			margin-left: 0px;
 			}
 		
@@ -527,131 +363,7 @@ nav a.external:after {
 	
 /* GRID BEHAVIOR */
 
-.row .column {
-	width: 100% !important;
-	float: none;
-	clear: both;
-	}
-	
-.fluid .row.quarters .column {
-	width: 50%;
-	}
-
-/*
-.fixed .row {
-
-	&.single .column,
-	&.halves .column,
-	&.thirds .column,
-	&.triptych .column,
-	&.sidebar .column.one,
-	&.sidebar .column.two,
-	&.sideleft .column.one,
-	&.sideleft .column.two,
-	&.margin .column.one,
-	&.margin .column.two,
-	&.single .halves .column {
-		width: 100%;
-		float: none;
-		clear: both;
-		}
-		
-	}
-
-
-/* Grid */
-/*
-.fluid .row.single .column,
-.fluid .row.halves .column,
-.fluid .row.thirds .column.one,
-.fluid .row.thirds .column.two,
-.fluid .row.thirds .column.three,
-.fluid .row.triptych .column,
-.fluid .row.sidebar .column.one,
-.fluid .row.sidebar .column.two,
-.fluid .row.sideleft .column.one,
-.fluid .row.sideleft .column.two,
-.fluid .row.margin .column.one,
-.fluid .row.margin .column.two,
-.fluid .row.single .halves .column {
-	width: 100%;
-	float: none;
-	clear: both;
-	}
-*/
-
-/* Unfortunately, this doesn't work --> .hybrid .row.halves *:not(.row) .column, */
-	
-/*
-.hybrid .row.single .column,
-.hybrid .row.halves .column,
-
-.hybrid .row.thirds .column.one,
-.hybrid .row.thirds .column.two,
-.hybrid .row.thirds .column.three,
-.hybrid .row.triptych .column,
-.hybrid .row.sidebar .column.one,
-.hybrid .row.sidebar .column.two,
-.hybrid .row.sideleft .column.one,
-.hybrid .row.sideleft .column.two,
-.hybrid .row.margin .column.one,
-.hybrid .row.margin .column.two,
-.hybrid .row.thirds .halves .column,
-.hybrid .row.fifteenths .four-fifteenths,
-.hybrid .row.fifteenths .five-fifteenths,
-.hybrid .row.fifteenths .six-fifteenths,
-.hybrid .row.fifteenths .seven-fifteenths {
-	width: 100%;
-	float: none;
-	clear: both;
-	}
-*/
-.hybrid .row.quarters .column,
-.hybrid .row.fifteenths .two-fifteenths,
-.hybrid .row.fifteenths .three-fifteenths {
-	width: 50%;
-	}
-	
-.hybrid .row .row.thirds .column {
-	width: 33%;
-	}
-.hybrid .row .row.thirds .column.two {
-	width: 34%;
-	}
-
-
-/* nesting */
-.hybrid .row .row.quarters .column,
-.fluid .row .row.quarters .column,
-.hybrid .row .row.thirds .column,
-.hybrid .row .row.thirds .column.two,
-.hybrid .row .row.halves .column,
-.hybrid .row .row.halves .column {
-	clear: none;
-	float: left;
-	}
-
-/* Gutters */
-.halves.gutter .column:nth-of-type(odd),
-.halves.gutter .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
-.halves.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 0 4em; }
-.halves.gutter.wide .column ~ .column { padding: 0em 4em 0 4em; }
-
-.thirds.gutter .column:nth-of-type(3n+1) { padding-left: 2em; } 
-.thirds.gutter .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
-.thirds.gutter .column:nth-of-type(3n+3) { padding-right: 2em; }
-
-.fifths.gutter .column { padding: 1em; }
-.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
-.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
-
-/* Gutters */
-.halves.gutter .column:nth-of-type(odd),
-.halves.gutter .column:nth-of-type(even) { padding: 2em 2em 1em 2em; } 
-.halves.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 1.5em 4em; }
-.halves.gutter.wide .column ~ .column { padding: 0em 4em 1.5em 4em; }
+@include grid-small;
 
 
 /* Signature */
