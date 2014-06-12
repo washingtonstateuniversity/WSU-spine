@@ -228,7 +228,7 @@
 				// Fixed/Sticky Horizontal Header
 				$(document).scroll(function() {
 					var top,bottom;
-					
+						$(document).css("-webkit-overflow-scrolling","touch");
 						top				= $(document).scrollTop();
 						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
 						scroll_dif		= scroll_top-top;
