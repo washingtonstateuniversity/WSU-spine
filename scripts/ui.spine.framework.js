@@ -108,11 +108,11 @@
 					$(".unbound.verso.recto").css("width",spread);
 				}
 				
-				if($(".cropped").length<=0){
+				if($(".cropped").length<=0){}
 					viewport_ht		= $(window).height();
 					glue.css("min-height",viewport_ht);
 					spine.css("min-height",viewport_ht);
-				}
+				
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
 				}
@@ -212,7 +212,7 @@
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
 		
-			if($(".cropped").length<=0){
+			if($(".cropped").length<=0){}
 
 				/*$( window ).on("resize", function() {
 					windowHeight	= $(window).height();
@@ -296,7 +296,7 @@
 				
 				
 				
-			}
+			
 			$("#glue > header").append("<button id='shelve' />");
 			$("#shelve").on("click",function(e) {
 				e.preventDefault();
