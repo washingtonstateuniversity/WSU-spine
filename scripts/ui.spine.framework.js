@@ -230,7 +230,7 @@
 					var top,bottom;
 						//$(document).css("-webkit-overflow-scrolling","touch");
 						//$(window).css("-webkit-overflow-scrolling","touch");
-						$('body').css("-webkit-overflow-scrolling","none");
+						$("body").css("-webkit-overflow-scrolling","none");
 						top				= $(document).scrollTop();
 						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
 						scroll_dif		= scroll_top-top;
