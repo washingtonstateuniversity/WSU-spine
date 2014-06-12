@@ -1,0 +1,143 @@
+
+// Fixed Large
+
+
+
+
+
+// Fixed Medium
+
+
+
+// Fixed Small
+
+@mixin grid-small {
+	
+	.row .column {
+	width: 100% !important;
+	float: none;
+	clear: both;
+	}
+	
+.fluid .row.quarters .column {
+	width: 50%;
+	}
+
+/*
+.fixed .row {
+
+	&.single .column,
+	&.halves .column,
+	&.thirds .column,
+	&.triptych .column,
+	&.sidebar .column.one,
+	&.sidebar .column.two,
+	&.sideleft .column.one,
+	&.sideleft .column.two,
+	&.margin .column.one,
+	&.margin .column.two,
+	&.single .halves .column {
+		width: 100%;
+		float: none;
+		clear: both;
+		}
+		
+	}
+
+
+/* Grid */
+/*
+.fluid .row.single .column,
+.fluid .row.halves .column,
+.fluid .row.thirds .column.one,
+.fluid .row.thirds .column.two,
+.fluid .row.thirds .column.three,
+.fluid .row.triptych .column,
+.fluid .row.sidebar .column.one,
+.fluid .row.sidebar .column.two,
+.fluid .row.sideleft .column.one,
+.fluid .row.sideleft .column.two,
+.fluid .row.margin .column.one,
+.fluid .row.margin .column.two,
+.fluid .row.single .halves .column {
+	width: 100%;
+	float: none;
+	clear: both;
+	}
+*/
+
+/* Unfortunately, this doesn't work --> .hybrid .row.halves *:not(.row) .column, */
+	
+/*
+.hybrid .row.single .column,
+.hybrid .row.halves .column,
+
+.hybrid .row.thirds .column.one,
+.hybrid .row.thirds .column.two,
+.hybrid .row.thirds .column.three,
+.hybrid .row.triptych .column,
+.hybrid .row.sidebar .column.one,
+.hybrid .row.sidebar .column.two,
+.hybrid .row.sideleft .column.one,
+.hybrid .row.sideleft .column.two,
+.hybrid .row.margin .column.one,
+.hybrid .row.margin .column.two,
+.hybrid .row.thirds .halves .column,
+.hybrid .row.fifteenths .four-fifteenths,
+.hybrid .row.fifteenths .five-fifteenths,
+.hybrid .row.fifteenths .six-fifteenths,
+.hybrid .row.fifteenths .seven-fifteenths {
+	width: 100%;
+	float: none;
+	clear: both;
+	}
+*/
+.hybrid .row.quarters .column,
+.hybrid .row.fifteenths .two-fifteenths,
+.hybrid .row.fifteenths .three-fifteenths {
+	width: 50%;
+	}
+	
+.hybrid .row .row.thirds .column {
+	width: 33%;
+	}
+.hybrid .row .row.thirds .column.two {
+	width: 34%;
+	}
+
+
+/* nesting */
+.hybrid .row .row.quarters .column,
+.fluid .row .row.quarters .column,
+.hybrid .row .row.thirds .column,
+.hybrid .row .row.thirds .column.two,
+.hybrid .row .row.halves .column,
+.hybrid .row .row.halves .column {
+	clear: none;
+	float: left;
+	}
+
+/* Gutters */
+.halves.gutter .column:nth-of-type(odd),
+.halves.gutter .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
+.halves.gutter.wide .column:nth-of-type(odd),
+.halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 0 4em; }
+.halves.gutter.wide .column ~ .column { padding: 0em 4em 0 4em; }
+
+.thirds.gutter .column:nth-of-type(3n+1) { padding-left: 2em; } 
+.thirds.gutter .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
+.thirds.gutter .column:nth-of-type(3n+3) { padding-right: 2em; }
+
+.fifths.gutter .column { padding: 1em; }
+.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
+.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
+
+/* Gutters */
+.halves.gutter .column:nth-of-type(odd),
+.halves.gutter .column:nth-of-type(even) { padding: 2em 2em 1em 2em; } 
+.halves.gutter.wide .column:nth-of-type(odd),
+.halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 1.5em 4em; }
+.halves.gutter.wide .column ~ .column { padding: 0em 4em 1.5em 4em; }
+	
+		
+}
