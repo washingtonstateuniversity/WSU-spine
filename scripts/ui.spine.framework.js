@@ -43,7 +43,6 @@
 			glue: $("#glue"),
 			main: $("main"),
 			wsu_actions:$("#wsu-actions"),
-			use_sticky: (window.navigator.userAgent.match(/(iPod|iPhone|iPad)/)!==null),
 		},
 		framework_create: function(){
 			var self,contactHtml,propmap={},spread,verso,page,para,recto,recto_margin,verso_width,
@@ -200,8 +199,7 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_dif,position,positionLock,viewport_ht,spine_ht,glue_ht,height_dif,use_sticky;
-			
+			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,glue_ht,height_dif;
 			
 			scroll_dif=0;
 			positionLock=0;
@@ -213,12 +211,7 @@
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			
-			use_sticky = self._get_globals("use_sticky");
-			
-			position=(use_sticky?"-webkit-sticky":"fixed");
-			
-			
+		
 			if($(".cropped").length<=0){}
 
 				/*$( window ).on("resize", function() {
@@ -276,7 +269,7 @@
 							if(bottom<=0){
 								positionLock=height_dif;
 							}
-							spine.css({"position":position,"top":positionLock+"px"});
+							spine.css({"position":"fixed","top":positionLock+"px"});
 						}
 					/*
 					if (top > 49) {
@@ -297,7 +290,7 @@
 						} else if(e.which === 36) {
 							positionLock=0;
 						}
-						spine.css({"position":position,"top":positionLock+"px"});
+						spine.css({"position":"fixed","top":positionLock+"px"});
 					}
 				});
 				
