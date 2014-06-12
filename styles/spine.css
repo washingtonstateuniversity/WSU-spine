@@ -35,24 +35,24 @@
 
 #glue {
   margin-top: 0px;
-  position: relative; }
+  position: relative;
+  width: 198px; }
 
 #glue:before {
-  background-color: #FFFFFF;
+  background-color: white;
   content: " ";
   min-height: 100%;
   position: absolute;
   xxdisplay: none;
-  content: " ";
-  width: 198px; }
+  width: 1000px; }
 
 .bleed #glue:before {
   left: -802px;
-  width: 1000px;
+  xxwidth: 1000px;
   display: block; }
 .bleed.unshelved #glue:before {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  left: -702px; }
+  left: -802px; }
 
 #spine nav,
 #spine footer {
@@ -539,7 +539,7 @@ html.lt-ie9 #spine footer {
       font-size: 1.8em;
       line-height: .8em;
       height: 1.2em;
-      padding: 0px;
+      padding: .5em 0px !important;
       display: block;
       position: relative;
       text-transform: none; }
@@ -747,507 +747,509 @@ html.lt-ie9 #spine footer {
     color: #8d959a; }
   #spine .spine-search-tab button:hover {
     color: #5e6a71; }
-  #spine.lightest {
-    /* ### LIGHTEST #e6e8e9, rgb(230,232,233) */ }
-    #spine.lightest #glue:before {
-      background-color: #eff0f1; }
-    #spine.lightest.vellum-05 {
-      background-color: rgba(239, 240, 241, 0.95); }
-    #spine.lightest.vellum-05.bleed:before {
-      background-color: rgba(239, 240, 241, 0.95); }
-    #spine.lightest.vellum-10 {
-      background-color: rgba(239, 240, 241, 0.9); }
-    #spine.lightest.vellum-10.bleed:before {
-      background-color: rgba(239, 240, 241, 0.9); }
-    #spine.lightest.vellum-15 {
-      background-color: rgba(239, 240, 241, 0.85); }
-    #spine.lightest.vellum-15.bleed:before {
-      background-color: rgba(239, 240, 241, 0.85); }
-    #spine.lightest.vellum-20 {
-      background-color: rgba(239, 240, 241, 0.8); }
-    #spine.lightest.vellum-20.bleed:before {
-      background-color: rgba(239, 240, 241, 0.8); }
-    #spine.lightest.vellum-25 {
-      background-color: rgba(239, 240, 241, 0.75); }
-    #spine.lightest.vellum-25.bleed:before {
-      background-color: rgba(239, 240, 241, 0.75); }
-    #spine.lightest .spine-sitenav a,
-    #spine.lightest .spine-offsitenav a:hover,
-    #spine.lightest .spine-search-tab button {
-      color: #464e54; }
-    #spine.lightest .spine-sitenav a:hover {
-      color: #981e32; }
-    #spine.lightest .spine-actions-tabs li button,
-    #spine.lightest .spine-social-channels a,
-    #spine.lightest .spine-footer small a {
-      color: #b5babe; }
-    #spine.lightest .spine-sitenav ul li,
-    #spine.lightest .spine-global-links {
-      border-color: #d7dadb; }
-    #spine.lightest .spine-offsitenav a,
-    #spine.lightest .spine-global-links a {
-      color: #929a9f; }
-    #spine.lightest .spine-actions-tabs button:hover,
-    #spine.lightest .spine-offsitenav a:hover,
-    #spine.lightest .spine-global-links a:hover {
-      color: #5e6a71; }
-    #spine.lightest .spine-search-tab:not(.opened) button {
-      color: #8d959a; }
-    #spine.lightest .spine-search-tab:not(.opened) button:hover {
-      color: #5e6a71; }
-    #spine.lightest .spine-actions-tabs li.opened,
-    #spine.lightest .spine-actions-tabs li.opened:hover,
-    #spine.lightest .spine-actions section {
-      background-color: white; }
-  #spine.lightly {
-    /* ### LIGHTLY #d7dadb, rgb(215 218 219) */ }
-    #spine.lightly #glue:before {
-      background-color: #d7dadb; }
-    #spine.lightly.vellum-05 {
-      background-color: rgba(215, 218, 219, 0.95); }
-    #spine.lightly.vellum-05.bleed:before {
-      background-color: rgba(215, 218, 219, 0.95); }
-    #spine.lightly.vellum-10 {
-      background-color: rgba(215, 218, 219, 0.9); }
-    #spine.lightly.vellum-10.bleed:before {
-      background-color: rgba(215, 218, 219, 0.9); }
-    #spine.lightly.vellum-15 {
-      background-color: rgba(215, 218, 219, 0.85); }
-    #spine.lightly.vellum-15.bleed:before {
-      background-color: rgba(215, 218, 219, 0.85); }
-    #spine.lightly.vellum-20 {
-      background-color: rgba(215, 218, 219, 0.8); }
-    #spine.lightly.vellum-20.bleed:before {
-      background-color: rgba(215, 218, 219, 0.8); }
-    #spine.lightly.vellum-25 {
-      background-color: rgba(215, 218, 219, 0.75); }
-    #spine.lightly.vellum-25.bleed:before {
-      background-color: rgba(215, 218, 219, 0.75); }
-    #spine.lightly .spine-actions-tabs button,
-    #spine.lightly .spine-social-channels a:hover,
-    #spine.lightly .spine-social-channels a,
-    #spine.lightly .spine-footer small a {
-      color: #b5babe; }
-    #spine.lightly .spine-sitenav a,
-    #spine.lightly .spine-offsitenav a:hover {
-      color: #2a3033; }
-    #spine.lightly .spine-sitenav ul li,
-    #spine.lightly .spine-global-links {
-      border-color: #babfc3; }
-    #spine.lightly .spine-offsitenav a,
-    #spine.lightly .spine-global-links a {
-      color: #8d959a; }
-    #spine.lightly .spine-actions-tabs button:hover,
-    #spine.lightly .spine-sitenav a,
-    #spine.lightly .spine-offsitenav a:hover,
-    #spine.lightly .spine-global-links a:hover {
-      color: #5e6a71; }
-    #spine.lightly .spine-search-tab button {
-      color: #8d959a; }
-    #spine.lightly .spine-search-tab button:hover {
-      color: #5e6a71; }
-    #spine.lightly .spine-sitenav a:hover,
-    #spine.lightly .spine-sitenav li.dogeared > a {
-      color: #981e32; }
-  #spine.lighter {
-    /* LIGHTER #b5babe, rgb(181 186 190) */ }
-    #spine.lighter #glue:before {
-      background-color: #b5babe; }
-    #spine.lighter.vellum-05 {
-      background-color: rgba(181, 186, 190, 0.95); }
-    #spine.lighter.vellum-05.bleed:before {
-      background-color: rgba(181, 186, 190, 0.95); }
-    #spine.lighter.vellum-10 {
-      background-color: rgba(181, 186, 190, 0.9); }
-    #spine.lighter.vellum-10.bleed:before {
-      background-color: rgba(181, 186, 190, 0.9); }
-    #spine.lighter.vellum-15 {
-      background-color: rgba(181, 186, 190, 0.85); }
-    #spine.lighter.vellum-15.bleed:before {
-      background-color: rgba(181, 186, 190, 0.85); }
-    #spine.lighter.vellum-20 {
-      background-color: rgba(181, 186, 190, 0.8); }
-    #spine.lighter.vellum-20.bleed:before {
-      background-color: rgba(181, 186, 190, 0.8); }
-    #spine.lighter.vellum-25 {
-      background-color: rgba(181, 186, 190, 0.75); }
-    #spine.lighter.vellum-25.bleed:before {
-      background-color: rgba(181, 186, 190, 0.75); }
-    #spine.lighter button#shelve {
-      background-image: url("//repo.wsu.edu/spine/1/icons/menu-white.svg"); }
-    #spine.lighter .spine-actions-tabs .opened button,
-    #spine.lighter .spine-actions-tabs button,
-    #spine.lighter .spine-actions-tabs .opened button:hover,
-    #spine.lighter .spine-social-channels .directory-channel a:hover,
-    #spine.lighter .spine-social-channels a,
-    #spine.lighter .spine-footer small a {
-      color: #8d959a; }
-    #spine.lighter .spine-sitenav a,
-    #spine.lighter .spine-offsitenav a:hover {
-      color: #2a3033; }
-    #spine.lighter .spine-sitenav ul li,
-    #spine.lighter .spine-global-links {
-      border-color: #8d959a; }
-    #spine.lighter .spine-search-tab.opened button:hover {
-      color: black; }
-    #spine.lighter .spine-offsitenav a,
-    #spine.lighter .spine-global-links a {
-      color: #5e6a71; }
-    #spine.lighter .spine-actions-tabs button:hover,
-    #spine.lighter .spine-sitenav a,
-    #spine.lighter .spine-offsitenav a:hover,
-    #spine.lighter .spine-global-links a:hover {
-      color: #2a3033; }
-    #spine.lighter .spine-search-tab button {
-      color: #647279;
-      /* 3% */ }
-    #spine.lighter .spine-search-tab button:hover {
-      color: black; }
-    #spine.lighter .spine-sitenav a:hover,
-    #spine.lighter .spine-sitenav li.dogeared > a {
-      color: #981e32; }
-  #spine.light {
-    /* LIGHT #8b9399, rgb(139,147,153) */ }
-    #spine.light #glue:before {
-      background-color: #8d959a; }
-    #spine.light.vellum-05 {
-      background-color: rgba(141, 149, 154, 0.95); }
-    #spine.light.vellum-05.bleed:before {
-      background-color: rgba(141, 149, 154, 0.95); }
-    #spine.light.vellum-10 {
-      background-color: rgba(141, 149, 154, 0.9); }
-    #spine.light.vellum-10.bleed:before {
-      background-color: rgba(141, 149, 154, 0.9); }
-    #spine.light.vellum-15 {
-      background-color: rgba(141, 149, 154, 0.85); }
-    #spine.light.vellum-15.bleed:before {
-      background-color: rgba(141, 149, 154, 0.85); }
-    #spine.light.vellum-20 {
-      background-color: rgba(141, 149, 154, 0.8); }
-    #spine.light.vellum-20.bleed:before {
-      background-color: rgba(141, 149, 154, 0.8); }
-    #spine.light.vellum-25 {
-      background-color: rgba(141, 149, 154, 0.75); }
-    #spine.light.vellum-25.bleed:before {
-      background-color: rgba(141, 149, 154, 0.75); }
-    #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
-    #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
-    #spine.light .spine-actions .opened button,
-    #spine.light .spine-actions button,
-    #spine.light .spine-actions .opened button:hover,
-    #spine.light .spine-social-channels a,
-    #spine.light .spine-footer small a {
-      color: #b5babe; }
-    #spine.light .spine-sitenav a,
-    #spine.light .spine-offsitenav a:hover {
-      color: #d7dadb; }
-    #spine.light .spine-sitenav ul li,
-    #spine.light .spine-global-links {
-      border-color: #b5babe; }
-    #spine.light .spine-offsitenav a,
-    #spine.light .spine-global-links a {
-      color: #babfc3; }
-    #spine.light .spine-actions-tabs button:hover,
-    #spine.light .spine-offsitenav a:hover,
-    #spine.light .spine-global-links a:hover {
-      color: #d7dadb; }
-    #spine.light .spine-search-tab:not(.opened) button {
-      color: #d7dadb; }
-    #spine.light .spine-search-tab:not(.opened) button:hover {
-      color: #eff0f1; }
-    #spine.light .spine-social-channels .twitter-channel a:hover {
-      color: #e1e8ed !important; }
-    #spine.light .spine-sitenav a:hover,
-    #spine.light .spine-sitenav li.dogeared > a {
-      color: white; }
-  #spine.gray {
-    /* GRAY #5e6a71, rgb(94,106,113) */ }
-    #spine.gray #glue:before {
-      background: #5e6a71; }
-    #spine.gray.vellum-05 {
-      background-color: rgba(94, 106, 113, 0.95); }
-    #spine.gray.vellum-05.bleed:before {
-      background-color: rgba(94, 106, 113, 0.95); }
-    #spine.gray.vellum-10 {
-      background-color: rgba(94, 106, 113, 0.9); }
-    #spine.gray.vellum-10.bleed:before {
-      background-color: rgba(94, 106, 113, 0.9); }
-    #spine.gray.vellum-15 {
-      background-color: rgba(94, 106, 113, 0.85); }
-    #spine.gray.vellum-15.bleed:before {
-      background-color: rgba(94, 106, 113, 0.85); }
-    #spine.gray.vellum-20 {
-      background-color: rgba(94, 106, 113, 0.8); }
-    #spine.gray.vellum-20.bleed:before {
-      background-color: rgba(94, 106, 113, 0.8); }
-    #spine.gray.vellum-25 {
-      background-color: rgba(94, 106, 113, 0.75); }
-    #spine.gray.vellum-25.bleed:before {
-      background-color: rgba(94, 106, 113, 0.75); }
-    #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
-    #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
-    #spine.gray .spine-actions .opened button,
-    #spine.gray .spine-actions button,
-    #spine.gray .spine-actions .opened button:hover,
-    #spine.gray .spine-social-channels a,
-    #spine.gray .spine-footer small a {
-      color: #41494e; }
-    #spine.gray .spine-sitenav a,
-    #spine.gray .spine-offsitenav a:hover,
-    #spine.gray .spine-search-tab button {
-      color: #d7dadb; }
-    #spine.gray .spine-sitenav ul li,
-    #spine.gray .spine-global-links {
-      border-color: #464e54; }
-    #spine.gray .spine-offsitenav a {
-      color: #212528; }
-    #spine.gray .spine-global-links a {
-      color: #33393e; }
-    #spine.gray .spine-actions-tabs :not(.opened) button:hover,
-    #spine.gray .spine-offsitenav a:hover,
-    #spine.gray .spine-global-links a:hover {
-      color: #d7dadb; }
-    #spine.gray .spine-search-tab button {
-      color: #2a3033; }
-    #spine.gray .spine-search-tab button:hover {
-      color: black; }
-    #spine.gray .spine-social-channels .facebook-channel a:hover {
-      color: #d3d8e8 !important; }
-    #spine.gray .spine-sitenav a:hover,
-    #spine.gray .spine-sitenav li.dogeared > a {
-      color: white; }
-  #spine.dark {
-    /* GRAY-DARK #383D42, rgb(75,85,90) */ }
-    #spine.dark #glue:before {
-      background-color: #464e54; }
-    #spine.dark.vellum-05 {
-      background-color: rgba(70, 78, 84, 0.95); }
-    #spine.dark.vellum-05.bleed:before {
-      background-color: rgba(70, 78, 84, 0.95); }
-    #spine.dark.vellum-10 {
-      background-color: rgba(70, 78, 84, 0.9); }
-    #spine.dark.vellum-10.bleed:before {
-      background-color: rgba(70, 78, 84, 0.9); }
-    #spine.dark.vellum-15 {
-      background-color: rgba(70, 78, 84, 0.85); }
-    #spine.dark.vellum-15.bleed:before {
-      background-color: rgba(70, 78, 84, 0.85); }
-    #spine.dark.vellum-20 {
-      background-color: rgba(70, 78, 84, 0.8); }
-    #spine.dark.vellum-20.bleed:before {
-      background-color: rgba(70, 78, 84, 0.8); }
-    #spine.dark.vellum-25 {
-      background-color: rgba(70, 78, 84, 0.75); }
-    #spine.dark.vellum-25.bleed:before {
-      background-color: rgba(70, 78, 84, 0.75); }
-    #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
-    #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
-    #spine.dark .spine-sitenav a,
-    #spine.dark .spine-offsitenav a:hover {
-      color: #d7dadb; }
-    #spine.dark .spine-actions .opened button,
-    #spine.dark .spine-actions button,
-    #spine.dark .spine-actions .opened button:hover,
-    #spine.dark .spine-social-channels a,
-    #spine.dark .spine-footer small a {
-      color: #7d868c; }
-    #spine.dark .spine-sitenav ul li,
-    #spine.dark .spine-global-links {
-      border-color: #5e6a71; }
-    #spine.dark .spine-search-tab.opened button,
-    #spine.dark .spine-search-tab.opened button:hover {
-      color: #2a3033; }
-    #spine.dark .spine-offsitenav a,
-    #spine.dark .spine-global-links a {
-      color: #8d959a; }
-    #spine.dark .spine-actions-tabs :not(.opened) button:hover,
-    #spine.dark .spine-sitenav a,
-    #spine.dark .spine-offsitenav a:hover,
-    #spine.dark .spine-global-links a:hover {
-      color: #d7dadb; }
-    #spine.dark .spine-social-channels li[class*="-channel"] a:hover {
-      color: #d7dadb !important; }
-    #spine.dark .spine-search-tab button {
-      color: #aab0b4; }
-    #spine.dark .spine-search-tab button:hover {
-      color: #d7dadb; }
-    #spine.dark .spine-sitenav a:hover,
-    #spine.dark .spine-sitenav li.dogeared > a {
-      color: white; }
-  #spine.darker {
-    /* GRAY-DARKER #2a3033, rgb(42 48 51) */ }
-    #spine.darker #glue:before {
-      background-color: #23282b; }
-    #spine.darker.vellum-05 {
-      background-color: rgba(35, 40, 43, 0.95); }
-    #spine.darker.vellum-05.bleed:before {
-      background-color: rgba(35, 40, 43, 0.95); }
-    #spine.darker.vellum-10 {
-      background-color: rgba(35, 40, 43, 0.9); }
-    #spine.darker.vellum-10.bleed:before {
-      background-color: rgba(35, 40, 43, 0.9); }
-    #spine.darker.vellum-15 {
-      background-color: rgba(35, 40, 43, 0.85); }
-    #spine.darker.vellum-15.bleed:before {
-      background-color: rgba(35, 40, 43, 0.85); }
-    #spine.darker.vellum-20 {
-      background-color: rgba(35, 40, 43, 0.8); }
-    #spine.darker.vellum-20.bleed:before {
-      background-color: rgba(35, 40, 43, 0.8); }
-    #spine.darker.vellum-25 {
-      background-color: rgba(35, 40, 43, 0.75); }
-    #spine.darker.vellum-25.bleed:before {
-      background-color: rgba(35, 40, 43, 0.75); }
-    #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
-    #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
-    #spine.darker .spine-sitenav a,
-    #spine.darker .spine-offsitenav a:hover {
-      color: #b5babe; }
-    #spine.darker .spine-actions .opened button,
-    #spine.darker .spine-actions button,
-    #spine.darker .spine-actions .opened button:hover,
-    #spine.darker .spine-social-channels a,
-    #spine.darker .spine-footer small a {
-      color: #5e6a71; }
-    #spine.darker .spine-sitenav ul li,
-    #spine.darker .spine-global-links {
-      border-color: #464e54; }
-    #spine.darker .spine-search-tab.opened button,
-    #spine.darker .spine-search-tab.opened button:hover {
-      color: #2a3033; }
-    #spine.darker .spine-offsitenav a,
-    #spine.darker .spine-global-links a {
-      color: #5e6a71; }
-    #spine.darker .spine-actions-tabs :not(.opened) button:hover,
-    #spine.darker .spine-sitenav a,
-    #spine.darker .spine-offsitenav a:hover,
-    #spine.darker .spine-global-links a:hover {
-      color: #d7dadb; }
-    #spine.darker .spine-search-tab button {
-      color: #8d959a; }
-    #spine.darker .spine-search-tab button:hover {
-      color: #b5babe; }
-    #spine.darker .spine-sitenav a:hover,
-    #spine.darker .spine-sitenav li.dogeared > a {
-      color: white; }
-  #spine.darkest {
-    /* GRAY-DARKEST #000, rgb 0,0,0 */ }
-    #spine.darkest #glue:before {
-      background-color: black; }
-    #spine.darkest.vellum-05 {
-      background-color: rgba(0, 0, 0, 0.95); }
-    #spine.darkest.vellum-05.bleed:before {
-      background-color: rgba(0, 0, 0, 0.95); }
-    #spine.darkest.vellum-10 {
-      background-color: rgba(0, 0, 0, 0.9); }
-    #spine.darkest.vellum-10.bleed:before {
-      background-color: rgba(0, 0, 0, 0.9); }
-    #spine.darkest.vellum-15 {
-      background-color: rgba(0, 0, 0, 0.85); }
-    #spine.darkest.vellum-15.bleed:before {
-      background-color: rgba(0, 0, 0, 0.85); }
-    #spine.darkest.vellum-20 {
-      background-color: rgba(0, 0, 0, 0.8); }
-    #spine.darkest.vellum-20.bleed:before {
-      background-color: rgba(0, 0, 0, 0.8); }
-    #spine.darkest.vellum-25 {
-      background-color: rgba(0, 0, 0, 0.75); }
-    #spine.darkest.vellum-25.bleed:before {
-      background-color: rgba(0, 0, 0, 0.75); }
-    #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
-    #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-crimson.svg"); }
-    #spine.darkest .spine-sitenav a,
-    #spine.darkest .spine-offsitenav a:hover {
-      color: #b5babe; }
-    #spine.darkest .spine-actions button,
-    #spine.darkest .spine-social-channels a,
-    #spine.darkest .spine-footer small a {
-      color: #5e6a71; }
-    #spine.darkest .spine-sitenav ul li,
-    #spine.darkest .spine-global-links {
-      border-color: #464e54; }
-    #spine.darkest .spine-offsitenav a,
-    #spine.darkest .spine-global-links a {
-      color: #5e6a71; }
-    #spine.darkest .spine-actions-tabs :not(.opened) button:hover,
-    #spine.darkest .spine-sitenav a,
-    #spine.darkest .spine-offsitenav a:hover,
-    #spine.darkest .spine-global-links a:hover {
-      color: #d7dadb; }
-    #spine.darkest .spine-search-tab:not(.opened) button {
-      color: #8d959a; }
-    #spine.darkest .spine-search-tab:not(.opened) button:hover {
-      color: #b5babe; }
-    #spine.darkest .spine-sitenav a:hover,
-    #spine.darkest .spine-sitenav li.dogeared > a {
-      color: #c60c30; }
-  #spine.crimson {
-    /* CRIMSON #981e32 */ }
-    #spine.crimson #glue:before {
-      background-color: #981e32; }
-    #spine.crimson.vellum-05 {
-      background-color: rgba(152, 30, 50, 0.95); }
-    #spine.crimson.vellum-05.bleed:before {
-      background-color: rgba(152, 30, 50, 0.95); }
-    #spine.crimson.vellum-10 {
-      background-color: rgba(152, 30, 50, 0.9); }
-    #spine.crimson.vellum-10.bleed:before {
-      background-color: rgba(152, 30, 50, 0.9); }
-    #spine.crimson.vellum-15 {
-      background-color: rgba(152, 30, 50, 0.85); }
-    #spine.crimson.vellum-15.bleed:before {
-      background-color: rgba(152, 30, 50, 0.85); }
-    #spine.crimson.vellum-20 {
-      background-color: rgba(152, 30, 50, 0.8); }
-    #spine.crimson.vellum-20.bleed:before {
-      background-color: rgba(152, 30, 50, 0.8); }
-    #spine.crimson.vellum-25 {
-      background-color: rgba(152, 30, 50, 0.75); }
-    #spine.crimson.vellum-25.bleed:before {
-      background-color: rgba(152, 30, 50, 0.75); }
-    #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
-    #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
-      background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
-    #spine.crimson .spine-sitenav a {
-      color: #b5babe; }
-    #spine.crimson .spine-actions-tabs button,
-    #spine.crimson .spine-social-channels a,
-    #spine.crimson .spine-footer small a {
-      xcolor: black;
-      color: #6b1523;
-      color: #5a121d; }
-    #spine.crimson .spine-sitenav ul li,
-    #spine.crimson .spine-global-links {
-      border-color: #6b1523; }
-    #spine.crimson .spine-offsitenav a,
-    #spine.crimson .spine-global-links a {
-      color: #2f0910;
-      color: black; }
-    #spine.crimson .spine-actions-tabs :not(.opened) button:hover,
-    #spine.crimson .spine-offsitenav a:hover,
-    #spine.crimson .spine-global-links a:hover {
-      color: black;
-      color: #490e18; }
-    #spine.crimson .spine-social-channels li[class*="-channel"] a:hover {
-      color: #490e18 !important; }
-    #spine.crimson .spine-search-tab:not(.opened) button {
-      color: #1e060a; }
-    #spine.crimson .spine-search-tab:not(.opened) button:hover {
-      color: black; }
-    #spine.crimson .spine-sitenav a:hover,
-    #spine.crimson .spine-sitenav li.dogeared > a {
-      color: white; }
+
+/* ### Alternate Colors */
+#spine.lightest {
+  /* #### LIGHTEST #e6e8e9, rgb(230,232,233) */ }
+  #spine.lightest #glue:before {
+    background-color: #eff0f1; }
+  #spine.lightest.vellum-05 {
+    background-color: rgba(239, 240, 241, 0.95); }
+  #spine.lightest.vellum-05.bleed:before {
+    background-color: rgba(239, 240, 241, 0.95); }
+  #spine.lightest.vellum-10 {
+    background-color: rgba(239, 240, 241, 0.9); }
+  #spine.lightest.vellum-10.bleed:before {
+    background-color: rgba(239, 240, 241, 0.9); }
+  #spine.lightest.vellum-15 {
+    background-color: rgba(239, 240, 241, 0.85); }
+  #spine.lightest.vellum-15.bleed:before {
+    background-color: rgba(239, 240, 241, 0.85); }
+  #spine.lightest.vellum-20 {
+    background-color: rgba(239, 240, 241, 0.8); }
+  #spine.lightest.vellum-20.bleed:before {
+    background-color: rgba(239, 240, 241, 0.8); }
+  #spine.lightest.vellum-25 {
+    background-color: rgba(239, 240, 241, 0.75); }
+  #spine.lightest.vellum-25.bleed:before {
+    background-color: rgba(239, 240, 241, 0.75); }
+  #spine.lightest .spine-sitenav a,
+  #spine.lightest .spine-offsitenav a:hover,
+  #spine.lightest .spine-search-tab button {
+    color: #464e54; }
+  #spine.lightest .spine-sitenav a:hover {
+    color: #981e32; }
+  #spine.lightest .spine-actions-tabs li button,
+  #spine.lightest .spine-social-channels a,
+  #spine.lightest .spine-footer small a {
+    color: #b5babe; }
+  #spine.lightest .spine-sitenav ul li,
+  #spine.lightest .spine-global-links {
+    border-color: #d7dadb; }
+  #spine.lightest .spine-offsitenav a,
+  #spine.lightest .spine-global-links a {
+    color: #929a9f; }
+  #spine.lightest .spine-actions-tabs button:hover,
+  #spine.lightest .spine-offsitenav a:hover,
+  #spine.lightest .spine-global-links a:hover {
+    color: #5e6a71; }
+  #spine.lightest .spine-search-tab:not(.opened) button {
+    color: #8d959a; }
+  #spine.lightest .spine-search-tab:not(.opened) button:hover {
+    color: #5e6a71; }
+  #spine.lightest .spine-actions-tabs li.opened,
+  #spine.lightest .spine-actions-tabs li.opened:hover,
+  #spine.lightest .spine-actions section {
+    background-color: white; }
+#spine.lightly {
+  /* #### LIGHTLY #d7dadb, rgb(215 218 219) */ }
+  #spine.lightly #glue:before {
+    background-color: #d7dadb; }
+  #spine.lightly.vellum-05 {
+    background-color: rgba(215, 218, 219, 0.95); }
+  #spine.lightly.vellum-05.bleed:before {
+    background-color: rgba(215, 218, 219, 0.95); }
+  #spine.lightly.vellum-10 {
+    background-color: rgba(215, 218, 219, 0.9); }
+  #spine.lightly.vellum-10.bleed:before {
+    background-color: rgba(215, 218, 219, 0.9); }
+  #spine.lightly.vellum-15 {
+    background-color: rgba(215, 218, 219, 0.85); }
+  #spine.lightly.vellum-15.bleed:before {
+    background-color: rgba(215, 218, 219, 0.85); }
+  #spine.lightly.vellum-20 {
+    background-color: rgba(215, 218, 219, 0.8); }
+  #spine.lightly.vellum-20.bleed:before {
+    background-color: rgba(215, 218, 219, 0.8); }
+  #spine.lightly.vellum-25 {
+    background-color: rgba(215, 218, 219, 0.75); }
+  #spine.lightly.vellum-25.bleed:before {
+    background-color: rgba(215, 218, 219, 0.75); }
+  #spine.lightly .spine-actions-tabs button,
+  #spine.lightly .spine-social-channels a:hover,
+  #spine.lightly .spine-social-channels a,
+  #spine.lightly .spine-footer small a {
+    color: #b5babe; }
+  #spine.lightly .spine-sitenav a,
+  #spine.lightly .spine-offsitenav a:hover {
+    color: #2a3033; }
+  #spine.lightly .spine-sitenav ul li,
+  #spine.lightly .spine-global-links {
+    border-color: #babfc3; }
+  #spine.lightly .spine-offsitenav a,
+  #spine.lightly .spine-global-links a {
+    color: #8d959a; }
+  #spine.lightly .spine-actions-tabs button:hover,
+  #spine.lightly .spine-sitenav a,
+  #spine.lightly .spine-offsitenav a:hover,
+  #spine.lightly .spine-global-links a:hover {
+    color: #5e6a71; }
+  #spine.lightly .spine-search-tab button {
+    color: #8d959a; }
+  #spine.lightly .spine-search-tab button:hover {
+    color: #5e6a71; }
+  #spine.lightly .spine-sitenav a:hover,
+  #spine.lightly .spine-sitenav li.dogeared > a {
+    color: #981e32; }
+#spine.lighter {
+  /* #### LIGHTER #b5babe, rgb(181 186 190) */ }
+  #spine.lighter #glue:before {
+    background-color: #b5babe; }
+  #spine.lighter.vellum-05 {
+    background-color: rgba(181, 186, 190, 0.95); }
+  #spine.lighter.vellum-05.bleed:before {
+    background-color: rgba(181, 186, 190, 0.95); }
+  #spine.lighter.vellum-10 {
+    background-color: rgba(181, 186, 190, 0.9); }
+  #spine.lighter.vellum-10.bleed:before {
+    background-color: rgba(181, 186, 190, 0.9); }
+  #spine.lighter.vellum-15 {
+    background-color: rgba(181, 186, 190, 0.85); }
+  #spine.lighter.vellum-15.bleed:before {
+    background-color: rgba(181, 186, 190, 0.85); }
+  #spine.lighter.vellum-20 {
+    background-color: rgba(181, 186, 190, 0.8); }
+  #spine.lighter.vellum-20.bleed:before {
+    background-color: rgba(181, 186, 190, 0.8); }
+  #spine.lighter.vellum-25 {
+    background-color: rgba(181, 186, 190, 0.75); }
+  #spine.lighter.vellum-25.bleed:before {
+    background-color: rgba(181, 186, 190, 0.75); }
+  #spine.lighter button#shelve {
+    background-image: url("//repo.wsu.edu/spine/1/icons/menu-white.svg"); }
+  #spine.lighter .spine-actions-tabs .opened button,
+  #spine.lighter .spine-actions-tabs button,
+  #spine.lighter .spine-actions-tabs .opened button:hover,
+  #spine.lighter .spine-social-channels .directory-channel a:hover,
+  #spine.lighter .spine-social-channels a,
+  #spine.lighter .spine-footer small a {
+    color: #8d959a; }
+  #spine.lighter .spine-sitenav a,
+  #spine.lighter .spine-offsitenav a:hover {
+    color: #2a3033; }
+  #spine.lighter .spine-sitenav ul li,
+  #spine.lighter .spine-global-links {
+    border-color: #8d959a; }
+  #spine.lighter .spine-search-tab.opened button:hover {
+    color: black; }
+  #spine.lighter .spine-offsitenav a,
+  #spine.lighter .spine-global-links a {
+    color: #5e6a71; }
+  #spine.lighter .spine-actions-tabs button:hover,
+  #spine.lighter .spine-sitenav a,
+  #spine.lighter .spine-offsitenav a:hover,
+  #spine.lighter .spine-global-links a:hover {
+    color: #2a3033; }
+  #spine.lighter .spine-search-tab button {
+    color: #647279;
+    /* 3% */ }
+  #spine.lighter .spine-search-tab button:hover {
+    color: black; }
+  #spine.lighter .spine-sitenav a:hover,
+  #spine.lighter .spine-sitenav li.dogeared > a {
+    color: #981e32; }
+#spine.light {
+  /* #### LIGHT #8b9399, rgb(139,147,153) */ }
+  #spine.light #glue:before {
+    background-color: #8d959a; }
+  #spine.light.vellum-05 {
+    background-color: rgba(141, 149, 154, 0.95); }
+  #spine.light.vellum-05.bleed:before {
+    background-color: rgba(141, 149, 154, 0.95); }
+  #spine.light.vellum-10 {
+    background-color: rgba(141, 149, 154, 0.9); }
+  #spine.light.vellum-10.bleed:before {
+    background-color: rgba(141, 149, 154, 0.9); }
+  #spine.light.vellum-15 {
+    background-color: rgba(141, 149, 154, 0.85); }
+  #spine.light.vellum-15.bleed:before {
+    background-color: rgba(141, 149, 154, 0.85); }
+  #spine.light.vellum-20 {
+    background-color: rgba(141, 149, 154, 0.8); }
+  #spine.light.vellum-20.bleed:before {
+    background-color: rgba(141, 149, 154, 0.8); }
+  #spine.light.vellum-25 {
+    background-color: rgba(141, 149, 154, 0.75); }
+  #spine.light.vellum-25.bleed:before {
+    background-color: rgba(141, 149, 154, 0.75); }
+  #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
+  #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
+  #spine.light .spine-actions .opened button,
+  #spine.light .spine-actions button,
+  #spine.light .spine-actions .opened button:hover,
+  #spine.light .spine-social-channels a,
+  #spine.light .spine-footer small a {
+    color: #b5babe; }
+  #spine.light .spine-sitenav a,
+  #spine.light .spine-offsitenav a:hover {
+    color: #d7dadb; }
+  #spine.light .spine-sitenav ul li,
+  #spine.light .spine-global-links {
+    border-color: #b5babe; }
+  #spine.light .spine-offsitenav a,
+  #spine.light .spine-global-links a {
+    color: #babfc3; }
+  #spine.light .spine-actions-tabs button:hover,
+  #spine.light .spine-offsitenav a:hover,
+  #spine.light .spine-global-links a:hover {
+    color: #d7dadb; }
+  #spine.light .spine-search-tab:not(.opened) button {
+    color: #d7dadb; }
+  #spine.light .spine-search-tab:not(.opened) button:hover {
+    color: #eff0f1; }
+  #spine.light .spine-social-channels .twitter-channel a:hover {
+    color: #e1e8ed !important; }
+  #spine.light .spine-sitenav a:hover,
+  #spine.light .spine-sitenav li.dogeared > a {
+    color: white; }
+#spine.gray {
+  /* #### GRAY #5e6a71, rgb(94,106,113) */ }
+  #spine.gray #glue:before {
+    background: #5e6a71; }
+  #spine.gray.vellum-05 {
+    background-color: rgba(94, 106, 113, 0.95); }
+  #spine.gray.vellum-05.bleed:before {
+    background-color: rgba(94, 106, 113, 0.95); }
+  #spine.gray.vellum-10 {
+    background-color: rgba(94, 106, 113, 0.9); }
+  #spine.gray.vellum-10.bleed:before {
+    background-color: rgba(94, 106, 113, 0.9); }
+  #spine.gray.vellum-15 {
+    background-color: rgba(94, 106, 113, 0.85); }
+  #spine.gray.vellum-15.bleed:before {
+    background-color: rgba(94, 106, 113, 0.85); }
+  #spine.gray.vellum-20 {
+    background-color: rgba(94, 106, 113, 0.8); }
+  #spine.gray.vellum-20.bleed:before {
+    background-color: rgba(94, 106, 113, 0.8); }
+  #spine.gray.vellum-25 {
+    background-color: rgba(94, 106, 113, 0.75); }
+  #spine.gray.vellum-25.bleed:before {
+    background-color: rgba(94, 106, 113, 0.75); }
+  #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
+  #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
+  #spine.gray .spine-actions .opened button,
+  #spine.gray .spine-actions button,
+  #spine.gray .spine-actions .opened button:hover,
+  #spine.gray .spine-social-channels a,
+  #spine.gray .spine-footer small a {
+    color: #41494e; }
+  #spine.gray .spine-sitenav a,
+  #spine.gray .spine-offsitenav a:hover,
+  #spine.gray .spine-search-tab button {
+    color: #d7dadb; }
+  #spine.gray .spine-sitenav ul li,
+  #spine.gray .spine-global-links {
+    border-color: #464e54; }
+  #spine.gray .spine-offsitenav a {
+    color: #212528; }
+  #spine.gray .spine-global-links a {
+    color: #33393e; }
+  #spine.gray .spine-actions-tabs :not(.opened) button:hover,
+  #spine.gray .spine-offsitenav a:hover,
+  #spine.gray .spine-global-links a:hover {
+    color: #d7dadb; }
+  #spine.gray .spine-search-tab button {
+    color: #2a3033; }
+  #spine.gray .spine-search-tab button:hover {
+    color: black; }
+  #spine.gray .spine-social-channels .facebook-channel a:hover {
+    color: #d3d8e8 !important; }
+  #spine.gray .spine-sitenav a:hover,
+  #spine.gray .spine-sitenav li.dogeared > a {
+    color: white; }
+#spine.dark {
+  /* #### GRAY-DARK #383D42, rgb(75,85,90) */ }
+  #spine.dark #glue:before {
+    background-color: #464e54; }
+  #spine.dark.vellum-05 {
+    background-color: rgba(70, 78, 84, 0.95); }
+  #spine.dark.vellum-05.bleed:before {
+    background-color: rgba(70, 78, 84, 0.95); }
+  #spine.dark.vellum-10 {
+    background-color: rgba(70, 78, 84, 0.9); }
+  #spine.dark.vellum-10.bleed:before {
+    background-color: rgba(70, 78, 84, 0.9); }
+  #spine.dark.vellum-15 {
+    background-color: rgba(70, 78, 84, 0.85); }
+  #spine.dark.vellum-15.bleed:before {
+    background-color: rgba(70, 78, 84, 0.85); }
+  #spine.dark.vellum-20 {
+    background-color: rgba(70, 78, 84, 0.8); }
+  #spine.dark.vellum-20.bleed:before {
+    background-color: rgba(70, 78, 84, 0.8); }
+  #spine.dark.vellum-25 {
+    background-color: rgba(70, 78, 84, 0.75); }
+  #spine.dark.vellum-25.bleed:before {
+    background-color: rgba(70, 78, 84, 0.75); }
+  #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
+  #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
+  #spine.dark .spine-sitenav a,
+  #spine.dark .spine-offsitenav a:hover {
+    color: #d7dadb; }
+  #spine.dark .spine-actions .opened button,
+  #spine.dark .spine-actions button,
+  #spine.dark .spine-actions .opened button:hover,
+  #spine.dark .spine-social-channels a,
+  #spine.dark .spine-footer small a {
+    color: #7d868c; }
+  #spine.dark .spine-sitenav ul li,
+  #spine.dark .spine-global-links {
+    border-color: #5e6a71; }
+  #spine.dark .spine-search-tab.opened button,
+  #spine.dark .spine-search-tab.opened button:hover {
+    color: #2a3033; }
+  #spine.dark .spine-offsitenav a,
+  #spine.dark .spine-global-links a {
+    color: #8d959a; }
+  #spine.dark .spine-actions-tabs :not(.opened) button:hover,
+  #spine.dark .spine-sitenav a,
+  #spine.dark .spine-offsitenav a:hover,
+  #spine.dark .spine-global-links a:hover {
+    color: #d7dadb; }
+  #spine.dark .spine-social-channels li[class*="-channel"] a:hover {
+    color: #d7dadb !important; }
+  #spine.dark .spine-search-tab button {
+    color: #aab0b4; }
+  #spine.dark .spine-search-tab button:hover {
+    color: #d7dadb; }
+  #spine.dark .spine-sitenav a:hover,
+  #spine.dark .spine-sitenav li.dogeared > a {
+    color: white; }
+#spine.darker {
+  /* #### GRAY-DARKER #2a3033, rgb(42 48 51) */ }
+  #spine.darker #glue:before {
+    background-color: #23282b; }
+  #spine.darker.vellum-05 {
+    background-color: rgba(35, 40, 43, 0.95); }
+  #spine.darker.vellum-05.bleed:before {
+    background-color: rgba(35, 40, 43, 0.95); }
+  #spine.darker.vellum-10 {
+    background-color: rgba(35, 40, 43, 0.9); }
+  #spine.darker.vellum-10.bleed:before {
+    background-color: rgba(35, 40, 43, 0.9); }
+  #spine.darker.vellum-15 {
+    background-color: rgba(35, 40, 43, 0.85); }
+  #spine.darker.vellum-15.bleed:before {
+    background-color: rgba(35, 40, 43, 0.85); }
+  #spine.darker.vellum-20 {
+    background-color: rgba(35, 40, 43, 0.8); }
+  #spine.darker.vellum-20.bleed:before {
+    background-color: rgba(35, 40, 43, 0.8); }
+  #spine.darker.vellum-25 {
+    background-color: rgba(35, 40, 43, 0.75); }
+  #spine.darker.vellum-25.bleed:before {
+    background-color: rgba(35, 40, 43, 0.75); }
+  #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
+  #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
+  #spine.darker .spine-sitenav a,
+  #spine.darker .spine-offsitenav a:hover {
+    color: #b5babe; }
+  #spine.darker .spine-actions .opened button,
+  #spine.darker .spine-actions button,
+  #spine.darker .spine-actions .opened button:hover,
+  #spine.darker .spine-social-channels a,
+  #spine.darker .spine-footer small a {
+    color: #5e6a71; }
+  #spine.darker .spine-sitenav ul li,
+  #spine.darker .spine-global-links {
+    border-color: #464e54; }
+  #spine.darker .spine-search-tab.opened button,
+  #spine.darker .spine-search-tab.opened button:hover {
+    color: #2a3033; }
+  #spine.darker .spine-offsitenav a,
+  #spine.darker .spine-global-links a {
+    color: #5e6a71; }
+  #spine.darker .spine-actions-tabs :not(.opened) button:hover,
+  #spine.darker .spine-sitenav a,
+  #spine.darker .spine-offsitenav a:hover,
+  #spine.darker .spine-global-links a:hover {
+    color: #d7dadb; }
+  #spine.darker .spine-search-tab button {
+    color: #8d959a; }
+  #spine.darker .spine-search-tab button:hover {
+    color: #b5babe; }
+  #spine.darker .spine-sitenav a:hover,
+  #spine.darker .spine-sitenav li.dogeared > a {
+    color: white; }
+#spine.darkest {
+  /* #### GRAY-DARKEST #000, rgb 0,0,0 */ }
+  #spine.darkest #glue:before {
+    background-color: black; }
+  #spine.darkest.vellum-05 {
+    background-color: rgba(0, 0, 0, 0.95); }
+  #spine.darkest.vellum-05.bleed:before {
+    background-color: rgba(0, 0, 0, 0.95); }
+  #spine.darkest.vellum-10 {
+    background-color: rgba(0, 0, 0, 0.9); }
+  #spine.darkest.vellum-10.bleed:before {
+    background-color: rgba(0, 0, 0, 0.9); }
+  #spine.darkest.vellum-15 {
+    background-color: rgba(0, 0, 0, 0.85); }
+  #spine.darkest.vellum-15.bleed:before {
+    background-color: rgba(0, 0, 0, 0.85); }
+  #spine.darkest.vellum-20 {
+    background-color: rgba(0, 0, 0, 0.8); }
+  #spine.darkest.vellum-20.bleed:before {
+    background-color: rgba(0, 0, 0, 0.8); }
+  #spine.darkest.vellum-25 {
+    background-color: rgba(0, 0, 0, 0.75); }
+  #spine.darkest.vellum-25.bleed:before {
+    background-color: rgba(0, 0, 0, 0.75); }
+  #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
+  #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-crimson.svg"); }
+  #spine.darkest .spine-sitenav a,
+  #spine.darkest .spine-offsitenav a:hover {
+    color: #b5babe; }
+  #spine.darkest .spine-actions button,
+  #spine.darkest .spine-social-channels a,
+  #spine.darkest .spine-footer small a {
+    color: #5e6a71; }
+  #spine.darkest .spine-sitenav ul li,
+  #spine.darkest .spine-global-links {
+    border-color: #464e54; }
+  #spine.darkest .spine-offsitenav a,
+  #spine.darkest .spine-global-links a {
+    color: #5e6a71; }
+  #spine.darkest .spine-actions-tabs :not(.opened) button:hover,
+  #spine.darkest .spine-sitenav a,
+  #spine.darkest .spine-offsitenav a:hover,
+  #spine.darkest .spine-global-links a:hover {
+    color: #d7dadb; }
+  #spine.darkest .spine-search-tab:not(.opened) button {
+    color: #8d959a; }
+  #spine.darkest .spine-search-tab:not(.opened) button:hover {
+    color: #b5babe; }
+  #spine.darkest .spine-sitenav a:hover,
+  #spine.darkest .spine-sitenav li.dogeared > a {
+    color: #c60c30; }
+#spine.crimson {
+  /* #### CRIMSON #981e32 */ }
+  #spine.crimson #glue:before {
+    background-color: #981e32; }
+  #spine.crimson.vellum-05 {
+    background-color: rgba(152, 30, 50, 0.95); }
+  #spine.crimson.vellum-05.bleed:before {
+    background-color: rgba(152, 30, 50, 0.95); }
+  #spine.crimson.vellum-10 {
+    background-color: rgba(152, 30, 50, 0.9); }
+  #spine.crimson.vellum-10.bleed:before {
+    background-color: rgba(152, 30, 50, 0.9); }
+  #spine.crimson.vellum-15 {
+    background-color: rgba(152, 30, 50, 0.85); }
+  #spine.crimson.vellum-15.bleed:before {
+    background-color: rgba(152, 30, 50, 0.85); }
+  #spine.crimson.vellum-20 {
+    background-color: rgba(152, 30, 50, 0.8); }
+  #spine.crimson.vellum-20.bleed:before {
+    background-color: rgba(152, 30, 50, 0.8); }
+  #spine.crimson.vellum-25 {
+    background-color: rgba(152, 30, 50, 0.75); }
+  #spine.crimson.vellum-25.bleed:before {
+    background-color: rgba(152, 30, 50, 0.75); }
+  #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
+  #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a:before, #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+    background-image: url("//repo.wsu.edu/spine/1/icons/home-white.svg"); }
+  #spine.crimson .spine-sitenav a {
+    color: #b5babe; }
+  #spine.crimson .spine-actions-tabs button,
+  #spine.crimson .spine-social-channels a,
+  #spine.crimson .spine-footer small a {
+    xcolor: black;
+    color: #6b1523;
+    color: #5a121d; }
+  #spine.crimson .spine-sitenav ul li,
+  #spine.crimson .spine-global-links {
+    border-color: #6b1523; }
+  #spine.crimson .spine-offsitenav a,
+  #spine.crimson .spine-global-links a {
+    color: #2f0910;
+    color: black; }
+  #spine.crimson .spine-actions-tabs :not(.opened) button:hover,
+  #spine.crimson .spine-offsitenav a:hover,
+  #spine.crimson .spine-global-links a:hover {
+    color: black;
+    color: #490e18; }
+  #spine.crimson .spine-social-channels li[class*="-channel"] a:hover {
+    color: #490e18 !important; }
+  #spine.crimson .spine-search-tab:not(.opened) button {
+    color: #1e060a; }
+  #spine.crimson .spine-search-tab:not(.opened) button:hover {
+    color: black; }
+  #spine.crimson .spine-sitenav a:hover,
+  #spine.crimson .spine-sitenav li.dogeared > a {
+    color: white; }
 
 /* Campus Signature Versions */
 #wsu-signature {
@@ -1407,209 +1409,205 @@ html.lt-ie9 #spine footer {
 html.lt-ie9 #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png"); }
 
-@keyframes widen {
-  from {
-    margin-left: 0px;
-    margin-right: 0; }
-
-  to {
-    margin-left: -500;
-    margin-right: -1000; } }
-/* ## Cropped */
-#spine.cropped {
-  height: 198px;
-  min-height: 198px;
-  position: absolute;
-  top: 0;
-  /* ### Cropped and Scrolled */ }
-  #spine.cropped #glue {
-    width: 198px;
-    height: 198px;
-    min-height: 198px; }
-  #spine.cropped nav,
-  #spine.cropped footer {
-    display: none; }
-  #spine.cropped.scanned:not(.unshelved) {
-    left: 0 !important;
+/* ### Cropped */
+@media screen and (min-width: 990px) {
+  /* ## Cropped */
+  #spine.cropped {
+    height: 198px !important;
+    min-height: 198px !important;
+    position: absolute;
     top: 0 !important;
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    min-height: 0;
-    animation: xwiden 5s; }
-    #spine.cropped.scanned:not(.unshelved) #glue,
-    #spine.cropped.scanned:not(.unshelved) #glue:before {
-      min-height: 0;
-      height: 50px !important;
-      width: 100% !important;
-      padding-top: 0px;
-      padding-bottom: 0px; }
-    #spine.cropped.scanned:not(.unshelved) #wsu-signature {
-      background-position: center center;
-      background-size: auto 30px;
-      height: 49px; }
-    #spine.cropped.scanned:not(.unshelved) #wsu-actions {
+    /* ### Cropped and Scrolled */ }
+    #spine.cropped #glue {
       width: 198px;
-      margin-top: -40px; }
+      height: 198px !important;
+      min-height: 198px !important; }
+    #spine.cropped #glue:before {
+      width: 198px; }
+    #spine.cropped nav,
+    #spine.cropped footer {
+      display: none; }
+    #spine.cropped.skimmed:not(.unshelved) {
+      left: 0 !important;
+      top: 0 !important;
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      min-height: 0;
+      animation: xwiden 5s; }
+      #spine.cropped.skimmed:not(.unshelved) #glue,
+      #spine.cropped.skimmed:not(.unshelved) #glue:before {
+        min-height: 0;
+        height: 50px !important;
+        width: 100% !important;
+        padding-top: 0px;
+        padding-bottom: 0px; }
+      #spine.cropped.skimmed:not(.unshelved) #wsu-signature {
+        background-position: center 14px;
+        background-size: auto 30px;
+        height: 49px; }
+      #spine.cropped.skimmed:not(.unshelved) #wsu-actions {
+        width: 198px;
+        margin-top: -40px; }
 
-#xxwsu-signature {
-  background-position: center 14px;
-  background-size: auto 30px;
-  height: 49px; }
+  #xxwsu-signature {
+    background-position: center 14px;
+    background-size: auto 30px;
+    height: 49px; }
 
-#spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg"); }
+  #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg"); }
 
-.spokane-signature #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal.svg"); }
+  .spokane-signature #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal.svg"); }
 
-.vancouver-signature #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal.svg"); }
+  .vancouver-signature #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal.svg"); }
 
-.tricities-signature #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal.svg"); }
+  .tricities-signature #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal.svg"); }
 
-.extension-signature #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal.svg"); }
+  .extension-signature #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal.svg"); }
 
-.foundation-signature #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal.svg"); }
+  .foundation-signature #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal.svg"); }
 
-#spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graydarker.svg"); }
+  #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-.spokane-signature #spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-graydarker.svg"); }
+  .spokane-signature #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-.vancouver-signature #spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-graydarker.svg"); }
+  .vancouver-signature #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-.tricities-signature #spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-graydarker.svg"); }
+  .tricities-signature #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-graydarker.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-.extension-signature #spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graydarker.svg"); }
+  .extension-signature #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-.foundation-signature #spine.cropped.scanned.lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-graydarker.svg"); }
+  .foundation-signature #spine.cropped.skimmed.lighter #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-graydarker.svg"); }
 
-#spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-white.svg"); }
+  #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-white.svg"); }
 
-.spokane-signature #spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-white.svg"); }
+  .spokane-signature #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-white.svg"); }
 
-.vancouver-signature #spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-white.svg"); }
+  .vancouver-signature #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-white.svg"); }
 
-.tricities-signature #spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-white.svg"); }
+  .tricities-signature #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-white.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-white.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-white.svg"); }
 
-.extension-signature #spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-white.svg"); }
+  .extension-signature #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-white.svg"); }
 
-.foundation-signature #spine.cropped.scanned.light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-white.svg"); }
+  .foundation-signature #spine.cropped.skimmed.light #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-white.svg"); }
 
-#spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-.spokane-signature #spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  .spokane-signature #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-.vancouver-signature #spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  .vancouver-signature #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-.tricities-signature #spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  .tricities-signature #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-.extension-signature #spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  .extension-signature #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-.foundation-signature #spine.cropped.scanned.gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-graydark-graylighter.svg"); }
+  .foundation-signature #spine.cropped.skimmed.gray #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-#spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-.spokane-signature #spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  .spokane-signature #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-.vancouver-signature #spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  .vancouver-signature #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-.tricities-signature #spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  .tricities-signature #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-.extension-signature #spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  .extension-signature #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-.foundation-signature #spine.cropped.scanned.dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+  .foundation-signature #spine.cropped.skimmed.dark #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
-#spine.cropped.scanned .darker #wsu-signature,
-#spine.cropped.scanned .darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graylighter.svg"); }
+  #spine.cropped.skimmed .darker #wsu-signature,
+  #spine.cropped.skimmed .darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-.spokane-signature #spine.cropped.scanned.darker #wsu-signature,
-.spokane-signature #spine.cropped.scanned.darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-graylighter.svg"); }
+  .spokane-signature #spine.cropped.skimmed.darker #wsu-signature,
+  .spokane-signature #spine.cropped.skimmed.darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-.vancouver-signature #spine.cropped.scanned.darker #wsu-signature,
-.vancouver-signature #spine.cropped.scanned.darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-graylighter.svg"); }
+  .vancouver-signature #spine.cropped.skimmed.darker #wsu-signature,
+  .vancouver-signature #spine.cropped.skimmed.darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-.tricities-signature #spine.cropped.scanned.darker #wsu-signature,
-.tricities-signature #spine.cropped.scanned.darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-graylighter.svg"); }
+  .tricities-signature #spine.cropped.skimmed.darker #wsu-signature,
+  .tricities-signature #spine.cropped.skimmed.darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned.darker #wsu-signature,
-.globalcampus-signature #spine.cropped.scanned.darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-graylighter.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed.darker #wsu-signature,
+  .globalcampus-signature #spine.cropped.skimmed.darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-.extension-signature #spine.cropped.scanned.darker #wsu-signature,
-.extension-signature #spine.cropped.scanned.darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graylighter.svg"); }
+  .extension-signature #spine.cropped.skimmed.darker #wsu-signature,
+  .extension-signature #spine.cropped.skimmed.darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-.foundation-signature #spine.cropped.scanned.darker #wsu-signature,
-.foundation-signature #spine.cropped.scanned.darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-graylighter.svg"); }
+  .foundation-signature #spine.cropped.skimmed.darker #wsu-signature,
+  .foundation-signature #spine.cropped.skimmed.darkest #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-#spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-white-graylightly-white.svg"); }
+  #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-white-graylightly-white.svg"); }
 
-.spokane-signature #spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-white-graylightly-white.svg"); }
+  .spokane-signature #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-white-graylightly-white.svg"); }
 
-.vancouver-signature #spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-white-graylightly-white.svg"); }
+  .vancouver-signature #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-white-graylightly-white.svg"); }
 
-.tricities-signature #spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-white-graylightly-white.svg"); }
+  .tricities-signature #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-white-graylightly-white.svg"); }
 
-.globalcampus-signature #spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-white-graylightly-white.svg"); }
+  .globalcampus-signature #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-white-graylightly-white.svg"); }
 
-.extension-signature #spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-white-graylightly-white.svg"); }
+  .extension-signature #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-white-graylightly-white.svg"); }
 
-.foundation-signature #spine.cropped.scanned.crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-white-graylightly-white.svg"); }
+  .foundation-signature #spine.cropped.skimmed.crimson #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-white-graylightly-white.svg"); }
 
-html.lt-ie9 #spine.cropped.scanned #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); }
+  html.lt-ie9 #spine.cropped.skimmed #wsu-signature {
+    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); } }
