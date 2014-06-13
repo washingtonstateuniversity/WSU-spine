@@ -79,10 +79,9 @@
 					$(this).attr("src",$(this).attr("src").replace(".svg",".png"));
 				});
 			}
-			
-
 
 			self.setup_nav();
+			self.setup_nav_scroll();
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
@@ -388,6 +387,10 @@
 			});
 		},
 
+		setup_nav_scroll: function() {
+			$("#glue").wrapInner( "<div id='scroll'>" );
+			$("#spine header").insertBefore($("#scroll"));
+		},
 		/**
 		 * Sets up navagation system
 		 */
