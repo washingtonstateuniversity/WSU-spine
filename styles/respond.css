@@ -1238,6 +1238,27 @@
   #wsu-signature {
     background-size: 260px auto !important;
     background-position: center 60% !important; } }
+/* IOS fix for unshelved spine */
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) and (orientation: portrait), only screen and (max-device-width: 480px) and (orientation: landscape), only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait), only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape), only screen and (-webkit-min-device-pixel-ratio: 2) {
+  #spine.unshelved {
+    top: 0px !important;
+    min-height: 0 !important; }
+    #spine.unshelved #scroll {
+      overflow-y: scroll;
+      position: fixed;
+      top: 50px;
+      bottom: 0px;
+      width: 298px;
+      z-index: 99165; }
+    #spine.unshelved #scroll {
+      -webkit-transition: left 0.2s ease-in-out;
+      left: 0; }
+    #spine.unshelved footer {
+      position: relative !important; }
+    #spine.unshelved #wsu-actions {
+      padding-top: 0px !important; }
+    #spine.unshelved .spine-navigation {
+      padding-bottom: 0px !important; } }
 /* LARGE FORMAT (Folio)
 ---------------------------------------------------------- */
 .folio-only {

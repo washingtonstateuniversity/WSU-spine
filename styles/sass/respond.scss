@@ -420,6 +420,9 @@ nav a.external:after {
 	
 	}
 	
+/* IOS fix for unshelved spine */
+@include unshelved-ios;
+	
 /* LARGE FORMAT (Folio)
 ---------------------------------------------------------- */
 
