@@ -54,6 +54,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   left: -802px; }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  /* Put your iPhone 4g styles in here */
+  #spine {
+    top: 0px !important;
+    background: 5px solid pink !important; } }
 #spine nav,
 #spine footer {
   margin-left: 1.75em;

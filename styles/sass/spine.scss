@@ -78,6 +78,19 @@
 		
 		}
 		
+@media
+	only screen
+	and (-webkit-min-device-pixel-ratio: 2)
+	 {
+    /* Put your iPhone 4g styles in here */ 
+    #spine {
+	    
+	    top: 0px !important;
+	    background: 5px solid pink !important;
+	    
+    	}
+	}
+	
 
 	
 #spine {
