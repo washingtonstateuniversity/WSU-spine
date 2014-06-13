@@ -1,0 +1,137 @@
+/* BUTTONS
+-------------------------------------------------------- */
+
+.spine-button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	background: $gray-lightest;
+	border-style: solid;
+	border-width: 1px;
+	border-color: $gray-lightly $gray-light $gray-light $gray-lightly;
+	border-radius: 0.5em;
+	color: $gray-dark;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 0px;
+	line-height: normal;
+	padding: 0.5em 1em;
+	}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+	color: $gray-dark;
+	background: $gray-er;
+	border-color: $gray-light;
+	border-width: 0px 2px 2px 0px;
+	}
+
+.button:active, .button.active,
+button:active, button.active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+	color: $gray-lighter;
+	border-color: $gray-darkest;
+	background: $gray-dark;
+	border-width: 2px 0px 0px 2px;
+	}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+	width: 100%;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	text-align: center; }
+
+button.functional,
+button.glassine {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	background: transparent;
+	border-radius: 0px;
+	}
+
+/* Fix for odd Mozilla border & padding issues */
+button:-moz-focus-inner,
+input:-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	}
+
+
+/* I.5.0 FORMS
+-------------------------------------------------------- */
+
+/* This could be a wee bit controversial */
+form,fieldset,input,textarea,legend,label {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	}
+form {
+	margin-bottom: 5px;
+	padding: 10px;
+	}
+fieldset {
+	margin-bottom: 5px;
+	padding: 0px;
+	}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	border: 1px solid #ccc;
+	padding: 6px 4px;
+	outline: none;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	color: #777;
+	margin: 0;
+	background: #fff; }
+select {
+	padding: 0; }
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	border: 1px solid #aaa;
+		color: #444;
+		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+	box-shadow:  0 0 3px rgba(0,0,0,.2); }
+textarea {
+	min-height: 60px; }
+label,
+legend {
+	font-weight: bold;
+	font-size: 13px;  }
+select {
+	 }
+input[type="checkbox"] {
+	display: inline; }
+label span,
+legend span {
+	font-weight: normal;
+	font-size: 13px;
+	color: #444; }
+
+fieldset {
+	position: relative;
+	}

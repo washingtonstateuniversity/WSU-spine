@@ -1,12 +1,7 @@
-/* Table of Contents
-==================================================
-    I.1.0 Reset
-    I.2.0 Set Defaults
-    
-    
-    #Clearing */
-/* 1.0 RESET
--------------------------------------------------- */
+/* twelfths */
+/* Fifteenths */
+/* # SKELETON */
+/* ## Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -435,7 +430,7 @@ section {
 .row .column.row.single .column {
   width: 792px; }
 
-/* I.4.1 Clearing
+/* ## Clearing
 -------------------------------------------------------- */
 /* Automatic Clearing (awesome but questionable) */
 /*
@@ -448,9 +443,9 @@ section {
 	clear: none;
 	}
 */
-/* I.4.2 Columnar Units
+/* ## Columnar Units
 -------------------------------------------------------- */
-/* twelfths */
+/* ### twelfths */
 .one-twelfths, .twelfths-1 {
   width: 66px; }
 
@@ -692,173 +687,7 @@ section {
 .fluid .twelve-twelfths, .fluid .twelfths-12 {
   width: 100.0%; }
 
-/* Fifteenths */
-.one-fifteenths, .fifteenths-1 {
-  width: 66px; }
-
-.one-fifteenths-max, .fifteenths-1-max {
-  max-width: 66px; }
-
-.one-fifteenths-tall, .fifteenths-1-tall {
-  height: 66px; }
-
-.two-fifteenths, .fifteenths-2 {
-  width: 132px; }
-
-.two-fifteenths-max, .fifteenths-2-max {
-  max-width: 132px; }
-
-.two-fifteenths-tall, .fifteenths-2-tall {
-  height: 132px; }
-
-.three-fifteenths, .fifteenths-3 {
-  width: 198px; }
-
-.three-fifteenths-max, .fifteenths-3-max {
-  max-width: 198px; }
-
-.three-fifteenths-tall, .fifteenths-3-tall {
-  height: 198px; }
-
-.four-fifteenths, .fifteenths-4 {
-  width: 264px; }
-
-.four-fifteenths-max, .fifteenths-4-max {
-  max-width: 264px; }
-
-.four-fifteenths-tall, .fifteenths-4-tall {
-  height: 264px; }
-
-.five-fifteenths, .fifteenths-5 {
-  width: 330px; }
-
-.five-fifteenths-max, .fifteenths-5-max {
-  max-width: 330px; }
-
-.five-fifteenths-tall, .fifteenths-5-tall {
-  height: 330px; }
-
-.six-fifteenths, .fifteenths-6 {
-  width: 396px; }
-
-.six-fifteenths-max, .fifteenths-6-max {
-  max-width: 396px; }
-
-.six-fifteenths-tall, .fifteenths-6-tall {
-  height: 396px; }
-
-.seven-fifteenths, .fifteenths-7 {
-  width: 462px; }
-
-.seven-fifteenths-max, .fifteenths-7-max {
-  max-width: 462px; }
-
-.seven-fifteenths-tall, .fifteenths-7-tall {
-  height: 462px; }
-
-.eight-fifteenths, .fifteenths-8 {
-  width: 528px; }
-
-.eight-fifteenths-max, .fifteenths-8-max {
-  max-width: 528px; }
-
-.eight-fifteenths-tall, .fifteenths-8-tall {
-  height: 528px; }
-
-.nine-fifteenths, .fifteenths-9 {
-  width: 594px; }
-
-.nine-fifteenths-max, .fifteenths-9-max {
-  max-width: 594px; }
-
-.nine-fifteenths-tall, .fifteenths-9-tall {
-  height: 594px; }
-
-.ten-fifteenths, .fifteenths-10 {
-  width: 660px; }
-
-.ten-fifteenths-max, .fifteenths-10-max {
-  max-width: 660px; }
-
-.ten-fifteenths-tall, .fifteenths-10-tall {
-  height: 660px; }
-
-.eleven-fifteenths, .fifteenths-11 {
-  width: 726px; }
-
-.eleven-fifteenths-max, .fifteenths-11-max {
-  max-width: 726px; }
-
-.eleven-fifteenths-tall, .fifteenths-11-tall {
-  height: 726px; }
-
-.twelve-fifteenths, .fifteenths-12 {
-  width: 792px; }
-
-.twelve-fifteenths-max, .fifteenths-12-max {
-  max-width: 792px; }
-
-.twelve-fifteenths-tall, .fifteenths-12-tall {
-  height: 792px; }
-
-.thirteen-fifteenths, .fifteenths-13 {
-  width: 858px; }
-
-.thirteen-fifteenths-max, .fifteenths-13-max {
-  max-width: 858px; }
-
-.thirteen-fifteenths-tall, .fifteenths-13-tall {
-  height: 858px; }
-
-.fourteen-fifteenths, .fifteenths-14 {
-  width: 924px; }
-
-.fourteen-fifteenths-max, .fifteenths-14-max {
-  max-width: 924px; }
-
-.fourteen-fifteenths-tall, .fifteenths-14-tall {
-  height: 924px; }
-
-.fifteen-fifteenths, .fifteenths-15 {
-  width: 990px; }
-
-.fifteen-fifteenths-max, .fifteenths-15-max {
-  max-width: 990px; }
-
-.fifteen-fifteenths-tall, .fifteenths-15-tall {
-  height: 990px; }
-
-.fluid .one-fifteenths, .fluid .fifteenths-1 {
-  width: 6.66667%; }
-.fluid .two-fifteenths, .fluid .fifteenths-2 {
-  width: 13.33333%; }
-.fluid .three-fifteenths, .fluid .fifteenths-3 {
-  width: 20.0%; }
-.fluid .four-fifteenths, .fluid .fifteenths-4 {
-  width: 26.66667%; }
-.fluid .five-fifteenths, .fluid .fifteenths-5 {
-  width: 33.33333%; }
-.fluid .six-fifteenths, .fluid .fifteenths-6 {
-  width: 40.0%; }
-.fluid .seven-fifteenths, .fluid .fifteenths-7 {
-  width: 46.66667%; }
-.fluid .eight-fifteenths, .fluid .fifteenths-8 {
-  width: 53.33333%; }
-.fluid .nine-fifteenths, .fluid .fifteenths-9 {
-  width: 60.0%; }
-.fluid .ten-fifteenths, .fluid .fifteenths-10 {
-  width: 66.66667%; }
-.fluid .eleven-fifteenths, .fluid .fifteenths-11 {
-  width: 73.33333%; }
-.fluid .twelve-fifteenths, .fluid .fifteenths-12 {
-  width: 80.0%; }
-.fluid .thirteen-fifteenths, .fluid .fifteenths-13 {
-  width: 86.66667%; }
-.fluid .fourteen-fifteenths, .fluid .fifteenths-14 {
-  width: 93.33333%; }
-.fluid .fifteen-fifteenths, .fluid .fifteenths-15 {
-  width: 100.0%; }
-
+/* ### Fifteenths Deprecated */
 /* I.4.3 Spineless
 -------------------------------------------------------- */
 .row.fifths .column {
@@ -970,6 +799,7 @@ section {
   padding-bottom: 1em; }
 
 /* ### Gutters */
+.gutter .column,
 .guttered {
   padding-left: 2em;
   padding-right: 2em; }
@@ -1157,6 +987,7 @@ main,
 .clear:after {
   clear: both; }
 
+/* FORMS */
 /* BUTTONS
 -------------------------------------------------------- */
 .spine-button,

@@ -1,19 +1,14 @@
 @import 'vars/global';
 @import 'vars/colors';
+@import 'skeleton/columns';
 // @import 'skeleton/grid';
 
 @charset "UTF-8";
 
-/* Table of Contents
-==================================================
-    I.1.0 Reset
-    I.2.0 Set Defaults
-    
-    
-    #Clearing */
+/* # SKELETON */
 
-/* 1.0 RESET
--------------------------------------------------- */
+/* ## Reset */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -242,7 +237,7 @@ $layouts: 'single','halves','thirds','side-right','sideright','sideleft','tripty
 
 	   .column.half { width: 396px !important; }
 .fluid .column.half { width: 50% !important; }
-	
+
 /* thirds */
 
 	   .row.thirds .column { width: 264px; }
@@ -324,8 +319,8 @@ $layouts: 'single','halves','thirds','side-right','sideright','sideleft','tripty
 	}
 
 
-	
-/* I.4.1 Clearing
+
+/* ## Clearing
 -------------------------------------------------------- */
 
 /* Automatic Clearing (awesome but questionable) */
@@ -343,53 +338,27 @@ $layouts: 'single','halves','thirds','side-right','sideright','sideleft','tripty
 
 
 
-/* I.4.2 Columnar Units
+/* ## Columnar Units
 -------------------------------------------------------- */
 
-/* twelfths */
+/* ### twelfths */
 
-@each $count, $name in $counter {
-	@if $count <= 24 {
-		$width: 66*$count;
-		// @if $count == '01' { $plurality: 'count'; }
-		// @else { $plurality: 'counts'; }
-		.#{$name}-twelfths, .twelfths-#{$count} { width: #{$width}px; }
-		.#{$name}-twelfths-max, .twelfths-#{$count}-max { max-width: #{$width}px; }
-		.#{$name}-twelfths-tall, .twelfths-#{$count}-tall { height: #{$width}px; }
-		}
-	}
+@include twelfths-pixels;
 
 .fluid {
-	
-	$percentage: 8.333333%;
-	@each $count, $name in $counter {
-	@if $count <= 12 {
-			 .#{$name}-twelfths, .twelfths-#{$count} { width: #{$percentage}; }
-			$percentage: 8.333333% + $percentage;
-			}
-		}
+
+	@include twelfths-percents;
+
 	}
 
-/* Fifteenths */
+/* ### Fifteenths Deprecated */
 
-@each $count, $name in $counter {
-	@if $count <= 15 {
-		$width: 66*$count;
-		.#{$name}-fifteenths, .fifteenths-#{$count} { width: #{$width}px; }
-		.#{$name}-fifteenths-max, .fifteenths-#{$count}-max { max-width: #{$width}px; }
-		.#{$name}-fifteenths-tall, .fifteenths-#{$count}-tall { height: #{$width}px; }
-		}
-	}
+// @include fifteenths-pixels;
 
 .fluid {
-	
-	$percentage: 6.6666667%;
-	@each $count, $name in $counter {
-	@if $count <= 15 {
-			 .#{$name}-fifteenths, .fifteenths-#{$count} { width: #{$percentage}; }
-			$percentage: 6.6666667% + $percentage;
-			}
-		}
+
+	// @include fifteenths-percents;
+
 	}
 
 /* I.4.3 Spineless
@@ -426,10 +395,10 @@ $layouts: 'single','halves','thirds','side-right','sideright','sideleft','tripty
 	margin: 0px;
 	border-top: 1px gray dotted;
 	}
-	
+
 /* ## Spacing
 -------------------------------------------------------- */
-	
+
 $default: 2em;
 $wide: $default * 2;
 $tall: $default * 2;
@@ -507,6 +476,7 @@ $spacing: $default, $wide;
 
 /* ### Gutters */
 
+.gutter .column,
 .guttered {
 	padding-left: 2em;
 	padding-right: 2em; }
@@ -576,7 +546,7 @@ main hr.short {
 	height: 100%;
 	width: auto;
 	}
-	
+
 .max-width {
 	max-width: 100%;
 	height: auto !important;
@@ -589,7 +559,7 @@ main hr.short {
   	width: auto; /* for ie 8 */
   } 
   } 
-	
+
 .hybrid.small figure.fill-width {
 	width: 100%;
 	}
@@ -622,7 +592,7 @@ img.grayscale {
   top: 0; left: 0; bottom: 0; right: 0;
   }
 
-	
+
 /* Character Styles
 -------------------------------------------------------- */
 
@@ -674,144 +644,9 @@ main,
     clear: both;
 	}
 
-/* BUTTONS
--------------------------------------------------------- */
+/* FORMS */
+@import 'skeleton/forms';
 
-.spine-button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-	background: $gray-lightest;
-	border-style: solid;
-	border-width: 1px;
-	border-color: $gray-lightly $gray-light $gray-light $gray-lightly;
-	border-radius: 0.5em;
-	color: $gray-dark;
-	display: inline-block;
-	text-decoration: none;
-	cursor: pointer;
-	margin-bottom: 0px;
-	line-height: normal;
-	padding: 0.5em 1em;
-	}
-
-.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
-	color: $gray-dark;
-	background: $gray-er;
-	border-color: $gray-light;
-	border-width: 0px 2px 2px 0px;
-	}
-
-.button:active, .button.active,
-button:active, button.active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-input[type="button"]:active,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
-	color: $gray-lighter;
-	border-color: $gray-darkest;
-	background: $gray-dark;
-	border-width: 2px 0px 0px 2px;
-	}
-
-.button.full-width,
-button.full-width,
-input[type="submit"].full-width,
-input[type="reset"].full-width,
-input[type="button"].full-width {
-	width: 100%;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	text-align: center; }
-		
-button.functional,
-button.glassine {
-	border: none;
-	padding: 0px;
-	margin: 0px;
-	background: transparent;
-	border-radius: 0px;
-	}
-
-/* Fix for odd Mozilla border & padding issues */
-button:-moz-focus-inner,
-input:-moz-focus-inner {
-	border: 0;
-	padding: 0;
-	}
-
-
-/* I.5.0 FORMS
--------------------------------------------------------- */
-
-/* This could be a wee bit controversial */
-form,fieldset,input,textarea,legend,label {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	}
-form {
-	margin-bottom: 5px;
-	padding: 10px;
-	}
-fieldset {
-	margin-bottom: 5px;
-	padding: 0px;
-	}
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea,
-select {
-	border: 1px solid #ccc;
-	padding: 6px 4px;
-	outline: none;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	color: #777;
-	margin: 0;
-	background: #fff; }
-select {
-	padding: 0; }
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-	border: 1px solid #aaa;
-		color: #444;
-		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
-	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
-	box-shadow:  0 0 3px rgba(0,0,0,.2); }
-textarea {
-	min-height: 60px; }
-label,
-legend {
-	font-weight: bold;
-	font-size: 13px;  }
-select {
-	 }
-input[type="checkbox"] {
-	display: inline; }
-label span,
-legend span {
-	font-weight: normal;
-	font-size: 13px;
-	color: #444; }
-
-fieldset {
-	position: relative;
-	}
-	
 /* MISC */
 code textarea,
 code textarea:focus {
@@ -827,4 +662,3 @@ code textarea:focus {
 .hidden { display: none; visibility: hidden; }
 .invisible { visibility: hidden; }
 .nowrap { white-space: nowrap; }
-
