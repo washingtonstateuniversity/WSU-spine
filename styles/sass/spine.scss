@@ -520,39 +520,42 @@ html.lt-ie9 #spine .spine-actions {
 #spine-shortcuts {
 
 	li {
+
 		padding: 0px;
 		list-style: none;
-		}
-	li a {
-		color: #5e6a71;
-		display: block;
-		padding: .6em 0;
-		margin: 0;
-		border-bottom: 1px #c3cbcf solid;
-		}
-	li a:hover,
-	li a.ui-state-focus {
-		color: white;
-		background-color: #434d53;
-		margin: -1px -1.75em 0px -1.75em;
-		padding: .6em 1.75em .6em 1.75em;
-		border-bottom: 2px #434d53 solid;
-		}
-	li:first-child a:hover,
-	li:first-child a.ui-state-focus {
-		margin: 0px -1.75em 0px -1.75em;
-		border-bottom: 1px #434d53 solid;
-		}
-	li:first-child a {
-		border-top: 1px transparent solid;
-		}
-	li:last-child a {
-		border-bottom-color: transparent;
-		}
-	li a:active,
-	li a:hover,
-	li a:focus {
-		outline: none;
+			
+		a {
+			color: #5e6a71;
+			display: block;
+			padding: .6em 0;
+			margin: 0;
+			border-bottom: 1px #c3cbcf solid;
+			}
+		a:hover,
+		a.ui-state-focus {
+			color: white;
+			background-color: #434d53;
+			margin: -1px -1.75em 0px -1.75em;
+			padding: .6em 1.75em .6em 1.75em;
+			border-bottom: 2px #434d53 solid;
+			}
+		&:first-child a:hover,
+		&:first-child a.ui-state-focus {
+			margin: 0px -1.75em 0px -1.75em;
+			border-bottom: 1px #434d53 solid;
+			}
+		&:first-child a {
+			border-top: 1px transparent solid;
+			}
+		&:last-child a {
+			border-bottom-color: transparent;
+			}
+		a:active,
+		a:hover,
+		a:focus {
+			outline: none;
+			}
+		
 		}
 	}
 	

@@ -375,31 +375,30 @@ html.lt-ie9 #spine .spine-actions {
 #spine-shortcuts li {
   padding: 0px;
   list-style: none; }
-#spine-shortcuts li a {
-  color: #5e6a71;
-  display: block;
-  padding: .6em 0;
-  margin: 0;
-  border-bottom: 1px #c3cbcf solid; }
-#spine-shortcuts li a:hover,
-#spine-shortcuts li a.ui-state-focus {
-  color: white;
-  background-color: #434d53;
-  margin: -1px -1.75em 0px -1.75em;
-  padding: .6em 1.75em .6em 1.75em;
-  border-bottom: 2px #434d53 solid; }
-#spine-shortcuts li:first-child a:hover,
-#spine-shortcuts li:first-child a.ui-state-focus {
-  margin: 0px -1.75em 0px -1.75em;
-  border-bottom: 1px #434d53 solid; }
-#spine-shortcuts li:first-child a {
-  border-top: 1px transparent solid; }
-#spine-shortcuts li:last-child a {
-  border-bottom-color: transparent; }
-#spine-shortcuts li a:active,
-#spine-shortcuts li a:hover,
-#spine-shortcuts li a:focus {
-  outline: none; }
+  #spine-shortcuts li a {
+    color: #5e6a71;
+    display: block;
+    padding: .6em 0;
+    margin: 0;
+    border-bottom: 1px #c3cbcf solid; }
+  #spine-shortcuts li a:hover,
+  #spine-shortcuts li a.ui-state-focus {
+    color: white;
+    background-color: #434d53;
+    margin: -1px -1.75em 0px -1.75em;
+    padding: .6em 1.75em .6em 1.75em;
+    border-bottom: 2px #434d53 solid; }
+  #spine-shortcuts li:first-child a:hover, #spine-shortcuts li:first-child a.ui-state-focus {
+    margin: 0px -1.75em 0px -1.75em;
+    border-bottom: 1px #434d53 solid; }
+  #spine-shortcuts li:first-child a {
+    border-top: 1px transparent solid; }
+  #spine-shortcuts li:last-child a {
+    border-bottom-color: transparent; }
+  #spine-shortcuts li a:active,
+  #spine-shortcuts li a:hover,
+  #spine-shortcuts li a:focus {
+    outline: none; }
 
 .ui-helper-hidden-accessible {
   border: 0 none;
