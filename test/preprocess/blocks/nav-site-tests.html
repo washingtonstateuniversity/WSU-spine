@@ -1,51 +1,33 @@
-<nav class="spine-sitenav">
+<li><a href="/">Site Home</a></li>
+	<li><a href="">Options</a>
+		<ul>
+			<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
+		</ul>
+	</li>
+	<li class="current"><a href="/demo.html">Demo</a></li>
+	<li>
+		<a href="#">Behavior</a>
+		<ul>
+			<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
+			<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
+			<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
+			<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
+		</ul>
+	</li>
+</li>
+<li>
+	<a href="/test/tests/overly.html" data-overview="Overly Linked and Long">Lots and lots</a>
+	<ul>
+		<li><a href="/test/tests/overly_linked.html">Overly Linked</a></li>
+		<li><a href="/test/tests/overly_long.html">Overly Long</a></li>
+	</ul>
+</li>
+<li><a href="/demo.html">Available Layouts</a></li>
+<li><a href="/test/tests/columns.html">Columns</a></li>
+<li>
+	<a href="/test/tests/columns.html">Broken</a>
+	<ul>
+		<li><a href="/test/tests/malformedContact.html">Malformed</a></li>
+	</ul>
+</li>
 
-<ul>
-	<li><a href="/">Site Home</a></li>
-	<li>
-		<!-- @if navdata='true' -->
-		<a href="link" data-foo="bar" >About</a>
-		<!-- @endif -->
-		<!-- @if navdata!='true' -->
-		<a href="link">About</a>
-		<!-- @endif -->
-		<ul>
-			<li><a href="">Options</a>
-				<ul>
-					<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
-				</ul>
-			</li>
-			<li class="current"><a href="/demo.html">Demo</a></li>
-			<li>
-				<a href="#">Behavior</a>
-				<ul>
-					<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
-					<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
-					<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
-					<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-	</li>
-	<li>
-		<a href="/test/tests/overly.html" data-overview="Overly Linked and Long">Lots and lots</a>
-		<ul>
-			<li><a href="/test/tests/overly_linked.html">Overly Linked</a></li>
-			<li><a href="/test/tests/overly_long.html">Overly Long</a></li>
-		</ul>
-	</li>
-	<li><a href="/demo.html">Available Layouts</a></li>
-	<li><a href="/test/tests/columns.html">Columns</a></li>
-	<li>
-		<a href="/test/tests/columns.html">Broken</a>
-		<ul>
-			<li><a href="/test/tests/malformedContact.html">Malformed</a></li>
-		</ul>
-	</li>
-<!-- @if manyLinks='true' -->
-	@@include('nav_extralinks.html', {})
-<!-- @endif -->
-</ul>
-
-</nav>

@@ -192,13 +192,36 @@
 
 <section id="spine-navigation" class="spine-navigation">
 
-	<!-- @if markup='true' -->
-	@@include('blocks/nav-site.html', {})
-	<!-- @endif -->
-
-	<!-- @if markup!='true' -->
-	@@include('blocks/nav-site-tests.html', {})
-	<!-- @endif -->
+	<nav class="spine-sitenav">
+	
+		<ul>
+		
+		
+	
+		<!-- @if markup!='true' -->
+		@@include('blocks/nav-site-tests.html', {})
+		<!-- @endif -->
+		
+		<!-- @if markup='true' -->
+		@@include('blocks/nav-site.html', {})
+		<!-- @endif -->
+				
+		<!-- @if navdata='true' -->
+		<li><a href="link" data-foo="bar" >About</a>
+		<!-- @endif -->
+				
+		<!-- @if navdata!='true' -->
+		<li><a href="link">Site Home</a>
+		<!-- @endif -->
+				
+		<!-- @if manyLinks='true' -->
+			@@include('blocks/nav_extralinks.html', {})
+		<!-- @endif -->
+		
+		</li>
+		</ul>
+	
+	</nav>
 
 	@@include('blocks/nav-offsite.html', {})
 

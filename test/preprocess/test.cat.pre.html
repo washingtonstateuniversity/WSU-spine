@@ -1224,15 +1224,56 @@ pre code {
 
 <section id="spine-navigation" class="spine-navigation">
 
-	<!-- @if markup='true' -->
 	<nav class="spine-sitenav">
-<!-- Your navigation list here
+	
+		<ul>
+		
+		
+	
+		<!-- @if markup!='true' -->
+		<li><a href="/">Site Home</a></li>
+	<li><a href="">Options</a>
+		<ul>
+			<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
+		</ul>
+	</li>
+	<li class="current"><a href="/demo.html">Demo</a></li>
+	<li>
+		<a href="#">Behavior</a>
+		<ul>
+			<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
+			<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
+			<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
+			<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
+		</ul>
+	</li>
+</li>
+<li>
+	<a href="/test/tests/overly.html" data-overview="Overly Linked and Long">Lots and lots</a>
+	<ul>
+		<li><a href="/test/tests/overly_linked.html">Overly Linked</a></li>
+		<li><a href="/test/tests/overly_long.html">Overly Long</a></li>
+	</ul>
+</li>
+<li><a href="/demo.html">Available Layouts</a></li>
+<li><a href="/test/tests/columns.html">Columns</a></li>
+<li>
+	<a href="/test/tests/columns.html">Broken</a>
+	<ul>
+		<li><a href="/test/tests/malformedContact.html">Malformed</a></li>
+	</ul>
+</li>
+
+
+		<!-- @endif -->
+		
+		<!-- @if markup='true' -->
+		<!-- Your navigation list here
 	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
 	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
 	• Replace example navigation list below
 -->
 
-<ul>
 	<li><a href="/">Site Home</a></li>
 	<li>
 		<a href="link">About</a>
@@ -1258,59 +1299,19 @@ pre code {
 	</li>
 	<li><a href="/test/layouts.html">Available Layouts</a></li>
 	<li><a href="/test/columns.html">Columns</a></li>
-</ul>
 
-</nav>
-	<!-- @endif -->
-
-	<!-- @if markup!='true' -->
-	<nav class="spine-sitenav">
-
-<ul>
-	<li><a href="/">Site Home</a></li>
-	<li>
-		<!-- @if navdata='true' -->
-		<a href="link" data-foo="bar" >About</a>
-		<!-- @endif -->
-		<!-- @if navdata!='true' -->
-		<a href="link">About</a>
-		<!-- @endif -->
-		<ul>
-			<li><a href="">Options</a>
-				<ul>
-					<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
-				</ul>
-			</li>
-			<li class="current"><a href="/demo.html">Demo</a></li>
-			<li>
-				<a href="#">Behavior</a>
-				<ul>
-					<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
-					<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
-					<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
-					<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-	</li>
-	<li>
-		<a href="/test/tests/overly.html" data-overview="Overly Linked and Long">Lots and lots</a>
-		<ul>
-			<li><a href="/test/tests/overly_linked.html">Overly Linked</a></li>
-			<li><a href="/test/tests/overly_long.html">Overly Long</a></li>
-		</ul>
-	</li>
-	<li><a href="/demo.html">Available Layouts</a></li>
-	<li><a href="/test/tests/columns.html">Columns</a></li>
-	<li>
-		<a href="/test/tests/columns.html">Broken</a>
-		<ul>
-			<li><a href="/test/tests/malformedContact.html">Malformed</a></li>
-		</ul>
-	</li>
+<!-- @endif -->
+		
+<!-- @if navdata='true' -->
+		<li><a href="link" data-foo="bar" >About</a>
+<!-- @endif -->
+		
+<!-- @if navdata!='true' -->
+		<li><a href="link">Site Home</a>
+<!-- @endif -->
+		
 <!-- @if manyLinks='true' -->
-		<li><a href="/">Fee, Fi, Fourth</a></li>
+				<li><a href="/">Fee, Fi, Fourth</a></li>
 	<li>
 		<a href="link">A first first order link</a>
 		<ul>
@@ -1403,10 +1404,11 @@ pre code {
 	<li><a href="link">34 over link</a></li>
 	<li><a href="link">35 over link</a></li>
 <!-- @endif -->
-</ul>
-
-</nav>
-	<!-- @endif -->
+		
+		</li>
+		</ul>
+	
+	</nav>
 
 	<nav class="spine-offsitenav">
 	<ul>
