@@ -172,15 +172,20 @@ section {
 	}
 
 
-/* I.4.0 GRID
--------------------------------------------------------- */
+/* ## GRID */
 .row {
 	width: 100%;
 	max-width: 792px;
 	}
-.max-1188 .row {
-	max-width: 990px;
-	}
+.spineless .row { max-width: 990px; }
+
+// @each $break, $point in $breaks { 
+//	.spineless .#{$point} .row {
+//		max-width: #{$break - 198}px;
+//		}
+//	}
+
+
 .row.fifteenths,
 .row.fifths {
 	max-width: 990px;
@@ -220,7 +225,7 @@ section {
 .fifteenths .rebound,
 .fifths .rebound { width: 990px; }
 
-$layouts: 'single','halves','thirds','side-right','sideright','sideleft','triptych','quarters','eighths';
+$layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','margin-right','triptych','quarters','eighths';
 
 /* single */
 
@@ -353,11 +358,11 @@ $layouts: 'single','halves','thirds','side-right','sideright','sideleft','tripty
 
 /* ### Fifteenths Deprecated */
 
-// @include fifteenths-pixels;
+@include fifteenths-pixels;
 
 .fluid {
 
-	// @include fifteenths-percents;
+	@include fifteenths-percents;
 
 	}
 

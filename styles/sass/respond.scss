@@ -17,51 +17,21 @@
 	z-index: 1;
 	}
 
-/* III.0.5 Show and Hide
--------------------------------------------------- */
-/* Hide */
-.size-small-only,
-.size-gt-small-only,
-.size-gt-smallish-only,
-.size-gt-medium-only,
-.size-gt-large-only,
-.size-gt-xlarge-only,
-.size-lt-small-only,
-.size-lt-smallish-only,
-.size-lt-medium-only,
-.size-lt-large-only,
-.size-lt-xlarge-only,
-.size-xlarge-only {
-	display: none !important;
-	}
-	
-.folio-only,
-.min-1188-only, .max-1188-only,
-.min-1386-only, .max-1386-only,
-.min-1584-only, .max-1584-only,
-.min-1782-only, .max-1782-only,
-.min-1980-only, .max-1980-only {
-	display: none !important;	
-	}
 
-/* Show */
-.size-small .size-small-only,
-.size-gt-small .size-gt-small-only,
-.size-gt-smallish .size-gt-smallish-only,
-.size-gt-medium .size-gt-medium-only,
-.size-gt-large .size-gt-large-only,
-.size-gt-xlarge .size-gt-xlarge-only,
-.size-lt-small .size-lt-small-only,
-.size-lt-smallish .size-lt-smallish-only,
-.size-lt-medium .size-lt-medium-only,
-.size-lt-large .size-lt-large-only,
-.size-lt-xlarge .size-lt-xlarge-only,
-.size-xlarge .size-xlarge-only {
-	display: block !important;
+/* ## LARGE (after first break) */
+
+@media screen
+	and ( max-width : 1187px )
+	
+	{
+
+/* ### Large Grid */
+
+@include grid-large;
+
 	}
 	
-/* III.1.0 MEDIUM (after first break)
--------------------------------------------------- */
+/* ## MEDIUM (after first break) */
 
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 
@@ -129,6 +99,9 @@ nav a.external:after {
 	margin-left: 3px;
 	content: "\21AA";
 	}
+	
+/* Grid Medium */
+@include grid-medium;
 
 @include header-colors;
 @include signatures('horizontal','#binder:not(.fluid) ');
@@ -271,6 +244,19 @@ nav a.external:after {
 	height: 49px;
 	}
 
+.at-medium-max-width {
+	max-width: 100% !important;
+	}
+.at-medium-full-width {
+	width: 100% !important;
+	}
+.at-medium-half-width {
+	width: 50% !important;
+	}
+.at-medium-clear {
+	clear: both !important;
+	}
+
 /* Header Colors and Signatures */
 @include header-colors;
 @include signatures('horizontal','.fluid ');
@@ -278,19 +264,15 @@ nav a.external:after {
 	}
 
 	
-/* SMALL-MED (Fixed Only)
+/* SMALLISH (Fixed Only)
 ----------------------------------------------------- */
 /* Medium and Desktop - Small */
 
 @media
 	only screen
-	and (min-width: 694px) and
-	(max-width: 791px) and
-	(max-device-width : 990px),
+	and (min-width: 694px)
+	and (max-width: 791px)
 	
-	(min-width: 694px) and
-	(max-width: 791px) and
-	(min-device-width : 990px)
 	{
 
 #binder.fixed {
@@ -307,6 +289,10 @@ nav a.external:after {
 #binder.fixed {
 	@include unshelved;
 	}
+	
+/* Grid */
+
+@include grid-smallish;
 
 /* Header Colors and Signatures */
 
@@ -315,8 +301,7 @@ nav a.external:after {
 
 }
 
-/* SMALL (max 693)
------------------------------------------------------ */
+/* ## SMALL (max 693)  */
 /* 792px - 198px = 594px */
 
 @media 
@@ -353,7 +338,7 @@ nav a.external:after {
 
 	}
 
-/* Logo */
+/* #### Logo */
 
 [class*="-signature"]  #wsu-signature {
 	background-size: 340px auto !important;
@@ -366,7 +351,7 @@ nav a.external:after {
 @include grid-small;
 
 
-/* Signature */
+/* #### Signature */
 #wsu-signature {
 	background-position: center 14px !important;
 	background-size: auto 30px !important;
@@ -624,10 +609,52 @@ nav a.external:after {
 	}
 
 	}
+	
+/* ## Show and Hide */
+
+/* Hide */
+.size-small-only,
+.size-gt-small-only,
+.size-gt-smallish-only,
+.size-gt-medium-only,
+.size-gt-large-only,
+.size-gt-xlarge-only,
+.size-lt-small-only,
+.size-lt-smallish-only,
+.size-lt-medium-only,
+.size-lt-large-only,
+.size-lt-xlarge-only,
+.size-xlarge-only {
+	display: none !important;
+	}
+	
+.folio-only,
+.min-1188-only, .max-1188-only,
+.min-1386-only, .max-1386-only,
+.min-1584-only, .max-1584-only,
+.min-1782-only, .max-1782-only,
+.min-1980-only, .max-1980-only {
+	display: none !important;	
+	}
+
+/* Show */
+.size-small .size-small-only,
+.size-gt-small .size-gt-small-only,
+.size-gt-smallish .size-gt-smallish-only,
+.size-gt-medium .size-gt-medium-only,
+.size-gt-large .size-gt-large-only,
+.size-gt-xlarge .size-gt-xlarge-only,
+.size-lt-small .size-lt-small-only,
+.size-lt-smallish .size-lt-smallish-only,
+.size-lt-medium .size-lt-medium-only,
+.size-lt-large .size-lt-large-only,
+.size-lt-xlarge .size-lt-xlarge-only,
+.size-xlarge .size-xlarge-only {
+	display: block !important;
+	}
 
 
-/* III.5.0 PRINT
------------------------------------------------------------------ */
+/* ## PRINT VIEW */
 
 html.print #binder main {
 	margin-left: 0px;

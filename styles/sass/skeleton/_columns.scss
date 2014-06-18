@@ -30,7 +30,7 @@
 
 /* Fifteenths */
 
-@mixin fifteenths-percents {
+@mixin fifteenths-pixels {
 
 	@each $count, $name in $counter {
 		@if $count <= 15 {

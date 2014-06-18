@@ -99,7 +99,6 @@
 #wsu-signature {
 	background-repeat: no-repeat;
 	background-position: center center;
-	xxbackground-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg');
 	background-size: 150px auto;
 	height: 155px;
 	display: block;
@@ -107,9 +106,6 @@
 	overflow: hidden;
 	white-space: nowrap;
 	position: relative;
-	}
-html.no-svg #wsu-signature {
-	xxbackground-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png');
 	}
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
@@ -153,78 +149,78 @@ button#shelve {
 	
 	nav {
 
-	ul {
-		margin: 0px;
-		padding: 0px;
-		}
-	li {
-		list-style: none;
-		}
-	ul li {
-		position: relative;
-		margin: 0px; padding: 0px;
-		border-width: 1px 0px 0px 0px;
-		border-style: solid;
-		line-height: 1.1em;
-		}
-	ul li a {
-		display: block;
-		padding: 6px 0px;
-		}
-	ul li li,
-	ul li li:hover {
-		border-top: none;
-		}
-	ul ul li a {
-		text-transform: none;
-		padding: .4em 0;
-		}
-	ul ul li {
-		margin-left: 1.25em;
-		}
-	ul ul ul li a {
-		padding: .25em 0;
-		}
-	
-	/* Parents */
-	
-	li.parent {
-	
-		> a {
-			padding-right: 15px;
+		ul {
+			margin: 0px;
+			padding: 0px;
 			}
-		&.opened > a,
-		&.active > a {
-			padding-bottom: 3px;
+		li {
+			list-style: none;
 			}
-		> a:after,
-		&.opened > a:after {
-			font-family: "Spine-Icons";
-			display: none;
-			position: absolute;
-			top: .5em;
-			right: 0;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
+		ul li {
+			position: relative;
+			margin: 0px; padding: 0px;
+			border-width: 1px 0px 0px 0px;
+			border-style: solid;
+			line-height: 1.1em;
 			}
-		&:not(.active) > a:after {
-			content: "\F501";
-			}
-		&.opened:not(.active) > a:after {
-			content: "\F500";
-			}
-		> a:hover:after,
-		&.opened > a:hover:after {
+		ul li a {
 			display: block;
+			padding: 6px 0px;
 			}
-		&.opened li:last-child a,
-		&.active li:last-child a {
-			padding-bottom: 8px;
+		ul li li,
+		ul li li:hover {
+			border-top: none;
 			}
-			
-		&.active > a:hover {
-		cursor: default;
-		}
+		ul ul li a {
+			text-transform: none;
+			padding: .4em 0;
+			}
+		ul ul li {
+			margin-left: 1.25em;
+			}
+		ul ul ul li a {
+			padding: .25em 0;
+			}
+	
+		/* Parents */
+		
+		li.parent {
+		
+			> a {
+				padding-right: 15px;
+				}
+			&.opened > a,
+			&.active > a {
+				padding-bottom: 3px;
+				}
+			> a:after,
+			&.opened > a:after {
+				font-family: "Spine-Icons";
+				display: none;
+				position: absolute;
+				top: .5em;
+				right: 0;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				}
+			&:not(.active) > a:after {
+				content: "\F501";
+				}
+			&.opened:not(.active) > a:after {
+				content: "\F500";
+				}
+			> a:hover:after,
+			&.opened > a:hover:after {
+				display: block;
+				}
+			&.opened li:last-child a,
+			&.active li:last-child a {
+				padding-bottom: 8px;
+				}
+				
+			&.active > a:hover {
+			cursor: default;
+			}
 		
 		}
 		
@@ -1000,7 +996,7 @@ html.lt-ie9 #spine footer {
 	
 		height: 198px !important;
 		min-height: 198px !important;
-		position: absolute;
+		position: absolute !important;
 		top: 0 !important;
 			
 		#glue {
@@ -1022,7 +1018,7 @@ html.lt-ie9 #spine footer {
 			
 			left: 0 !important;
 			top: 0 !important;
-			position: fixed;
+			position: fixed !important;
 			width: 100% ;
 			height: 50px;
 			
