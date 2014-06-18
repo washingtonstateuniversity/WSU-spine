@@ -122,431 +122,10 @@ h3 {
 <main>
 
 	<!-- @if columns='true' -->
-		<section id="spine-behavior" class="wireframe row twelfths gutter wide equalize">
+		<style>
 
-	<div class="column one-twelfths orange-lightest-back">
-		one 
-	</div>
-	
-	<div class="column two-twelfths orange-lightly-back">
-		two twelfths
-	</div>
-	
-	<div class="column three-twelfths orange-lighter-back">
-		three twelfths
-	</div>
-	
-	<div class="column six-twelfths orange-light-back">
-		six twelfths
-	</div>
-	
-	
-	
-</section>
-
-<section id="responsive" class="row halves equalize">
-	<div class="column one">
-	<article class="marginalize">
-	<header><h2>responsive</h2></header>
-	<p><b>Big brother, meet your kid brother, the smartphone. We love him too.</b> The Spine framework provides a responsive grid that enables sites to flex and fold to fit whatever device. The default width is comprised of fifteen 66 pixel columns, the main content area being twelve of those.</p>
-	</article>
-	</div>
-	<div class="column two" style="height: 350px;">
-		<div class="gray-back" style="height: 33%;"><br></div>
-		<div class="gray-light-back" style="height: 33%;"><br></div>
-		<div class="gray-lighter-back" style="height: 34%;"><br></div>
-	</div>
-</section>
-
-<section id="text-columns" class="row thirds gutter equalize">
-	<div class="column one">
-		<article class="gray-lightest-back">
-		<h2>Gutters</h2>
-		<strong>The skeleton grid eschews padding and margins by default to allow for seamless designs. However, adding a "gutter" class, as in this section, provides gutters for equally spaced column interior content (30px).</strong>
-		<hr><button class="centered" onclick="$('#text-columns').toggleClass('wide');">Wide/Narrow</button><hr>
-		<p>Vestibulum cursus ultricies tellus, sed fermentum mauris mattis vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam condimentum ligula ut dictum scelerisque. Aenean mattis erat ac tortor accumsan, vitae tincidunt dui feugiat. Vestibulum hendrerit metus id justo tristique, a pharetra nibh lobortis. Sed eu dolor nec metus blandit egestas ac at elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus ac mollis mauris. Sed aliquet ipsum in dapibus euismod.</p></article>
-	</div>
-	<div class="column two">
-		<article class="gray-lightest-back">
-		<h2>Margins</h2>
-		<p>Class naming logic... Passive and active, object and subject.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor neque, scelerisque quis mauris quis, fringilla eleifend est.</p>
-		<hr><button class="centered" onclick="$('#text-columns').toggleClass('marginalize');">Marginalize</button><hr>
-		<p>Phasellus purus leo, commodo sit amet ipsum ac, lacinia auctor nulla. Nam sed nunc fermentum, condimentum ligula sit amet, facilisis urna. Vestibulum pharetra dui turpis, vitae elementum dui gravida in. Quisque ut lectus aliquet, lobortis risus vitae, placerat metus. Duis nisl eros, mattis non fermentum eget, luctus sed tortor. Nunc tempus nulla eget erat ornare, quis mattis turpis tincidunt. Vivamus semper elit at metus consequat, vitae dapibus urna posuere. Nunc iaculis arcu sed ante mollis, vitae varius orci rhoncus. Nullam luctus tristique pretium. Ut tincidunt, velit ullamcorper aliquet molestie, nisl lectus interdum felis, quis blandit nisi tortor non elit. Ut sit amet ipsum consectetur, tempor tellus at, ultrices elit. Sed a mauris enim. Sed vitae odio vestibulum massa vulputate lacinia.</p></article>
-	</div>
-	<div class="column three">
-		<article class="gray-lightest-back">
-		<h2>Equalizing</h2>
-		<p>These columns have also been equalized with the "equalize" class to allow for aligning background images. Were using "border-box" box-sizing on our columns to enable padding without breaking our responsive math. Nam a dolor diam. Sed bibendum sit amet arcu id vehicula. Duis dictum rhoncus velit vel porttitor. Nullam scelerisque fermentum massa. Proin suscipit facilisis tincidunt. Aenean et tempor augue. Nullam gravida feugiat diam, vel blandit turpis ornare et. Sed sed arcu quis augue ultricies porta id vitae ante. Donec at ante sed mauris mollis rutrum eu sit amet lectus. <hr> .equalize makes columns equally tall... or short</p></article>
-	</div>
-</section>
-
-<section class="row quarters">
-	<div class="column one center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-spokane-signature-vertical.svg" width="150px"></div>
-	<div class="column two gray-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-crimson-graydark-graylighter.svg" width="150px"></div>
-	<div class="column three crimson-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-tricities-signature-vertical-white-graylightly-white.svg" width="150px"></div>
-	<div class="column four gray-lightly-back center absolutely three-twelfths-tall"><img src="http://repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-vertical.svg" width="150px"></div>
-	<div class="column five gray-lightly-back center absolutely three-twelfths-tall size-xlarge-only"><img src="http://repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical.svg" width="150px"></div>
-	<div class="column five row single">
-		<div class="column one">
-			<article>
-			<header><h2>campus ready</h2></header>
-			<p>The signatures for each urban campus and for other top level units are pre-baked into the Spine, both the vertical signature for large devices and the horizontal for small. <pre>The campus signatures are activated by adding, for example , a <code>.wsu-vancouver-signature</code> or <code>.wsu-tricities-signature</code> class to html or body.</pre></p>
-			</article>
-		</div>
-	</div>
-</section>
-
-<section id="spine-colors" class="row triptych reverse equalize gutter wide">
-	<style>
-		#spine-palettes dd { padding: .25em .5em; margin-bottom: .25em; }
-		#spine-palettes dd:hover { color: white; background-color: #A6192E; }
-	</style>
-	<div class="column one">
-		<br>
-	</div>
-	<div class="column two">
-		<article>
-			<header><h2>spine colors</h2></header>
-			<p><b>A chameleon of sorts</b>, to complement the style and tone of your design, the spine can be easily switched between several sets of tints and shades within our primary colors of gray and crimson.</p> <code><strong>Reverse Order</strong><br>
-			Notice that the column order at full size is 3 -> 2 -> 1. A .reverse class on the parent section switches the float direction to right at full-size, but flips it back left at mobile sizes for an alternative ordering. One day this will be supplanted by flexbox order.</code>
-		</article>
-	</div>
-	<div class="column three">
-		<br>
-	</div>
-</section>
-
-<section id="spine-sizes" class="row sidebar equalize marginalize gutter wide hidden">
-	
-	<div class="column one" style="">
-		<article>
-		<header><h2>your goldilocks</h2></header>
-		<p></p>
-		</article>
-	</div>
-	<div class="column two">
-		
-	</div>
-	
-</section>
-
-<section id="nesting" class="row halves reverse marginalize gutter wide">
-	
-	<div class="twelve-twelfths-max">
-	<div class="column one">
-		<article>
-		<header><h2>nesting and grouping</h2></header>
-		<p>Related articles and images can be nested so that they hang together in groups when the page flexes and folds for mobile. Notice how these nested color blocks hang together if you pull your browser window to a narrow width.</p>
-		</article>
-	</div>
-	<div class="column two row thirds padless">
-		<div class="column one orange-back four-twelfths-tall"></div>
-		<div class="column two green-back four-twelfths-tall"></div>
-		<div class="column three blue-back four-twelfths-tall"></div>
-		<!--<div class="column four yellow-back three-twelfths-tall"></div>-->
-	</div>
-	</div>
-	
-</section>
-
-<section id="resolution" class="row side-right gutter wide">
-	<style>
-	#resolution .column.two {
-		background: url('http://repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg') center center no-repeat;
-		background-size: auto; 
-		}
-	</style>
-	<article class="padless">
-	<div class="column one marginalized">
-		<header><h2>resolution independence</h2></header>
-		<p><b>Those whiskers are ticklish at life size.</b> The Spine is built entirely with vector based graphics so that it is prepared for high resolution displays and zooming.</p>
-	</div>
-	<div class="column two three-twelfths-tall min-height" style="xxoverflow: hidden;">
-		<figure></figure>
-	</div>
-	</article>
-</section>
-
-<section class="row halves  wireframe-only">
-	<div class="column one">
-
-	</div>
-	<div class="column two row">
-		<div class="column four-twelfths"></div>
-		<div class="column two-twelfths"></div>
-	</div>
-</section>
-
-<section id="tool-belt" class="row thirds equalize marginalize gutter wide">
-	
-	<div class="column one">
-	</div>
-	
-	<div class="column two">
-		<article>
-		<header><h2>tool belt included</h2></header>
-		<p>Out-of-the-box, the Spine includes local and WSU-wide <strong>search</strong>, a consistent presentation of <strong>contact</strong> information, easy <strong>sharing</strong> via the most popular social networks, and a <strong>print</strong> tool that automatically formats the page for letter-sized paper. <span class="wireframe-only"><code>Search solution can be customized with alternate sources or even replaced entirely.</code></span></p>
-		</article>
-	</div>
-	
-	<div class="column three">
-		<br>
-	</div>
-	
-</section>
-
-	<!-- @endif -->
-
-	<!-- Responsive Sections -->
-	<section class="row side-right">
-
-		<div class="column one">
-
-			<article>
-				<article class="post-15 page type-page status-publish hentry" id="post-15">
-	<header class="article-header">
-		<h1 class="article-title">The Spine Framework</h1>
-	</header>
-	<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
-	<h3>concept</h3>
-	<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
-	<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
-	<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
-	<h3>timeline</h3>
-	<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
-	<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
-</article>
-
-			<!-- @if showLong='true' || cropped='true' -->
-				
-			<p>De noster nisi summis pariatur, se dolore multos non cupidatat qui do irure 
-			varias nam deserunt, elit laboris ea nisi irure. Sunt non nescius. Duis ea 
-			litteris, a hic anim aliqua multos est o malis arbitror non si qui multos 
-			pariatur do quo lorem ingeniis exercitation, nostrud legam consequat iudicem si 
-			arbitror ita aliquip, in ab duis mentitum. Excepteur sint admodum si nostrud o 
-			esse. Illum arbitror comprehenderit, ab eram esse eu offendit. Pariatur illum 
-			incididunt aliquip, veniam si qui tamen tempor, a ipsum nescius, de ubi quis 
-			fugiat esse.</p>
-			
-			<p>E eram id esse. Labore proident e culpa quis. Ab quid amet ex eiusmod. Senserit 
-			sed quae non minim occaecat et nisi sint, an nulla quem quis aliquip quo iudicem 
-			domesticarum sed commodo, doctrina noster tempor iudicem, nescius si fugiat 
-			offendit, eram efflorescere vidisse quorum quibusdam iis ex quis ea magna. 
-			Laborum magna eiusmod vidisse. Malis ubi commodo an sint, elit ut expetendis.</p>
-			
-			<p>Appellat eu sunt o legam philosophari iudicem enim occaecat, noster est aliquip 
-			aut quorum, quis litteris ut reprehenderit. Consequat tamen aut incididunt 
-			tractavissent, ex ne veniam fore fugiat. Ut cillum se sint. Quem coniunctione 
-			deserunt minim aliquip, a ab tamen nulla quae. Eu hic lorem quae sunt. Eiusmod 
-			labore consequat. Ubi aut arbitrantur, ab do praetermissum.</p>
-			
-			<p>Fugiat te arbitror et quem. Occaecat de offendit et aliquip tamen an expetendis 
-			distinguantur est nescius quorum aute cupidatat quis, ut ne tamen malis varias, 
-			occaecat exercitation a nescius, sed cupidatat imitarentur, tamen possumus 
-			concursionibus iis fore o qui summis admodum. Eu varias exquisitaque. Eiusmod 
-			tamen laboris offendit in qui dolore irure si ingeniis, ad anim de aute aut enim 
-			iis appellat. Admodum ad tamen. Nam qui distinguantur.</p>
-			
-			<p>Ubi fore officia cernantur in velit se arbitror an a singulis eruditionem, ipsum 
-			quamquam hic familiaritatem, laborum aute varias ad elit, velit in fabulas nam 
-			elit, occaecat aute labore vidisse malis de ubi dolore malis dolore commodo. 
-			Singulis quorum sint aut tamen hic ad eram amet velit vidisse, quae offendit 
-			laboris quo si lorem laborum praetermissum. Aliquip de quem iudicem, nostrud 
-			quem quorum te quae, iis eiusmod id arbitror, eiusmod magna sint deserunt culpa. 
-			Est nisi efflorescere, fugiat est incurreret. Ab veniam vidisse laboris si 
-			cernantur ipsum dolore ad amet ne probant distinguantur ea tempor ad ut noster 
-			esse quo incurreret. Malis singulis ut concursionibus, elit admodum hic eram 
-			quem, elit id occaecat si aliqua quo velit admodum id eram ipsum se quorum 
-			mentitum coniunctione, hic ipsum se lorem qui iis cillum noster anim laborum, 
-			consequat amet quo quamquam exquisitaque.</p>
-			
-			<p>Quo do magna quamquam, aliqua exercitation ingeniis eram deserunt eu nostrud 
-			esse ut ullamco firmissimum, do irure despicationes. In tamen ipsum magna 
-			singulis qui fugiat mandaremus cernantur, quae admodum est dolore sunt qui enim 
-			sed quibusdam an quae. Qui elit commodo incurreret ad do dolore quorum ita 
-			nostrud, cillum consequat occaecat e nam arbitror concursionibus, nam ipsum 
-			admodum occaecat se aliqua expetendis de minim fugiat, te labore commodo 
-			familiaritatem, elit adipisicing admodum noster senserit. Si lorem lorem ex 
-			laborum, cernantur nisi singulis, vidisse a quibusdam an varias quibusdam se 
-			elit irure. Iudicem quem eiusmod occaecat, iudicem elit legam laboris varias, ea 
-			legam laborum tractavissent, nostrud legam aliqua ne malis. Se quid nostrud aut 
-			aut summis cillum ut possumus ad nescius noster multos excepteur cillum, ab 
-			cillum irure iis deserunt.</p>
-			
-			<p>Summis officia si familiaritatem. Si te exercitation, elit et sed elit 
-			incididunt. Aute probant tractavissent, fugiat quibusdam o veniam tamen, enim 
-			exquisitaque deserunt quae cupidatat o officia nisi incurreret consequat. Nam 
-			senserit quo excepteur, id te sempiternum id sed ipsum summis quae expetendis, 
-			eu fugiat familiaritatem. Sint tempor si veniam anim, est hic exquisitaque. Nam 
-			amet consequat offendit, de eram consequat ingeniis.</p>
-			
-			<p>Quae voluptate se graviterque id mentitum est admodum. Ubi aute minim culpa 
-			incididunt ad cupidatat iis quis. Iis an exercitation o ullamco iis vidisse. 
-			Probant reprehenderit ad laboris id singulis nisi malis in anim, mentitum et 
-			expetendis id doctrina ubi anim expetendis. Sunt voluptate et domesticarum, 
-			expetendis consectetur est senserit, ab ex distinguantur, ingeniis eram culpa an 
-			quae hic laborum ut labore, eu litteris consectetur, est occaecat sed ullamco a 
-			de mandaremus cohaerescant. Quo dolore nulla fore cernantur. A quae velit sint 
-			ingeniis quo e quae pariatur, aut in amet expetendis, non multos aliquip 
-			philosophari.</p>
-			
-			<p>Ut qui fugiat expetendis. Quibusdam ex lorem pariatur. Ea e efflorescere. Ut te 
-			voluptatibus. An possumus domesticarum nam a nulla ad dolor ne consequat sed 
-			proident, elit proident praetermissum. Lorem excepteur ex nulla aliqua, si non 
-			anim velit cillum de incurreret malis eiusmod incurreret, summis iudicem nam 
-			fabulas. Est malis incididunt philosophari, iudicem quo sunt possumus ea nam 
-			labore incididunt, voluptate ad proident, cillum cupidatat appellat, esse eu 
-			litteris hic summis et enim aut ullamco, summis singulis quibusdam. Nisi ab 
-			nescius se doctrina quae legam te ipsum, anim et ita quis quamquam, e fore quis 
-			iis voluptate, lorem concursionibus consequat cillum incurreret an voluptate qui 
-			ullamco o elit e quibusdam qui sint id id esse expetendis transferrem.</p>
-			
-			<p>Aliqua efflorescere mentitum multos vidisse. Ubi minim eiusmod efflorescere quo 
-			cernantur ea anim ingeniis. Elit do et multos arbitror, anim id sed ipsum 
-			mentitum, quid cernantur fidelissimae, tamen expetendis distinguantur, iis 
-			varias quem quid probant ab ab est domesticarum, cernantur fore ita possumus 
-			praetermissum ubi laboris ubi summis. Amet arbitrantur pariatur duis doctrina, 
-			quo deserunt praesentibus do ad eram ut eram an non aute cernantur. Veniam 
-			pariatur ex singulis in ne ea voluptatibus non proident noster aute se sunt nam 
-			excepteur irure qui eiusmod cohaerescant. Id pariatur tractavissent a quo a 
-			lorem irure quae, eiusmod aliqua officia officia, arbitror veniam nam expetendis 
-			relinqueret iis ea amet tempor eiusmod, quis eiusmod sempiternum, a ita 
-			reprehenderit, possumus elit lorem ab duis. Incididunt sint varias ea nisi, id 
-			ipsum cernantur ne ipsum te ullamco est dolor, an magna quamquam despicationes.</p>
-			
-			<p>Ne proident id litteris, cillum arbitror praesentibus. Est arbitror se 
-			voluptate. Varias arbitror transferrem ab legam nostrud efflorescere, fugiat 
-			coniunctione expetendis veniam senserit ea quorum nostrud ut quem legam. Nescius 
-			amet proident singulis, iis minim dolore fore vidisse, proident eram litteris, 
-			nulla in non quis iudicem, excepteur veniam sint o esse, dolore nostrud ut dolor 
-			minim, ab aut quis aute velit, eram in occaecat. Eu velit possumus 
-			praetermissum, sint pariatur et familiaritatem ad proident aut summis eiusmod, e 
-			legam aliqua in litteris. Vidisse si pariatur, malis pariatur adipisicing, ita 
-			illum laboris laborum, qui amet fidelissimae.</p>
-			
-			<p>Consequat varias eram excepteur fugiat, minim arbitrantur appellat sint 
-			arbitror. Sed noster cillum o pariatur, quae mandaremus ut lorem quem o amet 
-			incididunt o singulis eu irure mandaremus de labore quem ut culpa despicationes 
-			eiusmod nisi eiusmod ita eiusmod duis te fabulas fidelissimae ubi hic nostrud 
-			qui tempor ex magna senserit id quamquam. Eu in lorem quem lorem ea laboris e 
-			commodo, deserunt amet sunt e multos eu sunt officia o efflorescere si duis se 
-			qui nulla mentitum, aute laborum eu proident, noster vidisse exquisitaque, legam 
-			iis cupidatat. Probant ex magna deserunt hic duis excepteur iis despicationes, 
-			arbitror an elit te litteris quem fabulas officia. A quae irure elit mandaremus 
-			ita ipsum appellat ingeniis an ita malis cernantur occaecat ita magna hic 
-			offendit. Occaecat aute sunt te aliqua a eiusmod sunt eu fabulas illustriora, de 
-			aliqua laboris ab varias ullamco efflorescere, hic aut familiaritatem qui 
-			excepteur do excepteur, admodum ab minim ea quibusdam tamen eram officia irure.</p>
-			
-			<p>Ab summis expetendis, in eram reprehenderit, cillum est offendit, eiusmod noster 
-			quid a minim. Quae ingeniis transferrem, te ita nisi pariatur. Legam incurreret 
-			ut aute legam. Dolore cernantur quo expetendis, se sunt deserunt comprehenderit, 
-			non et reprehenderit qui an quae transferrem. Mandaremus o anim fabulas. Eiusmod 
-			malis doctrina e arbitror irure ullamco o multos ingeniis aut distinguantur, 
-			dolore fabulas eu mandaremus, an excepteur ex expetendis te tempor coniunctione 
-			ubi tempor, mandaremus esse laboris offendit eu mandaremus arbitrantur id 
-			commodo. Cernantur quid cillum senserit amet. Ne illum consectetur e senserit 
-			exquisitaque ne appellat, an dolor noster illum laborum iis doctrina aute elit 
-			possumus dolore, dolor expetendis se pariatur, laboris a laboris, et an sunt 
-			voluptate quo possumus fugiat laboris.</p>
-			
-			<p>Culpa iis e malis aliquip, te ab lorem elit sint. Excepteur do quem si ita aut 
-			esse cillum fore a ullamco ipsum aliquip, excepteur enim deserunt nescius. Quem 
-			cernantur ex summis quid do sed arbitror ab officia est iis enim fabulas 
-			offendit est varias do eu illum eiusmod. Culpa consequat despicationes an quem 
-			ea excepteur a anim qui iis enim nam varias, do id concursionibus, et amet 
-			ingeniis officia de quibusdam illum arbitror proident id cernantur ab minim, 
-			minim singulis offendit. Iudicem fore excepteur litteris, irure ut appellat id 
-			aute aut ne quorum culpa ut occaecat et eram qui an varias pariatur. Est malis 
-			in dolore. Quid cernantur quo familiaritatem. Consequat irure de laborum 
-			voluptatibus.</p>
-			
-			<p>Senserit qui tempor iis expetendis dolor do incurreret comprehenderit a 
-			quibusdam malis amet arbitror eram, et nam arbitrantur ita o mandaremus 
-			exercitation, hic non illustriora, litteris iis veniam probant, quamquam 
-			coniunctione quo excepteur. Excepteur si quorum. Singulis quo eiusmod, in quis 
-			nescius arbitror, quibusdam et legam iudicem iis veniam non quibusdam. Fugiat 
-			appellat do distinguantur. Quorum hic excepteur, quamquam varias eram ad nisi, 
-			possumus efflorescere do vidisse, cernantur aliqua doctrina quamquam, aliqua 
-			aliquip quamquam, ut ne tamen occaecat, sed culpa quamquam, amet ex ubi fore 
-			doctrina. Culpa eu de eram ullamco in ea fugiat dolor an probant ex esse tempor 
-			adipisicing a nostrud aliqua non laboris efflorescere, e in enim iudicem qui 
-			laboris quae proident laborum est qui incurreret graviterque, est legam do sunt. 
-			A eiusmod eruditionem ita labore de id quis occaecat aut qui iis quid voluptate, 
-			ipsum qui mandaremus te summis, admodum ipsum officia probant, o quo enim dolor 
-			noster, offendit quorum deserunt litteris, hic labore doctrina arbitrantur.</p>
-			
-			<p>Fore tractavissent expetendis malis admodum, dolor si cernantur a quid ad do 
-			labore eram multos offendit, se voluptate iis laborum, si tamen cillum non 
-			proident, ullamco amet aut offendit distinguantur est irure eruditionem appellat 
-			legam nostrud, quem et laboris. Vidisse summis lorem id quis, cupidatat amet ex 
-			ullamco transferrem ab offendit est legam non ne malis singulis cernantur. 
-			Voluptate veniam quorum nam duis. Cupidatat te amet, se legam mentitum 
-			consectetur, ullamco in quis ingeniis hic commodo ea multos. Aliqua iis non anim 
-			appellat iis ne lorem instituendarum, nescius o labore occaecat quo litteris 
-			quorum eiusmod mandaremus, quis fidelissimae laboris varias laboris, mandaremus 
-			ad eram iudicem de litteris te noster ut in quem esse quid consequat. Aliqua 
-			officia aut offendit, o labore laborum excepteur. Eu multos cohaerescant, o 
-			ingeniis praetermissum aut laborum se ingeniis nam in varias exquisitaque, e 
-			veniam proident voluptate, proident noster quis ubi minim de si enim possumus 
-			sempiternum ad nisi aut ubi eram nescius. Dolor excepteur nescius.</p>
-			
-			<p>Fore expetendis praesentibus te fore nostrud ea lorem dolore. Dolore non e 
-			fugiat tempor, mandaremus amet dolor incididunt esse, quid admodum cupidatat, 
-			incididunt lorem labore iis quid. Si quid deserunt doctrina nam iudicem elit 
-			litteris excepteur. Dolor in eu fore singulis, ab cillum velit ne proident, sunt 
-			do quo eram arbitror, ingeniis sempiternum sed occaecat qui minim cupidatat 
-			graviterque, aliqua aut quamquam ita quae incurreret non tamen fore, mandaremus 
-			ubi nisi incididunt. Appellat ad mentitum. Quis arbitrantur probant enim 
-			incurreret, id id aliqua nulla cillum aut ex ea dolore ingeniis, ea eram 
-			efflorescere quo o malis tractavissent, ex summis cernantur, sint quo offendit 
-			iis fore, officia labore summis doctrina malis. Sunt si non noster ullamco.</p>
-			
-			<p>Minim qui singulis ad fugiat, aute de et dolor expetendis ea iis noster occaecat 
-			tractavissent, varias ingeniis est domesticarum. Incurreret ad amet, deserunt 
-			dolor duis non malis. Non lorem do illum. Amet commodo ullamco, summis do 
-			doctrina. Te culpa multos cillum vidisse iis et officia est deserunt, qui quid 
-			aliquip ad hic mentitum consectetur. In veniam proident eiusmod quo ipsum 
-			laboris eu graviterque. Quis pariatur iis magna sunt se noster mandaremus o 
-			sempiternum ex tempor eram incurreret mandaremus, sint ea litteris id esse.</p>
-			
-			<p>Officia non dolor litteris, nam tamen ita tamen, te multos nescius exquisitaque, 
-			non anim aut ipsum, magna arbitror ea efflorescere ut minim voluptate quamquam, 
-			ullamco fugiat quamquam, admodum illum anim officia ipsum. Enim sed iis elit 
-			proident, malis familiaritatem tempor multos possumus ad do se dolor ullamco, 
-			sed litteris an aliquip. Consequat velit incididunt, cupidatat malis velit hic 
-			magna e singulis culpa te ingeniis philosophari eu qui nisi occaecat. Aliquip ut 
-			dolor consequat et do laboris familiaritatem ita de iudicem voluptatibus aut ne 
-			multos laboris. Tempor dolor veniam sed dolore, quis senserit ab fabulas de sunt 
-			hic si multos nostrud, dolore ne deserunt, do summis mandaremus cupidatat a 
-			fabulas ita elit voluptate, a culpa firmissimum id esse admodum ita cupidatat. 
-			Litteris sint quorum aliquip cillum aut ea eu sunt culpa sunt. Summis possumus 
-			eruditionem.</p>
-			<!-- @endif -->
-			</article>
-
-		</div><!--/column-->
-
-		<div class="column two">
-
-			<aside>
-				<!-- @if demo!='true' -->
-					<section>
-	<h2>Sidebar</h2>
-	<ul>
-		<li>Fight, fight, fight for Washington State! Win the victory!</li>
-		<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
-		<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
-		<li>Fight, fight, fight for Washington State and victory!</li>
-		<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
-	</ul>
-	<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
-</section>
-				<!-- @endif -->
-				<!-- @if markup!='true' -->
-					<style>
-
-.wireframe .row .column {
+.wireframe .row .column,
+.wireframe.row .column {
 	min-height: 198px;
 	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
 	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
@@ -889,8 +468,649 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleeding</button></dd>
-		<dd><button onclick="$('#spine').toggleClass('cropped'); $('#glue').removeAttr('style'); $(this).toggleClass('active');">cropped</button></dd> 
+		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('broken'); $(this).toggleClass('active');">bleed main</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active');">spineless</button></dd>
+	</dl>
+	
+	<dl class="spine-campuses clearfix">
+		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
+		<dd><button data-campus="system">System</button></dd>
+		<dd><button data-campus="spokane">Spokane</button></dd>
+		<dd><button data-campus="tricities">Tri-Cities</button></dd>
+		<dd><button data-campus="vancouver">Vancouver</button></dd>
+		<dd><button data-campus="globalcampus">Global Campus</button></dd>
+		<dd><button data-campus="extension">Extension</button></dd>
+	</dl>
+	
+	<dl class="spine-behavior clearfix">
+		<dt>grid behavior <a href="#responsive" class="info">info</a></dt>
+		<dd><button data-grid="fluid">fluid</button></dd>
+		<dd><button data-grid="fixed">fixed</button></dd>
+		<dd><button data-grid="hybrid">hybrid</button></dd>
+	</dl>
+	
+	<dl class="spine-sizes clearfix ">
+		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
+		<dd><button data-max="max-990">default</button></dd>
+		<dd><button data-max="max-1188">1188</button></dd>
+		<dd><button data-max="max-1386">1386</button></dd>
+		<dd><button data-max="max-1584">1584</button></dd>
+		<dd><button data-max="max-1782">1782</button></dd>
+		<dd><button data-max="max-1980">1980</button></dd>
+	</dl>
+	
+	<dl class="spine-wireframe">
+		<dt>under the hood</dt>
+		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
+	</dl>
+				
+</aside>
+
+</section>
+
+
+	<!-- @endif -->
+			
+	<!-- Responsive Sections -->
+	<section class="row side-right">
+
+		<div class="column one">
+
+			<article>
+			
+			<!-- @if columns!='true' -->
+				<article class="post-15 page type-page status-publish hentry" id="post-15">
+	<header class="article-header">
+		<h1 class="article-title">The Spine Framework</h1>
+	</header>
+	<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
+	<h3>concept</h3>
+	<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
+	<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
+	<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
+	<h3>timeline</h3>
+	<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
+	<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
+</article>
+			<!-- @endif -->
+
+			<!-- @if showLong='true' || cropped='true' -->
+				
+			<p>De noster nisi summis pariatur, se dolore multos non cupidatat qui do irure 
+			varias nam deserunt, elit laboris ea nisi irure. Sunt non nescius. Duis ea 
+			litteris, a hic anim aliqua multos est o malis arbitror non si qui multos 
+			pariatur do quo lorem ingeniis exercitation, nostrud legam consequat iudicem si 
+			arbitror ita aliquip, in ab duis mentitum. Excepteur sint admodum si nostrud o 
+			esse. Illum arbitror comprehenderit, ab eram esse eu offendit. Pariatur illum 
+			incididunt aliquip, veniam si qui tamen tempor, a ipsum nescius, de ubi quis 
+			fugiat esse.</p>
+			
+			<p>E eram id esse. Labore proident e culpa quis. Ab quid amet ex eiusmod. Senserit 
+			sed quae non minim occaecat et nisi sint, an nulla quem quis aliquip quo iudicem 
+			domesticarum sed commodo, doctrina noster tempor iudicem, nescius si fugiat 
+			offendit, eram efflorescere vidisse quorum quibusdam iis ex quis ea magna. 
+			Laborum magna eiusmod vidisse. Malis ubi commodo an sint, elit ut expetendis.</p>
+			
+			<p>Appellat eu sunt o legam philosophari iudicem enim occaecat, noster est aliquip 
+			aut quorum, quis litteris ut reprehenderit. Consequat tamen aut incididunt 
+			tractavissent, ex ne veniam fore fugiat. Ut cillum se sint. Quem coniunctione 
+			deserunt minim aliquip, a ab tamen nulla quae. Eu hic lorem quae sunt. Eiusmod 
+			labore consequat. Ubi aut arbitrantur, ab do praetermissum.</p>
+			
+			<p>Fugiat te arbitror et quem. Occaecat de offendit et aliquip tamen an expetendis 
+			distinguantur est nescius quorum aute cupidatat quis, ut ne tamen malis varias, 
+			occaecat exercitation a nescius, sed cupidatat imitarentur, tamen possumus 
+			concursionibus iis fore o qui summis admodum. Eu varias exquisitaque. Eiusmod 
+			tamen laboris offendit in qui dolore irure si ingeniis, ad anim de aute aut enim 
+			iis appellat. Admodum ad tamen. Nam qui distinguantur.</p>
+			
+			<p>Ubi fore officia cernantur in velit se arbitror an a singulis eruditionem, ipsum 
+			quamquam hic familiaritatem, laborum aute varias ad elit, velit in fabulas nam 
+			elit, occaecat aute labore vidisse malis de ubi dolore malis dolore commodo. 
+			Singulis quorum sint aut tamen hic ad eram amet velit vidisse, quae offendit 
+			laboris quo si lorem laborum praetermissum. Aliquip de quem iudicem, nostrud 
+			quem quorum te quae, iis eiusmod id arbitror, eiusmod magna sint deserunt culpa. 
+			Est nisi efflorescere, fugiat est incurreret. Ab veniam vidisse laboris si 
+			cernantur ipsum dolore ad amet ne probant distinguantur ea tempor ad ut noster 
+			esse quo incurreret. Malis singulis ut concursionibus, elit admodum hic eram 
+			quem, elit id occaecat si aliqua quo velit admodum id eram ipsum se quorum 
+			mentitum coniunctione, hic ipsum se lorem qui iis cillum noster anim laborum, 
+			consequat amet quo quamquam exquisitaque.</p>
+			
+			<p>Quo do magna quamquam, aliqua exercitation ingeniis eram deserunt eu nostrud 
+			esse ut ullamco firmissimum, do irure despicationes. In tamen ipsum magna 
+			singulis qui fugiat mandaremus cernantur, quae admodum est dolore sunt qui enim 
+			sed quibusdam an quae. Qui elit commodo incurreret ad do dolore quorum ita 
+			nostrud, cillum consequat occaecat e nam arbitror concursionibus, nam ipsum 
+			admodum occaecat se aliqua expetendis de minim fugiat, te labore commodo 
+			familiaritatem, elit adipisicing admodum noster senserit. Si lorem lorem ex 
+			laborum, cernantur nisi singulis, vidisse a quibusdam an varias quibusdam se 
+			elit irure. Iudicem quem eiusmod occaecat, iudicem elit legam laboris varias, ea 
+			legam laborum tractavissent, nostrud legam aliqua ne malis. Se quid nostrud aut 
+			aut summis cillum ut possumus ad nescius noster multos excepteur cillum, ab 
+			cillum irure iis deserunt.</p>
+			
+			<p>Summis officia si familiaritatem. Si te exercitation, elit et sed elit 
+			incididunt. Aute probant tractavissent, fugiat quibusdam o veniam tamen, enim 
+			exquisitaque deserunt quae cupidatat o officia nisi incurreret consequat. Nam 
+			senserit quo excepteur, id te sempiternum id sed ipsum summis quae expetendis, 
+			eu fugiat familiaritatem. Sint tempor si veniam anim, est hic exquisitaque. Nam 
+			amet consequat offendit, de eram consequat ingeniis.</p>
+			
+			<p>Quae voluptate se graviterque id mentitum est admodum. Ubi aute minim culpa 
+			incididunt ad cupidatat iis quis. Iis an exercitation o ullamco iis vidisse. 
+			Probant reprehenderit ad laboris id singulis nisi malis in anim, mentitum et 
+			expetendis id doctrina ubi anim expetendis. Sunt voluptate et domesticarum, 
+			expetendis consectetur est senserit, ab ex distinguantur, ingeniis eram culpa an 
+			quae hic laborum ut labore, eu litteris consectetur, est occaecat sed ullamco a 
+			de mandaremus cohaerescant. Quo dolore nulla fore cernantur. A quae velit sint 
+			ingeniis quo e quae pariatur, aut in amet expetendis, non multos aliquip 
+			philosophari.</p>
+			
+			<p>Ut qui fugiat expetendis. Quibusdam ex lorem pariatur. Ea e efflorescere. Ut te 
+			voluptatibus. An possumus domesticarum nam a nulla ad dolor ne consequat sed 
+			proident, elit proident praetermissum. Lorem excepteur ex nulla aliqua, si non 
+			anim velit cillum de incurreret malis eiusmod incurreret, summis iudicem nam 
+			fabulas. Est malis incididunt philosophari, iudicem quo sunt possumus ea nam 
+			labore incididunt, voluptate ad proident, cillum cupidatat appellat, esse eu 
+			litteris hic summis et enim aut ullamco, summis singulis quibusdam. Nisi ab 
+			nescius se doctrina quae legam te ipsum, anim et ita quis quamquam, e fore quis 
+			iis voluptate, lorem concursionibus consequat cillum incurreret an voluptate qui 
+			ullamco o elit e quibusdam qui sint id id esse expetendis transferrem.</p>
+			
+			<p>Aliqua efflorescere mentitum multos vidisse. Ubi minim eiusmod efflorescere quo 
+			cernantur ea anim ingeniis. Elit do et multos arbitror, anim id sed ipsum 
+			mentitum, quid cernantur fidelissimae, tamen expetendis distinguantur, iis 
+			varias quem quid probant ab ab est domesticarum, cernantur fore ita possumus 
+			praetermissum ubi laboris ubi summis. Amet arbitrantur pariatur duis doctrina, 
+			quo deserunt praesentibus do ad eram ut eram an non aute cernantur. Veniam 
+			pariatur ex singulis in ne ea voluptatibus non proident noster aute se sunt nam 
+			excepteur irure qui eiusmod cohaerescant. Id pariatur tractavissent a quo a 
+			lorem irure quae, eiusmod aliqua officia officia, arbitror veniam nam expetendis 
+			relinqueret iis ea amet tempor eiusmod, quis eiusmod sempiternum, a ita 
+			reprehenderit, possumus elit lorem ab duis. Incididunt sint varias ea nisi, id 
+			ipsum cernantur ne ipsum te ullamco est dolor, an magna quamquam despicationes.</p>
+			
+			<p>Ne proident id litteris, cillum arbitror praesentibus. Est arbitror se 
+			voluptate. Varias arbitror transferrem ab legam nostrud efflorescere, fugiat 
+			coniunctione expetendis veniam senserit ea quorum nostrud ut quem legam. Nescius 
+			amet proident singulis, iis minim dolore fore vidisse, proident eram litteris, 
+			nulla in non quis iudicem, excepteur veniam sint o esse, dolore nostrud ut dolor 
+			minim, ab aut quis aute velit, eram in occaecat. Eu velit possumus 
+			praetermissum, sint pariatur et familiaritatem ad proident aut summis eiusmod, e 
+			legam aliqua in litteris. Vidisse si pariatur, malis pariatur adipisicing, ita 
+			illum laboris laborum, qui amet fidelissimae.</p>
+			
+			<p>Consequat varias eram excepteur fugiat, minim arbitrantur appellat sint 
+			arbitror. Sed noster cillum o pariatur, quae mandaremus ut lorem quem o amet 
+			incididunt o singulis eu irure mandaremus de labore quem ut culpa despicationes 
+			eiusmod nisi eiusmod ita eiusmod duis te fabulas fidelissimae ubi hic nostrud 
+			qui tempor ex magna senserit id quamquam. Eu in lorem quem lorem ea laboris e 
+			commodo, deserunt amet sunt e multos eu sunt officia o efflorescere si duis se 
+			qui nulla mentitum, aute laborum eu proident, noster vidisse exquisitaque, legam 
+			iis cupidatat. Probant ex magna deserunt hic duis excepteur iis despicationes, 
+			arbitror an elit te litteris quem fabulas officia. A quae irure elit mandaremus 
+			ita ipsum appellat ingeniis an ita malis cernantur occaecat ita magna hic 
+			offendit. Occaecat aute sunt te aliqua a eiusmod sunt eu fabulas illustriora, de 
+			aliqua laboris ab varias ullamco efflorescere, hic aut familiaritatem qui 
+			excepteur do excepteur, admodum ab minim ea quibusdam tamen eram officia irure.</p>
+			
+			<p>Ab summis expetendis, in eram reprehenderit, cillum est offendit, eiusmod noster 
+			quid a minim. Quae ingeniis transferrem, te ita nisi pariatur. Legam incurreret 
+			ut aute legam. Dolore cernantur quo expetendis, se sunt deserunt comprehenderit, 
+			non et reprehenderit qui an quae transferrem. Mandaremus o anim fabulas. Eiusmod 
+			malis doctrina e arbitror irure ullamco o multos ingeniis aut distinguantur, 
+			dolore fabulas eu mandaremus, an excepteur ex expetendis te tempor coniunctione 
+			ubi tempor, mandaremus esse laboris offendit eu mandaremus arbitrantur id 
+			commodo. Cernantur quid cillum senserit amet. Ne illum consectetur e senserit 
+			exquisitaque ne appellat, an dolor noster illum laborum iis doctrina aute elit 
+			possumus dolore, dolor expetendis se pariatur, laboris a laboris, et an sunt 
+			voluptate quo possumus fugiat laboris.</p>
+			
+			<p>Culpa iis e malis aliquip, te ab lorem elit sint. Excepteur do quem si ita aut 
+			esse cillum fore a ullamco ipsum aliquip, excepteur enim deserunt nescius. Quem 
+			cernantur ex summis quid do sed arbitror ab officia est iis enim fabulas 
+			offendit est varias do eu illum eiusmod. Culpa consequat despicationes an quem 
+			ea excepteur a anim qui iis enim nam varias, do id concursionibus, et amet 
+			ingeniis officia de quibusdam illum arbitror proident id cernantur ab minim, 
+			minim singulis offendit. Iudicem fore excepteur litteris, irure ut appellat id 
+			aute aut ne quorum culpa ut occaecat et eram qui an varias pariatur. Est malis 
+			in dolore. Quid cernantur quo familiaritatem. Consequat irure de laborum 
+			voluptatibus.</p>
+			
+			<p>Senserit qui tempor iis expetendis dolor do incurreret comprehenderit a 
+			quibusdam malis amet arbitror eram, et nam arbitrantur ita o mandaremus 
+			exercitation, hic non illustriora, litteris iis veniam probant, quamquam 
+			coniunctione quo excepteur. Excepteur si quorum. Singulis quo eiusmod, in quis 
+			nescius arbitror, quibusdam et legam iudicem iis veniam non quibusdam. Fugiat 
+			appellat do distinguantur. Quorum hic excepteur, quamquam varias eram ad nisi, 
+			possumus efflorescere do vidisse, cernantur aliqua doctrina quamquam, aliqua 
+			aliquip quamquam, ut ne tamen occaecat, sed culpa quamquam, amet ex ubi fore 
+			doctrina. Culpa eu de eram ullamco in ea fugiat dolor an probant ex esse tempor 
+			adipisicing a nostrud aliqua non laboris efflorescere, e in enim iudicem qui 
+			laboris quae proident laborum est qui incurreret graviterque, est legam do sunt. 
+			A eiusmod eruditionem ita labore de id quis occaecat aut qui iis quid voluptate, 
+			ipsum qui mandaremus te summis, admodum ipsum officia probant, o quo enim dolor 
+			noster, offendit quorum deserunt litteris, hic labore doctrina arbitrantur.</p>
+			
+			<p>Fore tractavissent expetendis malis admodum, dolor si cernantur a quid ad do 
+			labore eram multos offendit, se voluptate iis laborum, si tamen cillum non 
+			proident, ullamco amet aut offendit distinguantur est irure eruditionem appellat 
+			legam nostrud, quem et laboris. Vidisse summis lorem id quis, cupidatat amet ex 
+			ullamco transferrem ab offendit est legam non ne malis singulis cernantur. 
+			Voluptate veniam quorum nam duis. Cupidatat te amet, se legam mentitum 
+			consectetur, ullamco in quis ingeniis hic commodo ea multos. Aliqua iis non anim 
+			appellat iis ne lorem instituendarum, nescius o labore occaecat quo litteris 
+			quorum eiusmod mandaremus, quis fidelissimae laboris varias laboris, mandaremus 
+			ad eram iudicem de litteris te noster ut in quem esse quid consequat. Aliqua 
+			officia aut offendit, o labore laborum excepteur. Eu multos cohaerescant, o 
+			ingeniis praetermissum aut laborum se ingeniis nam in varias exquisitaque, e 
+			veniam proident voluptate, proident noster quis ubi minim de si enim possumus 
+			sempiternum ad nisi aut ubi eram nescius. Dolor excepteur nescius.</p>
+			
+			<p>Fore expetendis praesentibus te fore nostrud ea lorem dolore. Dolore non e 
+			fugiat tempor, mandaremus amet dolor incididunt esse, quid admodum cupidatat, 
+			incididunt lorem labore iis quid. Si quid deserunt doctrina nam iudicem elit 
+			litteris excepteur. Dolor in eu fore singulis, ab cillum velit ne proident, sunt 
+			do quo eram arbitror, ingeniis sempiternum sed occaecat qui minim cupidatat 
+			graviterque, aliqua aut quamquam ita quae incurreret non tamen fore, mandaremus 
+			ubi nisi incididunt. Appellat ad mentitum. Quis arbitrantur probant enim 
+			incurreret, id id aliqua nulla cillum aut ex ea dolore ingeniis, ea eram 
+			efflorescere quo o malis tractavissent, ex summis cernantur, sint quo offendit 
+			iis fore, officia labore summis doctrina malis. Sunt si non noster ullamco.</p>
+			
+			<p>Minim qui singulis ad fugiat, aute de et dolor expetendis ea iis noster occaecat 
+			tractavissent, varias ingeniis est domesticarum. Incurreret ad amet, deserunt 
+			dolor duis non malis. Non lorem do illum. Amet commodo ullamco, summis do 
+			doctrina. Te culpa multos cillum vidisse iis et officia est deserunt, qui quid 
+			aliquip ad hic mentitum consectetur. In veniam proident eiusmod quo ipsum 
+			laboris eu graviterque. Quis pariatur iis magna sunt se noster mandaremus o 
+			sempiternum ex tempor eram incurreret mandaremus, sint ea litteris id esse.</p>
+			
+			<p>Officia non dolor litteris, nam tamen ita tamen, te multos nescius exquisitaque, 
+			non anim aut ipsum, magna arbitror ea efflorescere ut minim voluptate quamquam, 
+			ullamco fugiat quamquam, admodum illum anim officia ipsum. Enim sed iis elit 
+			proident, malis familiaritatem tempor multos possumus ad do se dolor ullamco, 
+			sed litteris an aliquip. Consequat velit incididunt, cupidatat malis velit hic 
+			magna e singulis culpa te ingeniis philosophari eu qui nisi occaecat. Aliquip ut 
+			dolor consequat et do laboris familiaritatem ita de iudicem voluptatibus aut ne 
+			multos laboris. Tempor dolor veniam sed dolore, quis senserit ab fabulas de sunt 
+			hic si multos nostrud, dolore ne deserunt, do summis mandaremus cupidatat a 
+			fabulas ita elit voluptate, a culpa firmissimum id esse admodum ita cupidatat. 
+			Litteris sint quorum aliquip cillum aut ea eu sunt culpa sunt. Summis possumus 
+			eruditionem.</p>
+			<!-- @endif -->
+			</article>
+
+		</div><!--/column-->
+
+		<div class="column two">
+
+			<aside>
+				<!-- @if demo!='true' && columns!='true' -->
+					<section>
+	<h2>Sidebar</h2>
+	<ul>
+		<li>Fight, fight, fight for Washington State! Win the victory!</li>
+		<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
+		<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
+		<li>Fight, fight, fight for Washington State and victory!</li>
+		<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
+	</ul>
+	<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
+</section>
+				<!-- @endif -->
+				<!-- @if markup!='true' && columns!='true' -->
+					<style>
+
+.wireframe .row .column,
+.wireframe.row .column {
+	min-height: 198px;
+	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+	}
+.inset {
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+	}
+	
+/* GRID */
+
+/* ------------------- */
+
+#binder {
+	position: relative;
+	}	
+
+#grid {
+	display: none;
+	}
+.grid #grid {
+	position: absolute;
+	width: 990px;
+	left: 0;
+	top: 0;
+	display: block;
+	height: 3000px;
+	z-index: 99999;
+	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid.png') repeat-y left top;
+	}
+.grid12 #grid {
+	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid12.png') repeat-y left top;
+	}
+	
+main:not(.wireframe) .wireframe-only {
+	display: none;
+	}
+
+.wireframe section.row::before {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .5;
+	position: absolute;
+	right: 0px;
+	width: 75px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	}
+.wireframe .row.eighths::before { content: "eighths"; }
+.wireframe .row.twelfths::before { content: "twelfths"; }
+.wireframe .row.quarters::before { content: "quarters"; }
+.wireframe .row.single::before { content: "single"; }
+.wireframe .row.halves::before { content: "halves"; }
+.wireframe .row.sidebar::before { content: "sidebar"; }
+.wireframe .row.sideleft::before { content: "sideleft"; }
+.wireframe .row.triptych::before { content: "triptych"; }
+.wireframe .row.thirds::before { content: "thirds"; }
+.wireframe .row.margin::before { content: "margin"; }
+
+	
+/* Column Numbering */
+.wireframe .column:not(.note)::after { 
+	color: rgba(255,255,255,0.5);
+	background-color: rgba(182,188,191,0.5);
+	padding: 5px 10px;
+	position: absolute;
+	right: 0; bottom: 0;
+	}
+.wireframe .row:not(.nest) .column.one::after { content:"1"; }
+.wireframe .row:not(.nest) .column.two::after { content:"2"; }
+.wireframe .row:not(.nest) .column.three::after { content:"3"; }
+.wireframe .row:not(.nest) .column.four::after { content:"4"; }
+.wireframe .row:not(.nest) .column.five::after { content:"5"; }
+.wireframe .row:not(.nest) .column.six::after { content:"6"; }
+.wireframe .row:not(.nest) .column.seven::after { content:"7"; }
+.wireframe :not(.nest) .column.eight::after { content:"8"; }
+.wireframe :not(.nest) .column.nine::after { content:"9"; }
+.wireframe :not(.nest) .column.ten::after { content:"10"; }
+.wireframe :not(.nest) .column.eleven::after { content:"11"; }
+.wireframe :not(.nest) .column.twelve::after { content:"12"; }
+
+.wireframe .row .column.one-twelfth::after { content:"1/12"; }
+.wireframe .row .column.two-twelfths::after { content:"2/12"; }
+.wireframe .row .column.three-twelfths::after { content:"3/12"; }
+.wireframe .row .column.six-twelfths::after { content:"6/12"; }
+
+/* Column Measurements */
+.column::before { 
+	color: black;
+	padding: 2px 4px;
+	position: absolute;
+	opacity: .2;
+	font-size: 10px;
+	top: 0;	left: 0;
+	width: 95%;
+	margin: 0px auto;
+	text-align: center;
+	}
+.wireframe .single .column::before { content:"\2190 792 \2192"; }
+.wireframe .sidebar .column.one::before { content:"\2190 528 \2192"; }
+.wireframe .sidebar .column.two::before,
+.wireframe .thirds .column::before { content:"\2190 264 \2192"; }
+.wireframe .margin .column.one::before { content:"\2190 594 \2192"; }
+.wireframe .margin .column.two::before,
+.wireframe .quarters .column::before,
+.wireframe .triptych .column.one::before,
+.wireframe .triptych .column.three::before,
+.wireframe .halves .halves .column::before { content:"\2190 198 \2192"; }
+.wireframe .halves .column::before,
+.wireframe .triptych .column.two::before { content:"\2190 396 \2192"; }
+.wireframe .halves .quarters .column::before { content:"\2190 99 \2192"; }
+.wireframe .quarters .thirds .column::before { content:"\2190 66 \2192"; }
+.wireframe .halves .thirds .column::before { content:"\2190 132 \2192"; }
+
+.wireframe .row .row::after {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .2;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	bottom: 50%;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	margin-left: -25px;
+	width: 50px;
+	height: 20px;
+	xbottom: 0px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	content:"nested";
+	}
+	
+.sidebar .column.two ul {
+	padding: 0px; margin: 0px;
+	}
+.sidebar .column.two li {
+	list-style: none;
+	padding: 10px 0px;
+	margin: 0px;
+	}
+.sidebar .column.two li:last-of-type {
+	border-bottom: none;
+	}
+	
+#binder main .note::after {
+	color: black;
+	padding: 6px 10px;
+	position: absolute;
+	font-size: 12px;
+	opacity: .8;
+	top: 5px;
+	left: 5px;
+	width: auto;
+	height: auto;
+	text-align: left;
+	display: none;
+	z-index: 999631;
+	line-height: 1em;
+	background: white;
+	visibility: visible !important;
+	}
+#binder main .note:hover::after {
+	display: block;
+	}
+section > big {
+	padding: 100px 100px 10px 100px;
+	font-size: 2em;
+	line-height: 1.1em;
+	display: block;
+	}
+#unprecedented .column.one {
+	padding-top: 100px;
+	}
+#unprecedented .column.two {
+	position: relative;
+	}
+.size-lt-small #controls dl:first-of-type {
+	margin-top: 150px;
+	}
+
+#controls dl {
+	margin-top: 15px;
+	padding-top: 5px;
+	}
+#controls dl ~ dl {
+	border-top: 1px #D7DAD8 solid;
+	}
+#controls dl dt {
+	display: block;
+	}
+dt a:hover {
+	
+	}
+#switches dl dd {
+	display: block; float: left;
+	padding: 0px; margin: 0px 0px 2px 0px;
+	}
+#switches dl a.info {
+	float: right;
+	display: block;
+	xtext-indent: -9000px;
+	overflow: hidden;
+	position: relative;
+	color: white;
+	opacity: .3;
+	}
+#switches dl a.info::before {
+	font-family: "Iconography";
+	content: "\2139";
+	font-size: 1.4em;
+	color: #b5babe;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 16px;
+	width: 30px;
+	text-align: center;
+	}
+#switches dl a.info:hover::before {
+	color: #5e6a71;
+	}
+.spine-colors dd {
+	display: block;
+	float: left;
+	padding: 2px 0px;
+	xwidth: 33%;
+	}
+.spine-wireframe button::before {
+	content: "show ";
+	}
+.wireframe .spine-wireframe button::before {
+	content: "hide ";
+	}
+pre,code {
+	display: none;
+	}
+.wirefram pre, .wireframe code {
+	display: block;
+	}
+pre {
+	white-space: normal;
+	}
+pre code {
+	font-style: italic;
+	}
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+	// 
+	$('.spine-behavior button').on('click', function() {
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		var grid = $(this).attr('data-grid');
+		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
+		return false;
+	});
+	
+	// Change Spine color
+	$('.spine-colors button').on('click', function() {
+		var color = $(this).attr('data-color');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		// $('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
+		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		
+		$('#spine').addClass(color);
+		return false;
+	});
+	
+	// Change Spine color
+	$('.spine-transparency button').on('click', function() {
+		var transparency = $(this).attr('data-transparency');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
+		$('#spine').addClass(transparency);
+		return false;
+	});
+	
+	// Folio Sizes
+	$('.spine-sizes button').on('click', function() {
+		var max = $(this).attr('data-max');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
+		$('#binder').addClass('folio').addClass(max);
+		return false;
+	});
+	
+	// Change Campus
+	$('.spine-campuses button').on('click', function() {
+		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
+		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		var campus = $(this).attr('data-campus');
+			campus = campus + '-signature';
+		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		return false;
+	});
+	
+	});
+
+</script>
+
+<section>
+
+<aside id="switches">
+	
+	<dl class="spine-colors clearfix">
+		<dt>spine colors <a href="#spine-colors" class="info">info</a></dt>
+		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd> 
+		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
+		<dd><button data-color="lightly" class="lightly-back gray-dark-text inset">Lightly</button></dd>
+		<dd><button data-color="lighter" class="lighter-back gray-text">Lighter</button></dd>
+		<dd><button data-color="light" class="light-back lightly-text">Light</button></dd>
+		<dd><button data-color="gray" class="gray-back lighter-text">Gray</button></dd>
+		<dd><button data-color="dark" class="dark-back lighter-text">Dark</button></dd>
+		<dd><button data-color="darker" class="darker-back light-text">Darker</button></dd>
+		<dd><button data-color="darkest" class="darkest-back light-text">Darkest</button></dd>
+		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
+	</dl>
+	
+	<dl class="spine-transparency clearfix">
+		<dt>spine transparency <a href="#spine-transparency" class="info">info</a></dt>
+		<dd><button data-transparency="">0</button></dd> 
+		<dd><button data-transparency="vellum-05">5</button></dd> 
+		<dd><button data-transparency="vellum-10">10</button></dd>
+		<dd><button data-transparency="vellum-15">15</button></dd>
+	</dl>
+	
+	<dl class="spine-column-options clearfix">
+		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
+		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('broken'); $(this).toggleClass('active');">bleed main</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">
@@ -936,6 +1156,262 @@ pre code {
 		</div><!--/column-->
 
 	</section>
+	
+	<!-- @if columns='true' -->
+		<style>
+
+.column {
+	min-height: 198px;
+	}
+	
+/* Column Numbering */
+.wireframe .column::after { 
+	color: rgba(0,0,0,0.2) !important;
+	background-color: rgba(182,188,191,0.5);
+	padding: 5px 10px;
+	position: absolute;
+	right: 0; bottom: 0;
+	}
+.wireframe .one-twelfths::after { content:"1"; }
+.wireframe .two-twelfths::after { content:"2"; }
+.wireframe .three-twelfths::after { content:"3"; }
+.wireframe .four-twelfths::after { content:"4"; }
+.wireframe .five-twelfths::after { content:"5"; }
+.wireframe .six-twelfths::after { content:"6"; }
+.wireframe .seven-twelfths::after { content:"7"; }
+.wireframe .eight-twelfths::after { content:"8"; }
+.wireframe .nine-twelfths::after { content:"9"; }
+.wireframe .ten-twelfths::after { content:"10"; }
+.wireframe .eleven-twelfths::after { content:"11"; }
+.wireframe .twelve-twelfths::after { content:"12"; }
+
+section header {
+	background-color: rgba(255,255,255,0.5);
+	xbackground: white;
+	padding: 4px 2px;
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	white-space: nowrap;
+	z-index: 99163;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+	}
+#switches {
+	padding: 2em;
+	}
+section.side-right,
+.spine-campuses,
+.spine-colors,
+.spine-transparency,
+.spine-wireframe,
+#switches dl a.info {
+	display: none;
+	}
+#switches dl dt,
+#switches dl dd { display: inline-block; float: none; clear: none; }
+hr {
+	border-top: 1px gray dotted;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: transparent;
+	width: 100%;
+	}
+
+</style>
+
+<section class="wireframe row twelfths">
+
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>1-10-1</header>
+	<div class="column one-twelfths orange-lightest-back"></div>
+	<div class="column ten-twelfths orange-lightly-back"></div>
+	<div class="column one-twelfths orange-lighter-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>2-8-2</header>
+	<div class="column two-twelfths yellow-lightest-back"></div>
+	<div class="column eight-twelfths yellow-lightly-back"></div>
+	<div class="column two-twelfths yellow-lighter-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>3-6-3</header>
+	<div class="column three-twelfths green-lightest-back"></div>
+	<div class="column six-twelfths green-lightly-back"></div>
+	<div class="column three-twelfths green-lighter-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>4-4-4</header>
+	<div class="column four-twelfths blue-lightest-back"></div>
+	<div class="column four-twelfths blue-lightly-back"></div>
+	<div class="column four-twelfths blue-lighter-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths gutter wide equalize">
+
+	<header>5-2-5</header>
+	<div class="column five-twelfths gray-lightest-back"></div>
+	<div class="column two-twelfths gray-lightly-back"></div>
+	<div class="column five-twelfths gray-lighter-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths gutter wide equalize">
+	
+	<header>6-6</header>
+	<div class="column six-twelfths orange-lightest-back"></div>
+	<div class="column six-twelfths orange-lightly-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>5-7</header>
+	<div class="column five-twelfths yellow-lightest-back"></div>
+	<div class="column seven-twelfths yellow-lightly-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>4-8</header>
+	<div class="column four-twelfths green-lightest-back"></div>
+	<div class="column eight-twelfths green-lightly-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>3-9</header>
+	<div class="column three-twelfths blue-lightest-back"></div>
+	<div class="column nine-twelfths blue-lightly-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>2-10</header>
+	<div class="column two-twelfths orange-lightest-back"></div>
+	<div class="column ten-twelfths orange-lightly-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>1-11</header>
+	<div class="column one-twelfths yellow-lightest-back"></div>
+	<div class="column eleven-twelfths yellow-lightly-back"></div>
+	
+</section>
+
+<hr>
+
+<section class="wireframe row twelfths">
+
+	<header>Fifteen Twelfths</header>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	<div class="column one-twelfths gray-lightest-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths">
+
+	<header>Five Quarters</header>
+	<div class="column three-twelfths gray-lightest-back"></div>
+	<div class="column three-twelfths gray-lightest-back"></div>
+	<div class="column three-twelfths gray-lightest-back"></div>
+	<div class="column three-twelfths gray-lightest-back"></div>
+	<div class="column three-twelfths gray-lightest-back"></div>
+	
+</section>
+
+<hr>
+
+<header>Manual Controls</header>
+<section class="wireframe row twelfths">
+
+	<header>4-4-4</header>
+	<div class="column four-twelfths blue-lightest-back at-large-full-width"><code>.at-large-full-width</code></div>
+	<div class="column four-twelfths blue-lightly-back at-medium-full-width"><code>.at-medium-full-width</code></div>
+	<div class="column four-twelfths blue-lighter-back at-medium-half-width at-small-full-width"><code>.at-medium-half-width .at-small-full-width</code></div>
+	
+</section>
+
+<hr>
+
+<section class="wireframe row twelfths gutter wide equalize">
+
+	<div class="column one-twelfths orange-lightest-back"></div>
+	<div class="column two-twelfths orange-lightly-back"></div>
+	<div class="column three-twelfths orange-lighter-back"></div>
+	<div class="column six-twelfths orange-light-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths gutter wide equalize">
+
+	<div class="column two-twelfths blue-lighter-back"></div>
+	<div class="column three-twelfths blue-light-back"></div>
+	<div class="column two-twelfths blue-lighter-back"></div>
+	<div class="column three-twelfths blue-light-back"></div>
+	<div class="column two-twelfths blue-lighter-back"></div>
+	
+</section>
+
+<section class="wireframe row twelfths gutter wide equalize">
+
+	<div class="column two-twelfths green-light-back"></div>
+	<div class="column four-twelfths green-back"></div>
+	<div class="column six-twelfths green-light-back"></div>
+	
+</section>
+
+	<!-- @endif -->
 
 	<!-- @if demo='true' -->
 		<section id="spine-behavior" class="row side-left gutter wide equalize">
@@ -1228,28 +1704,25 @@ pre code {
 	
 		<ul>
 		
-		
-	
 		<!-- @if markup!='true' -->
 		<li><a href="/">Site Home</a></li>
-	<li><a href="">Options</a>
-		<ul>
-			<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
-		</ul>
-	</li>
-	<li class="current"><a href="/demo.html">Demo</a></li>
-	<li>
-		<a href="#">Behavior</a>
-		<ul>
-			<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
-			<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
-			<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
-			<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
-		</ul>
-	</li>
+<li><a href="">Options</a>
+	<ul>
+		<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
+	</ul>
+</li>
+<li class="current"><a href="/demo.html">Demo</a></li>
+<li>
+	<a href="#">Behavior</a>
+	<ul>
+		<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
+		<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
+		<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
+		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
+	</ul>
 </li>
 <li>
-	<a href="/test/tests/overly.html" data-overview="Overly Linked and Long">Lots and lots</a>
+	<a href="/test/tests/overly.html" title="Overly Overly">Lots and lots</a>
 	<ul>
 		<li><a href="/test/tests/overly_linked.html">Overly Linked</a></li>
 		<li><a href="/test/tests/overly_long.html">Overly Long</a></li>
@@ -1300,17 +1773,13 @@ pre code {
 	<li><a href="/test/layouts.html">Available Layouts</a></li>
 	<li><a href="/test/columns.html">Columns</a></li>
 
-<!-- @endif -->
-		
-<!-- @if navdata='true' -->
-		<li><a href="link" data-foo="bar" >About</a>
-<!-- @endif -->
-		
-<!-- @if navdata!='true' -->
-		<li><a href="link">Site Home</a>
-<!-- @endif -->
-		
-<!-- @if manyLinks='true' -->
+		<!-- @endif -->
+				
+		<!-- @if navdata='true' -->
+		<li><a href="link" data-foo="bar" >Data Foo</a><li>
+		<!-- @endif -->
+				
+		<!-- @if manyLinks='true' -->
 				<li><a href="/">Fee, Fi, Fourth</a></li>
 	<li>
 		<a href="link">A first first order link</a>
@@ -1403,9 +1872,8 @@ pre code {
 	<li><a href="link">33 over link</a></li>
 	<li><a href="link">34 over link</a></li>
 	<li><a href="link">35 over link</a></li>
-<!-- @endif -->
+		<!-- @endif -->
 		
-		</li>
 		</ul>
 	
 	</nav>

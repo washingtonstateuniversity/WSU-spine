@@ -1,6 +1,7 @@
 <style>
 
-.wireframe .row .column {
+.wireframe .row .column,
+.wireframe.row .column {
 	min-height: 198px;
 	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
 	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
@@ -343,8 +344,9 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleeding</button></dd>
-		<dd><button onclick="$('#spine').toggleClass('cropped'); $('#glue').removeAttr('style'); $(this).toggleClass('active');">cropped</button></dd> 
+		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('broken'); $(this).toggleClass('active');">bleed main</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">

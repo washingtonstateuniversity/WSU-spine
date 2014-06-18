@@ -87,12 +87,14 @@
 <!-- CONTENT -->
 <main>
 
+			
 	<!-- Responsive Sections -->
 	<section class="row side-right">
 
 		<div class="column one">
 
 			<article>
+			
 				<article class="post-15 page type-page status-publish hentry" id="post-15">
 	<header class="article-header">
 		<h1 class="article-title">The Spine Framework</h1>
@@ -106,7 +108,6 @@
 	<p>WSU’s new web framework is currently in beta and, along with new default templates, will be widely available beginning in June. If you are a developer or web designer, you are more than welcome to take part in its development on <a href="https://github.com/washingtonstateuniversity/WSU-spine">GitHub</a>.</p>
 	<p>The earlier standards and Template Designer tool for the existing WSU web templates remain available online in the interim.</p>
 </article>
-
 			</article>
 
 		</div><!--/column-->
@@ -116,7 +117,8 @@
 			<aside>
 					<style>
 
-.wireframe .row .column {
+.wireframe .row .column,
+.wireframe.row .column {
 	min-height: 198px;
 	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
 	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
@@ -459,8 +461,9 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleeding</button></dd>
-		<dd><button onclick="$('#spine').toggleClass('cropped'); $('#glue').removeAttr('style'); $(this).toggleClass('active');">cropped</button></dd> 
+		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('broken'); $(this).toggleClass('active');">bleed main</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">
@@ -505,7 +508,7 @@ pre code {
 		</div><!--/column-->
 
 	</section>
-
+	
 		<section id="spine-behavior" class="row side-left gutter wide equalize">
 
 	<div class="column one gray-back">
@@ -704,27 +707,24 @@ pre code {
 	
 		<ul>
 		
-		
-	
 		<li><a href="/">Site Home</a></li>
-	<li><a href="">Options</a>
-		<ul>
-			<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
-		</ul>
-	</li>
-	<li class="current"><a href="/demo.html">Demo</a></li>
-	<li>
-		<a href="#">Behavior</a>
-		<ul>
-			<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
-			<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
-			<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
-			<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
-		</ul>
-	</li>
+<li><a href="">Options</a>
+	<ul>
+		<li><a href="/test/tests/cropped.html">The Cropped Spine</a></li>
+	</ul>
+</li>
+<li class="current"><a href="/demo.html">Demo</a></li>
+<li>
+	<a href="#">Behavior</a>
+	<ul>
+		<li><a href="/test/tests/grid_fluid.html">Fluid and Flex</a></li>
+		<li><a href="/test/tests/grid_fixed.html">Fixed and Fold</a></li>
+		<li><a href="/test/tests/grid_hybrid.html">Fold then Flex</a></li>
+		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
+	</ul>
 </li>
 <li>
-	<a href="/test/tests/overly.html" data-overview="Overly Linked and Long">Lots and lots</a>
+	<a href="/test/tests/overly.html" title="Overly Overly">Lots and lots</a>
 	<ul>
 		<li><a href="/test/tests/overly_linked.html">Overly Linked</a></li>
 		<li><a href="/test/tests/overly_long.html">Overly Long</a></li>
@@ -741,12 +741,9 @@ pre code {
 
 
 		
+				
+				
 		
-		
-		<li><a href="link">Site Home</a>
-		
-		
-		</li>
 		</ul>
 	
 	</nav>
