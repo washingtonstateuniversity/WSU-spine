@@ -67,7 +67,6 @@
 #wsu-signature {
   background-repeat: no-repeat;
   background-position: center center;
-  xxbackground-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.svg");
   background-size: 150px auto;
   height: 155px;
   display: block;
@@ -75,9 +74,6 @@
   overflow: hidden;
   white-space: nowrap;
   position: relative; }
-
-html.no-svg #wsu-signature {
-  xxbackground-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png"); }
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 button#shelve {
@@ -693,25 +689,15 @@ html.lt-ie9 #spine footer {
   */ }
   #spine #glue:before {
     background-color: white; }
-  #spine.vellum-05 {
+  #spine.vellum-05 #glue:before {
     background-color: rgba(255, 255, 255, 0.95); }
-  #spine.vellum-05.bleed:before {
-    background-color: rgba(255, 255, 255, 0.95); }
-  #spine.vellum-10 {
+  #spine.vellum-10 #glue:before {
     background-color: rgba(255, 255, 255, 0.9); }
-  #spine.vellum-10.bleed:before {
-    background-color: rgba(255, 255, 255, 0.9); }
-  #spine.vellum-15 {
+  #spine.vellum-15 #glue:before {
     background-color: rgba(255, 255, 255, 0.85); }
-  #spine.vellum-15.bleed:before {
-    background-color: rgba(255, 255, 255, 0.85); }
-  #spine.vellum-20 {
+  #spine.vellum-20 #glue:before {
     background-color: rgba(255, 255, 255, 0.8); }
-  #spine.vellum-20.bleed:before {
-    background-color: rgba(255, 255, 255, 0.8); }
-  #spine.vellum-25 {
-    background-color: rgba(255, 255, 255, 0.75); }
-  #spine.vellum-25.bleed:before {
+  #spine.vellum-25 #glue:before {
     background-color: rgba(255, 255, 255, 0.75); }
   #spine .spine-sitenav a,
   #spine .spine-search-tab button {
@@ -752,25 +738,15 @@ html.lt-ie9 #spine footer {
   /* #### LIGHTEST #e6e8e9, rgb(230,232,233) */ }
   #spine.lightest #glue:before {
     background-color: #eff0f1; }
-  #spine.lightest.vellum-05 {
+  #spine.lightest.vellum-05 #glue:before {
     background-color: rgba(239, 240, 241, 0.95); }
-  #spine.lightest.vellum-05.bleed:before {
-    background-color: rgba(239, 240, 241, 0.95); }
-  #spine.lightest.vellum-10 {
+  #spine.lightest.vellum-10 #glue:before {
     background-color: rgba(239, 240, 241, 0.9); }
-  #spine.lightest.vellum-10.bleed:before {
-    background-color: rgba(239, 240, 241, 0.9); }
-  #spine.lightest.vellum-15 {
+  #spine.lightest.vellum-15 #glue:before {
     background-color: rgba(239, 240, 241, 0.85); }
-  #spine.lightest.vellum-15.bleed:before {
-    background-color: rgba(239, 240, 241, 0.85); }
-  #spine.lightest.vellum-20 {
+  #spine.lightest.vellum-20 #glue:before {
     background-color: rgba(239, 240, 241, 0.8); }
-  #spine.lightest.vellum-20.bleed:before {
-    background-color: rgba(239, 240, 241, 0.8); }
-  #spine.lightest.vellum-25 {
-    background-color: rgba(239, 240, 241, 0.75); }
-  #spine.lightest.vellum-25.bleed:before {
+  #spine.lightest.vellum-25 #glue:before {
     background-color: rgba(239, 240, 241, 0.75); }
   #spine.lightest .spine-sitenav a,
   #spine.lightest .spine-offsitenav a:hover,
@@ -804,25 +780,15 @@ html.lt-ie9 #spine footer {
   /* #### LIGHTLY #d7dadb, rgb(215 218 219) */ }
   #spine.lightly #glue:before {
     background-color: #d7dadb; }
-  #spine.lightly.vellum-05 {
+  #spine.lightly.vellum-05 #glue:before {
     background-color: rgba(215, 218, 219, 0.95); }
-  #spine.lightly.vellum-05.bleed:before {
-    background-color: rgba(215, 218, 219, 0.95); }
-  #spine.lightly.vellum-10 {
+  #spine.lightly.vellum-10 #glue:before {
     background-color: rgba(215, 218, 219, 0.9); }
-  #spine.lightly.vellum-10.bleed:before {
-    background-color: rgba(215, 218, 219, 0.9); }
-  #spine.lightly.vellum-15 {
+  #spine.lightly.vellum-15 #glue:before {
     background-color: rgba(215, 218, 219, 0.85); }
-  #spine.lightly.vellum-15.bleed:before {
-    background-color: rgba(215, 218, 219, 0.85); }
-  #spine.lightly.vellum-20 {
+  #spine.lightly.vellum-20 #glue:before {
     background-color: rgba(215, 218, 219, 0.8); }
-  #spine.lightly.vellum-20.bleed:before {
-    background-color: rgba(215, 218, 219, 0.8); }
-  #spine.lightly.vellum-25 {
-    background-color: rgba(215, 218, 219, 0.75); }
-  #spine.lightly.vellum-25.bleed:before {
+  #spine.lightly.vellum-25 #glue:before {
     background-color: rgba(215, 218, 219, 0.75); }
   #spine.lightly .spine-actions-tabs button,
   #spine.lightly .spine-social-channels a:hover,
@@ -854,25 +820,15 @@ html.lt-ie9 #spine footer {
   /* #### LIGHTER #b5babe, rgb(181 186 190) */ }
   #spine.lighter #glue:before {
     background-color: #b5babe; }
-  #spine.lighter.vellum-05 {
+  #spine.lighter.vellum-05 #glue:before {
     background-color: rgba(181, 186, 190, 0.95); }
-  #spine.lighter.vellum-05.bleed:before {
-    background-color: rgba(181, 186, 190, 0.95); }
-  #spine.lighter.vellum-10 {
+  #spine.lighter.vellum-10 #glue:before {
     background-color: rgba(181, 186, 190, 0.9); }
-  #spine.lighter.vellum-10.bleed:before {
-    background-color: rgba(181, 186, 190, 0.9); }
-  #spine.lighter.vellum-15 {
+  #spine.lighter.vellum-15 #glue:before {
     background-color: rgba(181, 186, 190, 0.85); }
-  #spine.lighter.vellum-15.bleed:before {
-    background-color: rgba(181, 186, 190, 0.85); }
-  #spine.lighter.vellum-20 {
+  #spine.lighter.vellum-20 #glue:before {
     background-color: rgba(181, 186, 190, 0.8); }
-  #spine.lighter.vellum-20.bleed:before {
-    background-color: rgba(181, 186, 190, 0.8); }
-  #spine.lighter.vellum-25 {
-    background-color: rgba(181, 186, 190, 0.75); }
-  #spine.lighter.vellum-25.bleed:before {
+  #spine.lighter.vellum-25 #glue:before {
     background-color: rgba(181, 186, 190, 0.75); }
   #spine.lighter button#shelve {
     background-image: url("//repo.wsu.edu/spine/1/icons/menu-white.svg"); }
@@ -911,25 +867,15 @@ html.lt-ie9 #spine footer {
   /* #### LIGHT #8b9399, rgb(139,147,153) */ }
   #spine.light #glue:before {
     background-color: #8d959a; }
-  #spine.light.vellum-05 {
+  #spine.light.vellum-05 #glue:before {
     background-color: rgba(141, 149, 154, 0.95); }
-  #spine.light.vellum-05.bleed:before {
-    background-color: rgba(141, 149, 154, 0.95); }
-  #spine.light.vellum-10 {
+  #spine.light.vellum-10 #glue:before {
     background-color: rgba(141, 149, 154, 0.9); }
-  #spine.light.vellum-10.bleed:before {
-    background-color: rgba(141, 149, 154, 0.9); }
-  #spine.light.vellum-15 {
+  #spine.light.vellum-15 #glue:before {
     background-color: rgba(141, 149, 154, 0.85); }
-  #spine.light.vellum-15.bleed:before {
-    background-color: rgba(141, 149, 154, 0.85); }
-  #spine.light.vellum-20 {
+  #spine.light.vellum-20 #glue:before {
     background-color: rgba(141, 149, 154, 0.8); }
-  #spine.light.vellum-20.bleed:before {
-    background-color: rgba(141, 149, 154, 0.8); }
-  #spine.light.vellum-25 {
-    background-color: rgba(141, 149, 154, 0.75); }
-  #spine.light.vellum-25.bleed:before {
+  #spine.light.vellum-25 #glue:before {
     background-color: rgba(141, 149, 154, 0.75); }
   #spine.light:not(.homeless) .spine-sitenav > ul > li:first-child a {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
@@ -967,25 +913,15 @@ html.lt-ie9 #spine footer {
   /* #### GRAY #5e6a71, rgb(94,106,113) */ }
   #spine.gray #glue:before {
     background: #5e6a71; }
-  #spine.gray.vellum-05 {
+  #spine.gray.vellum-05 #glue:before {
     background-color: rgba(94, 106, 113, 0.95); }
-  #spine.gray.vellum-05.bleed:before {
-    background-color: rgba(94, 106, 113, 0.95); }
-  #spine.gray.vellum-10 {
+  #spine.gray.vellum-10 #glue:before {
     background-color: rgba(94, 106, 113, 0.9); }
-  #spine.gray.vellum-10.bleed:before {
-    background-color: rgba(94, 106, 113, 0.9); }
-  #spine.gray.vellum-15 {
+  #spine.gray.vellum-15 #glue:before {
     background-color: rgba(94, 106, 113, 0.85); }
-  #spine.gray.vellum-15.bleed:before {
-    background-color: rgba(94, 106, 113, 0.85); }
-  #spine.gray.vellum-20 {
+  #spine.gray.vellum-20 #glue:before {
     background-color: rgba(94, 106, 113, 0.8); }
-  #spine.gray.vellum-20.bleed:before {
-    background-color: rgba(94, 106, 113, 0.8); }
-  #spine.gray.vellum-25 {
-    background-color: rgba(94, 106, 113, 0.75); }
-  #spine.gray.vellum-25.bleed:before {
+  #spine.gray.vellum-25 #glue:before {
     background-color: rgba(94, 106, 113, 0.75); }
   #spine.gray:not(.homeless) .spine-sitenav > ul > li:first-child a {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
@@ -1025,25 +961,15 @@ html.lt-ie9 #spine footer {
   /* #### GRAY-DARK #383D42, rgb(75,85,90) */ }
   #spine.dark #glue:before {
     background-color: #464e54; }
-  #spine.dark.vellum-05 {
+  #spine.dark.vellum-05 #glue:before {
     background-color: rgba(70, 78, 84, 0.95); }
-  #spine.dark.vellum-05.bleed:before {
-    background-color: rgba(70, 78, 84, 0.95); }
-  #spine.dark.vellum-10 {
+  #spine.dark.vellum-10 #glue:before {
     background-color: rgba(70, 78, 84, 0.9); }
-  #spine.dark.vellum-10.bleed:before {
-    background-color: rgba(70, 78, 84, 0.9); }
-  #spine.dark.vellum-15 {
+  #spine.dark.vellum-15 #glue:before {
     background-color: rgba(70, 78, 84, 0.85); }
-  #spine.dark.vellum-15.bleed:before {
-    background-color: rgba(70, 78, 84, 0.85); }
-  #spine.dark.vellum-20 {
+  #spine.dark.vellum-20 #glue:before {
     background-color: rgba(70, 78, 84, 0.8); }
-  #spine.dark.vellum-20.bleed:before {
-    background-color: rgba(70, 78, 84, 0.8); }
-  #spine.dark.vellum-25 {
-    background-color: rgba(70, 78, 84, 0.75); }
-  #spine.dark.vellum-25.bleed:before {
+  #spine.dark.vellum-25 #glue:before {
     background-color: rgba(70, 78, 84, 0.75); }
   #spine.dark:not(.homeless) .spine-sitenav > ul > li:first-child a {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lightest.svg"); }
@@ -1085,25 +1011,15 @@ html.lt-ie9 #spine footer {
   /* #### GRAY-DARKER #2a3033, rgb(42 48 51) */ }
   #spine.darker #glue:before {
     background-color: #23282b; }
-  #spine.darker.vellum-05 {
+  #spine.darker.vellum-05 #glue:before {
     background-color: rgba(35, 40, 43, 0.95); }
-  #spine.darker.vellum-05.bleed:before {
-    background-color: rgba(35, 40, 43, 0.95); }
-  #spine.darker.vellum-10 {
+  #spine.darker.vellum-10 #glue:before {
     background-color: rgba(35, 40, 43, 0.9); }
-  #spine.darker.vellum-10.bleed:before {
-    background-color: rgba(35, 40, 43, 0.9); }
-  #spine.darker.vellum-15 {
+  #spine.darker.vellum-15 #glue:before {
     background-color: rgba(35, 40, 43, 0.85); }
-  #spine.darker.vellum-15.bleed:before {
-    background-color: rgba(35, 40, 43, 0.85); }
-  #spine.darker.vellum-20 {
+  #spine.darker.vellum-20 #glue:before {
     background-color: rgba(35, 40, 43, 0.8); }
-  #spine.darker.vellum-20.bleed:before {
-    background-color: rgba(35, 40, 43, 0.8); }
-  #spine.darker.vellum-25 {
-    background-color: rgba(35, 40, 43, 0.75); }
-  #spine.darker.vellum-25.bleed:before {
+  #spine.darker.vellum-25 #glue:before {
     background-color: rgba(35, 40, 43, 0.75); }
   #spine.darker:not(.homeless) .spine-sitenav > ul > li:first-child a {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
@@ -1143,25 +1059,15 @@ html.lt-ie9 #spine footer {
   /* #### GRAY-DARKEST #000, rgb 0,0,0 */ }
   #spine.darkest #glue:before {
     background-color: black; }
-  #spine.darkest.vellum-05 {
+  #spine.darkest.vellum-05 #glue:before {
     background-color: rgba(0, 0, 0, 0.95); }
-  #spine.darkest.vellum-05.bleed:before {
-    background-color: rgba(0, 0, 0, 0.95); }
-  #spine.darkest.vellum-10 {
+  #spine.darkest.vellum-10 #glue:before {
     background-color: rgba(0, 0, 0, 0.9); }
-  #spine.darkest.vellum-10.bleed:before {
-    background-color: rgba(0, 0, 0, 0.9); }
-  #spine.darkest.vellum-15 {
+  #spine.darkest.vellum-15 #glue:before {
     background-color: rgba(0, 0, 0, 0.85); }
-  #spine.darkest.vellum-15.bleed:before {
-    background-color: rgba(0, 0, 0, 0.85); }
-  #spine.darkest.vellum-20 {
+  #spine.darkest.vellum-20 #glue:before {
     background-color: rgba(0, 0, 0, 0.8); }
-  #spine.darkest.vellum-20.bleed:before {
-    background-color: rgba(0, 0, 0, 0.8); }
-  #spine.darkest.vellum-25 {
-    background-color: rgba(0, 0, 0, 0.75); }
-  #spine.darkest.vellum-25.bleed:before {
+  #spine.darkest.vellum-25 #glue:before {
     background-color: rgba(0, 0, 0, 0.75); }
   #spine.darkest:not(.homeless) .spine-sitenav > ul > li:first-child a {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
@@ -1196,25 +1102,15 @@ html.lt-ie9 #spine footer {
   /* #### CRIMSON #981e32 */ }
   #spine.crimson #glue:before {
     background-color: #981e32; }
-  #spine.crimson.vellum-05 {
+  #spine.crimson.vellum-05 #glue:before {
     background-color: rgba(152, 30, 50, 0.95); }
-  #spine.crimson.vellum-05.bleed:before {
-    background-color: rgba(152, 30, 50, 0.95); }
-  #spine.crimson.vellum-10 {
+  #spine.crimson.vellum-10 #glue:before {
     background-color: rgba(152, 30, 50, 0.9); }
-  #spine.crimson.vellum-10.bleed:before {
-    background-color: rgba(152, 30, 50, 0.9); }
-  #spine.crimson.vellum-15 {
+  #spine.crimson.vellum-15 #glue:before {
     background-color: rgba(152, 30, 50, 0.85); }
-  #spine.crimson.vellum-15.bleed:before {
-    background-color: rgba(152, 30, 50, 0.85); }
-  #spine.crimson.vellum-20 {
+  #spine.crimson.vellum-20 #glue:before {
     background-color: rgba(152, 30, 50, 0.8); }
-  #spine.crimson.vellum-20.bleed:before {
-    background-color: rgba(152, 30, 50, 0.8); }
-  #spine.crimson.vellum-25 {
-    background-color: rgba(152, 30, 50, 0.75); }
-  #spine.crimson.vellum-25.bleed:before {
+  #spine.crimson.vellum-25 #glue:before {
     background-color: rgba(152, 30, 50, 0.75); }
   #spine.crimson:not(.homeless) .spine-sitenav > ul > li:first-child a {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-gray-lighter.svg"); }
@@ -1269,9 +1165,6 @@ html.lt-ie9 #spine footer {
 .extension-signature #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical.svg"); }
 
-.foundation-signature #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical.svg"); }
-
 .lighter #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-gray-graydarker.svg"); }
 
@@ -1289,9 +1182,6 @@ html.lt-ie9 #spine footer {
 
 .extension-signature .lighter #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical-crimson-gray-graydarker.svg"); }
-
-.foundation-signature .lighter #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-crimson-gray-graydarker.svg"); }
 
 .light #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-gray-white.svg"); }
@@ -1311,9 +1201,6 @@ html.lt-ie9 #spine footer {
 .extension-signature .light #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical-crimson-gray-white.svg"); }
 
-.foundation-signature .light #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-crimson-gray-white.svg"); }
-
 .gray #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-graydark-graylighter.svg"); }
 
@@ -1332,9 +1219,6 @@ html.lt-ie9 #spine footer {
 .extension-signature .gray #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical-crimson-graydark-graylighter.svg"); }
 
-.foundation-signature .gray #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-crimson-graydark-graylighter.svg"); }
-
 .dark #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-crimson-7d868c-graylightly.svg"); }
 
@@ -1352,9 +1236,6 @@ html.lt-ie9 #spine footer {
 
 .extension-signature .dark #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical-crimson-7d868c-graylightly.svg"); }
-
-.foundation-signature .dark #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-crimson-7d868c-graylightly.svg"); }
 
 .darker #wsu-signature,
 .darkest #wsu-signature {
@@ -1380,10 +1261,6 @@ html.lt-ie9 #spine footer {
 .extension-signature .darkest #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical-crimson-gray-graylighter.svg"); }
 
-.foundation-signature .darker #wsu-signature,
-.foundation-signature .darkest #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-crimson-gray-graylighter.svg"); }
-
 .crimson #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical-white-graylightly-white.svg"); }
 
@@ -1402,9 +1279,6 @@ html.lt-ie9 #spine footer {
 .extension-signature .crimson #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-vertical-white-graylightly-white.svg"); }
 
-.foundation-signature .crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-vertical-white-graylightly-white.svg"); }
-
 html.lt-ie9 #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-vertical.png"); }
 
@@ -1414,7 +1288,7 @@ html.lt-ie9 #wsu-signature {
   #spine.cropped {
     height: 198px !important;
     min-height: 198px !important;
-    position: absolute;
+    position: absolute !important;
     top: 0 !important;
     /* ### Cropped and Scrolled */ }
     #spine.cropped #glue {
@@ -1429,7 +1303,7 @@ html.lt-ie9 #wsu-signature {
     #spine.cropped.skimmed:not(.unshelved) {
       left: 0 !important;
       top: 0 !important;
-      position: fixed;
+      position: fixed !important;
       width: 100%;
       height: 50px;
       min-height: 0;
@@ -1472,9 +1346,6 @@ html.lt-ie9 #wsu-signature {
   .extension-signature #spine.cropped.skimmed #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal.svg"); }
 
-  .foundation-signature #spine.cropped.skimmed #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal.svg"); }
-
   #spine.cropped.skimmed.lighter #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graydarker.svg"); }
 
@@ -1492,9 +1363,6 @@ html.lt-ie9 #wsu-signature {
 
   .extension-signature #spine.cropped.skimmed.lighter #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graydarker.svg"); }
-
-  .foundation-signature #spine.cropped.skimmed.lighter #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-graydarker.svg"); }
 
   #spine.cropped.skimmed.light #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-white.svg"); }
@@ -1514,9 +1382,6 @@ html.lt-ie9 #wsu-signature {
   .extension-signature #spine.cropped.skimmed.light #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-white.svg"); }
 
-  .foundation-signature #spine.cropped.skimmed.light #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-white.svg"); }
-
   #spine.cropped.skimmed.gray #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
@@ -1535,9 +1400,6 @@ html.lt-ie9 #wsu-signature {
   .extension-signature #spine.cropped.skimmed.gray #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-graydark-graylighter.svg"); }
 
-  .foundation-signature #spine.cropped.skimmed.gray #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-graydark-graylighter.svg"); }
-
   #spine.cropped.skimmed.dark #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
@@ -1555,9 +1417,6 @@ html.lt-ie9 #wsu-signature {
 
   .extension-signature #spine.cropped.skimmed.dark #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-7d868c-graylightly.svg"); }
-
-  .foundation-signature #spine.cropped.skimmed.dark #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-7d868c-graylightly.svg"); }
 
   #spine.cropped.skimmed .darker #wsu-signature,
   #spine.cropped.skimmed .darkest #wsu-signature {
@@ -1583,10 +1442,6 @@ html.lt-ie9 #wsu-signature {
   .extension-signature #spine.cropped.skimmed.darkest #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graylighter.svg"); }
 
-  .foundation-signature #spine.cropped.skimmed.darker #wsu-signature,
-  .foundation-signature #spine.cropped.skimmed.darkest #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-crimson-gray-graylighter.svg"); }
-
   #spine.cropped.skimmed.crimson #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-white-graylightly-white.svg"); }
 
@@ -1604,9 +1459,6 @@ html.lt-ie9 #wsu-signature {
 
   .extension-signature #spine.cropped.skimmed.crimson #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-white-graylightly-white.svg"); }
-
-  .foundation-signature #spine.cropped.skimmed.crimson #wsu-signature {
-    background-image: url("//repo.wsu.edu/spine/1/marks/wsu-foundation-signature-horizontal-white-graylightly-white.svg"); }
 
   html.lt-ie9 #spine.cropped.skimmed #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); } }
