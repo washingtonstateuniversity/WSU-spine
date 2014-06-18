@@ -109,16 +109,19 @@
 <main>
 
 	<!-- @if columns='true' -->
-		@@include('content/columns.html', {})
+		@@include('blocks/switches.html', {})
 	<!-- @endif -->
-
+			
 	<!-- Responsive Sections -->
 	<section class="row side-right">
 
 		<div class="column one">
 
 			<article>
+			
+			<!-- @if columns!='true' -->
 				@@include('content/intro.html', {})
+			<!-- @endif -->
 
 			<!-- @if showLong='true' || cropped='true' -->
 				@@include('blocks/long_text_block.html', {})
@@ -130,10 +133,10 @@
 		<div class="column two">
 
 			<aside>
-				<!-- @if demo!='true' -->
+				<!-- @if demo!='true' && columns!='true' -->
 					@@include('blocks/aside-fightsong.html', {})
 				<!-- @endif -->
-				<!-- @if markup!='true' -->
+				<!-- @if markup!='true' && columns!='true' -->
 					@@include('blocks/switches.html', {})
 				<!-- @endif -->
 			</aside>
@@ -141,6 +144,10 @@
 		</div><!--/column-->
 
 	</section>
+	
+	<!-- @if columns='true' -->
+		@@include('content/columns.html', {})
+	<!-- @endif -->
 
 	<!-- @if demo='true' -->
 		@@include('content/demo.html', {})
@@ -196,8 +203,6 @@
 	
 		<ul>
 		
-		
-	
 		<!-- @if markup!='true' -->
 		@@include('blocks/nav-site-tests.html', {})
 		<!-- @endif -->
@@ -207,18 +212,13 @@
 		<!-- @endif -->
 				
 		<!-- @if navdata='true' -->
-		<li><a href="link" data-foo="bar" >About</a>
-		<!-- @endif -->
-				
-		<!-- @if navdata!='true' -->
-		<li><a href="link">Site Home</a>
+		<li><a href="link" data-foo="bar" >Data Foo</a><li>
 		<!-- @endif -->
 				
 		<!-- @if manyLinks='true' -->
 			@@include('blocks/nav_extralinks.html', {})
 		<!-- @endif -->
 		
-		</li>
 		</ul>
 	
 	</nav>
