@@ -35,8 +35,7 @@ $breaks: (
 	1386: 'max-1386',
 	1584: 'max-1584',
 	1782: 'max-1782',
-	1980: 'max-1980',
-	100: 'full'
+	1980: 'max-1980'
 	);
 
 // Campuses
@@ -46,10 +45,8 @@ $vancouver: vancouver;
 $tricities: tricities;
 $globalcampus: globalcampus;
 $extension: extension;
-$healthsciences: healthsciences;
-$foundation: foundation;
 
-$campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$foundation;
+$campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension;
 
 $locality: '//repo.wsu.edu/spine/1';
 // $locality: '';
