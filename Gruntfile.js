@@ -121,6 +121,7 @@ module.exports = function(grunt) {
 				inline: true,
 				context : {
 					DEBUG: true,
+					location : '',
 					build_version : '<%= pkg.build_version %>',
 					markup: 'skip',
 					MALFORMED : 'skip', // true or false is what is tested for
@@ -154,7 +155,8 @@ module.exports = function(grunt) {
 				dest : 'spine.html',
 				options : {
 					context : {
-						markup : 'true'
+						markup : 'true',
+						location : 'http://repo.wsu.edu/spine/1'
 					}
 				}
 			},
