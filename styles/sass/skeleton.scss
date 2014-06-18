@@ -173,11 +173,16 @@ section {
 
 
 /* ## GRID */
-.row {
+
+/* ### Row */
+
+.row:not(.boundless) {
 	width: 100%;
 	max-width: 792px;
 	}
-.spineless .row { max-width: 990px; }
+.spineless .row:not(.boundless) {
+	max-width: 990px;
+	}
 
 // @each $break, $point in $breaks { 
 //	.spineless .#{$point} .row {
@@ -185,11 +190,8 @@ section {
 //		}
 //	}
 
+/* ### Columns */
 
-.row.fifteenths,
-.row.fifths {
-	max-width: 990px;
-	}
 .row .column {
 	position: relative;
 	display: block;
@@ -199,6 +201,10 @@ section {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	}
+.row.fifteenths,
+.row.fifths {
+	max-width: 990px;
 	}
 .row.reverse .column {
 	float: right;
@@ -217,13 +223,19 @@ section {
 	margin-left: auto;
 	margin-right: auto;
 	}
-.rebound { width: 792px; }
+.rebound {
+	width: 792px;
+	}
 .side-right .rebound {
 	width: 594px;
 	}
 .spineless .rebound,
 .fifteenths .rebound,
-.fifths .rebound { width: 990px; }
+.fifths .rebound {
+	width: 990px;
+	}
+	
+/* ## LAYOUTS */
 
 $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','margin-right','triptych','quarters','eighths';
 
@@ -291,8 +303,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 .fluid	.row.side-left .column.one { width: 33%; }
 
 
-/* I.4.1 NESTING
--------------------------------------------------------- */
+/* ### Nesting */
 
 .row.single row.halves .column { width: 396px; }
 .fluid .row.single .halves .column { width: 50%; }
@@ -323,85 +334,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	width: 792px;
 	}
 
-
-
-/* ## Clearing
--------------------------------------------------------- */
-
-/* Automatic Clearing (awesome but questionable) */
-
-/*
-.row.halves .column:nth-of-type(2n),
-.row.quarters .column:nth-of-type(4n) {
-	clear: both;
-	}
-.row.halves .row .column:nth-of-type(2n),
-.row.quarters .row .column:nth-of-type(4n) {
-	clear: none;
-	}
-*/
-
-
-
-/* ## Columnar Units
--------------------------------------------------------- */
-
-/* ### twelfths */
-
-@include twelfths-pixels;
-
-.fluid {
-
-	@include twelfths-percents;
-
-	}
-
-/* ### Fifteenths Deprecated */
-
-@include fifteenths-pixels;
-
-.fluid {
-
-	@include fifteenths-percents;
-
-	}
-
-/* I.4.3 Spineless
--------------------------------------------------------- */
-.row.fifths .column { width: 198px; }
-.fluid .row.fifths .column { width: 20%; }
-
-
-/* I.5.0  CONTENT
--------------------------------------------------------- */
-
-.column > article,
-.column > aside {
-	padding: 2em 2em 1em 2em;
-	}
-.column > article ~ article {
-	padding: .75em 2em;
-	}
-.column > article ~ article p {
-	padding-bottom: 0px;
-	}
-.column > aside {
-	padding: .75em 2em;
-	}
-.column > aside > header {
-	font-size: 1.3em;
-	font-weight: bold;
-	padding-top: 20px;
-	padding-bottom: 5px;
-	}
-.column > aside ul li {
-	list-style: none;
-	padding: 5px 0px;
-	margin: 0px;
-	border-top: 1px gray dotted;
-	}
-
-/* ## Spacing
+/* ### Spacing
 -------------------------------------------------------- */
 
 $default: 2em;
@@ -499,7 +432,9 @@ $spacing: $default, $wide;
 .halves.gutter .column:nth-of-type(even) { padding-left: 1em; padding-right: 2em; }
 
 .side-right.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(odd) {  padding-left: 4em; padding-right: 2em; }
+.halves.gutter.wide .column:nth-of-type(odd) {
+	padding-left: 4em;
+	padding-right: 2em; }
 .side-right.gutter.wide .column:nth-of-type(even),
 .halves.gutter.wide .column:nth-of-type(even) { padding-left: 2em; padding-right: 4em; } 
 
@@ -520,6 +455,85 @@ $spacing: $default, $wide;
 .fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
 
 
+/* ## Clearing
+-------------------------------------------------------- */
+
+/* Automatic Clearing (awesome but questionable) */
+
+/*
+.row.halves .column:nth-of-type(2n),
+.row.quarters .column:nth-of-type(4n) {
+	clear: both;
+	}
+.row.halves .row .column:nth-of-type(2n),
+.row.quarters .row .column:nth-of-type(4n) {
+	clear: none;
+	}
+*/
+
+
+
+/* ## Columnar Units
+-------------------------------------------------------- */
+
+/* ### twelfths */
+
+@include twelfths-pixels;
+
+.fluid {
+
+	@include twelfths-percents;
+
+	}
+
+/* ### Fifteenths Deprecated */
+
+@include fifteenths-pixels;
+
+.fluid {
+
+	@include fifteenths-percents;
+
+	}
+
+/* I.4.3 Spineless
+-------------------------------------------------------- */
+.row.fifths .column { width: 198px; }
+.fluid .row.fifths .column { width: 20%; }
+
+
+
+
+
+
+/* I.5.0  CONTENT
+-------------------------------------------------------- */
+
+.column > article,
+.column > aside {
+	padding: 2em 2em 1em 2em;
+	}
+.column > article ~ article {
+	padding: .75em 2em;
+	}
+.column > article ~ article p {
+	padding-bottom: 0px;
+	}
+.column > aside {
+	padding: .75em 2em;
+	}
+.column > aside > header {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	}
+.column > aside ul li {
+	list-style: none;
+	padding: 5px 0px;
+	margin: 0px;
+	border-top: 1px gray dotted;
+	}
 
 /* Block Level Styles
 -------------------------------------------------------- */

@@ -229,17 +229,15 @@ section {
   clear: both; }
 
 /* ## GRID */
-.row {
+/* ### Row */
+.row:not(.boundless) {
   width: 100%;
   max-width: 792px; }
 
-.spineless .row {
+.spineless .row:not(.boundless) {
   max-width: 990px; }
 
-.row.fifteenths,
-.row.fifths {
-  max-width: 990px; }
-
+/* ### Columns */
 .row .column {
   position: relative;
   display: block;
@@ -249,6 +247,10 @@ section {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+.row.fifteenths,
+.row.fifths {
+  max-width: 990px; }
 
 .row.reverse .column {
   float: right; }
@@ -278,6 +280,7 @@ section {
 .fifths .rebound {
   width: 990px; }
 
+/* ## LAYOUTS */
 /* single */
 .row.single .column {
   width: 792px; }
@@ -380,8 +383,7 @@ section {
 .fluid .row.side-left .column.one {
   width: 33%; }
 
-/* I.4.1 NESTING
--------------------------------------------------------- */
+/* ### Nesting */
 .row.single row.halves .column {
   width: 396px; }
 
@@ -428,6 +430,148 @@ section {
 .row .column.row.single,
 .row .column.row.single .column {
   width: 792px; }
+
+/* ### Spacing
+-------------------------------------------------------- */
+/* ### Margins (Uses padding) */
+.marginalize .column,
+.marginalized {
+  padding: 2em; }
+
+.marginalize-top .column,
+.marginalized-top {
+  padding-top: 2em; }
+
+.marginalize-right .column,
+.marginalized-right {
+  padding-right: 2em; }
+
+.marginalize-bottom .column,
+.marginalized-bottom {
+  padding-bottom: 2em; }
+
+.marginalize-left .column,
+.marginalized-left {
+  padding-left: 2em; }
+
+.marginalize.wide .column,
+.marginalized.wide {
+  padding-left: 4em;
+  padding-right: 4em; }
+
+.marginalize-right.wide .column,
+.marginalized-right.wide {
+  padding-right: 4em; }
+
+.marginalize-left.wide .column,
+.marginalized-left.wide {
+  padding-left: 4em; }
+
+.marginalize.narrow .column,
+.marginalized.narrow {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.marginalize-right.narrow .column,
+.marginalized-right.narrow {
+  padding-right: 1em; }
+
+.marginalize-left.narrow .column,
+.marginalized-left.narrow {
+  padding-left: 1em; }
+
+.marginalize.tall .column,
+.marginalized.tall {
+  padding-top: 4em;
+  padding-bottom: 4em; }
+
+.marginalize-top.tall .column,
+.marginalized-top.tall {
+  padding-top: 4em; }
+
+.marginalize-bottom.tall .column,
+.marginalized-bottom.tall {
+  padding-bottom: 4em; }
+
+.marginalize.short .column,
+.marginalized.short {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.marginalize-top.short .column,
+.marginalized-top.short {
+  padding-top: 1em; }
+
+.marginalize-bottom.short .column,
+.marginalized-bottom.short {
+  padding-bottom: 1em; }
+
+/* ### Gutters */
+.gutter .column,
+.guttered {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.guttered.wide {
+  padding-left: 4em;
+  padding-right: 4em; }
+
+.single.gutter .column {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.single.gutter.wide .column {
+  padding-left: 4em;
+  padding-right: 4em; }
+
+.side-right.gutter .column:nth-of-type(odd),
+.halves.gutter .column:nth-of-type(odd) {
+  padding-left: 2em;
+  padding-right: 1em; }
+
+.side-right.gutter .column:nth-of-type(even),
+.halves.gutter .column:nth-of-type(even) {
+  padding-left: 1em;
+  padding-right: 2em; }
+
+.side-right.gutter.wide .column:nth-of-type(odd),
+.halves.gutter.wide .column:nth-of-type(odd) {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.side-right.gutter.wide .column:nth-of-type(even),
+.halves.gutter.wide .column:nth-of-type(even) {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.thirds.gutter .column:nth-of-type(3n+1) {
+  padding-left: 2em;
+  padding-right: 1em; }
+.thirds.gutter .column:nth-of-type(3n+2) {
+  padding-left: 1em;
+  padding-right: 1em; }
+.thirds.gutter .column:nth-of-type(3n+3) {
+  padding-left: 1em;
+  padding-right: 2em; }
+
+.thirds.gutter.wide .column:nth-of-type(3n+1) {
+  padding-left: 4em;
+  padding-right: 2em; }
+.thirds.gutter.wide .column:nth-of-type(3n+2) {
+  padding-left: 2em;
+  padding-right: 2em; }
+.thirds.gutter.wide .column:nth-of-type(3n+3) {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.fifths.gutter .column {
+  padding: 1em; }
+
+.fifths.gutter .column:nth-of-type(5n+1) {
+  padding-left: 2em; }
+
+.fifths.gutter .column:nth-of-type(5n+5) {
+  padding-right: 2em; }
 
 /* ## Clearing
 -------------------------------------------------------- */
@@ -887,148 +1031,6 @@ section {
   padding: 5px 0px;
   margin: 0px;
   border-top: 1px gray dotted; }
-
-/* ## Spacing
--------------------------------------------------------- */
-/* ### Margins (Uses padding) */
-.marginalize .column,
-.marginalized {
-  padding: 2em; }
-
-.marginalize-top .column,
-.marginalized-top {
-  padding-top: 2em; }
-
-.marginalize-right .column,
-.marginalized-right {
-  padding-right: 2em; }
-
-.marginalize-bottom .column,
-.marginalized-bottom {
-  padding-bottom: 2em; }
-
-.marginalize-left .column,
-.marginalized-left {
-  padding-left: 2em; }
-
-.marginalize.wide .column,
-.marginalized.wide {
-  padding-left: 4em;
-  padding-right: 4em; }
-
-.marginalize-right.wide .column,
-.marginalized-right.wide {
-  padding-right: 4em; }
-
-.marginalize-left.wide .column,
-.marginalized-left.wide {
-  padding-left: 4em; }
-
-.marginalize.narrow .column,
-.marginalized.narrow {
-  padding-left: 1em;
-  padding-right: 1em; }
-
-.marginalize-right.narrow .column,
-.marginalized-right.narrow {
-  padding-right: 1em; }
-
-.marginalize-left.narrow .column,
-.marginalized-left.narrow {
-  padding-left: 1em; }
-
-.marginalize.tall .column,
-.marginalized.tall {
-  padding-top: 4em;
-  padding-bottom: 4em; }
-
-.marginalize-top.tall .column,
-.marginalized-top.tall {
-  padding-top: 4em; }
-
-.marginalize-bottom.tall .column,
-.marginalized-bottom.tall {
-  padding-bottom: 4em; }
-
-.marginalize.short .column,
-.marginalized.short {
-  padding-left: 1em;
-  padding-right: 1em; }
-
-.marginalize-top.short .column,
-.marginalized-top.short {
-  padding-top: 1em; }
-
-.marginalize-bottom.short .column,
-.marginalized-bottom.short {
-  padding-bottom: 1em; }
-
-/* ### Gutters */
-.gutter .column,
-.guttered {
-  padding-left: 2em;
-  padding-right: 2em; }
-
-.guttered.wide {
-  padding-left: 4em;
-  padding-right: 4em; }
-
-.single.gutter .column {
-  padding-left: 2em;
-  padding-right: 2em; }
-
-.single.gutter.wide .column {
-  padding-left: 4em;
-  padding-right: 4em; }
-
-.side-right.gutter .column:nth-of-type(odd),
-.halves.gutter .column:nth-of-type(odd) {
-  padding-left: 2em;
-  padding-right: 1em; }
-
-.side-right.gutter .column:nth-of-type(even),
-.halves.gutter .column:nth-of-type(even) {
-  padding-left: 1em;
-  padding-right: 2em; }
-
-.side-right.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(odd) {
-  padding-left: 4em;
-  padding-right: 2em; }
-
-.side-right.gutter.wide .column:nth-of-type(even),
-.halves.gutter.wide .column:nth-of-type(even) {
-  padding-left: 2em;
-  padding-right: 4em; }
-
-.thirds.gutter .column:nth-of-type(3n+1) {
-  padding-left: 2em;
-  padding-right: 1em; }
-.thirds.gutter .column:nth-of-type(3n+2) {
-  padding-left: 1em;
-  padding-right: 1em; }
-.thirds.gutter .column:nth-of-type(3n+3) {
-  padding-left: 1em;
-  padding-right: 2em; }
-
-.thirds.gutter.wide .column:nth-of-type(3n+1) {
-  padding-left: 4em;
-  padding-right: 2em; }
-.thirds.gutter.wide .column:nth-of-type(3n+2) {
-  padding-left: 2em;
-  padding-right: 2em; }
-.thirds.gutter.wide .column:nth-of-type(3n+3) {
-  padding-left: 2em;
-  padding-right: 4em; }
-
-.fifths.gutter .column {
-  padding: 1em; }
-
-.fifths.gutter .column:nth-of-type(5n+1) {
-  padding-left: 2em; }
-
-.fifths.gutter .column:nth-of-type(5n+5) {
-  padding-right: 2em; }
 
 /* Block Level Styles
 -------------------------------------------------------- */
