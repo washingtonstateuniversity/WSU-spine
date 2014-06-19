@@ -46,6 +46,9 @@
 		.spine-actions {
 			padding-top: 50px;
 			}
+		#wsu-actions section {
+			width: 298px;
+			}
 		.spine-navigation {
 			padding-bottom: 100px;
 			}
@@ -90,8 +93,8 @@
 		#wsu-actions {
 			padding-top: 0px;
 			}
-		#glue {
-			margin-top: 0px;
+		#wsu-actions section {
+			width: 298px;
 			}
 		
 		}	
@@ -130,10 +133,7 @@
     only screen
     and (device-width: 768px)
     and (device-height: 1024px)
-    and (orientation:landscape),
-    
-    only screen
-    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation:landscape)
 
 	{
     
@@ -144,7 +144,8 @@
      
 	    #scroll {
 		    overflow-y: scroll;
-		    position: fixed;
+		    -webkit-overflow-scrolling: touch;
+		    position: absolute;
 		    top: 50px;
 		    bottom: 0px;
 		    width: 298px;
@@ -154,6 +155,10 @@
 		#scroll {
 			-webkit-transition: left 0.2s ease-in-out;
 			left: 0;
+			}
+			
+		#glue:before {
+			top: 50px;
 			}
 	
 	    footer {

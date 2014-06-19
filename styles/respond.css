@@ -94,6 +94,8 @@
       height: 50px; }
     #binder:not(.fluid) #spine .spine-actions {
       padding-top: 50px; }
+    #binder:not(.fluid) #spine #wsu-actions section {
+      width: 298px; }
     #binder:not(.fluid) #spine .spine-navigation {
       padding-bottom: 100px; }
     #binder:not(.fluid) #spine nav ul li {
@@ -389,6 +391,8 @@
       height: 50px; }
     #binder.fluid #spine .spine-actions {
       padding-top: 50px; }
+    #binder.fluid #spine #wsu-actions section {
+      width: 298px; }
     #binder.fluid #spine .spine-navigation {
       padding-bottom: 100px; }
     #binder.fluid #spine nav ul li {
@@ -660,8 +664,8 @@
       height: 198px; }
     #binder.fixed #spine #wsu-actions {
       padding-top: 0px; }
-    #binder.fixed #spine #glue {
-      margin-top: 0px; }
+    #binder.fixed #spine #wsu-actions section {
+      width: 298px; }
   #binder.fixed .row.side-right .column {
     width: 100%; }
   #binder.fixed #wsu-signature {
@@ -1195,13 +1199,14 @@
     background-size: 260px auto !important;
     background-position: center 60% !important; } }
 /* IOS fix for unshelved spine */
-@media only screen and (max-device-width: 480px) and (orientation: portrait), only screen and (max-device-width: 480px) and (orientation: landscape), only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait), only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape), only screen and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-device-width: 480px) and (orientation: portrait), only screen and (max-device-width: 480px) and (orientation: landscape), only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait), only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
   #spine.unshelved {
     top: 0px !important;
     min-height: 0 !important; }
     #spine.unshelved #scroll {
       overflow-y: scroll;
-      position: fixed;
+      -webkit-overflow-scrolling: touch;
+      position: absolute;
       top: 50px;
       bottom: 0px;
       width: 298px;
@@ -1209,6 +1214,8 @@
     #spine.unshelved #scroll {
       -webkit-transition: left 0.2s ease-in-out;
       left: 0; }
+    #spine.unshelved #glue:before {
+      top: 50px; }
     #spine.unshelved footer {
       position: relative !important; }
     #spine.unshelved #wsu-actions {
