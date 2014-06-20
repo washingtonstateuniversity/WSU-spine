@@ -401,20 +401,12 @@
 			$("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
 			$("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
 			$("#spine .active").not(":has(.active)").addClass("dogeared");
-	
-			// Disclosure
-			$("#spine nav li.parent > a").on("click",function(e) {
-				e.preventDefault();
-				var tar=$(this);
-				tar.parent("li").siblings().removeClass("opened");
-				tar.parent("li").toggleClass("opened");
-			});
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
 				var tar, title, classes, url;
 				tar=$(this);
-				
+
 				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
 				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
 				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
@@ -429,6 +421,15 @@
 					tar.clone(true,true).appendTo( tar.parent("li").find("ul .overview:first") );
 					tar.parent("li").find("ul .overview:first a").html(title);
 				}
+				
+				// Disclosure
+				tar.on("click",function(e) { e.preventDefault();
+				var tar=$(this);
+				tar.parent("li").siblings().removeClass("opened");
+				tar.parent("li").toggleClass("opened");
+			})
+				
+				
 			});
 			// External Links in nav
 			// this shouldn"t be done this way
