@@ -366,69 +366,6 @@ $spacing: $default, $wide;
 
 /* ### Margins (Uses padding) */
 
-.marginalize .column,
-.marginalized {
-	padding: $default; }
-.marginalize-top .column,
-.marginalized-top {
-	padding-top: $default; }
-.marginalize-right .column,
-.marginalized-right {
-	padding-right: $default; }
-.marginalize-bottom .column,
-.marginalized-bottom {
-	padding-bottom: $default; }
-.marginalize-left .column,
-.marginalized-left {
-	padding-left: $default; }
-
-// Wide
-.marginalize.wide .column,
-.marginalized.wide {
-	padding-left: $wide;
-	padding-right: $wide; }
-.marginalize-right.wide .column,
-.marginalized-right.wide {
-	padding-right: $wide; }
-.marginalize-left.wide .column,
-.marginalized-left.wide {
-	padding-left: $wide; }
-
-// Narrow
-.marginalize.narrow .column,
-.marginalized.narrow {
-	padding-left: $narrow;
-	padding-right: $narrow; }
-.marginalize-right.narrow .column,
-.marginalized-right.narrow {
-	padding-right: $narrow; }
-.marginalize-left.narrow .column,
-.marginalized-left.narrow {
-	padding-left: $narrow; }
-
-// Tall
-.marginalize.tall .column,
-.marginalized.tall {
-	padding-top: $tall;
-	padding-bottom: $tall; }
-.marginalize-top.tall .column,
-.marginalized-top.tall {
-	padding-top: $tall; }
-.marginalize-bottom.tall .column,
-.marginalized-bottom.tall {
-	padding-bottom: $tall; }
-
-// Short
-.marginalize.short .column,
-.marginalized.short {
-	padding-left: $short;
-	padding-right: $short; }
-.marginalize-top.short .column,
-.marginalized-top.short {
-	padding-top: $short; }
-.marginalize-bottom.short .column,
-.marginalized-bottom.short {
-	padding-bottom: $short; }
 
 
 /* ### Gutters */
