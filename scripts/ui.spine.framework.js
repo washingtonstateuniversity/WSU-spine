@@ -423,10 +423,11 @@
 				}
 				
 				// Disclosure
-				tar.on("click",function(e) { e.preventDefault();
-				var tar=$(this);
-				tar.parent("li").siblings().removeClass("opened");
-				tar.parent("li").toggleClass("opened");
+				tar.on("click",function(e) { 
+					e.preventDefault();
+					tar.parent("li").siblings().removeClass("opened");
+					tar.parent("li").toggleClass("opened");
+				}
 			})
 				
 				
