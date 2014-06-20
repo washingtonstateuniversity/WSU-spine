@@ -103,7 +103,12 @@
 
 <!-- WRAPPING -->
 <div id="jacket">
-<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif -->">
+
+<!-- @if cropped='true' -->
+	@@include('content/cropped.html', {})
+<!-- @endif -->
+
+<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif -->">
 
 <!-- CONTENT -->
 <main>

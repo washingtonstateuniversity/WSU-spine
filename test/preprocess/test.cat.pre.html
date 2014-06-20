@@ -116,7 +116,27 @@ h3 {
 
 <!-- WRAPPING -->
 <div id="jacket">
-<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif -->">
+
+<!-- @if cropped='true' -->
+	<style>
+
+#billboard {
+	height: 600px;
+	background-image: url('/test/tests/images/cub.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100% auto;
+	}
+
+
+</style>
+
+<div id="billboard">
+
+</div>
+<!-- @endif -->
+
+<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif -->">
 
 <!-- CONTENT -->
 <main>
