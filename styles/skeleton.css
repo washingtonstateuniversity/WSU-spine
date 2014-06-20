@@ -533,28 +533,28 @@ section {
   padding-right: 2em; }
 
 /* .wide */
-.gutter .column.wide {
+.gutter.wide .column {
   padding-left: 2em;
   padding-right: 2em; }
 
-.gutter .column.wide:first-of-type {
+.gutter.wide .column:first-of-type {
   padding-left: 4em;
   padding-right: 2em; }
 
-.gutter .column.wide:last-of-type {
+.gutter.wide .column:last-of-type {
   padding-left: 2em;
   padding-right: 4em; }
 
 /* .narrow */
-.gutter .column.narrow {
+.gutter.narrow .column {
   padding-left: 0.5em;
   padding-right: 0.5em; }
 
-.gutter .column.narrow:first-of-type {
+.gutter.narrow .column:first-of-type {
   padding-left: 1em;
   padding-right: 0.5em; }
 
-.gutter .column.narrow:last-of-type {
+.gutter.narrow .column:last-of-type {
   padding-left: 0.5em;
   padding-right: 1em; }
 
