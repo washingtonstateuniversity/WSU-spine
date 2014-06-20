@@ -1,5 +1,11 @@
 @mixin marginalize {
 
+	$default: 2em;
+	$wide: $default * 2;
+	$tall: $default * 2;
+	$narrow: $default / 2;
+	$short: $default / 2;
+
 	.marginalize .column,
 	.marginalized {
 		padding: $default; }
@@ -16,13 +22,13 @@
 	.marginalized-left {
 		padding-left: $default; }
 	
-	// Default Y
+	// Default Ends
 	.marginalize-ends .column,
 	.marginalized-ends {
 		padding-top: $default;
 		padding-bottom: $default; }
 		
-	// Default X
+	// Default Sides
 	.marginalize-sides .column,
 	.marginalized-sides {
 		padding-left: $default;
@@ -33,13 +39,13 @@
 	.marginalized-sides.wide {
 		padding-left: $wide;
 		padding-right: $wide; }
-	.marginalize-side-right.wide .column,
-	.marginalized-side-right.wide {
+	.marginalize-right.wide .column,
+	.marginalized-right.wide {
 		padding-right: $wide; }
-	.marginalize-side-left.wide .column,
-	.marginalized-side-left.wide {
+	.marginalize-left.wide .column,
+	.marginalized-left.wide {
 		padding-left: $wide; }
-	
+
 	// Narrow
 	.marginalize-sides.narrow .column,
 	.marginalized-sides.narrow {
