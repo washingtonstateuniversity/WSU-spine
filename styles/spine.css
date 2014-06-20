@@ -43,8 +43,8 @@
   content: " ";
   min-height: 100%;
   position: absolute;
-  xxdisplay: none;
-  width: 198px; }
+  width: 198px;
+  visibility: visible; }
 
 .bleed #glue:before {
   left: -802px;
