@@ -532,6 +532,49 @@ section {
   padding-left: 1em;
   padding-right: 2em; }
 
+.halves.gutter .column.one,
+.side-left.gutter .column.one,
+.side-right.gutter .column.one {
+  padding-left: 2em;
+  padding-right: 1em; }
+
+.halves.gutter .column.two,
+.side-left.gutter .column.two,
+.side-right.gutter .column.two {
+  padding-left: 1em;
+  padding-right: 2em; }
+
+.thirds.gutter .column.one,
+.triptych.gutter .column.one {
+  padding-left: 2em;
+  padding-right: 1em; }
+
+.thirds.gutter .column.two,
+.triptych.gutter .column.two {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.thirds.gutter .column.three,
+.triptych.gutter .column.three {
+  padding-left: 1em;
+  padding-right: 2em; }
+
+.quarters.gutter .column.one {
+  padding-left: 2em;
+  padding-right: 1em; }
+
+.quarters.gutter .column.two {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.quarters.gutter .column.three {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.quarters.gutter .column {
+  padding-left: 1em;
+  padding-right: 2em; }
+
 /* .wide */
 .gutter.wide .column {
   padding-left: 2em;
@@ -542,6 +585,49 @@ section {
   padding-right: 2em; }
 
 .gutter.wide .column:last-of-type {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.halves.gutter.wide .column.one,
+.side-left.gutter.wide .column.one,
+.side-right.gutter.wide .column.one {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.halves.gutter.wide .column.two,
+.side-left.gutter.wide .column.two,
+.side-right.gutter.wide .column.two {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.thirds.gutter.wide .column.one,
+.triptych.gutter.wide .column.one {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.thirds.gutter.wide .column.two,
+.triptych.gutter.wide .column.two {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.thirds.gutter.wide .column.three,
+.triptych.gutter.wide .column.three {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.quarters.gutter.wide .column.one {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.quarters.gutter.wide .column.two {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.quarters.gutter.wide .column.three {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.quarters.gutter.wide .column {
   padding-left: 2em;
   padding-right: 4em; }
 
@@ -558,6 +644,54 @@ section {
   padding-left: 0.5em;
   padding-right: 1em; }
 
+.halves.gutter.narrow .column.one,
+.side-left.gutter.narrow .column.one,
+.side-right.gutter.narrow .column.one {
+  padding-left: 1em;
+  padding-right: 0.5em; }
+
+.halves.gutter.narrow .column.two,
+.side-left.gutter.narrow .column.two,
+.side-right.gutter.narrow .column.two {
+  padding-left: 0.5em;
+  padding-right: 1em; }
+
+.thirds.gutter.narrow .column.one,
+.triptych.gutter.narrow .column.one {
+  padding-left: 1em;
+  padding-right: 0.5em; }
+
+.thirds.gutter.narrow .column.two,
+.triptych.gutter.narrow .column.two {
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
+
+.thirds.gutter.narrow .column.three,
+.triptych.gutter.narrow .column.three {
+  padding-left: 0.5em;
+  padding-right: 1em; }
+
+.quarters.gutter.narrow .column.one {
+  padding-left: 1em;
+  padding-right: 0.5em; }
+
+.quarters.gutter.narrow .column.two {
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
+
+.quarters.gutter.narrow .column.three {
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
+
+.quarters.gutter.narrow .column {
+  padding-left: 0.5em;
+  padding-right: 1em; }
+
+/*
+	.fifths.gutter .column { padding: 1em; }
+	.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
+	.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
+*/
 /* ## GRID  */
 /* ### twelfths */
 .one-twelfths, .twelfths-1 {

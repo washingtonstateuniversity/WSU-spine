@@ -1,5 +1,7 @@
 @mixin gutter {
 
+
+
 $gutters: (
 	'': 2em,
 	'.wide': 4em,
@@ -9,7 +11,7 @@ $gutters: (
 @each $gutter, $space in $gutters {
 
 	/* #{$gutter} */
-	
+
 	.gutter#{$gutter} .column {
 		padding-left: $space/2;
 		padding-right: $space/2; }
@@ -19,7 +21,60 @@ $gutters: (
 	.gutter#{$gutter} .column:last-of-type{
 		padding-left: $space/2;
 		padding-right: $space; }
+	
+	.halves.gutter#{$gutter} .column.one,
+	.side-left.gutter#{$gutter} .column.one,
+	.side-right.gutter#{$gutter} .column.one {
+		padding-left: $space;
+		padding-right: ($space/2);
+		}
+	.halves.gutter#{$gutter} .column.two,
+	.side-left.gutter#{$gutter} .column.two,
+	.side-right.gutter#{$gutter} .column.two {
+		padding-left: ($space/2);
+		padding-right: $space;
+		}
+	
+	.thirds.gutter#{$gutter} .column.one,
+	.triptych.gutter#{$gutter} .column.one {
+		padding-left: $space;
+		padding-right: $space/2;
+		}
+	.thirds.gutter#{$gutter} .column.two,
+	.triptych.gutter#{$gutter} .column.two {
+		padding-left: $space/2;
+		padding-right: $space/2;
+		}
+	.thirds.gutter#{$gutter} .column.three,
+	.triptych.gutter#{$gutter} .column.three {
+		padding-left: $space/2;
+		padding-right: $space;
+		}
+	
+	.quarters.gutter#{$gutter} .column.one {
+		padding-left: $space;
+		padding-right: $space/2;
+		}
+	.quarters.gutter#{$gutter} .column.two {
+		padding-left: $space/2;
+		padding-right: $space/2;
+		}
+	.quarters.gutter#{$gutter} .column.three {
+		padding-left: $space/2;
+		padding-right: $space/2;
+		}
+	.quarters.gutter#{$gutter} .column {
+		padding-left: $space/2;
+		padding-right: $space;
+		}
 		
 	}
+
 	
+	/*
+		.fifths.gutter .column { padding: 1em; }
+		.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
+		.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
+	*/
+
 	}
