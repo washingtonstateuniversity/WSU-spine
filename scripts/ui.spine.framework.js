@@ -423,14 +423,12 @@
 				}
 				
 				// Disclosure
-				tar.on("click",function(e) { 
+				tar.on("click",function(e) {
 					e.preventDefault();
 					tar.parent("li").siblings().removeClass("opened");
 					tar.parent("li").toggleClass("opened");
-				}
-			})
-				
-				
+				});
+
 			});
 			// External Links in nav
 			// this shouldn"t be done this way
