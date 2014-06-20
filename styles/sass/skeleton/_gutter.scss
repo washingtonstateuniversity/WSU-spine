@@ -10,13 +10,13 @@ $gutters: (
 
 	/* #{$gutter} */
 	
-	.gutter .column#{$gutter} {
+	.gutter#{$gutter} .column {
 		padding-left: $space/2;
 		padding-right: $space/2; }
-	.gutter .column#{$gutter}:first-of-type{
+	.gutter#{$gutter} .column:first-of-type{
 		padding-left: $space;
 		padding-right: $space/2; }
-	.gutter .column#{$gutter}:last-of-type{
+	.gutter#{$gutter} .column:last-of-type{
 		padding-left: $space/2;
 		padding-right: $space; }
 		
