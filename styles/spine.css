@@ -1288,8 +1288,8 @@ html.lt-ie9 #wsu-signature {
   #spine.cropped {
     height: 198px !important;
     min-height: 198px !important;
-    position: absolute !important;
     top: 0 !important;
+    left: auto !important;
     /* ### Cropped and Scrolled */ }
     #spine.cropped #glue {
       width: 198px;
@@ -1303,7 +1303,6 @@ html.lt-ie9 #wsu-signature {
     #spine.cropped.skimmed:not(.unshelved) {
       left: 0 !important;
       top: 0 !important;
-      position: fixed !important;
       width: 100%;
       height: 50px;
       min-height: 0;
@@ -1316,7 +1315,7 @@ html.lt-ie9 #wsu-signature {
         padding-top: 0px;
         padding-bottom: 0px; }
       #spine.cropped.skimmed:not(.unshelved) #wsu-signature {
-        background-position: center 14px;
+        background-position: center 12px;
         background-size: auto 30px;
         height: 49px; }
       #spine.cropped.skimmed:not(.unshelved) #wsu-actions {
