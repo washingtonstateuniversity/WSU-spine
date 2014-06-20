@@ -1,0 +1,25 @@
+@mixin gutter {
+
+$gutters: (
+	'': 2em,
+	'.wide': 4em,
+	'.narrow': 1em
+	);
+
+@each $gutter, $space in $gutters {
+
+	/* #{$gutter} */
+	
+	.gutter .column#{$gutter} {
+		padding-left: $space/2;
+		padding-right: $space/2; }
+	.gutter .column#{$gutter}:first-of-type{
+		padding-left: $space;
+		padding-right: $space/2; }
+	.gutter .column#{$gutter}:last-of-type{
+		padding-left: $space/2;
+		padding-right: $space; }
+		
+	}
+	
+	}

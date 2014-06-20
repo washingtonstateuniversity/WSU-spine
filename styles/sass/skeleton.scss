@@ -1,6 +1,8 @@
 @import 'vars/global';
 @import 'vars/colors';
 @import 'skeleton/columns';
+@import 'skeleton/gutter';
+@import 'skeleton/marginalize';
 // @import 'skeleton/grid';
 
 @charset "UTF-8";
@@ -353,84 +355,18 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	width: 792px;
 	}
 
-/* ### Spacing
--------------------------------------------------------- */
+/* ### Spacing  */
 
-$default: 2em;
-$wide: $default * 2;
-$tall: $default * 2;
-$narrow: $default / 2;
-$short: $default / 2;
+/* #### Margins (Uses padding) */
 
-$spacing: $default, $wide;
+@include marginalize;
 
-/* ### Margins (Uses padding) */
+/* #### Gutters */
+
+@include gutter;
 
 
-
-/* ### Gutters */
-
-.gutter .column,
-.guttered {
-	padding-left: 2em;
-	padding-right: 2em; }
-
-// Wide
-.guttered.wide {
-	padding-left: $wide; padding-right: $wide; }
-
-.single.gutter .column { padding-left: 2em; padding-right:  2em; } 
-.single.gutter.wide .column { padding-left: 4em; padding-right:  4em; }
-
-.side-right.gutter .column:nth-of-type(odd),
-.halves.gutter .column:nth-of-type(odd) { padding-left: 2em; padding-right:  1em; } 
-.side-right.gutter .column:nth-of-type(even),
-.halves.gutter .column:nth-of-type(even) { padding-left: 1em; padding-right: 2em; }
-
-.side-right.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(odd) {
-	padding-left: 4em;
-	padding-right: 2em; }
-.side-right.gutter.wide .column:nth-of-type(even),
-.halves.gutter.wide .column:nth-of-type(even) { padding-left: 2em; padding-right: 4em; } 
-
-
-.thirds.gutter {
-	.column:nth-of-type(3n+1) { padding-left: 2em; padding-right: 1em; } 
-	.column:nth-of-type(3n+2) { padding-left: 1em; padding-right: 1em; } 
-	.column:nth-of-type(3n+3) { padding-left: 1em; padding-right: 2em; }
-	}
-.thirds.gutter.wide {
-	.column:nth-of-type(3n+1) { padding-left: 4em; padding-right: 2em; } 
-	.column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
-	.column:nth-of-type(3n+3) { padding-left: 2em; padding-right: 4em; }
-	}
-
-.fifths.gutter .column { padding: 1em; }
-.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
-.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
-
-
-/* ## Clearing
--------------------------------------------------------- */
-
-/* Automatic Clearing (awesome but questionable) */
-
-/*
-.row.halves .column:nth-of-type(2n),
-.row.quarters .column:nth-of-type(4n) {
-	clear: both;
-	}
-.row.halves .row .column:nth-of-type(2n),
-.row.quarters .row .column:nth-of-type(4n) {
-	clear: none;
-	}
-*/
-
-
-
-/* ## Columnar Units
--------------------------------------------------------- */
+/* ## GRID  */
 
 /* ### twelfths */
 
@@ -452,8 +388,7 @@ $spacing: $default, $wide;
 
 	}
 
-/* I.4.3 Spineless
--------------------------------------------------------- */
+/* ### Spineless  */
 .row.fifths .column { width: 198px; }
 .fluid .row.fifths .column { width: 20%; }
 
