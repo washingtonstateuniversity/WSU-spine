@@ -62,7 +62,7 @@
 
   /* Shelving */
   #binder:not(.fluid) #wsu-signature {
-    background-position: center 14px;
+    background-position: center 12px;
     background-size: auto 30px;
     height: 50px;
     margin-left: 40px; }
@@ -359,7 +359,7 @@
 
   /* Shelving */
   #binder.fluid #wsu-signature {
-    background-position: center 14px;
+    background-position: center 12px;
     background-size: auto 30px;
     height: 50px;
     margin-left: 40px; }
@@ -458,7 +458,7 @@
 
   /* Signature */
   #binder.fluid #wsu-signature {
-    background-position: center 14px;
+    background-position: center 12px;
     background-size: auto 30px;
     height: 49px; }
 
@@ -875,7 +875,7 @@
   /* #### Logo */
   [class*="-signature"] #wsu-signature {
     background-size: 340px auto !important;
-    background-position: center 14px !important;
+    background-position: center 12px !important;
     margin-left: 40px !important; }
 
   /* GRID BEHAVIOR */
@@ -1023,7 +1023,7 @@
 
   /* #### Signature */
   #wsu-signature {
-    background-position: center 14px !important;
+    background-position: center 12px !important;
     background-size: auto 30px !important;
     height: 49px !important; }
 
@@ -1373,7 +1373,7 @@ html.print #spine header {
   position: relative; }
 
 html.print #wsu-signature {
-  background-position: center 14px;
+  background-position: center 12px;
   background-size: auto 30px;
   height: 49px; }
 

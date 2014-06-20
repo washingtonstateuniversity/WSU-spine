@@ -44,11 +44,11 @@
   min-height: 100%;
   position: absolute;
   xxdisplay: none;
-  width: 1000px; }
+  width: 198px; }
 
 .bleed #glue:before {
   left: -802px;
-  xxwidth: 1000px;
+  width: 1000px;
   display: block; }
 .bleed.unshelved #glue:before {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
