@@ -1,7 +1,5 @@
-/* twelfths */
-/* Fifteenths */
-/* # SKELETON */
-/* ## Reset */
+/* # Skeleton */
+/* ## RESET */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,10 +39,6 @@ q:before, q:after {
   content: '';
   content: none; }
 
-figure {
-  /* Hmmmm */
-  xxline-height: 0px; }
-
 figcaption {
   line-height: 1em; }
 
@@ -52,8 +46,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* I.2.0 DEFAULTS (feel free to override)
--------------------------------------------------------- */
+/* ## DEFAULTS */
 sup, sub {
   font-size: .7em;
   line-height: .7em; }
@@ -169,8 +162,7 @@ article img[align="right"] {
 article img[align="left"] {
   margin: 0px 10px 10px 0px; }
 
-/* Fonts
--------------------------------------------------------- */
+/* ### Fonts  */
 body {
   font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
@@ -185,14 +177,13 @@ body {
   em, i, bold, big, h1, h2, h3, h4, h5, h6 {
     font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; } }
 .wsu-icon, .wsu-icons {
-  font-family: "Spine-Icons";
+  font-family: "Spine-Icons-Extended";
   font-style: normal;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-/* Layout
--------------------------------------------------------- */
+/* ## STRUCTURE  */
 body {
   color: #5e6a71;
   background-repeat: no-repeat;
@@ -229,12 +220,12 @@ section {
   clear: both; }
 
 /* ## GRID */
-/* ### Row */
-.row:not(.boundless) {
+/* ### Rows */
+.row:not(.boundless):not(.max-width):not(.full-width) {
   width: 100%;
   max-width: 792px; }
 
-.spineless .row:not(.boundless) {
+.spineless .row:not(.boundless):not(.max-width):not(.full-width) {
   max-width: 990px; }
 
 /* ### Columns */

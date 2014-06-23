@@ -7,9 +7,9 @@
 
 @charset "UTF-8";
 
-/* # SKELETON */
+/* # Skeleton */
 
-/* ## Reset */
+/* ## RESET */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -44,9 +44,6 @@ q:before, q:after {
 	content: '';
 	content: none;
 	}
-figure { /* Hmmmm */
-	xxline-height: 0px;
-	}
 figcaption {
 	line-height: 1em;
 	}
@@ -55,8 +52,8 @@ table {
 	border-spacing: 0;
 	}
 
-/* I.2.0 DEFAULTS (feel free to override)
--------------------------------------------------------- */
+/* ## DEFAULTS */
+
 sup,sub { font-size: .7em; line-height: .7em; }
 sup { vertical-align: super; margin-top: -6px; }
 sub { vertical-align: sub; }
@@ -114,8 +111,8 @@ article img[align="left"] {
 	margin: 0px 10px 10px 0px;
 	}
 
-/* Fonts
--------------------------------------------------------- */
+/* ### Fonts  */
+
 body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 .sans { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 .serif { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
@@ -125,15 +122,14 @@ body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Ge
 }
 
 .wsu-icon, .wsu-icons {
-	font-family: "Spine-Icons";
+	font-family: "Spine-Icons-Extended";
 	font-style: normal;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	}
 
-/* Layout
--------------------------------------------------------- */
+/* ## STRUCTURE  */
 
 body {
 	color: #5e6a71;
@@ -176,13 +172,13 @@ section {
 
 /* ## GRID */
 
-/* ### Row */
+/* ### Rows */
 
-.row:not(.boundless) {
+.row:not(.boundless):not(.max-width):not(.full-width) {
 	width: 100%;
 	max-width: 792px;
 	}
-.spineless .row:not(.boundless) {
+.spineless .row:not(.boundless):not(.max-width):not(.full-width) {
 	max-width: 990px;
 	}
 
