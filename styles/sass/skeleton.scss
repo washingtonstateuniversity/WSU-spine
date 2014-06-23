@@ -1,6 +1,7 @@
 @import 'vars/global';
 @import 'vars/colors';
 @import 'skeleton/columns';
+@import 'skeleton/layouts';
 @import 'skeleton/gutter';
 @import 'skeleton/marginalize';
 // @import 'skeleton/grid';
@@ -238,89 +239,7 @@ section {
 	
 /* ## LAYOUTS */
 
-$layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','margin-right','triptych','quarters','eighths';
-
-/* single */
-
-	   .row.single .column { width: 792px; }
-.fluid .row.single .column { width: 100%; }
-
-       .column.singled { width: 792px !important; }
-.fluid .column.singled { width: 100% !important; }
-
-/* halves */
-
-	   .row.halves .column { width: 396px; }
-.fluid .row.halves .column { width: 50%; }
-
-	   .column.half { width: 396px !important; }
-.fluid .column.half { width: 50% !important; }
-
-/* thirds */
-
-	   .row.thirds .column { width: 264px; }
-.fluid .row.thirds .column { width: 33%; }
-.fluid .row.thirds .column.two { width: 34%; }
-
-	   .column.third { width: 264px !important; }
-.fluid .column.third { width: 33.33333% !important; }
-
-/* quarters */
-
-	   .row.quarters .column { width: 198px; }
-.fluid .row.quarters .column { width: 25%; }
-
-		.column.quarter { width: 198px !important; }
-.fluid 	.column.quarter { width: 25% !important; }
-
-/* Triptych */
-
-.fixed 	.row.triptych .column { width: 198px; }
-.fixed 	.row.triptych .column.two { width: 396px; }
-		.row.triptych .column { width: 25%; }
-		.row.triptych .column.two { width: 50%; }
-
-
-/* Margin - Right & Left */
-
-	.row.margin-right .column.one,
-	.row.margin-left .column.two {
-		width: 594px; }
-	.row.margin-right .column.two,
-	.row.margin-left .column.one {
-		width: 198px; }
-
-.hybrid, .fluid	{
-
-	.row.margin-right .column.one,
-	.row.margin-left .column.two {
-		width: 75%; }
-	.row.margin-right .column.two,
-	.row.margin-left .column.one {
-		width: 25%; }
-	
-	}
-
-/*  Side - Right & Left */
-
-	.row.side-right .column.one,
-	.row.side-left .column.two {
-		width: 528px; }
-	.row.side-right .column.two,
-	.row.side-left .column.one {
-		width: 264px; }
-
-.hybrid, .fluid	{
-
-	.row.side-right .column.one,
-	.row.side-left .column.two {
-		width: 67%; }
-	.row.side-right .column.two,
-	.row.side-left .column.one {
-		width: 33%; }
-
-	}
-
+@include layouts;
 
 /* ### Nesting */
 
@@ -330,6 +249,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	max-width: auto;
 	}
 
+/* single then halves */
 .row.single row.halves .column { width: 396px; }
 .fluid .row.single .halves .column { width: 50%; }
 
@@ -339,7 +259,9 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 .fluid .row.halves .halves .column { width: 50%; }
 
 /* halves then thirds */
-.row .row.thirds .column { width: 132px; }
+.row .row.thirds .column {
+	width: 132px;
+	}
 .row.quarters .row.thirds .column { width: 66px; }
 .fluid .row .row.thirds .column { width: 33%; }
 .fluid .row .row.thirds .column.two { width: 34%; }
