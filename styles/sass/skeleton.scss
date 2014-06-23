@@ -181,6 +181,8 @@ section {
 .spineless .row:not(.boundless):not(.max-width):not(.full-width) {
 	max-width: 990px;
 	}
+	
+ 
 
 // @each $break, $point in $breaks { 
 //	.spineless .#{$point} .row {
@@ -321,6 +323,12 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 
 
 /* ### Nesting */
+
+.row .row,
+.row.spineless .row {
+	width: auto;
+	max-width: auto;
+	}
 
 .row.single row.halves .column { width: 396px; }
 .fluid .row.single .halves .column { width: 50%; }
@@ -566,5 +574,6 @@ code textarea:focus {
 .marginless { margin: 0px !important; }
 .center { text-align: center; }
 .hidden { display: none; visibility: hidden; }
+.visible { visibility: visible; }
 .invisible { visibility: hidden; }
 .nowrap { white-space: nowrap; }
