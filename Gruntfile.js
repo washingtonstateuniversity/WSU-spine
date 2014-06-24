@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 				//globalOption : 'foo'
 			},
 			dev: {
-				NODE_ENV : 'DEVELOPMENT'
+				NODE_ENV : 'DEVELOPMENT',
+
 			},
 			prod : {
 				NODE_ENV : 'PRODUCTION'
@@ -321,6 +322,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-preprocess');
 	
+	
+	
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
@@ -332,9 +335,23 @@ module.exports = function(grunt) {
 								'uglify',
 								'copy',
 								'includereplace',
-								'preprocess:html'
-								//'preprocess:markup',
-								//'preprocess:demo'
+								'preprocess:html',
+								'preprocess:opensans',
+								'preprocess:columns',
+								'preprocess:tu_search_tabs',
+								'preprocess:tu_contact_malformed',
+								'preprocess:tu_contact_filled',
+								'preprocess:tu_contact_double',
+								'preprocess:tu_overly',
+								'preprocess:tu_overly_long',
+								'preprocess:tu_overly_linked',
+								'preprocess:tu_cropped',
+								'preprocess:tu_grid_fluid',
+								'preprocess:tu_grid_hybrid',
+								'preprocess:tu_grid_fixed',
+								'preprocess:tu_navdata',
+								'preprocess:markup',
+								'preprocess:demo'
 								]);	
 	
 	grunt.registerTask('dev', ['jshint',
