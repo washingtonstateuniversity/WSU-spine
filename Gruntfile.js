@@ -144,7 +144,7 @@ module.exports = function(grunt) {
 			},
 			html : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/html.html',
+				dest : 'build/<%= pkg.build_version %>/tests/html.html',
 				options : {
 					context : {
 					}
@@ -171,7 +171,7 @@ module.exports = function(grunt) {
 			},
 			opensans : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/opensans.html',
+				dest : 'build/<%= pkg.build_version %>/tests/opensans.html',
 				options : {
 					context : {
 						opensans : 'true'
@@ -180,7 +180,7 @@ module.exports = function(grunt) {
 			},
 			columns : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/columns.html',
+				dest : 'build/<%= pkg.build_version %>/tests/columns.html',
 				options : {
 					context : {
 						columns : 'true'
@@ -189,7 +189,7 @@ module.exports = function(grunt) {
 			},
 			tu_search_tabs : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/search_tabs.html',
+				dest : 'build/<%= pkg.build_version %>/tests/search_tabs.html',
 				options : {
 					context : {
 						filledSearchTab : 'true'
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
 			},
 			tu_contact_malformed : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/contact_malformed.html',
+				dest : 'build/<%= pkg.build_version %>/tests/contact_malformed.html',
 				options : {
 					context : {
 						MALFORMED : 'true'
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 			},
 			tu_contact_filled : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/contact_filled.html',
+				dest : 'build/<%= pkg.build_version %>/tests/contact_filled.html',
 				options : {
 					context : {
 						MALFORMED : 'false'
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
 			},
 			tu_contact_double : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/contact_double.html',
+				dest : 'build/<%= pkg.build_version %>/tests/contact_double.html',
 				options : {
 					context : {
 						doubledContact : 'true'
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
 			},
 			tu_navdata : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/nav-data-links.html',
+				dest : 'build/<%= pkg.build_version %>/tests/nav-data-links.html',
 				options : {
 					context : {
 						navdata : 'true'
@@ -234,7 +234,7 @@ module.exports = function(grunt) {
 			},
 			tu_overly : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/overly.html',
+				dest : 'build/<%= pkg.build_version %>/tests/overly.html',
 				options : {
 					context : {
 						manyLinks : 'true',
@@ -244,7 +244,7 @@ module.exports = function(grunt) {
 			},
 			tu_overly_long : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/overly_long.html',
+				dest : 'build/<%= pkg.build_version %>/tests/overly_long.html',
 				options : {
 					context : {
 						showLong : 'true'
@@ -253,7 +253,7 @@ module.exports = function(grunt) {
 			},
 			tu_overly_linked : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/overly_linked.html',
+				dest : 'build/<%= pkg.build_version %>/tests/overly_linked.html',
 				options : {
 					context : {
 						manyLinks : 'true'
@@ -262,7 +262,7 @@ module.exports = function(grunt) {
 			},
 			tu_cropped : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/cropped.html',
+				dest : 'build/<%= pkg.build_version %>/tests/cropped.html',
 				options : {
 					context : {
 						cropped : 'true'
@@ -271,7 +271,7 @@ module.exports = function(grunt) {
 			},
 			tu_grid_fluid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/grid_fluid.html',
+				dest : 'build/<%= pkg.build_version %>/tests/grid_fluid.html',
 				options : {
 					context : {
 						fluidGrid : 'true'
@@ -280,7 +280,7 @@ module.exports = function(grunt) {
 			},
 			tu_grid_hybrid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/grid_hybrid.html',
+				dest : 'build/<%= pkg.build_version %>/tests/grid_hybrid.html',
 				options : {
 					context : {
 						hybridGrid : 'true'
@@ -289,7 +289,7 @@ module.exports = function(grunt) {
 			},
 			tu_grid_fixed : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'test/tests/grid_fixed.html',
+				dest : 'build/<%= pkg.build_version %>/tests/grid_fixed.html',
 				options : {
 					context : {
 						fixedGrid : 'true'

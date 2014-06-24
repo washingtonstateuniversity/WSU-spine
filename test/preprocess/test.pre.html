@@ -13,15 +13,18 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 
 	<!-- STYLESHEETS -->
-<!-- @if markup!='true' -->
-	<link href="../../build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
+<!-- @if markup!='true' && demo!='true' -->
+	<link href="../spine.css" rel="stylesheet" type="text/css" />
+<!-- @endif -->
+<!-- @if demo='true' -->
+	<link href="build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 <!-- @if markup='true' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 	<!-- Your custom stylesheets here -->
 <!-- @if opensans='true' -->
-	<link href="../../build/<!-- @echo build_version -->/styles/opensans.css" rel="stylesheet" type="text/css" />
+	<link href="../styles/opensans.css" rel="stylesheet" type="text/css" />
 	<style>
 	@@include('blocks/opensans-styles.css', {})
 	</style>
@@ -79,13 +82,15 @@
 		};
 	</script>   
 
-<!-- @if markup!='true' -->
-	<script src="../../build/<!-- @echo build_version -->/spine.js"></script>
-<!-- @endif -->
-
-<!-- @if markup='true' -->
+	<!-- @if markup!='true' && demo!='true' -->
+	<script src="../spine.js"></script>
+	<!-- @endif -->
+	<!-- @if demo='true' -->
+	<script src="build/<!-- @echo build_version -->/spine.js"></script>
+	<!-- @endif -->
+	<!-- @if markup='true' -->
 	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
-<!-- @endif -->
+	<!-- @endif -->
 
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

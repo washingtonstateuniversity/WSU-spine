@@ -183,8 +183,6 @@ section {
 	max-width: 990px;
 	}
 	
- 
-
 // @each $break, $point in $breaks { 
 //	.spineless .#{$point} .row {
 //		max-width: #{$break - 198}px;
@@ -239,7 +237,13 @@ section {
 	
 /* ## LAYOUTS */
 
-@include layouts;
+@include layouts-pixels;
+
+.fluid {
+	
+	@include layouts-percents;
+	
+	}
 
 /* ### Nesting */
 
@@ -317,10 +321,6 @@ section {
 /* ### Spineless  */
 .row.fifths .column { width: 198px; }
 .fluid .row.fifths .column { width: 20%; }
-
-
-
-
 
 
 /* I.5.0  CONTENT

@@ -2,6 +2,7 @@
 @import 'vars/colors';
 @import 'respond/states';
 @import 'respond/grid';
+@import 'skeleton/layouts';
 
 #binder #spine.unshelved header:before {
 	content: "";
@@ -70,6 +71,14 @@ main {
 
 	@include shelved;
 			
+	}
+	
+/* Layout Adjustments */
+
+.hybrid {
+	
+	@include layouts-percents;
+	
 	}
 
 /* Adjust Search */

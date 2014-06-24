@@ -106,6 +106,40 @@
     #binder:not(.fluid) #spine footer {
       width: 242px; }
 
+  /* Layout Adjustments */
+  .hybrid .row.single .column {
+    width: 100%; }
+  .hybrid .row.halves .column {
+    width: 50%; }
+  .hybrid .column.half {
+    width: 50% !important; }
+  .hybrid .row.thirds .column {
+    width: 33%; }
+  .hybrid .row.thirds .column.two {
+    width: 34%; }
+  .hybrid .column.third {
+    width: 33.33333% !important; }
+  .hybrid .row.quarters .column {
+    width: 25%; }
+  .hybrid .column.quarter {
+    width: 25% !important; }
+  .hybrid .row.triptych .column {
+    width: 25%; }
+  .hybrid .row.triptych .column.two {
+    width: 50%; }
+  .hybrid .row.margin-right .column.one,
+  .hybrid .row.margin-left .column.two {
+    width: 75%; }
+  .hybrid .row.margin-right .column.two,
+  .hybrid .row.margin-left .column.one {
+    width: 25%; }
+  .hybrid .row.side-right .column.one,
+  .hybrid .row.side-left .column.two {
+    width: 67%; }
+  .hybrid .row.side-right .column.two,
+  .hybrid .row.side-left .column.one {
+    width: 33%; }
+
   /* Adjust Search */
   .spine-search input[type="text"] {
     padding-right: 18px; }

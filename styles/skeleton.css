@@ -273,74 +273,36 @@ section {
   width: 990px; }
 
 /* ## LAYOUTS */
-/* single */
 .row.single .column {
   width: 792px; }
-
-.fluid .row.single .column {
-  width: 100%; }
 
 .column.singled {
   width: 792px !important; }
 
-.fluid .column.singled {
-  width: 100% !important; }
-
-/* halves */
 .row.halves .column {
   width: 396px; }
-
-.fluid .row.halves .column {
-  width: 50%; }
 
 .column.half {
   width: 396px !important; }
 
-.fluid .column.half {
-  width: 50% !important; }
-
-/* thirds */
 .row.thirds .column {
   width: 264px; }
-
-.fluid .row.thirds .column {
-  width: 33%; }
-
-.fluid .row.thirds .column.two {
-  width: 34%; }
 
 .column.third {
   width: 264px !important; }
 
-.fluid .column.third {
-  width: 33.33333% !important; }
-
-/* quarters */
 .row.quarters .column {
   width: 198px; }
-
-.fluid .row.quarters .column {
-  width: 25%; }
 
 .column.quarter {
   width: 198px !important; }
 
-.fluid .column.quarter {
-  width: 25% !important; }
-
-/* Triptych */
 .row.triptych .column {
   width: 198px; }
 
 .row.triptych .column.two {
   width: 396px; }
 
-.fluid .row.triptych .column {
-  width: 25%; }
-.fluid .row.triptych .column.two {
-  width: 50%; }
-
-/* Margin - Right & Left */
 .row.margin-right .column.one,
 .row.margin-left .column.two {
   width: 594px; }
@@ -349,14 +311,6 @@ section {
 .row.margin-left .column.one {
   width: 198px; }
 
-.fluid .row.margin-right .column.one,
-.fluid .row.margin-left .column.two {
-  width: 75%; }
-.fluid .row.margin-right .column.two,
-.fluid .row.margin-left .column.one {
-  width: 25%; }
-
-/*  Side - Right & Left */
 .row.side-right .column.one,
 .row.side-left .column.two {
   width: 528px; }
@@ -365,6 +319,32 @@ section {
 .row.side-left .column.one {
   width: 264px; }
 
+.fluid .row.single .column {
+  width: 100%; }
+.fluid .row.halves .column {
+  width: 50%; }
+.fluid .column.half {
+  width: 50% !important; }
+.fluid .row.thirds .column {
+  width: 33%; }
+.fluid .row.thirds .column.two {
+  width: 34%; }
+.fluid .column.third {
+  width: 33.33333% !important; }
+.fluid .row.quarters .column {
+  width: 25%; }
+.fluid .column.quarter {
+  width: 25% !important; }
+.fluid .row.triptych .column {
+  width: 25%; }
+.fluid .row.triptych .column.two {
+  width: 50%; }
+.fluid .row.margin-right .column.one,
+.fluid .row.margin-left .column.two {
+  width: 75%; }
+.fluid .row.margin-right .column.two,
+.fluid .row.margin-left .column.one {
+  width: 25%; }
 .fluid .row.side-right .column.one,
 .fluid .row.side-left .column.two {
   width: 67%; }
