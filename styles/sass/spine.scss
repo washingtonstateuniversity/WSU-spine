@@ -273,6 +273,9 @@ button#shelve {
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
 		background-image: url('//repo.wsu.edu/spine/1/icons/home-crimson.svg');
 		}
+	.spine-sitenav.homeless > ul > li:first-child > a {
+		background-image: none;
+		}
 		
 	/* #### "Dogeared" Link */
 
@@ -322,8 +325,7 @@ button#shelve {
 	}
 
 
-/* ## ACTIONS 
---------------------------------------------------------------------------- */
+/* ## ACTIONS/TOOLS */
 
 .no-js #spine .spine-actions,
 html.lt-ie9 #spine .spine-actions {
@@ -419,8 +421,7 @@ html.lt-ie9 #spine .spine-actions {
 
 }
 
-/* ### Search 
---------------------------------------------------------------------------- */
+/* ### Search  */
 
 .spine-search {
 
@@ -564,8 +565,7 @@ html.lt-ie9 #spine .spine-actions {
 	  width: 1px;
 	}
 
-/* ### Contact 
---------------------------------------------------------------------------- */
+/* ### Contact  */
 
 #spine .spine-contact {
 
@@ -991,7 +991,6 @@ html.lt-ie9 #spine footer {
 	
 	{	
 	
-	/* ## Cropped */
 	#spine.cropped {
 	
 		height: 198px !important;
@@ -1013,7 +1012,7 @@ html.lt-ie9 #spine footer {
 			display: none;
 			}
 		
-		/* ### Cropped and Scrolled */
+		/* #### Cropped and Scrolled */
 		&.skimmed:not(.unshelved) {
 			
 			left: 0 !important;
