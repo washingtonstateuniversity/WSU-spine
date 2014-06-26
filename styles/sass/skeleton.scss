@@ -145,10 +145,6 @@ body {
 	width: 990px;
 	margin: 0px auto;
 	}
-#binder.fluid.folio {
-	width: 100%;
-	max-width: 1980px; /* 990 x 2 */
-	}
 main {
 	margin-left: 198px;
 	box-sizing: border-box;
@@ -247,8 +243,8 @@ section {
 
 /* ### Nesting */
 
-.row .row,
-.row.spineless .row {
+.row:not(.boundless):not(.max-width):not(.full-width) .row,
+.row.spineless:not(.boundless):not(.max-width):not(.full-width) .row {
 	width: auto;
 	max-width: auto;
 	}
@@ -293,7 +289,7 @@ section {
 
 /* #### Gutters */
 
-@include gutter;
+@include gutter(1,2);
 
 
 /* ## GRID  */
