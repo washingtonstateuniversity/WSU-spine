@@ -154,8 +154,22 @@
 					$.each($(".column", this),function(){
 						tallestBox = ($(this).outerHeight() > tallestBox) ? $(this).outerHeight() : tallestBox;
 					});
-					$(".column",this).not(".unequaled").css("min-height",tallestBox);
+					if($(window).width() <= 792) {
+						$(".column",this).not(".unequaled").css("min-height","1");
+						}
+					else {
+						$(".column",this).not(".unequaled").css("min-height",tallestBox);
+						}
 					$("section.equalize .column",this).css("min-height","auto");
+					//Would be nice to enable equalizing of child elements, requiring a height declaration
+					//if($(window).width() <= 792) {
+					//	$(".column",this).not(".unequaled").css("min-height","1").css("height","auto");
+					//	}
+					//else {
+					//	$(".column",this).not(".unequaled").css("min-height",tallestBox).css("height",tallestBox);
+					//	}
+					//$("section.equalize .column",this).css("min-height","auto").css("height","auto");
+					
 				});
 			}
 		},
