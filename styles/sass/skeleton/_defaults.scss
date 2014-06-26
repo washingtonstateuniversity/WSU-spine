@@ -1,0 +1,67 @@
+@mixin defaults {
+	
+	sup,sub { font-size: .7em; line-height: .7em; }
+	sup { vertical-align: super; margin-top: -6px; }
+	sub { vertical-align: sub; }
+	small { font-size: .8em; line-height: .8em;	}
+	nav ul li,
+	.widget ul li { list-style: none; }
+	a {
+		text-decoration: none;
+		color: #981e32;
+		}
+	a:hover { color: #c60c30; }
+	strong,b { font-weight: bold; }
+	em,i { font-style: italic; }
+	hr { border-width: 0px;
+		border-style: solid;
+		border-color: black;
+		margin: 10px 0px;
+		height: 2px;
+		background-color: rgba(93,105,112,0.50);
+		display: block;
+		clear: both;
+		}
+	h6,h5,h4,h3,h2,h1 {
+		margin: 0px 0px 3px 0px;
+		line-height: 1.1em;
+		letter-spacing: 0em;
+		font-weight: bold;
+		/* Maybe... -webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale; */
+		}
+	h1 { font-size: 2em; padding: 0px 0px .2em 0px; }
+	h2 { font-size: 1.8em; margin: 0px; padding: .5em 0px .2em 0px; }
+	h3 { font-size: 1.6em; margin: 0px; padding: .5em 0px .2em 0px; }
+	h4 { font-size: 1.4em; margin: 0px; padding: .5em 0px .2em 0px; }
+	h5 { font-size: 1.2em; margin: 0px; padding: .5em 0px .2em 0px; }
+	h6 { font-size: 1.0em; margin: 0px; padding: .5em 0px .2em 0px; }
+	p { margin: 0px; padding-bottom: .8em; }
+	blockquote { padding-bottom: .8em; }
+	ul, ol { padding-bottom: .8em; }
+	ol li { list-style: decimal; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px;  }
+	ul li { list-style: circle; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px; }
+	pre, code { font-family: "Courier New", Courier, monospace; }
+	
+	input {
+		outline: none;
+		}
+	article img[align="right"] {
+		margin: 0px 0px 1em 10px;
+		}
+	article img[align="left"] {
+		margin: 0px 10px 1em 0px;
+		}
+	
+	/* ### Fonts  */
+	
+	body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+	.sans { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+	.serif { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
+	
+	/* IE9, IE10 */
+	@media screen and (min-width:0\0) {
+	    em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+	}
+
+	}
