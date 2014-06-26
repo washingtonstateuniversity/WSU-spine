@@ -118,7 +118,7 @@
 <!-- CONTENT -->
 <main>
 
-	<!-- @if columns='true' -->
+	<!-- @if columns='true' || spacing='true' -->
 		@@include('blocks/switches.html', {})
 	<!-- @endif -->
 			
@@ -129,10 +129,10 @@
 
 			<article>
 			
-			<!-- @if columns!='true' -->
+			<!-- @if columns!='true' && spacing!='true' -->
 				@@include('content/intro.html', {})
 			<!-- @endif -->
-
+			
 			<!-- @if showLong='true' -->
 				@@include('blocks/long_text_block.html', {})
 			<!-- @endif -->
@@ -143,10 +143,10 @@
 		<div class="column two">
 
 			<aside>
-				<!-- @if demo!='true' && columns!='true' -->
+				<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
 					@@include('blocks/aside-fightsong.html', {})
 				<!-- @endif -->
-				<!-- @if markup!='true' && columns!='true' -->
+				<!-- @if markup!='true' && columns!='true' && spacing!='true' -->
 					@@include('blocks/switches.html', {})
 				<!-- @endif -->
 			</aside>
@@ -154,6 +154,10 @@
 		</div><!--/column-->
 
 	</section>
+	
+	<!-- @if spacing='true' -->
+		@@include('content/spacing.html', {})
+	<!-- @endif -->
 	
 	<!-- @if columns='true' -->
 		@@include('content/columns.html', {})
@@ -195,11 +199,11 @@
 		@@include('blocks/search_present_block.html', {})
 	<!-- @endif -->
 
-	<!-- @if MALFORMED='true' -->
+	<!-- @if malformed='true' -->
 		@@include('blocks/contact_malformed.html', {})
 	<!-- @endif -->
 
-	<!-- @if MALFORMED='false' -->
+	<!-- @if malformed='false' -->
 		<!-- NOTE: a normal working contact tab, just could have been better placed 
 			 then in the spine directly -->
 		@@include('blocks/contact_normal.html', {})
