@@ -1,7 +1,7 @@
 
 // Fixed Large
 
-@mixin grid-large {
+@mixin grid-large-controls {
 
 	/* Grid - Manual Overrides */
 	
@@ -34,7 +34,7 @@
 
 // Medium
 
-@mixin grid-medium {
+@mixin grid-medium-controls {
 	
 	/* Grid - Manual Controls */
 
@@ -67,7 +67,7 @@
 	
 // Smallish
 
-@mixin grid-smallish {
+@mixin grid-smallish-controls {
 	
 	/* Grid - Manual Controls */
 
@@ -100,58 +100,27 @@
 
 // Fixed Small
 
-@mixin grid-small {
-	
-xx.row .column {
-	/* width: 100% !important; */
-	width: 100%;
-	float: none;
-	clear: both;
-	}
-	
-
-
-/*
-.fixed .row {
-
-	&.single .column,
-	&.halves .column,
-	&.thirds .column,
-	&.triptych .column,
-	&.sidebar .column.one,
-	&.sidebar .column.two,
-	&.sideleft .column.one,
-	&.sideleft .column.two,
-	&.margin .column.one,
-	&.margin .column.two,
-	&.single .halves .column {
-		width: 100%;
-		float: none;
-		clear: both;
-		}
-		
-	}
-
-/* Unfortunately, this doesn't work --> .hybrid .row.halves *:not(.row) .column, */
-
-.hybrid,
-.fluid {
+@mixin layouts-small {
 
 	.row {
 	
 		&.single .column,
 		&.halves .column,
-		&.thirds .column.one,
+		&.thirds .column,
 		&.thirds .column.two,
-		&.thirds .column.three,
-		&.triptych .column,
+		&.triptych .column.one,
+		&.triptych .column.two,
+		&.triptych .column.three,
 		&.side-right .column.one,
-		&.side-right .column.two,
 		&.side-left .column.one,
+		&.side-right .column.two,
 		&.side-left .column.two,
 		&.margin-right .column.one,
+		&.margin-left .column.two,,
 		&.margin-right .column.two,
+		&.margin-left .column.one,
 		&.thirds .halves .column,
+		// deprecated
 		&.fifteenths .four-fifteenths,
 		&.fifteenths .five-fifteenths,
 		&.fifteenths .six-fifteenths,
@@ -161,84 +130,65 @@ xx.row .column {
 			clear: both;
 			}
 		}
-	}
 
-	.fluid .row.quarters .column {
+	.row.quarters .column {
 		width: 50%;
 		}
-	.hybrid .row.quarters .column,
-	.hybrid .row.fifteenths .two-fifteenths,
-	.hybrid .row.fifteenths .three-fifteenths {
+	//deprecated
+	.row.fifteenths .two-fifteenths,
+	.row.fifteenths .three-fifteenths {
 		width: 50%;
 		}
 		
-	.hybrid .row .row.thirds .column {
+	/* Nesting */
+	
+	.row .row.thirds .column {
 		width: 33%;
 		}
-	.hybrid .row .row.thirds .column.two {
+	.row .row.thirds .column.two {
 		width: 34%;
 		}
-	
-	
-	/* nesting */
-	.hybrid .row .row.quarters .column,
-	.fluid .row .row.quarters .column,
-	.hybrid .row .row.thirds .column,
-	.hybrid .row .row.thirds .column.two,
-	.hybrid .row .row.halves .column,
-	.hybrid .row .row.halves .column {
-		clear: none;
-		float: left;
+	.row {
+		.row {
+			&.quarters .column,
+			&.thirds .column,
+			&.thirds .column.two,
+			&.halves .column {
+				clear: none;
+				float: left;
+				}
+			}
 		}
-	
-/* Grid - Manual Controls */
-
-.at-small-max-width,
-.at-small-max-width .column {
-	max-width: 100% !important;
-	}
-.at-small-full-width,
-.at-small-full-width .column {
-	width: 100% !important;
-	}
-.at-small-half-width,
-.at-small-half-width .column {
-	width: 50% !important;
-	}
-.at-small-third-width,
-.at-small-third-width .column {
-	width: 33.3334% !important;
-	}
-.at-small-clear,
-.at-small-clear .column {
-	clear: both !important;
-	}
-.at-small-float-none,
-.at-small-float-none .column {
-	float: none !important;
-	}
-
-/* Gutters */
-.halves.gutter .column:nth-of-type(odd),
-.halves.gutter .column:nth-of-type(even) { padding: 2em 2em 0 2em; } 
-.halves.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 0 4em; }
-.halves.gutter.wide .column ~ .column { padding: 0em 4em 0 4em; }
-
-.thirds.gutter .column:nth-of-type(3n+1) { padding-left: 2em; } 
-.thirds.gutter .column:nth-of-type(3n+2) { padding-left: 2em; padding-right: 2em; } 
-.thirds.gutter .column:nth-of-type(3n+3) { padding-right: 2em; }
-
-.fifths.gutter .column { padding: 1em; }
-.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
-.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
-
-/* Gutters */
-.halves.gutter .column:nth-of-type(odd),
-.halves.gutter .column:nth-of-type(even) { padding: 2em 2em 1em 2em; } 
-.halves.gutter.wide .column:nth-of-type(odd),
-.halves.gutter.wide .column:nth-of-type(even) { padding: 4em 4em 1.5em 4em; }
-.halves.gutter.wide .column ~ .column { padding: 0em 4em 1.5em 4em; }
-	
 		
 }
+
+@mixin grid-small-controls {
+
+	/* Grid - Manual Controls */
+	
+	.at-small-max-width,
+	.at-small-max-width .column {
+		max-width: 100% !important;
+		}
+	.at-small-full-width,
+	.at-small-full-width .column {
+		width: 100% !important;
+		}
+	.at-small-half-width,
+	.at-small-half-width .column {
+		width: 50% !important;
+		}
+	.at-small-third-width,
+	.at-small-third-width .column {
+		width: 33.3334% !important;
+		}
+	.at-small-clear,
+	.at-small-clear .column {
+		clear: both !important;
+		}
+	.at-small-float-none,
+	.at-small-float-none .column {
+		float: none !important;
+		}
+
+	}
