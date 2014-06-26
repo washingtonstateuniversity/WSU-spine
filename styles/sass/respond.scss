@@ -384,9 +384,10 @@ nav a.external:after {
 	&.max-1782, &.max-1782 .row { max-width: 1782px; }
 	&.max-1980, &.max-1980 .row { max-width: 1980px; }
 	}
-	
+
+#binder.fluid,
 #binder.fluid .row {
-	width: 100% !important;
+	width: 100%;
 	}
 	
 	}
@@ -426,6 +427,7 @@ nav a.external:after {
 	&.max-1584 .row,
 	&.max-1782 .row,
 	&.max-1980 .row {
+		width: 990px;
 		max-width: 990px;
 		}
 	}
