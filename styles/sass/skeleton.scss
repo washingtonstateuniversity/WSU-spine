@@ -1,5 +1,7 @@
 @import 'vars/global';
 @import 'vars/colors';
+@import 'skeleton/reset';
+@import 'skeleton/defaults';
 @import 'skeleton/columns';
 @import 'skeleton/layouts';
 @import 'skeleton/gutter';
@@ -12,115 +14,11 @@
 
 /* ## RESET */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	font-weight: normal;
-	vertical-align: baseline;
-	}
-main, article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-	}
-body { line-height: 1; }
-ol, ul { list-style: none; }
-blockquote, q {	quotes: none; }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-	}
-figcaption {
-	line-height: 1em;
-	}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	}
+@include reset;
 
 /* ## DEFAULTS */
 
-sup,sub { font-size: .7em; line-height: .7em; }
-sup { vertical-align: super; margin-top: -6px; }
-sub { vertical-align: sub; }
-small { font-size: .8em; line-height: .8em;	}
-nav ul li,
-.widget ul li { list-style: none; }
-a {
-	text-decoration: none;
-	color: #981e32;
-	}
-a:hover { color: #c60c30; }
-strong,b { font-weight: bold; }
-em,i { font-style: italic; }
-hr { border-width: 0px;
-	border-style: solid;
-	border-color: black;
-	margin: 10px 0px;
-	height: 2px;
-	background-color: rgba(93,105,112,0.50);
-	display: block;
-	clear: both;
-	}
-h6,h5,h4,h3,h2,h1 {
-	margin: 0px 0px 3px 0px;
-	line-height: 1.1em;
-	letter-spacing: 0em;
-	font-weight: bold;
-	/* Maybe... -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale; */
-	}
-h1 { font-size: 2em; padding: 0px 0px .2em 0px; }
-h2 { font-size: 1.8em; margin: 0px; padding: .5em 0px .2em 0px; }
-h3 { font-size: 1.6em; margin: 0px; padding: .5em 0px .2em 0px; }
-h4 { font-size: 1.4em; margin: 0px; padding: .5em 0px .2em 0px; }
-h5 { font-size: 1.2em; margin: 0px; padding: .5em 0px .2em 0px; }
-h6 { font-size: 1.0em; margin: 0px; padding: .5em 0px .2em 0px; }
-p { margin: 0px; padding-bottom: .8em; }
-blockquote { padding-bottom: .8em; }
-ul, ol { padding-bottom: .8em; }
-ol li { list-style: decimal; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px;  }
-ul li { list-style: circle; margin: 0px 0px 0px 20px; padding: 0px 0px .8em 0px; }
-pre, code { font-family: "Courier New", Courier, monospace; }
-
-input {
-	outline: none;
-	}
-/* These may be too heavy-handed */
-/*article img {
-	margin: 10px;
-	}*/
-article img[align="right"] {
-	margin: 0px 0px 10px 10px;
-	}
-article img[align="left"] {
-	margin: 0px 10px 10px 0px;
-	}
-
-/* ### Fonts  */
-
-body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
-.sans { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
-.serif { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
-/* IE9, IE10 */
-@media screen and (min-width:0\0) {
-    em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
-}
+@include defaults;
 
 .wsu-icon, .wsu-icons {
 	font-family: "Spine-Icons-Extended";
@@ -143,6 +41,7 @@ body {
 	}
 #binder {
 	width: 990px;
+	xxmax-width: 990px;
 	margin: 0px auto;
 	}
 main {
@@ -151,7 +50,7 @@ main {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
-:not(.fluid) main {
+#binder:not(.fluid) main {
 	width: 792px;
 	}
 .spineless main {
