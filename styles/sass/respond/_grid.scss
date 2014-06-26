@@ -141,15 +141,16 @@
 		}
 		
 	/* Nesting */
-	
-	.row .row.thirds .column {
-		width: 33%;
-		}
-	.row .row.thirds .column.two {
-		width: 34%;
-		}
+
 	.row {
 		.row {
+		
+			&.thirds .column {
+				width: 33%;
+				}
+			&.thirds .column.two {
+				width: 34%;
+				}
 			&.quarters .column,
 			&.thirds .column,
 			&.thirds .column.two,
