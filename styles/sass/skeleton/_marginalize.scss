@@ -21,14 +21,8 @@
 	.marginalize-left .column,
 	.marginalized-left {
 		padding-left: $default; }
-	
-	// Default Ends
-	.marginalize-ends .column,
-	.marginalized-ends {
-		padding-top: $default;
-		padding-bottom: $default; }
 		
-	// Default Sides
+	// SIDES
 	.marginalize-sides .column,
 	.marginalized-sides {
 		padding-left: $default;
@@ -57,6 +51,12 @@
 	.marginalize-left.narrow .column,
 	.marginalized-left.narrow {
 		padding-left: $narrow; }
+		
+	// ENDS
+	.marginalize-ends .column,
+	.marginalized-ends {
+		padding-top: $default;
+		padding-bottom: $default; }
 	
 	// Tall
 	.marginalize-ends.tall .column,
@@ -73,8 +73,8 @@
 	// Short
 	.marginalize-ends.short .column,
 	.marginalized-ends.short {
-		padding-left: $short;
-		padding-right: $short; }
+		padding-top: $short;
+		padding-bottom: $short; }
 	.marginalize-top.short .column,
 	.marginalized-top.short {
 		padding-top: $short; }
