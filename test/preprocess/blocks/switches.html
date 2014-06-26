@@ -247,10 +247,10 @@ dt a:hover {
 	content: "hide ";
 	}
 pre,code {
-	display: none;
+	xdisplay: none;
 	}
-.wirefram pre, .wireframe code {
-	display: block;
+.wireframe pre, .wireframe code {
+	xxdisplay: block;
 	}
 pre {
 	white-space: normal;
@@ -345,7 +345,7 @@ pre code {
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
 		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
-		<dd><button onclick="$('#binder').toggleClass('broken'); $(this).toggleClass('active');">bleed main</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active');">spineless</button></dd>
 	</dl>
 	
