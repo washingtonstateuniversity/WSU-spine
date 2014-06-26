@@ -9,6 +9,14 @@
 	.marginalize .column,
 	.marginalized {
 		padding: $default; }
+	.marginalize.narrow.short .column,
+	.marginalized.narrow.short {
+		padding: $narrow; }
+	.marginalize.wide.tall .column,
+	.marginalized.wide.tall {
+		padding: $wide; }
+		
+	// One by One
 	.marginalize-top .column,
 	.marginalized-top {
 		padding-top: $default; }
