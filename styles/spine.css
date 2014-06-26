@@ -42,8 +42,9 @@
   background-color: white;
   content: " ";
   min-height: 100%;
+  left: -702px;
   position: absolute;
-  width: 198px;
+  width: 1000px;
   visibility: visible; }
 
 .bleed #glue:before {
