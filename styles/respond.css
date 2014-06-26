@@ -1516,7 +1516,8 @@
   #binder.fluid.max-1980, #binder.fluid.max-1980 .row {
     max-width: 1980px; }
 
-  #binder.fluid .row {
+  .fluid main,
+  .fluid .row {
     width: 100%; } }
 /* !LARGE FORMAT -> 1188 */
 @media only screen and (min-width: 1188px) and (min-device-width: 990px) {

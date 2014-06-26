@@ -386,7 +386,8 @@ nav a.external:after {
 	&.max-1980, &.max-1980 .row { max-width: 1980px; }
 	}
 
-#binder.fluid .row {
+.fluid main,
+.fluid .row {
 	width: 100%;
 	}
 	

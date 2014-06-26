@@ -36,9 +36,6 @@ body {
 	background-position: center top;
 	background-color: #f9f9f9;
 	}
-#jacket {
-
-	}
 #binder {
 	width: 990px;
 	xxmax-width: 990px;
@@ -50,7 +47,8 @@ main {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
-#binder:not(.fluid) main {
+.fixed main,
+.hybrid main {
 	width: 792px;
 	}
 .spineless main {
@@ -58,7 +56,7 @@ main {
 	width: 990px;
 	}
 .fluid main {
-	width: auto;
+	width: 100%;
 	}
 section {
 	position: relative;
