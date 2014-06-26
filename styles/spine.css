@@ -42,9 +42,8 @@
   background-color: white;
   content: " ";
   min-height: 100%;
-  left: 0px;
   position: absolute;
-  width: 298px;
+  width: 198px;
   visibility: visible; }
 
 .bleed #glue:before {
@@ -188,6 +187,8 @@ button#shelve {
   #spine .spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
   #spine .spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
     background-image: url("//repo.wsu.edu/spine/1/icons/home-crimson.svg"); }
+  #spine .spine-sitenav.homeless > ul > li:first-child > a {
+    background-image: none; }
   #spine li:not(.parent).dogeared > a {
     color: #981e32;
     font-weight: bold; }
@@ -216,8 +217,7 @@ button#shelve {
   .spine-offsitenav a:hover i {
     display: inline; }
 
-/* ## ACTIONS 
---------------------------------------------------------------------------- */
+/* ## ACTIONS/TOOLS */
 .no-js #spine .spine-actions,
 html.lt-ie9 #spine .spine-actions {
   display: none; }
@@ -292,8 +292,7 @@ html.lt-ie9 #spine .spine-actions {
   #spine .spine-print-tab.opened button:hover:before {
     content: "\2421"; }
 
-/* ### Search 
---------------------------------------------------------------------------- */
+/* ### Search  */
 .spine-search form {
   padding: 1em 1.75em 0 1.75em;
   margin: 0px 0px -1px 0px;
@@ -407,8 +406,7 @@ html.lt-ie9 #spine .spine-actions {
   position: absolute;
   width: 1px; }
 
-/* ### Contact 
---------------------------------------------------------------------------- */
+/* ### Contact  */
 #spine .spine-contact address {
   color: #384044;
   margin: 1.75em;
@@ -1285,13 +1283,12 @@ html.lt-ie9 #wsu-signature {
 
 /* ### Cropped */
 @media screen and (min-width: 990px) {
-  /* ## Cropped */
   #spine.cropped {
     height: 198px !important;
     min-height: 198px !important;
     top: 0 !important;
     left: auto !important;
-    /* ### Cropped and Scrolled */ }
+    /* #### Cropped and Scrolled */ }
     #spine.cropped #glue {
       width: 198px;
       height: 198px !important;

@@ -76,7 +76,8 @@
     #binder:not(.fluid) #spine #glue {
       width: 298px; }
     #binder:not(.fluid) #spine #glue:before {
-      left: -702px; }
+      left: -702px;
+      width: 1000px; }
     #binder:not(.fluid) #spine button#shelve {
       display: block; }
     #binder:not(.fluid) #spine.shelved {
@@ -407,7 +408,8 @@
     #binder.fluid #spine #glue {
       width: 298px; }
     #binder.fluid #spine #glue:before {
-      left: -702px; }
+      left: -702px;
+      width: 1000px; }
     #binder.fluid #spine button#shelve {
       display: block; }
     #binder.fluid #spine.shelved {
@@ -1513,8 +1515,9 @@
   #binder.fluid.max-1980, #binder.fluid.max-1980 .row {
     max-width: 1980px; }
 
+  #binder.fluid,
   #binder.fluid .row {
-    width: 100% !important; } }
+    width: 100%; } }
 /* !LARGE FORMAT -> 1188 */
 @media only screen and (min-width: 1188px) and (min-device-width: 990px) {
   #binder:not(.fluid).max-1188, #binder:not(.fluid).max-1386, #binder:not(.fluid).max-1584, #binder:not(.fluid).max-1782, #binder:not(.fluid).max-1980 {
@@ -1524,6 +1527,7 @@
     width: 990px; }
 
   #binder:not(.fluid).max-1188 .row, #binder:not(.fluid).max-1386 .row, #binder:not(.fluid).max-1584 .row, #binder:not(.fluid).max-1782 .row, #binder:not(.fluid).max-1980 .row {
+    width: 990px;
     max-width: 990px; } }
 /* XLARGE -> 1386 */
 @media only screen and (min-width: 1386px) {

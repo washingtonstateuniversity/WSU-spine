@@ -152,15 +152,11 @@ pre, code {
 input {
   outline: none; }
 
-/* These may be too heavy-handed */
-/*article img {
-	margin: 10px;
-	}*/
 article img[align="right"] {
-  margin: 0px 0px 10px 10px; }
+  margin: 0px 0px 1em 10px; }
 
 article img[align="left"] {
-  margin: 0px 10px 10px 0px; }
+  margin: 0px 10px 1em 0px; }
 
 /* ### Fonts  */
 body {
@@ -192,6 +188,7 @@ body {
 
 #binder {
   width: 990px;
+  xxmax-width: 990px;
   margin: 0px auto; }
 
 main {
@@ -200,7 +197,7 @@ main {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
 
-:not(.fluid) main {
+#binder:not(.fluid) main {
   width: 792px; }
 
 .spineless main {
