@@ -125,10 +125,11 @@ module.exports = function(grunt) {
 					location : '',
 					build_version : '<%= pkg.build_version %>',
 					markup: 'skip',
-					MALFORMED : 'skip', // true or false is what is tested for
+					malformed : 'skip', // true or false is what is tested for
 					demo: 'skip',
 					opensans: 'skip',
 					columns: 'skip',
+					spacing: 'skip',
 					filledSearchTab : 'skip',
 					showLong : 'skip',
 					manyLinks : 'skip',
@@ -188,6 +189,15 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+			spacing : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'build/<%= pkg.build_version %>/tests/spacing.html',
+				options : {
+					context : {
+						spacing : 'true'
+					}
+				}
+			},
 			tu_search_tabs : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'build/<%= pkg.build_version %>/tests/search_tabs.html',
@@ -202,7 +212,7 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/contact_malformed.html',
 				options : {
 					context : {
-						MALFORMED : 'true'
+						malformed : 'true'
 					}
 				}
 			},
@@ -211,7 +221,7 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/contact_filled.html',
 				options : {
 					context : {
-						MALFORMED : 'false'
+						malformed : 'false'
 					}
 				}
 			},
@@ -338,6 +348,7 @@ module.exports = function(grunt) {
 								'preprocess:html',
 								'preprocess:opensans',
 								'preprocess:columns',
+								'preprocess:spacing',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
@@ -366,6 +377,7 @@ module.exports = function(grunt) {
 								'preprocess:html',
 								'preprocess:opensans',
 								'preprocess:columns',
+								'preprocess:spacing',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
