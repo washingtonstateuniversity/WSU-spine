@@ -160,6 +160,7 @@ nav a.external:after {
 	}
 #binder.hybrid main,
 #binder.fluid main {
+	width: 100%;
 	font-size: 16px;
 	line-height: 26px;
 	margin-left: 0px;
@@ -385,7 +386,6 @@ nav a.external:after {
 	&.max-1980, &.max-1980 .row { max-width: 1980px; }
 	}
 
-#binder.fluid,
 #binder.fluid .row {
 	width: 100%;
 	}
@@ -427,7 +427,7 @@ nav a.external:after {
 	&.max-1584 .row,
 	&.max-1782 .row,
 	&.max-1980 .row {
-		width: 990px;
+		xxwidth: 990px;
 		max-width: 990px;
 		}
 	}

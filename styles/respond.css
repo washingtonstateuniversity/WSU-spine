@@ -388,6 +388,7 @@
 
   #binder.hybrid main,
   #binder.fluid main {
+    width: 100%;
     font-size: 16px;
     line-height: 26px;
     margin-left: 0px; }
@@ -1515,7 +1516,6 @@
   #binder.fluid.max-1980, #binder.fluid.max-1980 .row {
     max-width: 1980px; }
 
-  #binder.fluid,
   #binder.fluid .row {
     width: 100%; } }
 /* !LARGE FORMAT -> 1188 */
@@ -1527,7 +1527,7 @@
     width: 990px; }
 
   #binder:not(.fluid).max-1188 .row, #binder:not(.fluid).max-1386 .row, #binder:not(.fluid).max-1584 .row, #binder:not(.fluid).max-1782 .row, #binder:not(.fluid).max-1980 .row {
-    width: 990px;
+    xxwidth: 990px;
     max-width: 990px; } }
 /* XLARGE -> 1386 */
 @media only screen and (min-width: 1386px) {
