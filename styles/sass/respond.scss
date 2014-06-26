@@ -3,6 +3,7 @@
 @import 'respond/states';
 @import 'respond/grid';
 @import 'skeleton/layouts';
+@import 'skeleton/gutter';
 
 #binder #spine.unshelved header:before {
 	content: "";
@@ -28,7 +29,7 @@
 
 /* ### Large Grid */
 
-@include grid-large;
+@include grid-large-controls;
 
 	}
 	
@@ -110,7 +111,7 @@ nav a.external:after {
 	}
 	
 /* Grid Medium */
-@include grid-medium;
+@include grid-medium-controls;
 
 @include header-colors;
 @include signatures('horizontal','#binder:not(.fluid) ');
@@ -171,80 +172,8 @@ nav a.external:after {
 	
 	}
 	
-/* Grid */
 
-/* Hybrid Shift */
 
-.hybrid .row {
-
-	&.halves .column,
-	&.triptych .column.two {
-		width: 50%;
-		}
-		
-	&.thirds .column {width: 33%; }
-	&.thirds .column.two { width: 34%; }
-	
-	&.quarters .column,
-	&.triptych .column.one,
-	&.triptych .column.three {
-		width: 25%;
-		}
-	
-	&.sidebar .column.one,
-	&.sideleft .column.two {
-		width: 66%;
-		}
-		
-	&.sidebar .column.two,
-	&.sideleft .column.one {
-		width: 34%;
-		}
-	
-	&.single .column,
-	&.margin .column.one,
-	&.margin .column.two {
-		width: 100%;
-		}
-	/*
-.column,
-	&.quarters .column,
-	&.halves .column,
-	&.halves .thirds .column {
-		float: left;
-		}
-*/
-	
-	}
-	
-.fluid .row .column,
-	.fluid .row.halves .column,
-	.fluid .row.halves .thirds .column {
-		float: left;
-		}
-	
-.row.twelfths {
-	float: left;
-	}
-/* Nested */
-.row.halves .halves .column {
-	width: 198px;
-	float: left;
-	}
-.fluid .row.halves .halves .column {
-	width: 50%;
-	float: left;
-	}
-.row.halves .thirds .column {
-	width: 132px;
-	float: left;
-	}
-.hybrid .row .row.thirds .column {
-	width: 33%;
-	}
-.hybrid .row .row.thirds .column.two {
-	width: 34%;
-	}
 	
 /* Signature */
 #binder.fluid #wsu-signature {
@@ -301,7 +230,12 @@ nav a.external:after {
 	
 /* Grid */
 
-@include grid-smallish;
+.fixed { @include layouts-small; }
+@include grid-smallish-controls;
+
+/* Gutters */
+
+.fixed { @include gutter(2,2); }
 
 /* Header Colors and Signatures */
 
@@ -347,6 +281,7 @@ nav a.external:after {
 
 	}
 
+
 /* #### Logo */
 
 [class*="-signature"]  #wsu-signature {
@@ -355,9 +290,14 @@ nav a.external:after {
 	margin-left: 40px !important;
 	}
 	
-/* GRID BEHAVIOR */
+/* #### Grid */
 
-@include grid-small;
+.fixed,.hybrid,.fluid { @include layouts-small; }
+@include grid-small-controls;
+
+/* #### Gutters */
+
+@include gutter(2,2);
 
 
 /* #### Signature */
@@ -376,7 +316,8 @@ nav a.external:after {
 
 	}
 
-	
+/* ## SMALLER */
+
 @media 
 	
 	only screen
