@@ -41,6 +41,7 @@ body {
 	xxmax-width: 990px;
 	margin: 0px auto;
 	}
+
 main {
 	margin-left: 198px;
 	box-sizing: border-box;
@@ -51,12 +52,13 @@ main {
 .hybrid main {
 	width: 792px;
 	}
-.spineless main {
+.spineless .fixed main,
+.spineless .hybrid main {
 	margin-left: 0px;
 	width: 990px;
 	}
 .fluid main {
-	width: 100%;
+	width: auto;
 	}
 section {
 	position: relative;
@@ -70,10 +72,10 @@ section {
 
 .row:not(.boundless):not(.max-width):not(.full-width) {
 	width: 100%;
-	max-width: 792px;
+	xxmax-width: 792px;
 	}
 .spineless .row:not(.boundless):not(.max-width):not(.full-width) {
-	max-width: 990px;
+	xxmax-width: 990px;
 	}
 	
 // @each $break, $point in $breaks { 

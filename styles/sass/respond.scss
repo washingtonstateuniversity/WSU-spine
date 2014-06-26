@@ -359,16 +359,9 @@ nav a.external:after {
 /* IOS fix for unshelved spine */
 @include unshelved-ios;
 	
-/* LARGE FORMAT (Folio)
----------------------------------------------------------- */
+/* ## XLARGE Sizes */
 
-.folio-only {
-	display: none;
-	}
-.hybrid.folio .row .column,
-.fixed.folio .row .column {
-	float: left;
-	}
+/* ## XLARGE */
 
 @media
 	
@@ -377,18 +370,35 @@ nav a.external:after {
 	
 	{
 
-	
 #binder.fluid {
-	&.max-1188, &.max-1188 .row { max-width: 1188px; }
-	&.max-1386, &.max-1386 .row { max-width: 1386px; }
-	&.max-1584, &.max-1584 .row { max-width: 1584px; }
-	&.max-1782, &.max-1782 .row { max-width: 1782px; }
-	&.max-1980, &.max-1980 .row { max-width: 1980px; }
+
+	width: 100%;
+	max-width: 990px;
+	
+	&.max-1188,
+	&.max-1188 .row {
+		max-width: 1188px;
+		}
+	&.max-1386,
+	&.max-1386 .row {
+		max-width: 1386px;
+		}
+	&.max-1584,
+	&.max-1584 .row {
+		max-width: 1584px;
+		}
+	&.max-1782,
+	&.max-1782 .row {
+		max-width: 1782px;
+		}
+	&.max-1980,
+	&.max-1980 .row {
+		max-width: 1980px;
+		}
 	}
 
-.fluid main,
-.fluid .row {
-	width: 100%;
+#binder.fluid .row {
+	width: 100% !important;
 	}
 	
 	}
