@@ -142,43 +142,7 @@ section {
 
 /* ### Nesting */
 
-.row:not(.boundless):not(.max-width):not(.full-width) .row,
-.row.spineless:not(.boundless):not(.max-width):not(.full-width) .row {
-	width: auto;
-	max-width: auto;
-	}
-
-/* single then halves */
-.row.single row.halves .column { width: 396px; }
-.fluid .row.single .halves .column { width: 50%; }
-
-/* halves then halves */
-.row.halves .halves .column { width: 198px; }
-.hybrid .row.halves .halves .column,
-.fluid .row.halves .halves .column { width: 50%; }
-
-/* halves then thirds */
-.row .row.thirds .column {
-	width: 132px;
-	}
-.row.quarters .row.thirds .column { width: 66px; }
-.fluid .row .row.thirds .column { width: 33%; }
-.fluid .row .row.thirds .column.two { width: 34%; }
-
-/* halves then quarters */
-.row .row.quarters .column { width: 99px; }
-.hybrid .row .row.quarters .column,
-.fluid .row .row.quarters .column { width: 25%; }
-
-/* thirds then halves */
-.row.thirds .row.halves .column { width: 132px; }
-.fluid .row.thirds .halves .column { width: 50%; }
-
-/* quarters then ... */
-.row .column.row.single,
-.row .column.row.single .column {
-	width: 792px;
-	}
+@include nested;
 
 /* ### Spacing  */
 
@@ -221,26 +185,26 @@ section {
 /* I.5.0  CONTENT
 -------------------------------------------------------- */
 
-.column > article,
-.column > aside {
+xx.column > article,
+xx.column > aside {
 	padding: 2em 2em 1em 2em;
 	}
-.column > article ~ article {
+xx.column > article ~ article {
 	padding: .75em 2em;
 	}
-.column > article ~ article p {
+xx.column > article ~ article p {
 	padding-bottom: 0px;
 	}
-.column > aside {
+xx.column > aside {
 	padding: .75em 2em;
 	}
-.column > aside > header {
+xx.column > aside > header {
 	font-size: 1.3em;
 	font-weight: bold;
 	padding-top: 20px;
 	padding-bottom: 5px;
 	}
-.column > aside ul li {
+xx.column > aside ul li {
 	list-style: none;
 	padding: 5px 0px;
 	margin: 0px;

@@ -347,7 +347,6 @@ section {
 /* ### Nesting */
 .row:not(.boundless):not(.max-width):not(.full-width) .row,
 .row.spineless:not(.boundless):not(.max-width):not(.full-width) .row {
-  width: auto;
   max-width: auto; }
 
 /* single then halves */
@@ -403,6 +402,14 @@ section {
 .marginalize .column,
 .marginalized {
   padding: 2em; }
+
+.marginalize.narrow.short .column,
+.marginalized.narrow.short {
+  padding: 1em; }
+
+.marginalize.wide.tall .column,
+.marginalized.wide.tall {
+  padding: 4em; }
 
 .marginalize-top .column,
 .marginalized-top {
@@ -1099,26 +1106,26 @@ section {
 
 /* I.5.0  CONTENT
 -------------------------------------------------------- */
-.column > article,
-.column > aside {
+xx.column > article,
+xx.column > aside {
   padding: 2em 2em 1em 2em; }
 
-.column > article ~ article {
+xx.column > article ~ article {
   padding: .75em 2em; }
 
-.column > article ~ article p {
+xx.column > article ~ article p {
   padding-bottom: 0px; }
 
-.column > aside {
+xx.column > aside {
   padding: .75em 2em; }
 
-.column > aside > header {
+xx.column > aside > header {
   font-size: 1.3em;
   font-weight: bold;
   padding-top: 20px;
   padding-bottom: 5px; }
 
-.column > aside ul li {
+xx.column > aside ul li {
   list-style: none;
   padding: 5px 0px;
   margin: 0px;

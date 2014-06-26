@@ -93,3 +93,50 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 		width: 33%; }
 	
 	}
+
+@mixin nested {
+	
+	.row:not(.boundless):not(.max-width):not(.full-width) .row,
+	.row.spineless:not(.boundless):not(.max-width):not(.full-width) .row {
+		max-width: auto;
+		}
+	
+	/* single then halves */
+	
+	.row.single row.halves .column { width: 396px; }
+	.fluid .row.single .halves .column { width: 50%; }
+	
+	/* halves then halves */
+	
+	.row.halves .halves .column { width: 198px; }
+	.hybrid .row.halves .halves .column,
+	.fluid .row.halves .halves .column { width: 50%; }
+	
+	/* halves then thirds */
+	
+	.row .row.thirds .column {
+		width: 132px;
+		}
+	.row.quarters .row.thirds .column { width: 66px; }
+	.fluid .row .row.thirds .column { width: 33%; }
+	.fluid .row .row.thirds .column.two { width: 34%; }
+	
+	/* halves then quarters */
+	
+	.row .row.quarters .column { width: 99px; }
+	.hybrid .row .row.quarters .column,
+	.fluid .row .row.quarters .column { width: 25%; }
+	
+	/* thirds then halves */
+	
+	.row.thirds .row.halves .column { width: 132px; }
+	.fluid .row.thirds .halves .column { width: 50%; }
+	
+	/* quarters then ... */
+	
+	.row .column.row.single,
+	.row .column.row.single .column {
+		width: 792px;
+		}
+	
+	}
