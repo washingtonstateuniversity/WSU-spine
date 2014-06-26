@@ -1,6 +1,4 @@
-@mixin gutter {
-
-
+@mixin gutter($whole,$halve) {
 
 $gutters: (
 	'': 2em,
@@ -8,64 +6,79 @@ $gutters: (
 	'.narrow': 1em
 	);
 
-@each $gutter, $space in $gutters {
+@each $gutter, $dividend in $gutters {
 
 	/* #{$gutter} */
 
-	.gutter#{$gutter} .column {
-		padding-left: $space/2;
-		padding-right: $space/2; }
-	.gutter#{$gutter} .column:first-of-type{
-		padding-left: $space;
-		padding-right: $space/2; }
-	.gutter#{$gutter} .column:last-of-type{
-		padding-left: $space/2;
-		padding-right: $space; }
+	.gutter#{$gutter} .column,
+	.guttered#{$gutter} {
+		padding-left: $dividend/$halve;
+		padding-right: $dividend/$halve; }
 	
+	// One Column
+	.single.gutter#{$gutter} .column {
+		padding-left: $dividend/$whole;
+		padding-right: $dividend/$whole; }
+	
+	// Two Columns
 	.halves.gutter#{$gutter} .column.one,
+	.halves.gutter#{$gutter} .column:nth-of-type(2n+3),
 	.side-left.gutter#{$gutter} .column.one,
 	.side-right.gutter#{$gutter} .column.one {
-		padding-left: $space;
-		padding-right: ($space/2);
+		padding-left: $dividend/$whole;
+		padding-right: ($dividend/$halve);
 		}
 	.halves.gutter#{$gutter} .column.two,
+	.halves.gutter#{$gutter} .column:nth-of-type(2n+4),
 	.side-left.gutter#{$gutter} .column.two,
 	.side-right.gutter#{$gutter} .column.two {
-		padding-left: ($space/2);
-		padding-right: $space;
+		padding-left: ($dividend/$halve);
+		padding-right: $dividend/$whole;
 		}
 	
+	// Three Columns
 	.thirds.gutter#{$gutter} .column.one,
+	.thirds.gutter#{$gutter} .column:nth-of-type(3n+4),
 	.triptych.gutter#{$gutter} .column.one {
-		padding-left: $space;
-		padding-right: $space/2;
+		padding-left: $dividend/$whole;
+		padding-right: $dividend/$halve;
 		}
 	.thirds.gutter#{$gutter} .column.two,
+	.thirds.gutter#{$gutter} .column:nth-of-type(3n+5),
 	.triptych.gutter#{$gutter} .column.two {
-		padding-left: $space/2;
-		padding-right: $space/2;
+		padding-left: $dividend/$halve;
+		padding-right: $dividend/$halve;
 		}
 	.thirds.gutter#{$gutter} .column.three,
+	.thirds.gutter#{$gutter} .column:nth-of-type(3n+6),
 	.triptych.gutter#{$gutter} .column.three {
-		padding-left: $space/2;
-		padding-right: $space;
+		padding-left: $dividend/$halve;
+		padding-right: $dividend/$whole;
 		}
 	
-	.quarters.gutter#{$gutter} .column.one {
-		padding-left: $space;
-		padding-right: $space/2;
+	// Four Columns
+	.quarters.gutter#{$gutter} .column.one,
+	.quarters.gutter#{$gutter} .column:nth-of-type(4n+5) {
+		padding-left: $dividend/$whole;
+		padding-right: $dividend/$halve;
 		}
-	.quarters.gutter#{$gutter} .column.two {
-		padding-left: $space/2;
-		padding-right: $space/2;
+	.quarters.gutter#{$gutter} .column.two,
+	.quarters.gutter#{$gutter} .column.three,
+	.quarters.gutter#{$gutter} .column:nth-of-type(4n+6),
+	.quarters.gutter#{$gutter} .column:nth-of-type(4n+7) {
+		padding-left: $dividend/$halve;
+		padding-right: $dividend/$halve;
 		}
-	.quarters.gutter#{$gutter} .column.three {
-		padding-left: $space/2;
-		padding-right: $space/2;
+	.quarters.gutter#{$gutter} .column.four,
+	.quarters.gutter#{$gutter} .column:nth-of-type(4n+8) {
+		padding-left: $dividend/$halve;
+		padding-right: $dividend/$whole;
 		}
-	.quarters.gutter#{$gutter} .column {
-		padding-left: $space/2;
-		padding-right: $space;
+		
+	.gutterless,
+	.gutless {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
 		}
 		
 	}
