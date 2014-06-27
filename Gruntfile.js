@@ -125,11 +125,13 @@ module.exports = function(grunt) {
 					location : '',
 					build_version : '<%= pkg.build_version %>',
 					markup: 'skip',
+					markup_min: 'skip',
 					malformed : 'skip', // true or false is what is tested for
 					demo: 'skip',
 					opensans: 'skip',
 					columns: 'skip',
 					spacing: 'skip',
+					mainheader: 'skip',
 					filledSearchTab : 'skip',
 					showLong : 'skip',
 					manyLinks : 'skip',
@@ -158,6 +160,16 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						markup : 'true',
+						location : 'http://repo.wsu.edu/spine/1'
+					}
+				}
+			},
+			markup_min : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'spine.min.html',
+				options : {
+					context : {
+						markup_min : 'true',
 						location : 'http://repo.wsu.edu/spine/1'
 					}
 				}
@@ -195,6 +207,15 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						spacing : 'true'
+					}
+				}
+			},
+			mainheader : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'build/<%= pkg.build_version %>/tests/mainheader.html',
+				options : {
+					context : {
+						mainheader : 'true'
 					}
 				}
 			},
@@ -349,6 +370,7 @@ module.exports = function(grunt) {
 								'preprocess:opensans',
 								'preprocess:columns',
 								'preprocess:spacing',
+								'preprocess:mainheader',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
@@ -362,6 +384,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_grid_fixed',
 								'preprocess:tu_navdata',
 								'preprocess:markup',
+								'preprocess:markup_min',
 								'preprocess:demo'
 								]);	
 	
@@ -378,6 +401,7 @@ module.exports = function(grunt) {
 								'preprocess:opensans',
 								'preprocess:columns',
 								'preprocess:spacing',
+								'preprocess:mainheader',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
@@ -391,6 +415,7 @@ module.exports = function(grunt) {
 								'preprocess:tu_grid_fixed',
 								'preprocess:tu_navdata',
 								'preprocess:markup',
+								'preprocess:markup_min',
 								'preprocess:demo'
 								]);
 		
