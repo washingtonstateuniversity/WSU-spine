@@ -1498,9 +1498,6 @@
 /* ## XLARGE Sizes */
 /* ## XLARGE */
 @media only screen and (min-width: 990px) {
-  xx#binder.fluid main {
-    width: 100%; }
-
   #binder.fluid {
     width: 100%;
     max-width: 990px; }
