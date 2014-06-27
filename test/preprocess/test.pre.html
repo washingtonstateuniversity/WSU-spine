@@ -37,9 +37,9 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
+	<!-- @if markup!='true' -->
 	<script type="text/javascript">
 		var spineoptions={
-<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 			search:{
 				providers:{
 					local:{
@@ -78,9 +78,9 @@
 					verification:"XXXXXXXXXXXXXXXXXXXXX"
 				}
 			}
-<!-- @endif -->
 		};
-	</script>   
+	</script>
+	<!-- @endif -->
 
 	<!-- @if markup!='true' && demo!='true' -->
 	<script src="../spine.js"></script>
@@ -118,14 +118,18 @@
 <!-- CONTENT -->
 <main>
 
+	<!-- @if mainheader='true' -->
+		@@include('blocks/main-header.html', {})
+	<!-- @endif -->
+	
 	<!-- @if columns='true' || spacing='true' -->
 		@@include('blocks/switches.html', {})
 	<!-- @endif -->
 			
 	<!-- Responsive Sections -->
-	<section class="row side-right">
+	<section class="row side-right gutter wide marginalize-ends tall">
 
-		<div class="column one marginalized-sides wide marginalized-ends tall">
+		<div class="column one">
 
 			<article>
 			
@@ -140,7 +144,7 @@
 
 		</div><!--/column-->
 
-		<div class="column two gutterless marginalized-ends tall">
+		<div class="column two">
 
 			<aside>
 				<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
@@ -219,7 +223,7 @@
 		
 		@@include('blocks/nav-site.html', {})
 				
-		<!-- @if navdata='true' -->
+		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
 		<!-- @endif -->
 				

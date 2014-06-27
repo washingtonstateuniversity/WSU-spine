@@ -50,9 +50,9 @@ h3 {
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
+	<!-- @if markup!='true' -->
 	<script type="text/javascript">
 		var spineoptions={
-<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 			search:{
 				providers:{
 					local:{
@@ -91,9 +91,9 @@ h3 {
 					verification:"XXXXXXXXXXXXXXXXXXXXX"
 				}
 			}
-<!-- @endif -->
 		};
-	</script>   
+	</script>
+	<!-- @endif -->
 
 	<!-- @if markup!='true' && demo!='true' -->
 	<script src="../spine.js"></script>
@@ -155,6 +155,30 @@ main {
 <!-- CONTENT -->
 <main>
 
+	<!-- @if mainheader='true' -->
+		<header class="main-header">
+	<div class="header-group hgroup">
+		
+		<sup class="sup-header" data-section="About" data-pagetitle="Overview" data-posttitle="Overview" data-default="&lt;a href=&quot;http://everett.wsu.edu/&quot; rel=&quot;home&quot;&gt;WSU North Puget Sound at Everett&lt;/a&gt;" data-alternate=""><span class="sup-header-default"><a href="http://everett.wsu.edu/" rel="home">Sup Header</a></span></sup>
+		<sub class="sub-header" data-sitename="Sub Header" data-pagetitle="Overview" data-posttitle="Overview" data-default="&lt;a href=&quot;http://everett.wsu.edu/about/&quot;&gt;About&lt;/a&gt;" data-alternate=""><span class="sub-header-default"><a href="http://everett.wsu.edu/about/">Sub Header</a></span></sub>
+		
+	</div>
+</header>
+
+<style>
+
+.main-header sup {
+	padding-left: 4.5em;
+	padding-right: 4.5em;
+	}
+.main-header sub {
+	padding-left: 2em;
+	padding-right: 2em;
+	}
+
+</style>
+	<!-- @endif -->
+	
 	<!-- @if columns='true' || spacing='true' -->
 		<style>
 
@@ -196,6 +220,10 @@ main {
 main:not(.wireframe) .wireframe-only {
 	display: none;
 	}
+main {
+	
+	border-top: 20px #981e32 solid;
+}
 
 .wireframe section.row::before {
 	display: block;
@@ -547,9 +575,9 @@ pre code {
 	<!-- @endif -->
 			
 	<!-- Responsive Sections -->
-	<section class="row side-right">
+	<section class="row side-right gutter wide marginalize-ends tall">
 
-		<div class="column one marginalized-sides wide marginalized-ends tall">
+		<div class="column one">
 
 			<article>
 			
@@ -776,7 +804,7 @@ pre code {
 
 		</div><!--/column-->
 
-		<div class="column two gutterless marginalized-ends tall">
+		<div class="column two">
 
 			<aside>
 				<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
@@ -833,6 +861,10 @@ pre code {
 main:not(.wireframe) .wireframe-only {
 	display: none;
 	}
+main {
+	
+	border-top: 20px #981e32 solid;
+}
 
 .wireframe section.row::before {
 	display: block;
@@ -2029,6 +2061,13 @@ hr {
 		<li><a href="<!-- @echo location -->/build/<!-- @echo build_version -->/tests/spacing.html">Spacing</a></li>
 	</ul>
 <li>
+	<a href="#">Content</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/demo.html">Demo</a></li>
+		<li><a href="<!-- @echo location -->/build/<!-- @echo build_version -->/tests/mainheader.html">Main Header</a></li>
+	</ul>
+</li>
+<li>
 	<a href="<!-- @echo location -->/build/<!-- @echo build_version -->/tests/columns.html">Broken</a>
 	<ul>
 		<li><a href="<!-- @echo location -->/build/<!-- @echo build_version -->/tests/contact_malformed.html">Malformed</a></li>
@@ -2040,7 +2079,7 @@ hr {
 
 
 				
-		<!-- @if navdata='true' -->
+		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
 		<!-- @endif -->
 				

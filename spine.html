@@ -22,49 +22,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
-	<script type="text/javascript">
-		var spineoptions={
-			search:{
-				providers:{
-					local:{
-						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
-						dataType: "jsonp",
-						featureClass: "P",
-						style: "full",
-						maxRows: 12
-					} 
-				},
-				result:{
-					appendTo: "#spine-shortcuts",
-					showRelated:true,
-					relatedHeader:"<hr/>",
-					minLength: 2, 
-					template:"<li>%s</li>"
-				}
-			},
-		social:{
-			provider:"WSU_share",
-			script_url:"//repo.wsu.edu/wsu_share/1/",
-			channels:[
-				"facebook",
-				"twitter",
-				"Pinterest"
-			]
-				},
-			analytics:{ 
-				"google":{
-					analytics:{
-						"account_id":"UA-XXXXX-XX"
-					},
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				},
-				"bing":{
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				}
-			}
-		};
-	</script>   
-
 	<script src="http://repo.wsu.edu/spine/1/spine.min.js"></script>
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -88,11 +45,12 @@
 <!-- CONTENT -->
 <main>
 
+	
 			
 	<!-- Responsive Sections -->
-	<section class="row side-right">
+	<section class="row side-right gutter wide marginalize-ends tall">
 
-		<div class="column one marginalized-sides wide marginalized-ends tall">
+		<div class="column one">
 
 			<article>
 			
@@ -111,7 +69,7 @@
 
 		</div><!--/column-->
 
-		<div class="column two gutterless marginalized-ends tall">
+		<div class="column two">
 
 			<aside>
 					<section>
@@ -201,6 +159,13 @@
 		<li><a href="http://repo.wsu.edu/spine/1/build/1/tests/columns.html">Columns</a></li>
 		<li><a href="http://repo.wsu.edu/spine/1/build/1/tests/spacing.html">Spacing</a></li>
 	</ul>
+<li>
+	<a href="#">Content</a>
+	<ul>
+		<li><a href="http://repo.wsu.edu/spine/1/demo.html">Demo</a></li>
+		<li><a href="http://repo.wsu.edu/spine/1/build/1/tests/mainheader.html">Main Header</a></li>
+	</ul>
+</li>
 <li>
 	<a href="http://repo.wsu.edu/spine/1/build/1/tests/columns.html">Broken</a>
 	<ul>
