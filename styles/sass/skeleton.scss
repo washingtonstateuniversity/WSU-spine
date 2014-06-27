@@ -52,6 +52,8 @@ main {
 .hybrid main {
 	width: 792px;
 	}
+.spineless.fixed main,
+.spineless.hybrid main,
 .spineless .fixed main,
 .spineless .hybrid main {
 	margin-left: 0px;
@@ -209,6 +211,52 @@ xx.column > aside ul li {
 	padding: 5px 0px;
 	margin: 0px;
 	border-top: 1px gray dotted;
+	}
+
+/* Main Header */
+.main-header {
+	height: 142px;
+	background-color: #5e6a71;
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	}
+.main-header .header-group {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	max-width: 792px;
+	}
+.main-header sup,
+.main-header sub {
+	display: block;
+	color: white;
+	line-height: 1em;
+	vertical-align: baseline;
+	margin: 0px;
+	
+	}
+.main-header a,
+.main-header a:hover {
+	color: white;
+	}
+.main-header sup {
+	font-size: .9em;
+	text-transform: uppercase;
+	padding-left: 2em;
+	padding-right: 2em;
+	}
+.main-header sup a {
+	color: #e6e8e9;
+	}
+.main-header sub {
+	font-size: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
+	}
+.main-header sup span {
+	display: block;
+	line-height: 1em;
 	}
 
 /* Block Level Styles
