@@ -1,7 +1,7 @@
 {
   "name": "wsu-spine",
   "version": "0.9.0",
-  "build_version": "rc",
+  "build_version": "1",
   "repository": {
     "type": "git",
     "url": "http://github.com/washingtonstateuniversity/wsu-spine.git"
