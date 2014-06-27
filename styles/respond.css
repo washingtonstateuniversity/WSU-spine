@@ -45,7 +45,7 @@
   #binder {
     width: 792px; }
 
-  main {
+  #binder main {
     margin-left: 0px;
     padding-top: 50px; }
 
@@ -54,7 +54,8 @@
 
   #binder.fluid main {
     width: auto;
-    margin-left: 198px; }
+    margin-left: 198px;
+    padding-top: 0px; }
 
   .spineless main {
     width: auto;
@@ -391,7 +392,8 @@
     width: 100%;
     font-size: 16px;
     line-height: 26px;
-    margin-left: 0px; }
+    margin-left: 0px;
+    padding-top: 50px; }
 
   /* Shelving */
   #binder.fluid #wsu-signature {
