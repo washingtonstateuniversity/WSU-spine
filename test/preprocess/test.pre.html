@@ -117,7 +117,6 @@
 <!-- CONTENT -->
 <main>
 
-	<!-- LAYOUTS: Place your preferred layout and content here. Layouts available are single (1 column), halves (2), thirds (3), quarters (4), side-left (2), side-right (2), margin-left (2), margin-right (2), and triptych (3). -->
 	<!-- @if mainheader='true' -->
 		@@include('blocks/main-header.html', {})
 	<!-- @endif -->
@@ -125,6 +124,15 @@
 		@@include('blocks/switches.html', {})
 	<!-- @endif -->
 	<!-- Responsive Sections -->
+	<!-- @if markup='true' || markup_min='true'  -->
+	<section class="layout">
+		<!--
+		LAYOUTS: Place your preferred layout and content here. Layouts available are single (1 column), halves (2), thirds (3), quarters (4), side-left (2), side-right (2), margin-left (2), margin-right (2), and triptych (3). -->
+		<div class="column one"></div>
+		<div class="column one"></div>
+		<div class="column one"></div>
+		<div class="column one"></div>
+	</section>
 	<!-- @if markup!='true' -->
 		@@include('content/side-right.html', {})
 	<!-- @endif -->
@@ -182,14 +190,14 @@
 		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
 		<!-- @endif -->
-		<!-- @if manyLinks='true' -->
-			@@include('blocks/nav_extralinks.html', {})
-		<!-- @endif -->
 		<!-- @if markup!='true' & markup_min!='true' -->
 		@@include('blocks/nav-site-tests.html', {})
 		<!-- @endif -->
-		<!-- @if markup='true' || markup_min='true' -->
-		@@include('blocks/nav-site.html', {})
+<!-- @if markup='true' || markup_min='true' -->
+@@include('blocks/nav-site.html', {})
+<!-- @endif -->
+		<!-- @if manyLinks='true' -->
+		@@include('blocks/nav_extralinks.html', {})
 		<!-- @endif -->
 		</ul>
 	
@@ -202,6 +210,12 @@
 <!-- Social and Global Links -->
 <footer class="spine-footer">
 	<nav id="wsu-social-channels" class="spine-social-channels">
+		<!--
+		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
+		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
+		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
+		• Maximum number of channels is five -->
+		<!-- @endif -->
 		<ul>
 			<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>
 			<li class="twitter-channel"><a href="http://twitter.com/wsupullman">Twitter</a></li>
@@ -209,12 +223,6 @@
 			<li class="directory-channel"><a href="http://social.wsu.edu">Directory</a></li>
 		</ul>
 		<!-- @if markup='true' -->
-		<!--
-		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
-		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
-		• Maximum number of channels is five -->
-		<!-- @endif -->
 	</nav>
 	<nav id="wsu-global-links" class="spine-global-links">
 		<ul>
@@ -234,10 +242,10 @@
 </div><!--/jacket-->
 <!-- /WRAPPING -->
 	
-	<!-- @if markup='true' -->
-	<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
-	<!-- @endif -->
-	@@include('blocks/contact_normal.html', {})
+<!-- @if markup='true' || markup_min='true' -->
+<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
+<!-- @endif -->
+@@include('blocks/contact_normal.html', {})
 	
 	<!-- @if malformed='true' -->
 		@@include('blocks/contact_malformed.html', {})

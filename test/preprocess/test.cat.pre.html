@@ -154,7 +154,6 @@ main {
 <!-- CONTENT -->
 <main>
 
-	<!-- LAYOUTS: Place your preferred layout and content here. Layouts available are single (1 column), halves (2), thirds (3), quarters (4), side-left (2), side-right (2), margin-left (2), margin-right (2), and triptych (3). -->
 	<!-- @if mainheader='true' -->
 		<header class="main-header">
 	<div class="header-group">
@@ -571,6 +570,15 @@ pre code {
 
 	<!-- @endif -->
 	<!-- Responsive Sections -->
+	<!-- @if markup='true' || markup_min='true'  -->
+	<section class="layout">
+		<!--
+		LAYOUTS: Place your preferred layout and content here. Layouts available are single (1 column), halves (2), thirds (3), quarters (4), side-left (2), side-right (2), margin-left (2), margin-right (2), and triptych (3). -->
+		<div class="column one"></div>
+		<div class="column one"></div>
+		<div class="column one"></div>
+		<div class="column one"></div>
+	</section>
 	<!-- @if markup!='true' -->
 		<section class="row side-right gutter wide marginalize-ends tall">
 
@@ -1984,8 +1992,80 @@ hr {
 		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
 		<!-- @endif -->
+		<!-- @if markup!='true' & markup_min!='true' -->
+		<!-- Your navigation list here
+	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
+	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
+	• Replace example navigation list below
+-->
+
+<li><a href="/">Site Home</a></li>
+<li><a href="">Options</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/cropped.html">The Cropped Spine</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/opensans.html">Open Sans</a></li>
+	</ul>
+</li>
+<li class="current"><a href="<!-- @echo location -->/demo.html">Demo</a></li>
+<li>
+	<a href="#">Behavior</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fluid.html">Fluid and Flex</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fixed.html">Fixed and Fold</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_hybrid.html">Fold then Flex</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/binding_broken.html">Broken Binding</a></li>
+		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
+	</ul>
+</li>
+<li>
+	<a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/overly.html" title="Overly Overly">Lots and lots</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/overly_linked.html">Overly Linked</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/overly_long.html">Overly Long</a></li>
+	</ul>
+</li>
+<li>
+	<a href="#">Layouts and Columns</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/demo.html">Layouts</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/columns.html">Columns</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/spacing.html">Spacing</a></li>
+	</ul>
+<li>
+	<a href="#">Content</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/mainheader.html">Main Header</a></li>
+	</ul>
+</li>
+<li>
+	<a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/columns.html">Broken</a>
+	<ul>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/contact_malformed.html">Malformed</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/contact_filled.html">Filled Contact</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/contact_double.html">Double Contact</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/nav-data-links.html">Double Contact</a></li>
+	</ul>
+</li>
+
+
+		<!-- @endif -->
+<!-- @if markup='true' || markup_min='true' -->
+			<!-- 
+			NAVIGATION: Your navigation list here
+			• Active link should be denoted with an "active" or "current" link on the link's parent li element.
+			• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
+			• Replace example navigation list below -->
+			<li><a href="/">Site Home</a></li>
+			<li><a href="">Options</a>
+				<ul>
+					<li><a href="http://brand.wsu.edu/media/web/">The WSU Web Template</a></li>
+					<li><a href="http://brand.wsu.edu/media/web/web-standards">Spine standards</a></li>
+				</ul>
+			</li>
+			<li class="current"><a href="spine.html">The Spine framework</a></li>
+<!-- @endif -->
 		<!-- @if manyLinks='true' -->
-				<li><a href="/">Fee, Fi, Fourth</a></li>
+			<li><a href="/">Fee, Fi, Fourth</a></li>
 	<li>
 		<a href="link">A first first order link</a>
 		<ul>
@@ -2078,78 +2158,6 @@ hr {
 	<li><a href="link">34 over link</a></li>
 	<li><a href="link">35 over link</a></li>
 		<!-- @endif -->
-		<!-- @if markup!='true' & markup_min!='true' -->
-		<!-- Your navigation list here
-	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
-	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
-	• Replace example navigation list below
--->
-
-<li><a href="/">Site Home</a></li>
-<li><a href="">Options</a>
-	<ul>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/cropped.html">The Cropped Spine</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/opensans.html">Open Sans</a></li>
-	</ul>
-</li>
-<li class="current"><a href="<!-- @echo location -->/demo.html">Demo</a></li>
-<li>
-	<a href="#">Behavior</a>
-	<ul>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fluid.html">Fluid and Flex</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fixed.html">Fixed and Fold</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_hybrid.html">Fold then Flex</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/binding_broken.html">Broken Binding</a></li>
-		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
-	</ul>
-</li>
-<li>
-	<a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/overly.html" title="Overly Overly">Lots and lots</a>
-	<ul>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/overly_linked.html">Overly Linked</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/overly_long.html">Overly Long</a></li>
-	</ul>
-</li>
-<li>
-	<a href="#">Layouts and Columns</a>
-	<ul>
-		<li><a href="<!-- @echo location -->/demo.html">Layouts</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/columns.html">Columns</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/spacing.html">Spacing</a></li>
-	</ul>
-<li>
-	<a href="#">Content</a>
-	<ul>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/mainheader.html">Main Header</a></li>
-	</ul>
-</li>
-<li>
-	<a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/columns.html">Broken</a>
-	<ul>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/contact_malformed.html">Malformed</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/contact_filled.html">Filled Contact</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/contact_double.html">Double Contact</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/nav-data-links.html">Double Contact</a></li>
-	</ul>
-</li>
-
-
-		<!-- @endif -->
-		<!-- @if markup='true' || markup_min='true' -->
-		<!-- NAVIGATION: Your navigation list here
-	• Active link should be denoted with an "active" or "current" link on the link's parent li element.
-	• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
-	• Replace example navigation list below
--->
-<li><a href="/">Site Home</a></li>
-<li><a href="">Options</a>
-	<ul>
-		<li><a href="http://brand.wsu.edu/media/web/">The WSU Web Template</a></li>
-		<li><a href="http://brand.wsu.edu/media/web/web-standards">Spine standards</a></li>
-	</ul>
-</li>
-<li class="current"><a href="spine.html">The Spine framework</a></li>
-		<!-- @endif -->
 		</ul>
 	
 	</nav>
@@ -2166,6 +2174,12 @@ hr {
 <!-- Social and Global Links -->
 <footer class="spine-footer">
 	<nav id="wsu-social-channels" class="spine-social-channels">
+		<!--
+		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
+		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
+		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
+		• Maximum number of channels is five -->
+		<!-- @endif -->
 		<ul>
 			<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>
 			<li class="twitter-channel"><a href="http://twitter.com/wsupullman">Twitter</a></li>
@@ -2173,12 +2187,6 @@ hr {
 			<li class="directory-channel"><a href="http://social.wsu.edu">Directory</a></li>
 		</ul>
 		<!-- @if markup='true' -->
-		<!--
-		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
-		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
-		• Maximum number of channels is five -->
-		<!-- @endif -->
 	</nav>
 	<nav id="wsu-global-links" class="spine-global-links">
 		<ul>
@@ -2198,22 +2206,22 @@ hr {
 </div><!--/jacket-->
 <!-- /WRAPPING -->
 	
-	<!-- @if markup='true' -->
-	<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
-	<!-- @endif -->
-	<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
+<!-- @if markup='true' || markup_min='true' -->
+<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
+<!-- @endif -->
+<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
 	<span itemprop="department"  content="University Unit"></span> 
 	<span itemprop="name" content="Washington State University"></span> 
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<span itemprop="location" content="French Administration Building"></span>
-		<span itemprop="streetAddress" content="PO Box 555555"></span>
+		<span itemprop="location" content="Your location"></span>
+		<span itemprop="streetAddress" content="Your PO Box"></span>
 		<span itemprop="addressLocality" content="Pullman"></span>
 		<span itemprop="addressRegion" content="WA"></span>
 		<span itemprop="postalCode" content="99163"></span>
 	</div>
 	<span itemprop="telephone" content="(509) 335-3564"></span>
 	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+	<span itemprop="contactPoint" content="http://contactpage.wsu.edu"></span>
 	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
 </div>
 	
@@ -2241,15 +2249,15 @@ hr {
 	<span itemprop="department"  content="University Unit"></span> 
 	<span itemprop="name" content="Washington State University"></span> 
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<span itemprop="location" content="French Administration Building"></span>
-		<span itemprop="streetAddress" content="PO Box 555555"></span>
+		<span itemprop="location" content="Your location"></span>
+		<span itemprop="streetAddress" content="Your PO Box"></span>
 		<span itemprop="addressLocality" content="Pullman"></span>
 		<span itemprop="addressRegion" content="WA"></span>
 		<span itemprop="postalCode" content="99163"></span>
 	</div>
 	<span itemprop="telephone" content="(509) 335-3564"></span>
 	<span itemprop="email" content="your-contact-email@wsu.edu"></span>
-	<span itemprop="contactPoint" content="http://contact.wsu.edu"></span>
+	<span itemprop="contactPoint" content="http://contactpage.wsu.edu"></span>
 	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
 </div>
 	<!-- @endif -->
