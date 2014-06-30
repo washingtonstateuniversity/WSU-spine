@@ -36,7 +36,6 @@
 	<!-- SCRIPTS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
 	<!-- @if markup!='true' -->
 	<script type="text/javascript">
 		var spineoptions={
@@ -81,7 +80,6 @@
 		};
 	</script>
 	<!-- @endif -->
-
 	<!-- @if markup!='true' && demo!='true' -->
 	<script src="../spine.js"></script>
 	<!-- @endif -->
@@ -108,24 +106,24 @@
 
 <!-- WRAPPING -->
 <div id="jacket">
-
 <!-- @if cropped='true' -->
 	@@include('content/cropped.html', {})
 <!-- @endif -->
-
 <div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif -->">
+<!-- @if markup='true' -->
+<!-- GRID BEHAVIOR: Default behavior can be changed by changing "hybrid" to "fixed" or "fluid". -->
+<!-- @endif -->
 
 <!-- CONTENT -->
 <main>
 
+	<!-- LAYOUTS: Place your preferred layout and content here. Layouts available are single (1 column), halves (2), thirds (3), quarters (4), side-left (2), side-right (2), margin-left (2), margin-right (2), and triptych (3). -->
 	<!-- @if mainheader='true' -->
 		@@include('blocks/main-header.html', {})
 	<!-- @endif -->
-	
 	<!-- @if columns='true' || spacing='true' -->
 		@@include('blocks/switches.html', {})
 	<!-- @endif -->
-			
 	<!-- Responsive Sections -->
 	<section class="row side-right gutter wide marginalize-ends tall">
 
@@ -158,19 +156,15 @@
 		</div><!--/column-->
 
 	</section>
-	
 	<!-- @if spacing='true' -->
 		@@include('content/spacing.html', {})
 	<!-- @endif -->
-	
 	<!-- @if columns='true' -->
 		@@include('content/columns.html', {})
 	<!-- @endif -->
-
 	<!-- @if demo='true' -->
 		@@include('content/demo.html', {})
 	<!-- @endif -->
-
 	<!-- @if cropped='true' -->
 		@@include('blocks/looseleaf-footer.html', {})
 	<!-- @endif -->
@@ -181,12 +175,12 @@
 <!-- SPINE -->
 <div id="spine" class="spine-column shelved <!-- @if markup='true' --> color <!-- @endif --> <!-- @if cropped!='true' --> bleed <!-- @endif --> <!-- @if cropped='true' --> cropped crimson <!-- @endif -->">
 <!-- @if markup='true' -->
-<!-- Available spine colors are: crimson, gray, gray-lightest, gray-lightly, gray-lighter, gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above with your preferred color if you want to override the default. -->
+<!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter, gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above with your preferred color if you want to override the default. -->
 <!-- @endif -->
 <div id="glue" class="spine-glue">
 
 <header class="spine-header">
-	<a href="http://www.wsu.edu/" id="wsu-signature">Washington State University</a>
+	<a href="http://www.wsu.edu/" id="wsu-signature" class="spine-signature">Washington State University</a>
 </header>
 
 <!-- ACTIONS -->
@@ -243,7 +237,7 @@
 		</ul>
 		<!-- @if markup='true' -->
 		<!--
-		You can replace default social channels with your own. Available channels are:
+		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
 		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
 		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
 		• Maximum number of channels is five -->
@@ -268,7 +262,7 @@
 <!-- /WRAPPING -->
 	
 	<!-- @if markup='true' -->
-	<!-- Adjust the sample contact info below to reflect appropriate contact information. -->
+	<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
 	<!-- @endif -->
 	@@include('blocks/contact_normal.html', {})
 	
