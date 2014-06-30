@@ -1,31 +1,29 @@
 <section class="row side-right gutter wide marginalize-ends tall">
 
-		<div class="column one">
+	<div class="column one">
 
-			<article>
-			
-			<!-- @if columns!='true' && spacing!='true' -->
-				@@include('intro.html', {})
+		<article>
+		<!-- @if columns!='true' && spacing!='true' && markup!='true' && markup_min!='true' -->
+			@@include('intro.html', {})
+		<!-- @endif -->
+		<!-- @if showLong='true' -->
+			@@include('../blocks/long_text_block.html', {})
+		<!-- @endif -->
+		</article>
+
+	</div><!--/column-->
+
+	<div class="column two">
+
+		<aside>
+			<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
+				@@include('../blocks/aside-fightsong.html', {})
 			<!-- @endif -->
-			
-			<!-- @if showLong='true' -->
-				@@include('../blocks/long_text_block.html', {})
+			<!-- @if markup!='true' && columns!='true' && spacing!='true' && markup_min!='true' -->
+				@@include('../blocks/switches.html', {})
 			<!-- @endif -->
-			</article>
+		</aside>
 
-		</div><!--/column-->
+	</div><!--/column-->
 
-		<div class="column two">
-
-			<aside>
-				<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
-					@@include('../blocks/aside-fightsong.html', {})
-				<!-- @endif -->
-				<!-- @if markup!='true' && columns!='true' && spacing!='true' && markup_min!='true' -->
-					@@include('../blocks/switches.html', {})
-				<!-- @endif -->
-			</aside>
-
-		</div><!--/column-->
-
-	</section>
+</section>

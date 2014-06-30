@@ -583,12 +583,11 @@ pre code {
 	<!-- @if markup!='true' && markup_min!='true' -->
 		<section class="row side-right gutter wide marginalize-ends tall">
 
-		<div class="column one">
+	<div class="column one">
 
-			<article>
-			
-			<!-- @if columns!='true' && spacing!='true' -->
-				<article class="post-15 page type-page status-publish hentry" id="post-15">
+		<article>
+		<!-- @if columns!='true' && spacing!='true' && markup!='true' && markup_min!='true' -->
+			<article class="post-15 page type-page status-publish hentry" id="post-15">
 	<header class="article-header">
 		<h1 class="article-title">The Spine Framework</h1>
 	</header>
@@ -598,10 +597,9 @@ pre code {
 	<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
 	<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
 </article>
-			<!-- @endif -->
+		<!-- @endif -->
+		<!-- @if showLong='true' -->
 			
-			<!-- @if showLong='true' -->
-				
 			<p>De noster nisi summis pariatur, se dolore multos non cupidatat qui do irure 
 			varias nam deserunt, elit laboris ea nisi irure. Sunt non nescius. Duis ea 
 			litteris, a hic anim aliqua multos est o malis arbitror non si qui multos 
@@ -805,16 +803,16 @@ pre code {
 			fabulas ita elit voluptate, a culpa firmissimum id esse admodum ita cupidatat. 
 			Litteris sint quorum aliquip cillum aut ea eu sunt culpa sunt. Summis possumus 
 			eruditionem.</p>
-			<!-- @endif -->
-			</article>
+		<!-- @endif -->
+		</article>
 
-		</div><!--/column-->
+	</div><!--/column-->
 
-		<div class="column two">
+	<div class="column two">
 
-			<aside>
-				<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
-					<section>
+		<aside>
+			<!-- @if demo!='true' && columns!='true' && spacing!='true' -->
+				<section>
 	<h2>Sidebar</h2>
 	<ul>
 		<li>Fight, fight, fight for Washington State! Win the victory!</li>
@@ -825,9 +823,9 @@ pre code {
 	</ul>
 	<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
 </section>
-				<!-- @endif -->
-				<!-- @if markup!='true' && columns!='true' && spacing!='true' && markup_min!='true' -->
-					<style>
+			<!-- @endif -->
+			<!-- @if markup!='true' && columns!='true' && spacing!='true' && markup_min!='true' -->
+				<style>
 
 .wireframe .row .column,
 .wireframe.row .column {
@@ -1219,12 +1217,12 @@ pre code {
 </section>
 
 
-				<!-- @endif -->
-			</aside>
+			<!-- @endif -->
+		</aside>
 
-		</div><!--/column-->
+	</div><!--/column-->
 
-	</section>
+</section>
 	<!-- @endif -->
 	<!-- @if spacing='true' -->
 		<style>
