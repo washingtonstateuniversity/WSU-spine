@@ -124,8 +124,6 @@ module.exports = function(grunt) {
 					DEBUG: true,
 					location : '',
 					build_version : '<%= pkg.build_version %>',
-					markup: 'skip',
-					markup_min: 'skip',
 					malformed : 'skip', // true or false is what is tested for
 					demo: 'skip',
 					opensans: 'skip',
@@ -141,6 +139,8 @@ module.exports = function(grunt) {
 					hybridGrid: 'skip',
 					fixedGrid: 'skip',
 					navdata:'skip',
+					markup: 'skip',
+					markup_min: 'skip',
 				}
 			},
 			js : {

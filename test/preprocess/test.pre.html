@@ -13,13 +13,13 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 
 	<!-- STYLESHEETS -->
-<!-- @if markup!='true' && demo!='true' -->
+<!-- @if markup!='true' && demo!='true' && markup_min!='true' -->
 	<link href="../spine.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 <!-- @if demo='true' -->
 	<link href="build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
-<!-- @if markup='true' -->
+<!-- @if markup='true' || markup_min='true' -->
 	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 	<!-- Your custom stylesheets here -->
@@ -80,13 +80,13 @@
 		};
 	</script>
 	<!-- @endif -->
-	<!-- @if markup!='true' && demo!='true' -->
+	<!-- @if markup!='true' && demo!='true' && markup_min!='true' -->
 	<script src="../spine.js"></script>
 	<!-- @endif -->
 	<!-- @if demo='true' -->
 	<script src="build/<!-- @echo build_version -->/spine.js"></script>
 	<!-- @endif -->
-	<!-- @if markup='true' -->
+	<!-- @if markup='true' || markup_min='true' -->
 	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
 	<!-- @endif -->
 
@@ -124,21 +124,27 @@
 		@@include('blocks/switches.html', {})
 	<!-- @endif -->
 	<!-- Responsive Sections -->
-	<!-- @if markup='true' || markup_min='true'  -->
-	<section class="layout">
+	<!-- @if markup_min='true' -->
+	<section class="layout marginalize">
 		<!--
 		LAYOUTS: Place your preferred layout and content here.
 		Layouts available are single (1 column), halves (2), thirds
 		(3), quarters (4), side-left (2), side-right (2), margin-left (2),
 		margin-right (2), and triptych (3). -->
-		<div class="column one"></div>
-		<div class="column one"></div>
-		<div class="column one"></div>
-		<div class="column one"></div>
+		<div class="column one">Content</div>
+		<div class="column two"></div>
+		<div class="column three"></div>
+		<div class="column four"></div>
 	</section>
 	<!-- @endif -->
-	<!-- @if markup!='true' && markup_min!='true' -->
-		@@include('content/side-right.html', {})
+	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' -->
+		@@include('content/content.html', {})
+	<!-- @endif -->
+	<!-- @if showLong='true' -->
+		@@include('content/content_long.html', {})
+	<!-- @endif -->
+	<!-- @if markup!='true' && columns!='true' && spacing!='true' && markup_min!='true' -->
+		@@include('blocks/switches.html', {})
 	<!-- @endif -->
 	<!-- @if spacing='true' -->
 		@@include('content/spacing.html', {})
@@ -160,7 +166,7 @@
 <div id="spine" class="spine-column shelved <!-- @if markup='true' --> color <!-- @endif --> <!-- @if cropped!='true' --> bleed <!-- @endif --> <!-- @if cropped='true' --> cropped crimson <!-- @endif -->">
 <!-- @if markup='true' -->
 <!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter, gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above with your preferred color if you want to override the default. -->
-<!-- SPINE BLEED: Available spine colors a. -->
+<!-- SPINE BLEED: Remove "bleed" so that  -->
 <!-- @endif -->
 <div id="glue" class="spine-glue">
 
@@ -214,6 +220,7 @@
 <!-- Social and Global Links -->
 <footer class="spine-footer">
 	<nav id="wsu-social-channels" class="spine-social-channels">
+		<!-- @if markup='true' -->
 		<!--
 		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
 		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
