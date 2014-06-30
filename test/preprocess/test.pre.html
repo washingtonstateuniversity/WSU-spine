@@ -179,11 +179,9 @@
 	<nav class="spine-sitenav">
 	
 		<ul>
-		
 		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
 		<!-- @endif -->
-				
 		<!-- @if manyLinks='true' -->
 			@@include('blocks/nav_extralinks.html', {})
 		<!-- @endif -->
@@ -193,7 +191,6 @@
 		<!-- @if markup='true' || markup_min='true' -->
 		@@include('blocks/nav-site.html', {})
 		<!-- @endif -->
-		
 		</ul>
 	
 	</nav>
