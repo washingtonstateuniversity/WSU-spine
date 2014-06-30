@@ -160,7 +160,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						markup : 'true',
-						location : 'http://repo.wsu.edu/spine/1'
+						location : 'http://repo.wsu.edu/spine/'
 					}
 				}
 			},
@@ -170,7 +170,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						markup_min : 'true',
-						location : 'http://repo.wsu.edu/spine/1'
+						location : 'http://repo.wsu.edu/spine/'
 					}
 				}
 			},
@@ -179,7 +179,8 @@ module.exports = function(grunt) {
 				dest : 'demo.html',
 				options : {
 					context : {
-						demo : 'true'
+						demo : 'true',
+						location : 'http://repo.wsu.edu/spine/'
 					}
 				}
 			},
@@ -188,7 +189,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/opensans.html',
 				options : {
 					context : {
-						opensans : 'true'
+						opensans : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -197,7 +199,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/columns.html',
 				options : {
 					context : {
-						columns : 'true'
+						columns : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -206,7 +209,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/spacing.html',
 				options : {
 					context : {
-						spacing : 'true'
+						spacing : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -215,7 +219,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/mainheader.html',
 				options : {
 					context : {
-						mainheader : 'true'
+						mainheader : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -224,7 +229,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/search_tabs.html',
 				options : {
 					context : {
-						filledSearchTab : 'true'
+						filledSearchTab : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -233,7 +239,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/contact_malformed.html',
 				options : {
 					context : {
-						malformed : 'true'
+						malformed : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -242,7 +249,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/contact_filled.html',
 				options : {
 					context : {
-						malformed : 'false'
+						malformed : 'false',
+						location : '/build'
 					}
 				}
 			},
@@ -251,7 +259,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/contact_double.html',
 				options : {
 					context : {
-						doubledContact : 'true'
+						doubledContact : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -260,7 +269,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/nav-data-links.html',
 				options : {
 					context : {
-						navdata : 'true'
+						navdata : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -270,7 +280,8 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						manyLinks : 'true',
-						showLong : 'true'
+						showLong : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -279,7 +290,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/overly_long.html',
 				options : {
 					context : {
-						showLong : 'true'
+						showLong : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -288,7 +300,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/overly_linked.html',
 				options : {
 					context : {
-						manyLinks : 'true'
+						manyLinks : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -297,7 +310,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/cropped.html',
 				options : {
 					context : {
-						cropped : 'true'
+						cropped : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -306,7 +320,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/grid_fluid.html',
 				options : {
 					context : {
-						fluidGrid : 'true'
+						fluidGrid : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -315,7 +330,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/grid_hybrid.html',
 				options : {
 					context : {
-						hybridGrid : 'true'
+						hybridGrid : 'true',
+						location : '/build'
 					}
 				}
 			},
@@ -324,7 +340,8 @@ module.exports = function(grunt) {
 				dest : 'build/<%= pkg.build_version %>/tests/grid_fixed.html',
 				options : {
 					context : {
-						fixedGrid : 'true'
+						fixedGrid : 'true',
+						location : '/build'
 					}
 				}
 			},
