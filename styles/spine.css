@@ -232,8 +232,8 @@ html.lt-ie9 #spine .spine-actions {
       position: absolute;
       display: block;
       width: 198px;
-      xxtop: 0;
-      xxbottom: 0; }
+      top: 0;
+      bottom: 0; }
     #spine .spine-actions section.closed {
       display: none; }
     #spine .spine-actions section.opened {
