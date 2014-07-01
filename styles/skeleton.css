@@ -512,6 +512,124 @@ section {
   padding-left: 1em;
   padding-right: 1em; }
 
+/* .wide */
+.gutter.wide .column,
+.guttered.wide {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+/* .narrow */
+.gutter.narrow .column,
+.guttered.narrow {
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
+
+.spacing-loose .single.gutter .column {
+  padding-left: 4em;
+  padding-right: 4em; }
+
+.spacing-loose .halves.gutter .column.one,
+.spacing-loose .halves.gutter .column:nth-of-type(2n+3),
+.spacing-loose .side-left.gutter .column.one,
+.spacing-loose .side-right.gutter .column.one {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.spacing-loose .halves.gutter .column.two,
+.spacing-loose .halves.gutter .column:nth-of-type(2n+4),
+.spacing-loose .side-left.gutter .column.two,
+.spacing-loose .side-right.gutter .column.two {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.spacing-loose .thirds.gutter .column.one,
+.spacing-loose .thirds.gutter .column:nth-of-type(3n+4),
+.spacing-loose .triptych.gutter .column.one {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.spacing-loose .thirds.gutter .column.two,
+.spacing-loose .thirds.gutter .column:nth-of-type(3n+5),
+.spacing-loose .triptych.gutter .column.two {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.spacing-loose .thirds.gutter .column.three,
+.spacing-loose .thirds.gutter .column:nth-of-type(3n+6),
+.spacing-loose .triptych.gutter .column.three {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.spacing-loose .quarters.gutter .column.one,
+.spacing-loose .quarters.gutter .column:nth-of-type(4n+5) {
+  padding-left: 4em;
+  padding-right: 2em; }
+
+.spacing-loose .quarters.gutter .column.two,
+.spacing-loose .quarters.gutter .column.three,
+.spacing-loose .quarters.gutter .column:nth-of-type(4n+6),
+.spacing-loose .quarters.gutter .column:nth-of-type(4n+7) {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.spacing-loose .quarters.gutter .column.four,
+.spacing-loose .quarters.gutter .column:nth-of-type(4n+8) {
+  padding-left: 2em;
+  padding-right: 4em; }
+
+.spacing-tight .single.gutter .column {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.spacing-tight .halves.gutter .column.one,
+.spacing-tight .halves.gutter .column:nth-of-type(2n+3),
+.spacing-tight .side-left.gutter .column.one,
+.spacing-tight .side-right.gutter .column.one {
+  padding-left: 1em;
+  padding-right: 0.5em; }
+
+.spacing-tight .halves.gutter .column.two,
+.spacing-tight .halves.gutter .column:nth-of-type(2n+4),
+.spacing-tight .side-left.gutter .column.two,
+.spacing-tight .side-right.gutter .column.two {
+  padding-left: 0.5em;
+  padding-right: 1em; }
+
+.spacing-tight .thirds.gutter .column.one,
+.spacing-tight .thirds.gutter .column:nth-of-type(3n+4),
+.spacing-tight .triptych.gutter .column.one {
+  padding-left: 1em;
+  padding-right: 0.5em; }
+
+.spacing-tight .thirds.gutter .column.two,
+.spacing-tight .thirds.gutter .column:nth-of-type(3n+5),
+.spacing-tight .triptych.gutter .column.two {
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
+
+.spacing-tight .thirds.gutter .column.three,
+.spacing-tight .thirds.gutter .column:nth-of-type(3n+6),
+.spacing-tight .triptych.gutter .column.three {
+  padding-left: 0.5em;
+  padding-right: 1em; }
+
+.spacing-tight .quarters.gutter .column.one,
+.spacing-tight .quarters.gutter .column:nth-of-type(4n+5) {
+  padding-left: 1em;
+  padding-right: 0.5em; }
+
+.spacing-tight .quarters.gutter .column.two,
+.spacing-tight .quarters.gutter .column.three,
+.spacing-tight .quarters.gutter .column:nth-of-type(4n+6),
+.spacing-tight .quarters.gutter .column:nth-of-type(4n+7) {
+  padding-left: 0.5em;
+  padding-right: 0.5em; }
+
+.spacing-tight .quarters.gutter .column.four,
+.spacing-tight .quarters.gutter .column:nth-of-type(4n+8) {
+  padding-left: 0.5em;
+  padding-right: 1em; }
+
 .single.gutter .column {
   padding-left: 2em;
   padding-right: 2em; }
@@ -563,17 +681,6 @@ section {
 .quarters.gutter .column.four,
 .quarters.gutter .column:nth-of-type(4n+8) {
   padding-left: 1em;
-  padding-right: 2em; }
-
-.gutterless,
-.gutless {
-  padding-left: 0px !important;
-  padding-right: 0px !important; }
-
-/* .wide */
-.gutter.wide .column,
-.guttered.wide {
-  padding-left: 2em;
   padding-right: 2em; }
 
 .single.gutter.wide .column {
@@ -628,17 +735,6 @@ section {
 .quarters.gutter.wide .column:nth-of-type(4n+8) {
   padding-left: 2em;
   padding-right: 4em; }
-
-.gutterless,
-.gutless {
-  padding-left: 0px !important;
-  padding-right: 0px !important; }
-
-/* .narrow */
-.gutter.narrow .column,
-.guttered.narrow {
-  padding-left: 0.5em;
-  padding-right: 0.5em; }
 
 .single.gutter.narrow .column {
   padding-left: 1em;

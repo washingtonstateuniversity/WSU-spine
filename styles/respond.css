@@ -719,6 +719,102 @@
     .fixed .guttered {
       padding-left: 1em;
       padding-right: 1em; }
+    .fixed .gutter.wide .column,
+    .fixed .guttered.wide {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .gutter.narrow .column,
+    .fixed .guttered.narrow {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-loose .single.gutter .column {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .halves.gutter .column.one,
+    .fixed .spacing-loose .halves.gutter .column:nth-of-type(2n+3),
+    .fixed .spacing-loose .side-left.gutter .column.one,
+    .fixed .spacing-loose .side-right.gutter .column.one {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .halves.gutter .column.two,
+    .fixed .spacing-loose .halves.gutter .column:nth-of-type(2n+4),
+    .fixed .spacing-loose .side-left.gutter .column.two,
+    .fixed .spacing-loose .side-right.gutter .column.two {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .thirds.gutter .column.one,
+    .fixed .spacing-loose .thirds.gutter .column:nth-of-type(3n+4),
+    .fixed .spacing-loose .triptych.gutter .column.one {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .thirds.gutter .column.two,
+    .fixed .spacing-loose .thirds.gutter .column:nth-of-type(3n+5),
+    .fixed .spacing-loose .triptych.gutter .column.two {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .thirds.gutter .column.three,
+    .fixed .spacing-loose .thirds.gutter .column:nth-of-type(3n+6),
+    .fixed .spacing-loose .triptych.gutter .column.three {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .quarters.gutter .column.one,
+    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+5) {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .quarters.gutter .column.two,
+    .fixed .spacing-loose .quarters.gutter .column.three,
+    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+6),
+    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+7) {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-loose .quarters.gutter .column.four,
+    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+8) {
+      padding-left: 2em;
+      padding-right: 2em; }
+    .fixed .spacing-tight .single.gutter .column {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .halves.gutter .column.one,
+    .fixed .spacing-tight .halves.gutter .column:nth-of-type(2n+3),
+    .fixed .spacing-tight .side-left.gutter .column.one,
+    .fixed .spacing-tight .side-right.gutter .column.one {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .halves.gutter .column.two,
+    .fixed .spacing-tight .halves.gutter .column:nth-of-type(2n+4),
+    .fixed .spacing-tight .side-left.gutter .column.two,
+    .fixed .spacing-tight .side-right.gutter .column.two {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .thirds.gutter .column.one,
+    .fixed .spacing-tight .thirds.gutter .column:nth-of-type(3n+4),
+    .fixed .spacing-tight .triptych.gutter .column.one {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .thirds.gutter .column.two,
+    .fixed .spacing-tight .thirds.gutter .column:nth-of-type(3n+5),
+    .fixed .spacing-tight .triptych.gutter .column.two {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .thirds.gutter .column.three,
+    .fixed .spacing-tight .thirds.gutter .column:nth-of-type(3n+6),
+    .fixed .spacing-tight .triptych.gutter .column.three {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .quarters.gutter .column.one,
+    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+5) {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .quarters.gutter .column.two,
+    .fixed .spacing-tight .quarters.gutter .column.three,
+    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+6),
+    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+7) {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    .fixed .spacing-tight .quarters.gutter .column.four,
+    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+8) {
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
     .fixed .single.gutter .column {
       padding-left: 1em;
       padding-right: 1em; }
@@ -763,14 +859,6 @@
     .fixed .quarters.gutter .column:nth-of-type(4n+8) {
       padding-left: 1em;
       padding-right: 1em; }
-    .fixed .gutterless,
-    .fixed .gutless {
-      padding-left: 0px !important;
-      padding-right: 0px !important; }
-    .fixed .gutter.wide .column,
-    .fixed .guttered.wide {
-      padding-left: 2em;
-      padding-right: 2em; }
     .fixed .single.gutter.wide .column {
       padding-left: 2em;
       padding-right: 2em; }
@@ -815,14 +903,6 @@
     .fixed .quarters.gutter.wide .column:nth-of-type(4n+8) {
       padding-left: 2em;
       padding-right: 2em; }
-    .fixed .gutterless,
-    .fixed .gutless {
-      padding-left: 0px !important;
-      padding-right: 0px !important; }
-    .fixed .gutter.narrow .column,
-    .fixed .guttered.narrow {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
     .fixed .single.gutter.narrow .column {
       padding-left: 0.5em;
       padding-right: 0.5em; }
@@ -1104,6 +1184,124 @@
     padding-left: 1em;
     padding-right: 1em; }
 
+  /* .wide */
+  .gutter.wide .column,
+  .guttered.wide {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  /* .narrow */
+  .gutter.narrow .column,
+  .guttered.narrow {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-loose .single.gutter .column {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .halves.gutter .column.one,
+  .spacing-loose .halves.gutter .column:nth-of-type(2n+3),
+  .spacing-loose .side-left.gutter .column.one,
+  .spacing-loose .side-right.gutter .column.one {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .halves.gutter .column.two,
+  .spacing-loose .halves.gutter .column:nth-of-type(2n+4),
+  .spacing-loose .side-left.gutter .column.two,
+  .spacing-loose .side-right.gutter .column.two {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .thirds.gutter .column.one,
+  .spacing-loose .thirds.gutter .column:nth-of-type(3n+4),
+  .spacing-loose .triptych.gutter .column.one {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .thirds.gutter .column.two,
+  .spacing-loose .thirds.gutter .column:nth-of-type(3n+5),
+  .spacing-loose .triptych.gutter .column.two {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .thirds.gutter .column.three,
+  .spacing-loose .thirds.gutter .column:nth-of-type(3n+6),
+  .spacing-loose .triptych.gutter .column.three {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .quarters.gutter .column.one,
+  .spacing-loose .quarters.gutter .column:nth-of-type(4n+5) {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .quarters.gutter .column.two,
+  .spacing-loose .quarters.gutter .column.three,
+  .spacing-loose .quarters.gutter .column:nth-of-type(4n+6),
+  .spacing-loose .quarters.gutter .column:nth-of-type(4n+7) {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-loose .quarters.gutter .column.four,
+  .spacing-loose .quarters.gutter .column:nth-of-type(4n+8) {
+    padding-left: 2em;
+    padding-right: 2em; }
+
+  .spacing-tight .single.gutter .column {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .halves.gutter .column.one,
+  .spacing-tight .halves.gutter .column:nth-of-type(2n+3),
+  .spacing-tight .side-left.gutter .column.one,
+  .spacing-tight .side-right.gutter .column.one {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .halves.gutter .column.two,
+  .spacing-tight .halves.gutter .column:nth-of-type(2n+4),
+  .spacing-tight .side-left.gutter .column.two,
+  .spacing-tight .side-right.gutter .column.two {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .thirds.gutter .column.one,
+  .spacing-tight .thirds.gutter .column:nth-of-type(3n+4),
+  .spacing-tight .triptych.gutter .column.one {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .thirds.gutter .column.two,
+  .spacing-tight .thirds.gutter .column:nth-of-type(3n+5),
+  .spacing-tight .triptych.gutter .column.two {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .thirds.gutter .column.three,
+  .spacing-tight .thirds.gutter .column:nth-of-type(3n+6),
+  .spacing-tight .triptych.gutter .column.three {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .quarters.gutter .column.one,
+  .spacing-tight .quarters.gutter .column:nth-of-type(4n+5) {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .quarters.gutter .column.two,
+  .spacing-tight .quarters.gutter .column.three,
+  .spacing-tight .quarters.gutter .column:nth-of-type(4n+6),
+  .spacing-tight .quarters.gutter .column:nth-of-type(4n+7) {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .spacing-tight .quarters.gutter .column.four,
+  .spacing-tight .quarters.gutter .column:nth-of-type(4n+8) {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
   .single.gutter .column {
     padding-left: 1em;
     padding-right: 1em; }
@@ -1157,17 +1355,6 @@
     padding-left: 1em;
     padding-right: 1em; }
 
-  .gutterless,
-  .gutless {
-    padding-left: 0px !important;
-    padding-right: 0px !important; }
-
-  /* .wide */
-  .gutter.wide .column,
-  .guttered.wide {
-    padding-left: 2em;
-    padding-right: 2em; }
-
   .single.gutter.wide .column {
     padding-left: 2em;
     padding-right: 2em; }
@@ -1220,17 +1407,6 @@
   .quarters.gutter.wide .column:nth-of-type(4n+8) {
     padding-left: 2em;
     padding-right: 2em; }
-
-  .gutterless,
-  .gutless {
-    padding-left: 0px !important;
-    padding-right: 0px !important; }
-
-  /* .narrow */
-  .gutter.narrow .column,
-  .guttered.narrow {
-    padding-left: 0.5em;
-    padding-right: 0.5em; }
 
   .single.gutter.narrow .column {
     padding-left: 0.5em;
