@@ -1255,7 +1255,9 @@ xx.column > aside ul li {
   position: absolute;
   bottom: 0;
   left: 0;
-  max-width: 792px; }
+  max-width: 792px;
+  padding-bottom: 1em;
+  padding-left: 2em; }
 
 .main-header sup,
 .main-header sub {
@@ -1271,17 +1273,13 @@ xx.column > aside ul li {
 
 .main-header sup {
   font-size: .9em;
-  text-transform: uppercase;
-  padding-left: 2em;
-  padding-right: 2em; }
+  text-transform: uppercase; }
 
 .main-header sup a {
   color: #e6e8e9; }
 
 .main-header sub {
-  font-size: 2em;
-  padding-left: 1em;
-  padding-right: 1em; }
+  font-size: 2em; }
 
 .main-header sup span {
   display: block;

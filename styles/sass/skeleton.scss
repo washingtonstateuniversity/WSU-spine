@@ -227,6 +227,7 @@ xx.column > aside ul li {
 	left: 0;
 	max-width: 792px;
 	padding-bottom: 1em;
+	padding-left: 2em;
 	}
 .main-header sup,
 .main-header sub {
@@ -235,7 +236,6 @@ xx.column > aside ul li {
 	line-height: 1em;
 	vertical-align: baseline;
 	margin: 0px;
-	
 	}
 .main-header a,
 .main-header a:hover {
@@ -244,16 +244,12 @@ xx.column > aside ul li {
 .main-header sup {
 	font-size: .9em;
 	text-transform: uppercase;
-	padding-left: 2em;
-	padding-right: 2em;
 	}
 .main-header sup a {
 	color: #e6e8e9;
 	}
 .main-header sub {
 	font-size: 2em;
-	padding-left: 1em;
-	padding-right: 1em;
 	}
 .main-header sup span {
 	display: block;
