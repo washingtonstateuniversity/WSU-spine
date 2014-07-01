@@ -407,13 +407,25 @@ section {
 .marginalized {
   padding: 2em; }
 
-.marginalize.narrow.short .column,
-.marginalized.narrow.short {
-  padding: 1em; }
+.marginalize.wide .column,
+.marginalized.wide {
+  padding-left: 4em;
+  padding-right: 4em; }
 
-.marginalize.wide.tall .column,
-.marginalized.wide.tall {
-  padding: 4em; }
+.marginalize.narrow .column,
+.marginalized.narrow {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.marginalize.tall .column,
+.marginalized.tall {
+  padding-top: 4em;
+  padding-bottom: 4em; }
+
+.marginalize.short .column,
+.marginalized.short {
+  padding-top: 1em;
+  padding-bottom: 1em; }
 
 .marginalize-top .column,
 .marginalized-top {

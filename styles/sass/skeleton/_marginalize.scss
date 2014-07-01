@@ -9,12 +9,22 @@
 	.marginalize .column,
 	.marginalized {
 		padding: $default; }
-	.marginalize.narrow.short .column,
-	.marginalized.narrow.short {
-		padding: $narrow; }
-	.marginalize.wide.tall .column,
-	.marginalized.wide.tall {
-		padding: $wide; }
+	.marginalize.wide .column,
+	.marginalized.wide {
+		padding-left: $wide;
+		padding-right: $wide; }
+	.marginalize.narrow .column,
+	.marginalized.narrow {
+		padding-left: $narrow;
+		padding-right: $narrow; }
+	.marginalize.tall .column,
+	.marginalized.tall {
+		padding-top: $tall;
+		padding-bottom: $tall; }
+	.marginalize.short .column,
+	.marginalized.short {
+		padding-top: $short;
+		padding-bottom: $short; }
 		
 	// One by One
 	.marginalize-top .column,
