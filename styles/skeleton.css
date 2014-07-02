@@ -1257,7 +1257,7 @@ xx.column > aside ul li {
   left: 0;
   max-width: 792px; }
 
-.main-header .header-group:not(.unset) {
+.main-header:not(.gutter) .header-group:not(.unset):not(.guttered) {
   padding-bottom: 1em;
   padding-left: 2em; }
 
