@@ -251,6 +251,11 @@ xx.column > aside ul li {
 .main-header sub {
 	font-size: 2em;
 	}
+.main-header sup a,
+.main-header sub a,
+.main-header sub * {
+	font-size: 100%;
+	}
 .main-header sup span {
 	display: block;
 	line-height: 1em;
