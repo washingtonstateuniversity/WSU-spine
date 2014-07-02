@@ -221,16 +221,18 @@ xx.column > aside ul li {
 	position: relative;
 	box-sizing: border-box;
 	}
-.main-header .header-group {
+.main-header .header-group:not(.unset) {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	max-width: 792px;
+	}
+.main-header .header-group:not(.unset) {
 	padding-bottom: 1em;
 	padding-left: 2em;
 	}
-.main-header sup,
-.main-header sub {
+.main-header sup:not(.unset),
+.main-header sub:not(.unset) {
 	display: block;
 	color: white;
 	line-height: 1em;
@@ -241,22 +243,22 @@ xx.column > aside ul li {
 .main-header a:hover {
 	color: white;
 	}
-.main-header sup {
+.main-header sup:not(.unset) {
 	font-size: .9em;
 	text-transform: uppercase;
 	}
-.main-header sup a {
+.main-header sup:not(.unset) a {
 	color: #e6e8e9;
 	}
-.main-header sub {
+.main-header sub:not(.unset) {
 	font-size: 2em;
 	}
-.main-header sup a,
-.main-header sub a,
-.main-header sub * {
+.main-header sup:not(.unset) a,
+.main-header sub:not(.unset) a,
+.main-header sub:not(.unset) * {
 	font-size: 100%;
 	}
-.main-header sup span {
+.main-header sup:not(.unset) span {
 	display: block;
 	line-height: 1em;
 	}
