@@ -235,7 +235,9 @@ nav a.external:after {
 
 /* Gutters */
 
-.fixed { @include gutter(2,2); }
+.fixed {
+	// @include gutter(2,2);
+	}
 
 /* Header Colors and Signatures */
 

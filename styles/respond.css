@@ -706,252 +706,6 @@
     float: none !important; }
 
   /* Gutters */
-  .fixed {
-    /*  */
-    /* .wide */
-    /* .narrow */
-    /*
-    	.fifths.gutter .column { padding: 1em; }
-    	.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
-    	.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
-    */ }
-    .fixed .gutter .column,
-    .fixed .guttered {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .gutter.wide .column,
-    .fixed .guttered.wide {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .gutter.narrow .column,
-    .fixed .guttered.narrow {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-loose .single.gutter .column {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .halves.gutter .column.one,
-    .fixed .spacing-loose .halves.gutter .column:nth-of-type(2n+3),
-    .fixed .spacing-loose .side-left.gutter .column.one,
-    .fixed .spacing-loose .side-right.gutter .column.one {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .halves.gutter .column.two,
-    .fixed .spacing-loose .halves.gutter .column:nth-of-type(2n+4),
-    .fixed .spacing-loose .side-left.gutter .column.two,
-    .fixed .spacing-loose .side-right.gutter .column.two {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .thirds.gutter .column.one,
-    .fixed .spacing-loose .thirds.gutter .column:nth-of-type(3n+4),
-    .fixed .spacing-loose .triptych.gutter .column.one {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .thirds.gutter .column.two,
-    .fixed .spacing-loose .thirds.gutter .column:nth-of-type(3n+5),
-    .fixed .spacing-loose .triptych.gutter .column.two {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .thirds.gutter .column.three,
-    .fixed .spacing-loose .thirds.gutter .column:nth-of-type(3n+6),
-    .fixed .spacing-loose .triptych.gutter .column.three {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .quarters.gutter .column.one,
-    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+5) {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .quarters.gutter .column.two,
-    .fixed .spacing-loose .quarters.gutter .column.three,
-    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+6),
-    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+7) {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-loose .quarters.gutter .column.four,
-    .fixed .spacing-loose .quarters.gutter .column:nth-of-type(4n+8) {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .spacing-tight .single.gutter .column {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .halves.gutter .column.one,
-    .fixed .spacing-tight .halves.gutter .column:nth-of-type(2n+3),
-    .fixed .spacing-tight .side-left.gutter .column.one,
-    .fixed .spacing-tight .side-right.gutter .column.one {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .halves.gutter .column.two,
-    .fixed .spacing-tight .halves.gutter .column:nth-of-type(2n+4),
-    .fixed .spacing-tight .side-left.gutter .column.two,
-    .fixed .spacing-tight .side-right.gutter .column.two {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .thirds.gutter .column.one,
-    .fixed .spacing-tight .thirds.gutter .column:nth-of-type(3n+4),
-    .fixed .spacing-tight .triptych.gutter .column.one {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .thirds.gutter .column.two,
-    .fixed .spacing-tight .thirds.gutter .column:nth-of-type(3n+5),
-    .fixed .spacing-tight .triptych.gutter .column.two {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .thirds.gutter .column.three,
-    .fixed .spacing-tight .thirds.gutter .column:nth-of-type(3n+6),
-    .fixed .spacing-tight .triptych.gutter .column.three {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .quarters.gutter .column.one,
-    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+5) {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .quarters.gutter .column.two,
-    .fixed .spacing-tight .quarters.gutter .column.three,
-    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+6),
-    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+7) {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .spacing-tight .quarters.gutter .column.four,
-    .fixed .spacing-tight .quarters.gutter .column:nth-of-type(4n+8) {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .single.gutter .column {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .halves.gutter .column.one,
-    .fixed .halves.gutter .column:nth-of-type(2n+3),
-    .fixed .side-left.gutter .column.one,
-    .fixed .side-right.gutter .column.one {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .halves.gutter .column.two,
-    .fixed .halves.gutter .column:nth-of-type(2n+4),
-    .fixed .side-left.gutter .column.two,
-    .fixed .side-right.gutter .column.two {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .thirds.gutter .column.one,
-    .fixed .thirds.gutter .column:nth-of-type(3n+4),
-    .fixed .triptych.gutter .column.one {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .thirds.gutter .column.two,
-    .fixed .thirds.gutter .column:nth-of-type(3n+5),
-    .fixed .triptych.gutter .column.two {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .thirds.gutter .column.three,
-    .fixed .thirds.gutter .column:nth-of-type(3n+6),
-    .fixed .triptych.gutter .column.three {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .quarters.gutter .column.one,
-    .fixed .quarters.gutter .column:nth-of-type(4n+5) {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .quarters.gutter .column.two,
-    .fixed .quarters.gutter .column.three,
-    .fixed .quarters.gutter .column:nth-of-type(4n+6),
-    .fixed .quarters.gutter .column:nth-of-type(4n+7) {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .quarters.gutter .column.four,
-    .fixed .quarters.gutter .column:nth-of-type(4n+8) {
-      padding-left: 1em;
-      padding-right: 1em; }
-    .fixed .single.gutter.wide .column {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .halves.gutter.wide .column.one,
-    .fixed .halves.gutter.wide .column:nth-of-type(2n+3),
-    .fixed .side-left.gutter.wide .column.one,
-    .fixed .side-right.gutter.wide .column.one {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .halves.gutter.wide .column.two,
-    .fixed .halves.gutter.wide .column:nth-of-type(2n+4),
-    .fixed .side-left.gutter.wide .column.two,
-    .fixed .side-right.gutter.wide .column.two {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .thirds.gutter.wide .column.one,
-    .fixed .thirds.gutter.wide .column:nth-of-type(3n+4),
-    .fixed .triptych.gutter.wide .column.one {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .thirds.gutter.wide .column.two,
-    .fixed .thirds.gutter.wide .column:nth-of-type(3n+5),
-    .fixed .triptych.gutter.wide .column.two {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .thirds.gutter.wide .column.three,
-    .fixed .thirds.gutter.wide .column:nth-of-type(3n+6),
-    .fixed .triptych.gutter.wide .column.three {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .quarters.gutter.wide .column.one,
-    .fixed .quarters.gutter.wide .column:nth-of-type(4n+5) {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .quarters.gutter.wide .column.two,
-    .fixed .quarters.gutter.wide .column.three,
-    .fixed .quarters.gutter.wide .column:nth-of-type(4n+6),
-    .fixed .quarters.gutter.wide .column:nth-of-type(4n+7) {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .quarters.gutter.wide .column.four,
-    .fixed .quarters.gutter.wide .column:nth-of-type(4n+8) {
-      padding-left: 2em;
-      padding-right: 2em; }
-    .fixed .single.gutter.narrow .column {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .halves.gutter.narrow .column.one,
-    .fixed .halves.gutter.narrow .column:nth-of-type(2n+3),
-    .fixed .side-left.gutter.narrow .column.one,
-    .fixed .side-right.gutter.narrow .column.one {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .halves.gutter.narrow .column.two,
-    .fixed .halves.gutter.narrow .column:nth-of-type(2n+4),
-    .fixed .side-left.gutter.narrow .column.two,
-    .fixed .side-right.gutter.narrow .column.two {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .thirds.gutter.narrow .column.one,
-    .fixed .thirds.gutter.narrow .column:nth-of-type(3n+4),
-    .fixed .triptych.gutter.narrow .column.one {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .thirds.gutter.narrow .column.two,
-    .fixed .thirds.gutter.narrow .column:nth-of-type(3n+5),
-    .fixed .triptych.gutter.narrow .column.two {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .thirds.gutter.narrow .column.three,
-    .fixed .thirds.gutter.narrow .column:nth-of-type(3n+6),
-    .fixed .triptych.gutter.narrow .column.three {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .quarters.gutter.narrow .column.one,
-    .fixed .quarters.gutter.narrow .column:nth-of-type(4n+5) {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .quarters.gutter.narrow .column.two,
-    .fixed .quarters.gutter.narrow .column.three,
-    .fixed .quarters.gutter.narrow .column:nth-of-type(4n+6),
-    .fixed .quarters.gutter.narrow .column:nth-of-type(4n+7) {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .quarters.gutter.narrow .column.four,
-    .fixed .quarters.gutter.narrow .column:nth-of-type(4n+8) {
-      padding-left: 0.5em;
-      padding-right: 0.5em; }
-    .fixed .gutterless,
-    .fixed .gutless {
-      padding-left: 0px !important;
-      padding-right: 0px !important; }
-
   /* Header Colors and Signatures */
   #binder #spine header {
     background-color: white; }
@@ -1196,6 +950,11 @@
     padding-left: 0.5em;
     padding-right: 0.5em; }
 
+  .spacing-loose .gutter .colum,
+  .spacing-loose .guttered {
+    padding-left: 2em;
+    padding-right: 2em; }
+
   .spacing-loose .single.gutter .column {
     padding-left: 2em;
     padding-right: 2em; }
@@ -1248,6 +1007,11 @@
   .spacing-loose .quarters.gutter .column:nth-of-type(4n+8) {
     padding-left: 2em;
     padding-right: 2em; }
+
+  .spacing-tight .gutter .colum,
+  .spacing-tight .guttered {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
 
   .spacing-tight .single.gutter .column {
     padding-left: 0.5em;

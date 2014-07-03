@@ -524,6 +524,11 @@ section {
   padding-left: 0.5em;
   padding-right: 0.5em; }
 
+.spacing-loose .gutter .colum,
+.spacing-loose .guttered {
+  padding-left: 4em;
+  padding-right: 4em; }
+
 .spacing-loose .single.gutter .column {
   padding-left: 4em;
   padding-right: 4em; }
@@ -576,6 +581,11 @@ section {
 .spacing-loose .quarters.gutter .column:nth-of-type(4n+8) {
   padding-left: 2em;
   padding-right: 4em; }
+
+.spacing-tight .gutter .colum,
+.spacing-tight .guttered {
+  padding-left: 1em;
+  padding-right: 1em; }
 
 .spacing-tight .single.gutter .column {
   padding-left: 1em;

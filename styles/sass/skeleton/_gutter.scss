@@ -24,6 +24,11 @@ $spacing: (
 
 @each $space, $dividend in $spacing {
 	
+	.spacing-#{$space} .gutter .colum,
+	.spacing-#{$space} .guttered {
+		padding-left: $dividend/$whole;
+		padding-right: $dividend/$whole; }
+	
 	// One Column
 	.spacing-#{$space} .single.gutter .column {
 		padding-left: $dividend/$whole;
