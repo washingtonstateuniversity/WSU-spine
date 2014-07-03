@@ -403,6 +403,7 @@ section {
 
 /* ### Spacing  */
 /* #### Margins (Uses padding) */
+/* "Marginalize" is Deprecated */
 .marginalize .column,
 .marginalized {
   padding: 2em; }
@@ -503,6 +504,108 @@ section {
 
 .marginalize-bottom.short .column,
 .marginalized-bottom.short {
+  padding-bottom: 1em; }
+
+.pad .column,
+.padded {
+  padding: 2em; }
+
+.pad.wide .column,
+.padded.wide {
+  padding-left: 4em;
+  padding-right: 4em; }
+
+.pad.narrow .column,
+.padded.narrow {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.pad.tall .column,
+.padded.tall {
+  padding-top: 4em;
+  padding-bottom: 4em; }
+
+.pad.short .column,
+.padded.short {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.pad-top .column,
+.padded-top {
+  padding-top: 2em; }
+
+.pad-right .column,
+.padded-right {
+  padding-right: 2em; }
+
+.pad-bottom .column,
+.padded-bottom {
+  padding-bottom: 2em; }
+
+.pad-left .column,
+.padded-left {
+  padding-left: 2em; }
+
+.pad-sides .column,
+.padded-sides {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.pad-sides.wide .column,
+.padded-sides.wide {
+  padding-left: 4em;
+  padding-right: 4em; }
+
+.pad-right.wide .column,
+.padded-right.wide {
+  padding-right: 4em; }
+
+.pad-left.wide .column,
+.padded-left.wide {
+  padding-left: 4em; }
+
+.pad-sides.narrow .column,
+.padded-sides.narrow {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.pad-right.narrow .column,
+.padded-right.narrow {
+  padding-right: 1em; }
+
+.pad-left.narrow .column,
+.padded-left.narrow {
+  padding-left: 1em; }
+
+.pad-ends .column,
+.padded-ends {
+  padding-top: 2em;
+  padding-bottom: 2em; }
+
+.pad-ends.tall .column,
+.padded-ends.tall {
+  padding-top: 4em;
+  padding-bottom: 4em; }
+
+.pad-top.tall .column,
+.padded-top.tall {
+  padding-top: 4em; }
+
+.pad-bottom.tall .column,
+.padded-bottom.tall {
+  padding-bottom: 4em; }
+
+.pad-ends.short .column,
+.padded-ends.short {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.pad-top.short .column,
+.padded-top.short {
+  padding-top: 1em; }
+
+.pad-bottom.short .column,
+.padded-bottom.short {
   padding-bottom: 1em; }
 
 /* #### Gutters */

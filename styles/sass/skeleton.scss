@@ -6,6 +6,7 @@
 @import 'skeleton/layouts';
 @import 'skeleton/gutter';
 @import 'skeleton/marginalize';
+@import 'skeleton/pad';
 // @import 'skeleton/grid';
 
 @charset "UTF-8";
@@ -150,7 +151,9 @@ section {
 
 /* #### Margins (Uses padding) */
 
+/* "Marginalize" is Deprecated */
 @include marginalize;
+@include pad;
 
 /* #### Gutters */
 
