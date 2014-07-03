@@ -509,20 +509,20 @@ section {
 /*  */
 .gutter .column,
 .guttered {
-  padding-left: 1em;
-  padding-right: 1em; }
+  padding-left: 2em;
+  padding-right: 2em; }
 
 /* .wide */
 .gutter.wide .column,
 .guttered.wide {
-  padding-left: 2em;
-  padding-right: 2em; }
+  padding-left: 4em;
+  padding-right: 4em; }
 
 /* .narrow */
 .gutter.narrow .column,
 .guttered.narrow {
-  padding-left: 0.5em;
-  padding-right: 0.5em; }
+  padding-left: 1em;
+  padding-right: 1em; }
 
 .spacing-loose .gutter .colum,
 .spacing-loose .guttered {
