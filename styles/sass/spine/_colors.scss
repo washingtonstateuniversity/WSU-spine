@@ -371,7 +371,7 @@
 		}
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray;
+		color: lighten($gray, 3%);
 		}
 	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
