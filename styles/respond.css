@@ -1553,15 +1553,6 @@ html.print #binder main {
 html.print #binder #spine header button#shelve {
   display: none; }
 
-@media print {
-  html.print {
-    zoom: 90%; }
-
-  html.print #spine header button#shelve,
-  html.print #spine .print-controls {
-    display: none; }
-
-  /*#jacket { overflow: visible; }*/ }
 html.print #binder {
   position: relative;
   width: 792px;
@@ -1570,7 +1561,14 @@ html.print #binder {
 html.print #spine,
 html.print #glue {
   min-height: 0px !important;
+  top: 0px !important;
   width: 792px; }
+
+html.print #glue:before,
+html.print #spine.bleed #glue:before {
+  width: 792px;
+  height: 50px;
+  left: 0px; }
 
 html.print #spine {
   height: 50px;
@@ -1581,9 +1579,6 @@ html.print #spine {
 html.print main {
   padding-top: 50px; }
 
-html.print #spine header {
-  position: relative; }
-
 html.print #wsu-signature {
   background-position: center 12px;
   background-size: auto 30px;
@@ -1592,20 +1587,123 @@ html.print #wsu-signature {
 html.print #spine #glue header ~ * {
   display: none !important; }
 
+html.print #binder #spine header {
+  background-color: white; }
+html.print #binder #spine.lightest header {
+  background-color: #eff0f1; }
+html.print #binder #spine.lightly header {
+  background-color: #d7dadb; }
+html.print #binder #spine.lighter header {
+  background-color: #b5babe; }
+html.print #binder #spine.light header {
+  background-color: #8d959a; }
+html.print #binder #spine.gray header {
+  background-color: #5e6a71; }
+html.print #binder #spine.dark header {
+  background-color: #464e54; }
+html.print #binder #spine.darker header {
+  background-color: #23282b; }
+html.print #binder #spine.darkest header {
+  background-color: black; }
+html.print #binder #spine.crimson header {
+  background-color: #981e32; }
+html.print #xxwsu-signature {
+  background-position: center 14px;
+  background-size: auto 30px;
+  height: 49px; }
 html.print #wsu-signature {
   background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.svg"); }
-
-html.print .light #wsu-signature,
-html.print .gray #wsu-signature,
-html.print .dark #wsu-signature,
+html.print .spokane-signature #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal.svg"); }
+html.print .vancouver-signature #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal.svg"); }
+html.print .tricities-signature #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal.svg"); }
+html.print .globalcampus-signature #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal.svg"); }
+html.print .extension-signature #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal.svg"); }
+html.print .lighter #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graydarker.svg"); }
+html.print .spokane-signature .lighter #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-graydarker.svg"); }
+html.print .vancouver-signature .lighter #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-graydarker.svg"); }
+html.print .tricities-signature .lighter #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-graydarker.svg"); }
+html.print .globalcampus-signature .lighter #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-graydarker.svg"); }
+html.print .extension-signature .lighter #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graydarker.svg"); }
+html.print .light #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-white.svg"); }
+html.print .spokane-signature .light #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-white.svg"); }
+html.print .vancouver-signature .light #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-white.svg"); }
+html.print .tricities-signature .light #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-white.svg"); }
+html.print .globalcampus-signature .light #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-white.svg"); }
+html.print .extension-signature .light #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-white.svg"); }
+html.print .gray #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-graydark-graylighter.svg"); }
+html.print .spokane-signature .gray #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-graydark-graylighter.svg"); }
+html.print .vancouver-signature .gray #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-graydark-graylighter.svg"); }
+html.print .tricities-signature .gray #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-graydark-graylighter.svg"); }
+html.print .globalcampus-signature .gray #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-graydark-graylighter.svg"); }
+html.print .extension-signature .gray #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-graydark-graylighter.svg"); }
+html.print .dark #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+html.print .spokane-signature .dark #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+html.print .vancouver-signature .dark #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+html.print .tricities-signature .dark #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+html.print .globalcampus-signature .dark #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+html.print .extension-signature .dark #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-7d868c-graylightly.svg"); }
+html.print .darker #wsu-signature,
+html.print .darkest #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-crimson-gray-graylighter.svg"); }
+html.print .spokane-signature .darker #wsu-signature,
+html.print .spokane-signature .darkest #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-crimson-gray-graylighter.svg"); }
+html.print .vancouver-signature .darker #wsu-signature,
+html.print .vancouver-signature .darkest #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-crimson-gray-graylighter.svg"); }
+html.print .tricities-signature .darker #wsu-signature,
+html.print .tricities-signature .darkest #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-crimson-gray-graylighter.svg"); }
+html.print .globalcampus-signature .darker #wsu-signature,
+html.print .globalcampus-signature .darkest #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-crimson-gray-graylighter.svg"); }
+html.print .extension-signature .darker #wsu-signature,
+html.print .extension-signature .darkest #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-crimson-gray-graylighter.svg"); }
 html.print .crimson #wsu-signature {
-  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-lighter.svg"); }
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal-white-graylightly-white.svg"); }
+html.print .spokane-signature .crimson #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-spokane-signature-horizontal-white-graylightly-white.svg"); }
+html.print .vancouver-signature .crimson #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-vancouver-signature-horizontal-white-graylightly-white.svg"); }
+html.print .tricities-signature .crimson #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-tricities-signature-horizontal-white-graylightly-white.svg"); }
+html.print .globalcampus-signature .crimson #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-globalcampus-signature-horizontal-white-graylightly-white.svg"); }
+html.print .extension-signature .crimson #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-extension-signature-horizontal-white-graylightly-white.svg"); }
+html.print html.lt-ie9 #wsu-signature {
+  background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); }
 
-/*
-.for(@campuses); .-each(@campus) {
-	html.print .@{campus}-signature #wsu-signature { background-image: url('//repo.wsu.edu/marks/wsu-@{campus}-signature-horizontal.svg'); }
-	}
-*/
 html.print #spine .print-controls {
   float: right; }
 
@@ -1675,3 +1773,11 @@ html.print #spine .print-button {
 
 #spine button#print-cancel:before {
   content: "␡"; }
+
+@media print {
+  html.print {
+    zoom: 90%; }
+
+  html.print #spine header button#shelve,
+  html.print #spine .print-controls {
+    display: none; } }
