@@ -319,7 +319,7 @@ nav a.external:after {
 
 	}
 
-/* ## SMALLER */
+/* ## SMALLER than small */
 
 @media 
 	
@@ -361,8 +361,6 @@ nav a.external:after {
 /* IOS fix for unshelved spine */
 @include unshelved-ios;
 	
-/* ## XLARGE Sizes */
-
 /* ## XLARGE */
 
 @media

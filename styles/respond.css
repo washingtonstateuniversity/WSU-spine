@@ -1405,7 +1405,7 @@
 
   html.lt-ie9 .fluid #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); } }
-/* ## SMALLER */
+/* ## SMALLER than small */
 @media only screen and (max-width: 420px), screen and (max-width: 360px) and (max-device-width: 480px) and (orientation: landscape) {
   #wsu-signature {
     background-size: 320px auto !important; } }
@@ -1437,7 +1437,6 @@
       padding-top: 0px !important; }
     #spine.unshelved .spine-navigation {
       padding-bottom: 0px !important; } }
-/* ## XLARGE Sizes */
 /* ## XLARGE */
 @media only screen and (min-width: 990px) {
   #binder.fluid {
