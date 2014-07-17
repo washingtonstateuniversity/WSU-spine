@@ -130,6 +130,7 @@ module.exports = function(grunt) {
 					columns: 'skip',
 					spacing: 'skip',
 					mainheader: 'skip',
+					unbound: 'skip',
 					filledSearchTab : 'skip',
 					showLong : 'skip',
 					manyLinks : 'skip',
@@ -220,6 +221,16 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						mainheader : 'true',
+						location : '/build'
+					}
+				}
+			},
+			unbound : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'build/<%= pkg.build_version %>/tests/unbound.html',
+				options : {
+					context : {
+						unbound : 'true',
 						location : '/build'
 					}
 				}
@@ -388,6 +399,7 @@ module.exports = function(grunt) {
 								'preprocess:columns',
 								'preprocess:spacing',
 								'preprocess:mainheader',
+								'preprocess:unbound',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
@@ -419,6 +431,7 @@ module.exports = function(grunt) {
 								'preprocess:columns',
 								'preprocess:spacing',
 								'preprocess:mainheader',
+								'preprocess:unbound',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',

@@ -137,7 +137,7 @@
 		<div class="column four"></div>
 	</section>
 	<!-- @endif -->
-	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' -->
+	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' && unbound!='true' -->
 		@@include('content/content.html', {})
 	<!-- @endif -->
 	<!-- @if showLong='true' -->
@@ -145,6 +145,9 @@
 	<!-- @endif -->
 	<!-- @if markup!='true' && columns!='true' && spacing!='true' && markup_min!='true' -->
 		@@include('blocks/switches.html', {})
+	<!-- @endif -->
+	<!-- @if unbound='true' -->
+		@@include('content/unbound.html', {})
 	<!-- @endif -->
 	<!-- @if spacing='true' -->
 		@@include('content/spacing.html', {})
@@ -163,7 +166,7 @@
 <!-- /CONTENT -->
 
 <!-- SPINE -->
-<div id="spine" class="spine-column shelved <!-- @if markup='true' --> color <!-- @endif --> <!-- @if cropped!='true' --> bleed <!-- @endif --> <!-- @if cropped='true' --> cropped crimson <!-- @endif -->">
+<div id="spine" class="spine-column shelved <!-- @if markup='true' --> color <!-- @endif --> <!-- @if cropped!='true' && unbound!='true' --> bleed <!-- @endif --> <!-- @if cropped='true' --> cropped crimson <!-- @endif -->">
 <!-- @if markup='true' -->
 <!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter, gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above with your preferred color if you want to override the default. -->
 <!-- SPINE BLEED: Remove "bleed" so that  -->

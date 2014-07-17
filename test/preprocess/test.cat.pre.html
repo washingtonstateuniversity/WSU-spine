@@ -579,7 +579,7 @@ pre code {
 		<div class="column four"></div>
 	</section>
 	<!-- @endif -->
-	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' -->
+	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' && unbound!='true' -->
 		<section class="row side-right gutter wide marginalize-ends tall">
 
 	<div class="column one">
@@ -1043,6 +1043,46 @@ pre code {
 </section>
 
 
+	<!-- @endif -->
+	<!-- @if unbound='true' -->
+		<style>
+
+
+
+</style>
+
+<div class="unbound recto green-back">
+<section id="verso" class="row single rebound wireframe">
+	<h2 class="guttered">Recto</h2>
+	<div class="column one"></div>
+	<div class="column two"></div>
+	<div class="column three"></div>
+</section>
+</div>
+
+<hr>
+
+<div class="unbound verso blue-back">
+<div class="rebound">
+<section id="verso" class="row single wireframe">
+	<h2 class="guttered">Verso</h2>
+	<div class="column one"></div>
+	<div class="column two"></div>
+	<div class="column three"></div>
+</section>
+</div>
+</div>
+
+<hr>
+
+<div class="unbound verso recto yellow-back">
+<section id="verso" class="row single rebound wireframe">
+	<h2 class="guttered">Verso Recto</h2>
+	<div class="column one"></div>
+	<div class="column two"></div>
+	<div class="column three"></div>
+</section>
+</div>
 	<!-- @endif -->
 	<!-- @if spacing='true' -->
 		<style>
@@ -1753,7 +1793,7 @@ hr {
 <!-- /CONTENT -->
 
 <!-- SPINE -->
-<div id="spine" class="spine-column shelved <!-- @if markup='true' --> color <!-- @endif --> <!-- @if cropped!='true' --> bleed <!-- @endif --> <!-- @if cropped='true' --> cropped crimson <!-- @endif -->">
+<div id="spine" class="spine-column shelved <!-- @if markup='true' --> color <!-- @endif --> <!-- @if cropped!='true' && unbound!='true' --> bleed <!-- @endif --> <!-- @if cropped='true' --> cropped crimson <!-- @endif -->">
 <!-- @if markup='true' -->
 <!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter, gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above with your preferred color if you want to override the default. -->
 <!-- SPINE BLEED: Remove "bleed" so that  -->
@@ -1832,7 +1872,6 @@ hr {
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fluid.html">Fluid and Flex</a></li>
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fixed.html">Fixed and Fold</a></li>
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_hybrid.html">Fold then Flex</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/binding_broken.html">Broken Binding</a></li>
 		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
 	</ul>
 </li>
@@ -1851,9 +1890,11 @@ hr {
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/spacing.html">Spacing</a></li>
 	</ul>
 <li>
-	<a href="#">Content</a>
+	<a href="#">Main</a>
 	<ul>
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/mainheader.html">Main Header</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/unbound.html">Main Header</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/binding_broken.html">Broken Binding</a></li>
 	</ul>
 </li>
 <li>
