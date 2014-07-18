@@ -57,8 +57,15 @@
     margin-left: 198px;
     padding-top: 0px; }
 
-  .spineless main {
-    width: auto;
+  .spineless.fixed main,
+  .spineless.hybrid main,
+  .spineless .fixed main,
+  .spineless .hybrid main {
+    margin-left: 0px;
+    width: 792px; }
+
+  .spineless.fluid main,
+  .spineless .fluid main {
     margin-left: 0px; }
 
   /* Shelving */
