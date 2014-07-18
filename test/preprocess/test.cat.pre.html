@@ -126,8 +126,9 @@ h3 {
 	height: 600px;
 	background-image: url('../../../images/tests/cub.jpg');
 	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: 100% auto;
+	background-position: center;
+	background-size: cover;
+	xxbackground-attachment: fixed;
 	}
 .size-lt-large #billboard {
 	background-size: auto 100%;
@@ -192,9 +193,45 @@ main {
 
 /* ------------------- */
 
-#binder {
-	position: relative;
-	}	
+#switches {
+	position: fixed;
+	top: 0;
+	right: 0px;
+	width: 56px;
+	height: 56px;
+	z-index: 99164;
+	background: black;
+	box-sizing: border-box;
+	}
+#switches.disclosed {
+	width: 250px;
+	height: auto;
+	}
+#switches dl {
+
+	display: none;
+	
+	}
+	
+#switches.disclosed dl {
+	display: block;
+	
+	}
+#onoff {
+	width: 56px;
+	height: 56px;
+	margin-left: -14px;
+	margin-top: -14px;
+	color: white;
+	background-color: black;
+	border: none;
+	border-radius: 0px;
+	}
+#onoff:hover {
+	background: #981e32;
+	}
+	
+/* ------------------- */
 
 #grid {
 	display: none;
@@ -498,7 +535,9 @@ pre code {
 
 </script>
 
-<section id="switches" class="marginalized wide">
+<section id="switches" class="marginalized short narrow">
+
+	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 	
 	<dl class="spine-colors clearfix">
 		<dt>spine colors <a href="#spine-colors" class="info">info</a></dt>
@@ -671,9 +710,45 @@ pre code {
 
 /* ------------------- */
 
-#binder {
-	position: relative;
-	}	
+#switches {
+	position: fixed;
+	top: 0;
+	right: 0px;
+	width: 56px;
+	height: 56px;
+	z-index: 99164;
+	background: black;
+	box-sizing: border-box;
+	}
+#switches.disclosed {
+	width: 250px;
+	height: auto;
+	}
+#switches dl {
+
+	display: none;
+	
+	}
+	
+#switches.disclosed dl {
+	display: block;
+	
+	}
+#onoff {
+	width: 56px;
+	height: 56px;
+	margin-left: -14px;
+	margin-top: -14px;
+	color: white;
+	background-color: black;
+	border: none;
+	border-radius: 0px;
+	}
+#onoff:hover {
+	background: #981e32;
+	}
+	
+/* ------------------- */
 
 #grid {
 	display: none;
@@ -977,7 +1052,9 @@ pre code {
 
 </script>
 
-<section id="switches" class="marginalized wide">
+<section id="switches" class="marginalized short narrow">
+
+	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 	
 	<dl class="spine-colors clearfix">
 		<dt>spine colors <a href="#spine-colors" class="info">info</a></dt>
@@ -1047,16 +1124,20 @@ pre code {
 	<!-- @if unbound='true' -->
 		<style>
 
-
+h2 {
+	color: white;
+	}
 
 </style>
 
+<hr>
+
 <div class="unbound recto green-back">
-<section id="verso" class="row single rebound wireframe">
-	<h2 class="guttered">Recto</h2>
-	<div class="column one"></div>
-	<div class="column two"></div>
-	<div class="column three"></div>
+<section id="recto" class="row single rebound gutter narrow">
+	<div class="column one green-lighter-text">
+	<h2>Recto</h2>
+	<p>Quisque ac justo molestie, vulputate arcu non, rutrum tortor. Integer in purus eget metus tincidunt tempor imperdiet sit amet sapien. Aliquam varius massa nec augue pulvinar, vel mattis sem congue. In vitae ultricies quam. Maecenas nec pharetra nulla. Sed tincidunt, tellus sed iaculis luctus, justo elit aliquam purus, non molestie ante velit id massa. Integer ac leo lobortis, blandit nibh eu, dignissim neque. Aliquam rutrum molestie nulla vitae blandit. Donec venenatis rutrum orci, in eleifend erat malesuada eu. Etiam et eros tellus.</p>
+	</div>
 </section>
 </div>
 
@@ -1064,11 +1145,11 @@ pre code {
 
 <div class="unbound verso blue-back">
 <div class="rebound">
-<section id="verso" class="row single wireframe">
-	<h2 class="guttered">Verso</h2>
-	<div class="column one"></div>
-	<div class="column two"></div>
-	<div class="column three"></div>
+<section id="verso" class="row single gutter narrow">
+	<div class="column one blue-lighter-text">
+	<h2>Verso</h2>
+	<p>Aenean auctor varius malesuada. Nam semper quam eu nibh feugiat lacinia. Morbi nec massa rutrum, vulputate urna sed, ultrices nisl. Integer sodales, purus a rhoncus ultrices, urna nibh imperdiet erat, tincidunt auctor neque ante in nisi. Maecenas eu erat imperdiet sem sollicitudin tincidunt nec eget leo. Etiam lobortis imperdiet nisi vitae vestibulum. Donec cursus arcu non turpis varius pulvinar. Donec tempus tempus arcu blandit auctor. Ut ut hendrerit mauris. Sed dignissim ultrices erat non adipiscing. Quisque congue tempor feugiat. Integer bibendum ante ut pharetra sodales. Aliquam vel neque ante.</p>
+	</div>
 </section>
 </div>
 </div>
@@ -1076,13 +1157,49 @@ pre code {
 <hr>
 
 <div class="unbound verso recto yellow-back">
-<section id="verso" class="row single rebound wireframe">
-	<h2 class="guttered">Verso Recto</h2>
-	<div class="column one"></div>
-	<div class="column two"></div>
-	<div class="column three"></div>
+<section id="versorecto" class="row single rebound gutter narrow">
+	<div class="column one yellow-lighter-text">
+	<h2>Verso Recto</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit velit vitae odio lacinia elementum. Nunc suscipit lectus ultrices, molestie dui at, tincidunt lacus. Nunc aliquam ullamcorper metus sed eleifend. Aliquam ac quam ut ante cursus ullamcorper. Aliquam pharetra laoreet cursus. Suspendisse pellentesque, dolor eget viverra gravida, risus urna eleifend diam, ac ornare ligula quam at eros. Pellentesque venenatis ante turpis, lacinia eleifend libero placerat et. Vestibulum accumsan sodales consectetur.</p></div>
 </section>
 </div>
+
+<hr>
+
+<div class="unbound recto green-back">
+<section id="verso" class="row single rebound gutter narrow">
+	<div class="column one green-lighter-text">
+	<h2 class="green-lightest-text">Recto</h2>
+	<p>Quisque ac justo molestie, vulputate arcu non, rutrum tortor. Integer in purus eget metus tincidunt tempor imperdiet sit amet sapien. Aliquam varius massa nec augue pulvinar, vel mattis sem congue. In vitae ultricies quam. Maecenas nec pharetra nulla. Sed tincidunt, tellus sed iaculis luctus, justo elit aliquam purus, non molestie ante velit id massa. Integer ac leo lobortis, blandit nibh eu, dignissim neque. Aliquam rutrum molestie nulla vitae blandit. Donec venenatis rutrum orci, in eleifend erat malesuada eu. Etiam et eros tellus.</p>
+	</div>
+</section>
+</div>
+
+<hr>
+
+<div class="unbound verso blue-back">
+<div class="rebound">
+<section id="verso" class="row single gutter narrow">
+	<div class="column one blue-lighter-text">
+	<h2>Verso</h2>
+	<p>Aenean auctor varius malesuada. Nam semper quam eu nibh feugiat lacinia. Morbi nec massa rutrum, vulputate urna sed, ultrices nisl. Integer sodales, purus a rhoncus ultrices, urna nibh imperdiet erat, tincidunt auctor neque ante in nisi. Maecenas eu erat imperdiet sem sollicitudin tincidunt nec eget leo. Etiam lobortis imperdiet nisi vitae vestibulum. Donec cursus arcu non turpis varius pulvinar. Donec tempus tempus arcu blandit auctor. Ut ut hendrerit mauris. Sed dignissim ultrices erat non adipiscing. Quisque congue tempor feugiat. Integer bibendum ante ut pharetra sodales. Aliquam vel neque ante.</p>
+	</div>
+</section>
+</div>
+</div>
+
+<hr>
+
+<div class="unbound verso recto yellow-back">
+<section id="versorecto" class="row single rebound gutter narrow">
+	<div class="column one yellow-lighter-text">
+	<h2 class="yellow-lightly-text">Verso Recto</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit velit vitae odio lacinia elementum. Nunc suscipit lectus ultrices, molestie dui at, tincidunt lacus. Nunc aliquam ullamcorper metus sed eleifend. Aliquam ac quam ut ante cursus ullamcorper. Aliquam pharetra laoreet cursus. Suspendisse pellentesque, dolor eget viverra gravida, risus urna eleifend diam, ac ornare ligula quam at eros. Pellentesque venenatis ante turpis, lacinia eleifend libero placerat et. Vestibulum accumsan sodales consectetur.</p></div>
+</section>
+</div>
+
+<hr>
+
 	<!-- @endif -->
 	<!-- @if spacing='true' -->
 		<style>
@@ -1278,6 +1395,15 @@ section > h2 {
 	</div>
 	<div class="column four">
 		<article class="gray-light-back" style="min-height: 200px">four</article>
+	</div>
+</section>
+
+<hr>
+
+<section id="single" class="row single gutter wireframe">
+	<h2 class="guttered">Single</h2>
+	<div class="column one">
+		<article class="gray-lightest-back" style="min-height: 210px">one</article>
 	</div>
 </section>
 

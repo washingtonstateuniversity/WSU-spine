@@ -101,9 +101,45 @@
 
 /* ------------------- */
 
-#binder {
-	position: relative;
-	}	
+#switches {
+	position: fixed;
+	top: 0;
+	right: 0px;
+	width: 56px;
+	height: 56px;
+	z-index: 99164;
+	background: black;
+	box-sizing: border-box;
+	}
+#switches.disclosed {
+	width: 250px;
+	height: auto;
+	}
+#switches dl {
+
+	display: none;
+	
+	}
+	
+#switches.disclosed dl {
+	display: block;
+	
+	}
+#onoff {
+	width: 56px;
+	height: 56px;
+	margin-left: -14px;
+	margin-top: -14px;
+	color: white;
+	background-color: black;
+	border: none;
+	border-radius: 0px;
+	}
+#onoff:hover {
+	background: #981e32;
+	}
+	
+/* ------------------- */
 
 #grid {
 	display: none;
@@ -407,7 +443,9 @@ pre code {
 
 </script>
 
-<section id="switches" class="marginalized wide">
+<section id="switches" class="marginalized short narrow">
+
+	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 	
 	<dl class="spine-colors clearfix">
 		<dt>spine colors <a href="#spine-colors" class="info">info</a></dt>
