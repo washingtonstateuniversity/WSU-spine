@@ -1017,10 +1017,9 @@ html.lt-ie9 #spine footer {
 			
 			left: 0 !important;
 			top: 0 !important;
-			width: 100% ;
-			height: 50px;
+			width: 100% !important;
+			height: 50px !important;
 			min-height: 0 !important;
-			animation: xwiden 5s;
 			
 			#glue,
 			#glue:before {
