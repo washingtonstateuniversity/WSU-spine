@@ -76,6 +76,15 @@
 .spineless .fluid main {
 	margin-left: 0px;
 	}
+	
+.row:not(.boundless),
+.row.rebound,
+.verso .rebound,
+.recto .rebound,
+.recto.verso .rebound {
+	width: 100%;
+	border-left: none;
+	}
 			
 /* Shelving */
 #binder:not(.fluid) {

@@ -73,11 +73,11 @@ section {
 
 /* ### Rows */
 
-.row:not(.boundless):not(.max-width):not(.full-width) {
+.row:not(.boundless) {
 	width: 100%;
 	xxmax-width: 792px;
 	}
-.spineless .row:not(.boundless):not(.max-width):not(.full-width) {
+.spineless .row:not(.boundless) {
 	xxmax-width: 990px;
 	}
 	
@@ -117,14 +117,20 @@ section {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	}
+.verso .rebound {
+	margin-right: 0px;
+	margin-left: auto;
+	}
 .recto.verso .rebound {
 	margin-left: auto;
 	margin-right: auto;
+	border-left: 99px transparent solid;
 	}
-/*:not(.spineless) .recto.verso .rebound {
-	padding-left: 198px;
-	}*/
-.rebound {
+.spineless .recto.verso .rebound {
+	border-left-width: 0px;
+	}
+.rebound,
+.row.rebound {
 	width: 792px;
 	}
 .side-right .rebound {
@@ -190,36 +196,9 @@ section {
 .fluid .row.fifths .column { width: 20%; }
 
 
-/* I.5.0  CONTENT
--------------------------------------------------------- */
+/* ## CONTENT  */
 
-xx.column > article,
-xx.column > aside {
-	padding: 2em 2em 1em 2em;
-	}
-xx.column > article ~ article {
-	padding: .75em 2em;
-	}
-xx.column > article ~ article p {
-	padding-bottom: 0px;
-	}
-xx.column > aside {
-	padding: .75em 2em;
-	}
-xx.column > aside > header {
-	font-size: 1.3em;
-	font-weight: bold;
-	padding-top: 20px;
-	padding-bottom: 5px;
-	}
-xx.column > aside ul li {
-	list-style: none;
-	padding: 5px 0px;
-	margin: 0px;
-	border-top: 1px gray dotted;
-	}
-
-/* Main Header */
+/* ### Main Header */
 .main-header {
 	height: 142px;
 	background-color: #5e6a71;
@@ -271,8 +250,6 @@ xx.column > aside ul li {
 
 /* Block Level Styles
 -------------------------------------------------------- */
-
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { xxpadding-top: 0; }
 
 main hr.tall {
 	margin-top: 2em;
