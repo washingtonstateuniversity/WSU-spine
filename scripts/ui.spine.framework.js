@@ -89,7 +89,7 @@
 				self.equalizing();
 				self.mainheight();
 				// Only run function if an unbound element exists
-				if( ($(".unbound").length || $("#binder.broken").length) && ($(window).width() > $("#binder").width()) ) {
+				if( $(".unbound").length || $("#binder.broken").length ) {
 					spread = $(window).width();
 					verso = self._get_globals("main").offset().left;
 					page = self._get_globals("main").width();
