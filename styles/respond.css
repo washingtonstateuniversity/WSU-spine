@@ -39,6 +39,10 @@
   .at-large-float-none,
   .at-large-float-none .column {
     float: none !important; } }
+.max-1188 .rebound,
+.max-1188 .row.rebound {
+  width: 792px; }
+
 /* ## MEDIUM (after first break) */
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 @media screen and (max-width: 989px), only screen and (max-device-width: 1024px) and (orientation: portrait) {
@@ -426,6 +430,8 @@
     margin-left: 0px;
     padding-top: 50px; }
 
+  .max-1188 .rebound,
+  .max-1188 .row.rebound,
   .row:not(.boundless) {
     width: 100%; }
 

@@ -34,6 +34,11 @@
 
 	}
 	
+.max-1188 .rebound,
+.max-1188 .row.rebound {
+	width: 792px;
+	}
+	
 /* ## MEDIUM (after first break) */
 
 /* Tablets (iPad) then iPads (portrait, not landscape) */
@@ -76,6 +81,8 @@
 .spineless .fluid main {
 	margin-left: 0px;
 	}
+	
+
 
 .fluid .row.rebound,
 .fluid .verso .rebound,
@@ -206,6 +213,8 @@ nav a.external:after {
 	padding-top: 50px;
 	}
 
+.max-1188 .rebound,
+.max-1188 .row.rebound,
 .row:not(.boundless) {
 	width: 100%;
 	}

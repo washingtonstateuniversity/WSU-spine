@@ -28,14 +28,17 @@
 		width: 792px;
 		}
 		
-	.side-right .rebound {
-		width: 594px;
-		}
-		
 	.spineless .rebound,
 	.fifteenths .rebound,
-	.fifths .rebound {
+	.fifths .rebound,
+	.max-1188 .rebound,
+	.max-1188 .row.rebound {
 		width: 990px;
+		}
+		
+	.max-1188 .spineless .rebound,
+	.max-1188 .spineless .row.rebound {
+		width: 1188px;
 		}
 		
 	.recto.verso .rebound {
