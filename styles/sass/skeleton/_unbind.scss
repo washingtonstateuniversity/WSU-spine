@@ -1,0 +1,45 @@
+@mixin unbind {
+	
+	.row.unbound,
+	.unbound {
+		position: relative;
+		max-width: 100%;
+		max-width: 99164px;
+		}
+	.rebound {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		}
+	.verso .rebound {
+		margin-right: 0px;
+		margin-left: auto;
+		}
+	.recto.verso .rebound {
+		margin-left: auto;
+		margin-right: auto;
+		}
+	.spineless .recto.verso .rebound {
+		border-left-width: 0px;
+		}
+		
+	.rebound,
+	.row.rebound {
+		width: 792px;
+		}
+		
+	.side-right .rebound {
+		width: 594px;
+		}
+		
+	.spineless .rebound,
+	.fifteenths .rebound,
+	.fifths .rebound {
+		width: 990px;
+		}
+		
+	.recto.verso .rebound {
+		border-left: 99px transparent solid;
+		}
+	
+	}
