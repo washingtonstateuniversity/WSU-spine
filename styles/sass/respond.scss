@@ -76,14 +76,34 @@
 .spineless .fluid main {
 	margin-left: 0px;
 	}
-	
-.row:not(.boundless),
-.row.rebound,
-.verso .rebound,
-.recto .rebound,
-.recto.verso .rebound {
+
+.fluid .row.rebound,
+.fluid .verso .rebound,
+.fluid .recto .rebound,
+.fluid .recto.verso .rebound {
 	width: 100%;
-	border-left: none;
+	}
+	
+.fluid .recto.verso .rebound,
+.fluid .verso .rebound {
+	border-left: 198px transparent solid;
+	}
+
+.verso .rebound {
+	border-left: 0px transparent solid;
+	margin-left: auto;
+	margin-right: 0px;
+	}
+	
+.recto.verso .rebound {
+	border-left: 0px transparent solid;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.spineless .fluid .verso .rebound,
+.spineless .fluid .recto.verso .rebound {
+	border-left: 0px transparent solid;
 	}
 			
 /* Shelving */
@@ -184,6 +204,15 @@ nav a.external:after {
 	line-height: 26px;
 	margin-left: 0px;
 	padding-top: 50px;
+	}
+
+.row:not(.boundless) {
+	width: 100%;
+	}
+
+.fluid .verso .rebound,
+.fluid .recto.verso .rebound {
+	border-left: 0px transparent solid;
 	}
 
 /* Shelving */
@@ -414,7 +443,7 @@ nav a.external:after {
 		}
 	}
 
-#binder.fluid .row {
+#binder.fluid .row:not(.rebound) {
 	width: 100% !important;
 	}
 	

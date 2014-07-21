@@ -397,6 +397,7 @@ pre code {
 		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		var grid = $(this).attr('data-grid');
 		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
+		$(this).trigger( "resize" );
 		return false;
 	});
 	
@@ -406,17 +407,18 @@ pre code {
 		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		// $('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
 		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
-		
 		$('#spine').addClass(color);
+		$(this).trigger( "resize" );
 		return false;
 	});
 	
-	// Change Spine color
+	// Change Spine transparency
 	$('.spine-transparency button').on('click', function() {
 		var transparency = $(this).attr('data-transparency');
 		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
 		$('#spine').addClass(transparency);
+		$(this).trigger( "resize" );
 		return false;
 	});
 	
@@ -426,6 +428,7 @@ pre code {
 		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
 		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
 		$('#binder').addClass('folio').addClass(max);
+		$(this).trigger( "resize" );
 		return false;
 	});
 	
@@ -436,6 +439,7 @@ pre code {
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
 		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		$(this).trigger( "resize" );
 		return false;
 	});
 	
@@ -473,7 +477,7 @@ pre code {
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
 		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
-		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active');">spineless</button></dd>
+		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">

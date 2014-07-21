@@ -68,13 +68,29 @@
   .spineless .fluid main {
     margin-left: 0px; }
 
-  .row:not(.boundless),
-  .row.rebound,
-  .verso .rebound,
-  .recto .rebound,
+  .fluid .row.rebound,
+  .fluid .verso .rebound,
+  .fluid .recto .rebound,
+  .fluid .recto.verso .rebound {
+    width: 100%; }
+
+  .fluid .recto.verso .rebound,
+  .fluid .verso .rebound {
+    border-left: 198px transparent solid; }
+
+  .verso .rebound {
+    border-left: 0px transparent solid;
+    margin-left: auto;
+    margin-right: 0px; }
+
   .recto.verso .rebound {
-    width: 100%;
-    border-left: none; }
+    border-left: 0px transparent solid;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .spineless .fluid .verso .rebound,
+  .spineless .fluid .recto.verso .rebound {
+    border-left: 0px transparent solid; }
 
   /* Shelving */
   #binder:not(.fluid) #wsu-signature {
@@ -409,6 +425,13 @@
     line-height: 26px;
     margin-left: 0px;
     padding-top: 50px; }
+
+  .row:not(.boundless) {
+    width: 100%; }
+
+  .fluid .verso .rebound,
+  .fluid .recto.verso .rebound {
+    border-left: 0px transparent solid; }
 
   /* Shelving */
   #binder.fluid #wsu-signature {
@@ -1468,7 +1491,7 @@
     #binder.fluid.max-1980, #binder.fluid.max-1980 .row {
       max-width: 1980px; }
 
-  #binder.fluid .row {
+  #binder.fluid .row:not(.rebound) {
     width: 100% !important; } }
 /* !LARGE FORMAT -> 1188 */
 @media only screen and (min-width: 1188px) and (min-device-width: 990px) {

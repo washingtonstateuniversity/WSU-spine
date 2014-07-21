@@ -7,6 +7,8 @@
 @import 'skeleton/gutter';
 @import 'skeleton/marginalize';
 @import 'skeleton/pad';
+@import 'skeleton/unbind';
+@import 'skeleton/headers';
 // @import 'skeleton/grid';
 
 @charset "UTF-8";
@@ -39,7 +41,6 @@ body {
 	}
 #binder {
 	width: 990px;
-	xxmax-width: 990px;
 	margin: 0px auto;
 	}
 
@@ -53,12 +54,18 @@ main {
 .hybrid main {
 	width: 792px;
 	}
+	
+/* ### Spineless */
 .spineless.fixed main,
 .spineless.hybrid main,
 .spineless .fixed main,
 .spineless .hybrid main {
 	margin-left: 0px;
 	width: 990px;
+	}
+.spineless.fluid main,
+.spineless .fluid main {
+	margin-left: 0px;
 	}
 .fluid main {
 	width: auto;
@@ -68,17 +75,16 @@ section {
 	clear: both;
 	}
 
-
 /* ## GRID */
 
 /* ### Rows */
 
-.row:not(.boundless) {
-	width: 100%;
-	xxmax-width: 792px;
+.row {
+	box-sizing: border-box;
 	}
-.spineless .row:not(.boundless) {
-	xxmax-width: 990px;
+
+.row:not(.boundless):not(.rebound) {
+	width: 100%;
 	}
 	
 // @each $break, $point in $breaks { 
@@ -106,41 +112,10 @@ section {
 .row.reverse .column {
 	float: right;
 	}
-.row.unbound,
-.unbound {
-	position: relative;
-	max-width: 100%;
-	max-width: 99164px;
-	}
-.rebound {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	}
-.verso .rebound {
-	margin-right: 0px;
-	margin-left: auto;
-	}
-.recto.verso .rebound {
-	margin-left: auto;
-	margin-right: auto;
-	border-left: 99px transparent solid;
-	}
-.spineless .recto.verso .rebound {
-	border-left-width: 0px;
-	}
-.rebound,
-.row.rebound {
-	width: 792px;
-	}
-.side-right .rebound {
-	width: 594px;
-	}
-.spineless .rebound,
-.fifteenths .rebound,
-.fifths .rebound {
-	width: 990px;
-	}
+
+/* ### Unbind */
+
+@include unbind;
 	
 /* ## LAYOUTS */
 
@@ -199,54 +174,7 @@ section {
 /* ## CONTENT  */
 
 /* ### Main Header */
-.main-header {
-	height: 142px;
-	background-color: #5e6a71;
-	width: 100%;
-	position: relative;
-	box-sizing: border-box;
-	}
-.main-header .header-group:not(.unset) {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	max-width: 792px;
-	}
-.main-header:not(.gutter) .header-group:not(.unset):not(.guttered) {
-	padding-bottom: 1em;
-	padding-left: 2em;
-	}
-.main-header sup:not(.unset),
-.main-header sub:not(.unset) {
-	display: block;
-	color: white;
-	line-height: 1em;
-	vertical-align: baseline;
-	margin: 0px;
-	}
-.main-header a,
-.main-header a:hover {
-	color: white;
-	}
-.main-header sup:not(.unset) {
-	font-size: .9em;
-	text-transform: uppercase;
-	}
-.main-header sup:not(.unset) a {
-	color: #e6e8e9;
-	}
-.main-header sub:not(.unset) {
-	font-size: 2em;
-	}
-.main-header sup:not(.unset) a,
-.main-header sub:not(.unset) a,
-.main-header sub:not(.unset) * {
-	font-size: 100%;
-	}
-.main-header sup:not(.unset) span {
-	display: block;
-	line-height: 1em;
-	}
+@include main-header;
 
 /* Block Level Styles
 -------------------------------------------------------- */

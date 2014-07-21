@@ -188,7 +188,6 @@ body {
 
 #binder {
   width: 990px;
-  xxmax-width: 990px;
   margin: 0px auto; }
 
 main {
@@ -201,12 +200,17 @@ main {
 .hybrid main {
   width: 792px; }
 
+/* ### Spineless */
 .spineless.fixed main,
 .spineless.hybrid main,
 .spineless .fixed main,
 .spineless .hybrid main {
   margin-left: 0px;
   width: 990px; }
+
+.spineless.fluid main,
+.spineless .fluid main {
+  margin-left: 0px; }
 
 .fluid main {
   width: auto; }
@@ -217,12 +221,11 @@ section {
 
 /* ## GRID */
 /* ### Rows */
-.row:not(.boundless) {
-  width: 100%;
-  xxmax-width: 792px; }
+.row {
+  box-sizing: border-box; }
 
-.spineless .row:not(.boundless) {
-  xxmax-width: 990px; }
+.row:not(.boundless):not(.rebound) {
+  width: 100%; }
 
 /* ### Columns */
 .row .column {
@@ -242,6 +245,7 @@ section {
 .row.reverse .column {
   float: right; }
 
+/* ### Unbind */
 .row.unbound,
 .unbound {
   position: relative;
@@ -259,8 +263,7 @@ section {
 
 .recto.verso .rebound {
   margin-left: auto;
-  margin-right: auto;
-  border-left: 99px transparent solid; }
+  margin-right: auto; }
 
 .spineless .recto.verso .rebound {
   border-left-width: 0px; }
@@ -276,6 +279,9 @@ section {
 .fifteenths .rebound,
 .fifths .rebound {
   width: 990px; }
+
+.recto.verso .rebound {
+  border-left: 99px transparent solid; }
 
 /* ## LAYOUTS */
 .row.single .column {
