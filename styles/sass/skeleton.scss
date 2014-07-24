@@ -33,11 +33,13 @@
 
 /* ## STRUCTURE  */
 
+html {
+	background-color: #f9f9f9;
+	}
 body {
 	color: #5e6a71;
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-color: #f9f9f9;
+	background-repeat: no-repeat; /* nix */
+	background-position: center top; /* nix */
 	}
 #binder {
 	width: 990px;
@@ -305,7 +307,7 @@ main,
 /* FORMS */
 @import 'skeleton/forms';
 
-/* MISC */
+/* ## Utility Classes */
 code textarea,
 code textarea:focus {
 	width: 100%;
@@ -314,10 +316,22 @@ code textarea:focus {
 	color: white;
 	background-color: rgba(94,106,113,0.5);
 	}
-.padless { padding: 0px !important; }
-.marginless { margin: 0px !important; }
+
 .center { text-align: center; }
-.hidden { display: none; visibility: hidden; }
+.hidden { display: none; }
+.shown { display: block; }
 .visible { visibility: visible; }
 .invisible { visibility: hidden; }
 .nowrap { white-space: nowrap; }
+
+/* Important */
+.padless, .padding-0 { padding: 0px !important }
+.marginless, .margin-0 { margin: 0px !important }
+.display-block { display: block !important }
+.display-none { display: none !important }
+.visibility-visible { visibility: visible !important; }
+.visibility-hidden { visibility: hidden !important; }
+.text-align-right { text-align: right !important; }
+.text-align-left { text-align: left !important; }
+.text-align-center { text-align: center !important; }
+.text-align-justify { text-align: justify !important; }
