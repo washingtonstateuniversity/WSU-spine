@@ -120,6 +120,9 @@
 	<!-- @if mainheader='true' -->
 		@@include('blocks/main-header.html', {})
 	<!-- @endif -->
+	<!-- @if test_title!='' -->
+	<h1 class="guttered padded-ends short"> <!-- @echo test_title --> </h1>
+	<!-- @endif -->
 	<!-- @if columns='true' || spacing='true' -->
 		@@include('blocks/switches.html', {})
 	<!-- @endif -->
@@ -137,7 +140,7 @@
 		<div class="column four"></div>
 	</section>
 	<!-- @endif -->
-	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' && unbound!='true' -->
+	<!-- @if content='true' -->
 		@@include('content/content.html', {})
 	<!-- @endif -->
 	<!-- @if showLong='true' -->
@@ -154,6 +157,9 @@
 	<!-- @endif -->
 	<!-- @if columns='true' -->
 		@@include('content/columns.html', {})
+	<!-- @endif -->
+	<!-- @if ui='true' -->
+		@@include('content/ui.html', {})
 	<!-- @endif -->
 	<!-- @if demo='true' -->
 		@@include('content/demo.html', {})

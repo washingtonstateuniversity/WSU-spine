@@ -176,6 +176,9 @@ main {
 
 </style>
 	<!-- @endif -->
+	<!-- @if test_title!='' -->
+	<h1 class="guttered padded-ends short"> <!-- @echo test_title --> </h1>
+	<!-- @endif -->
 	<!-- @if columns='true' || spacing='true' -->
 		<style>
 
@@ -483,10 +486,13 @@ pre code {
 <script>
 
 	$(document).ready(function(){
+	
+	if ($('#binder').hasClass('spineless')) { $('#spineless-switch').addClass('active'); }
+	if ($('#spine').hasClass('bleed')) { $('#bleed-switch').addClass('active'); }
 
 	// 
 	$('.spine-behavior button').on('click', function() {
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var grid = $(this).attr('data-grid');
 		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
 		$(this).trigger( "resize" );
@@ -507,7 +513,7 @@ pre code {
 	// Change Spine transparency
 	$('.spine-transparency button').on('click', function() {
 		var transparency = $(this).attr('data-transparency');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
 		$('#spine').addClass(transparency);
 		$(this).trigger( "resize" );
@@ -517,7 +523,7 @@ pre code {
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
 		$('#binder').addClass('folio').addClass(max);
 		$(this).trigger( "resize" );
@@ -527,13 +533,19 @@ pre code {
 	// Change Campus
 	$('.spine-campuses button').on('click', function() {
 		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
 		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		$(this).trigger( "resize" );
 		return false;
 	});
+	
+	$('button').on('click', function() {
+	
+		$(this).not('.active').toggleClass('active');
+	
+		});
 	
 	});
 
@@ -567,9 +579,9 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
-		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active'); $(this).trigger('resize');">spineless</button></dd>
+		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">
@@ -622,20 +634,19 @@ pre code {
 		<div class="column four"></div>
 	</section>
 	<!-- @endif -->
-	<!-- @if markup_min!='true' && demo!='true' && showLong!='true' && unbound!='true' -->
-		<section class="row side-right gutter wide marginalize-ends tall">
+	<!-- @if content='true' -->
+		<section class="row side-right gutter wide pad-bottom tall">
 
 	<div class="column one">
 
 		<article class="post-15 page type-page status-publish hentry" id="post-15">
-			<header class="article-header">
-				<h1 class="article-title">The Spine Framework</h1>
-			</header>
-			<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
-			<h3>concept</h3>
-			<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
-			<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
-			<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
+			
+			<p><big>Integer vestibulum</big> quis lacus imperdiet imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sollicitudin mauris a augue mattis, in sollicitudin felis tincidunt. Nulla id leo et justo molestie egestas. Mauris ultrices metus nunc, vel tempor diam molestie id. Ut vitae porttitor massa. Ut posuere enim at turpis tristique varius. Praesent pellentesque augue nulla. In consequat dui quam. Duis pellentesque in orci cursus varius. Ut vehicula enim libero, sit amet porta dui suscipit in.</p>
+
+<h3>Cras at bibendum elit.</h3>
+<p>Sed facilisis feugiat nunc, quis aliquet nisl tristique vitae. Nam adipiscing mauris metus, eget commodo tortor placerat id. Etiam tincidunt eget nisi id elementum. Nam vel tincidunt nibh, vel lobortis sapien. Aliquam egestas augue nec libero porttitor tincidunt. Curabitur quis sapien a diam adipiscing gravida. Sed sed porta sem. Duis vel sapien nec metus sollicitudin rhoncus. Vestibulum ultrices vulputate mauris, ac ullamcorper magna porta quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+<p>Etiam dignissim nec felis vel fringilla. Proin imperdiet aliquet ante, quis egestas felis tincidunt id. Duis vel adipiscing quam. Praesent iaculis sagittis mattis. Morbi ac bibendum nulla. Donec quis est augue. Vestibulum rutrum quam ac interdum elementum.</p>
 
 		</article>
 
@@ -660,38 +671,112 @@ pre code {
 </section>
 	<!-- @endif -->
 	<!-- @if showLong='true' -->
-		<section class="row side-right gutter wide marginalize-ends tall">
+		<section class="row single gutter wide marginalize-ends tall">
 
 	<div class="column one">
 
 		<article class="post-15 page type-page status-publish hentry" id="post-15">
 			<header class="article-header">
-				<h1 class="article-title">The Spine Framework</h1>
+				<h1 class="article-title">Lots of Words and Paragraphs</h1>
 			</header>
-			<p><big>Unprecedented flexibility</big>&nbsp;is a hallmark of the revised brand standards. For the web, they introduce a new approach to creating websites that can be more customized to individual unit needs while reflecting WSU’s core identity elements.</p>
-			<h3>concept</h3>
-			<p>The goal is to reflect both the unity and diversity of WSU while providing a positive visitor experience across all University web pages.</p>
-			<p>The vertical column or spine seen at the left of this page in desktop view appears on all pages and contains the essential brand, content, and usability essentials.&nbsp;The remainder of the page is essentially a blank canvas awaiting your creativity.</p>
-			<p>In addition to the column you&nbsp;<em>see</em>, the Spine is also an&nbsp;<em>unseen</em>&nbsp;skeleton or framework undergirding the page. While the column is more rigid and global, the framework is exceedingly flexible and customizable.&nbsp;The feature list below is a sampling of some of the ways the Spine aims to enable and uphold our unified diversity.</p>
+			
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum tempus magna sed feugiat. Nam quis neque congue, lobortis nulla vel, tincidunt justo. Proin interdum ante nec diam accumsan, nec consectetur elit euismod. Etiam sed nunc fermentum, consequat tortor in, molestie sapien. Aenean eget tristique mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin tristique lacus metus, in sagittis lectus facilisis at. Nam feugiat pellentesque arcu, eget tempor tortor porta ac. Duis auctor faucibus nibh eget interdum. Sed nec blandit elit, et cursus dolor. Aliquam purus urna, venenatis vel nisi sed, lobortis faucibus lorem. Vivamus iaculis a eros nec vehicula. Ut sodales magna ullamcorper lectus tristique, id accumsan sapien placerat.
+			</p>
+			<p>
+			Nullam sed pellentesque metus, id aliquam lacus. Donec non augue consectetur, malesuada enim non, ultrices ante. Nulla nec aliquam ligula, venenatis vehicula nisi. Fusce egestas leo vitae lacus volutpat, non bibendum lectus vulputate. Etiam massa enim, commodo ac consequat a, laoreet sit amet nunc. Donec tempor augue eget diam tempor, in tempus erat mollis. In vel sapien neque. Vestibulum ut erat augue. Praesent elit quam, ullamcorper sed turpis molestie, dictum vehicula tellus. Donec est nulla, venenatis convallis eros ut, pretium pellentesque tellus.
+			</p>
+			<blockquote>
+			Sed ac justo ut nulla commodo ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id aliquet justo. Aenean dignissim dolor sit amet gravida consectetur. Morbi placerat facilisis dolor. Aliquam ac mattis mauris. Mauris semper nisi at ante vulputate, non viverra metus accumsan. Mauris libero arcu, vestibulum at vestibulum id, semper quis mauris. Nulla nec libero id erat luctus volutpat.
+			<cite>~ Nulla nec libero id erat luctus volutpat.</cite>
+			</blockquote>
+			<h3>An H3 Header</h3>
+			<p>
+			Ut ac orci sit amet metus porta auctor. Sed porttitor posuere consequat. Proin sed nisi in nulla lobortis malesuada. Nullam aliquam massa in tortor placerat, a ultrices dolor accumsan. Etiam pellentesque quam ut suscipit tempus. Phasellus at fringilla neque. Praesent accumsan diam quis nisi varius sollicitudin vel ut risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non malesuada diam, ut rutrum arcu. Mauris condimentum risus vitae tincidunt iaculis. Integer gravida rhoncus augue, placerat faucibus justo.
+			</p>
+			<p>
+			Integer cursus sed mi sit amet malesuada. Pellentesque blandit massa in sapien porta, vitae egestas enim semper. Cras in turpis ac urna pulvinar molestie. Aenean a libero vitae velit fringilla interdum nec nec neque. Etiam egestas pulvinar neque, vel vestibulum lorem sodales at. Donec venenatis enim cursus, congue odio ut, venenatis orci. Mauris adipiscing enim a commodo consequat. Nam magna purus, sodales quis diam vel, congue interdum leo. Sed pulvinar nisl at purus molestie, vitae commodo quam auctor.
+			</p>
+			<p>
+			Suspendisse at convallis urna. Aenean accumsan pretium dignissim. In in augue quis diam sollicitudin porta et nec eros. Curabitur malesuada velit id turpis sagittis accumsan. Ut egestas dignissim lectus, vitae adipiscing odio vestibulum ornare. Quisque convallis velit nec lacus fringilla fringilla. Cras iaculis fringilla mi, sed tempus ipsum ornare vitae. Cras auctor neque nibh, ut condimentum sapien facilisis eget. Etiam non enim eu libero molestie porta. Nam tempus purus ut congue facilisis. In hac habitasse platea dictumst. Cras eget dui tincidunt, tincidunt nulla a, vulputate orci. Donec malesuada eros at orci fringilla, at tempus augue imperdiet. Maecenas nunc dui, faucibus et lacus vel, lacinia bibendum tellus. Nam quis arcu in dui sodales posuere et a magna. In in velit mi.
+			</p>
+			<h4>An H4 Header</h4>
+			<p>
+			Vivamus vel ligula bibendum, sodales dui ac, vestibulum erat. Vestibulum a dolor velit. In nec dui ligula. Integer et ultricies elit. Ut eu eros dapibus, pretium mauris a, pharetra eros. Praesent tempor velit non libero euismod placerat et eget erat. Aenean ac arcu ac augue rhoncus ultricies eget ut augue. Suspendisse nunc tellus, tempus ac mi in, mollis elementum enim. Etiam eget turpis ligula.
+			</p>
+			<p>
+			Donec eu ornare elit. Ut feugiat lacus eget lobortis ullamcorper. Praesent blandit sem eu consequat convallis. Cras lacinia, nunc id porta sagittis, nunc ante dapibus leo, ac congue nisl erat tincidunt nisi. Vestibulum volutpat commodo tortor, ut elementum leo. Mauris a turpis sem. Vivamus volutpat viverra ipsum sed vulputate. Nulla facilisi. Quisque condimentum auctor est in porta.
+			</p>
+			<p>
+			Vivamus venenatis id eros vel congue. Ut eget eros sem. Quisque non erat nec magna tincidunt eleifend vel vitae diam. Aliquam eu urna tortor. Donec nec arcu at leo bibendum tempus. Proin tempus metus vitae tortor consectetur accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mi tellus, sodales sit amet condimentum id, venenatis in risus. Fusce imperdiet tempus mauris id fermentum. Nam id lorem purus. In condimentum augue in justo ultrices, at tempus lectus accumsan. Aliquam eget urna ac augue varius sagittis. Phasellus convallis sem at dictum lobortis. Sed fermentum metus et diam tempus, sit amet dignissim turpis mattis. Duis eu tempor felis, porttitor congue mauris. Aenean volutpat scelerisque nulla vel cursus.
+			</p>
+			<p>
+			Donec eleifend nunc et nisi rutrum, congue euismod sapien rhoncus. Vestibulum ultricies in leo ut condimentum. Praesent consequat bibendum sem, a varius felis. Integer lobortis, risus vel laoreet dictum, lacus leo sollicitudin lacus, ac ullamcorper odio urna faucibus mi. Integer non pulvinar massa, id ultrices turpis. Cras erat eros, porttitor nec arcu eget, mattis gravida lorem. Integer mauris eros, feugiat et dapibus in, fringilla nec ante. Phasellus sit amet metus eu lectus porta condimentum sit amet ultricies sapien. Pellentesque dolor ligula, facilisis at sapien eu, rutrum commodo diam.
+			</p>
+			
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum tempus magna sed feugiat. Nam quis neque congue, lobortis nulla vel, tincidunt justo. Proin interdum ante nec diam accumsan, nec consectetur elit euismod. Etiam sed nunc fermentum, consequat tortor in, molestie sapien. Aenean eget tristique mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin tristique lacus metus, in sagittis lectus facilisis at. Nam feugiat pellentesque arcu, eget tempor tortor porta ac. Duis auctor faucibus nibh eget interdum. Sed nec blandit elit, et cursus dolor. Aliquam purus urna, venenatis vel nisi sed, lobortis faucibus lorem. Vivamus iaculis a eros nec vehicula. Ut sodales magna ullamcorper lectus tristique, id accumsan sapien placerat.
+			</p>
+			<p>
+			Nullam sed pellentesque metus, id aliquam lacus. Donec non augue consectetur, malesuada enim non, ultrices ante. Nulla nec aliquam ligula, venenatis vehicula nisi. Fusce egestas leo vitae lacus volutpat, non bibendum lectus vulputate. Etiam massa enim, commodo ac consequat a, laoreet sit amet nunc. Donec tempor augue eget diam tempor, in tempus erat mollis. In vel sapien neque. Vestibulum ut erat augue. Praesent elit quam, ullamcorper sed turpis molestie, dictum vehicula tellus. Donec est nulla, venenatis convallis eros ut, pretium pellentesque tellus.
+			</p>
+			<p>
+			Sed ac justo ut nulla commodo ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id aliquet justo. Aenean dignissim dolor sit amet gravida consectetur. Morbi placerat facilisis dolor. Aliquam ac mattis mauris. Mauris semper nisi at ante vulputate, non viverra metus accumsan. Mauris libero arcu, vestibulum at vestibulum id, semper quis mauris. Nulla nec libero id erat luctus volutpat.
+			</p>
+			<p>
+			Ut ac orci sit amet metus porta auctor. Sed porttitor posuere consequat. Proin sed nisi in nulla lobortis malesuada. Nullam aliquam massa in tortor placerat, a ultrices dolor accumsan. Etiam pellentesque quam ut suscipit tempus. Phasellus at fringilla neque. Praesent accumsan diam quis nisi varius sollicitudin vel ut risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non malesuada diam, ut rutrum arcu. Mauris condimentum risus vitae tincidunt iaculis. Integer gravida rhoncus augue, placerat faucibus justo.
+			</p>
+			<p>
+			Integer cursus sed mi sit amet malesuada. Pellentesque blandit massa in sapien porta, vitae egestas enim semper. Cras in turpis ac urna pulvinar molestie. Aenean a libero vitae velit fringilla interdum nec nec neque. Etiam egestas pulvinar neque, vel vestibulum lorem sodales at. Donec venenatis enim cursus, congue odio ut, venenatis orci. Mauris adipiscing enim a commodo consequat. Nam magna purus, sodales quis diam vel, congue interdum leo. Sed pulvinar nisl at purus molestie, vitae commodo quam auctor.
+			</p>
+			<p>
+			Suspendisse at convallis urna. Aenean accumsan pretium dignissim. In in augue quis diam sollicitudin porta et nec eros. Curabitur malesuada velit id turpis sagittis accumsan. Ut egestas dignissim lectus, vitae adipiscing odio vestibulum ornare. Quisque convallis velit nec lacus fringilla fringilla. Cras iaculis fringilla mi, sed tempus ipsum ornare vitae. Cras auctor neque nibh, ut condimentum sapien facilisis eget. Etiam non enim eu libero molestie porta. Nam tempus purus ut congue facilisis. In hac habitasse platea dictumst. Cras eget dui tincidunt, tincidunt nulla a, vulputate orci. Donec malesuada eros at orci fringilla, at tempus augue imperdiet. Maecenas nunc dui, faucibus et lacus vel, lacinia bibendum tellus. Nam quis arcu in dui sodales posuere et a magna. In in velit mi.
+			</p>
+			<p>
+			Vivamus vel ligula bibendum, sodales dui ac, vestibulum erat. Vestibulum a dolor velit. In nec dui ligula. Integer et ultricies elit. Ut eu eros dapibus, pretium mauris a, pharetra eros. Praesent tempor velit non libero euismod placerat et eget erat. Aenean ac arcu ac augue rhoncus ultricies eget ut augue. Suspendisse nunc tellus, tempus ac mi in, mollis elementum enim. Etiam eget turpis ligula.
+			</p>
+			<p>
+			Donec eu ornare elit. Ut feugiat lacus eget lobortis ullamcorper. Praesent blandit sem eu consequat convallis. Cras lacinia, nunc id porta sagittis, nunc ante dapibus leo, ac congue nisl erat tincidunt nisi. Vestibulum volutpat commodo tortor, ut elementum leo. Mauris a turpis sem. Vivamus volutpat viverra ipsum sed vulputate. Nulla facilisi. Quisque condimentum auctor est in porta.
+			</p>
+			<p>
+			Vivamus venenatis id eros vel congue. Ut eget eros sem. Quisque non erat nec magna tincidunt eleifend vel vitae diam. Aliquam eu urna tortor. Donec nec arcu at leo bibendum tempus. Proin tempus metus vitae tortor consectetur accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mi tellus, sodales sit amet condimentum id, venenatis in risus. Fusce imperdiet tempus mauris id fermentum. Nam id lorem purus. In condimentum augue in justo ultrices, at tempus lectus accumsan. Aliquam eget urna ac augue varius sagittis. Phasellus convallis sem at dictum lobortis. Sed fermentum metus et diam tempus, sit amet dignissim turpis mattis. Duis eu tempor felis, porttitor congue mauris. Aenean volutpat scelerisque nulla vel cursus.
+			</p>
+			<p>
+			Donec eleifend nunc et nisi rutrum, congue euismod sapien rhoncus. Vestibulum ultricies in leo ut condimentum. Praesent consequat bibendum sem, a varius felis. Integer lobortis, risus vel laoreet dictum, lacus leo sollicitudin lacus, ac ullamcorper odio urna faucibus mi. Integer non pulvinar massa, id ultrices turpis. Cras erat eros, porttitor nec arcu eget, mattis gravida lorem. Integer mauris eros, feugiat et dapibus in, fringilla nec ante. Phasellus sit amet metus eu lectus porta condimentum sit amet ultricies sapien. Pellentesque dolor ligula, facilisis at sapien eu, rutrum commodo diam.
+			</p>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum tempus magna sed feugiat. Nam quis neque congue, lobortis nulla vel, tincidunt justo. Proin interdum ante nec diam accumsan, nec consectetur elit euismod. Etiam sed nunc fermentum, consequat tortor in, molestie sapien. Aenean eget tristique mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin tristique lacus metus, in sagittis lectus facilisis at. Nam feugiat pellentesque arcu, eget tempor tortor porta ac. Duis auctor faucibus nibh eget interdum. Sed nec blandit elit, et cursus dolor. Aliquam purus urna, venenatis vel nisi sed, lobortis faucibus lorem. Vivamus iaculis a eros nec vehicula. Ut sodales magna ullamcorper lectus tristique, id accumsan sapien placerat.
+			</p>
+			<p>
+			Nullam sed pellentesque metus, id aliquam lacus. Donec non augue consectetur, malesuada enim non, ultrices ante. Nulla nec aliquam ligula, venenatis vehicula nisi. Fusce egestas leo vitae lacus volutpat, non bibendum lectus vulputate. Etiam massa enim, commodo ac consequat a, laoreet sit amet nunc. Donec tempor augue eget diam tempor, in tempus erat mollis. In vel sapien neque. Vestibulum ut erat augue. Praesent elit quam, ullamcorper sed turpis molestie, dictum vehicula tellus. Donec est nulla, venenatis convallis eros ut, pretium pellentesque tellus.
+			</p>
+			<p>
+			Sed ac justo ut nulla commodo ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id aliquet justo. Aenean dignissim dolor sit amet gravida consectetur. Morbi placerat facilisis dolor. Aliquam ac mattis mauris. Mauris semper nisi at ante vulputate, non viverra metus accumsan. Mauris libero arcu, vestibulum at vestibulum id, semper quis mauris. Nulla nec libero id erat luctus volutpat.
+			</p>
+			<p>
+			Ut ac orci sit amet metus porta auctor. Sed porttitor posuere consequat. Proin sed nisi in nulla lobortis malesuada. Nullam aliquam massa in tortor placerat, a ultrices dolor accumsan. Etiam pellentesque quam ut suscipit tempus. Phasellus at fringilla neque. Praesent accumsan diam quis nisi varius sollicitudin vel ut risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non malesuada diam, ut rutrum arcu. Mauris condimentum risus vitae tincidunt iaculis. Integer gravida rhoncus augue, placerat faucibus justo.
+			</p>
+			<p>
+			Integer cursus sed mi sit amet malesuada. Pellentesque blandit massa in sapien porta, vitae egestas enim semper. Cras in turpis ac urna pulvinar molestie. Aenean a libero vitae velit fringilla interdum nec nec neque. Etiam egestas pulvinar neque, vel vestibulum lorem sodales at. Donec venenatis enim cursus, congue odio ut, venenatis orci. Mauris adipiscing enim a commodo consequat. Nam magna purus, sodales quis diam vel, congue interdum leo. Sed pulvinar nisl at purus molestie, vitae commodo quam auctor.
+			</p>
+			<p>
+			Suspendisse at convallis urna. Aenean accumsan pretium dignissim. In in augue quis diam sollicitudin porta et nec eros. Curabitur malesuada velit id turpis sagittis accumsan. Ut egestas dignissim lectus, vitae adipiscing odio vestibulum ornare. Quisque convallis velit nec lacus fringilla fringilla. Cras iaculis fringilla mi, sed tempus ipsum ornare vitae. Cras auctor neque nibh, ut condimentum sapien facilisis eget. Etiam non enim eu libero molestie porta. Nam tempus purus ut congue facilisis. In hac habitasse platea dictumst. Cras eget dui tincidunt, tincidunt nulla a, vulputate orci. Donec malesuada eros at orci fringilla, at tempus augue imperdiet. Maecenas nunc dui, faucibus et lacus vel, lacinia bibendum tellus. Nam quis arcu in dui sodales posuere et a magna. In in velit mi.
+			</p>
+			<p>
+			Vivamus vel ligula bibendum, sodales dui ac, vestibulum erat. Vestibulum a dolor velit. In nec dui ligula. Integer et ultricies elit. Ut eu eros dapibus, pretium mauris a, pharetra eros. Praesent tempor velit non libero euismod placerat et eget erat. Aenean ac arcu ac augue rhoncus ultricies eget ut augue. Suspendisse nunc tellus, tempus ac mi in, mollis elementum enim. Etiam eget turpis ligula.
+			</p>
+			<p>
+			Donec eu ornare elit. Ut feugiat lacus eget lobortis ullamcorper. Praesent blandit sem eu consequat convallis. Cras lacinia, nunc id porta sagittis, nunc ante dapibus leo, ac congue nisl erat tincidunt nisi. Vestibulum volutpat commodo tortor, ut elementum leo. Mauris a turpis sem. Vivamus volutpat viverra ipsum sed vulputate. Nulla facilisi. Quisque condimentum auctor est in porta.
+			</p>
+			<p>
+			Vivamus venenatis id eros vel congue. Ut eget eros sem. Quisque non erat nec magna tincidunt eleifend vel vitae diam. Aliquam eu urna tortor. Donec nec arcu at leo bibendum tempus. Proin tempus metus vitae tortor consectetur accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mi tellus, sodales sit amet condimentum id, venenatis in risus. Fusce imperdiet tempus mauris id fermentum. Nam id lorem purus. In condimentum augue in justo ultrices, at tempus lectus accumsan. Aliquam eget urna ac augue varius sagittis. Phasellus convallis sem at dictum lobortis. Sed fermentum metus et diam tempus, sit amet dignissim turpis mattis. Duis eu tempor felis, porttitor congue mauris. Aenean volutpat scelerisque nulla vel cursus.
+			</p>
+			<small>
+			Donec eleifend nunc et nisi rutrum, congue euismod sapien rhoncus. Vestibulum ultricies in leo ut condimentum. Praesent consequat bibendum sem, a varius felis. Integer lobortis, risus vel laoreet dictum, lacus leo sollicitudin lacus, ac ullamcorper odio urna faucibus mi. Integer non pulvinar massa, id ultrices turpis. Cras erat eros, porttitor nec arcu eget, mattis gravida lorem. Integer mauris eros, feugiat et dapibus in, fringilla nec ante. Phasellus sit amet metus eu lectus porta condimentum sit amet ultricies sapien. Pellentesque dolor ligula, facilisis at sapien eu, rutrum commodo diam.
+			</small>
 
 
 		</article>
-
-	</div><!--/column-->
-
-	<div class="column two">
-
-		<aside>
-				<h2>Sidebar</h2>
-				<ul>
-					<li>Fight, fight, fight for Washington State! Win the victory!</li>
-					<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
-					<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
-					<li>Fight, fight, fight for Washington State and victory!</li>
-					<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
-				</ul>
-				<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
-		</aside>
 
 	</div><!--/column-->
 
@@ -1004,10 +1089,13 @@ pre code {
 <script>
 
 	$(document).ready(function(){
+	
+	if ($('#binder').hasClass('spineless')) { $('#spineless-switch').addClass('active'); }
+	if ($('#spine').hasClass('bleed')) { $('#bleed-switch').addClass('active'); }
 
 	// 
 	$('.spine-behavior button').on('click', function() {
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var grid = $(this).attr('data-grid');
 		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
 		$(this).trigger( "resize" );
@@ -1028,7 +1116,7 @@ pre code {
 	// Change Spine transparency
 	$('.spine-transparency button').on('click', function() {
 		var transparency = $(this).attr('data-transparency');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
 		$('#spine').addClass(transparency);
 		$(this).trigger( "resize" );
@@ -1038,7 +1126,7 @@ pre code {
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
 		$('#binder').addClass('folio').addClass(max);
 		$(this).trigger( "resize" );
@@ -1048,13 +1136,19 @@ pre code {
 	// Change Campus
 	$('.spine-campuses button').on('click', function() {
 		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
 		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		$(this).trigger( "resize" );
 		return false;
 	});
+	
+	$('button').on('click', function() {
+	
+		$(this).not('.active').toggleClass('active');
+	
+		});
 	
 	});
 
@@ -1088,9 +1182,9 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
-		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active'); $(this).trigger('resize');">spineless</button></dd>
+		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">
@@ -1143,7 +1237,7 @@ h2 {
 <div class="unbound recto green-back">
 <section id="recto" class="row single rebound gutter narrow">
 	<div class="column one green-lighter-text">
-	<h2>Recto</h2>
+	<h2 class="green-lightly-text">Recto</h2>
 	<p>Quisque ac justo molestie, vulputate arcu non, rutrum tortor. Integer in purus eget metus tincidunt tempor imperdiet sit amet sapien. Aliquam varius massa nec augue pulvinar, vel mattis sem congue. In vitae ultricies quam. Maecenas nec pharetra nulla. Sed tincidunt, tellus sed iaculis luctus, justo elit aliquam purus, non molestie ante velit id massa. Integer ac leo lobortis, blandit nibh eu, dignissim neque. Aliquam rutrum molestie nulla vitae blandit. Donec venenatis rutrum orci, in eleifend erat malesuada eu. Etiam et eros tellus.</p>
 	</div>
 </section>
@@ -1154,7 +1248,7 @@ h2 {
 <div class="unbound verso blue-back">
 <section id="verso" class="row single rebound gutter narrow">
 	<div class="column one blue-lighter-text">
-	<h2>Verso</h2>
+	<h2 class="blue-lightly-text">Verso</h2>
 	<p>Aenean auctor varius malesuada. Nam semper quam eu nibh feugiat lacinia. Morbi nec massa rutrum, vulputate urna sed, ultrices nisl. Integer sodales, purus a rhoncus ultrices, urna nibh imperdiet erat, tincidunt auctor neque ante in nisi. Maecenas eu erat imperdiet sem sollicitudin tincidunt nec eget leo. Etiam lobortis imperdiet nisi vitae vestibulum. Donec cursus arcu non turpis varius pulvinar. Donec tempus tempus arcu blandit auctor. Ut ut hendrerit mauris. Sed dignissim ultrices erat non adipiscing. Quisque congue tempor feugiat. Integer bibendum ante ut pharetra sodales. Aliquam vel neque ante.</p>
 	</div>
 </section>
@@ -1165,7 +1259,7 @@ h2 {
 <div class="unbound verso recto yellow-back">
 <section id="versorecto" class="row single rebound gutter narrow">
 	<div class="column one yellow-lighter-text">
-	<h2>Verso Recto <small>( .rebound.row )</small></h2>
+	<h2 class="yellow-lightly-text">Verso+Recto <small>( .rebound.row )</small></h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit velit vitae odio lacinia elementum. Nunc suscipit lectus ultrices, molestie dui at, tincidunt lacus. Nunc aliquam ullamcorper metus sed eleifend. Aliquam ac quam ut ante cursus ullamcorper. Aliquam pharetra laoreet cursus. Suspendisse pellentesque, dolor eget viverra gravida, risus urna eleifend diam, ac ornare ligula quam at eros. Pellentesque venenatis ante turpis, lacinia eleifend libero placerat et. Vestibulum accumsan sodales consectetur.</p></div>
 </section>
 </div>
@@ -1174,9 +1268,9 @@ h2 {
 
 <div class="unbound recto green-back">
 <div class="rebound">
-<section id="verso" class="row single gutter narrow">
+<section id="recto2" class="row single gutter narrow">
 	<div class="column one green-lighter-text">
-	<h2 class="green-lightest-text">Recto <small>( .rebound > .row )</small></h2>
+	<h2 class="green-lightly-text">Recto <small>( .rebound > .row )</small></h2>
 	<p>Quisque ac justo molestie, vulputate arcu non, rutrum tortor. Integer in purus eget metus tincidunt tempor imperdiet sit amet sapien. Aliquam varius massa nec augue pulvinar, vel mattis sem congue. In vitae ultricies quam. Maecenas nec pharetra nulla. Sed tincidunt, tellus sed iaculis luctus, justo elit aliquam purus, non molestie ante velit id massa. Integer ac leo lobortis, blandit nibh eu, dignissim neque. Aliquam rutrum molestie nulla vitae blandit. Donec venenatis rutrum orci, in eleifend erat malesuada eu. Etiam et eros tellus.</p>
 	</div>
 </section>
@@ -1187,9 +1281,9 @@ h2 {
 
 <div class="unbound verso blue-back">
 <div class="rebound">
-<section id="verso" class="row single gutter narrow">
+<section id="verso2" class="row single gutter narrow">
 	<div class="column one blue-lighter-text">
-	<h2>Verso <small>( .rebound > .row )</small></h2>
+	<h2 class="blue-lightly-text">Verso <small>( .rebound > .row )</small></h2>
 	<p>Aenean auctor varius malesuada. Nam semper quam eu nibh feugiat lacinia. Morbi nec massa rutrum, vulputate urna sed, ultrices nisl. Integer sodales, purus a rhoncus ultrices, urna nibh imperdiet erat, tincidunt auctor neque ante in nisi. Maecenas eu erat imperdiet sem sollicitudin tincidunt nec eget leo. Etiam lobortis imperdiet nisi vitae vestibulum. Donec cursus arcu non turpis varius pulvinar. Donec tempus tempus arcu blandit auctor. Ut ut hendrerit mauris. Sed dignissim ultrices erat non adipiscing. Quisque congue tempor feugiat. Integer bibendum ante ut pharetra sodales. Aliquam vel neque ante.</p>
 	</div>
 </section>
@@ -1200,9 +1294,9 @@ h2 {
 
 <div class="unbound verso recto yellow-back">
 <div class="rebound">
-<section id="versorecto" class="row single gutter narrow">
+<section id="versorecto2" class="row single gutter narrow">
 	<div class="column one yellow-lighter-text">
-	<h2 class="yellow-lightly-text">Verso Recto <small>( .rebound > .row )</small></h2>
+	<h2 class="yellow-lightly-text">Verso+Recto <small>( .rebound > .row )</small></h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit velit vitae odio lacinia elementum. Nunc suscipit lectus ultrices, molestie dui at, tincidunt lacus. Nunc aliquam ullamcorper metus sed eleifend. Aliquam ac quam ut ante cursus ullamcorper. Aliquam pharetra laoreet cursus. Suspendisse pellentesque, dolor eget viverra gravida, risus urna eleifend diam, ac ornare ligula quam at eros. Pellentesque venenatis ante turpis, lacinia eleifend libero placerat et. Vestibulum accumsan sodales consectetur.</p></div>
 </section>
 </div>
@@ -1733,6 +1827,165 @@ hr {
 </section>
 
 	<!-- @endif -->
+	<!-- @if ui='true' -->
+		<style>
+
+
+</style>
+
+<script>
+
+</script>
+
+<hr>
+
+<section id="quarters" class="row halves gutter wireframe">
+
+	<header class="guttered">Buttons and Inputs</header>
+	
+	<div class="column one">
+		
+		<button>Button</button>
+		<input type="button" value="Input type button">
+		<a class="button" href="#">a button class</a>
+		
+		<form class="gray-lightest-back">
+		
+		<button>Button</button>
+		<input type="button" value="Input type button">
+		<a class="button"></a>
+		
+		Show 1 value:
+		<SELECT NAME="Fav_Pet">
+		<OPTION>Cat
+		<OPTION>Dog
+		<OPTION>Rat
+		</SELECT>
+		
+		Show all values:
+		<SELECT NAME="Fav_Color" MULTIPLE>
+		<OPTION>Green
+		<OPTION>Purple
+		<OPTION>Black
+		</SELECT>
+		
+		Where do you live?
+<INPUT TYPE="radio" NAME="city" VALUE="Los_Angeles" CHECKED>Los Angeles
+<INPUT TYPE="radio" NAME="city" VALUE="San_Diego">San Diego
+<INPUT TYPE="radio" NAME="city" VALUE="San_Francisco">San Francisco
+
+Notice how "Los_Angeles" is marked as CHECKED in the example above.
+
+Where do you work?
+<INPUT TYPE="radio" NAME="work" VALUE="Home">Home
+<INPUT TYPE="radio" NAME="work" VALUE="Office">Office
+<INPUT TYPE="radio" NAME="work" VALUE="No_Work">Don't Work
+
+	What sports are you interested in?
+<INPUT TYPE="checkbox" NAME="sports" VALUE="Football" CHECKED>Football
+<INPUT TYPE="checkbox" NAME="sports" VALUE="Baseball">Baseball
+<INPUT TYPE="checkbox" NAME="sports" VALUE="Basketball">Basketball
+		
+		</form>
+	</div>
+	<div class="column two">
+		<article class="gray-lightly-back">two</article>
+	</div>
+</section>
+
+<section id="thirds" class="row thirds gutter equalize wireframe">
+	
+	<header class="guttered">HTML5</header>
+	
+	<div class="column one">
+	
+		<h3>Placeholder</h3>
+		<form>
+		  <input name="q" placeholder="Go to a Website">
+		  <input type="submit" value="Search">
+		</form>
+		
+	</div>
+	
+	<div class="column two">
+
+		<h3>Autofocus</h3>
+		<form>
+		  <input name="q" autofocus>
+		  <input type="submit" value="Search">
+		</form>
+	
+	</div>
+	
+	<div class="column three">
+	
+	
+	
+	</div>
+
+</section>
+
+<hr>
+
+<section id="single" class="row single gutter wireframe">
+	
+	<div class="column one">
+		<h2>Single</h2>
+		<form id="myForm" action="#" method="post">
+    <label for="name">Text Input:</label>
+    <input type="text" name="name" id="name" value="" tabindex="1">
+
+   <div>
+     <h4>Radio Button Choice</h4>
+
+     <label for="radio-choice-1">Choice 1</label>
+     <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1">
+
+    <label for="radio-choice-2">Choice 2</label>
+    <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2">
+  </div>
+
+  <div>
+    <label for="select-choice">Select Dropdown Choice:</label>
+    <select name="select-choice" id="select-choice">
+      <option value="Choice 1">Choice 1</option>
+      <option value="Choice 2">Choice 2</option>
+      <option value="Choice 3">Choice 3</option>
+    </select>
+  </div>
+	
+  <div>
+    <label for="textarea">Textarea:</label>
+    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+  </div>
+	
+  <div>
+    <label for="checkbox">Checkbox:</label>
+    <input type="checkbox" name="checkbox">
+  </div>
+
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+
+</form>
+		
+	</div>
+</section>
+
+<hr>
+
+<section id="text-columns" class="row halves gutter wireframe">
+	<h2 class="guttered">Halves</h2>
+	<div class="column one">
+		<article class="gray-lightly-back" style="min-height: 310px">one</article>
+	</div>
+	<div class="column two">
+		<article class="gray-lighter-back" style="min-height: 390px">two</article>
+	</div>
+</section>
+
+	<!-- @endif -->
 	<!-- @if demo='true' -->
 		<section id="spine-behavior" class="row side-left gutter wide equalize">
 
@@ -2008,6 +2261,7 @@ hr {
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fluid.html">Fluid and Flex</a></li>
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_fixed.html">Fixed and Fold</a></li>
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/grid_hybrid.html">Fold then Flex</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/binding_broken.html">Broken Binding</a></li>
 		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
 	</ul>
 </li>
@@ -2029,8 +2283,8 @@ hr {
 	<a href="#">Main</a>
 	<ul>
 		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/mainheader.html">Main Header</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/unbound.html">Main Header</a></li>
-		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/binding_broken.html">Broken Binding</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/unbound.html">Unbound Rebound</a></li>
+		<li><a href="<!-- @echo location -->/<!-- @echo build_version -->/tests/ui.html">User Interface</a></li>
 	</ul>
 </li>
 <li>
