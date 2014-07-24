@@ -5,6 +5,14 @@
 
 	/* Grid - Manual Overrides */
 	
+	.at-large-display-none,
+	.at-large-display-none .column {
+		display: none;
+		}
+	.at-large-display-block,
+	.at-large-display-block .column {
+		display: block;
+		}
 	.at-large-max-width,
 	.at-large-max-width .column {
 		max-width: 100% !important;
@@ -38,6 +46,14 @@
 	
 	/* Grid - Manual Controls */
 
+	.at-medium-display-none,
+	.at-medium-display-none .column {
+		display: none;
+		}
+	.at-medium-display-block,
+	.at-medium-display-block .column {
+		display: block;
+		}
 	.at-medium-max-width,
 	.at-medium-max-width .column {
 		max-width: 100% !important;
@@ -167,6 +183,14 @@
 
 	/* Grid - Manual Controls */
 	
+	.at-small-display-none,
+	.at-small-display-none .column {
+		display: none;
+		}
+	.at-medium-display-block,
+	.at-medium-display-block .column {
+		display: block;
+		}
 	.at-small-max-width,
 	.at-small-max-width .column {
 		max-width: 100% !important;
