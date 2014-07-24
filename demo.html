@@ -391,10 +391,13 @@ pre code {
 <script>
 
 	$(document).ready(function(){
+	
+	if ($('#binder').hasClass('spineless')) { $('#spineless-switch').addClass('active'); }
+	if ($('#spine').hasClass('bleed')) { $('#bleed-switch').addClass('active'); }
 
 	// 
 	$('.spine-behavior button').on('click', function() {
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var grid = $(this).attr('data-grid');
 		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
 		$(this).trigger( "resize" );
@@ -415,7 +418,7 @@ pre code {
 	// Change Spine transparency
 	$('.spine-transparency button').on('click', function() {
 		var transparency = $(this).attr('data-transparency');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
 		$('#spine').addClass(transparency);
 		$(this).trigger( "resize" );
@@ -425,7 +428,7 @@ pre code {
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
 		$('#binder').addClass('folio').addClass(max);
 		$(this).trigger( "resize" );
@@ -435,13 +438,19 @@ pre code {
 	// Change Campus
 	$('.spine-campuses button').on('click', function() {
 		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
+		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
 		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		$(this).trigger( "resize" );
 		return false;
 	});
+	
+	$('#switches button').on('click', function() {
+	
+		$(this).not('.active').toggleClass('active');
+	
+		});
 	
 	});
 
@@ -475,9 +484,9 @@ pre code {
 	
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="#cropping-bleeding" class="info">info</a></dt>
-		<dd><button class="active" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
+		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
-		<dd><button onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).toggleClass('active'); $(this).trigger('resize');">spineless</button></dd>
+		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 	
 	<dl class="spine-campuses clearfix">
@@ -727,6 +736,7 @@ pre code {
 		<li><a href="http://repo.wsu.edu/spine//1/tests/grid_fluid.html">Fluid and Flex</a></li>
 		<li><a href="http://repo.wsu.edu/spine//1/tests/grid_fixed.html">Fixed and Fold</a></li>
 		<li><a href="http://repo.wsu.edu/spine//1/tests/grid_hybrid.html">Fold then Flex</a></li>
+		<li><a href="http://repo.wsu.edu/spine//1/tests/binding_broken.html">Broken Binding</a></li>
 		<li><a href="http://en.wikipedia.org/wiki/Responsive_web_design">On Responsiveness</a></li>
 	</ul>
 </li>
@@ -748,8 +758,8 @@ pre code {
 	<a href="#">Main</a>
 	<ul>
 		<li><a href="http://repo.wsu.edu/spine//1/tests/mainheader.html">Main Header</a></li>
-		<li><a href="http://repo.wsu.edu/spine//1/tests/unbound.html">Main Header</a></li>
-		<li><a href="http://repo.wsu.edu/spine//1/tests/binding_broken.html">Broken Binding</a></li>
+		<li><a href="http://repo.wsu.edu/spine//1/tests/unbound.html">Unbound Rebound</a></li>
+		<li><a href="http://repo.wsu.edu/spine//1/tests/ui.html">User Interface</a></li>
 	</ul>
 </li>
 <li>
