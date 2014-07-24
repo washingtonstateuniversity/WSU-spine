@@ -2,13 +2,13 @@
 -------------------------------------------------------- */
 
 .spine-button,
-button,
+.button, button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
 	background: $gray-lightest;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 1px 1px 1px 1px;
 	border-color: $gray-lightly $gray-light $gray-light $gray-lightly;
 	border-radius: 0.5em;
 	color: $gray-dark;
@@ -18,13 +18,17 @@ input[type="button"] {
 	margin-bottom: 0px;
 	line-height: normal;
 	padding: 0.5em 1em;
+	vertical-align: middle;
 	}
 
-.button:hover,
-button:hover,
+.button:hover, button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="button"]:hover {
+input[type="button"]:hover,
+.button:focus, button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
 	color: $gray-dark;
 	background: $gray-er;
 	border-color: $gray-light;
@@ -35,12 +39,7 @@ input[type="button"]:hover {
 button:active, button.active,
 input[type="submit"]:active,
 input[type="reset"]:active,
-input[type="button"]:active,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
+input[type="button"]:active {
 	color: $gray-lighter;
 	border-color: $gray-darkest;
 	background: $gray-dark;
@@ -74,8 +73,7 @@ input:-moz-focus-inner {
 	}
 
 
-/* I.5.0 FORMS
--------------------------------------------------------- */
+/* ## FORMS  */
 
 /* This could be a wee bit controversial */
 form,fieldset,input,textarea,legend,label {
@@ -117,7 +115,10 @@ textarea:focus {
 	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
 	box-shadow:  0 0 3px rgba(0,0,0,.2); }
 textarea {
-	min-height: 60px; }
+	min-height: 60px;
+	width: 100%;
+	box-sizing: border-box;
+	}
 label,
 legend {
 	font-weight: bold;
