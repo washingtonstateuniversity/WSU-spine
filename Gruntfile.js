@@ -124,6 +124,8 @@ module.exports = function(grunt) {
 					DEBUG: true,
 					location : '',
 					build_version : '<%= pkg.build_version %>',
+					test_title: '',
+					content: 'skip',
 					malformed : 'skip', // true or false is what is tested for
 					demo: 'skip',
 					opensans: 'skip',
@@ -131,6 +133,7 @@ module.exports = function(grunt) {
 					spacing: 'skip',
 					mainheader: 'skip',
 					unbound: 'skip',
+					ui: 'skip',
 					filledSearchTab : 'skip',
 					showLong : 'skip',
 					manyLinks : 'skip',
@@ -161,6 +164,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						markup : 'true',
+						content: 'true',
 						location : 'http://repo.wsu.edu/spine/'
 					}
 				}
@@ -171,6 +175,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						markup_min : 'true',
+						content: 'false',
 						location : 'http://repo.wsu.edu/spine/'
 					}
 				}
@@ -181,6 +186,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						demo : 'true',
+						content: 'false',
 						location : 'http://repo.wsu.edu/spine/'
 					}
 				}
@@ -191,6 +197,8 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						opensans : 'true',
+						test_title: 'Testing Opens Sans',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -201,6 +209,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						columns : 'true',
+						test_title: 'Testing Columns',
 						location : '/build'
 					}
 				}
@@ -211,6 +220,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						spacing : 'true',
+						test_title: 'Testing Gutters and Pads',
 						location : '/build'
 					}
 				}
@@ -221,6 +231,8 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						mainheader : 'true',
+						test_title: 'Testing the Main Header',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -231,6 +243,18 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						unbound : 'true',
+						content: 'false',
+						location : '/build'
+					}
+				}
+			},
+			ui : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'build/<%= pkg.build_version %>/tests/ui.html',
+				options : {
+					context : {
+						ui : 'true',
+						test_title: 'User Interaction Elements',
 						location : '/build'
 					}
 				}
@@ -241,6 +265,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						filledSearchTab : 'true',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -251,6 +276,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						malformed : 'true',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -261,6 +287,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						malformed : 'false',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -271,6 +298,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						doubledContact : 'true',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -281,6 +309,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						navdata : 'true',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -312,6 +341,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						manyLinks : 'true',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -322,36 +352,44 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						cropped : 'true',
+						test_title: 'Testing Cropped Spine',
+						content: 'true',
 						location : '/build'
 					}
 				}
 			},
-			tu_grid_fluid : {
+			grid_fluid : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'build/<%= pkg.build_version %>/tests/grid_fluid.html',
 				options : {
 					context : {
 						fluidGrid : 'true',
+						test_title: 'Testing Fluid Grid',
+						content: 'true',
 						location : '/build'
 					}
 				}
 			},
-			tu_grid_hybrid : {
+			grid_hybrid : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'build/<%= pkg.build_version %>/tests/grid_hybrid.html',
 				options : {
 					context : {
 						hybridGrid : 'true',
+						test_title: 'Testing Hybrid Grid',
+						content: 'true',
 						location : '/build'
 					}
 				}
 			},
-			tu_grid_fixed : {
+			grid_fixed : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'build/<%= pkg.build_version %>/tests/grid_fixed.html',
 				options : {
 					context : {
 						fixedGrid : 'true',
+						test_title: 'Testing Fixed Grid',
+						content: 'true',
 						location : '/build'
 					}
 				}
@@ -400,6 +438,7 @@ module.exports = function(grunt) {
 								'preprocess:spacing',
 								'preprocess:mainheader',
 								'preprocess:unbound',
+								'preprocess:ui',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
@@ -408,9 +447,9 @@ module.exports = function(grunt) {
 								'preprocess:tu_overly_long',
 								'preprocess:tu_overly_linked',
 								'preprocess:tu_cropped',
-								'preprocess:tu_grid_fluid',
-								'preprocess:tu_grid_hybrid',
-								'preprocess:tu_grid_fixed',
+								'preprocess:grid_fluid',
+								'preprocess:grid_hybrid',
+								'preprocess:grid_fixed',
 								'preprocess:tu_navdata',
 								'preprocess:markup',
 								'preprocess:markup_min',
@@ -432,6 +471,7 @@ module.exports = function(grunt) {
 								'preprocess:spacing',
 								'preprocess:mainheader',
 								'preprocess:unbound',
+								'preprocess:ui',
 								'preprocess:tu_search_tabs',
 								'preprocess:tu_contact_malformed',
 								'preprocess:tu_contact_filled',
@@ -440,9 +480,9 @@ module.exports = function(grunt) {
 								'preprocess:tu_overly_long',
 								'preprocess:tu_overly_linked',
 								'preprocess:tu_cropped',
-								'preprocess:tu_grid_fluid',
-								'preprocess:tu_grid_hybrid',
-								'preprocess:tu_grid_fixed',
+								'preprocess:grid_fluid',
+								'preprocess:grid_hybrid',
+								'preprocess:grid_fixed',
 								'preprocess:tu_navdata',
 								'preprocess:markup',
 								'preprocess:markup_min',
