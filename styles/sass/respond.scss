@@ -82,8 +82,6 @@
 	margin-left: 0px;
 	}
 	
-
-
 .fluid .row.rebound,
 .fluid .verso .rebound,
 .fluid .recto .rebound,
@@ -214,7 +212,9 @@ nav a.external:after {
 	}
 
 .max-1188 .rebound,
-.max-1188 .row.rebound,
+.max-1188 .row.rebound {
+	width: 792px;
+	}
 .row:not(.boundless) {
 	width: 100%;
 	}
@@ -238,18 +238,7 @@ nav a.external:after {
 	height: 49px;
 	}
 
-.at-medium-max-width {
-	max-width: 100% !important;
-	}
-.at-medium-full-width {
-	width: 100% !important;
-	}
-.at-medium-half-width {
-	width: 50% !important;
-	}
-.at-medium-clear {
-	clear: both !important;
-	}
+@include grid-small-controls;
 
 /* Header Colors and Signatures */
 @include header-colors;
@@ -630,47 +619,18 @@ nav a.external:after {
 	
 /* ## Show and Hide */
 
-/* Hide */
-.size-small-only,
-.size-gt-small-only,
-.size-gt-smallish-only,
-.size-gt-medium-only,
-.size-gt-large-only,
-.size-gt-xlarge-only,
-.size-lt-small-only,
-.size-lt-smallish-only,
-.size-lt-medium-only,
-.size-lt-large-only,
-.size-lt-xlarge-only,
-.size-xlarge-only {
+.display-none-important {
 	display: none !important;
 	}
-	
-.folio-only,
-.min-1188-only, .max-1188-only,
-.min-1386-only, .max-1386-only,
-.min-1584-only, .max-1584-only,
-.min-1782-only, .max-1782-only,
-.min-1980-only, .max-1980-only {
-	display: none !important;	
-	}
-
-/* Show */
-.size-small .size-small-only,
-.size-gt-small .size-gt-small-only,
-.size-gt-smallish .size-gt-smallish-only,
-.size-gt-medium .size-gt-medium-only,
-.size-gt-large .size-gt-large-only,
-.size-gt-xlarge .size-gt-xlarge-only,
-.size-lt-small .size-lt-small-only,
-.size-lt-smallish .size-lt-smallish-only,
-.size-lt-medium .size-lt-medium-only,
-.size-lt-large .size-lt-large-only,
-.size-lt-xlarge .size-lt-xlarge-only,
-.size-xlarge .size-xlarge-only {
+.display-block-important {
 	display: block !important;
 	}
-
+	
+@each $size, $name in $sizes {
+	
+	div:not(.size-lt-#{$name}) .size-lt-#{$name}-only, div:not(.size-#{$name}) .size-#{$name}-only, div:not(.size-gt-#{$name}) .size-gt-#{$name}-only {
+		@extend .display-none-important; }
+	}
 
 /* ## PRINT VIEW */
 
