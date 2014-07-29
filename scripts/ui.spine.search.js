@@ -260,8 +260,8 @@
 				var scope,site,cx,cof,search_term,search_url;
 				scope = wsu_search.attr("data-default");
 				site = " site:"+window.location.hostname;
-				if ( scope === "site-search" ) {
-					site = " site:"+window.location.hostname;
+				if ( scope === "wsu.edu" ) {
+					site = "";
 				}
 				cx = "cx=004677039204386950923:xvo7gapmrrg";
 				cof = "cof=FORID%3A11";
