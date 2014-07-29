@@ -1413,7 +1413,7 @@ main hr.short {
 
 /* Images
 -------------------------------------------------------- */
-.fluid .column img {
+.column img {
   max-width: 100%;
   height: auto; }
 
