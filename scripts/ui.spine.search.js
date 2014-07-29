@@ -259,7 +259,7 @@
 			$("#wsu-search form").submit( function() {
 				var scope,site,cx,cof,search_term,search_url;
 				scope = wsu_search.attr("data-default");
-				site = "";
+				site = " site:"+window.location.hostname;
 				if ( scope === "site-search" ) {
 					site = " site:"+window.location.hostname;
 				}
