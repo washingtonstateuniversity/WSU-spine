@@ -430,7 +430,7 @@ html.lt-ie9 #spine .spine-actions {
 #spine .spine-contact .organization-unit a:hover {
   color: black; }
 #spine .spine-contact .organization-name {
-  white-space: nowrap;
+  font-size: .9em;
   padding: 0;
   border-bottom: none; }
 #spine .spine-contact .adr {
