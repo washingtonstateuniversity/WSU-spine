@@ -628,7 +628,7 @@ nav a.external:after {
 	
 @each $size, $name in $sizes {
 	
-	div:not(.size-lt-#{$name}) .size-lt-#{$name}-only, div:not(.size-#{$name}) .size-#{$name}-only, div:not(.size-gt-#{$name}) .size-gt-#{$name}-only {
+	#jacket:not(.size-lt-#{$name}) .size-lt-#{$name}-only, #jacket:not(.size-#{$name}) .size-#{$name}-only, #jacket:not(.size-gt-#{$name}) .size-gt-#{$name}-only {
 		@extend .display-none-important; }
 	}
 
