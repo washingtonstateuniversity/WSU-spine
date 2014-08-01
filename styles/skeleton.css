@@ -1434,7 +1434,7 @@ aside.marginalized {
 
 .margin-right aside.marginalized {
   width: 198px;
-  left: -198px;
+  right: -198px;
   border-left-width: 1px;
   padding-left: 1em; }
 
