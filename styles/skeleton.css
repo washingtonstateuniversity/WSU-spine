@@ -1412,13 +1412,11 @@ main hr.short {
 
 aside.marginalized {
   position: absolute;
-  top: 0;
   box-sizing: border-box;
   border-width: 0px;
   border-style: solid;
-  border-color: gray;
-  padding: 1em 2em;
-  margin-top: 1em; }
+  border-color: #b5babe;
+  padding: 1em 2em; }
 
 .side-right aside.marginalized {
   width: 264px;
