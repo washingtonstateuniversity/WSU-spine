@@ -9,6 +9,7 @@
 @import 'skeleton/pad';
 @import 'skeleton/unbind';
 @import 'skeleton/headers';
+@import 'skeleton/asides';
 // @import 'skeleton/grid';
 
 @charset "UTF-8";
@@ -178,8 +179,7 @@ section {
 /* ### Main Header */
 @include main-header;
 
-/* Block Level Styles
--------------------------------------------------------- */
+/* ### Block Level Styles */
 
 main hr.tall {
 	margin-top: 2em;
@@ -189,10 +189,11 @@ main hr.short {
 	margin-top: 0;
 	margin-bottom: 0;
 	}
+	
+@include asides-marginalized;
 
 
-/* Images
--------------------------------------------------------- */
+/* ### Images  */
 .column img {
 		max-width: 100%;
 		height: auto; }
