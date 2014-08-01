@@ -1401,8 +1401,7 @@ section {
   display: block;
   line-height: 1em; }
 
-/* Block Level Styles
--------------------------------------------------------- */
+/* ### Block Level Styles */
 main hr.tall {
   margin-top: 2em;
   margin-bottom: 2em; }
@@ -1411,8 +1410,41 @@ main hr.short {
   margin-top: 0;
   margin-bottom: 0; }
 
-/* Images
--------------------------------------------------------- */
+aside.marginalized {
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  border-width: 0px;
+  border-style: solid;
+  border-color: gray;
+  padding: 1em 2em;
+  margin-top: 1em; }
+
+.side-right aside.marginalized {
+  width: 264px;
+  padding-left: 1em;
+  border-left-width: 1px;
+  right: -264px; }
+
+.side-left aside.marginalized {
+  width: 264px;
+  left: -264px;
+  padding-right: 1em;
+  border-right-width: 1px; }
+
+.margin-right aside.marginalized {
+  width: 198px;
+  left: -198px;
+  border-left-width: 1px;
+  padding-left: 1em; }
+
+.margin-left aside.marginalized {
+  width: 198px;
+  left: -198px;
+  border-right-width: 1px;
+  padding-right: 1em; }
+
+/* ### Images  */
 .column img {
   max-width: 100%;
   height: auto; }
@@ -1598,7 +1630,7 @@ form, fieldset, input, textarea, legend, label {
 
 form {
   margin-bottom: 5px;
-  padding: 10px; }
+  padding: 10px 0px; }
 
 fieldset {
   margin-bottom: 5px;
