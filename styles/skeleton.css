@@ -1,3 +1,27 @@
+body:not(.unset) table {
+  width: 100%; }
+
+body:not(.unset) table th {
+  font-weight: bold;
+  text-align: left; }
+
+body:not(.unset) table td,
+body:not(.unset) table th {
+  padding: .3em .6em .3em 0em;
+  vertical-align: top; }
+
+table.stripe td,
+table.stripe th {
+  padding: .3em .6em; }
+
+/* line */
+table.line td {
+  border-top: 1px #d7dadb solid; }
+
+/* stripe */
+table.stripe tr:nth-of-type(even) td {
+  background-color: #eff0f1; }
+
 /* # Skeleton */
 /* ## RESET */
 html, body, div, span, applet, object, iframe,
@@ -138,12 +162,12 @@ ul, ol {
 
 ol li {
   list-style: decimal;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 1em;
   padding: 0px 0px .8em 0px; }
 
 ul li {
   list-style: circle;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 1em;
   padding: 0px 0px .8em 0px; }
 
 pre, code {
