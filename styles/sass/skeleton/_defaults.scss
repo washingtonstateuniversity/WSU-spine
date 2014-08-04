@@ -43,11 +43,11 @@
 	p ~ p,
 	blockquote,
 	ul, ol {
-		padding-top: 1em;
+		padding-bottom: 1em;
 		}
 	
 	h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-		padding-top: 0em;
+		
 		}
 	
 	h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
@@ -55,8 +55,17 @@
 		
 		}
 	
-	ol li { list-style: decimal; margin: 0px 0px 0px 1em; padding: 0px 0px .8em 0px;  }
-	ul li { list-style: circle; margin: 0px 0px 0px 1em; padding: 0px 0px .8em 0px; }
+	ul li,
+	ol li {
+		margin: 0 0 0 1em;
+		padding: 0 0 .8em 0;
+		}
+	ol li {
+		list-style: decimal;
+		}
+	ul li {
+		list-style: circle;
+		}
 	
 	pre, code {
 		font-family: "Courier New", Courier, monospace;
@@ -70,9 +79,7 @@
 		line-height: 110%;
 		}
 	
-	input {
-		outline: none;
-		}
+	
 	article img[align="right"] {
 		margin: 0px 0px 1em 10px;
 		}

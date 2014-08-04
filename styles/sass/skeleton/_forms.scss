@@ -89,6 +89,9 @@ fieldset {
 	margin-bottom: 5px;
 	padding: 0px;
 	}
+input {
+		outline: none;
+		}
 input[type="text"],
 input[type="password"],
 input[type="email"],
