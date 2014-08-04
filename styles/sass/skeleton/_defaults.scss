@@ -16,15 +16,15 @@
 	hr { border-width: 0px;
 		border-style: solid;
 		border-color: black;
-		margin: 10px 0px;
-		height: 2px;
+		margin: 1em 0;
+		height: 1px;
 		background-color: rgba(93,105,112,0.50);
 		display: block;
 		clear: both;
 		}
 	h6,h5,h4,h3,h2,h1 {
-		margin: 0px 0px 3px 0px;
-		line-height: 1.1em;
+		margin: 0;
+		line-height: 1em;
 		letter-spacing: 0em;
 		font-weight: bold;
 		/* Maybe... -webkit-font-smoothing: antialiased;
@@ -51,7 +51,16 @@
 	ul, ol { padding-bottom: .8em; }
 	ol li { list-style: decimal; margin: 0px 0px 0px 1em; padding: 0px 0px .8em 0px;  }
 	ul li { list-style: circle; margin: 0px 0px 0px 1em; padding: 0px 0px .8em 0px; }
+	
 	pre, code { font-family: "Courier New", Courier, monospace; }
+	
+	big {
+		font-size: 1.5em;
+		}
+	small {
+		font-size: smaller;
+		line-height: 110%;
+		}
 	
 	input {
 		outline: none;
