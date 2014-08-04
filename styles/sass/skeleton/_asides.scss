@@ -1,6 +1,6 @@
 @mixin asides-marginalized {
 	
-	aside.marginalized {
+	.column .marginalized {
 		position: absolute;
 		box-sizing: border-box;
 		border-width: 0px;
@@ -9,7 +9,7 @@
 		padding: 1em 2em;
 		}
 	
-	.side-right aside.marginalized {
+	.side-right .marginalized {
 		
 		width: 264px;
 		padding-left: 1em;
@@ -18,7 +18,7 @@
 		
 		}
 		
-	.side-left aside.marginalized {
+	.side-left .marginalized {
 		
 		width: 264px;
 		left: -264px;
@@ -27,7 +27,7 @@
 		
 		}
 	
-	.margin-right aside.marginalized {
+	.margin-right .marginalized {
 		
 		width: 198px;
 		right: -198px;
@@ -36,7 +36,7 @@
 		
 		}
 		
-	.margin-left aside.marginalized {
+	.margin-left .marginalized {
 		
 		width: 198px;
 		left: -198px;

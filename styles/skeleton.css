@@ -1434,7 +1434,7 @@ main hr.short {
   margin-top: 0;
   margin-bottom: 0; }
 
-aside.marginalized {
+.column .marginalized {
   position: absolute;
   box-sizing: border-box;
   border-width: 0px;
@@ -1442,25 +1442,25 @@ aside.marginalized {
   border-color: #b5babe;
   padding: 1em 2em; }
 
-.side-right aside.marginalized {
+.side-right .marginalized {
   width: 264px;
   padding-left: 1em;
   border-left-width: 1px;
   right: -264px; }
 
-.side-left aside.marginalized {
+.side-left .marginalized {
   width: 264px;
   left: -264px;
   padding-right: 1em;
   border-right-width: 1px; }
 
-.margin-right aside.marginalized {
+.margin-right .marginalized {
   width: 198px;
   right: -198px;
   border-left-width: 1px;
   padding-left: 1em; }
 
-.margin-left aside.marginalized {
+.margin-left .marginalized {
   width: 198px;
   left: -198px;
   border-right-width: 1px;
