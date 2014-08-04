@@ -37,8 +37,17 @@
 	h5 { font-size: 1.2em; margin: 0px; padding: .5em 0px .2em 0px; }
 	h6 { font-size: 1.0em; margin: 0px; padding: .5em 0px .2em 0px; }
 	
+	p {
+		margin: 0px;
+		}
+	p ~ p,
+	blockquote,
+	ul, ol {
+		padding-top: 1em;
+		}
+	
 	h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-		
+		padding-top: 0em;
 		}
 	
 	h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
@@ -46,18 +55,12 @@
 		
 		}
 	
-	p {
-		margin: 0px;
-		}
-	p ~ p,
-	blockquote,
-	ul, ol, {
-		padding-top: 1em;
-		}
 	ol li { list-style: decimal; margin: 0px 0px 0px 1em; padding: 0px 0px .8em 0px;  }
 	ul li { list-style: circle; margin: 0px 0px 0px 1em; padding: 0px 0px .8em 0px; }
 	
-	pre, code { font-family: "Courier New", Courier, monospace; }
+	pre, code {
+		font-family: "Courier New", Courier, monospace;
+		}
 	
 	big {
 		font-size: 1.5em;
