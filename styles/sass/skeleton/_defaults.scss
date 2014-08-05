@@ -22,25 +22,45 @@
 		display: block;
 		clear: both;
 		}
+		
+	/* ### Headers */
+	
 	h6,h5,h4,h3,h2,h1 {
 		margin: 0;
 		line-height: 1.1em;
 		letter-spacing: 0em;
 		font-weight: bold;
+		padding: .5em 0px .2em 0px;
 		/* Maybe... -webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale; */
 		}
-	h1 { font-size: 2em; padding: 0px 0px .2em 0px; }
-	h2 { font-size: 1.8em; margin: 0px; padding: .5em 0px .2em 0px; }
-	h3 { font-size: 1.6em; margin: 0px; padding: .5em 0px .2em 0px; }
-	h4 { font-size: 1.4em; margin: 0px; padding: .5em 0px .2em 0px; }
-	h5 { font-size: 1.2em; margin: 0px; padding: .5em 0px .2em 0px; }
-	h6 { font-size: 1.0em; margin: 0px; padding: .5em 0px .2em 0px; }
-	
-	p {
-		margin: 0px;
-		padding-bottom: 1em;
+	h1 {
+		font-size: 2em;
+		font-size: 2rem;
+		padding-top: 0;
 		}
+	h2 {
+		font-size: 1.8em;
+		font-size: 1.8rem;
+		}
+	h3 {
+		font-size: 1.6em;
+		font-size: 1.6rem;
+		}
+	h4 {
+		font-size: 1.4em;
+		font-size: 1.4rem;
+		}
+	h5 {
+		font-size: 1.2em;
+		font-size: 1.2rem;
+		}
+	h6 {
+		font-size: 1.0em;
+		font-size: 1.0rem;
+		}	
+		
+	/* ### Lists */
 		
 	ul, ol {
 		padding: 0em 2em 1em 2em;
@@ -54,7 +74,15 @@
 		padding: 0 0 .3em 0;
 		line-height: 1.4em;
 		}
+	ul li ul,
+	ol li ol {
+		padding-top: .3em;
+		}
 	
+	p {
+		margin: 0px;
+		padding-bottom: 1em;
+		}
 	p ~ p,
 	blockquote,
 	ul, ol {
