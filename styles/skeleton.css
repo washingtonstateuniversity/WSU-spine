@@ -22,6 +22,9 @@ table.line td {
 table.stripe tr:nth-of-type(even) td {
   background-color: #eff0f1; }
 
+ul.line {
+  padding: 0 0 1em 0; }
+
 ul.line li {
   list-style: none;
   padding: .3em 0;
