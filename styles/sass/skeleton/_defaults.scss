@@ -24,7 +24,7 @@
 		}
 	h6,h5,h4,h3,h2,h1 {
 		margin: 0;
-		line-height: 1em;
+		line-height: 1.1em;
 		letter-spacing: 0em;
 		font-weight: bold;
 		/* Maybe... -webkit-font-smoothing: antialiased;
@@ -39,7 +39,23 @@
 	
 	p {
 		margin: 0px;
+		padding-bottom: 1em;
 		}
+		
+	ul, ol {
+		padding: 0em 2em 1em 2em;
+		}
+	ul ul,
+	ol ol {
+		padding-bottom: 0;
+		}
+	ul li,
+	ol li {
+		margin: 0 0 .3em 0;
+		padding: 0;
+		line-height: 1.5em;
+		}
+	
 	p ~ p,
 	blockquote,
 	ul, ol {
@@ -55,17 +71,7 @@
 		
 		}
 	
-	ul li,
-	ol li {
-		margin: 0 0 0 1em;
-		padding: 0 0 .8em 0;
-		}
-	ol li {
-		list-style: decimal;
-		}
-	ul li {
-		list-style: circle;
-		}
+	
 	
 	pre, code {
 		font-family: "Courier New", Courier, monospace;

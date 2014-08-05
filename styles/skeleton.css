@@ -52,13 +52,11 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
-  list-style: none; }
-
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
+blockquote:before,
+blockquote:after,
 q:before, q:after {
   content: '';
   content: none; }
@@ -115,7 +113,7 @@ hr {
 
 h6, h5, h4, h3, h2, h1 {
   margin: 0;
-  line-height: 1em;
+  line-height: 1.1em;
   letter-spacing: 0em;
   font-weight: bold;
   /* Maybe... -webkit-font-smoothing: antialiased;
@@ -151,25 +149,32 @@ h6 {
   padding: .5em 0px .2em 0px; }
 
 p {
-  margin: 0px; }
+  margin: 0px;
+  padding-bottom: 1em; }
+
+ul, ol {
+  padding: 0em 2em 1em 2em; }
+
+ul ul,
+ol ol {
+  padding-bottom: 0; }
+
+ul li,
+ol li {
+  margin: 0 0 .3em 0;
+  padding: 0;
+  line-height: 1.5em; }
+
+xol li {
+  list-style: decimal; }
+
+xul li {
+  list-style: disc; }
 
 p ~ p,
 blockquote,
 ul, ol {
-  padding-top: 1em; }
-
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-  padding-top: 0em; }
-
-ol li {
-  list-style: decimal;
-  margin: 0px 0px 0px 1em;
-  padding: 0px 0px .8em 0px; }
-
-ul li {
-  list-style: circle;
-  margin: 0px 0px 0px 1em;
-  padding: 0px 0px .8em 0px; }
+  padding-bottom: 1em; }
 
 pre, code {
   font-family: "Courier New", Courier, monospace; }
@@ -180,9 +185,6 @@ big {
 small {
   font-size: smaller;
   line-height: 110%; }
-
-input {
-  outline: none; }
 
 article img[align="right"] {
   margin: 0px 0px 1em 10px; }
@@ -1665,6 +1667,9 @@ form {
 fieldset {
   margin-bottom: 5px;
   padding: 0px; }
+
+input {
+  outline: none; }
 
 input[type="text"],
 input[type="password"],
