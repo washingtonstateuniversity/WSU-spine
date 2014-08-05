@@ -132,6 +132,7 @@ module.exports = function(grunt) {
 					columns: 'skip',
 					spacing: 'skip',
 					mainheader: 'skip',
+					typography: 'skip',
 					unbound: 'skip',
 					ui: 'skip',
 					filledSearchTab : 'skip',
@@ -197,8 +198,9 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						opensans : 'true',
-						test_title: 'Testing Opens Sans',
-						content: 'true',
+						test_title: 'Testing Open Sans',
+						content: 'false',
+						typography: 'true',
 						location : '/build'
 					}
 				}
@@ -237,11 +239,23 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+			typography : {
+				src : 'test/preprocess/test.cat.pre.html',
+				dest : 'build/<%= pkg.build_version %>/tests/typography.html',
+				options : {
+					context : {
+						test_title: 'Testing Typography',
+						typography: 'true',
+						location : '/build'
+					}
+				}
+			},
 			unbound : {
 				src : 'test/preprocess/test.cat.pre.html',
 				dest : 'build/<%= pkg.build_version %>/tests/unbound.html',
 				options : {
 					context : {
+						test_title: 'Testing Unbound and Rebound',
 						unbound : 'true',
 						content: 'false',
 						location : '/build'
@@ -418,9 +432,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-preprocess');
-	
-	
-	
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
@@ -437,6 +448,7 @@ module.exports = function(grunt) {
 								'preprocess:columns',
 								'preprocess:spacing',
 								'preprocess:mainheader',
+								'preprocess:typography',
 								'preprocess:unbound',
 								'preprocess:ui',
 								'preprocess:tu_search_tabs',
@@ -470,6 +482,7 @@ module.exports = function(grunt) {
 								'preprocess:columns',
 								'preprocess:spacing',
 								'preprocess:mainheader',
+								'preprocess:typography',
 								'preprocess:unbound',
 								'preprocess:ui',
 								'preprocess:tu_search_tabs',
