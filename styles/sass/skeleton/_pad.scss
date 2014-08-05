@@ -1,6 +1,6 @@
 @mixin pad {
 
-	$default: 2em;
+	$default: 2rem;
 	$wide: $default * 2;
 	$tall: $default * 2;
 	$narrow: $default / 2;

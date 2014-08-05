@@ -1,9 +1,9 @@
 @mixin gutter($whole,$halve) {
 
 $gutters: (
-	'': 2em,
-	'.wide': 4em,
-	'.narrow': 1em
+	'': 2rem,
+	'.wide': 4rem,
+	'.narrow': 1rem
 	);
 
 @each $gutter, $dividend in $gutters {
@@ -18,8 +18,8 @@ $gutters: (
 	}
 	
 $spacing: (
-	'loose': 4em,
-	'tight': 1em
+	'loose': 4rem,
+	'tight': 1rem
 	);
 
 @each $space, $dividend in $spacing {
