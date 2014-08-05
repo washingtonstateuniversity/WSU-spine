@@ -51,9 +51,8 @@
 		}
 	ul li,
 	ol li {
-		margin: 0 0 .3em 0;
-		padding: 0;
-		line-height: 1.5em;
+		padding: 0 0 .3em 0;
+		line-height: 1.4em;
 		}
 	
 	p ~ p,
@@ -68,7 +67,7 @@
 	
 	h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
 	h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
-		
+		padding-top: .3em;
 		}
 	
 	
