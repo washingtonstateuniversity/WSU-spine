@@ -22,6 +22,14 @@ table.line td {
 table.stripe tr:nth-of-type(even) td {
   background-color: #eff0f1; }
 
+ul.line li {
+  list-style: none;
+  padding: .3em 0;
+  margin: 0px; }
+
+ul.line li ~ li {
+  border-top: 1px #d7dadb solid; }
+
 /* # Skeleton */
 /* ## RESET */
 html, body, div, span, applet, object, iframe,
