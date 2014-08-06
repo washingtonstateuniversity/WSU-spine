@@ -80,47 +80,15 @@ table {
   border-spacing: 0; }
 
 /* ## DEFAULTS */
-sup, sub {
-  font-size: .7em;
-  line-height: .7em; }
+/* ### Fonts  */
+body {
+  font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
-sup {
-  vertical-align: super;
-  margin-top: -6px; }
+.sans {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
-sub {
-  vertical-align: sub; }
-
-small {
-  font-size: .8em;
-  line-height: .8em; }
-
-nav ul li,
-.widget ul li {
-  list-style: none; }
-
-a {
-  text-decoration: none;
-  color: #981e32; }
-
-a:hover {
-  color: #c60c30; }
-
-strong, b {
-  font-weight: bold; }
-
-em, i {
-  font-style: italic; }
-
-hr {
-  border-width: 0px;
-  border-style: solid;
-  border-color: black;
-  margin: 1em 0;
-  height: 1px;
-  background-color: rgba(93, 105, 112, 0.5);
-  display: block;
-  clear: both; }
+.serif {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
 
 /* ### Headers */
 h6, h5, h4, h3, h2, h1 {
@@ -187,6 +155,11 @@ h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
 h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   padding-top: .3em; }
 
+blockquote {
+  padding-left: 1em;
+  padding-right: 1em;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
+
 pre, code {
   font-family: "Courier New", Courier, monospace; }
 
@@ -203,15 +176,47 @@ article img[align="right"] {
 article img[align="left"] {
   margin: 0px 10px 1em 0px; }
 
-/* ### Fonts  */
-body {
-  font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+sup, sub {
+  font-size: .7em;
+  line-height: .7em; }
 
-.sans {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+sup {
+  vertical-align: super;
+  margin-top: -6px; }
 
-.serif {
-  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
+sub {
+  vertical-align: sub; }
+
+small {
+  font-size: .8em;
+  line-height: .8em; }
+
+nav ul li,
+.widget ul li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #981e32; }
+
+a:hover {
+  color: #c60c30; }
+
+strong, b {
+  font-weight: bold; }
+
+em, i {
+  font-style: italic; }
+
+hr {
+  border-width: 0px;
+  border-style: solid;
+  border-color: black;
+  margin: 1em 0;
+  height: 1px;
+  background-color: rgba(93, 105, 112, 0.5);
+  display: block;
+  clear: both; }
 
 /* IE9, IE10 */
 @media screen and (min-width: 0 \0) {
