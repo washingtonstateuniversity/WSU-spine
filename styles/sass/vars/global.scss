@@ -60,6 +60,14 @@ $extension: extension;
 
 $campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension;
 
+// Typography
+@mixin serif {
+	font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+	}
+@mixin sans {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	}
+
 $locality: '//repo.wsu.edu/spine/1';
 // $locality: '';
 
