@@ -183,7 +183,7 @@
 				if ($("#binder").hasClass("size-lt-large")) {
 					main_height -= 50;
 				}
-				$("main.fill-window-height").css("min-height",main_height);
+				$("main:not(.height-auto)").css("min-height",main_height);
 			}
 		},
 
