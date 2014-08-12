@@ -446,6 +446,9 @@
     margin-left: 0px;
     padding-top: 50px; }
 
+  .row.reverse {
+    direction: ltr; }
+
   .max-1188 .rebound,
   .max-1188 .row.rebound {
     width: 792px; }

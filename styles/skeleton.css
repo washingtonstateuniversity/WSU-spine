@@ -296,8 +296,11 @@ section {
 .row.fifths {
   max-width: 990px; }
 
+.row.reverse {
+  direction: rtl; }
+
 .row.reverse .column {
-  float: right; }
+  direction: ltr; }
 
 /* ### Unbind */
 .row.unbound,
