@@ -24,7 +24,7 @@
 <!-- @endif -->
 	<!-- Your custom stylesheets here -->
 <!-- @if opensans='true' -->
-	<link href="../styles/opensans.css" rel="stylesheet" type="text/css" />
+	<link href="build/<!-- @echo build_version -->/styles/opensans.css" rel="stylesheet" type="text/css" />
 	<style>
 	body {
 	font-family: "OpenSans";
@@ -60,13 +60,13 @@ h3 {
 						featureClass: "P",
 						style: "full",
 						maxRows: 12
-					} 
+					}
 				},
 				result:{
 					appendTo: "#spine-shortcuts",
 					showRelated:true,
 					relatedHeader:"<hr/>",
-					minLength: 2, 
+					minLength: 2,
 					template:"<li>%s</li>"
 				}
 			},
@@ -79,7 +79,7 @@ h3 {
 				"Pinterest"
 			]
 				},
-			analytics:{ 
+			analytics:{
 				"google":{
 					analytics:{
 						"account_id":"UA-XXXXX-XX"
@@ -2417,7 +2417,7 @@ Where do you work?
 <section id="spine-navigation" class="spine-navigation">
 
 	<nav class="spine-sitenav">
-	
+
 		<ul>
 		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
@@ -2593,7 +2593,7 @@ Where do you work?
 	<li><a href="link">35 over link</a></li>
 		<!-- @endif -->
 		</ul>
-	
+
 	</nav>
 
 	<nav class="spine-offsitenav">
@@ -2611,7 +2611,7 @@ Where do you work?
 		<!-- @if markup='true' -->
 		<!--
 		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
+		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
 		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
 		• Maximum number of channels is five -->
 		<!-- @endif -->
@@ -2629,7 +2629,7 @@ Where do you work?
 			<li class="policies-link"><a href="http://policies.wsu.edu/">Policies</a></li>
 			<li class="copyright-link"><a href="http://copyright.wsu.edu">&copy;</a></li>
 		</ul>
-	</nav>	
+	</nav>
 </footer>
 
 </div><!--/glue-->
@@ -2639,7 +2639,7 @@ Where do you work?
 </div><!--/cover-->
 </div><!--/jacket-->
 <!-- /WRAPPING -->
-	
+
 <!-- @if markup='true' || markup_min='true' -->
 <!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
 <!-- @endif -->
@@ -2658,7 +2658,7 @@ Where do you work?
 	<span itemprop="contactPoint" content="http://contactpage.wsu.edu"></span>
 	<span itemprop="url" content="http://your-unit.wsu.edu"></span>
 </div>
-	
+
 	<!-- @if malformed='true' -->
 			<!-- NOTE: This normaly wouldn't have been here but in this cause it's also
 		 malformed to the degree it's failing the Google Rich Data testing -->
@@ -2677,7 +2677,7 @@ Where do you work?
 	<!-- @endif -->
 
 	<!-- @if malformed='false' -->
-		<!-- NOTE: a normal working contact tab, just could have been better placed 
+		<!-- NOTE: a normal working contact tab, just could have been better placed
 			 then in the spine directly -->
 		<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
 	<span itemprop="department"  content="University Unit"></span> 
