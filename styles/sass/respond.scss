@@ -210,8 +210,8 @@ nav a.external:after {
 	margin-left: 0px;
 	margin-top: 50px;
 	}
-.row.reverse .column {
-	float: right;
+.row.reverse-at-small .column {
+	float: left;
 	}
 .max-1188 .rebound,
 .max-1188 .row.rebound {
@@ -280,6 +280,12 @@ nav a.external:after {
 .fixed { @include layouts-small; }
 @include grid-smallish-controls;
 
+
+/* Reverse */
+.fixed .row.reverse .column {
+	float: left;
+	}
+
 /* Gutters */
 
 .fixed {
@@ -329,7 +335,10 @@ nav a.external:after {
 		}
 
 	}
-
+	
+.row.reverse .column {
+	float: left;
+	}
 
 /* #### Logo */
 

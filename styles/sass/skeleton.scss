@@ -113,7 +113,21 @@ section {
 .row.fifths {
 	max-width: 990px;
 	}
-
+.row.reverse .column {
+	float: right;
+	}
+.row.reverse {
+	max-width: 792px;
+	}
+.max-1188 .row.reverse {
+	max-width: 990px;
+	}
+.max-1386 .row.reverse {
+	max-width: 1188px;
+	}
+.max-1584 .row.reverse {
+	max-width: 1386px;
+	}
 
 /* ### Unbind */
 

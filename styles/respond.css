@@ -446,8 +446,8 @@
     margin-left: 0px;
     margin-top: 50px; }
 
-  .row.reverse .column {
-    float: right; }
+  .row.reverse-at-small .column {
+    float: left; }
 
   .max-1188 .rebound,
   .max-1188 .row.rebound {
@@ -791,6 +791,10 @@
   .at-smallish-float-none .column {
     float: none !important; }
 
+  /* Reverse */
+  .fixed .row.reverse .column {
+    float: left; }
+
   /* Gutters */
   /* Header Colors and Signatures */
   #binder #spine header {
@@ -963,6 +967,9 @@
     #binder.fluid main, #binder.hybrid main {
       width: auto;
       margin-left: 0px; }
+
+  .row.reverse .column {
+    float: left; }
 
   /* #### Logo */
   [class*="-signature"] #wsu-signature {
