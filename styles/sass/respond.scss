@@ -57,7 +57,7 @@
 	}
 #binder main {
 	margin-left: 0px;
-	padding-top: 50px;
+	margin-top: 50px;
 	}
 			
 #binder.fluid {
@@ -195,7 +195,7 @@ nav a.external:after {
 	}
 #binder main {
 	width: auto;
-	padding-top: 50px;
+	margin-top: 50px;
 	margin-left: 0px;
 	}
 #binder.fixed main {
@@ -208,10 +208,10 @@ nav a.external:after {
 	font-size: 16px;
 	line-height: 26px;
 	margin-left: 0px;
-	padding-top: 50px;
+	margin-top: 50px;
 	}
-.row.reverse {
-	direction: ltr;
+.row.reverse .column {
+	float: right;
 	}
 .max-1188 .rebound,
 .max-1188 .row.rebound {
@@ -310,7 +310,7 @@ nav a.external:after {
 		margin: 0px auto;
 		
 		main {
-			padding-top: 50px;
+			margin-top: 50px;
 			margin-left: 0px;
 			}
 		

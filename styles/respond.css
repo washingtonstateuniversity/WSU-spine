@@ -59,7 +59,7 @@
 
   #binder main {
     margin-left: 0px;
-    padding-top: 50px; }
+    margin-top: 50px; }
 
   #binder.fluid {
     width: 100%; }
@@ -431,7 +431,7 @@
 
   #binder main {
     width: auto;
-    padding-top: 50px;
+    margin-top: 50px;
     margin-left: 0px; }
 
   #binder.fixed main {
@@ -444,10 +444,10 @@
     font-size: 16px;
     line-height: 26px;
     margin-left: 0px;
-    padding-top: 50px; }
+    margin-top: 50px; }
 
-  .row.reverse {
-    direction: ltr; }
+  .row.reverse .column {
+    float: right; }
 
   .max-1188 .rebound,
   .max-1188 .row.rebound {
@@ -956,7 +956,7 @@
     min-width: 396px;
     margin: 0px auto; }
     #binder.fixed main {
-      padding-top: 50px;
+      margin-top: 50px;
       margin-left: 0px; }
   #binder.fluid, #binder.hybrid {
     width: 100%; }
