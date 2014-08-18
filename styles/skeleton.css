@@ -1504,7 +1504,7 @@ main hr.short {
   padding-right: 1em; }
 
 /* ### Images  */
-.column img {
+.column img:not(.unbound) {
   max-width: 100%;
   height: auto; }
 

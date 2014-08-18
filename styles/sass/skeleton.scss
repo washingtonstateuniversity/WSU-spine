@@ -207,9 +207,11 @@ main hr.short {
 
 
 /* ### Images  */
-.column img {
-		max-width: 100%;
-		height: auto; }
+.column img:not(.unbound) {
+	max-width: 100%;
+	height: auto;
+	}
+	
 .fill-width,
 .full-width {
 	width: 100%;
@@ -228,6 +230,7 @@ main hr.short {
 	-moz-box-sizing: border-box; 
 	box-sizing: border-box;
 	}
+
 @media \0screen {
   img.max-width { 
   	width: auto; /* for ie 8 */
