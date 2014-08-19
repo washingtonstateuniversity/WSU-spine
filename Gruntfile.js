@@ -1,24 +1,29 @@
 module.exports = function(grunt) {
-	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		env : {
-			options : {
-				/* Shared Options Hash */
-				//globalOption : 'foo'
-			},
-			dev: {
-				NODE_ENV : 'DEVELOPMENT',
 
+		config: {
+			build: 'build/<%= pkg.build_version %>'
+		},
+
+		env: { // https://github.com/jsoverson/grunt-env
+			dev: {
+				NODE_ENV : 'DEVELOPMENT'
 			},
 			prod : {
 				NODE_ENV : 'PRODUCTION'
 			}
 		},
+
 		concat: {
 			styles: {
-				src: ['styles/skeleton.css','styles/colors.css','styles/spine.css','styles/respond.css'],
-				dest: 'build/<%= pkg.build_version %>/spine.css',
+				src: [
+					'styles/skeleton.css',
+					'styles/colors.css',
+					'styles/spine.css',
+					'styles/respond.css'
+				],
+				dest: '<%= config.build %>/spine.css',
 			},
 			scripts: {
 				src: [
@@ -31,53 +36,61 @@ module.exports = function(grunt) {
 					'scripts/ui.spine.analytics.js',
 					'scripts/spine.js'
 				],
-				dest: 'build/<%= pkg.build_version %>/spine.js',
+				dest: '<%= config.build %>/spine.js',
 			},
 		},
+
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n' +
 					'/*  See https://github.com/washingtonstateuniversity/WSU-spine/ for full source.*/\n'
 			},
 			build: {
-				src: 'build/<%= pkg.build_version %>/spine.js',
-				dest: 'build/<%= pkg.build_version %>/spine.min.js'
+				src: '<%= config.build %>/spine.js',
+				dest: '<%= config.build %>/spine.min.js'
 			}
 		},
+
 		sass: {
-  			dev: {
-  				files: [
- 				// Files to compile
-  				{ src: 'styles/sass/skeleton.scss', dest: 'styles/skeleton.css' },
-  				{ src: 'styles/sass/colors.scss', dest: 'styles/colors.css' },
-  				{ src: 'styles/sass/respond.scss', dest: 'styles/respond.css' },
-  				{ src: 'styles/sass/spine.scss', dest: 'styles/spine.css' },
-  				{ src: 'styles/sass/opensans.scss', dest: 'styles/opensans.css' }
-  				]
-  			},
-  		},
+			dev: {
+				files: [{
+					expand: true,
+					cwd: 'styles/sass/',
+					src: '*.scss',
+					dest: 'styles/',
+					ext: '.css'
+				}]
+			}
+		},
+
 		cssmin: {
 			combine: {
 				files: {
-					// Hmmm, in reverse order
-					'build/<%= pkg.build_version %>/spine.min.css': ['build/<%= pkg.build_version %>/spine.css']
+					// Hmmm, in reverse order (see http://gruntjs.com/configuring-tasks#files-object-format)
+					'<%= config.build %>/spine.min.css': ['<%= config.build %>/spine.css']
 				}
 			}
 		},
+
+		clean: {
+			build: 'build'
+		},
+
 		copy: {
 			main: {
-				files: [
-					{expand: true, dot:true, src: ['fonts/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, src: ['html/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, dot:true, src: ['icons/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, src: ['images/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, src: ['marks/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, src: ['scripts/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, src: ['styles/*'], dest: 'build/<%= pkg.build_version %>/'},
-					{expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: 'build/<%= pkg.build_version %>/'},
+				files: [ // This can be drastically simplified by putting this stuff in a `src` folder.
+					{ expand: true, src: ['fonts/*'], dest: '<%= config.build %>/', dot: true },
+					{ expand: true, src: ['html/*'], dest: '<%= config.build %>/' },
+					{ expand: true, src: ['icons/*'], dest: '<%= config.build %>/', dot: true },
+					{ expand: true, src: ['images/*'], dest: '<%= config.build %>/' },
+					{ expand: true, src: ['marks/*'], dest: '<%= config.build %>/' },
+					{ expand: true, src: ['scripts/*'], dest: '<%= config.build %>/' },
+					{ expand: true, src: ['styles/*'], dest: '<%= config.build %>/' },
+					{ expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: '<%= config.build %>/' }
 				]
 			}
 		},
+
 		jshint: {
 			files: ['Gruntfile.js', 'scripts/*.js'],
 			options: {
@@ -104,7 +117,8 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		includereplace: {
+
+		includereplace: { // https://github.com/alanshaw/grunt-include-replace
 			dist: {
 				options: {
 					globals: {
@@ -117,7 +131,8 @@ module.exports = function(grunt) {
 				dest: 'test/preprocess/test.cat.pre.html'
 			}
 		},
-		preprocess : {
+
+		preprocess : { // https://github.com/jsoverson/grunt-preprocess
 			options: {
 				inline: true,
 				context : {
@@ -149,15 +164,11 @@ module.exports = function(grunt) {
 				}
 			},
 			js : {
-				src: 'build/<%= pkg.build_version %>/spine.js'
+				src: '<%= config.build %>/spine.js'
 			},
 			html : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/html.html',
-				options : {
-					context : {
-					}
-				}
+				dest : '<%= config.build %>/tests/html.html'
 			},
 			markup : {
 				src : 'test/preprocess/test.cat.pre.html',
@@ -194,7 +205,7 @@ module.exports = function(grunt) {
 			},
 			opensans : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/opensans.html',
+				dest : '<%= config.build %>/tests/opensans.html',
 				options : {
 					context : {
 						opensans : 'true',
@@ -207,7 +218,7 @@ module.exports = function(grunt) {
 			},
 			columns : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/columns.html',
+				dest : '<%= config.build %>/tests/columns.html',
 				options : {
 					context : {
 						columns : 'true',
@@ -218,7 +229,7 @@ module.exports = function(grunt) {
 			},
 			spacing : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/spacing.html',
+				dest : '<%= config.build %>/tests/spacing.html',
 				options : {
 					context : {
 						spacing : 'true',
@@ -229,7 +240,7 @@ module.exports = function(grunt) {
 			},
 			mainheader : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/mainheader.html',
+				dest : '<%= config.build %>/tests/mainheader.html',
 				options : {
 					context : {
 						mainheader : 'true',
@@ -241,7 +252,7 @@ module.exports = function(grunt) {
 			},
 			typography : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/typography.html',
+				dest : '<%= config.build %>/tests/typography.html',
 				options : {
 					context : {
 						test_title: 'Testing Typography',
@@ -252,7 +263,7 @@ module.exports = function(grunt) {
 			},
 			unbound : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/unbound.html',
+				dest : '<%= config.build %>/tests/unbound.html',
 				options : {
 					context : {
 						test_title: 'Testing Unbound and Rebound',
@@ -264,7 +275,7 @@ module.exports = function(grunt) {
 			},
 			ui : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/ui.html',
+				dest : '<%= config.build %>/tests/ui.html',
 				options : {
 					context : {
 						ui : 'true',
@@ -275,7 +286,7 @@ module.exports = function(grunt) {
 			},
 			tu_search_tabs : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/search_tabs.html',
+				dest : '<%= config.build %>/tests/search_tabs.html',
 				options : {
 					context : {
 						filledSearchTab : 'true',
@@ -286,7 +297,7 @@ module.exports = function(grunt) {
 			},
 			tu_contact_malformed : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/contact_malformed.html',
+				dest : '<%= config.build %>/tests/contact_malformed.html',
 				options : {
 					context : {
 						malformed : 'true',
@@ -297,7 +308,7 @@ module.exports = function(grunt) {
 			},
 			tu_contact_filled : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/contact_filled.html',
+				dest : '<%= config.build %>/tests/contact_filled.html',
 				options : {
 					context : {
 						malformed : 'false',
@@ -308,7 +319,7 @@ module.exports = function(grunt) {
 			},
 			tu_contact_double : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/contact_double.html',
+				dest : '<%= config.build %>/tests/contact_double.html',
 				options : {
 					context : {
 						doubledContact : 'true',
@@ -319,7 +330,7 @@ module.exports = function(grunt) {
 			},
 			tu_navdata : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/nav-data-links.html',
+				dest : '<%= config.build %>/tests/nav-data-links.html',
 				options : {
 					context : {
 						navdata : 'true',
@@ -330,7 +341,7 @@ module.exports = function(grunt) {
 			},
 			tu_overly : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/overly.html',
+				dest : '<%= config.build %>/tests/overly.html',
 				options : {
 					context : {
 						manyLinks : 'true',
@@ -341,7 +352,7 @@ module.exports = function(grunt) {
 			},
 			tu_overly_long : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/overly_long.html',
+				dest : '<%= config.build %>/tests/overly_long.html',
 				options : {
 					context : {
 						showLong : 'true',
@@ -351,7 +362,7 @@ module.exports = function(grunt) {
 			},
 			tu_overly_linked : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/overly_linked.html',
+				dest : '<%= config.build %>/tests/overly_linked.html',
 				options : {
 					context : {
 						manyLinks : 'true',
@@ -362,7 +373,7 @@ module.exports = function(grunt) {
 			},
 			tu_cropped : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/cropped.html',
+				dest : '<%= config.build %>/tests/cropped.html',
 				options : {
 					context : {
 						cropped : 'true',
@@ -374,7 +385,7 @@ module.exports = function(grunt) {
 			},
 			grid_fluid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/grid_fluid.html',
+				dest : '<%= config.build %>/tests/grid_fluid.html',
 				options : {
 					context : {
 						fluidGrid : 'true',
@@ -386,7 +397,7 @@ module.exports = function(grunt) {
 			},
 			grid_hybrid : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/grid_hybrid.html',
+				dest : '<%= config.build %>/tests/grid_hybrid.html',
 				options : {
 					context : {
 						hybridGrid : 'true',
@@ -398,7 +409,7 @@ module.exports = function(grunt) {
 			},
 			grid_fixed : {
 				src : 'test/preprocess/test.cat.pre.html',
-				dest : 'build/<%= pkg.build_version %>/tests/grid_fixed.html',
+				dest : '<%= config.build %>/tests/grid_fixed.html',
 				options : {
 					context : {
 						fixedGrid : 'true',
@@ -409,98 +420,75 @@ module.exports = function(grunt) {
 				}
 			},
 		},
+
 		watch: {
-	      html: {
-	        files: ['test/*.html'],
-	        tasks: ['dev'],
-	        options: {
-	          livereload: true,
-	        }
-	      },
-	    }
+      html: {
+        files: ['test/*.html'],
+        tasks: ['dev'],
+        options: {
+          livereload: true,
+        }
+      },
+    }
 	});
 
-	// Load the plugin that provides the "uglify" task.
-	grunt.loadNpmTasks('grunt-env');
-	grunt.loadNpmTasks('grunt-include-replace');
-	// grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-env');
+	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('prod', ['env:prod',
-								'sass:dev',
-								'concat',
-								'preprocess:js',
-								'cssmin',
-								'uglify',
-								'copy',
-								'includereplace',
-								'preprocess:html',
-								'preprocess:opensans',
-								'preprocess:columns',
-								'preprocess:spacing',
-								'preprocess:mainheader',
-								'preprocess:typography',
-								'preprocess:unbound',
-								'preprocess:ui',
-								'preprocess:tu_search_tabs',
-								'preprocess:tu_contact_malformed',
-								'preprocess:tu_contact_filled',
-								'preprocess:tu_contact_double',
-								'preprocess:tu_overly',
-								'preprocess:tu_overly_long',
-								'preprocess:tu_overly_linked',
-								'preprocess:tu_cropped',
-								'preprocess:grid_fluid',
-								'preprocess:grid_hybrid',
-								'preprocess:grid_fixed',
-								'preprocess:tu_navdata',
-								'preprocess:markup',
-								'preprocess:markup_min',
-								'preprocess:demo'
-								]);	
-	
-	grunt.registerTask('dev', ['jshint',
-								'env:dev',
-								'sass:dev',
-								'concat',
-								'preprocess:js',
-								'cssmin',
-								'uglify',
-								'copy',
-								'includereplace',
-								'preprocess:html',
-								'preprocess:opensans',
-								'preprocess:columns',
-								'preprocess:spacing',
-								'preprocess:mainheader',
-								'preprocess:typography',
-								'preprocess:unbound',
-								'preprocess:ui',
-								'preprocess:tu_search_tabs',
-								'preprocess:tu_contact_malformed',
-								'preprocess:tu_contact_filled',
-								'preprocess:tu_contact_double',
-								'preprocess:tu_overly',
-								'preprocess:tu_overly_long',
-								'preprocess:tu_overly_linked',
-								'preprocess:tu_cropped',
-								'preprocess:grid_fluid',
-								'preprocess:grid_hybrid',
-								'preprocess:grid_fixed',
-								'preprocess:tu_navdata',
-								'preprocess:markup',
-								'preprocess:markup_min',
-								'preprocess:demo'
-								]);
-		
-		
+
+	grunt.registerTask('prod', [
+		'env:prod',
+		'build'
+	]);
+
+	grunt.registerTask('dev', [
+		'jshint',
+		'env:dev',
+		'build'
+	]);
+
+	grunt.registerTask('build', [
+		'clean',
+		'sass:dev',
+		'concat',
+		'preprocess:js',
+		'cssmin',
+		'uglify',
+		'copy',
+		'includereplace',
+		'preprocess:html',
+		'preprocess:opensans',
+		'preprocess:columns',
+		'preprocess:spacing',
+		'preprocess:mainheader',
+		'preprocess:typography',
+		'preprocess:unbound',
+		'preprocess:ui',
+		'preprocess:tu_search_tabs',
+		'preprocess:tu_contact_malformed',
+		'preprocess:tu_contact_filled',
+		'preprocess:tu_contact_double',
+		'preprocess:tu_overly',
+		'preprocess:tu_overly_long',
+		'preprocess:tu_overly_linked',
+		'preprocess:tu_cropped',
+		'preprocess:grid_fluid',
+		'preprocess:grid_hybrid',
+		'preprocess:grid_fixed',
+		'preprocess:tu_navdata',
+		'preprocess:markup',
+		'preprocess:markup_min',
+		'preprocess:demo'
+	]);
 };
