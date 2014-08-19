@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 					'styles/spine.css',
 					'styles/respond.css'
 				],
-				dest: '<%= config.build %>/spine.css',
+				dest: '<%= config.build %>/spine.css'
 			},
 			scripts: {
 				src: [
@@ -36,8 +36,8 @@ module.exports = function(grunt) {
 					'scripts/ui.spine.analytics.js',
 					'scripts/spine.js'
 				],
-				dest: '<%= config.build %>/spine.js',
-			},
+				dest: '<%= config.build %>/spine.js'
+			}
 		},
 
 		uglify: {
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
 						var1: 'one',
 						var2: 'two',
 						var3: 'three'
-					},
+					}
 				},
 				src: 'test/preprocess/test.pre.html',
 				dest: 'test/preprocess/test.cat.pre.html'
@@ -160,7 +160,7 @@ module.exports = function(grunt) {
 					fixedGrid: 'skip',
 					navdata:'skip',
 					markup: 'skip',
-					markup_min: 'skip',
+					markup_min: 'skip'
 				}
 			},
 			js : {
@@ -426,9 +426,9 @@ module.exports = function(grunt) {
         files: ['test/*.html'],
         tasks: ['dev'],
         options: {
-          livereload: true,
+          livereload: true
         }
-      },
+      }
     }
 	});
 
