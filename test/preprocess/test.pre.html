@@ -24,7 +24,7 @@
 <!-- @endif -->
 	<!-- Your custom stylesheets here -->
 <!-- @if opensans='true' -->
-	<link href="../styles/opensans.css" rel="stylesheet" type="text/css" />
+	<link href="build/<!-- @echo build_version -->/styles/opensans.css" rel="stylesheet" type="text/css" />
 	<style>
 	@@include('blocks/opensans-styles.css', {})
 	</style>
@@ -47,13 +47,13 @@
 						featureClass: "P",
 						style: "full",
 						maxRows: 12
-					} 
+					}
 				},
 				result:{
 					appendTo: "#spine-shortcuts",
 					showRelated:true,
 					relatedHeader:"<hr/>",
-					minLength: 2, 
+					minLength: 2,
 					template:"<li>%s</li>"
 				}
 			},
@@ -66,7 +66,7 @@
 				"Pinterest"
 			]
 				},
-			analytics:{ 
+			analytics:{
 				"google":{
 					analytics:{
 						"account_id":"UA-XXXXX-XX"
@@ -209,7 +209,7 @@
 <section id="spine-navigation" class="spine-navigation">
 
 	<nav class="spine-sitenav">
-	
+
 		<ul>
 		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
@@ -224,7 +224,7 @@
 		@@include('blocks/nav_extralinks.html', {})
 		<!-- @endif -->
 		</ul>
-	
+
 	</nav>
 
 	@@include('blocks/nav-offsite.html', {})
@@ -237,7 +237,7 @@
 		<!-- @if markup='true' -->
 		<!--
 		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
+		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
 		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
 		• Maximum number of channels is five -->
 		<!-- @endif -->
@@ -255,7 +255,7 @@
 			<li class="policies-link"><a href="http://policies.wsu.edu/">Policies</a></li>
 			<li class="copyright-link"><a href="http://copyright.wsu.edu">&copy;</a></li>
 		</ul>
-	</nav>	
+	</nav>
 </footer>
 
 </div><!--/glue-->
@@ -265,18 +265,18 @@
 </div><!--/cover-->
 </div><!--/jacket-->
 <!-- /WRAPPING -->
-	
+
 <!-- @if markup='true' || markup_min='true' -->
 <!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
 <!-- @endif -->
 @@include('blocks/contact_normal.html', {})
-	
+
 	<!-- @if malformed='true' -->
 		@@include('blocks/contact_malformed.html', {})
 	<!-- @endif -->
 
 	<!-- @if malformed='false' -->
-		<!-- NOTE: a normal working contact tab, just could have been better placed 
+		<!-- NOTE: a normal working contact tab, just could have been better placed
 			 then in the spine directly -->
 		@@include('blocks/contact_normal.html', {})
 	<!-- @endif -->

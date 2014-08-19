@@ -13,8 +13,6 @@
 @import 'skeleton/asides';
 // @import 'skeleton/grid';
 
-@charset "UTF-8";
-
 /* # Skeleton */
 
 /* ## RESET */
@@ -58,7 +56,7 @@ main {
 .hybrid main {
 	width: 792px;
 	}
-	
+
 /* ### Spineless */
 .spineless.fixed main,
 .spineless.hybrid main,
@@ -90,8 +88,8 @@ section {
 .row:not(.boundless):not(.rebound) {
 	width: 100%;
 	}
-	
-// @each $break, $point in $breaks { 
+
+// @each $break, $point in $breaks {
 //	.spineless .#{$point} .row {
 //		max-width: #{$break - 198}px;
 //		}
@@ -132,15 +130,15 @@ section {
 /* ### Unbind */
 
 @include unbind;
-	
+
 /* ## LAYOUTS */
 
 @include layouts-pixels;
 
 .fluid {
-	
+
 	@include layouts-percents;
-	
+
 	}
 
 /* ### Nesting */
@@ -202,7 +200,7 @@ main hr.short {
 	margin-top: 0;
 	margin-bottom: 0;
 	}
-	
+
 @include asides-marginalized;
 
 
@@ -230,15 +228,15 @@ img.unbound {
 	max-width: 100%;
 	height: auto !important;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	}
 
 @media \0screen {
-  img.max-width { 
+  img.max-width {
   	width: auto; /* for ie 8 */
-  } 
-  } 
+  }
+  }
 
 .hybrid.small figure.fill-width {
 	width: 100%;
@@ -309,7 +307,7 @@ main,
 .rebound,
 .clearfix {
   zoom: 1; }
-  
+
 /* or */
 .cf:before,
 .cf:after,
