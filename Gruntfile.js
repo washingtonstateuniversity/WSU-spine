@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		config: {
-			build: 'build/<%= pkg.build_version %>'
+			build: 'build'
 		},
 
 		env: { // https://github.com/jsoverson/grunt-env
