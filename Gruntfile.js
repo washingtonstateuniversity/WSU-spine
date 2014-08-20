@@ -63,6 +63,12 @@ module.exports = function(grunt) {
 			}
 		},
 
+		csslint: {
+			spine: {
+				src: ['<%= config.build %>/spine.css']
+			}
+		},
+
 		cssmin: {
 			combine: {
 				files: {
@@ -438,6 +444,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-env');
