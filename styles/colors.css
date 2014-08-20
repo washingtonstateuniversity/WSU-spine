@@ -16,10 +16,10 @@
 
 /* GRAY */
 .gray-back {
-  background-color: #5e6a71; }
+  background-color: #5E6A71; }
 
 .gray-text {
-  color: #5e6a71; }
+  color: #5E6A71; }
 
 /* grayer */
 .gray-er-back, .er-back, .white-back {
@@ -344,3 +344,5 @@
 
 .yellow-darkest-text {
   color: #4f3a08; }
+
+/*# sourceMappingURL=colors.css.map */
