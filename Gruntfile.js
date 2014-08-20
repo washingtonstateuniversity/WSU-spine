@@ -16,15 +16,6 @@ module.exports = function(grunt) {
 		},
 
 		concat: {
-			styles: {
-				src: [
-					'styles/skeleton.css',
-					'styles/colors.css',
-					'styles/spine.css',
-					'styles/respond.css'
-				],
-				dest: '<%= config.build %>/spine.css'
-			},
 			scripts: {
 				src: [
 					'scripts/debug.js',
@@ -53,13 +44,10 @@ module.exports = function(grunt) {
 
 		sass: {
 			dev: {
-				files: [{
-					expand: true,
-					cwd: 'styles/sass/',
-					src: '*.scss',
-					dest: 'styles/',
-					ext: '.css'
-				}]
+				files: [
+					{ src: 'styles/sass/spine.scss', dest: '<%= config.build %>/spine.css' },
+					{ src: 'styles/sass/opensans.scss', dest: '<%= config.build %>/styles/opensans.css' }
+				]
 			}
 		},
 
@@ -91,7 +79,7 @@ module.exports = function(grunt) {
 					{ expand: true, src: ['images/**'], dest: '<%= config.build %>/' },
 					{ expand: true, src: ['marks/*'], dest: '<%= config.build %>/' },
 					{ expand: true, src: ['scripts/*'], dest: '<%= config.build %>/' },
-					{ expand: true, src: ['styles/*'], dest: '<%= config.build %>/' },
+					{ expand: true, src: ['styles/jqueryui.css', 'styles/styles.css'], dest: '<%= config.build %>/' },
 					{ expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: '<%= config.build %>/' }
 				]
 			}
@@ -424,7 +412,7 @@ module.exports = function(grunt) {
 						location : 'https://repo.wsu.edu/spine'
 					}
 				}
-			},
+			}
 		},
 
 		watch: {

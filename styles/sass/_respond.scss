@@ -26,7 +26,7 @@
 
 @media screen
 	and ( max-width : 1187px )
-	
+
 	{
 
 /* ### Large Grid */
@@ -34,23 +34,23 @@
 @include grid-large-controls;
 
 	}
-	
+
 .max-1188 .rebound,
 .max-1188 .row.rebound {
 	width: 792px;
 	}
-	
+
 /* ## MEDIUM (after first break) */
 
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 
 @media screen
 	and ( max-width : 989px ),
-	
+
 	only screen
 	and (max-device-width : 1024px)
 	and (orientation : portrait)
-	
+
 	{
 
 #binder {
@@ -60,7 +60,7 @@
 	margin-left: 0px;
 	margin-top: 50px;
 	}
-			
+
 #binder.fluid {
 	width: 100%;
 	}
@@ -77,19 +77,19 @@
 	margin-left: 0px;
 	width: 792px;
 	}
-	
+
 .spineless.fluid main,
 .spineless .fluid main {
 	margin-left: 0px;
 	}
-	
+
 .fluid .row.rebound,
 .fluid .verso .rebound,
 .fluid .recto .rebound,
 .fluid .recto.verso .rebound {
 	width: 100%;
 	}
-	
+
 .fluid .recto.verso .rebound,
 .fluid .verso .rebound {
 	border-left: 198px transparent solid;
@@ -100,31 +100,31 @@
 	margin-left: auto;
 	margin-right: 0px;
 	}
-	
+
 .recto.verso .rebound {
 	border-left: 0px transparent solid;
 	margin-left: auto;
 	margin-right: auto;
 	}
-	
+
 .spineless .fluid .verso .rebound,
 .spineless .fluid .recto.verso .rebound {
 	border-left: 0px transparent solid;
 	}
-			
+
 /* Shelving */
 #binder:not(.fluid) {
 
 	@include shelved;
-			
+
 	}
-	
+
 /* Layout Adjustments */
 
 .hybrid {
-	
+
 	@include layouts-percents;
-	
+
 	}
 
 /* Adjust Search */
@@ -154,13 +154,13 @@ nav a.external:after {
 	margin-left: 3px;
 	content: "\21AA";
 	}
-	
+
 /* Grid Medium */
 @include grid-medium-controls;
 
 @include header-colors;
 @include signatures('horizontal','#binder:not(.fluid) ');
-	
+
 	}
 
 
@@ -169,17 +169,17 @@ nav a.external:after {
 @media screen
 	and ( max-width : 791px )
 	and ( min-device-width : 990px ),
-	
+
 	screen
 	and ( max-width : 791px )
 	and ( orientation: portrait )
 	and ( max-device-width: 420px ),
-	
+
 	screen
 	and ( max-width : 791px )
 	and ( orientation: landscape )
 	and ( max-device-width: 480px )
-	
+
 	{
 
 #binder,
@@ -231,9 +231,9 @@ nav a.external:after {
 #binder.fluid {
 
 	@include shelved;
-	
+
 	}
-	
+
 /* Signature */
 #binder.fluid #wsu-signature {
 	background-position: center 12px;
@@ -249,7 +249,7 @@ nav a.external:after {
 
 	}
 
-	
+
 /* SMALLISH (Fixed Only)
 ----------------------------------------------------- */
 /* Medium and Desktop - Small */
@@ -258,7 +258,7 @@ nav a.external:after {
 	only screen
 	and (min-width: 694px)
 	and (max-width: 791px)
-	
+
 	{
 
 #binder.fixed {
@@ -269,13 +269,13 @@ nav a.external:after {
 	padding-top: 0px;
 	margin-left: 298px;
 	}
-	
+
 /* Shelving */
 
 #binder.fixed {
 	@include unshelved;
 	}
-	
+
 /* Grid */
 
 .fixed { @include layouts-small; }
@@ -303,36 +303,36 @@ nav a.external:after {
 /* ## SMALL (max 693)  */
 /* 792px - 198px = 594px */
 
-@media 
+@media
 	only screen
 	and (max-width: 693px)
 	{
 
 #binder {
-	
+
 	&.fixed {
-	
+
 		width: 396px;
 		min-width: 396px;
 		margin: 0px auto;
-		
+
 		main {
 			margin-top: 50px;
 			margin-left: 0px;
 			}
-		
+
 		}
-		
+
 	&.fluid,
 	&.hybrid {
-	
+
 		width: 100%;
-		
+
 		main {
 			width: auto;
 			margin-left: 0px;
 			}
-		
+
 		}
 
 	}
@@ -348,7 +348,7 @@ nav a.external:after {
 	background-position: center 12px !important;
 	margin-left: 40px !important;
 	}
-	
+
 /* #### Grid */
 
 .fixed,.hybrid,.fluid { @include layouts-small; }
@@ -377,60 +377,60 @@ nav a.external:after {
 
 /* ## SMALLER than small */
 
-@media 
-	
+@media
+
 	only screen
 	and (max-width: 420px),
-	
+
 	screen
 	and ( max-width: 360px )
 	and ( max-device-width: 480px )
 	and ( orientation: landscape )
-	
+
 	{
-	
+
 #wsu-signature {
 	background-size: 320px auto !important;
 	}
-	
+
 	}
-	
-@media 
-	
+
+@media
+
 	only screen
 	and (max-width: 360px),
-	
+
 	screen
 	and ( max-width: 360px )
 	and ( max-device-width: 480px )
 	and ( orientation: portrait )
-	
+
 	{
-	
+
 #wsu-signature {
 	background-size: 260px auto !important;
 	background-position: center 60% !important;
 	}
-	
+
 	}
-	
+
 /* IOS fix for unshelved spine */
 @include unshelved-ios;
-	
+
 /* ## XLARGE */
 
 @media
-	
+
 	only screen
 	and ( min-width : 990px )
-	
+
 	{
 
 #binder.fluid {
 
 	width: 100%;
 	max-width: 990px;
-	
+
 	&.max-1188,
 	&.max-1188 .row {
 		max-width: 1188px;
@@ -456,16 +456,16 @@ nav a.external:after {
 #binder.fluid .row:not(.rebound) {
 	width: 100% !important;
 	}
-	
+
 	}
 
 /* !LARGE FORMAT -> 1188 */
 @media
-	
+
 	only screen
 	and ( min-width : 1188px )
 	and ( min-device-width : 990px )
-	
+
 	{
 
 #binder:not(.fluid) {
@@ -477,7 +477,7 @@ nav a.external:after {
 		width: 1188px;
 		}
 	}
-	
+
 #binder:not(.fluid) {
 	&.max-1188 main,
 	&.max-1386 main,
@@ -487,7 +487,7 @@ nav a.external:after {
 		width: 990px;
 		}
 	}
-	
+
 #binder:not(.fluid) {
 	&.max-1188 .row,
 	&.max-1386 .row,
@@ -498,15 +498,15 @@ nav a.external:after {
 		max-width: 990px;
 		}
 	}
-		
+
 	}
 
 /* XLARGE -> 1386 */
 @media
-	
+
 	only screen
 	and ( min-width : 1386px )
-	
+
 	{
 
 #binder:not(.fluid) {
@@ -537,7 +537,7 @@ nav a.external:after {
 	}
 
 	}
-	
+
 /* !LARGE FORMAT -> 1584  */
 @media
 	only screen
@@ -569,13 +569,13 @@ nav a.external:after {
 	}
 
 	}
-	
+
 /* !LARGE FORMAT -> 1782  */
 @media
-	
+
 	only screen
 	and ( min-width : 1782px )
-	
+
 	{
 
 #binder:not(.fluid) {
@@ -603,12 +603,12 @@ nav a.external:after {
 
 /* !LARGE FORMAT -> 1980  */
 @media
-	
+
 	only screen
 	and ( min-width : 1980px )
-	
+
 	{
-	
+
 #binder:not(.fluid) {
 	&.max-1980 {
 		width: 1980px;
@@ -620,7 +620,7 @@ nav a.external:after {
 		width: 1782px;
 		}
 	}
-	
+
 #binder:not(.fluid) {
 	&.max-1980 .row {
 		max-width: 1782px;
@@ -628,7 +628,7 @@ nav a.external:after {
 	}
 
 	}
-	
+
 /* ## Show and Hide */
 
 .display-none-important {
@@ -637,9 +637,9 @@ nav a.external:after {
 .display-block-important {
 	display: block !important;
 	}
-	
+
 @each $size, $name in $sizes {
-	
+
 	#jacket:not(.size-lt-#{$name}) .size-lt-#{$name}-only, #jacket:not(.size-#{$name}) .size-#{$name}-only, #jacket:not(.size-gt-#{$name}) .size-gt-#{$name}-only {
 		@extend .display-none-important; }
 	}

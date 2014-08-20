@@ -1,11 +1,11 @@
-/** intended usage is 
+/** intended usage is
 *	$.spine({
 *		"option":"value"
 *	});
 **/
 /*jshint -W054 */
 ;(function ( $, window, document, undefined ) {
-	
+
 	//var cache = {};
 	$.fn.stripClass = function (partialMatch, endOrBegin) {
 		/// <summary>
@@ -16,7 +16,7 @@
 		/// <returns type=""></returns>
 		var x;
 		x = new RegExp((!endOrBegin ? "\\b" : "\\S+") + partialMatch + "\\S*", "g");
-	
+
 		// http://stackoverflow.com/a/2644364/1037948
 		this.attr("class", function (i, c) {
 			if (!c){
@@ -30,7 +30,7 @@
 		var elems;
 		elems = $(this.selector);
 		this.splice(0, this.length);
-		
+
 		try {
 			this.push.apply(this, elems);
 		}
@@ -78,7 +78,7 @@
 	 */
 	$.s = function(name, prototype) {
 		var namespace;
-		
+
 		//alert("starting name ==>"+dump(name));
 		namespace = name.split(".")[0];
 		name = name.split(".")[1];
@@ -102,16 +102,16 @@
 				context_options=arguments[1];
 			}
 			//alert("w/ arguments ==>"+dump(context_options));
-			
+
 			context = context || {};
 			this.options = $.extend({}, context);
-			
+
 			//this is will used to provide data changes as things are read if they exist
 			//this.elem = elem;
 			//this.$elem = $(elem);
 			//this.options = options;
 			//this.metadata = this.$elem.data('plugin-options');
-			
+
 			//this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
 			isMethodCall = typeof context === "string";
@@ -126,7 +126,7 @@
 				var instance;
 				//alert("==>"+dump(name));
 				instance = $.data(this, name);
-				
+
 				if (!instance) {
 					instance = $.data(this, name, new $[namespace][name](context, this));
 				}
@@ -144,9 +144,9 @@
 			return returnValue;
 		};
 	};
-	
+
 	$.s("ui.spine", {
-		
+
 		globals: {
 			version: "0.1.0",
 			current_url:window.location.href,
@@ -154,7 +154,7 @@
 		options: {
 		},
 		/**
-		 * Setup plugin basics, 
+		 * Setup plugin basics,
 		 * @param options:object
 		 * @param element:node
 		 */
@@ -178,7 +178,7 @@
 			//alert('self.instance.spine==>'+dump(self.instance.spine));
 			self._call(self.options.callback, self.instance.spine);
 		},
-		
+
 		/**
 		 * Sets up values to the global spine obj
 		 * @param obj:object		e.g. {'foo':'bar'}
@@ -196,7 +196,7 @@
 		_get_globals: function(context) {
 			return this.globals[context];
 		},
-		
+
 		/**
 		 * Clears by type
 		 * @param TAX:string	e.g. 'search', 'social', 'framework'
@@ -206,7 +206,7 @@
 			this.set(TAX, []);
 			return this;
 		},
-		
+
 		/**
 		 * Sets up an object that can be worked
 		 */
@@ -220,7 +220,7 @@
 
 		/**
 		 * Returns the objects with a specific property and value, e.g. 'category', 'tags'
-		 * @param ctx:string	in what context, e.g. 'search' 
+		 * @param ctx:string	in what context, e.g. 'search'
 		 * @param options:object	property:string	the property to search within, value:string, operator:string (optional) (AND/OR)
 		 * @param callback:function(search:jObj, isFound:boolean)
 		 */
@@ -275,7 +275,7 @@
 			}
 			return instance[key];
 		},
-				
+
 		/**
 		 * Sets an instance property
 		 * @param key:string
@@ -292,7 +292,7 @@
 		_unwrap: function(obj) {
 			return (!obj) ? null : ( (obj instanceof jQuery) ? obj[0] : ((obj instanceof Object) ? obj : $("#"+obj)[0]) );
 		},
-		
+
 		/**
 		 * Helper method for calling a function
 		 * @param callback
@@ -335,5 +335,5 @@
 		});
 	};
 
-	
+
 })( jQuery, window, document );

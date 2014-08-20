@@ -53,8 +53,8 @@
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			
-			
+
+
 			// Section -> Contact
 			if (!$("#wsu-contact").length) {
 				contactHtml = "<section id='wsu-contact' class='spine-contact spine-action closed'>";
@@ -106,18 +106,18 @@
 					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
 					$(".unbound.verso.recto").css("width",spread);
 				}
-				
+
 				if($(".cropped").length<=0){}
 					viewport_ht		= $(window).height();
 					glue.css("min-height",viewport_ht);
 					spine.css("min-height",viewport_ht);
-				
+
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
 				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
 				$(document).trigger("scroll");
-				
+
 			}).trigger("resize");
 		},
 		// Label #jacket with current window size
@@ -169,7 +169,7 @@
 					//	$(".column",this).not(".unequaled").css("min-height",tallestBox).css("height",tallestBox);
 					//	}
 					//$("section.equalize .column",this).css("min-height","auto").css("height","auto");
-					
+
 				});
 			}
 		},
@@ -213,18 +213,18 @@
 		 */
 		setup_spine: function(){
 			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,glue_ht,height_dif;
-			
+
 			scroll_dif=0;
 			positionLock=0;
 			scroll_top=0;
-			
+
 			//console.log("starting positionLock::" + positionLock);
-			
+
 			self=this;
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-		
+
 			if($(".cropped").length<=0){}
 
 				/*$( window ).on("resize", function() {
@@ -248,7 +248,7 @@
 						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
 						scroll_dif		= scroll_top-top;
 						scroll_top		= top;
-	
+
 						viewport_ht		= $(window).height();
 						spine_ht		= spine[0].scrollHeight;
 						glue_ht			= glue.height();
@@ -267,13 +267,13 @@
 								}
 							}else{//up
 								positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-								
+
 								if(top>0 && positionLock>0){
 									positionLock=0;
 								}
-								
+
 							}
-							
+
 							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
 							//console.log("SCROLLING || spine_ht::" + spine_ht);
 							//console.log("SCROLLING || height_dif::" + height_dif);
@@ -293,8 +293,8 @@
 						spine.removeClass("scanned");
 					}*/
 				});
-				
-				
+
+
 				$(document).keydown(function(e) {
 					if(e.which === 35 || e.which === 36) {
 						viewport_ht		= $(window).height();
@@ -308,10 +308,10 @@
 						spine.css({"position":"fixed","top":positionLock+"px"});
 					}
 				});
-				
-				
-				
-			
+
+
+
+
 			$("#glue > header").append("<button id='shelve' />");
 			$("#shelve").on("click",function(e) {
 				e.preventDefault();
@@ -333,7 +333,7 @@
 			// Cracking the Spine for Short Windows
 			/* $(window).on("load resize scroll mouseup touchend",function() {
 				var footerHeight, windowHeight, spineHeight;
-				
+
 				footerHeight = $("#spine footer").height();
 				windowHeight = window.innerHeight - footerHeight - 50;
 				spineHeight = $("#glue").height();
@@ -394,9 +394,9 @@
 			$("#wsu-"+tab+"-tab button").on("click",function(e) {
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-"+tab+",#wsu-"+tab+"-tab").toggleClass("opened closed");
-				
+
 				action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
-				
+
 				$(".spine-action.opened").css( "min-height", action_ht );
 			});
 		},
@@ -424,7 +424,7 @@
 				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
 				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
 				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
-				
+
 				classes = "overview";
 				if (tar.closest(".parent").hasClass("dogeared")) {
 					classes += " dogeared";
@@ -435,7 +435,7 @@
 					tar.clone(true,true).appendTo( tar.parent("li").find("ul .overview:first") );
 					tar.parent("li").find("ul .overview:first a").html(title);
 				}
-				
+
 				// Disclosure
 				tar.on("click",function(e) {
 					e.preventDefault();
@@ -456,7 +456,7 @@
 		 */
 		setup_printing: function(){
 			var self, spine, wsu_actions, print_controls;
-			
+
 			self=this;//hold to preserve scope
 			spine = self._get_globals("spine").refresh();
 			wsu_actions = self._get_globals("wsu_actions").refresh();
@@ -487,7 +487,7 @@
 				window.setTimeout(function() { printPage(); }, 400);
 			}
 			$("#wsu-print-tab button").click(print);
-	
+
 			// Shut a tool section
 			$("button.shut").on("click",function(e) {
 				e.preventDefault();

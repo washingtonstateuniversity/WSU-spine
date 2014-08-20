@@ -9,7 +9,7 @@
 .inset {
 	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
 	}
-	
+
 /* GRID */
 
 /* ------------------- */
@@ -31,12 +31,12 @@
 #switches dl {
 
 	display: none;
-	
+
 	}
-	
+
 #switches.disclosed dl {
 	display: block;
-	
+
 	}
 #onoff {
 	width: 56px;
@@ -51,7 +51,7 @@
 #onoff:hover {
 	background: #981e32;
 	}
-	
+
 /* ------------------- */
 
 #grid {
@@ -70,12 +70,12 @@
 .grid12 #grid {
 	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid12.png') repeat-y left top;
 	}
-	
+
 main:not(.wireframe) .wireframe-only {
 	display: none;
 	}
 main {
-	
+
 	border-top: 20px #981e32 solid;
 }
 
@@ -105,9 +105,9 @@ main {
 .wireframe .row.thirds::before { content: "thirds"; }
 .wireframe .row.margin::before { content: "margin"; }
 
-	
+
 /* Column Numbering */
-.wireframe .column:not(.note)::after { 
+.wireframe .column:not(.note)::after {
 	color: rgba(255,255,255,0.5);
 	background-color: rgba(182,188,191,0.5);
 	padding: 5px 10px;
@@ -133,7 +133,7 @@ main {
 .wireframe .row .column.six-twelfths::after { content:"6/12"; }
 
 /* Column Measurements */
-.column::before { 
+.column::before {
 	color: black;
 	padding: 2px 4px;
 	position: absolute;
@@ -184,7 +184,7 @@ main {
 	font-size: 10px;
 	content:"nested";
 	}
-	
+
 .sidebar .column.two ul {
 	padding: 0px; margin: 0px;
 	}
@@ -196,7 +196,7 @@ main {
 .sidebar .column.two li:last-of-type {
 	border-bottom: none;
 	}
-	
+
 #binder main .note::after {
 	color: black;
 	padding: 6px 10px;
@@ -244,7 +244,7 @@ section > big {
 	display: block;
 	}
 dt a:hover {
-	
+
 	}
 #switches dl dd {
 	display: block; float: left;
@@ -304,11 +304,11 @@ pre code {
 <script>
 
 	$(document).ready(function(){
-	
+
 	if ($('#binder').hasClass('spineless')) { $('#spineless-switch').addClass('active'); }
 	if ($('#spine').hasClass('bleed')) { $('#bleed-switch').addClass('active'); }
 
-	// 
+	//
 	$('.spine-behavior button').on('click', function() {
 		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var grid = $(this).attr('data-grid');
@@ -316,7 +316,7 @@ pre code {
 		$(this).trigger( "resize" );
 		return false;
 	});
-	
+
 	// Change Spine color
 	$('.spine-colors button').on('click', function() {
 		var color = $(this).attr('data-color');
@@ -327,7 +327,7 @@ pre code {
 		$(this).trigger( "resize" );
 		return false;
 	});
-	
+
 	// Change Spine transparency
 	$('.spine-transparency button').on('click', function() {
 		var transparency = $(this).attr('data-transparency');
@@ -337,7 +337,7 @@ pre code {
 		$(this).trigger( "resize" );
 		return false;
 	});
-	
+
 	// Folio Sizes
 	$('.spine-sizes button').on('click', function() {
 		var max = $(this).attr('data-max');
@@ -347,7 +347,7 @@ pre code {
 		$(this).trigger( "resize" );
 		return false;
 	});
-	
+
 	// Change Campus
 	$('.spine-campuses button').on('click', function() {
 		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
@@ -358,13 +358,13 @@ pre code {
 		$(this).trigger( "resize" );
 		return false;
 	});
-	
+
 	$('#switches button').on('click', function() {
-	
+
 		$(this).not('.active').toggleClass('active');
-	
+
 		});
-	
+
 	});
 
 </script>
@@ -372,10 +372,10 @@ pre code {
 <section id="switches" class="marginalized short narrow">
 
 	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
-	
+
 	<dl class="spine-colors clearfix">
 		<dt>spine colors <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#colors" target="_blank" class="info">info</a></dt>
-		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd> 
+		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd>
 		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
 		<dd><button data-color="lightly" class="lightly-back gray-dark-text inset">Lightly</button></dd>
 		<dd><button data-color="lighter" class="lighter-back gray-text">Lighter</button></dd>
@@ -386,22 +386,22 @@ pre code {
 		<dd><button data-color="darkest" class="darkest-back light-text">Darkest</button></dd>
 		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
 	</dl>
-	
+
 	<dl class="spine-transparency clearfix">
 		<dt>spine transparency <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#opacity" target="_blank" class="info">info</a></dt>
-		<dd><button data-transparency="">0</button></dd> 
-		<dd><button data-transparency="vellum-05">5</button></dd> 
+		<dd><button data-transparency="">0</button></dd>
+		<dd><button data-transparency="vellum-05">5</button></dd>
 		<dd><button data-transparency="vellum-10">10</button></dd>
 		<dd><button data-transparency="vellum-15">15</button></dd>
 	</dl>
-	
+
 	<dl class="spine-column-options clearfix">
 		<dt>spine options <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options" target="_blank" class="info">info</a></dt>
 		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
 		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
-	
+
 	<dl class="spine-campuses clearfix">
 		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
 		<dd><button data-campus="system">System</button></dd>
@@ -411,14 +411,14 @@ pre code {
 		<dd><button data-campus="globalcampus">Global Campus</button></dd>
 		<dd><button data-campus="extension">Extension</button></dd>
 	</dl>
-	
+
 	<dl class="spine-behavior clearfix">
 		<dt>grid behavior <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/II.3.-Page:-Responsive#responsive-behavior" target="_blank" class="info">info</a></dt>
 		<dd><button data-grid="fluid">fluid</button></dd>
 		<dd><button data-grid="fixed">fixed</button></dd>
 		<dd><button data-grid="hybrid">hybrid</button></dd>
 	</dl>
-	
+
 	<dl class="spine-sizes clearfix ">
 		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
 		<dd><button data-max="max-990">default</button></dd>
@@ -428,7 +428,7 @@ pre code {
 		<dd><button data-max="max-1782">1782</button></dd>
 		<dd><button data-max="max-1980">1980</button></dd>
 	</dl>
-	
+
 	<dl class="spine-wireframe">
 		<dt>under the hood</dt>
 		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
