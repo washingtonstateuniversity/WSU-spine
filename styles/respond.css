@@ -202,7 +202,7 @@
   #binder:not(.fluid) #spine.light header {
     background-color: #8d959a; }
   #binder:not(.fluid) #spine.gray header {
-    background-color: #5e6a71; }
+    background-color: #5E6A71; }
   #binder:not(.fluid) #spine.dark header {
     background-color: #464e54; }
   #binder:not(.fluid) #spine.darker header {
@@ -266,7 +266,7 @@
   #binder #spine.light header {
     background-color: #8d959a; }
   #binder #spine.gray header {
-    background-color: #5e6a71; }
+    background-color: #5E6A71; }
   #binder #spine.dark header {
     background-color: #464e54; }
   #binder #spine.darker header {
@@ -558,7 +558,7 @@
   #binder #spine.light header {
     background-color: #8d959a; }
   #binder #spine.gray header {
-    background-color: #5e6a71; }
+    background-color: #5E6A71; }
   #binder #spine.dark header {
     background-color: #464e54; }
   #binder #spine.darker header {
@@ -808,7 +808,7 @@
   #binder #spine.light header {
     background-color: #8d959a; }
   #binder #spine.gray header {
-    background-color: #5e6a71; }
+    background-color: #5E6A71; }
   #binder #spine.dark header {
     background-color: #464e54; }
   #binder #spine.darker header {
@@ -1357,7 +1357,7 @@
   #binder #spine.light header {
     background-color: #8d959a; }
   #binder #spine.gray header {
-    background-color: #5e6a71; }
+    background-color: #5E6A71; }
   #binder #spine.dark header {
     background-color: #464e54; }
   #binder #spine.darker header {
@@ -1666,7 +1666,7 @@ html.print #binder #spine.lighter header {
 html.print #binder #spine.light header {
   background-color: #8d959a; }
 html.print #binder #spine.gray header {
-  background-color: #5e6a71; }
+  background-color: #5E6A71; }
 html.print #binder #spine.dark header {
   background-color: #464e54; }
 html.print #binder #spine.darker header {
@@ -1849,3 +1849,5 @@ html.print #spine .print-button {
   html.print #spine header button#shelve,
   html.print #spine .print-controls {
     display: none; } }
+
+/*# sourceMappingURL=respond.css.map */

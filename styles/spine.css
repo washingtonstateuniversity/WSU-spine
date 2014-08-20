@@ -550,7 +550,7 @@ html.lt-ie9 #spine footer {
     .spine-social-channels ul .facebook-channel a:before {
       content: "F"; }
     .spine-social-channels ul .facebook-channel a:hover {
-      color: #3b5998 !important; }
+      color: #3B5998 !important; }
     .spine-social-channels ul .twitter-channel a:before {
       content: "T"; }
     .spine-social-channels ul .twitter-channel a:hover {
@@ -671,7 +671,7 @@ html.lt-ie9 #spine footer {
   .spine-global-links .copyright-link a {
     color: #8b9399; }
   .spine-global-links .copyright-link a:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
 
 /* ## COLORS - Spinal Column Colors */
 #spine {
@@ -700,7 +700,7 @@ html.lt-ie9 #spine footer {
     background-color: rgba(255, 255, 255, 0.75); }
   #spine .spine-sitenav a,
   #spine .spine-search-tab button {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine .spine-actions-tabs button,
   #spine .spine-social-channels a,
   #spine .spine-footer small a {
@@ -720,7 +720,7 @@ html.lt-ie9 #spine footer {
     color: #8d959a; }
   #spine .spine-offsitenav a:hover,
   #spine .spine-global-links a:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine .spine-actions-tabs .opened,
   #spine .spine-actions-tabs .opened:hover,
   #spine .spine-actions section {
@@ -730,7 +730,7 @@ html.lt-ie9 #spine footer {
   #spine .spine-search-tab button {
     color: #8d959a; }
   #spine .spine-search-tab button:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
 
 /* ### Alternate Colors */
 #spine.lightest {
@@ -766,11 +766,11 @@ html.lt-ie9 #spine footer {
   #spine.lightest .spine-actions-tabs button:hover,
   #spine.lightest .spine-offsitenav a:hover,
   #spine.lightest .spine-global-links a:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.lightest .spine-search-tab:not(.opened) button {
     color: #8d959a; }
   #spine.lightest .spine-search-tab:not(.opened) button:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.lightest .spine-actions-tabs li.opened,
   #spine.lightest .spine-actions-tabs li.opened:hover,
   #spine.lightest .spine-actions section {
@@ -807,11 +807,11 @@ html.lt-ie9 #spine footer {
   #spine.lightly .spine-sitenav a,
   #spine.lightly .spine-offsitenav a:hover,
   #spine.lightly .spine-global-links a:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.lightly .spine-search-tab button {
     color: #8d959a; }
   #spine.lightly .spine-search-tab button:hover {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.lightly .spine-sitenav a:hover,
   #spine.lightly .spine-sitenav li.dogeared > a {
     color: #981e32; }
@@ -848,7 +848,7 @@ html.lt-ie9 #spine footer {
     color: black; }
   #spine.lighter .spine-offsitenav a,
   #spine.lighter .spine-global-links a {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.lighter .spine-actions-tabs button:hover,
   #spine.lighter .spine-sitenav a,
   #spine.lighter .spine-offsitenav a:hover,
@@ -911,7 +911,7 @@ html.lt-ie9 #spine footer {
 #spine.gray {
   /* #### GRAY #5e6a71, rgb(94,106,113) */ }
   #spine.gray #glue:before {
-    background: #5e6a71; }
+    background: #5E6A71; }
   #spine.gray.vellum-05 #glue:before {
     background-color: rgba(94, 106, 113, 0.95); }
   #spine.gray.vellum-10 #glue:before {
@@ -952,7 +952,7 @@ html.lt-ie9 #spine footer {
   #spine.gray .spine-search-tab button:hover {
     color: black; }
   #spine.gray .spine-social-channels .facebook-channel a:hover {
-    color: #d3d8e8 !important; }
+    color: #D3D8E8 !important; }
   #spine.gray .spine-sitenav a:hover,
   #spine.gray .spine-sitenav li.dogeared > a {
     color: white; }
@@ -985,7 +985,7 @@ html.lt-ie9 #spine footer {
     color: #7d868c; }
   #spine.dark .spine-sitenav ul li,
   #spine.dark .spine-global-links {
-    border-color: #5e6a71; }
+    border-color: #5E6A71; }
   #spine.dark .spine-search-tab.opened button,
   #spine.dark .spine-search-tab.opened button:hover {
     color: #2a3033; }
@@ -1032,7 +1032,7 @@ html.lt-ie9 #spine footer {
   #spine.darker .spine-actions .opened button:hover,
   #spine.darker .spine-social-channels a,
   #spine.darker .spine-footer small a {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.darker .spine-sitenav ul li,
   #spine.darker .spine-global-links {
     border-color: #464e54; }
@@ -1078,13 +1078,13 @@ html.lt-ie9 #spine footer {
   #spine.darkest .spine-actions button,
   #spine.darkest .spine-social-channels a,
   #spine.darkest .spine-footer small a {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.darkest .spine-sitenav ul li,
   #spine.darkest .spine-global-links {
     border-color: #464e54; }
   #spine.darkest .spine-offsitenav a,
   #spine.darkest .spine-global-links a {
-    color: #5e6a71; }
+    color: #5E6A71; }
   #spine.darkest .spine-actions-tabs :not(.opened) button:hover,
   #spine.darkest .spine-sitenav a,
   #spine.darkest .spine-offsitenav a:hover,
@@ -1458,3 +1458,5 @@ html.lt-ie9 #wsu-signature {
 
   html.lt-ie9 #spine.cropped.skimmed #wsu-signature {
     background-image: url("//repo.wsu.edu/spine/1/marks/wsu-signature-horizontal.png"); } }
+
+/*# sourceMappingURL=spine.css.map */
