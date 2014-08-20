@@ -14,7 +14,7 @@
 			this._set_globals(this.search_globals);
 			this.create_search();
 		},
-		
+
 		search_options:{
 			data:[],
 			providers:{
@@ -75,11 +75,11 @@
 				wsu_search.remove();
 			}
 			this.setup_tabs("search",tabhtml);
-			
+
 			if($("#spine-shortcuts").length<=0){
 				$("#wsu-search").append("<div id='spine-shortcuts' class='spine-shortcuts'></div>");
 			}
-			
+
 			$("#wsu-search-tab button").on("click",function() {
 				self._get_globals("search_input").refresh().focus();
 			});
@@ -153,15 +153,15 @@
 		format_result_text:function(term,text,value){
 			var self,termTemplate,regex;
 			self=this;//hold to preserve scope
-			
+
 			termTemplate = "<strong>$1</strong>"; //typeof($.ui.autocomplete.prototype.options.termTemplate)!==undefined ? $.ui.autocomplete.prototype.options.termTemplate : "<strong>$1</strong>";
 
 			regex	= "(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(term) + ")(?![^<>]*>)(?![^&;]+;)";
 			text	= "<a href='"+value+"' target='"+self.search_options.result.target+"'>" + text.replace( new RegExp( regex , "gi" ), termTemplate )+"</a>";
-			
+
 			return text;
 		},
-		
+
 		setup_result_obj:function(term,data){
 			var self, matcher;
 			self=this;//hold to preserve scop
@@ -184,21 +184,21 @@
 		},
 
 		setup_search: function (){
-			
+
 			var self, wsu_search, search_input, focuseitem={};
-			
+
 			self=this;//hold to preserve scop
 			wsu_search = self._get_globals("wsu_search").refresh();
 			search_input = self._get_globals("search_input").refresh();
 			focuseitem={};
 
 			search_input.autosearch({
-				
+
 				appendTo:			self.search_options.result.appendTo,
 				showRelated:		self.search_options.result.showRelated,
 				relatedHeader:		self.search_options.result.relatedHeader,
 				minLength:			self.search_options.search.minLength,
-				
+
 				source: function( request, response )  {
 					self.start_search(request,function(data){
 						response(data);
@@ -231,7 +231,7 @@
 					return false;
 				}
 			}).data( "autosearch" );
-			
+
 			search_input.on( "keydown", function( e ) {
 				if ( e.keyCode === $.ui.keyCode.TAB && search_input.is($(":focus")) ) {
 					e.preventDefault();
@@ -242,7 +242,7 @@
 					//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?"?id="+id:"")+(term!=""?"&term="+term:""));
 					search_input.autosearch("close");
 					//getSignlePlace(jObj,id);
-					
+
 				}
 			});
 
@@ -255,7 +255,7 @@
 				//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?"?id="+id:"")+(term!=""?"&term="+term:""));
 			});
 
-			
+
 			$("#wsu-search form").submit( function() {
 				var scope,site,cx,cof,search_term,search_url;
 				scope = wsu_search.attr("data-default");
@@ -270,9 +270,9 @@
 				window.location.href = search_url;
 				return false;
 			});
-			
-			
+
+
 		},
-		
+
 	});
 } (jQuery) );
