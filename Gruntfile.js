@@ -177,7 +177,7 @@ module.exports = function(grunt) {
 					context : {
 						markup : 'true',
 						content: 'true',
-						location : 'http://repo.wsu.edu/spine/'
+						location : 'http://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
 					context : {
 						markup_min : 'true',
 						content: 'false',
-						location : 'http://repo.wsu.edu/spine/'
+						location : 'http://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -199,7 +199,7 @@ module.exports = function(grunt) {
 					context : {
 						demo : 'true',
 						content: 'false',
-						location : 'http://repo.wsu.edu/spine/'
+						location : 'http://repo.wsu.edu/spine'
 					}
 				}
 			},
