@@ -20,4 +20,3 @@ A typical implementation of the WSU Spine would start with spine.html.
 ### Details
 
 More information is available in this repo's <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki">Wiki</a>.
-
