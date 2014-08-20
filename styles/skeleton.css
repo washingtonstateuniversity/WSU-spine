@@ -218,7 +218,7 @@ hr {
   clear: both; }
 
 /* IE9, IE10 */
-@media screen and (min-width: 0 \0) {
+@media screen and (min-width: 0\0) {
   em, i, bold, big, h1, h2, h3, h4, h5, h6 {
     font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; } }
 .wsu-icon, .wsu-icons {
@@ -1808,3 +1808,5 @@ code textarea:focus {
 
 .text-align-justify {
   text-align: justify !important; }
+
+/*# sourceMappingURL=skeleton.css.map */
