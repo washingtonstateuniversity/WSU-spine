@@ -177,7 +177,7 @@ module.exports = function(grunt) {
 					context : {
 						markup : 'true',
 						content: 'true',
-						location : 'http://repo.wsu.edu/spine'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
 					context : {
 						markup_min : 'true',
 						content: 'false',
-						location : 'http://repo.wsu.edu/spine'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -199,7 +199,7 @@ module.exports = function(grunt) {
 					context : {
 						demo : 'true',
 						content: 'false',
-						location : 'http://repo.wsu.edu/spine'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -212,7 +212,7 @@ module.exports = function(grunt) {
 						test_title: 'Testing Open Sans',
 						content: 'false',
 						typography: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -223,7 +223,7 @@ module.exports = function(grunt) {
 					context : {
 						columns : 'true',
 						test_title: 'Testing Columns',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -234,7 +234,7 @@ module.exports = function(grunt) {
 					context : {
 						spacing : 'true',
 						test_title: 'Testing Gutters and Pads',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -246,7 +246,7 @@ module.exports = function(grunt) {
 						mainheader : 'true',
 						test_title: 'Testing the Main Header',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -257,7 +257,7 @@ module.exports = function(grunt) {
 					context : {
 						test_title: 'Testing Typography',
 						typography: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -269,7 +269,7 @@ module.exports = function(grunt) {
 						test_title: 'Testing Unbound and Rebound',
 						unbound : 'true',
 						content: 'false',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -280,7 +280,7 @@ module.exports = function(grunt) {
 					context : {
 						ui : 'true',
 						test_title: 'User Interaction Elements',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -291,7 +291,7 @@ module.exports = function(grunt) {
 					context : {
 						filledSearchTab : 'true',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -302,7 +302,7 @@ module.exports = function(grunt) {
 					context : {
 						malformed : 'true',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -313,7 +313,7 @@ module.exports = function(grunt) {
 					context : {
 						malformed : 'false',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -324,7 +324,7 @@ module.exports = function(grunt) {
 					context : {
 						doubledContact : 'true',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -335,7 +335,7 @@ module.exports = function(grunt) {
 					context : {
 						navdata : 'true',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -346,7 +346,7 @@ module.exports = function(grunt) {
 					context : {
 						manyLinks : 'true',
 						showLong : 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -356,7 +356,7 @@ module.exports = function(grunt) {
 				options : {
 					context : {
 						showLong : 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -367,7 +367,7 @@ module.exports = function(grunt) {
 					context : {
 						manyLinks : 'true',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -379,7 +379,7 @@ module.exports = function(grunt) {
 						cropped : 'true',
 						test_title: 'Testing Cropped Spine',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -391,7 +391,7 @@ module.exports = function(grunt) {
 						fluidGrid : 'true',
 						test_title: 'Testing Fluid Grid',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -403,7 +403,7 @@ module.exports = function(grunt) {
 						hybridGrid : 'true',
 						test_title: 'Testing Hybrid Grid',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
@@ -415,7 +415,7 @@ module.exports = function(grunt) {
 						fixedGrid : 'true',
 						test_title: 'Testing Fixed Grid',
 						content: 'true',
-						location : '/<%= config.build %>'
+						location : 'https://repo.wsu.edu/spine'
 					}
 				}
 			},
