@@ -32,18 +32,18 @@
 
 ### Commits
 
-1. Break commits into logical groups of changes.
-2. Format your commit messages with a short title on the first line explaining the commit followed by a full explanation of the decision and reasoning.
+* Break commits into logical groups of changes.
+* Format your commit messages with a short title on the first line explaining the commit followed by a full explanation of the decision and reasoning.
 
-````
-    A short title describing the issue at hand
+	````
+		A short title describing the issue at hand
 
-    A longer description of what is actually being changed in the commit.
-    If possible, each line of this description should be no more than 80
-    characters so that it appears correctly in terminal screens and other
-    places that kind of expect it that way.
+		A longer description of what is actually being changed in the commit.
+		If possible, each line of this description should be no more than 80
+		characters so that it appears correctly in terminal screens and other
+		places that kind of expect it that way.
 
-    This is in no way a requirement, just a formatting preference. :)
-````
+		This is in no way a requirement, just a formatting preference. :)
+	````
 
-3. Run `grunt dev` to ensure nothing has broken. `grunt prod` can also be used to check the full build process.
+* Run `grunt dev` to ensure nothing has broken. `grunt prod` can also be used to check the full build process.
