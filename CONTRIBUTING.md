@@ -34,6 +34,8 @@
 
 1. Break commits into logical groups of changes.
 2. Format your commit messages with a short title on the first line explaining the commit followed by a full explanation of the decision and reasoning.
+
+````
     A short title describing the issue at hand
 
     A longer description of what is actually being changed in the commit.
@@ -42,4 +44,6 @@
     places that kind of expect it that way.
 
     This is in no way a requirement, just a formatting preference. :)
+````
+
 3. Run `grunt dev` to ensure nothing has broken. `grunt prod` can also be used to check the full build process.
