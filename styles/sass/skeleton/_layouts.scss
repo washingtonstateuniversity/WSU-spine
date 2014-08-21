@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','margin-right','triptych','quarters','eighths';
 
 @mixin layouts-pixels {
