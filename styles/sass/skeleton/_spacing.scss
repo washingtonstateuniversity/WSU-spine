@@ -1,0 +1,39 @@
+@import 'vars/global';
+
+@mixin spacers {
+
+.spacer {
+	display: block;
+	}
+.spacer,
+.spacer-2em {
+	margin-top: $spacing-default/2;
+	margin-bottom: $spacing-default/2;
+	}
+.spacer.short,
+.spacer-1em {
+	margin-top: $spacing-short/2;
+	margin-bottom: $spacing-short/2;
+	}
+.spacer.tall,
+.spacer-2em {
+	margin-top: $spacing-tall/2;
+	margin-bottom: $spacing-tall/2;
+	}
+.spacer-4em {
+	margin-top: $spacing-default;
+	margin-bottom: $spacing-default;
+	}
+.spacer-6em {
+	margin-top: $spacing-default*1.5;
+	margin-bottom: $spacing-default*1.5;
+	}
+.spacer-8em {
+	margin-top: $spacing-default*2;
+	margin-bottom: $spacing-default*2;
+	}
+hr.spacer:not(.line) {
+	border-top: none;
+	}
+	
+	}
