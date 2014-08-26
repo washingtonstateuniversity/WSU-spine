@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 $counter: (
 	01: one,
 	02: two,
@@ -25,7 +25,7 @@ $counter: (
 	23: twentythree,
 	24: twentyfour
 	);
-
+	
 // Breaks
 $breaks: (
 	594: 'small',
@@ -37,7 +37,7 @@ $breaks: (
 	1782: 'max-1782',
 	1980: 'max-1980'
 	);
-
+	
 $sizes: (
 	594: 'small',
 	791: 'smallish',
@@ -49,6 +49,13 @@ $sizes: (
 	1782: 'max-1782',
 	1980: 'max-1980'
 	);
+
+// Spacing
+$spacing-default: 2rem;
+$spacing-wide: $spacing-default * 2;
+$spacing-tall: $spacing-default * 2;
+$spacing-narrow: $spacing-default / 2;
+$spacing-short: $spacing-default / 2;
 
 // Campuses
 $pullman: pullman;
@@ -68,12 +75,8 @@ $campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	}
 
-// locality acts as a base URL for assets. This must be updated when tagging a new release.
-// HTTPS is forced to avoid issues with file:// and because we're better of planning ahead.
-$locality: 'https://repo.wsu.edu/spine/develop';
-// font_domain accomplishes the same thing, but does not force HTTPS to avoid CORs issues when
-// a page is displayed via HTTP
-$font_domain: '//repo.wsu.edu/spine/develop';
+$locality: '//repo.wsu.edu/spine/1';
+// $locality: '';
 
 @mixin signatures($directionality,$path) {
 
@@ -86,19 +89,19 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 		}
 
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path} #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}.svg');
 		    	}
 	    	}
-		@else {
+		@else { 
 			.#{$campus}-signature #{$path} #wsu-signature {
 	    		background-image: url('#{$locality}/marks/wsu-#{$campus}-signature-#{$directionality}.svg');
 				}
 			}
 		}
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path}.lighter #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-gray-graydarker.svg');
 		    	}
@@ -110,7 +113,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			}
 		}
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path}.light #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-gray-white.svg');
 		    	}
@@ -122,7 +125,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			}
 		}
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path}.gray #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-graydark-graylighter.svg');
 		    	}
@@ -134,7 +137,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			}
 		}
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path}.dark #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-7d868c-graylightly.svg');
 		    	}
@@ -146,7 +149,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			}
 		}
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path} .darker #wsu-signature,
 			#{$path} .darkest #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-crimson-gray-graylighter.svg');
@@ -160,7 +163,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			}
 		}
 	@each $campus in $campuses {
-		@if $campus == 'pullman' {
+		@if $campus == 'pullman' { 
 			#{$path}.crimson #wsu-signature {
 		    	background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}-white-graylightly-white.svg');
 		    	}
@@ -171,15 +174,15 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 				}
 			}
 		}
-
+	
 	html.lt-ie9 #{$path} #wsu-signature {
-		background-image: url('#{$locality}/marks/wsu-signature-#{$directionality}.png');
+		background-image: url('//repo.wsu.edu/spine/1/marks/wsu-signature-#{$directionality}.png');
 		}
-
+	
 	}
-
+	
 @mixin header-colors {
-
+	
 	#binder #spine {
 		header { background-color: white; }
 		@each $spine-color, $color in $spine-colors {
