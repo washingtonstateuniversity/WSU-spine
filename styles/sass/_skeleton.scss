@@ -5,6 +5,7 @@
 @import 'skeleton/defaults';
 @import 'skeleton/columns';
 @import 'skeleton/layouts';
+@import 'skeleton/spacing';
 @import 'skeleton/gutter';
 @import 'skeleton/marginalize';
 @import 'skeleton/pad';
@@ -13,6 +14,8 @@
 @import 'skeleton/tables';
 @import 'skeleton/asides';
 // @import 'skeleton/grid';
+
+@charset "UTF-8";
 
 /* # Skeleton */
 
@@ -57,7 +60,7 @@ main {
 .hybrid main {
 	width: 792px;
 	}
-
+	
 /* ### Spineless */
 .spineless.fixed main,
 .spineless.hybrid main,
@@ -89,8 +92,8 @@ section {
 .row:not(.boundless):not(.rebound) {
 	width: 100%;
 	}
-
-// @each $break, $point in $breaks {
+	
+// @each $break, $point in $breaks { 
 //	.spineless .#{$point} .row {
 //		max-width: #{$break - 198}px;
 //		}
@@ -131,15 +134,15 @@ section {
 /* ### Unbind */
 
 @include unbind;
-
+	
 /* ## LAYOUTS */
 
 @include layouts-pixels;
 
 .fluid {
-
+	
 	@include layouts-percents;
-
+	
 	}
 
 /* ### Nesting */
@@ -147,6 +150,8 @@ section {
 @include nested;
 
 /* ### Spacing  */
+
+@include spacers;
 
 /* #### Margins (Uses padding) */
 
@@ -201,9 +206,8 @@ main hr.short {
 	margin-top: 0;
 	margin-bottom: 0;
 	}
-
+	
 @include asides-marginalized;
-
 
 /* ### Images  */
 .column img:not(.unbound) {
@@ -236,8 +240,8 @@ img.unbound {
 @media \0screen {
   img.max-width {
   	width: auto; /* for ie 8 */
-  }
-  }
+  } 
+  } 
 
 .hybrid.small figure.fill-width {
 	width: 100%;
