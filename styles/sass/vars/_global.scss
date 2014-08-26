@@ -75,8 +75,12 @@ $campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	}
 
-$locality: '//repo.wsu.edu/spine/1';
-// $locality: '';
+// locality acts as a base URL for assets. This must be updated when tagging a new release.
+// HTTPS is forced to avoid issues with file:// and because we're better of planning ahead.
+$locality: 'https://repo.wsu.edu/spine/develop';
+// font_domain accomplishes the same thing, but does not force HTTPS to avoid CORs issues when
+// a page is displayed via HTTP
+$font_domain: '//repo.wsu.edu/spine/develop';
 
 @mixin signatures($directionality,$path) {
 
