@@ -745,22 +745,30 @@ html.lt-ie9 #spine footer {
 			-moz-osx-font-smoothing: grayscale;
 			}
 
-		.facebook-channel {
-			a:before { content: "F"; }
-			a:hover { color: $facebook-blue !important; }
-			}
-		.twitter-channel {
-			a:before { content: "T"; }
-			a:hover { color: $twitter-blue !important; }
-			}
-		.youtube-channel {
-			a:before { content: "Y"; }
-			a:hover { color: $youtube-red !important; }
-			}
 		.directory-channel {
 			a:before { content: "s"; }
 			a:hover:before { content: "S"; }
 			a:hover { color: $gray-light !important; }
+			}
+		.facebook-channel {
+			a:before { content: "F"; }
+			a:hover { color: $facebook-blue !important; }
+			}
+		.flickr-channel {
+			a:before { content: "R"; }
+			a:hover { color: $flickr-pink !important; }
+			}
+		.github-channel {
+			a:before { content: "H"; }
+			a:hover { color: $github-blue !important; }
+			}
+		.gplus-channel {
+			a:before { content: "G"; }
+			a:hover { color: $gplus-orange !important; }
+			}
+		.instagram-channel {
+			a:before { content: "I"; }
+			a:hover { color: $instagram-blue !important; }
 			}
 		.linkedin-channel {
 			a:before { content: "L"; }
@@ -770,17 +778,25 @@ html.lt-ie9 #spine footer {
 			a:before { content: "P"; }
 			a:hover { color: $pinterest-red !important; }
 			}
-		.gplus-channel {
-			a:before { content: "G"; }
-			a:hover { color: $gplus-orange !important; }
-			}
-		.flickr-channel {
-			a:before { content: "R"; }
-			a:hover { color: $flickr-pink !important; }
-			}
 		.tumblr-channel {
 			a:before { content: "B"; }
 			a:hover { color: $tumblr-blue !important; }
+			}
+		.twitter-channel {
+			a:before { content: "T"; }
+			a:hover { color: $twitter-blue !important; }
+			}
+		.vimeo-channel {
+			a:before { content: "V"; }
+			a:hover { color: $vimeo-green !important; }
+			}
+		.vine-channel {
+			a:before { content: "v"; }
+			a:hover { color: $vine-green !important; }
+			}
+		.youtube-channel {
+			a:before { content: "Y"; }
+			a:hover { color: $youtube-red !important; }
 			}
 
 		}
