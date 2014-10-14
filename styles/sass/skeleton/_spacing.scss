@@ -1,22 +1,23 @@
 @import 'vars/global';
 
-@mixin spacers {
-
 .spacer {
 	display: block;
 	}
 .spacer,
-.spacer-2em {
+.spacer-2em,
+hr {
 	margin-top: $spacing-default/2;
 	margin-bottom: $spacing-default/2;
 	}
 .spacer.short,
-.spacer-1em {
+.spacer-1em,
+hr.short {
 	margin-top: $spacing-short/2;
 	margin-bottom: $spacing-short/2;
 	}
 .spacer.tall,
-.spacer-2em {
+.spacer-2em,
+hr.tall {
 	margin-top: $spacing-tall/2;
 	margin-bottom: $spacing-tall/2;
 	}
@@ -32,8 +33,16 @@
 	margin-top: $spacing-default*2;
 	margin-bottom: $spacing-default*2;
 	}
-hr.spacer:not(.line) {
+
+hr.spacer.vellum {
 	border-top: none;
 	}
-	
+hr.thick {
+	border-top-width: 2px;
+	}
+hr.thicker {
+	border-top-width: 3px;
+	}
+hr.thickest {
+	border-top-width: 4px;
 	}
