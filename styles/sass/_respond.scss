@@ -45,11 +45,7 @@
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 
 @media screen
-	and ( max-width : 989px ),
-
-	only screen
-	and (max-device-width : 1024px)
-	and (orientation : portrait)
+	and ( max-width : 989px )
 
 	{
 
@@ -171,17 +167,6 @@ nav a.external:after {
 ------------------------------------------ */
 @media screen
 	and ( max-width : 791px )
-	and ( min-device-width : 990px ),
-
-	screen
-	and ( max-width : 791px )
-	and ( orientation: portrait )
-	and ( max-device-width: 420px ),
-
-	screen
-	and ( max-width : 791px )
-	and ( orientation: landscape )
-	and ( max-device-width: 480px )
 
 	{
 
@@ -251,7 +236,6 @@ nav a.external:after {
 @include signatures('horizontal','.fluid ');
 
 	}
-
 
 /* SMALLISH (Fixed Only)
 ----------------------------------------------------- */
@@ -383,12 +367,7 @@ nav a.external:after {
 @media
 
 	only screen
-	and (max-width: 420px),
-
-	screen
-	and ( max-width: 360px )
-	and ( max-device-width: 480px )
-	and ( orientation: landscape )
+	and (max-width: 420px)
 
 	{
 
@@ -401,12 +380,7 @@ nav a.external:after {
 @media
 
 	only screen
-	and (max-width: 360px),
-
-	screen
-	and ( max-width: 360px )
-	and ( max-device-width: 480px )
-	and ( orientation: portrait )
+	and (max-width: 360px)
 
 	{
 
@@ -604,7 +578,7 @@ nav a.external:after {
 
 	}
 
-/* !LARGE FORMAT -> 1980  */
+/* ## LARGE FORMAT -> 1980  */
 @media
 
 	only screen
