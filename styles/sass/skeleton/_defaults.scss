@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@mixin defaults {
 
 	/* ### Fonts  */
 	
@@ -136,4 +135,9 @@
 	    em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
 	}
 
+/* Block Styles  */
+
+ul + h1, ul + h2, ul + h3, ul + h4,
+ol + h1, ol + h2, ol + h3, ol + h4 {
+	margin-top: .8;
 	}
