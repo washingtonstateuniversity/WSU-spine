@@ -36,6 +36,20 @@
 	.padded-left {
 		padding-left: $spacing-default; }
 		
+	// One by None
+	.pad-top-none .column,
+	.padded-top-none {
+		padding-top: 0; }
+	.pad-right-none .column,
+	.padded-right-none {
+		padding-right: 0; }
+	.pad-bottom-none .column,
+	.padded-bottom-none {
+		padding-bottom: 0; }
+	.pad-left-none .column,
+	.padded-left-none {
+		padding-left: 0; }
+		
 	// SIDES
 	.pad-sides .column,
 	.padded-sides {
