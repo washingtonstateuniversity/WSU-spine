@@ -132,8 +132,9 @@
 				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
 			} else if(current_width < 990 && current_width >= 792) {
 				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
-				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
-			} else if(current_width < 792) {
+			} else if(current_width >= 694 && current_width < 792) {
+				ele_class="size-small size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
+			} else if(current_width < 694) {
 				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			} else if(current_width < 396) {
 				ele_class="size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
@@ -445,6 +446,7 @@
 			});
 			// External Links in nav
 			// this shouldn"t be done this way
+			$(".spine-sitenav a,.spine-offsitenav a").filter(function() {
 				return this.hostname && this.hostname !== window.location.hostname;
 			}).addClass("external");
 		},
