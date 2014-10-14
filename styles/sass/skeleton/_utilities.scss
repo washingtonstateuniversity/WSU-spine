@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* ### Clearing  */
+
+.row:before, .row:after,
+main:before, main:after,
+#binder:before, #binder:after,
+.clearfix:before, .clearfix:after,
+.rebound:before, .rebound:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  }
+#binder:after,
+main:after,
+.row:after,
+.clearfix:after,
+.rebound:after {
+  clear: both;
+  }
+main,
+.row,
+.rebound,
+.clearfix {
+  zoom: 1; }
+
+/* or */
+.cf:before,
+.cf:after,
+.clear:before,
+.clear:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+	}
+
+.cf:after,
+.clear:after {
+    clear: both;
+	}
+
+@media \0screen {
+  img.max-width {
+  	width: auto; /* for ie 8 */
+  } 
+  } 
+
+.hybrid.small figure.fill-width {
+	width: 100%;
+	}
+.picture-frame {
+	line-height: 0px;
+	}
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+/* ### Responsive Video  */
+.iframe-16-9 {
+   position: relative;
+   padding-bottom: 56.25%;
+   /* padding-top: 25px; Add for controls. */
+   height: 0;
+}
+.iframe-4-3 {
+   position: relative;
+   padding-bottom: 75%;
+   /* padding-top: 25px; Add for controls. */
+   height: 0;
+}
+
+/* Centering */
+.center.vertically > *,
+.centered.vertically {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);	
+	}
+.centered.absolutely,
+.center.absolutely > *:first-of-type {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  }
+
+/* Code */
+code textarea,
+code textarea:focus {
+	width: 100%;
+	padding: 15px;
+	height: auto;
+	color: white;
+	background-color: rgba(94,106,113,0.5);
+	}
