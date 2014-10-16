@@ -138,7 +138,7 @@
 
 #binder:not(.fluid) #spine {
 	@each $spine-color, $color in $spine-colors {
-		&.#{$spine-color} header { background-color: $color; }
+		&.#{""+$spine-color} header { background-color: $color; }
 		}
 	}
 
