@@ -81,7 +81,9 @@
 			}
 
 			self.setup_nav();
-			self.setup_nav_scroll();
+			if($.is_iOS()){ 
+				self.setup_nav_scroll(); 
+			}
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
