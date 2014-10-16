@@ -59,9 +59,77 @@
 				<hr />
 				<h2 id="form_elements">Forms</h2>
 				<fieldset>
-						<legend>Legend</legend>
+						<legend>Fieldset Legend</legend>
 						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
-						<form>
+
+						
+<h3>Basic Form</h3>							
+<form role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<h3>Html5 Inputs</h3>
+<label>text :<input type="text" class="form-control" placeholder="text input"></label><br/>
+<label>password :<input type="password" class="form-control" placeholder="password input"></label><br/>
+<label>datetime<input type="datetime" class="form-control" placeholder="datetime input"></label><br/>
+<label>datetime-local :<input type="datetime-local" class="form-control" placeholder="datetime-local input"></label><br/>
+<label>date :<input type="date" class="form-control" placeholder="date input"></label><br/>
+<label>month :<input type="month" class="form-control" placeholder="month input"></label><br/>
+<label>time :<input type="time" class="form-control" placeholder="time input"></label><br/>
+<label>week :<input type="week" class="form-control" placeholder="week input"></label><br/>
+<label>number :<input type="number" class="form-control" placeholder="number input"></label><br/>
+<label>email :<input type="email" class="form-control" placeholder="email input"></label><br/>
+<label>url :<input type="url" class="form-control" placeholder="url input"></label><br/>
+<label>search :<input type="search" class="form-control" placeholder="search input"></label><br/>
+<label>tel :<input type="tel" class="form-control" placeholder="tel input"></label><br/>
+<label>color :<input type="color" class="form-control" placeholder="color input"></label><br/>
+
+<h3>Readonly inputs</h3>						
+<input class="form-control" type="text" placeholder="Readonly input here…" readonly />
+
+<h3>Disabled inputs</h3>							
+<form role="form">
+  <fieldset disabled>
+    <div class="form-group">
+      <label for="disabledTextInput">Disabled input</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+    </div>
+    <div class="form-group">
+      <label for="disabledSelect">Disabled select menu</label>
+      <select id="disabledSelect" class="form-control">
+        <option>Disabled select</option>
+      </select>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Can't check this
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>		
+						
+						
+						
+								<form>
 								<h2>Form Element</h2>
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
 								<p>
@@ -75,25 +143,24 @@
 										<textarea id="text_area"></textarea>
 								</p>
 								<p>
-								<label for="select_element">Select Element:</label>
-								<br />
+								<label for="select_element">Select Element:
 								<select name="select_element">
-										<br />
 										<optgroup label="Option Group 1">
 										<option value="1">Option 1</option>
 										<option value="2">Option 2</option>
 										<option value="3">Option 3</option>
 										</optgroup>
-										</p>
-										<p>
 										<optgroup label="Option Group 2">
 										<option value="1">Option 1</option>
 										<option value="2">Option 2</option>
 										<option value="3">Option 3</option>
 										</optgroup>
-										<br />
-								</select>
+								</select></label>
 								</p>
+								
+
+								
+								
 								<p>
 										<label for="radio_buttons">Radio Buttons:</label>
 								</p>
@@ -136,7 +203,14 @@
 										<input class="button" type="submit" value="Submit" />
 								</p>
 								</p>
-						</form>
+						</form>				
+						
+						
+						
+						
+						
+						
+						
 				</fieldset>
 				<p><small><a href="#wrapper">[top]</a></small></p>
 				<hr />
