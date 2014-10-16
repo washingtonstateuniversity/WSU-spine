@@ -71,6 +71,12 @@
 	$.whenAll = function() {
 		return $.when.apply($, arguments);
 	};
+	$.is_iOS = function() {
+		return ( window.navigator.userAgent.match(/(iPad|iPhone|iPod)/ig) ? true : false );
+	};
+	$.is_Android = function() {
+		return ( window.navigator.userAgent.match(/(Android)/ig) ? true : false );
+	};
 	/**
 	 * Sets up the plugins prototype
 	 * @param name:string
