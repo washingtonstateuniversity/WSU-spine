@@ -7,6 +7,9 @@
 @import 'skeleton/gutter';
 @import 'respond/print';
 
+@include navscroll;
+
+
 #binder #spine.unshelved header:before {
 	content: "";
 	position: absolute;
@@ -138,7 +141,7 @@
 
 #binder:not(.fluid) #spine {
 	@each $spine-color, $color in $spine-colors {
-		&.#{$spine-color} header { background-color: $color; }
+		&.#{""+$spine-color} header { background-color: $color; }
 		}
 	}
 
