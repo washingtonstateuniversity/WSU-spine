@@ -81,8 +81,9 @@
 			}
 
 			self.setup_nav();
-			if($.is_iOS()){ 
-				self.setup_nav_scroll(); 
+			if($.is_iOS()){
+				$("html").addClass("ios");
+				self.setup_nav_scroll();
 			}
 			self.setup_spine();
 			self.setup_printing();
@@ -134,9 +135,9 @@
 				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
 			} else if(current_width < 990 && current_width >= 792) {
 				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
-			} else if(current_width >= 694 && current_width < 792) {
-				ele_class="size-small size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
-			} else if(current_width < 694) {
+			} else if((current_width >= 694 && current_width < 792) && ($("#binder").hasClass("fixed"))) {
+				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
+			} else if(current_width < 792) {
 				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			} else if(current_width < 396) {
 				ele_class="size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
@@ -239,78 +240,79 @@
 					//console.log("window-resize | spineHeight::" + spineHeight);
 					//console.log("window-resize | heightDif::" + heightDif);
 				}).trigger("resize");*/
-
-				// Fixed/Sticky Horizontal Header
-				$(document).on("scroll touchmove",function() {
-					var top,bottom;
-						//$(document).css("-webkit-overflow-scrolling","touch");
-						//$(window).css("-webkit-overflow-scrolling","touch");
-						//$("body").css("-webkit-overflow-scrolling","touch");
-						top				= $(document).scrollTop();
-						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
-						scroll_dif		= scroll_top-top;
-						scroll_top		= top;
-
-						viewport_ht		= $(window).height();
-						spine_ht		= spine[0].scrollHeight;
-						glue_ht			= glue.height();
-						height_dif		= viewport_ht - spine_ht;
-						//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
-						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-						//console.log("SCROLLING || spine_ht::" + spine_ht);
-						//console.log("SCROLLING || height_dif::" + height_dif);
-						//console.log("SCROLLING || positionLock::" + positionLock);
-						//console.log("|---------------------------------------------");
-						if( main.height()>glue_ht ){
-							if( (scroll_dif>0?false:true) ){//down
-								positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-								if(bottom<=0 && positionLock >= height_dif){
-									positionLock=height_dif;
-								}
-							}else{//up
-								positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-
-								if(top>0 && positionLock>0){
-									positionLock=0;
-								}
-
-							}
-
+				
+					// Fixed/Sticky Horizontal Header
+					$(document).on("scroll touchmove",function() {
+						
+						if($(".ios .hybrid .unshelved").length<=0){
+						var top,bottom;
+							//$(document).css("-webkit-overflow-scrolling","touch");
+							//$(window).css("-webkit-overflow-scrolling","touch");
+							//$("body").css("-webkit-overflow-scrolling","touch");
+							top				= $(document).scrollTop();
+							bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
+							scroll_dif		= scroll_top-top;
+							scroll_top		= top;
+	
+							viewport_ht		= $(window).height();
+							spine_ht		= spine[0].scrollHeight;
+							glue_ht			= glue.height();
+							height_dif		= viewport_ht - spine_ht;
+							//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
 							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
 							//console.log("SCROLLING || spine_ht::" + spine_ht);
 							//console.log("SCROLLING || height_dif::" + height_dif);
 							//console.log("SCROLLING || positionLock::" + positionLock);
-							if(top<=0){
-								positionLock=0;
+							//console.log("|---------------------------------------------");
+							if( main.height()>glue_ht ){
+								if( (scroll_dif>0?false:true) ){//down
+									positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+									if(bottom<=0 && positionLock >= height_dif){
+										positionLock=height_dif;
+									}
+								}else{//up
+									positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+	
+									if(top>0 && positionLock>0){
+										positionLock=0;
+									}
+	
+								}
+	
+								//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+								//console.log("SCROLLING || spine_ht::" + spine_ht);
+								//console.log("SCROLLING || height_dif::" + height_dif);
+								//console.log("SCROLLING || positionLock::" + positionLock);
+								if(top<=0){
+									positionLock=0;
+								}
+								if(bottom<=0){
+									positionLock=height_dif;
+								}
+								spine.css({"position":"fixed","top":positionLock+"px"});
 							}
-							if(bottom<=0){
+						}else{
+							$("#scroll").on("foucs",function(){
+								$(document).trigger("touchend");
+							});
+						}
+					});
+	
+				if($(".ios .hybrid .unshelved").length<=0){
+					$(document).keydown(function(e) {
+						if(e.which === 35 || e.which === 36) {
+							viewport_ht		= $(window).height();
+							spine_ht		= spine[0].scrollHeight;
+							height_dif		= viewport_ht - spine_ht;
+							if(e.which === 35) {
 								positionLock=height_dif;
+							} else if(e.which === 36) {
+								positionLock=0;
 							}
 							spine.css({"position":"fixed","top":positionLock+"px"});
 						}
-					/*
-					if (top > 49) {
-						spine.not(".unshelved").addClass("scanned");
-					} else {
-						spine.removeClass("scanned");
-					}*/
-				});
-
-
-				$(document).keydown(function(e) {
-					if(e.which === 35 || e.which === 36) {
-						viewport_ht		= $(window).height();
-						spine_ht		= spine[0].scrollHeight;
-						height_dif		= viewport_ht - spine_ht;
-						if(e.which === 35) {
-							positionLock=height_dif;
-						} else if(e.which === 36) {
-							positionLock=0;
-						}
-						spine.css({"position":"fixed","top":positionLock+"px"});
-					}
-				});
-
+					});
+				}
 
 
 
@@ -448,7 +450,7 @@
 			});
 			// External Links in nav
 			// this shouldn"t be done this way
-			$(".spine-sitenav a,.spine-offsitenav a").filter(function() {
+			$(".spine-sitenav a").filter(function() {
 				return this.hostname && this.hostname !== window.location.hostname;
 			}).addClass("external");
 		},
