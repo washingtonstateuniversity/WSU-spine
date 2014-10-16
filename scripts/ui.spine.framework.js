@@ -453,10 +453,9 @@
 			/*$(".spine-sitenav a").filter(function() {
 				return this.hostname && this.hostname !== window.location.hostname;
 			}).addClass("external");*/
-			
-			$(".spine-sitenav a:not([href=*'"+this.hostname+"'])").addClass("external"); 
-			
-			
+
+			$(".spine-sitenav a:not([href=*'"+this.hostname+"'])").addClass("external");
+
 		},
 
 		/**
