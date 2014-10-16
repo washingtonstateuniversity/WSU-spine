@@ -131,7 +131,7 @@ module.exports = function(grunt) {
 				inline: true,
 				context : {
 					DEBUG: true,
-					location : '',
+					basepath:'<%= pkg.build_location %>/<%= pkg.build_version %>/',
 					build_version : '<%= pkg.build_version %>',
 					test_title: '',
 					content: 'skip',
