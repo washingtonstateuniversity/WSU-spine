@@ -7,6 +7,9 @@
 @import 'skeleton/gutter';
 @import 'respond/print';
 
+@include navscroll;
+
+
 #binder #spine.unshelved header:before {
 	content: "";
 	position: absolute;
