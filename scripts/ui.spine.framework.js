@@ -413,7 +413,7 @@
 				wsu_actions.find(".opened").toggleClass("opened closed");
 				$("html").toggleClass("print");
 				spine.find("header").prepend(print_controls);
-				spine.find(".unshelved").removeClass("unshelved").addClass("shelved");
+				$(".unshelved").removeClass("unshelved").addClass("shelved");
 				$("#print-invoke").on("click",function() { window.print(); });
 				$("#print-cancel").on("click",print_cancel);
 				window.setTimeout(function() { printPage(); }, 400);
