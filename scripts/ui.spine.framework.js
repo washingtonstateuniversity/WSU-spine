@@ -89,7 +89,7 @@
 				self.equalizing();
 				self.mainheight();
 				// Only run function if an unbound element exists
-				if( $(".unbound").length || $("#binder.broken").length ) {
+				if( $(".unbound,#binder.broken").length ) {
 					spread = $(window).width();
 					verso = self._get_globals("main").offset().left;
 					page = self._get_globals("main").width();
@@ -114,10 +114,9 @@
 					$(".unbound.verso.recto").css("width",spread);
 				}
 
-				if($(".cropped").length<=0){}
-					viewport_ht		= $(window).height();
-					glue.css("min-height",viewport_ht);
-					spine.css("min-height",viewport_ht);
+				viewport_ht		= $(window).height();
+				glue.css("min-height",viewport_ht);
+				spine.css("min-height",viewport_ht);
 
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
