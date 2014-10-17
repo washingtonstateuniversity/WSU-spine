@@ -15,12 +15,12 @@ module.exports = function(grunt) {
 	  return object;
 	}
 
-	var pkg,setbase;
+	var pkg,setbase,config;
 	
 	pkg = grunt.file.readJSON('package.json');
 	setbase = grunt.option('setbase') || pkg.build_location+'/'+pkg.build_version+'/';
 	
-	var config = {
+	config = {
 		pkg: grunt.file.readJSON('package.json'),
 		setbase:setbase,
 		config: {
