@@ -176,7 +176,7 @@
 				main_top = main.offset().top;
 				window_height = $(window).height();
 				main_height = window_height;
-				if ($("#binder").hasClass("size-lt-large")) {
+				if ($("#binder").is(".size-lt-large")) {
 					main_height -= 50;
 				}
 				$("main:not(.height-auto)").css("min-height",main_height);
