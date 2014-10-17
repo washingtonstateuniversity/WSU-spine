@@ -7,10 +7,7 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
 		framework_init: function(options) {
-			//alert("init framework");
-			//alert("options==>"+dump(options));
 			$.extend(this.framework_options,options);
-			//alert("options==>"+dump(this.framework_options));
 			this._set_globals(this.framework_globals);
 			this.framework_create();
 		},
@@ -98,14 +95,21 @@
 					page = self._get_globals("main").width();
 					recto = spread - self._get_globals("main").offset().left;
 					recto_margin = "";
-					if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-					/* Broken Binding */ if ($("#binder").hasClass("broken")) { self._get_globals("main").css("width",recto); }
+					if (recto >= page ) {
+						recto_margin = recto - page;
+					} else {
+						recto_margin = 0;
+					}
+					/* Broken Binding */
+					if ($("#binder").hasClass("broken")) {
+						self._get_globals("main").css("width",recto);
+					}
 					verso_width = verso + self._get_globals("main").width();
 					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
 					$(".unbound.element.recto").each( function() {
 						para = $(this).width();
 						$(this).css("width",para+recto_margin).css("margin-right",-(recto_margin));
-						});
+					});
 					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
 					$(".unbound.verso.recto").css("width",spread);
 				}
@@ -135,8 +139,8 @@
 				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
 			} else if(current_width < 990 && current_width >= 792) {
 				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
-			} else if((current_width >= 694 && current_width < 792) && ($("#binder").hasClass("fixed"))) {
-				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
+			} else if(current_width >= 694 && current_width < 792) {
+				ele_class="size-small size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
 			} else if(current_width < 792) {
 				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			} else if(current_width < 396) {
@@ -159,20 +163,10 @@
 					});
 					if($(window).width() <= 792) {
 						$(".column",this).not(".unequaled").css("min-height","1");
-						}
-					else {
+					} else {
 						$(".column",this).not(".unequaled").css("min-height",tallestBox);
-						}
+					}
 					$("section.equalize .column",this).css("min-height","auto");
-					//Would be nice to enable equalizing of child elements, requiring a height declaration
-					//if($(window).width() <= 792) {
-					//	$(".column",this).not(".unequaled").css("min-height","1").css("height","auto");
-					//	}
-					//else {
-					//	$(".column",this).not(".unequaled").css("min-height",tallestBox).css("height",tallestBox);
-					//	}
-					//$("section.equalize .column",this).css("min-height","auto").css("height","auto");
-
 				});
 			}
 		},
@@ -228,91 +222,75 @@
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
 
-			if($(".cropped").length<=0){}
-
-				/*$( window ).on("resize", function() {
-					windowHeight	= $(window).height();
-					spineHeight		= spine[0].scrollHeight;
-					heightDif		= windowHeight - spineHeight;
-					glue.css("min-height",windowHeight);
-					spine.css("min-height",windowHeight);
-					//console.log("window-resize | windowHeight::" + windowHeight);
-					//console.log("window-resize | spineHeight::" + spineHeight);
-					//console.log("window-resize | heightDif::" + heightDif);
-				}).trigger("resize");*/
-				
-					// Fixed/Sticky Horizontal Header
-					$(document).on("scroll touchmove",function() {
-						
-						if($(".ios .hybrid .unshelved").length<=0){
-						var top,bottom;
-							//$(document).css("-webkit-overflow-scrolling","touch");
-							//$(window).css("-webkit-overflow-scrolling","touch");
-							//$("body").css("-webkit-overflow-scrolling","touch");
-							top				= $(document).scrollTop();
-							bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
-							scroll_dif		= scroll_top-top;
-							scroll_top		= top;
-	
-							viewport_ht		= $(window).height();
-							spine_ht		= spine[0].scrollHeight;
-							glue_ht			= glue.height();
-							height_dif		= viewport_ht - spine_ht;
-							//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
-							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-							//console.log("SCROLLING || spine_ht::" + spine_ht);
-							//console.log("SCROLLING || height_dif::" + height_dif);
-							//console.log("SCROLLING || positionLock::" + positionLock);
-							//console.log("|---------------------------------------------");
-							if( main.height()>glue_ht ){
-								if( (scroll_dif>0?false:true) ){//down
-									positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-									if(bottom<=0 && positionLock >= height_dif){
-										positionLock=height_dif;
-									}
-								}else{//up
-									positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-	
-									if(top>0 && positionLock>0){
-										positionLock=0;
-									}
-	
-								}
-	
-								//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-								//console.log("SCROLLING || spine_ht::" + spine_ht);
-								//console.log("SCROLLING || height_dif::" + height_dif);
-								//console.log("SCROLLING || positionLock::" + positionLock);
-								if(top<=0){
-									positionLock=0;
-								}
-								if(bottom<=0){
-									positionLock=height_dif;
-								}
-								spine.css({"position":"fixed","top":positionLock+"px"});
-							}
-						}else{
-							$("#scroll").on("foucs",function(){
-								$(document).trigger("touchend");
-							});
-						}
-					});
-	
+			// Fixed/Sticky Horizontal Header
+			$(document).on("scroll touchmove",function() {
 				if($(".ios .hybrid .unshelved").length<=0){
-					$(document).keydown(function(e) {
-						if(e.which === 35 || e.which === 36) {
-							viewport_ht		= $(window).height();
-							spine_ht		= spine[0].scrollHeight;
-							height_dif		= viewport_ht - spine_ht;
-							if(e.which === 35) {
+					var top,bottom;
+
+					top				= $(document).scrollTop();
+					bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
+					scroll_dif		= scroll_top-top;
+					scroll_top		= top;
+
+					viewport_ht		= $(window).height();
+					spine_ht		= spine[0].scrollHeight;
+					glue_ht			= glue.height();
+					height_dif		= viewport_ht - spine_ht;
+					//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
+					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+					//console.log("SCROLLING || spine_ht::" + spine_ht);
+					//console.log("SCROLLING || height_dif::" + height_dif);
+					//console.log("SCROLLING || positionLock::" + positionLock);
+					//console.log("|---------------------------------------------");
+					if( main.height()>glue_ht ){
+						if( (scroll_dif>0?false:true) ){//down
+							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+							if(bottom<=0 && positionLock >= height_dif){
 								positionLock=height_dif;
-							} else if(e.which === 36) {
+							}
+						}else{//up
+							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+
+							if(top>0 && positionLock>0){
 								positionLock=0;
 							}
-							spine.css({"position":"fixed","top":positionLock+"px"});
+
 						}
+
+						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+						//console.log("SCROLLING || spine_ht::" + spine_ht);
+						//console.log("SCROLLING || height_dif::" + height_dif);
+						//console.log("SCROLLING || positionLock::" + positionLock);
+						if(top<=0){
+							positionLock=0;
+						}
+						if(bottom<=0){
+							positionLock=height_dif;
+						}
+						spine.css({"position":"fixed","top":positionLock+"px"});
+					}
+				}else{
+					$("#scroll").on("foucs",function(){
+						$(document).trigger("touchend");
 					});
 				}
+			});
+	
+			if($(".ios .hybrid .unshelved").length<=0){
+				$(document).keydown(function(e) {
+					if(e.which === 35 || e.which === 36) {
+						viewport_ht		= $(window).height();
+						spine_ht		= spine[0].scrollHeight;
+						height_dif		= viewport_ht - spine_ht;
+						if(e.which === 35) {
+							positionLock=height_dif;
+						} else if(e.which === 36) {
+							positionLock=0;
+						}
+						spine.css({"position":"fixed","top":positionLock+"px"});
+					}
+				});
+			}
 
 
 
@@ -322,42 +300,11 @@
 				spine.toggleClass("unshelved shelved");
 			});
 
-			// Clicking Outside Spine Closes It
-			/* $(document).on("mouseup touchstart", function (e) {
-				var container = $("#spine.unshelved");
-				if (container.has(e.target).length === 0)
-				{ container.toggleClass("shelved unshelved"); }
-			}); */
 			main.on("click swipeleft", function() {
 				if ( spine.hasClass("unshelved") ) {
 					spine.toggleClass("shelved unshelved");
 				}
 			});
-
-			// Cracking the Spine for Short Windows
-			/* $(window).on("load resize scroll mouseup touchend",function() {
-				var footerHeight, windowHeight, spineHeight;
-
-				footerHeight = $("#spine footer").height();
-				windowHeight = window.innerHeight - footerHeight - 50;
-				spineHeight = $("#glue").height();
-				//$("main").prepend(footerHeight);
-				if ( windowHeight < spineHeight ) {
-					spine.removeClass("uncracked").addClass("cracked");
-				} else {
-					spine.removeClass("cracked").addClass("uncracked");
-				}
-			}); */
-
-			// Moving the Spine for Short Windows
-			/* $(document).scroll(function() {
-				var windowHeight = window.innerHeight;
-				var top = $(document).scrollTop();
-				var spineHeight = $("#glue").height();
-				var crack = spineHeight - windowHeight;
-				if ( top > crack ) { $("#spine.cracked").addClass("pinned"); }
-				else { $("#spine.cracked").removeClass("pinned"); }
-			}); */
 
 			// Add skimming
 			$(document).scroll(function() {
@@ -369,21 +316,6 @@
 					$("#spine").removeClass("skimmed");
 				}
 			});
-
-			// Moving the Spine for Short Windows
-			/*$(document).scroll(function() {
-				var windowHeight = window.innerHeight;
-				var top = $(document).scrollTop();
-				var spineHeight = $("#glue").height();
-				var crack = spineHeight - windowHeight;
-				if ( top > crack ) {
-					var top_pos = -(top);
-					$("#spine.cracked").addClass("pinned");
-					$("#spine.cracked #glue").css("top",top_pos);
-				} else {
-					$("#spine.cracked").removeClass("pinned");
-				}
-			});*/
 		},
 
 		/**
@@ -449,11 +381,6 @@
 
 			});
 			// External Links in nav
-			// this shouldn"t be done this way
-			/*$(".spine-sitenav a").filter(function() {
-				return this.hostname && this.hostname !== window.location.hostname;
-			}).addClass("external");*/
-
 			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
 
 		},
@@ -480,7 +407,6 @@
 				$(".print-controls").remove();
 			}
 
-			/* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
 			function print(e) {
 				if ( undefined !== e ) {
 					e.preventDefault();

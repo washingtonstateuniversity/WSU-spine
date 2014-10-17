@@ -124,9 +124,7 @@
 			top: 50px;
 		}
 	
-	    footer {
-		    position: relative !important;
-		}
+
 		#wsu-actions {
 			padding-top: 0px !important;
 		}
@@ -142,6 +140,10 @@
 			bottom: 0px;
 			width: 298px;
 			z-index: 99165;
+
+			footer {
+		    	position: relative !important;
+			}
 		}
 			
 		#scroll {
