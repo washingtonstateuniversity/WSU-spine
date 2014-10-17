@@ -300,7 +300,7 @@
 			});
 
 			main.on("click swipeleft", function() {
-				if ( spine.hasClass("unshelved") ) {
+				if ( spine.is(".unshelved") ) {
 					spine.toggleClass("shelved unshelved");
 				}
 			});
