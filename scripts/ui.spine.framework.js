@@ -101,7 +101,7 @@
 						recto_margin = 0;
 					}
 					/* Broken Binding */
-					if ($("#binder").hasClass("broken")) {
+					if ($("#binder").is(".broken")) {
 						self._get_globals("main").css("width",recto);
 					}
 					verso_width = verso + self._get_globals("main").width();
