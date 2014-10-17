@@ -361,7 +361,7 @@
 				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
 
 				classes = "overview";
-				if (tar.closest(".parent").hasClass("dogeared")) {
+				if (tar.closest(".parent").is(".dogeared")) {
 					classes += " dogeared";
 				}
 				url = tar.attr("href");
