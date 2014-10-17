@@ -139,8 +139,8 @@
 				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
 			} else if(current_width < 990 && current_width >= 792) {
 				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
-			} else if((current_width >= 694 && current_width < 792) && ($("#binder").hasClass("fixed"))) {
-				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
+			} else if(current_width >= 694 && current_width < 792) {
+				ele_class="size-small size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
 			} else if(current_width < 792) {
 				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			} else if(current_width < 396) {
