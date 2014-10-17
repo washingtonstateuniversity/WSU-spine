@@ -89,7 +89,7 @@
 				self.equalizing();
 				self.mainheight();
 				// Only run function if an unbound element exists
-				if( $(".unbound").length || $("#binder.broken").length ) {
+				if( $(".unbound,#binder.broken").length ) {
 					spread = $(window).width();
 					verso = self._get_globals("main").offset().left;
 					page = self._get_globals("main").width();
@@ -101,7 +101,7 @@
 						recto_margin = 0;
 					}
 					/* Broken Binding */
-					if ($("#binder").hasClass("broken")) {
+					if ($("#binder").is(".broken")) {
 						self._get_globals("main").css("width",recto);
 					}
 					verso_width = verso + self._get_globals("main").width();
@@ -114,10 +114,9 @@
 					$(".unbound.verso.recto").css("width",spread);
 				}
 
-				if($(".cropped").length<=0){}
-					viewport_ht		= $(window).height();
-					glue.css("min-height",viewport_ht);
-					spine.css("min-height",viewport_ht);
+				viewport_ht		= $(window).height();
+				glue.css("min-height",viewport_ht);
+				spine.css("min-height",viewport_ht);
 
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
@@ -177,7 +176,7 @@
 				main_top = main.offset().top;
 				window_height = $(window).height();
 				main_height = window_height;
-				if ($("#binder").hasClass("size-lt-large")) {
+				if ($("#binder").is(".size-lt-large")) {
 					main_height -= 50;
 				}
 				$("main:not(.height-auto)").css("min-height",main_height);
@@ -301,7 +300,7 @@
 			});
 
 			main.on("click swipeleft", function() {
-				if ( spine.hasClass("unshelved") ) {
+				if ( spine.is(".unshelved") ) {
 					spine.toggleClass("shelved unshelved");
 				}
 			});
@@ -350,7 +349,7 @@
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
 			$("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
 			$("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
-			$("#spine .active").not(":has(.active)").addClass("dogeared");
+			$("#spine .active:not(:has(.active))").addClass("dogeared");
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
@@ -362,7 +361,7 @@
 				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
 
 				classes = "overview";
-				if (tar.closest(".parent").hasClass("dogeared")) {
+				if (tar.closest(".parent").is(".dogeared")) {
 					classes += " dogeared";
 				}
 				url = tar.attr("href");
@@ -414,7 +413,7 @@
 				wsu_actions.find(".opened").toggleClass("opened closed");
 				$("html").toggleClass("print");
 				spine.find("header").prepend(print_controls);
-				spine.find(".unshelved").removeClass("unshelved").addClass("shelved");
+				$(".unshelved").removeClass("unshelved").addClass("shelved");
 				$("#print-invoke").on("click",function() { window.print(); });
 				$("#print-cancel").on("click",print_cancel);
 				window.setTimeout(function() { printPage(); }, 400);
