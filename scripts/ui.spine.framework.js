@@ -349,7 +349,7 @@
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
 			$("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
 			$("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
-			$("#spine .active").not(":has(.active)").addClass("dogeared");
+			$("#spine .active:not(:has(.active))").addClass("dogeared");
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
