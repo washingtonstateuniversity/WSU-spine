@@ -210,25 +210,25 @@
 		setup_spine: function(){
 			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,glue_ht,height_dif;
 
-			scroll_dif=0;
-			positionLock=0;
-			scroll_top=0;
+			scroll_dif = 0;
+			positionLock = 0;
+			scroll_top = 0;
 
 			//console.log("starting positionLock::" + positionLock);
 
-			self=this;
+			self = this;
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
 
 			// Fixed/Sticky Horizontal Header
 			$(document).on("scroll touchmove",function() {
-				if($(".ios .hybrid .unshelved").length<=0){
+				if($(".ios .hybrid .unshelved").length <= 0){
 					var top,bottom;
 
 					top				= $(document).scrollTop();
 					bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
-					scroll_dif		= scroll_top-top;
+					scroll_dif		= scroll_top - top;
 					scroll_top		= top;
 
 					viewport_ht		= $(window).height();
@@ -241,33 +241,33 @@
 					//console.log("SCROLLING || height_dif::" + height_dif);
 					//console.log("SCROLLING || positionLock::" + positionLock);
 					//console.log("|---------------------------------------------");
-					if( main.height()>glue_ht ){
+					if( main.height() > glue_ht ){
 						if( (scroll_dif>0?false:true) ){//down
 							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-							if(bottom<=0 && positionLock >= height_dif){
-								positionLock=height_dif;
+							if(bottom <= 0 && positionLock >= height_dif){
+								positionLock = height_dif;
 							}
 						}else{//up
 							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
 
-							if(top>0 && positionLock>0){
-								positionLock=0;
+							if(top > 0 && positionLock > 0){
+								positionLock = 0;
 							}
-
 						}
 
 						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
 						//console.log("SCROLLING || spine_ht::" + spine_ht);
 						//console.log("SCROLLING || height_dif::" + height_dif);
 						//console.log("SCROLLING || positionLock::" + positionLock);
-						if(top<=0){
-							positionLock=0;
+						if(top <= 0){
+							positionLock = 0;
 						}
-						if(bottom<=0){
-							positionLock=height_dif;
+						if(bottom <= 0){
+							positionLock = height_dif;
 						}
 						spine.css({"position":"fixed","top":positionLock+"px"});
 					} else {
+						// scroll_top from here should be positionLock above
 						spine.removeAttr('style');
 					}
 				}else{
@@ -284,9 +284,9 @@
 						spine_ht		= spine[0].scrollHeight;
 						height_dif		= viewport_ht - spine_ht;
 						if(e.which === 35) {
-							positionLock=height_dif;
+							positionLock = height_dif;
 						} else if(e.which === 36) {
-							positionLock=0;
+							positionLock = 0;
 						}
 						spine.css({"position":"fixed","top":positionLock+"px"});
 					}
