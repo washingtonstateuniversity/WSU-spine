@@ -271,7 +271,7 @@
 						spine.removeAttr("style");
 					}
 				}else{
-					$("#scroll").on("foucs",function(){
+					$("#scroll").on("focus",function(){
 						$(document).trigger("touchend");
 					});
 				}
