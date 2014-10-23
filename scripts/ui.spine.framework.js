@@ -268,7 +268,7 @@
 						spine.css({"position":"fixed","top":positionLock+"px"});
 					} else {
 						// scroll_top from here should be positionLock above
-						spine.removeAttr('style');
+						spine.removeAttr("style");
 					}
 				}else{
 					$("#scroll").on("foucs",function(){
