@@ -242,7 +242,7 @@
 					//console.log("SCROLLING || positionLock::" + positionLock);
 					//console.log("|---------------------------------------------");
 					if( main.height() > glue_ht ){
-						if( (scroll_dif>0?false:true) ){//down
+						if( (scroll_dif <= 0) ){//down
 							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
 							if(bottom <= 0 && positionLock >= height_dif){
 								positionLock = height_dif;
