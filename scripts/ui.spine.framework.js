@@ -267,6 +267,8 @@
 							positionLock=height_dif;
 						}
 						spine.css({"position":"fixed","top":positionLock+"px"});
+					} else {
+						spine.removeAttr('style');
 					}
 				}else{
 					$("#scroll").on("foucs",function(){
