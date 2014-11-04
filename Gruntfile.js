@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 	
 	pkg = grunt.file.readJSON('package.json');
 	setbase = grunt.option('setbase') || pkg.build_location+'/'+pkg.build_version+'/';
+	// setbase = '/build/';
 	
 	config = {
 		pkg: grunt.file.readJSON('package.json'),

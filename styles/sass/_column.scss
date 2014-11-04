@@ -639,6 +639,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	ul {
 		margin: 1.75em !important;
+		padding: 0;
 
 		li {
 
@@ -994,69 +995,10 @@ html.lt-ie9 #spine footer {
 
 @import 'spine/colors';
 
-
 /* Campus Signature Versions */
 
 @include signatures('vertical','');
 
 /* ### Cropped */
 
-@media screen
-	and ( min-width : 990px )
-
-	{
-
-	#spine.cropped {
-
-		height: 198px !important;
-		min-height: 198px !important;
-		top: 0 !important;
-		left: auto !important;
-
-		#glue {
-			width: 198px;
-			height: 198px !important;
-			min-height: 198px !important;
-			}
-		#glue:before {
-			width: 198px;
-			}
-
-		nav,
-		footer {
-			display: none;
-			}
-
-		/* #### Cropped and Scrolled */
-		&.skimmed:not(.unshelved) {
-
-			left: 0 !important;
-			top: 0 !important;
-			width: 100% !important;
-			height: 50px !important;
-			min-height: 0 !important;
-
-			#glue,
-			#glue:before {
-				min-height: 0 !important;
-				height: 50px !important;
-				width: 100% !important;
-				padding-top: 0px;
-				padding-bottom: 0px;
-				}
-			#wsu-signature {
-				background-position: center 12px;
-				background-size: auto 30px;
-				height: 49px;
-				}
-
-			#wsu-actions {
-				width: 198px;
-				margin-top: -40px;
-				}
-			}
-		}
-
-	@include signatures('horizontal','#spine.cropped.skimmed');
-
-	}
+@import 'spine/cropped';
