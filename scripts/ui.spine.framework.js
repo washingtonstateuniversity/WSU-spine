@@ -41,6 +41,15 @@
 			main: $("main"),
 			wsu_actions:$("#wsu-actions"),
 		},
+		nav_state:{
+			viewport_ht:0,
+			scroll_dif:0,
+			positionLock:0,
+			scroll_top:0,
+			spine_ht:0,
+			glue_ht:0,
+			height_dif:0,
+		},
 		framework_create: function(){
 			var self,contactHtml,propmap={},spread,verso,page,para,recto,recto_margin,verso_width,
 				svg_imgs,viewport_ht,spine,glue,main;
@@ -208,78 +217,35 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,glue_ht,height_dif;
-
-			scroll_dif = 0;
-			positionLock = 0;
-			scroll_top = 0;
-
-			//console.log("starting positionLock::" + positionLock);
+			var self,spine,glue,main,viewport_ht,spine_ht,height_dif,positionLock;
 
 			self = this;
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
+			self.nav_state.scroll_top=0;
+			self.nav_state.scroll_dif=0;
+			self.nav_state.positionLock=0;
 
-			// Fixed/Sticky Horizontal Header
-			$(document).on("scroll touchmove",function() {
-				if($(".ios .hybrid .unshelved").length <= 0){
-					var top,bottom;
+			if($(".ios .hybrid .unshelved").length <= 0){
+				// Fixed/Sticky Horizontal Header
+				$(document).on("scroll touchmove",function() {
+					self.apply_nav_func(self);
+				});
+				//will be
+				//$.observeDOM( glue , self.apply_nav_func(self));
+				//for now do it the way to targeted way
+				$("#spine nav li.parent > a").on("click",function(){
+					self.apply_nav_func(self);
+				});
+				
+			}else{
+				$("#scroll").on("focus",function(){
+					$(document).trigger("touchend");
+				});
+			}
 
-					top				= $(document).scrollTop();
-					bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
-					scroll_dif		= scroll_top - top;
-					scroll_top		= top;
 
-					viewport_ht		= $(window).height();
-					spine_ht		= spine[0].scrollHeight;
-					glue_ht			= glue.height();
-					height_dif		= viewport_ht - spine_ht;
-					//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
-					//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-					//console.log("SCROLLING || spine_ht::" + spine_ht);
-					//console.log("SCROLLING || height_dif::" + height_dif);
-					//console.log("SCROLLING || positionLock::" + positionLock);
-					//console.log("|---------------------------------------------");
-					main.css({"min-height":glue_ht});
-					
-					if( main.height() > glue_ht ){
-						if( (scroll_dif <= 0) ){//down
-							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-							if(bottom <= 0 && positionLock >= height_dif){
-								positionLock = height_dif;
-							}
-						}else{//up
-							positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-
-							if(top > 0 && positionLock > 0){
-								positionLock = 0;
-							}
-						}
-
-						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-						//console.log("SCROLLING || spine_ht::" + spine_ht);
-						//console.log("SCROLLING || height_dif::" + height_dif);
-						//console.log("SCROLLING || positionLock::" + positionLock);
-						if(top <= 0){
-							positionLock = 0;
-						}
-						if(bottom <= 0){
-							positionLock = height_dif;
-						}
-						spine.css({"position":"fixed","top":positionLock+"px"});
-					} else {
-						// scroll_top from here should be positionLock above
-						if( spine.is("#spine[style]") ){
-							spine.removeAttr("style");
-						}
-					}
-				}else{
-					$("#scroll").on("focus",function(){
-						$(document).trigger("touchend");
-					});
-				}
-			});
 	
 			if($(".ios .hybrid .unshelved").length<=0){
 				$(document).keydown(function(e) {
@@ -293,6 +259,7 @@
 							positionLock = 0;
 						}
 						spine.css({"position":"fixed","top":positionLock+"px"});
+						self.nav_state.positionLock=positionLock;
 					}
 				});
 			}
@@ -322,7 +289,71 @@
 				}
 			});
 		},
+		apply_nav_func: function(self){
+			
+			var spine,glue,main,top,bottom,scroll_top,positionLock,scroll_dif,spine_ht,viewport_ht,glue_ht,height_dif;
 
+			spine = self._get_globals("spine").refresh();
+			glue = self._get_globals("glue").refresh();
+			main = self._get_globals("main").refresh();
+			
+			scroll_top=self.nav_state.scroll_top;
+			positionLock=self.nav_state.positionLock;
+
+			top				= $(document).scrollTop();
+			bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
+			scroll_dif		= scroll_top - top;
+			scroll_top		= top;
+			self.nav_state.scroll_top	= scroll_top;
+			
+			viewport_ht		= $(window).height();
+			spine_ht		= spine[0].scrollHeight;
+			glue_ht			= glue.height();
+			height_dif		= viewport_ht - spine_ht;
+			//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
+			//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+			//console.log("SCROLLING || spine_ht::" + spine_ht);
+			//console.log("SCROLLING || height_dif::" + height_dif);
+			//console.log("SCROLLING || positionLock::" + positionLock);
+			//console.log("|---------------------------------------------");
+			if(scroll_dif===0 && (glue_ht > main.height())){
+				main.css({"min-height":glue_ht+scroll_top});
+			}
+			if( main.height() > glue_ht ){
+				if( (scroll_dif <= 0) ){//down
+					positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+					if(bottom <= 0 && positionLock >= height_dif){
+						positionLock = height_dif;
+					}
+				}else{//up
+					positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+
+					if(top > 0 && positionLock > 0){
+						positionLock = 0;
+					}
+				}
+
+				//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+				//console.log("SCROLLING || spine_ht::" + spine_ht);
+				//console.log("SCROLLING || height_dif::" + height_dif);
+				//console.log("SCROLLING || positionLock::" + positionLock);
+				if(top <= 0){
+					positionLock = 0;
+				}
+				if(bottom <= 0){
+					positionLock = height_dif;
+				}
+				spine.css({"position":"fixed","top":positionLock+"px"});
+				self.nav_state.positionLock=positionLock;
+			} else {
+				
+				// scroll_top from here should be positionLock above
+				if( spine.is("#spine[style]") ){
+					spine.removeAttr("style");
+				}
+			}
+			
+		},
 		/**
 		 * Sets up the tabs that will be able to be used by other extensions
 		 */
