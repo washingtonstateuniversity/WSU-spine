@@ -20,7 +20,8 @@ module.exports = {
 			console: true,
 			module: true,
 			document: true,
-			window:true
+			window:true,
+			MutationObserver:true
 		}
 	}
 }

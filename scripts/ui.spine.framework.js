@@ -232,13 +232,10 @@
 				$(document).on("scroll touchmove",function() {
 					self.apply_nav_func(self);
 				});
-				//will be
-				//$.observeDOM( glue , self.apply_nav_func(self));
-				//for now do it the way to targeted way
-				$("#spine nav li.parent > a").on("click",function(){
+				//check for changes to the dom
+				$.observeDOM( glue , function(){
 					self.apply_nav_func(self);
-				});
-				
+				});				
 			}else{
 				$("#scroll").on("focus",function(){
 					$(document).trigger("touchend");
