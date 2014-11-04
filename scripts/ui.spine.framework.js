@@ -241,6 +241,8 @@
 					//console.log("SCROLLING || height_dif::" + height_dif);
 					//console.log("SCROLLING || positionLock::" + positionLock);
 					//console.log("|---------------------------------------------");
+					main.css({"min-height":glue_ht});
+					
 					if( main.height() > glue_ht ){
 						if( (scroll_dif <= 0) ){//down
 							positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
