@@ -235,7 +235,7 @@
 				//check for changes to the dom
 				$.observeDOM( glue , function(){
 					self.apply_nav_func(self);
-				});				
+				});
 			}else{
 				$("#scroll").on("focus",function(){
 					$(document).trigger("touchend");
@@ -315,6 +315,12 @@
 			//console.log("|---------------------------------------------");
 			if(scroll_dif===0 && (glue_ht > main.height())){
 				main.css({"min-height":glue_ht+scroll_top});
+			}else{
+				if(scroll_dif===0){
+					main.animate({"min-height":glue_ht},"fast");
+				}else{
+					main.css({"min-height":glue_ht});
+				}
 			}
 			if( main.height() > glue_ht ){
 				if( (scroll_dif <= 0) ){//down
