@@ -313,7 +313,7 @@
 			//console.log("SCROLLING || height_dif::" + height_dif);
 			//console.log("SCROLLING || positionLock::" + positionLock);
 			//console.log("|---------------------------------------------");
-			if(scroll_dif===0 && (glue_ht > main.outerHeight())){
+			if(scroll_dif===0 && (glue_ht > main.outerHeight(true))){
 				main.css({"min-height":glue_ht+scroll_top});
 			}else{
 				if(scroll_dif===0){
@@ -322,7 +322,7 @@
 					main.css({"min-height":glue_ht});
 				}
 			}
-			if( main.outerHeight() > glue_ht ){
+			if( main.outerHeight(true) > glue_ht ){
 				if( (scroll_dif <= 0) ){//down
 					positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
 					if(bottom <= 0 && positionLock >= height_dif){
