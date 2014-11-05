@@ -232,13 +232,10 @@
 				$(document).on("scroll touchmove",function() {
 					self.apply_nav_func(self);
 				});
-				//will be
-				//$.observeDOM( glue , self.apply_nav_func(self));
-				//for now do it the way to targeted way
-				$("#spine nav li.parent > a").on("click",function(){
+				//check for changes to the dom
+				$.observeDOM( glue , function(){
 					self.apply_nav_func(self);
 				});
-				
 			}else{
 				$("#scroll").on("focus",function(){
 					$(document).trigger("touchend");
@@ -316,10 +313,16 @@
 			//console.log("SCROLLING || height_dif::" + height_dif);
 			//console.log("SCROLLING || positionLock::" + positionLock);
 			//console.log("|---------------------------------------------");
-			if(scroll_dif===0 && (glue_ht > main.height())){
+			if(scroll_dif===0 && (glue_ht > main.outerHeight(true))){
 				main.css({"min-height":glue_ht+scroll_top});
+			}else{
+				if(scroll_dif===0){
+					main.animate({"min-height":glue_ht},"fast");
+				}else{
+					main.css({"min-height":glue_ht});
+				}
 			}
-			if( main.height() > glue_ht ){
+			if( main.outerHeight(true) > glue_ht ){
 				if( (scroll_dif <= 0) ){//down
 					positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
 					if(bottom <= 0 && positionLock >= height_dif){

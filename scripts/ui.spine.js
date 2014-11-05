@@ -78,96 +78,29 @@
 		return ( window.navigator.userAgent.match(/(Android)/ig) ? true : false );
 	};
 
-
-	// @if DEBUG
-	/* currently for dev state testing only. remove on production */
-	/*jshint unused: false */
-
-	
-	$.observeDOM = function(){
-		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
-			eventListenerSupported = window.addEventListener;
-		console.log("looking for dom changes note since called there should be");
-		return function(obj, callback){
-			var obs,ele;
-			ele=obj[0];
-			if( MutationObserver ){
-				// define a new observer
-				obs = new MutationObserver(function(mutations){
-					if( mutations[0].addedNodes.length || mutations[0].removedNodes.length ){
-						callback();
-					}
-				});
-				// have the observer observe foo for changes in children
-				obs.observe( ele, { childList:true, subtree:true });
-			} else {
-				if( eventListenerSupported ){
-					ele.addEventListener("DOMNodeInserted", callback, false);
-					ele.addEventListener("DOMNodeRemoved", callback, false);
-				}
-
-				;(function (factory) {
-					factory(jQuery);
-				}(function ($) {
-					"use strict";
-					/**
-					 * Triggers the DOM changed event on the given element
-					 */
-					function jQueryDOMChanged (element, type) {
-						return $(element).trigger("DOMChanged", type);
-					}
-					/**
-					 * Wraps a given jQuery method and injects another function to be called
-					 */
-					function jQueryHook (method, caller) {
-						var definition;
-						definition = $.fn[method];
-						if (definition) {
-							$.fn[method] = function () {
-								var args,result;
-								args   = Array.prototype.slice.apply(arguments);
-								result = definition.apply(this, args);
-								caller.apply(this, args);
-								return result;
-							};
-						}
-					}
-					jQueryHook("prepend", function () {
-						return jQueryDOMChanged(this, "prepend");
-					});
-					jQueryHook("append", function () {
-						return jQueryDOMChanged(this, "append");
-					});
-					jQueryHook("before", function () {
-						return jQueryDOMChanged($(this).parent(), "before");
-					});
-					jQueryHook("after", function () {
-						return jQueryDOMChanged($(this).parent(), "after");
-					});
-					jQueryHook("click", function () {
-						return jQueryDOMChanged($(this).parent(), "after");
-					});
-					jQueryHook("resize", function () {
-						return jQueryDOMChanged($(this).parent(), "after");
-					});
-					jQueryHook("change", function () {
-						return jQueryDOMChanged($(this).parent(), "after");
-					});
-					jQueryHook("html", function (value) {
-						// Internally jQuery will set strings using innerHTML otherwise will use append to insert new elements
-						// Only trigger on string types to avoid doubled events
-						if (typeof value === "string") {
-							return jQueryDOMChanged(this, "html");
-						}
-					});
-				}));
-				obj.on("DOMChanged", callback);
+	$.observeDOM = function(obj,callback){
+		var config,mutationObserver;
+		
+		config = {childList: true, attributes: true, subtree: true, attributeOldValue: true, attributeFilter: ["class", "style"]};
+		
+		mutationObserver = new MutationObserver(function(mutationRecords) {
+		  $.each(mutationRecords, function(index, mutationRecord) {
+			if (mutationRecord.type === "childList") {
+			  if (mutationRecord.addedNodes.length > 0) {
+				callback();
+			  } else if (mutationRecord.removedNodes.length > 0) {
+				callback();
+			  }
+			} else if (mutationRecord.type === "attributes") {
+			  if (mutationRecord.attributeName === "class") {
+				callback();
+			  }
 			}
-		};
+		  });
+		});
+		mutationObserver.observe(obj[0], config);
 	};
-	// @endif
-	
-	
+
 	
 	/**
 	 * Sets up the plugins prototype
