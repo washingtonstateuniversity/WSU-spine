@@ -11,6 +11,7 @@
 * Correct campus zipcode to 99164
 * Adds new function `$.observeDOM()` which will allow someone to watch for changes to the dom and then react.  Look to the wiki for more information
 * Abstracts the code that applies change to the nav based on user action in `$.spine.setup_spine()` to a new function `$.spine.apply_nav_func()`
+* Adds a `$.spine.nav_state`
 
 ### Development Changes
 
