@@ -7,6 +7,7 @@ module.exports = {
 			build_version : '<%= pkg.build_version %>',
 			test_title: '',
 			content: 'skip',
+			behavior: 'skip',
 			malformed : 'skip', // true or false is what is tested for
 			demo: 'skip',
 			opensans: 'skip',
@@ -14,6 +15,7 @@ module.exports = {
 			spacing: 'skip',
 			mainheader: 'skip',
 			typography: 'skip',
+			broken: 'skip',
 			unbound: 'skip',
 			ui: 'skip',
 			filledSearchTab : 'skip',
@@ -116,6 +118,18 @@ module.exports = {
 			context : {
 				test_title: 'Testing Typography',
 				typography: 'true'
+			}
+		}
+	},
+	broken : {
+		src : 'test/preprocess/test.cat.pre.html',
+		dest : '<%= config.build %>/tests/binding_broken.html',
+		options : {
+			context : {
+				test_title: 'Testing Broken Binding',
+				broken : 'true',
+				behavior : 'fluid',
+				content : 'true'
 			}
 		}
 	},
@@ -238,7 +252,7 @@ module.exports = {
 		dest : '<%= config.build %>/tests/grid_fluid.html',
 		options : {
 			context : {
-				fluidGrid : 'true',
+				behavior : 'fluid',
 				test_title: 'Testing Fluid Grid',
 				content: 'true'
 			}

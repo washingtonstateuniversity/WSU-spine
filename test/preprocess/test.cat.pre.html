@@ -148,7 +148,7 @@ main {
 
 </div>
 <!-- @endif -->
-<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif -->">
+<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' || behavior='fluid' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif --> <!-- @if broken='true' --> broken <!-- @endif -->">
 <!-- @if markup='true' -->
 <!-- GRID BEHAVIOR: Default behavior can be changed by changing "hybrid" to "fixed" or "fluid". -->
 <!-- @endif -->
@@ -549,7 +549,7 @@ pre code {
 
 </script>
 
-<section id="switches" class="marginalized short narrow">
+<section id="switches" class="short narrow">
 
 	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 
@@ -1474,7 +1474,7 @@ pre code {
 
 </script>
 
-<section id="switches" class="marginalized short narrow">
+<section id="switches" class="short narrow">
 
 	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 

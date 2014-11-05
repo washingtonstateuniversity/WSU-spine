@@ -110,7 +110,7 @@
 <!-- @if cropped='true' -->
 	@@include('content/cropped.html', {})
 <!-- @endif -->
-<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif -->">
+<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' || behavior='fluid' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif --> <!-- @if broken='true' --> broken <!-- @endif -->">
 <!-- @if markup='true' -->
 <!-- GRID BEHAVIOR: Default behavior can be changed by changing "hybrid" to "fixed" or "fluid". -->
 <!-- @endif -->
