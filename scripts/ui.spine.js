@@ -80,9 +80,9 @@
 
 	$.observeDOM = function(obj,callback){
 		var config,mutationObserver;
-		
+
 		config = {childList: true, attributes: true, subtree: true, attributeOldValue: true, attributeFilter: ["class", "style"]};
-		
+
 		mutationObserver = new MutationObserver(function(mutationRecords) {
 		  $.each(mutationRecords, function(index, mutationRecord) {
 			if (mutationRecord.type === "childList") {
@@ -101,7 +101,6 @@
 		mutationObserver.observe(obj[0], config);
 	};
 
-	
 	/**
 	 * Sets up the plugins prototype
 	 * @param name:string
@@ -365,6 +364,5 @@
 			});
 		});
 	};
-
 
 })( jQuery, window, document );
