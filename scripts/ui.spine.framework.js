@@ -242,8 +242,6 @@
 				});
 			}
 
-
-	
 			if($(".ios .hybrid .unshelved").length<=0){
 				$(document).keydown(function(e) {
 					if(e.which === 35 || e.which === 36) {
@@ -260,8 +258,6 @@
 					}
 				});
 			}
-
-
 
 			$("#glue > header").append("<button id='shelve' />");
 			$("#shelve").on("click",function(e) {
@@ -287,13 +283,13 @@
 			});
 		},
 		apply_nav_func: function(self){
-			
+
 			var spine,glue,main,top,bottom,scroll_top,positionLock,scroll_dif,spine_ht,viewport_ht,glue_ht,height_dif;
 
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			
+
 			scroll_top=self.nav_state.scroll_top;
 			positionLock=self.nav_state.positionLock;
 
@@ -302,7 +298,7 @@
 			scroll_dif		= scroll_top - top;
 			scroll_top		= top;
 			self.nav_state.scroll_top	= scroll_top;
-			
+
 			viewport_ht		= $(window).height();
 			spine_ht		= spine[0].scrollHeight;
 			glue_ht			= glue.height();
@@ -349,13 +345,13 @@
 				spine.css({"position":"fixed","top":positionLock+"px"});
 				self.nav_state.positionLock=positionLock;
 			} else {
-				
+
 				// scroll_top from here should be positionLock above
 				if( spine.is("#spine[style]") ){
 					spine.removeAttr("style");
 				}
 			}
-			
+
 		},
 		/**
 		 * Sets up the tabs that will be able to be used by other extensions

@@ -1,26 +1,25 @@
 
 module.exports = function(grunt) {
-	//lets look for configs
+	// Look at the passed path for .js files used as extended Grunt config.
 	function loadConfig(path) {
-	  var glob = require('glob');
+		var glob = require('glob');
 
-	  var object = {};
-	  var key;
+		var object = {};
+		var key;
 
-	  glob.sync('*', {cwd: path}).forEach(function(option) {
-		key = option.replace(/\.js$/,'');
-		object[key] = require(path + option);
-	  });
+		glob.sync('*', {cwd: path}).forEach(function(option) {
+			key = option.replace(/\.js$/,'');
+			object[key] = require(path + option);
+		});
 
-	  return object;
+		return object;
 	}
 
 	var pkg,setbase,config;
-	
+
 	pkg = grunt.file.readJSON('package.json');
 	setbase = grunt.option('setbase') || pkg.build_location+'/'+pkg.build_version+'/';
-	// setbase = '/build/';
-	
+
 	config = {
 		pkg: grunt.file.readJSON('package.json'),
 		setbase:setbase,
@@ -28,7 +27,7 @@ module.exports = function(grunt) {
 			build: 'build'
 		}
 	};
- 
+
 	grunt.util._.extend(config, loadConfig('./grunt/options/'));
 	grunt.initConfig(config);
 
