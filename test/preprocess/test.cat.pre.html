@@ -221,8 +221,6 @@ h1 {
 #onoff {
 	width: 56px;
 	height: 56px;
-	margin-left: -14px;
-	margin-top: -14px;
 	color: white;
 	background-color: black;
 	border: none;
@@ -553,7 +551,7 @@ pre code {
 
 	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 
-	<dl class="spine-colors clearfix">
+	<dl class="padded-sides narrow spine-colors clearfix">
 		<dt>spine colors <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#colors" target="_blank" class="info">info</a></dt>
 		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd>
 		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
@@ -567,7 +565,7 @@ pre code {
 		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
 	</dl>
 
-	<dl class="spine-transparency clearfix">
+	<dl class="padded-sides narrow spine-transparency clearfix">
 		<dt>spine transparency <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#opacity" target="_blank" class="info">info</a></dt>
 		<dd><button data-transparency="">0</button></dd>
 		<dd><button data-transparency="vellum-05">5</button></dd>
@@ -575,14 +573,14 @@ pre code {
 		<dd><button data-transparency="vellum-15">15</button></dd>
 	</dl>
 
-	<dl class="spine-column-options clearfix">
+	<dl class="padded-sides narrow spine-column-options clearfix">
 		<dt>spine options <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options" target="_blank" class="info">info</a></dt>
 		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
 		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 
-	<dl class="spine-campuses clearfix">
+	<dl class="padded-sides narrow spine-campuses clearfix">
 		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
 		<dd><button data-campus="system">System</button></dd>
 		<dd><button data-campus="spokane">Spokane</button></dd>
@@ -592,14 +590,14 @@ pre code {
 		<dd><button data-campus="extension">Extension</button></dd>
 	</dl>
 
-	<dl class="spine-behavior clearfix">
+	<dl class="padded-sides narrow spine-behavior clearfix">
 		<dt>grid behavior <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/II.3.-Page:-Responsive#responsive-behavior" target="_blank" class="info">info</a></dt>
 		<dd><button data-grid="fluid">fluid</button></dd>
 		<dd><button data-grid="fixed">fixed</button></dd>
 		<dd><button data-grid="hybrid">hybrid</button></dd>
 	</dl>
 
-	<dl class="spine-sizes clearfix ">
+	<dl class="padded-sides narrow spine-sizes clearfix ">
 		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
 		<dd><button data-max="max-990">default</button></dd>
 		<dd><button data-max="max-1188">1188</button></dd>
@@ -609,7 +607,7 @@ pre code {
 		<dd><button data-max="max-1980">1980</button></dd>
 	</dl>
 
-	<dl class="spine-wireframe">
+	<dl class="padded-sides narrow spine-wireframe">
 		<dt>under the hood</dt>
 		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
 	</dl>
@@ -1146,8 +1144,6 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 #onoff {
 	width: 56px;
 	height: 56px;
-	margin-left: -14px;
-	margin-top: -14px;
 	color: white;
 	background-color: black;
 	border: none;
@@ -1478,7 +1474,7 @@ pre code {
 
 	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
 
-	<dl class="spine-colors clearfix">
+	<dl class="padded-sides narrow spine-colors clearfix">
 		<dt>spine colors <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#colors" target="_blank" class="info">info</a></dt>
 		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd>
 		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
@@ -1492,7 +1488,7 @@ pre code {
 		<dd><button data-color="crimson" class="crimson-back white-text">Crimson</button></dd>
 	</dl>
 
-	<dl class="spine-transparency clearfix">
+	<dl class="padded-sides narrow spine-transparency clearfix">
 		<dt>spine transparency <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#opacity" target="_blank" class="info">info</a></dt>
 		<dd><button data-transparency="">0</button></dd>
 		<dd><button data-transparency="vellum-05">5</button></dd>
@@ -1500,14 +1496,14 @@ pre code {
 		<dd><button data-transparency="vellum-15">15</button></dd>
 	</dl>
 
-	<dl class="spine-column-options clearfix">
+	<dl class="padded-sides narrow spine-column-options clearfix">
 		<dt>spine options <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options" target="_blank" class="info">info</a></dt>
 		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
 		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 
-	<dl class="spine-campuses clearfix">
+	<dl class="padded-sides narrow spine-campuses clearfix">
 		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
 		<dd><button data-campus="system">System</button></dd>
 		<dd><button data-campus="spokane">Spokane</button></dd>
@@ -1517,14 +1513,14 @@ pre code {
 		<dd><button data-campus="extension">Extension</button></dd>
 	</dl>
 
-	<dl class="spine-behavior clearfix">
+	<dl class="padded-sides narrow spine-behavior clearfix">
 		<dt>grid behavior <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/II.3.-Page:-Responsive#responsive-behavior" target="_blank" class="info">info</a></dt>
 		<dd><button data-grid="fluid">fluid</button></dd>
 		<dd><button data-grid="fixed">fixed</button></dd>
 		<dd><button data-grid="hybrid">hybrid</button></dd>
 	</dl>
 
-	<dl class="spine-sizes clearfix ">
+	<dl class="padded-sides narrow spine-sizes clearfix ">
 		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
 		<dd><button data-max="max-990">default</button></dd>
 		<dd><button data-max="max-1188">1188</button></dd>
@@ -1534,7 +1530,7 @@ pre code {
 		<dd><button data-max="max-1980">1980</button></dd>
 	</dl>
 
-	<dl class="spine-wireframe">
+	<dl class="padded-sides narrow spine-wireframe">
 		<dt>under the hood</dt>
 		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
 	</dl>
