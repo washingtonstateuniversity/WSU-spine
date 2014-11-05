@@ -63,6 +63,7 @@ module.exports = function(grunt) {
 		'preprocess:spacing',
 		'preprocess:mainheader',
 		'preprocess:typography',
+		'preprocess:broken',
 		'preprocess:unbound',
 		'preprocess:ui',
 		'preprocess:tu_search_tabs',
