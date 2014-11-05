@@ -9,6 +9,7 @@
 * Add social icons for Google Plus, Instagram, Vine, Vimeo, GitHub, and Flickr
 * Add `margin-left` and `margin-right` layouts to `gutter`
 * Correct campus zipcode to 99164
+* Adds new function `$.observeDOM()` which will allow someone to watch for changes to the dom and then react.  Look to the wiki for more information
 
 ### Development Changes
 
