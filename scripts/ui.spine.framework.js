@@ -378,7 +378,7 @@
 			$("#spine header").insertBefore($("#scroll"));
 		},
 		/**
-		 * Sets up navagation system
+		 * Sets up navigation system
 		 */
 		setup_nav: function(){
 			// NAVIGATION
