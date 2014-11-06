@@ -1,5 +1,7 @@
 # WSU Spine Changelog
 
+## 1.3.0 (In progress)
+
 ## 1.2.0 (November 6, 2014)
 
 ### Framework Changes
@@ -20,7 +22,7 @@
 * Remove most compiled files from the repository.
 * Refactor build process to support multiple versions in production.
 * Refactor development workflow to use `develop` branch.
-* Allows one to set the base url for the test units via `--setbase` ex: `grunt watch --setbase=E:\_GIT\WSU-spine\build\` when local 
+* Allows one to set the base url for the test units via `--setbase` ex: `grunt watch --setbase=E:\_GIT\WSU-spine\build\` when local
 
 ## 1.1.0 (August 20, 2014)
 
