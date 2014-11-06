@@ -7,10 +7,7 @@
 ( function($) {
 	$.extend($.ui.spine.prototype, {
 		framework_init: function(options) {
-			//alert("init framework");
-			//alert("options==>"+dump(options));
 			$.extend(this.framework_options,options);
-			//alert("options==>"+dump(this.framework_options));
 			this._set_globals(this.framework_globals);
 			this.framework_create();
 		},
@@ -44,6 +41,15 @@
 			main: $("main"),
 			wsu_actions:$("#wsu-actions"),
 		},
+		nav_state:{
+			viewport_ht:0,
+			scroll_dif:0,
+			positionLock:0,
+			scroll_top:0,
+			spine_ht:0,
+			glue_ht:0,
+			height_dif:0,
+		},
 		framework_create: function(){
 			var self,contactHtml,propmap={},spread,verso,page,para,recto,recto_margin,verso_width,
 				svg_imgs,viewport_ht,spine,glue,main;
@@ -53,8 +59,8 @@
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			
-			
+
+
 			// Section -> Contact
 			if (!$("#wsu-contact").length) {
 				contactHtml = "<section id='wsu-contact' class='spine-contact spine-action closed'>";
@@ -81,7 +87,10 @@
 			}
 
 			self.setup_nav();
-			self.setup_nav_scroll();
+			if($.is_iOS()){
+				$("html").addClass("ios");
+				self.setup_nav_scroll();
+			}
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
@@ -89,35 +98,41 @@
 				self.equalizing();
 				self.mainheight();
 				// Only run function if an unbound element exists
-				if( $(".unbound").length || $("#binder.broken").length ) {
+				if( $(".unbound,#binder.broken").length ) {
 					spread = $(window).width();
 					verso = self._get_globals("main").offset().left;
 					page = self._get_globals("main").width();
 					recto = spread - self._get_globals("main").offset().left;
 					recto_margin = "";
-					if (recto >= page ) { recto_margin = recto - page; } else { recto_margin = 0; }
-					/* Broken Binding */ if ($("#binder").hasClass("broken")) { self._get_globals("main").css("width",recto); }
+					if (recto >= page ) {
+						recto_margin = recto - page;
+					} else {
+						recto_margin = 0;
+					}
+					/* Broken Binding */
+					if ($("#binder").is(".broken")) {
+						self._get_globals("main").css("width",recto);
+					}
 					verso_width = verso + self._get_globals("main").width();
 					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
 					$(".unbound.element.recto").each( function() {
 						para = $(this).width();
 						$(this).css("width",para+recto_margin).css("margin-right",-(recto_margin));
-						});
+					});
 					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
 					$(".unbound.verso.recto").css("width",spread);
 				}
-				
-				if($(".cropped").length<=0){}
-					viewport_ht		= $(window).height();
-					glue.css("min-height",viewport_ht);
-					spine.css("min-height",viewport_ht);
-				
+
+				viewport_ht		= $(window).height();
+				glue.css("min-height",viewport_ht);
+				spine.css("min-height",viewport_ht);
+
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
 				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
 				$(document).trigger("scroll");
-				
+
 			}).trigger("resize");
 		},
 		// Label #jacket with current window size
@@ -130,11 +145,11 @@
 				ele_class="size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large";
 			} else if(current_width >= 990) {
 				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
-			} else if(current_width < 990 && current_width >= 792) {
-				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
-			} else if((current_width >= 694 && current_width < 792) && ($("#binder").hasClass("fixed"))) {
+			} else if((current_width >= 694 && current_width < 792) && ($("#binder").is(".fixed"))) {
 				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
-			} else if(current_width < 792) {
+			} else if(current_width < 990 && current_width >= 694) {
+				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
+			} else if(current_width < 694) {
 				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			} else if(current_width < 396) {
 				ele_class="size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
@@ -156,20 +171,10 @@
 					});
 					if($(window).width() <= 792) {
 						$(".column",this).not(".unequaled").css("min-height","1");
-						}
-					else {
+					} else {
 						$(".column",this).not(".unequaled").css("min-height",tallestBox);
-						}
+					}
 					$("section.equalize .column",this).css("min-height","auto");
-					//Would be nice to enable equalizing of child elements, requiring a height declaration
-					//if($(window).width() <= 792) {
-					//	$(".column",this).not(".unequaled").css("min-height","1").css("height","auto");
-					//	}
-					//else {
-					//	$(".column",this).not(".unequaled").css("min-height",tallestBox).css("height",tallestBox);
-					//	}
-					//$("section.equalize .column",this).css("min-height","auto").css("height","auto");
-					
 				});
 			}
 		},
@@ -180,7 +185,7 @@
 				main_top = main.offset().top;
 				window_height = $(window).height();
 				main_height = window_height;
-				if ($("#binder").hasClass("size-lt-large")) {
+				if ($("#binder").is(".size-lt-large")) {
 					main_height -= 50;
 				}
 				$("main:not(.height-auto)").css("min-height",main_height);
@@ -212,148 +217,59 @@
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,scroll_top,scroll_dif,positionLock,viewport_ht,spine_ht,glue_ht,height_dif;
-			
-			scroll_dif=0;
-			positionLock=0;
-			scroll_top=0;
-			
-			//console.log("starting positionLock::" + positionLock);
-			
-			self=this;
+			var self,spine,glue,main,viewport_ht,spine_ht,height_dif,positionLock;
+
+			self = this;
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-		
-			if($(".cropped").length<=0){}
+			self.nav_state.scroll_top=0;
+			self.nav_state.scroll_dif=0;
+			self.nav_state.positionLock=0;
 
-				/*$( window ).on("resize", function() {
-					windowHeight	= $(window).height();
-					spineHeight		= spine[0].scrollHeight;
-					heightDif		= windowHeight - spineHeight;
-					glue.css("min-height",windowHeight);
-					spine.css("min-height",windowHeight);
-					//console.log("window-resize | windowHeight::" + windowHeight);
-					//console.log("window-resize | spineHeight::" + spineHeight);
-					//console.log("window-resize | heightDif::" + heightDif);
-				}).trigger("resize");*/
-
+			if($(".ios .hybrid .unshelved").length <= 0){
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
-					var top,bottom;
-						//$(document).css("-webkit-overflow-scrolling","touch");
-						//$(window).css("-webkit-overflow-scrolling","touch");
-						//$("body").css("-webkit-overflow-scrolling","touch");
-						top				= $(document).scrollTop();
-						bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
-						scroll_dif		= scroll_top-top;
-						scroll_top		= top;
-	
-						viewport_ht		= $(window).height();
-						spine_ht		= spine[0].scrollHeight;
-						glue_ht			= glue.height();
-						height_dif		= viewport_ht - spine_ht;
-						//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
-						//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-						//console.log("SCROLLING || spine_ht::" + spine_ht);
-						//console.log("SCROLLING || height_dif::" + height_dif);
-						//console.log("SCROLLING || positionLock::" + positionLock);
-						//console.log("|---------------------------------------------");
-						if( main.height()>glue_ht ){
-							if( (scroll_dif>0?false:true) ){//down
-								positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-								if(bottom<=0 && positionLock >= height_dif){
-									positionLock=height_dif;
-								}
-							}else{//up
-								positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
-								
-								if(top>0 && positionLock>0){
-									positionLock=0;
-								}
-								
-							}
-							
-							//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-							//console.log("SCROLLING || spine_ht::" + spine_ht);
-							//console.log("SCROLLING || height_dif::" + height_dif);
-							//console.log("SCROLLING || positionLock::" + positionLock);
-							if(top<=0){
-								positionLock=0;
-							}
-							if(bottom<=0){
-								positionLock=height_dif;
-							}
-							spine.css({"position":"fixed","top":positionLock+"px"});
-						}
-					/*
-					if (top > 49) {
-						spine.not(".unshelved").addClass("scanned");
-					} else {
-						spine.removeClass("scanned");
-					}*/
+					self.apply_nav_func(self);
 				});
-				
-				
+				//check for changes to the dom
+				$.observeDOM( glue , function(){
+					self.apply_nav_func(self);
+				});
+			}else{
+				$("#scroll").on("focus",function(){
+					$(document).trigger("touchend");
+				});
+			}
+
+			if($(".ios .hybrid .unshelved").length<=0){
 				$(document).keydown(function(e) {
 					if(e.which === 35 || e.which === 36) {
 						viewport_ht		= $(window).height();
 						spine_ht		= spine[0].scrollHeight;
 						height_dif		= viewport_ht - spine_ht;
 						if(e.which === 35) {
-							positionLock=height_dif;
+							positionLock = height_dif;
 						} else if(e.which === 36) {
-							positionLock=0;
+							positionLock = 0;
 						}
 						spine.css({"position":"fixed","top":positionLock+"px"});
+						self.nav_state.positionLock=positionLock;
 					}
 				});
-				
-				
-				
-			
+			}
+
 			$("#glue > header").append("<button id='shelve' />");
 			$("#shelve").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
 			});
 
-			// Clicking Outside Spine Closes It
-			/* $(document).on("mouseup touchstart", function (e) {
-				var container = $("#spine.unshelved");
-				if (container.has(e.target).length === 0)
-				{ container.toggleClass("shelved unshelved"); }
-			}); */
 			main.on("click swipeleft", function() {
-				if ( spine.hasClass("unshelved") ) {
+				if ( spine.is(".unshelved") ) {
 					spine.toggleClass("shelved unshelved");
 				}
 			});
-
-			// Cracking the Spine for Short Windows
-			/* $(window).on("load resize scroll mouseup touchend",function() {
-				var footerHeight, windowHeight, spineHeight;
-				
-				footerHeight = $("#spine footer").height();
-				windowHeight = window.innerHeight - footerHeight - 50;
-				spineHeight = $("#glue").height();
-				//$("main").prepend(footerHeight);
-				if ( windowHeight < spineHeight ) {
-					spine.removeClass("uncracked").addClass("cracked");
-				} else {
-					spine.removeClass("cracked").addClass("uncracked");
-				}
-			}); */
-
-			// Moving the Spine for Short Windows
-			/* $(document).scroll(function() {
-				var windowHeight = window.innerHeight;
-				var top = $(document).scrollTop();
-				var spineHeight = $("#glue").height();
-				var crack = spineHeight - windowHeight;
-				if ( top > crack ) { $("#spine.cracked").addClass("pinned"); }
-				else { $("#spine.cracked").removeClass("pinned"); }
-			}); */
 
 			// Add skimming
 			$(document).scroll(function() {
@@ -365,23 +281,78 @@
 					$("#spine").removeClass("skimmed");
 				}
 			});
-
-			// Moving the Spine for Short Windows
-			/*$(document).scroll(function() {
-				var windowHeight = window.innerHeight;
-				var top = $(document).scrollTop();
-				var spineHeight = $("#glue").height();
-				var crack = spineHeight - windowHeight;
-				if ( top > crack ) {
-					var top_pos = -(top);
-					$("#spine.cracked").addClass("pinned");
-					$("#spine.cracked #glue").css("top",top_pos);
-				} else {
-					$("#spine.cracked").removeClass("pinned");
-				}
-			});*/
 		},
+		apply_nav_func: function(self){
 
+			var spine,glue,main,top,bottom,scroll_top,positionLock,scroll_dif,spine_ht,viewport_ht,glue_ht,height_dif;
+
+			spine = self._get_globals("spine").refresh();
+			glue = self._get_globals("glue").refresh();
+			main = self._get_globals("main").refresh();
+
+			scroll_top=self.nav_state.scroll_top;
+			positionLock=self.nav_state.positionLock;
+
+			top				= $(document).scrollTop();
+			bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
+			scroll_dif		= scroll_top - top;
+			scroll_top		= top;
+			self.nav_state.scroll_top	= scroll_top;
+
+			viewport_ht		= $(window).height();
+			spine_ht		= spine[0].scrollHeight;
+			glue_ht			= glue.height();
+			height_dif		= viewport_ht - spine_ht;
+			//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
+			//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+			//console.log("SCROLLING || spine_ht::" + spine_ht);
+			//console.log("SCROLLING || height_dif::" + height_dif);
+			//console.log("SCROLLING || positionLock::" + positionLock);
+			//console.log("|---------------------------------------------");
+			if(scroll_dif===0 && (glue_ht > main.outerHeight(true))){
+				main.css({"min-height":glue_ht+scroll_top});
+			}else{
+				if(scroll_dif===0){
+					main.animate({"min-height":glue_ht},"fast");
+				}else{
+					main.css({"min-height":glue_ht});
+				}
+			}
+			if( main.outerHeight(true) > glue_ht ){
+				if( (scroll_dif <= 0) ){//down
+					positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+					if(bottom <= 0 && positionLock >= height_dif){
+						positionLock = height_dif;
+					}
+				}else{//up
+					positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+
+					if(top > 0 && positionLock > 0){
+						positionLock = 0;
+					}
+				}
+
+				//console.log("SCROLLING || viewport_ht::" + viewport_ht);
+				//console.log("SCROLLING || spine_ht::" + spine_ht);
+				//console.log("SCROLLING || height_dif::" + height_dif);
+				//console.log("SCROLLING || positionLock::" + positionLock);
+				if(top <= 0){
+					positionLock = 0;
+				}
+				if(bottom <= 0){
+					positionLock = height_dif;
+				}
+				spine.css({"position":"fixed","top":positionLock+"px"});
+				self.nav_state.positionLock=positionLock;
+			} else {
+
+				// scroll_top from here should be positionLock above
+				if( spine.is("#spine[style]") ){
+					spine.removeAttr("style");
+				}
+			}
+
+		},
 		/**
 		 * Sets up the tabs that will be able to be used by other extensions
 		 */
@@ -394,9 +365,9 @@
 			$("#wsu-"+tab+"-tab button").on("click",function(e) {
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-"+tab+",#wsu-"+tab+"-tab").toggleClass("opened closed");
-				
+
 				action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
-				
+
 				$(".spine-action.opened").css( "min-height", action_ht );
 			});
 		},
@@ -406,15 +377,19 @@
 			$("#spine header").insertBefore($("#scroll"));
 		},
 		/**
-		 * Sets up navagation system
+		 * Sets up navigation system
 		 */
 		setup_nav: function(){
 			// NAVIGATION
 			// Tag location and hierarchy
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
-			$("#spine nav li[class*=current], nav li[class*=active]").addClass("active").parents("li").addClass("active");
-			$("#spine nav li a[class*=current], nav li a[class*=active]").parents("li").addClass("active");
-			$("#spine .active").not(":has(.active)").addClass("dogeared");
+
+			// Use "current" or "active" on active li elements. Parents of these elements will automatically
+			// receive the "active" class. We check wildcards to accommodate inflexible platforms.
+			$("#spine nav li[class*=current], #spine nav li[class*=active]").addClass("active").parents("li").addClass("active");
+			$("#spine nav li a[class*=current], #spine nav li a[class*=active]").parents("li").addClass("active");
+
+			$("#spine .active:not(:has(.active))").addClass("dogeared");
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
@@ -424,9 +399,9 @@
 				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
 				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
 				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
-				
+
 				classes = "overview";
-				if (tar.closest(".parent").hasClass("dogeared")) {
+				if (tar.closest(".parent").is(".dogeared")) {
 					classes += " dogeared";
 				}
 				url = tar.attr("href");
@@ -435,7 +410,7 @@
 					tar.clone(true,true).appendTo( tar.parent("li").find("ul .overview:first") );
 					tar.parent("li").find("ul .overview:first a").html(title);
 				}
-				
+
 				// Disclosure
 				tar.on("click",function(e) {
 					e.preventDefault();
@@ -445,10 +420,8 @@
 
 			});
 			// External Links in nav
-			// this shouldn"t be done this way
-			$(".spine-sitenav a").filter(function() {
-				return this.hostname && this.hostname !== window.location.hostname;
-			}).addClass("external");
+			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
+
 		},
 
 		/**
@@ -456,7 +429,7 @@
 		 */
 		setup_printing: function(){
 			var self, spine, wsu_actions, print_controls;
-			
+
 			self=this;//hold to preserve scope
 			spine = self._get_globals("spine").refresh();
 			wsu_actions = self._get_globals("wsu_actions").refresh();
@@ -473,7 +446,6 @@
 				$(".print-controls").remove();
 			}
 
-			/* var print_timeout = setTimeout(function() { window.print(); }, 400); Cancel timeout? */
 			function print(e) {
 				if ( undefined !== e ) {
 					e.preventDefault();
@@ -481,13 +453,13 @@
 				wsu_actions.find(".opened").toggleClass("opened closed");
 				$("html").toggleClass("print");
 				spine.find("header").prepend(print_controls);
-				spine.find(".unshelved").removeClass("unshelved").addClass("shelved");
+				$(".unshelved").removeClass("unshelved").addClass("shelved");
 				$("#print-invoke").on("click",function() { window.print(); });
 				$("#print-cancel").on("click",print_cancel);
 				window.setTimeout(function() { printPage(); }, 400);
 			}
 			$("#wsu-print-tab button").click(print);
-	
+
 			// Shut a tool section
 			$("button.shut").on("click",function(e) {
 				e.preventDefault();

@@ -1,5 +1,6 @@
 @charset "UTF-8";
-$locality: '//repo.wsu.edu/spine/1/fonts/';
+@import 'vars/global';
+
 $stack: '"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif';
 
 $opensans-fonts: (
@@ -21,11 +22,11 @@ $opensans-fonts: (
 @each $opensans-font, $fontname in $opensans-fonts {
 	@font-face {
 		font-family: "OpenSans#{$fontname}";
-		src: url('#{$locality}OpenSans#{$fontname}.eot');
-		src: url('#{$locality}OpenSans#{$fontname}.eot?#iefix') format('embedded-opentype'),
-        	 url('#{$locality}OpenSans#{$fontname}.woff') format('woff'),
-			 url('#{$locality}OpenSans#{$fontname}.ttf') format('truetype'),
-			 url('#{$locality}OpenSans#{$fontname}.svg#OpenSans') format('svg');
+		src: url('#{$font_domain}/fonts/OpenSans#{$fontname}.eot');
+		src: url('#{$font_domain}/fonts/OpenSans#{$fontname}.eot?#iefix') format('embedded-opentype'),
+        	 url('#{$font_domain}/fonts/OpenSans#{$fontname}.woff') format('woff'),
+			 url('#{$font_domain}/fonts/OpenSans#{$fontname}.ttf') format('truetype'),
+			 url('#{$font_domain}/fonts/OpenSans#{$fontname}.svg#OpenSans') format('svg');
 		font-weight: normal;
 		font-style: normal;
 		}

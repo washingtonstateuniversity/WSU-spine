@@ -17,14 +17,14 @@
 	<link href="../spine.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 <!-- @if demo='true' -->
-	<link href="build/<!-- @echo build_version -->/spine.css" rel="stylesheet" type="text/css" />
+	<link href="spine.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 <!-- @if markup='true' || markup_min='true' -->
-	<link href="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.css" rel="stylesheet" type="text/css" />
 <!-- @endif -->
 	<!-- Your custom stylesheets here -->
 <!-- @if opensans='true' -->
-	<link href="../styles/opensans.css" rel="stylesheet" type="text/css" />
+	<link href="build/<!-- @echo build_version -->/styles/opensans.css" rel="stylesheet" type="text/css" />
 	<style>
 	@@include('blocks/opensans-styles.css', {})
 	</style>
@@ -34,8 +34,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 
 	<!-- SCRIPTS -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	<!-- @if markup!='true' && markup_min!='true' -->
 	<script type="text/javascript">
 		var spineoptions={
@@ -47,13 +47,13 @@
 						featureClass: "P",
 						style: "full",
 						maxRows: 12
-					} 
+					}
 				},
 				result:{
 					appendTo: "#spine-shortcuts",
 					showRelated:true,
 					relatedHeader:"<hr/>",
-					minLength: 2, 
+					minLength: 2,
 					template:"<li>%s</li>"
 				}
 			},
@@ -66,7 +66,7 @@
 				"Pinterest"
 			]
 				},
-			analytics:{ 
+			analytics:{
 				"google":{
 					analytics:{
 						"account_id":"UA-XXXXX-XX"
@@ -84,21 +84,22 @@
 	<script src="../spine.js"></script>
 	<!-- @endif -->
 	<!-- @if demo='true' -->
-	<script src="build/<!-- @echo build_version -->/spine.js"></script>
+	<script src="spine.js"></script>
 	<!-- @endif -->
 	<!-- @if markup='true' || markup_min='true' -->
-	<script src="http://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
+	<script src="https://repo.wsu.edu/spine/<!-- @echo build_version -->/spine.min.js"></script>
 	<!-- @endif -->
 
 	<!-- COMPATIBILITY -->
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<noscript><style>#spine .spine-sitenav ul ul li { display: block !important; }</style></noscript>
 
 	<!-- DOCS -->
 	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="help" href="http://brand.wsu.edu">
 
-	<!-- ANALYTICS -->
+	<!-- BASE URL -->
+	<base href="<!-- @echo basepath -->" />
 
 </head>
 
@@ -109,7 +110,7 @@
 <!-- @if cropped='true' -->
 	@@include('content/cropped.html', {})
 <!-- @endif -->
-<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif -->">
+<div id="binder" class="<!-- @if fixedGrid='true' --> fixed <!-- @endif --> <!-- @if fluidGrid='true' || behavior='fluid' --> fluid <!-- @endif --> <!-- @if fixedGrid!='true' && fluidGrid!='true' --> hybrid <!-- @endif --> <!-- @if cropped='true' --> spineless <!-- @endif --> <!-- @if broken='true' --> broken <!-- @endif -->">
 <!-- @if markup='true' -->
 <!-- GRID BEHAVIOR: Default behavior can be changed by changing "hybrid" to "fixed" or "fluid". -->
 <!-- @endif -->
@@ -209,7 +210,7 @@
 <section id="spine-navigation" class="spine-navigation">
 
 	<nav class="spine-sitenav">
-	
+
 		<ul>
 		<!-- @if navdata='true' && markup_min!='true' -->
 		<li><a href="link" data-foo="bar" >Data Foo</a><li>
@@ -224,7 +225,7 @@
 		@@include('blocks/nav_extralinks.html', {})
 		<!-- @endif -->
 		</ul>
-	
+
 	</nav>
 
 	@@include('blocks/nav-offsite.html', {})
@@ -237,7 +238,7 @@
 		<!-- @if markup='true' -->
 		<!--
 		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr, 
+		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
 		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
 		• Maximum number of channels is five -->
 		<!-- @endif -->
@@ -255,7 +256,7 @@
 			<li class="policies-link"><a href="http://policies.wsu.edu/">Policies</a></li>
 			<li class="copyright-link"><a href="http://copyright.wsu.edu">&copy;</a></li>
 		</ul>
-	</nav>	
+	</nav>
 </footer>
 
 </div><!--/glue-->
@@ -265,18 +266,18 @@
 </div><!--/cover-->
 </div><!--/jacket-->
 <!-- /WRAPPING -->
-	
+
 <!-- @if markup='true' || markup_min='true' -->
 <!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
 <!-- @endif -->
 @@include('blocks/contact_normal.html', {})
-	
+
 	<!-- @if malformed='true' -->
 		@@include('blocks/contact_malformed.html', {})
 	<!-- @endif -->
 
 	<!-- @if malformed='false' -->
-		<!-- NOTE: a normal working contact tab, just could have been better placed 
+		<!-- NOTE: a normal working contact tab, just could have been better placed
 			 then in the spine directly -->
 		@@include('blocks/contact_normal.html', {})
 	<!-- @endif -->

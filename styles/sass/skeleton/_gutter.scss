@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @mixin gutter($whole,$halve) {
 
 $gutters: (
@@ -40,14 +39,18 @@ $spacing: (
 	.spacing-#{$space} .halves.gutter .column.one,
 	.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+3),
 	.spacing-#{$space} .side-left.gutter .column.one,
-	.spacing-#{$space} .side-right.gutter .column.one {
+	.spacing-#{$space} .side-right.gutter .column.one,
+	.spacing-#{$space} .margin-left.gutter .column.one,
+	.spacing-#{$space} .margin-right.gutter .column.one {
 		padding-left: $dividend/$whole;
 		padding-right: $dividend/$halve;
 		}
 	.spacing-#{$space} .halves.gutter .column.two,
 	.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+4),
 	.spacing-#{$space} .side-left.gutter .column.two,
-	.spacing-#{$space} .side-right.gutter .column.two {
+	.spacing-#{$space} .side-right.gutter .column.two,
+	.spacing-#{$space} .margin-left.gutter .column.two,
+	.spacing-#{$space} .margin-right.gutter .column.two {
 		padding-left: ($dividend/$halve);
 		padding-right: $dividend/$whole;
 		}
@@ -157,8 +160,7 @@ $spacing: (
 		
 	}
 	
-	.gutterless,
-	.gutless {
+	.gutterless {
 		padding-left: 0px !important;
 		padding-right: 0px !important;
 		}

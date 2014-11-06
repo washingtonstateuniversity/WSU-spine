@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* ### Spineless */
+.spineless.fixed main,
+.spineless.hybrid main,
+.spineless .fixed main,
+.spineless .hybrid main {
+	margin-left: 0px;
+	width: 990px;
+	}
+.spineless.fluid main,
+.spineless .fluid main {
+	margin-left: 0px;
+	}
+.fluid main {
+	width: auto;
+	}
+section {
+	position: relative;
+	clear: both;
+	}

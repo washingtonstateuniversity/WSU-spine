@@ -1,24 +1,29 @@
 {
-  "name": "wsu-spine",
-  "version": "1.1.0",
-  "build_version": "1",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/washingtonstateuniversity/wsu-spine.git"
-  },
-  "file": "spine",
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-sass": "^0.7.3",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-env": "~0.4.1",
-    "grunt-include-replace": "~1.2.0",
-    "grunt-preprocess": "~4.0.0"
-  }
+	"name": "wsu-spine",
+	"version": "1.2.0",
+	"latest_stable": "1",
+	"build_version": "1",
+	"build_location": "",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/washingtonstateuniversity/wsu-spine.git"
+	},
+	"file": "spine",
+	"devDependencies": {
+		"load-grunt-tasks": "~0.6.0",
+		"glob": "~4.0.6",
+		"grunt": "~0.4.2",
+		"grunt-contrib-clean": "^0.6.0",
+		"grunt-contrib-concat": "~0.3.0",
+		"grunt-contrib-copy": "~0.4.1",
+		"grunt-contrib-csslint": "^0.2.0",
+		"grunt-contrib-cssmin": "~0.7.0",
+		"grunt-contrib-jshint": "~0.6.3",
+		"grunt-contrib-sass": "^0.7.3",
+		"grunt-contrib-uglify": "~0.2.2",
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-env": "~0.4.1",
+		"grunt-include-replace": "~1.2.0",
+		"grunt-preprocess": "~4.0.0"
+	}
 }

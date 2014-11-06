@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.column img:not(.unscaled),
+.row:not(.unscale) .column img,
+.column:not(.unscale) img {
+	max-width: 100%;
+	height: auto;
+	}
+img.unframed {
+	height: auto;
+	}
+	
+.fill-width,
+.full-width {
+	width: 100%;
+	height: auto;
+	}
+
+.fill-height {
+	height: 100%;
+	width: auto;
+	}
+
+.max-width {
+	max-width: 100%;
+	height: auto !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}

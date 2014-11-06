@@ -1,0 +1,113 @@
+@import '../vars/global';
+
+@mixin margin {
+
+	.margin .column,
+	.margined {
+		margin: $spacing-default; }
+	.margin.wide .column,
+	.margined.wide {
+		margin-left: $spacing-wide;
+		margin-right: $spacing-wide; }
+	.margin.narrow .column,
+	.margined.narrow {
+		margin-left: $spacing-narrow;
+		margin-right: $spacing-narrow; }
+	.margin.tall .column,
+	.margined.tall {
+		margin-top: $spacing-tall;
+		margin-bottom: $spacing-tall; }
+	.margin.short .column,
+	.margined.short {
+		margin-top: $spacing-short;
+		margin-bottom: $spacing-short; }
+		
+	// One by One
+	.margin-top .column,
+	.margined-top {
+		margin-top: $spacing-default; }
+	.margin-right .column,
+	.margined-right {
+		margin-right: $spacing-default; }
+	.margin-bottom .column,
+	.margined-bottom {
+		margin-bottom: $spacing-default; }
+	.margin-left .column,
+	.margined-left {
+		margin-left: $spacing-default; }
+		
+	// One by None
+	.margin-top-none .column,
+	.margined-top-none {
+		margin-top: 0; }
+	.margin-right-none .column,
+	.margined-right-none {
+		margin-right: 0; }
+	.margin-bottom-none .column,
+	.margined-bottom-none {
+		margin-bottom: 0; }
+	.margin-left-none .column,
+	.margined-left-none {
+		margin-left: 0; }
+		
+	// SIDES
+	.margin-sides .column,
+	.margined-sides {
+		margin-left: $spacing-default;
+		margin-right: $spacing-default; }
+	
+	// Wide
+	.margin-sides.wide .column,
+	.margined-sides.wide {
+		margin-left: $spacing-wide;
+		margin-right: $spacing-wide; }
+	.margin-right.wide .column,
+	.margined-right.wide {
+		margin-right: $spacing-wide; }
+	.margin-left.wide .column,
+	.margined-left.wide {
+		margin-left: $spacing-wide; }
+
+	// Narrow
+	.margin-sides.narrow .column,
+	.margined-sides.narrow {
+		margin-left: $spacing-narrow;
+		margin-right: $spacing-narrow; }
+	.margin-right.narrow .column,
+	.margined-right.narrow {
+		margin-right: $spacing-narrow; }
+	.margin-left.narrow .column,
+	.margined-left.narrow {
+		margin-left: $spacing-narrow; }
+		
+	// ENDS
+	.margin-ends .column,
+	.margined-ends {
+		margin-top: $spacing-default;
+		margin-bottom: $spacing-default; }
+	
+	// Tall
+	.margin-ends.tall .column,
+	.margined-ends.tall {
+		margin-top: $spacing-tall;
+		margin-bottom: $spacing-tall; }
+	.margin-top.tall .column,
+	.margined-top.tall {
+		margin-top: $spacing-tall; }
+	.margin-bottom.tall .column,
+	.margined-bottom.tall {
+		margin-bottom: $spacing-tall; }
+	
+	// Short
+	.margin-ends.short .column,
+	.margined-ends.short {
+		margin-top: $spacing-short;
+		margin-bottom: $spacing-short; }
+	.margin-top.short .column,
+	.margined-top.short {
+		margin-top: $spacing-short; }
+	.margin-bottom.short .column,
+	.margined-bottom.short {
+		margin-bottom: $spacing-short; }
+	
+	}

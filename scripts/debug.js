@@ -17,11 +17,11 @@ function dump(arr,limit,level) {
 		level_padding += "	";
 	}
 
-	if(typeof(arr) === "object") { //Array/Hashes/Objects 
+	if(typeof(arr) === "object") { //Array/Hashes/Objects
 		if(level<=limit){
 			for(item in arr) {
 				value = arr[item];
-				
+
 				if(typeof(value) === "object") { //If it is an array,
 					dumped_text += level_padding + "'" + item + "' ...\n";
 					dumped_text += dump(value,limit,level+1);
