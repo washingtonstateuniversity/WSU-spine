@@ -110,7 +110,7 @@
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
-button#shelve {
+.shelved button#shelve,.unshelved button#shelve {
 	height: 50px;
 	width: 100px;
 	border: none;
@@ -118,7 +118,7 @@ button#shelve {
 	left: 0px;
 	top: 0px;
 	z-index: 100;
-	display: none;
+	/*display: none;*/
 	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 	outline: none;
 	}

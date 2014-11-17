@@ -129,6 +129,9 @@
 
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
+					spine.removeClass("shelved");
+				}else{
+					spine.addClass("shelved");
 				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
 				$(document).trigger("scroll");
