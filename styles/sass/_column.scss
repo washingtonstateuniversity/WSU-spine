@@ -106,6 +106,7 @@
 	overflow: hidden;
 	white-space: nowrap;
 	position: relative;
+	z-index:99;
 	}
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
@@ -117,7 +118,7 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	z-index:999999;
+	z-index:100;
 	/*display: none;*/
 	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 	outline: none;
