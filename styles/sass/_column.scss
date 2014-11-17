@@ -112,7 +112,7 @@
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
-.shelved button#shelve,.unshelved button#shelve {
+.shelved a#shelve,.unshelved a#shelve {
 	height: 50px;
 	width: 100px;
 	border: none;
@@ -120,11 +120,11 @@
 	left: 0px;
 	top: 0px;*/
 	z-index:100;
-	/*display: none;*/
+	display:block;
 	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 	outline: none;
 	}
-.shelved button#shelve,.nosvg .unshelved button#shelve {
+.shelved a#shelve,.nosvg .unshelved a#shelve {
 	background: #00ABFF url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 }
 

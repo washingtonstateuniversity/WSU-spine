@@ -266,7 +266,7 @@
 				});
 			}
 
-			$("#glue > header").prepend("<button id='shelve' name=''/>");
+			$("#glue > header").prepend("<a id='shelve' href='#'></a>");
 			$("#shelve").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
