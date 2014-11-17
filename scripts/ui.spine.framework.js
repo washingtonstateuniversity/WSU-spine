@@ -234,6 +234,20 @@
 			self.nav_state.scroll_dif=0;
 			self.nav_state.positionLock=0;
 
+
+
+			
+			$("header button").on("click",function(e) {
+				e.preventDefault();
+				spine.toggleClass("unshelved shelved");
+			});
+
+			main.on("click swipeleft", function() {
+				if ( spine.is(".unshelved") ) {
+					spine.toggleClass("shelved unshelved");
+				}
+			});
+			
 			if($(".ios .hybrid .unshelved").length <= 0){
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
@@ -265,19 +279,6 @@
 					}
 				});
 			}
-
-			
-			$("header button").on("click",function(e) {
-				e.preventDefault();
-				spine.toggleClass("unshelved shelved");
-			});
-
-			main.on("click swipeleft", function() {
-				if ( spine.is(".unshelved") ) {
-					spine.toggleClass("shelved unshelved");
-				}
-			});
-
 			// Add skimming
 			$(document).scroll(function() {
 				var top;
