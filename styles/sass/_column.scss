@@ -117,7 +117,7 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	z-index: 100;
+	z-index:999999;
 	/*display: none;*/
 	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 	outline: none;
