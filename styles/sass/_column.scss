@@ -100,7 +100,7 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 150px auto;
-	background-color: red;
+	background-color: transparent;
 	height: 155px;
 	display: block;
 	text-indent: 120%;
@@ -112,21 +112,19 @@
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
-.shelved a#shelve,.unshelved a#shelve {
+.shelved button#shelve,.unshelved button#shelve {
 	height: 50px;
 	width: 100px;
 	border: none;
-	/*position: absolute;
+	position: absolute;
 	left: 0px;
-	top: 0px;*/
+	top: 0px;
 	z-index:100;
 	display:block;
 	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 	outline: none;
 	}
-.shelved a#shelve,.nosvg .unshelved a#shelve {
-	background: #00ABFF url('#{$locality}/icons/menu.svg') 20px center no-repeat;
-}
+
 
 
 
