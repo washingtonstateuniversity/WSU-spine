@@ -91,6 +91,10 @@
 				$("html").addClass("ios");
 				self.setup_nav_scroll();
 			}
+			if(!$.svg_enabled()){
+				$("html").addClass("nosvg");
+			}
+			
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
