@@ -91,6 +91,10 @@
 				$("html").addClass("ios");
 				self.setup_nav_scroll();
 			}
+			if(!$.svg_enabled()){
+				$("html").addClass("nosvg");
+			}
+			
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
@@ -129,6 +133,9 @@
 
 				if($(".spine-header").height()>50){
 					spine.removeClass("unshelved");
+					spine.removeClass("shelved");
+				}else{
+					spine.addClass("shelved");
 				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
 				$(document).trigger("scroll");
@@ -218,7 +225,7 @@
 		 */
 		setup_spine: function(){
 			var self,spine,glue,main,viewport_ht,spine_ht,height_dif,positionLock;
-
+			$("#glue > header").prepend("<button id='shelve' />");
 			self = this;
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
@@ -227,6 +234,20 @@
 			self.nav_state.scroll_dif=0;
 			self.nav_state.positionLock=0;
 
+
+
+			
+			$("header button").on("click",function(e) {
+				e.preventDefault();
+				spine.toggleClass("unshelved shelved");
+			});
+
+			main.on("click swipeleft", function() {
+				if ( spine.is(".unshelved") ) {
+					spine.toggleClass("shelved unshelved");
+				}
+			});
+			
 			if($(".ios .hybrid .unshelved").length <= 0){
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
@@ -258,19 +279,6 @@
 					}
 				});
 			}
-
-			$("#glue > header").append("<button id='shelve' />");
-			$("#shelve").on("click",function(e) {
-				e.preventDefault();
-				spine.toggleClass("unshelved shelved");
-			});
-
-			main.on("click swipeleft", function() {
-				if ( spine.is(".unshelved") ) {
-					spine.toggleClass("shelved unshelved");
-				}
-			});
-
 			// Add skimming
 			$(document).scroll(function() {
 				var top;
