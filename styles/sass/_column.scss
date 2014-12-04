@@ -112,6 +112,10 @@
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
+button#shelve {
+  display:none;
+	}
+
 .shelved button#shelve,.unshelved button#shelve {
 	height: 50px;
 	width: 100px;
