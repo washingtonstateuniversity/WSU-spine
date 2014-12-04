@@ -1,7 +1,7 @@
 @font-face {
   font-family: "OpenSans";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans,
@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: "OpenSans-Bold";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Bold.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Bold.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Bold.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Bold.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Bold.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Bold.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Bold.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Bold.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-bold,
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: "OpenSans-BoldItalic";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-BoldItalic.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-BoldItalic.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-BoldItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-BoldItalic.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-BoldItalic.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-BoldItalic.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-BoldItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-BoldItalic.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-bolditalic,
@@ -30,8 +30,8 @@
 
 @font-face {
   font-family: "OpenSans-CondBold";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondBold.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondBold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondBold.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondBold.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondBold.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondBold.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondBold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondBold.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondBold.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondBold.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-condbold,
@@ -40,8 +40,8 @@
 
 @font-face {
   font-family: "OpenSans-CondLight";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLight.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLight.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLight.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLight.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLight.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLight.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLight.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLight.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLight.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLight.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-condlight,
@@ -50,8 +50,8 @@
 
 @font-face {
   font-family: "OpenSans-CondLightItalic";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLightItalic.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLightItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLightItalic.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLightItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-CondLightItalic.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLightItalic.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLightItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLightItalic.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLightItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-CondLightItalic.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-condlightitalic,
@@ -60,8 +60,8 @@
 
 @font-face {
   font-family: "OpenSans-ExtraBold";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBold.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBold.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBold.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBold.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBold.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBold.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBold.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBold.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-extrabold,
@@ -70,8 +70,8 @@
 
 @font-face {
   font-family: "OpenSans-ExtraBoldItalic";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBoldItalic.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBoldItalic.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-ExtraBoldItalic.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBoldItalic.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBoldItalic.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-ExtraBoldItalic.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-extrabolditalic,
@@ -80,8 +80,8 @@
 
 @font-face {
   font-family: "OpenSans-Italic";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Italic.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Italic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Italic.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Italic.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Italic.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Italic.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Italic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Italic.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Italic.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Italic.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-italic,
@@ -90,8 +90,8 @@
 
 @font-face {
   font-family: "OpenSans-Light";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Light.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Light.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Light.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Light.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Light.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Light.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Light.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Light.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-light,
@@ -100,8 +100,8 @@
 
 @font-face {
   font-family: "OpenSans-LightItalic";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-LightItalic.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-LightItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-LightItalic.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-LightItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-LightItalic.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-LightItalic.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-LightItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-LightItalic.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-LightItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-LightItalic.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-lightitalic,
@@ -110,8 +110,8 @@
 
 @font-face {
   font-family: "OpenSans-Semibold";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Semibold.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Semibold.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Semibold.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-Semibold.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Semibold.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Semibold.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Semibold.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-Semibold.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-semibold,
@@ -120,8 +120,8 @@
 
 @font-face {
   font-family: "OpenSans-SemiBoldItalic";
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-SemiBoldItalic.eot");
-  src: url("//repo.wsu.edu/spine/1/fonts/OpenSans-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-SemiBoldItalic.woff") format("woff"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-SemiBoldItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/1/fonts/OpenSans-SemiBoldItalic.svg#OpenSans") format("svg");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-SemiBoldItalic.eot");
+  src: url("//repo.wsu.edu/spine/develop/fonts/OpenSans-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-SemiBoldItalic.woff") format("woff"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-SemiBoldItalic.ttf") format("truetype"), url("//repo.wsu.edu/spine/develop/fonts/OpenSans-SemiBoldItalic.svg#OpenSans") format("svg");
   font-weight: normal;
   font-style: normal; }
 .opensans-semibolditalic,
