@@ -2,6 +2,10 @@
 
 ## 1.3.0 (In progress)
 
+## 1.2.1 (December 4, 2014)
+
+* Fix an issue where the mobile menu icon was not appearing on some devices.
+
 ## 1.2.0 (November 6, 2014)
 
 ### Framework Changes
