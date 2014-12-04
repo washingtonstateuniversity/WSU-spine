@@ -100,28 +100,37 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 150px auto;
+	background-color: transparent;
 	height: 155px;
 	display: block;
 	text-indent: 120%;
 	overflow: hidden;
 	white-space: nowrap;
 	position: relative;
+	z-index:99;
 	}
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
 button#shelve {
+  display:none;
+	}
+
+.shelved button#shelve,.unshelved button#shelve {
 	height: 50px;
 	width: 100px;
 	border: none;
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	z-index: 100;
-	display: none;
+	z-index:100;
+	display:block;
 	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
 	outline: none;
 	}
+
+
+
 
 .spine-actions-tabs,
 .spine-nav,
