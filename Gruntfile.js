@@ -44,7 +44,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('dev', [
 		'jshint',
 		'env:dev',
-		'build'
+		'build',
+		'copy:dev'
 	]);
 
 	grunt.registerTask('build', [
@@ -55,7 +56,7 @@ module.exports = function(grunt) {
 		'autoprefixer',
 		'cssmin',
 		'uglify',
-		'copy',
+		'copy:main',
 		'includereplace',
 		'preprocess:html',
 		'preprocess:opensans',
@@ -80,6 +81,7 @@ module.exports = function(grunt) {
 		'preprocess:tu_navdata',
 		'preprocess:markup',
 		'preprocess:markup_min',
-		'preprocess:demo'
+		'preprocess:demo',
+		'preprocess:js_units'
 	]);
 };

@@ -10,5 +10,10 @@ module.exports = {
 			{ expand: true, src: ['styles/jqueryui.css', 'styles/styles.css'], dest: '<%= config.build %>/' },
 			{ expand: true, src: ['spine.html','spine.min.html','authors.txt','favicon.ico'], dest: '<%= config.build %>/' }
 		]
+	},
+	dev: {
+		files: [ // This can be drastically simplified by putting this stuff in a `src` folder.
+			{ flatten: true, expand: true, src: ['test/js/*'], dest: '<%= config.build %>/tests/js/'},
+		]
 	}
 }
