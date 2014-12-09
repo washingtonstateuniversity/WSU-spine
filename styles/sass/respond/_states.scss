@@ -19,6 +19,7 @@
 		
 		#glue {
 			width: 298px;
+			margin-top: 50px;
 			}
 		#glue:before {
 			left: -702px;
@@ -97,7 +98,7 @@
 		#wsu-actions section {
 			width: 298px;
 			}
-		}	
+		}
 		
 	.row.side-right .column {
 		width: 100%;
@@ -109,8 +110,7 @@
 		height: 197px;
 		margin-left: 0px;
 		}
-	
-	
+
 	}
 	
 @mixin navscroll {
@@ -119,18 +119,16 @@
     
 	    /*top: 0px !important;*/
 	    min-height: 0 !important;
-
+		
 		#glue:before {
-			top: 50px;
+			xxtop: 50px;
 		}
-	
 
+
+		
 		#wsu-actions {
 			padding-top: 0px !important;
 		}
-		/*.spine-navigation {
-			padding-bottom: 0px !important;
-		}*/
 			
 		#scroll {
 			overflow-y: scroll;
