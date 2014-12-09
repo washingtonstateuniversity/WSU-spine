@@ -1,0 +1,76 @@
+	<!-- SPINE -->
+	<div id="spine" class="shelved bleed crimson">
+		<div id="glue" class="spine-glue">
+		
+			<header class="spine-header">
+				<a href="http://www.wsu.edu/" id="wsu-signature" class="spine-signature">Washington State University</a>
+			</header>
+			
+			<!-- ACTIONS -->
+			<section id="wsu-actions" class="spine-actions">
+				<!-- Tabs -->
+				<ul id="wsu-actions-tabs" class="spine-actions-tabs clearfix">
+					<!--<li id="wsu-search-tab" class="spine-search-tab closed"><button>Search</button></li>
+					This will be taken out for the mean time, but will add it back in later.
+					-->
+					<li id="wsu-contact-tab" class="spine-contact-tab closed"><button>Contact</button></li>
+					<li id="wsu-share-tab" class="spine-share-tab closed"><button>Share</button></li>
+					<li id="wsu-print-tab" class="spine-print-tab closed"><button>Print</button></li>
+				</ul>
+			</section><!--/#wsu-actions-->
+	
+			<nav id="spine-navigation" class="spine-navigation">
+				<nav id="spine-sitenav" class="spine-sitenav">
+					<ul>
+					{% for title, link in nav -%}
+					{% if link=="[object Object]" -%}
+						<li>
+						{% for ctitle, clink in link -%}
+							{% if loop.first -%}
+								<a href="{{ clink }}" {% if clink|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ ctitle }}</a>
+								<ul>
+							{% else -%}
+								<li><a href="{{ clink }}">{{ ctitle }}</a></li>
+							{% endif -%}
+							{%- if loop.last %}
+								</ul>
+							{% endif -%}
+						{%- endfor %}
+						</li>
+					{% else %}
+						<li><a href="{{ link }}" {% if link|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ title }}</a></li>
+					{%- endif %}
+					{% endfor -%}
+					</ul>
+				</nav>
+				<nav id="spine-offsitenav" class="spine-offsitenav">
+					<ul>
+						<li><a href="//washingtonstateuniversity.github.io/WSUMAGE-base/">WSU Magento deployment</a></li>
+					</ul>
+				</nav>
+			</nav><!-- #navigation -->
+	
+			<!-- Social and Global Links -->
+			<footer class="spine-footer">
+				<!--<nav id="wsu-social-channels" class="spine-social-channels">
+					<ul>
+						<li id="facebook"><a href="http://facebook.com/wsupullman">Facebook</a></li>
+						<li id="twitter"><a href="http://twitter.com/wsupullman">Twitter</a></li>
+						<li id="youtube"><a href="http://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+						<li id="directory"><a href="http://social.wsu.edu">Social</a></li>
+					</ul>
+				</nav>-->
+				<nav id="wsu-global-links" class="spine-global-links">
+					<ul>
+						<li id="zzusis"><a href="http://zzusis.wsu.edu/">Zzu<strong>sis</strong></a></li>
+						<li id="access"><a href="http://access.wsu.edu/">Access</a></li>
+						<li id="policies"><a href="http://policies.wsu.edu/">Policies</a></li>
+						<li id="copyright"><a href="http://copyright.wsu.edu">&nbsp;&copy;</a></li>
+					</ul>
+				</nav>	
+				<!-- <small id="copyright"><a href="http://copyright.wsu.edu">&copy; Washington State University</a></small> -->
+			</footer>
+	
+		</div><!--/glue-->
+	</div><!--/spine-->
+	<!-- /SPINE -->

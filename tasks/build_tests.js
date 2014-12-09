@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 			util = require('util');
 		var nunjucks = require('nunjucks'),
 			markdown = require('nunjucks-markdown');
-		var env = nunjucks.configure('templates');
+		var env = nunjucks.configure('test');
 		env.addFilter('indexof', function(str, cmpstr) {
 			return str.indexOf(cmpstr);
 		});
@@ -30,9 +30,9 @@ module.exports = function(grunt) {
 
 		sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
-		console.log("site_obj: %j", site_obj);
+		console.log("site_obj: %j", sitemap);
 		
-		return true;
+		//return true;
 		
 		
 		/*
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
 
 				var site_obj = sitemap;
 				var page_obj = site_obj.pages[key];
-				var sourceFile = 'templates/'+page_obj.template+'.tmpl';
+				var sourceFile = 'test/preprocess/'+page_obj.template+'.tmpl';
 				//var tmpFile = 'build/deletable.tmp';
 				var root = page_obj.root.replace(new RegExp("[\/]+$", "g"), "");
 				

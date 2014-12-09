@@ -1,0 +1,34 @@
+{% set page = pages[current_build] -%}
+{% include "preprocess/blocks/head.html" -%}
+<body>
+	<!-- WRAPPING -->
+	<div id="jacket">
+		<div id="binder" class="fluid max-1782 xlarge">
+			<!-- CONTENT -->
+			<main>
+			<!-- Responsive Sections -->
+			<section class="row side-right gutter pad short">
+			
+				<div class="column one">
+					<article class="wrapper markdown-body">
+					{#% include "pages/"+current_build+".md" -%#}
+					</article>
+				</div><!--/column-->
+			
+				<div class="column two">
+					<aside>
+						<section>
+						{% include "preprocess/blocks/sidebar.md" -%}
+						</section>
+					</aside>
+				</div><!--/column-->
+			</section>
+			</main>
+			<!-- /CONTENT -->
+			{% include "preprocess/blocks/spine.html" -%}
+		</div><!--/cover-->
+	</div><!--/jacket-->
+	<!-- /WRAPPING -->
+	{#% include "preprocess/blocks/analytics.html" -%#}
+</body>
+</html>

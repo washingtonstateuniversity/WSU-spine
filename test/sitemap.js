@@ -5,21 +5,20 @@ module.exports = {
 				"google_analytics":""
 			},
 			"page_defaults":{
-				"root":"../site/",
-				"nav_root":"site/",
+				"root":"build/tests/",
+				"nav_root":"tests/",
 				"template":"main"
 			},
 			"pages":{
 				"index":{
 					"name":"index",
 					"nav_link":"",
-					"root":"../",
-					"title":"WSU Serverbase",
+					"title":"WSU Test unit",
 					"vars":{
 						"showstuff":true
 					}
 				},
-				"development":{
+				/*"development":{
 					"name":"development",
 					"title":"WSU Serverbase development guide",
 					"nav_title":"Development",
@@ -47,7 +46,7 @@ module.exports = {
 					"vars":{
 						"showstuff":true
 					}
-				}
+				}*/
 			}
 		};
 		
