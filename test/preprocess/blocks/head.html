@@ -14,14 +14,14 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 
 	<!-- STYLESHEETS -->
-	{% if not page.markup and not page.markup_min -%}
-		<link href="{{ "../" if page.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
+	{% if not page_var.markup and not page_var.markup_min -%}
+		<link href="{{ "../" if page_var.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
 	{% else -%}
-		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
+		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
 	{% endif -%}
 
 	<!-- Your custom stylesheets here -->
-	{% if page.opensans -%}
+	{% if page_var.opensans -%}
 		<link href="build/{{ build_version }}/styles/opensans.css" rel="stylesheet" type="text/css" />
 		<style>
 		{% include "preprocess/blocks/opensans-styles.css" -%}
@@ -37,7 +37,7 @@
 	
 	<script type="text/javascript">
 		var spineoptions={
-			{% if not page.markup and not page.markup_min -%}
+			{% if not page_var.markup and not page_var.markup_min -%}
 			search:{
 				providers:{
 					local:{
@@ -79,10 +79,10 @@
 			{% endif -%}
 		};
 	</script>
-	{% if not page.markup and not page.markup_min -%}
-	<script src="{{ "../" if page.demo else "" }}spine.js"></script>
+	{% if not page_var.markup and not page_var.markup_min -%}
+	<script src="{{ "../" if page_var.demo else "" }}spine.js"></script>
 	{% else %}
-	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page.markup_min else "" }}.js"></script>
+	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.js"></script>
 	{% endif -%}
 
 
@@ -94,7 +94,7 @@
 	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="help" href="http://brand.wsu.edu">
 
-	{% if not page.demo -%}
+	{% if not page_var.demo -%}
 	<!-- BASE URL -->
 	<base href="{{ basepath }}" />
 	{% endif -%}
