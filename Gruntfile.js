@@ -32,7 +32,8 @@ module.exports = function(grunt) {
 	grunt.initConfig(config);
 
 	require('load-grunt-tasks')(grunt);
-
+	grunt.loadTasks('tasks');
+	
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
 
@@ -45,6 +46,7 @@ module.exports = function(grunt) {
 		'jshint',
 		'env:dev',
 		'build',
+		'build_tests',
 		'copy:dev'
 	]);
 
