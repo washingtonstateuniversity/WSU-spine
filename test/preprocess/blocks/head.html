@@ -9,32 +9,94 @@
 	<meta charset="utf-8">
 	
 	<title>{{ page.title }} | Washington State University</title>
-	
+
 	<!-- FAVICON -->
-	<link rel="shortcut icon" href="//repo.wsu.edu/spine/1/favicon.ico" />
-	
+	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
+
 	<!-- STYLESHEETS -->
-	<link href="//repo.wsu.edu/spine/1/spine.min.css" rel="stylesheet" type="text/css" />
+	{% if not page.markup and not page.markup_min -%}
+		<link href="{{ "../" if page.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
+	{% else -%}
+		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
+	{% endif -%}
+
 	<!-- Your custom stylesheets here -->
-	<link href="/WSU-Web-Serverbase/site/stylesheets/git_styles.css" rel="stylesheet" type="text/css" />
+	{% if page.opensans -%}
+		<link href="build/{{ build_version }}/styles/opensans.css" rel="stylesheet" type="text/css" />
+		<style>
+		{% include "preprocess/blocks/opensans-styles.css" -%}
+		</style>
+	{% endif -%}
+
 	<!-- RESPOND -->
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
-	
+
 	<!-- SCRIPTS -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-	<script src="//repo.wsu.edu/spine/1/spine.min.js"></script>
-	<!-- Your supplementary scripts here (jQuery Mobile, modernizr, site specific scripts, etcetera) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	
+	<script type="text/javascript">
+		var spineoptions={
+			{% if not page.markup and not page.markup_min -%}
+			search:{
+				providers:{
+					local:{
+						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+						dataType: "jsonp",
+						featureClass: "P",
+						style: "full",
+						maxRows: 12
+					}
+				},
+				result:{
+					appendTo: "#spine-shortcuts",
+					showRelated:true,
+					relatedHeader:"<hr/>",
+					minLength: 2,
+					template:"<li>%s</li>"
+				}
+			},
+			social:{
+				provider:"WSU_share",
+				script_url:"//repo.wsu.edu/wsu_share/1/",
+				channels:[
+					"facebook",
+					"twitter",
+					"Pinterest"
+				]
+				},
+			analytics:{
+				"google":{
+					analytics:{
+						"account_id":"UA-XXXXX-XX"
+					},
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				},
+				"bing":{
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				}
+			}
+			{% endif -%}
+		};
+	</script>
+	{% if not page.markup and not page.markup_min -%}
+	<script src="{{ "../" if page.demo else "" }}spine.js"></script>
+	{% else %}
+	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page.markup_min else "" }}.js"></script>
+	{% endif -%}
+
+
 	<!-- COMPATIBILITY -->
-	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
-	
+	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<noscript><style>#spine .spine-sitenav ul ul li { display: block !important; }</style></noscript>
+
 	<!-- DOCS -->
 	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="help" href="http://brand.wsu.edu">
-	
-	<!-- ANALYTICS -->
-	<base href="http://washingtonstateuniversity.github.io/WSU-Web-Serverbase/"/>
+
+	{% if not page.demo -%}
+	<!-- BASE URL -->
+	<base href="{{ basepath }}" />
+	{% endif -%}
+
 </head>

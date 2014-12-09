@@ -14,6 +14,7 @@ module.exports = {
 					"name":"index",
 					"nav_link":"",
 					"title":"WSU Test unit",
+					"demo":true,
 					"vars":{
 						"showstuff":true
 					}
