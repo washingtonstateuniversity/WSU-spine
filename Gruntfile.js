@@ -39,7 +39,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('prod', [
 		'env:prod',
-		'build'
+		'build',
+		'copy:main',
 	]);
 
 	grunt.registerTask('dev', [
@@ -47,6 +48,7 @@ module.exports = function(grunt) {
 		'env:dev',
 		'build',
 		'build_tests',
+		'copy:main',
 		'copy:dev'
 	]);
 
@@ -58,32 +60,5 @@ module.exports = function(grunt) {
 		'autoprefixer',
 		'cssmin',
 		'uglify',
-		'copy:main',
-		/*'includereplace',
-		'preprocess:html',
-		'preprocess:opensans',
-		'preprocess:columns',
-		'preprocess:spacing',
-		'preprocess:mainheader',
-		'preprocess:typography',
-		'preprocess:broken',
-		'preprocess:unbound',
-		'preprocess:ui',
-		'preprocess:tu_search_tabs',
-		'preprocess:tu_contact_malformed',
-		'preprocess:tu_contact_filled',
-		'preprocess:tu_contact_double',
-		'preprocess:tu_overly',
-		'preprocess:tu_overly_long',
-		'preprocess:tu_overly_linked',
-		'preprocess:tu_cropped',
-		'preprocess:grid_fluid',
-		'preprocess:grid_hybrid',
-		'preprocess:grid_fixed',
-		'preprocess:tu_navdata',
-		'preprocess:markup',
-		'preprocess:markup_min',
-		'preprocess:demo',
-		'preprocess:js_units'*/
 	]);
 };
