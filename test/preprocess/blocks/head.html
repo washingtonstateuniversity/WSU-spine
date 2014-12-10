@@ -15,7 +15,7 @@
 
 	<!-- STYLESHEETS -->
 	{% if not page_var.markup and not page_var.markup_min -%}
-		<link href="{{ "../" if page_var.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
+		<link href="{{ "../" if not page_var.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
 	{% else -%}
 		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
 	{% endif -%}
@@ -80,7 +80,7 @@
 		};
 	</script>
 	{% if not page_var.markup and not page_var.markup_min -%}
-	<script src="{{ "../" if page_var.demo else "" }}spine.js"></script>
+	<script src="{{ "../" if not page_var.demo else "" }}spine.js"></script>
 	{% else %}
 	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.js"></script>
 	{% endif -%}

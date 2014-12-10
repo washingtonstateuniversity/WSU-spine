@@ -195,12 +195,6 @@ module.exports = {
 						unit_tests: true
 					}
 				}
-				
-				
-				
-				
-				
-				
 				/*"development":{
 					name : "development",
 					title : "WSU Serverbase development guide",
@@ -212,22 +206,6 @@ module.exports = {
 					"#vagrant-options":"Vagrant Options",
 						"#how-to-add-a-web-app-":"Load Web Apps",
 						"#sample-working-file":"Sample Config"
-					}
-				},
-				"production":{
-					name : "production",
-					title : "WSU Server Production Environment",
-					"nav_title":"Production",
-					vars : {
-					"showstuff":true
-					}
-				},
-				"troubleshooting":{
-					name : "troubleshooting",
-					title : "Trouble Shooting",
-					"nav_title":"Trouble Shooting",
-					vars : {
-					"showstuff":true
 					}
 				}*/
 			}
