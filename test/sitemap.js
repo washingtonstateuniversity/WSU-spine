@@ -1,19 +1,19 @@
 module.exports = {
 	get_site_obj: function () {
 		var site_obj = {
-			"globals":{
-				"google_analytics":""
+			globals:{
+				google_analytics:""
 			},
-			"page_defaults":{
-				"root":"build/tests/",
-				"nav_root":"tests/",
-				"template":"main"
+			page_defaults:{
+				root : "build/tests/",
+				nav_root : "tests/",
+				template : "main"
 			},
-			"pages":{
+			pages:{
 				index:{
-					"name":"index",
+					name : "index",
 					nav_link : "",
-					"title":"WSU Test unit",
+					title : "WSU Test unit",
 					vars : {
 						"demo":true,
 					}
@@ -39,7 +39,7 @@ module.exports = {
 				},
 				opensans : {
 					nav_link : 'opensans.html',
-					"title":"Testing Open Sans",
+					title : "Testing Open Sans",
 					vars : {
 						opensans : true,
 						typography: true
@@ -202,8 +202,8 @@ module.exports = {
 				
 				
 				/*"development":{
-					"name":"development",
-					"title":"WSU Serverbase development guide",
+					name : "development",
+					title : "WSU Serverbase development guide",
 					"nav_title":"Development",
 					vars : {
 					"showstuff":true
@@ -215,16 +215,16 @@ module.exports = {
 					}
 				},
 				"production":{
-					"name":"production",
-					"title":"WSU Server Production Environment",
+					name : "production",
+					title : "WSU Server Production Environment",
 					"nav_title":"Production",
 					vars : {
 					"showstuff":true
 					}
 				},
 				"troubleshooting":{
-					"name":"troubleshooting",
-					"title":"Trouble Shooting",
+					name : "troubleshooting",
+					title : "Trouble Shooting",
 					"nav_title":"Trouble Shooting",
 					vars : {
 					"showstuff":true
