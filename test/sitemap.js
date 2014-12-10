@@ -5,114 +5,137 @@ module.exports = {
 				google_analytics:""
 			},
 			page_defaults:{
-				root : "build/tests/",
+				file_root : "build/tests/",
 				nav_root : "tests/",
 				template : "main"
 			},
 			pages:{
-				index:{
-					name : "index",
-					nav_link : "",
-					title : "WSU Test unit",
-					vars : {
-						"demo":true,
-					}
-				},
+				/* note that these first files are not inclucded in the test suite nav */
 				markup : {
-					nav_link : 'spine.html',
-					root : "../",
+					file : 'spine.min.html',
+					file_root : "",
+					nav:false,
 					vars : {
 						markup : true,
 						content: true,
 					}
 				},
 				markup_min : {
-					nav_link : 'spine.min.html',
-					root : "../",
+					file : 'spine.min.html',
+					file_root : "",
+					nav:false,
 					vars : {
 						markup_min : true
 					}
 				},
+				/* end of navless */
+				index:{
+					name : "index",
+					title : "WSU Test unit",
+					nav:{
+						nav_link : "index.html",
+					},
+				},
 				demo : {
-					nav_link : 'demo.html',
-					nav_title:"Demo",
 					title : "Basic Demo",
+					nav:{
+						nav_link : 'demo.html',
+						nav_title:"Demo",
+					},
 					vars : {
 						demo : true
 					}
 				},
 				opensans : {
-					nav_link : 'opensans.html',
-					nav_title:"Open Sans",
 					title : "Testing Open Sans",
+					nav:{
+						nav_link : 'opensans.html',
+						nav_title:"Open Sans",
+					},
 					vars : {
 						opensans : true,
 						typography: true
 					}
 				},
 				columns : {
-					nav_link : 'columns.html',
-					nav_title:"Columns",
 					title: 'Testing Columns',
+					nav:{
+						nav_link : 'columns.html',
+						nav_title:"Columns",
+					},
 					vars : {
 						columns : true,
 					}
 				},
 				spacing : {
-					nav_link : 'spacing.html',
-					nav_title:"Gutters and Pads",
 					title: 'Testing Gutters and Pads',
+					nav:{
+						nav_link : 'spacing.html',
+						nav_title:"Gutters and Pads",
+					},
 					vars : {
 						spacing : true,
 					}
 				},
 				mainheader : {
-					nav_link : 'mainheader.html',
-					nav_title:"Main Header",
 					title: 'Testing the Main Header',
+					nav:{
+						nav_link : 'mainheader.html',
+						nav_title:"Main Header",
+					},
 					vars : {
 						mainheader : true,
 						content: true
 					}
 				},
 				typography : {
-					nav_link : 'typography.html',
 					title: 'Testing Typography',
+					nav:{
+						nav_link : 'typography.html',
+					},
 					vars : {
 						typography: true
 					}
 				},
 				grid_fluid : {
-					nav_link : 'grid_fluid.html',
-					nav_title:"Fluid and Flex",
 					title: 'Testing Fluid Grid',
+					nav:{
+						nav_link : 'grid_fluid.html',
+						nav_title:"Fluid and Flex",
+					},
 					vars : {
 						behavior : 'fluid',
 						content: true
 					}
 				},
 				grid_hybrid : {
-					nav_link : 'grid_hybrid.html',
-					nav_title:"Fold then Flex",
 					title: 'Testing Hybrid Grid',
+					nav:{
+						nav_link : 'grid_hybrid.html',
+						nav_title:"Fold then Flex",
+					},
 					vars : {
 						hybridGrid : true,
 						content: true
 					}
 				},
 				grid_fixed : {
-					nav_link : 'grid_fixed.html',
-					nav_title:"Fixed and Fold",
 					title: 'Testing Fixed Grid',
+					nav:{
+						nav_link : 'grid_fixed.html',
+						nav_title:"Fixed and Fold",
+					},
 					vars : {
 						fixedGrid : true,
 						content: true
 					}
 				},
 				broken : {
-					nav_link : 'binding_broken.html',
-					nav_title : 'Broken Binding',
 					title: 'Testing Broken Binding',
+					nav:{
+						nav_link : 'binding_broken.html',
+						nav_title : 'Broken Binding',
+					},
 					vars : {
 						broken : true,
 						behavior : 'fluid',
@@ -120,32 +143,41 @@ module.exports = {
 					}
 				},
 				unbound : {
-					nav_link : 'unbound.html',
-					nav_title : 'Unbound and Rebound',
 					title: 'Testing Unbound and Rebound',
+					nav:{
+						nav_link : 'unbound.html',
+						nav_title : 'Unbound and Rebound',
+					},
 					vars : {
 						unbound : true
 					}
 				},
 				ui : {
-					nav_link : 'ui.html',
-					nav_title: 'Behavior',
 					title: 'User Interaction Elements',
+					nav:{
+						nav_link : 'ui.html',
+						nav_title: 'Behavior',
+					},
 					vars : {
 						ui : true
 					}
 				},
 				search_tabs : {
-					nav_link : 'search_tabs.html',
-					nav_title : 'Local Defined Search',
+					title: 'Testing serach tab',
+					nav:{
+						nav_link : 'search_tabs.html',
+						nav_title : 'Local Defined Search',
+					},
 					vars : {
 						filledSearchTab : true,
 						content: true
 					}
 				},
 				contact_malformed : {
-					nav_link : 'contact_malformed.html',
-					nav_title : 'malformed Contact',
+					nav:{
+						nav_link : 'contact_malformed.html',
+						nav_title : 'malformed Contact',
+					},
 					vars : {
 						malformed : true,
 						content: true,
@@ -153,24 +185,30 @@ module.exports = {
 					}
 				},
 				contact_filled : {
-					nav_link : 'contact_filled.html',
-					nav_title : 'Prefilled Contact',
+					nav:{
+						nav_link : 'contact_filled.html',
+						nav_title : 'Prefilled Contact',
+					},
 					vars : {
 						malformed : 'false',
 						content: true
 					}
 				},
 				contact_double : {
-					nav_link : 'contact_double.html',
-					nav_title : 'Contact doubling',
+					nav:{
+						nav_link : 'contact_double.html',
+						nav_title : 'Contact doubling',
+					},
 					vars : {
 						doubledContact : true,
 						content: true
 					}
 				},
-				navdata : {
-					nav_link : 'nav-data-links.html',
-					nav_title : 'Nav data intergration',
+				nav_data_links : {
+					nav:{
+						nav_link : 'nav_data_links.html',
+						nav_title : 'Nav data intergration',
+					},
 					vars : {
 						navdata : true,
 						content: true,
@@ -178,16 +216,20 @@ module.exports = {
 					}
 				},
 				overly : {
-					nav_link : 'overly.html',
-					nav_title: 'Overly Overly',
+					nav:{
+						nav_link : 'overly.html',
+						nav_title: 'Overly Overly',
+					},
 					vars : {
 						manyLinks : true,
 						showLong : true
 					}
 				},
 				overly_linked : {
-					nav_link : 'overly_linked.html',
-					nav_title: 'Overly Linked',
+					nav:{
+						nav_link : 'overly_linked.html',
+						nav_title: 'Overly Linked',
+					},
 					vars : {
 						manyLinks : true,
 						content: true,
@@ -195,15 +237,19 @@ module.exports = {
 					}
 				},
 				overly_long : {
-					nav_link : 'overly_long.html',
-					nav_title: 'Overly Long',
+					nav:{
+						nav_link : 'overly_long.html',
+						nav_title: 'Overly Long',
+					},
 					vars : {
 						showLong : true
 					}
 				},
 				cropped : {
-					nav_link : 'cropped.html',
 					title: 'Testing Cropped Spine',
+					nav:{
+						nav_link : 'cropped.html',
+					},
 					vars : {
 						cropped : true,
 						content: true
@@ -211,8 +257,10 @@ module.exports = {
 				},
 
 				js_units:{
-					nav_link : 'js-units.html',
 					title: 'Unit Testing',
+					nav:{
+						nav_link : 'js-units.html',
+					},
 					vars : {
 						fixedGrid : true,
 						unit_tests: true
