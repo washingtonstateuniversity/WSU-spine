@@ -33,18 +33,7 @@
 			<section id="spine-navigation" class="spine-navigation">
 				<nav id="spine-sitenav" class="spine-sitenav">
 					<ul>
-						{% if page_var.navdata and not page_var.markup_min -%}
-							<li><a href="link" data-foo="bar" >Data Foo</a><li>
-						{% endif -%}
-						{% if not page_var.markup and not page_var.markup_min -%}
-							{% include "preprocess/blocks/nav-site-tests.html" %}
-						{% endif -%}
-						{% if page_var.markup or page_var.markup_min -%}
-							{% include "preprocess/blocks/nav-site.html" %}
-						{% endif -%}
-						{% if page_var.manyLinks -%}
-							{% include "preprocess/blocks/nav_extralinks.html" %}
-						{% endif -%}
+
 						
 						{#% this is the generated nav from the testing sitemap %#}
 						{% for title, link in nav -%}
@@ -66,6 +55,20 @@
 							<li><a href="{{ link }}" {% if link|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ title }}</a></li>
 						{%- endif %}
 						{% endfor -%}
+						
+						{% if page_var.navdata and not page_var.markup_min -%}
+							<li><a href="link" data-foo="bar" >Data Foo</a><li>
+						{% endif -%}
+						{#% if not page_var.markup and not page_var.markup_min -%}
+							{% include "preprocess/blocks/nav-site-tests.html" %}
+						{% endif -%#}
+						{% if page_var.markup or page_var.markup_min -%}
+							{% include "preprocess/blocks/nav-site.html" %}
+						{% endif -%}
+						{% if page_var.manyLinks -%}
+							{% include "preprocess/blocks/nav_extralinks.html" %}
+						{% endif -%}
+						
 					</ul>
 				</nav>
 				{% include "preprocess/blocks/nav-offsite.html" %}
