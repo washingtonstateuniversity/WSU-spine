@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 		sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
 		console.log("site_obj: %j", sitemap);
-		
+		wrench.mkdirSyncRecursive("build/tests", 0777);
 		//return true;
 		
 		

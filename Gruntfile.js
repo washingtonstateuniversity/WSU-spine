@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 		'cssmin',
 		'uglify',
 		'copy:main',
-		'includereplace',
+		/*'includereplace',
 		'preprocess:html',
 		'preprocess:opensans',
 		'preprocess:columns',
@@ -84,6 +84,6 @@ module.exports = function(grunt) {
 		'preprocess:markup',
 		'preprocess:markup_min',
 		'preprocess:demo',
-		'preprocess:js_units'
+		'preprocess:js_units'*/
 	]);
 };

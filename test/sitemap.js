@@ -41,7 +41,7 @@ module.exports = {
 					}
 				},
 				opensans : {
-					"nav_link":'tests/opensans.html',
+					"nav_link":'opensans.html',
 					"title":"Testing Open Sans",
 					"vars":{
 							opensans : 'true',
@@ -50,7 +50,7 @@ module.exports = {
 					}
 				},
 				columns : {
-					"nav_link":'tests/columns.html',
+					"nav_link":'columns.html',
 					title: 'Testing Columns',
 					"vars":{
 							columns : 'true',
@@ -58,14 +58,14 @@ module.exports = {
 					}
 				},
 				spacing : {
-					"nav_link":'tests/spacing.html',
+					"nav_link":'spacing.html',
 					title: 'Testing Gutters and Pads',
 					"vars":{
 							spacing : 'true',
 					}
 				},
 				mainheader : {
-					"nav_link":'tests/mainheader.html',
+					"nav_link":'mainheader.html',
 					title: 'Testing the Main Header',
 					"vars":{
 							mainheader : 'true',
@@ -73,14 +73,14 @@ module.exports = {
 					}
 				},
 				typography : {
-					"nav_link":'tests/typography.html',
+					"nav_link":'typography.html',
 					title: 'Testing Typography',
 					"vars":{
 							typography: 'true'
 					}
 				},
 				broken : {
-					"nav_link":'tests/binding_broken.html',
+					"nav_link":'binding_broken.html',
 					title: 'Testing Broken Binding',
 					"vars":{
 							broken : 'true',
@@ -89,7 +89,7 @@ module.exports = {
 					}
 				},
 				unbound : {
-					"nav_link":'tests/unbound.html',
+					"nav_link":'unbound.html',
 					title: 'Testing Unbound and Rebound',
 					"vars":{
 							unbound : 'true',
@@ -97,72 +97,72 @@ module.exports = {
 					}
 				},
 				ui : {
-					"nav_link":'tests/ui.html',
+					"nav_link":'ui.html',
 					title: 'User Interaction Elements',
 					"vars":{
 							ui : 'true'
 					}
 				},
-				tu_search_tabs : {
-					"nav_link":'tests/search_tabs.html',
+				search_tabs : {
+					"nav_link":'search_tabs.html',
 					"vars":{
 							filledSearchTab : 'true',
 							content: 'true'
 					}
 				},
-				tu_contact_malformed : {
-					"nav_link":'tests/contact_malformed.html',
+				contact_malformed : {
+					"nav_link":'contact_malformed.html',
 					"vars":{
 							malformed : 'true',
 							content: 'true',
 							location : 'https://repo.wsu.edu/spine'
 					}
 				},
-				tu_contact_filled : {
-					"nav_link":'tests/contact_filled.html',
+				contact_filled : {
+					"nav_link":'contact_filled.html',
 					"vars":{
 							malformed : 'false',
 							content: 'true'
 					}
 				},
-				tu_contact_double : {
-					"nav_link":'tests/contact_double.html',
+				contact_double : {
+					"nav_link":'contact_double.html',
 					"vars":{
 							doubledContact : 'true',
 							content: 'true'
 					}
 				},
-				tu_navdata : {
-					"nav_link":'tests/nav-data-links.html',
+				navdata : {
+					"nav_link":'nav-data-links.html',
 					"vars":{
 							navdata : 'true',
 							content: 'true',
 							location : 'https://repo.wsu.edu/spine'
 					}
 				},
-				tu_overly : {
-					"nav_link":'tests/overly.html',
+				overly : {
+					"nav_link":'overly.html',
 					"vars":{
 							manyLinks : 'true',
 							showLong : 'true'
 					}
 				},
-				tu_overly_long : {
-					"nav_link":'tests/overly_long.html',
+				overly_long : {
+					"nav_link":'overly_long.html',
 					"vars":{
 							showLong : 'true'
 					}
 				},
-				tu_overly_linked : {
-					"nav_link":'tests/overly_linked.html',
+				overly_linked : {
+					"nav_link":'overly_linked.html',
 					"vars":{
 							manyLinks : 'true',
 							content: 'true',
 							location : 'https://repo.wsu.edu/spine'
 					}
 				},
-				tu_cropped : {
-					"nav_link":'tests/cropped.html',
+				cropped : {
+					"nav_link":'cropped.html',
 					title: 'Testing Cropped Spine',
 					"vars":{
 							cropped : 'true',
@@ -170,7 +170,7 @@ module.exports = {
 					}
 				},
 				grid_fluid : {
-					"nav_link":'tests/grid_fluid.html',
+					"nav_link":'grid_fluid.html',
 					title: 'Testing Fluid Grid',
 					"vars":{
 							behavior : 'fluid',
@@ -178,7 +178,7 @@ module.exports = {
 					}
 				},
 				grid_hybrid : {
-					"nav_link":'tests/grid_hybrid.html',
+					"nav_link":'grid_hybrid.html',
 					title: 'Testing Hybrid Grid',
 					"vars":{
 							hybridGrid : 'true',
@@ -186,7 +186,7 @@ module.exports = {
 					}
 				},
 				grid_fixed : {
-					"nav_link":'tests/grid_fixed.html',
+					"nav_link":'grid_fixed.html',
 					title: 'Testing Fixed Grid',
 					"vars":{
 							fixedGrid : 'true',
@@ -194,7 +194,7 @@ module.exports = {
 					}
 				},
 				js_units:{
-					"nav_link":'tests/js-units.html',
+					"nav_link":'js-units.html',
 					title: 'Unit Testing',
 					"vars":{
 							fixedGrid : 'true',
@@ -238,10 +238,9 @@ module.exports = {
 				}*/
 			}
 		};
-		
 		return site_obj;
 	},
-					};
+};
 	
 	
 	
