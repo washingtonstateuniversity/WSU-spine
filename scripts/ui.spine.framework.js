@@ -235,9 +235,6 @@
 			self.nav_state.scroll_dif=0;
 			self.nav_state.positionLock=0;
 
-
-
-			
 			$("header button").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");

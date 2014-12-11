@@ -1,0 +1,72 @@
+{% if page_var.mainheader -%}
+	{% include "preprocess/blocks/main-header.html" -%}
+{% endif -%}
+
+{% if page.title -%}
+	<header class="guttered padded-ends short">
+		<h1> {{ page.title }} </h1>
+	</header>
+{% endif -%}
+
+{% if page_var.columns or page_var.spacing -%}
+	{% include "preprocess/blocks/switches.html" -%}
+{% endif -%}
+
+<!-- Responsive Sections -->
+{% if page_var.markup_min -%}
+	<section class="layout marginalize">
+		<!--
+		LAYOUTS: Place your preferred layout and content here.
+		Layouts available are single (1 column), halves (2), thirds
+		(3), quarters (4), side-left (2), side-right (2), margin-left (2),
+		margin-right (2), and triptych (3). -->
+		<div class="column one">Content</div>
+		<div class="column two"></div>
+		<div class="column three"></div>
+		<div class="column four"></div>
+	</section>
+{% endif -%}
+
+{% if page_var.content -%}
+	{% include "preprocess/content/content.html" -%}
+{% endif -%}
+
+{% if page_var.typography -%}
+	{% include "preprocess/content/typography.html" -%}
+{% endif -%}
+
+{% if page_var.showLong -%}
+	{% include "preprocess/content/content_long.html" -%}
+{% endif -%}
+
+{% if not page_var.markup and not page_var.columns and not page_var.spacing and not page_var.markup_min -%}
+	{% include "preprocess/blocks/switches.html" -%}
+{% endif -%}
+
+{% if page_var.unbound -%}
+	{% include "preprocess/content/unbound.html" -%}
+{% endif -%}
+
+{% if page_var.spacing -%}
+	{% include "preprocess/content/spacing.html" -%}
+{% endif -%}
+
+{% if page_var.columns -%}
+	{% include "preprocess/content/columns.html" -%}
+{% endif -%}
+
+{% if page_var.ui -%}
+	{% include "preprocess/content/ui.html" -%}
+{% endif -%}
+
+{% if page_var.demo -%}
+	{% include "preprocess/content/demo.html" -%}
+{% endif -%}
+
+{% if page_var.cropped -%}
+	{% include "preprocess/blocks/looseleaf-footer.html" -%}
+{% endif -%}
+
+{% if page_var.unit_tests -%}
+	{% include "preprocess/blocks/js-units.html" -%}
+{% endif -%}

@@ -12,18 +12,24 @@
 	"devDependencies": {
 		"load-grunt-tasks": "~0.6.0",
 		"glob": "~4.0.6",
+		"deepmerge ":"~0.2.7",
+		"extend":"~2.0.0",
+		"wrench":"~1.5.8",
 		"grunt": "~0.4.2",
 		"grunt-contrib-clean": "^0.6.0",
 		"grunt-contrib-concat": "~0.3.0",
 		"grunt-contrib-copy": "~0.4.1",
 		"grunt-contrib-csslint": "^0.2.0",
 		"grunt-contrib-cssmin": "~0.7.0",
-		"grunt-contrib-jshint": "~0.6.3",
+		"grunt-contrib-jshint": "~0.10.0",
 		"grunt-contrib-sass": "^0.7.3",
 		"grunt-contrib-uglify": "~0.2.2",
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-env": "~0.4.1",
-		"grunt-include-replace": "~1.2.0",
-		"grunt-preprocess": "~4.0.0"
+		"grunt-preprocess": "~4.0.0",
+		"grunt-autoprefixer":"~2.0.0",
+		"nunjucks":"~1.1.0",
+		"marked":"~0.3.2",
+		"nunjucks-markdown" : "~0.5.2"
 	}
 }

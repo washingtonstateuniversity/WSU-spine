@@ -28,7 +28,8 @@ module.exports = {
 			fixedGrid: 'skip',
 			navdata:'skip',
 			markup: 'skip',
-			markup_min: 'skip'
+			markup_min: 'skip',
+			unit_tests: 'skip'
 		}
 	},
 	js : {
@@ -277,6 +278,17 @@ module.exports = {
 				fixedGrid : 'true',
 				test_title: 'Testing Fixed Grid',
 				content: 'true'
+			}
+		}
+	},
+	js_units:{
+		src : 'test/preprocess/test.cat.pre.html',
+		dest : '<%= config.build %>/tests/js-units.html',
+		options : {
+			context : {
+				fixedGrid : 'true',
+				test_title: 'Unit Testing',
+				unit_tests: 'true'
 			}
 		}
 	}
