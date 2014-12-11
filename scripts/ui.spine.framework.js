@@ -135,6 +135,7 @@
 					spine.removeClass("unshelved");
 					spine.removeClass("shelved");
 				}else{
+					glue.css("min-height",viewport_ht-50);
 					spine.addClass("shelved");
 				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
