@@ -115,7 +115,7 @@
 		},
 
 		run_query:function(term,provider){
-			var self, result = [], tmpObj = [];
+			var self, result = [], tmpObj = [], nodes,nodeslength;
 			self=this;//hold to preserve scop
 			result = [];
 
@@ -132,19 +132,26 @@
 					}
 				});
 			}else if(typeof(provider)!==undefined && typeof(provider.nodes)!==undefined ){
-				$.each($(provider.nodes).find("a"),function(i,v){
+				nodes=$(provider.nodes).find("a");
+				nodeslength = nodes.length;
+				$.each(nodes,function(i,v){
 					var obj,text, localtmpObj;
 					obj = $(v);
 					text = obj.text();
 					if(text.toLowerCase().indexOf(term.toLowerCase())>-1){
 						localtmpObj = {
 							label:text,
-							value:obj.attr("href")
+							value:obj.attr("href"),
+							related:false,
+							searchKeywords:""
 						};
 						tmpObj.push(localtmpObj);
 					}
+					if (i === nodeslength-1){
+						return [tmpObj];
+					}
 				});
-				return [tmpObj];
+				
 			}else{
 				//self.search_options.data.push(result);
 			}
