@@ -214,9 +214,11 @@
 				select : function( e, ui ) {
 					var id, term;
 					id = ui.item.searchKeywords;
-					term = ui.item.label;
+					term =$(ui.item.label).text();
+					search_input.val( term );
 					//$("#indices").empty();
 					search_input.autosearch("close");
+					return false;
 				},
 				focus : function( e, ui ) {
 					search_input.val( $(ui.item.label).text() );
