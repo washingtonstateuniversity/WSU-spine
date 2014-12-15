@@ -90,7 +90,7 @@
 			var self,term,queries = [];
 			self=this;//hold to preserve scop
 
-			term = request.term;
+			term = $.trim(request.term);
 			self.search_options.data=[];
 			$.each(self.search_options.providers, function(i,provider){
 				$.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
@@ -142,16 +142,16 @@
 						localtmpObj = {
 							label:text,
 							value:obj.attr("href"),
-							related:false,
+							related:"false",
 							searchKeywords:""
 						};
 						tmpObj.push(localtmpObj);
 					}
 					if (i === nodeslength-1){
-						return [tmpObj];
+						
 					}
 				});
-				
+				return [tmpObj];
 			}else{
 				//self.search_options.data.push(result);
 			}
