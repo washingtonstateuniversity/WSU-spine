@@ -27,7 +27,7 @@
 				},
 				atoz:{
 					name:"WSU A to Z index",
-					url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+					url: "https://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
 					urlSpaces:"+",
 					dataType: "jsonp",
 					featureClass: "P",
