@@ -115,7 +115,7 @@
 		},
 
 		run_query:function(term,provider){
-			var self, result = [], tmpObj = [], nodes,nodeslength;
+			var self, result = [], tmpObj = [], nodes;
 			self=this;//hold to preserve scop
 			result = [];
 
@@ -133,12 +133,11 @@
 				});
 			}else if(typeof(provider)!==undefined && typeof(provider.nodes)!==undefined ){
 				nodes=$(provider.nodes).find("a");
-				nodeslength = nodes.length;
 				$.each(nodes,function(i,v){
 					var obj,text, localtmpObj;
 					obj = $(v);
 					text = obj.text();
-					if(text.toLowerCase().indexOf(term.toLowerCase())>-1){
+					if(text.toLowerCase().indexOf(term.toLowerCase())>-1 && obj.attr("href")!=="#"){
 						localtmpObj = {
 							label:text,
 							value:obj.attr("href"),
@@ -146,9 +145,6 @@
 							searchKeywords:""
 						};
 						tmpObj.push(localtmpObj);
-					}
-					if (i === nodeslength-1){
-						
 					}
 				});
 				return [tmpObj];
@@ -218,9 +214,11 @@
 				select : function( e, ui ) {
 					var id, term;
 					id = ui.item.searchKeywords;
-					term = ui.item.label;
+					term =$(ui.item.label).text();
+					search_input.val( term );
 					//$("#indices").empty();
 					search_input.autosearch("close");
+					return false;
 				},
 				focus : function( e, ui ) {
 					search_input.val( $(ui.item.label).text() );
@@ -273,7 +271,7 @@
 				cx = "cx=004677039204386950923:xvo7gapmrrg";
 				cof = "cof=FORID%3A11";
 				search_term = search_input.val();
-				search_url = "http://search.wsu.edu/default.aspx?"+cx+"&"+cof+"&q="+search_term+site;
+				search_url = "https://search.wsu.edu/default.aspx?"+cx+"&"+cof+"&q="+search_term+site;
 				window.location.href = search_url;
 				return false;
 			});
