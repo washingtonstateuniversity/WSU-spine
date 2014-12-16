@@ -36,6 +36,13 @@ module.exports = {
 						nav_link : "index.html",
 					},
 				},
+				_options : {
+					file:false,
+					nav:{
+						nav_link : '#',
+						nav_title : 'Options',
+					}
+				},
 				demo : {
 					title : "Basic Demo",
 					nav:{
@@ -49,6 +56,7 @@ module.exports = {
 				opensans : {
 					title : "Testing Open Sans",
 					nav:{
+						parent:"Options",
 						nav_link : 'opensans.html',
 						nav_title:"Open Sans",
 					},
@@ -57,49 +65,18 @@ module.exports = {
 						typography: true
 					}
 				},
-				columns : {
-					title: 'Testing Columns',
+				
+				_behaviors : {
+					file:false,
 					nav:{
-						nav_link : 'columns.html',
-						nav_title:"Columns",
-					},
-					vars : {
-						columns : true,
-					}
-				},
-				spacing : {
-					title: 'Testing Gutters and Pads',
-					nav:{
-						nav_link : 'spacing.html',
-						nav_title:"Gutters and Pads",
-					},
-					vars : {
-						spacing : true,
-					}
-				},
-				mainheader : {
-					title: 'Testing the Main Header',
-					nav:{
-						nav_link : 'mainheader.html',
-						nav_title:"Main Header",
-					},
-					vars : {
-						mainheader : true,
-						content: true
-					}
-				},
-				typography : {
-					title: 'Testing Typography',
-					nav:{
-						nav_link : 'typography.html',
-					},
-					vars : {
-						typography: true
+						nav_link : '#',
+						nav_title : 'Behavior',
 					}
 				},
 				grid_fluid : {
 					title: 'Testing Fluid Grid',
 					nav:{
+						parent:"Behavior",
 						nav_link : 'grid_fluid.html',
 						nav_title:"Fluid and Flex",
 					},
@@ -111,6 +88,7 @@ module.exports = {
 				grid_hybrid : {
 					title: 'Testing Hybrid Grid',
 					nav:{
+						parent:"Behavior",
 						nav_link : 'grid_hybrid.html',
 						nav_title:"Fold then Flex",
 					},
@@ -122,6 +100,7 @@ module.exports = {
 				grid_fixed : {
 					title: 'Testing Fixed Grid',
 					nav:{
+						parent:"Behavior",
 						nav_link : 'grid_fixed.html',
 						nav_title:"Fixed and Fold",
 					},
@@ -133,6 +112,7 @@ module.exports = {
 				broken : {
 					title: 'Testing Broken Binding',
 					nav:{
+						parent:"Behavior",
 						nav_link : 'binding_broken.html',
 						nav_title : 'Broken Binding',
 					},
@@ -142,79 +122,16 @@ module.exports = {
 						content : true
 					}
 				},
-				unbound : {
-					title: 'Testing Unbound and Rebound',
+				responsiveness : {
+					file:false,
 					nav:{
-						nav_link : 'unbound.html',
-						nav_title : 'Unbound and Rebound',
-					},
-					vars : {
-						unbound : true
+						parent:"Behavior",
+						nav_link : 'http://en.wikipedia.org/wiki/Responsive_web_design',
+						nav_title : 'On Responsiveness',
 					}
 				},
-				ui : {
-					title: 'User Interaction Elements',
-					nav:{
-						nav_link : 'ui.html',
-						nav_title: 'Behavior',
-					},
-					vars : {
-						ui : true
-					}
-				},
-				search_tabs : {
-					title: 'Testing serach tab',
-					nav:{
-						nav_link : 'search_tabs.html',
-						nav_title : 'Local Defined Search',
-					},
-					vars : {
-						filledSearchTab : true,
-						content: true
-					}
-				},
-				contact_malformed : {
-					nav:{
-						nav_link : 'contact_malformed.html',
-						nav_title : 'malformed Contact',
-					},
-					vars : {
-						malformed : true,
-						content: true,
-						location : 'https://repo.wsu.edu/spine'
-					}
-				},
-				contact_filled : {
-					nav:{
-						nav_link : 'contact_filled.html',
-						nav_title : 'Prefilled Contact',
-					},
-					vars : {
-						malformed : 'false',
-						content: true
-					}
-				},
-				contact_double : {
-					nav:{
-						nav_link : 'contact_double.html',
-						nav_title : 'Contact doubling',
-					},
-					vars : {
-						doubledContact : true,
-						content: true
-					}
-				},
-				nav_data_links : {
-					nav:{
-						nav_link : 'nav_data_links.html',
-						nav_title : 'Nav data intergration',
-					},
-					vars : {
-						navdata : true,
-						content: true,
-						location : 'https://repo.wsu.edu/spine'
-					}
-				},
+
+				
 				overly : {
 					nav:{
 						nav_link : 'overly.html',
@@ -227,6 +144,7 @@ module.exports = {
 				},
 				overly_linked : {
 					nav:{
+						parent:"Overly Overly",
 						nav_link : 'overly_linked.html',
 						nav_title: 'Overly Linked',
 					},
@@ -238,6 +156,7 @@ module.exports = {
 				},
 				overly_long : {
 					nav:{
+						parent:"Overly Overly",
 						nav_link : 'overly_long.html',
 						nav_title: 'Overly Long',
 					},
@@ -245,6 +164,163 @@ module.exports = {
 						showLong : true
 					}
 				},
+				
+				_layouts : {
+					file:false,
+					nav:{
+						nav_link : '#',
+						nav_title : 'Layouts and Columns',
+					}
+				},
+				
+				columns : {
+					title: 'Testing Columns',
+					nav:{
+						parent:'Layouts and Columns',
+						nav_link : 'columns.html',
+						nav_title:"Columns",
+					},
+					vars : {
+						columns : true,
+					}
+				},
+				spacing : {
+					title: 'Testing Gutters and Pads',
+					nav:{
+						parent:'Layouts and Columns',
+						nav_link : 'spacing.html',
+						nav_title:"Gutters and Pads",
+					},
+					vars : {
+						spacing : true,
+					}
+				},
+				
+				
+				_content : {
+					file:false,
+					nav:{
+						nav_link : '#',
+						nav_title : 'Main/Content',
+					}
+				},
+				
+				mainheader : {
+					title: 'Testing the Main Header',
+					nav:{
+						parent:'Main/Content',
+						nav_link : 'mainheader.html',
+						nav_title:"Main Header",
+					},
+					vars : {
+						mainheader : true,
+						content: true
+					}
+				},
+				typography : {
+					title: 'Testing Typography',
+					nav:{
+						parent:'Main/Content',
+						nav_link : 'typography.html',
+					},
+					vars : {
+						typography: true
+					}
+				},
+				unbound : {
+					title: 'Testing Unbound and Rebound',
+					nav:{
+						parent:'Main/Content',
+						nav_link : 'unbound.html',
+						nav_title : 'Unbound and Rebound',
+					},
+					vars : {
+						unbound : true
+					}
+				},
+				ui : {
+					title: 'User Interaction Elements',
+					nav:{
+						parent:'Main/Content',
+						nav_link : 'ui.html',
+						nav_title: 'Behavior',
+					},
+					vars : {
+						ui : true
+					}
+				},
+				
+				
+				
+				
+				_broken : {
+					file:false,
+					nav:{
+						nav_link : '#',
+						nav_title : 'Broken',
+					}
+				},
+				
+				contact_malformed : {
+					nav:{
+						parent:'Broken',
+						nav_link : 'contact_malformed.html',
+						nav_title : 'malformed Contact',
+					},
+					vars : {
+						malformed : true,
+						content: true,
+						location : 'https://repo.wsu.edu/spine'
+					}
+				},
+				contact_filled : {
+					nav:{
+						parent:'Broken',
+						nav_link : 'contact_filled.html',
+						nav_title : 'Prefilled Contact',
+					},
+					vars : {
+						malformed : 'false',
+						content: true
+					}
+				},
+				contact_double : {
+					nav:{
+						parent:'Broken',
+						nav_link : 'contact_double.html',
+						nav_title : 'Contact doubling',
+					},
+					vars : {
+						doubledContact : true,
+						content: true
+					}
+				},
+				nav_data_links : {
+					nav:{
+						parent:'Broken',
+						nav_link : 'nav_data_links.html',
+						nav_title : 'Nav data intergration',
+					},
+					vars : {
+						navdata : true,
+						content: true,
+						location : 'https://repo.wsu.edu/spine'
+					}
+				},
+				search_tabs : {
+					title: 'Testing serach tab',
+					nav:{
+						parent:'Broken',
+						nav_link : 'search_tabs.html',
+						nav_title : 'Local Defined Search',
+					},
+					vars : {
+						filledSearchTab : true,
+						content: true
+					}
+				},
+				
+				
 				cropped : {
 					title: 'Testing Cropped Spine',
 					nav:{
