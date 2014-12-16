@@ -131,39 +131,9 @@ module.exports = {
 					}
 				},
 
+
 				
-				overly : {
-					nav:{
-						nav_link : 'overly.html',
-						nav_title: 'Overly Overly',
-					},
-					vars : {
-						manyLinks : true,
-						showLong : true
-					}
-				},
-				overly_linked : {
-					nav:{
-						parent:"Overly Overly",
-						nav_link : 'overly_linked.html',
-						nav_title: 'Overly Linked',
-					},
-					vars : {
-						manyLinks : true,
-						content: true,
-						location : 'https://repo.wsu.edu/spine'
-					}
-				},
-				overly_long : {
-					nav:{
-						parent:"Overly Overly",
-						nav_link : 'overly_long.html',
-						nav_title: 'Overly Long',
-					},
-					vars : {
-						showLong : true
-					}
-				},
+				
 				
 				_layouts : {
 					file:false,
@@ -251,6 +221,7 @@ module.exports = {
 				},
 				
 				
+
 				
 				
 				_broken : {
@@ -321,20 +292,71 @@ module.exports = {
 				},
 				
 				
-				cropped : {
-					title: 'Testing Cropped Spine',
+				_testing : {
+					file:false,
 					nav:{
+						nav_link : '#',
+						nav_title : 'Testing Units',
+					}
+				},
+				overly : {
+					nav:{
+						parent:"Testing Units",
+						nav_link : 'overly.html',
+						nav_title: 'Overly Overly',
+					},
+					vars : {
+						manyLinks : true,
+						showLong : true
+					}
+				},
+				overly_linked : {
+					nav:{
+						parent:"Testing Units",
+						nav_link : 'overly_linked.html',
+						nav_title: 'Overly Linked',
+					},
+					vars : {
+						manyLinks : true,
+						content: true,
+						location : 'https://repo.wsu.edu/spine'
+					}
+				},
+				overly_long : {
+					nav:{
+						parent:"Testing Units",
+						nav_link : 'overly_long.html',
+						nav_title: 'Overly Long',
+					},
+					vars : {
+						showLong : true
+					}
+				},
+				cropped : {
+					nav:{
+						parent:"Testing Units",
 						nav_link : 'cropped.html',
+						nav_title: 'Testing Cropped Spine',
 					},
 					vars : {
 						cropped : true,
 						content: true
 					}
 				},
-
+				anchored : {
+					nav:{
+						parent:"Testing Units",
+						nav_link : 'anchored.html',
+						nav_title: 'Anchored page',
+					},
+					vars : {
+						anchored: true
+					}
+				},
 				js_units:{
 					title: 'Unit Testing',
 					nav:{
+						parent:"Testing Units",
 						nav_link : 'js-units.html',
 					},
 					vars : {
