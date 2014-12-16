@@ -319,7 +319,7 @@
 				main.css({"min-height":glue_ht+scroll_top});
 			}else{
 				if(scroll_dif===0){
-					main.animate({"min-height":glue_ht},"fast");
+					main.animate({"min-height":glue_ht},50);
 				}else{
 					main.css({"min-height":glue_ht});
 				}
