@@ -40,7 +40,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('prod', [
 		'env:prod',
 		'build',
+		'build_tests',
 		'copy:main',
+		'copy:dev'
 	]);
 
 	grunt.registerTask('dev', [
