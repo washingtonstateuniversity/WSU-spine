@@ -1,0 +1,54 @@
+{% set partCount = [1,2,3,4,5] %}
+
+
+
+<section class="row side-right gutter pad-bottom tall">
+
+	<div class="column one">
+
+
+		<article class="post-15 page type-page status-publish hentry" id="post-15">
+{% for i in partCount -%}
+  
+			
+
+<h3 id="link{{ i }}">{{ i }}.) Cras at bibendum elit.</h3>
+<p>Sed facilisis feugiat nunc, quis aliquet nisl tristique vitae. Nam adipiscing mauris metus, eget commodo tortor placerat id. Etiam tincidunt eget nisi id elementum. Nam vel tincidunt nibh, vel lobortis sapien. Aliquam egestas augue nec libero porttitor tincidunt. Curabitur quis sapien a diam adipiscing gravida. Sed sed porta sem. Duis vel sapien nec metus sollicitudin rhoncus. Vestibulum ultrices vulputate mauris, ac ullamcorper magna porta quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+<p>Etiam dignissim nec felis vel fringilla. Proin imperdiet aliquet ante, quis egestas felis tincidunt id. Duis vel adipiscing quam. Praesent iaculis sagittis mattis. Morbi ac bibendum nulla. Donec quis est augue. Vestibulum rutrum quam ac interdum elementum.</p>
+			
+<p><big>Integer vestibulum</big> quis lacus imperdiet imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sollicitudin mauris a augue mattis, in sollicitudin felis tincidunt. Nulla id leo et justo molestie egestas. Mauris ultrices metus nunc, vel tempor diam molestie id. Ut vitae porttitor massa. Ut posuere enim at turpis tristique varius. Praesent pellentesque augue nulla. In consequat dui quam. Duis pellentesque in orci cursus varius. Ut vehicula enim libero, sit amet porta dui suscipit in.</p>
+			
+{%- endfor %}
+		</article>
+
+	</div><!--/column-->
+
+	<div class="column two">
+
+		<aside>
+				<h2>Sidebar</h2>
+			<ul>
+				{% for i in partCount -%}
+				<li><a href="anchored.html#link{{ i }}">Go to link{{ i }}</a></li>
+				{%- endfor %}
+			
+			
+			</ul>
+			
+			
+			
+			
+				<ul>
+					<li>Fight, fight, fight for Washington State! Win the victory!</li>
+					<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
+					<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
+					<li>Fight, fight, fight for Washington State and victory!</li>
+					<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
+				</ul>
+				<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
+		</aside>
+
+	</div><!--/column-->
+
+</section>

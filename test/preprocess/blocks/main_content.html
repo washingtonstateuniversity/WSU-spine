@@ -30,7 +30,9 @@
 {% if page_var.content -%}
 	{% include "preprocess/content/content.html" -%}
 {% endif -%}
-
+{% if page_var.anchored -%}
+	{% include "preprocess/content/anchored.html" -%}
+{% endif -%}
 {% if page_var.typography -%}
 	{% include "preprocess/content/typography.html" -%}
 {% endif -%}

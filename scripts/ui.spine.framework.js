@@ -142,6 +142,8 @@
 				$(document).trigger("scroll");
 
 			}).trigger("resize");
+			$(document).trigger("scroll");
+			
 		},
 		// Label #jacket with current window size
 		sizing: function (jacket) {
@@ -249,6 +251,7 @@
 			if($(".ios .hybrid .unshelved").length <= 0){
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
+					//console.log("should be scrolling");
 					self.apply_nav_func(self);
 				});
 				//check for changes to the dom
@@ -326,7 +329,7 @@
 			}
 			if( main.outerHeight(true) > glue_ht ){
 				if( (scroll_dif <= 0) ){//down
-					positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+					positionLock = ( positionLock===0 || positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
 					if(bottom <= 0 && positionLock >= height_dif){
 						positionLock = height_dif;
 					}
@@ -386,6 +389,9 @@
 		 * Sets up navigation system
 		 */
 		setup_nav: function(){
+			var self;
+			
+			self = this;
 			// NAVIGATION
 			// Tag location and hierarchy
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
@@ -425,6 +431,13 @@
 				});
 
 			});
+			//note the selector is so that we can have # with preceding url that is not off site, but needed for base
+			$("main a[href*='#']:not([href*='://'])").on("mouseup",function(){
+				//self.apply_nav_func(self);
+				//console.log("scroll it");
+				$(document).trigger("scroll");
+			});
+			
 			// External Links in nav
 			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
 
