@@ -21,8 +21,7 @@ module.exports = function(grunt) {
 				smartLists: true,
 				smartypants: false
 			});
-			
-		
+
 		grunt.log.writeln("'Set up all test pages'");
 		
 		// Include sitemap.js' to get the dynamic configuration
@@ -30,18 +29,16 @@ module.exports = function(grunt) {
 
 		sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
-		console.log("site_obj: %j", sitemap);
+		//console.log("site_obj: %j", sitemap);
 		wrench.mkdirSyncRecursive("build/tests", 0777);
-		//return true;
-		
-		
+
 		/*
 		 * This will apply defaults and build the nav
 		 */
 		function build_site_obj(){
 			var nav = {};
 			for (var page_key in sitemap.pages) {
-				grunt.log.writeln("working "+page_key);
+				//grunt.log.writeln("working "+page_key);
 
 				//apply defaults were needed
 				sitemap.pages[page_key].nav_key = page_key;
@@ -54,13 +51,11 @@ module.exports = function(grunt) {
 				}
 				
 				//build nav
-				
 				var pagenav = sitemap.pages[page_key].nav!==undefined ? sitemap.pages[page_key].nav:{};
 				if(pagenav!==false){
 					var tmpobj={};
 					var root = sitemap.pages[page_key].nav_root.replace(new RegExp("[\/]+$", "g"), "");
-					
-					
+
 					var linkTitle = sitemap.pages[page_key].title;
 					if(typeof pagenav.nav_title !== "undefined" ){
 						linkTitle = pagenav.nav_title;
@@ -75,7 +70,6 @@ module.exports = function(grunt) {
 							exurl=root+'/'+sitemap.pages[page_key].nav_key+".html";
 						}
 						exnav[linkTitle] = exurl;
-						
 
 						var tmp = {};
 						if(typeof pnav==="object"){
@@ -114,7 +108,7 @@ module.exports = function(grunt) {
 					}
 					nav = extend(nav,tmpobj);
 				}
-				grunt.log.writeln("worked "+page_key);
+				//grunt.log.writeln("worked "+page_key);
 			}
 			sitemap.nav = nav;
 		}
@@ -125,7 +119,7 @@ module.exports = function(grunt) {
 		 * Construct the static pages
 		 */
 		function build_page(){
-			console.log(sitemap);
+			//console.log(sitemap);
 			for (var key in sitemap.pages) {
 
 				var site_obj = sitemap;
