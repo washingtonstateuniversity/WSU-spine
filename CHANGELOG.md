@@ -2,6 +2,12 @@
 
 ## 1.3.0 (In progress)
 
+## 1.2.2 (TBD)
+* Fix issues #168, #169, #186, #189, #191, #194
+* Add `autoprefixing` to `grunt` build process
+* Change build process to use custom test page task
+* Update tests units
+
 ## 1.2.1 (December 4, 2014)
 
 * Fix an issue where the mobile menu icon was not appearing on some devices.
