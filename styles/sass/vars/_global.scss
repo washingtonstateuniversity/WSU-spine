@@ -64,8 +64,10 @@ $vancouver: vancouver;
 $tricities: tricities;
 $globalcampus: globalcampus;
 $extension: extension;
+$hs: healthsciences;
+$hss: healthsciences-spokane;
 
-$campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension;
+$campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss;
 
 // Typography
 @mixin serif {
@@ -77,7 +79,7 @@ $campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension;
 
 // locality acts as a base URL for assets. This must be updated when tagging a new release.
 // HTTPS is forced to avoid issues with file:// and because we're better off planning ahead.
-$locality: 'https://repo.wsu.edu/spine/1';
+$locality: 'https://repo.wsu.edu/spine/develop';
 // font_domain accomplishes the same thing, but does not force HTTPS to avoid CORs issues when
 // a page is displayed via HTTP
 $font_domain: '//repo.wsu.edu/spine/1';
