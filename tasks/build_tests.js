@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
 		sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
-
+		//console.log("site_obj: %j", sitemap);
 		wrench.mkdirSyncRecursive("build/tests", 0777);
 
 		/*
@@ -119,6 +119,7 @@ module.exports = function(grunt) {
 		 * Construct the static pages
 		 */
 		function build_page(){
+			//console.log(sitemap);
 			for (var key in sitemap.pages) {
 
 				var site_obj = sitemap;
