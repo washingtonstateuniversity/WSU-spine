@@ -3,7 +3,7 @@
 ## 1.3.0 (In progress)
 
 ## 1.2.2 (TBD)
-* Fix issues #168, #169, #186, #189, #191, #194
+* Fix issues #168, #169, #186, #189, #191, #194, #205
 * Add `autoprefixing` to `grunt` build process
 * Change build process to use custom test page task
 * Update tests units
