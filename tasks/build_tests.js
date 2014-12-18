@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 		// Include sitemap.js" to get the dynamic configuration
 		var _sitemap = require("../test/sitemap");
 
-		sitemap = _sitemap.get_site_obj();
+		var sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
 		//console.log("site_obj: %j", sitemap);
 		wrench.mkdirSyncRecursive("build/tests", 0777);
