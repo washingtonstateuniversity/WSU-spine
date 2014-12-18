@@ -1,3 +1,3 @@
 module.exports = {
-	build: '<%= config.build %>'
-}
+	build: "<%= config.build %>"
+};

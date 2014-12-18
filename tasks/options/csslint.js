@@ -1,5 +1,5 @@
 module.exports = {
 	spine: {
-		src: ['<%= config.build %>/spine.css']
+		src: ["<%= config.build %>/spine.css"]
 	}
-}
+};
