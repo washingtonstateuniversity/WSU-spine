@@ -163,11 +163,11 @@
 		
 	@include vellum($gray-light);
 	
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url('#{$locality}/icons/home-gray-lightest.svg');
 		}
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url('#{$locality}/icons/home-white.svg');
 		}
 	.spine-actions .opened button,
@@ -220,11 +220,11 @@
 	
 	@include vellum($gray);
 
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url('#{$locality}/icons/home-gray-lightest.svg');
 		}
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url('#{$locality}/icons/home-white.svg');
 		}
 	.spine-actions .opened button,
@@ -280,11 +280,11 @@
 	
 	@include vellum($gray-dark);
 	
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url('#{$locality}/icons/home-gray-lightest.svg');
 		}
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url('#{$locality}/icons/home-white.svg');
 		}
 	.spine-sitenav a,
@@ -343,11 +343,11 @@
 	
 	@include vellum(darken($gray-darker, 3%));
 	
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url('#{$locality}/icons/home-gray-lighter.svg');
 		}
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url('#{$locality}/icons/home-white.svg');
 		}
 	.spine-sitenav a,
@@ -402,11 +402,11 @@
 	
 	@include vellum($gray-darkest);
 	
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url('#{$locality}/icons/home-gray-lighter.svg');
 		}
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url('#{$locality}/icons/home-crimson.svg');
 		}
 	.spine-sitenav a,
@@ -455,11 +455,11 @@
 	
 	@include vellum($crimson);
 	
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url('#{$locality}/icons/home-gray-lighter.svg');
 		}
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:before,
-	&:not(.homeless) .spine-sitenav > ul > li:first-child a:hover {
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
+	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url('#{$locality}/icons/home-white.svg');
 		}
 	.spine-sitenav a {
