@@ -37,7 +37,7 @@ Specific version builds are also available for every minor version.
 
 These have the benefit of being cached in browser for 120 days, though will require attention whenever the Spine is updated.
 
-When following alon gwith development, the following can be used:
+When following along with development, the following can be used:
 
 * `https://repo.wsu.edu/spine/develop/spine.min.css`
 * `https://repo.wsu.edu/spine/develop/spine.min.js`
