@@ -149,6 +149,6 @@ module.exports = function(grunt) {
 		}
 		build_page();
 			
-		grunt.task.current.async();
+		//grunt.task.current.async();
 	});
 };
