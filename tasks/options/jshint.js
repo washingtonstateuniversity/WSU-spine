@@ -1,5 +1,5 @@
 module.exports = {
-	files: ['Gruntfile.js', 'scripts/*.js'],
+	files: ['Gruntfile.js', 'tasks/*', 'scripts/*.js'],
 	options: {
 		// options here to override JSHint defaults
 		boss: true,
@@ -24,4 +24,4 @@ module.exports = {
 			MutationObserver:true
 		}
 	}
-}
+};
