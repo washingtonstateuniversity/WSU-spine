@@ -141,7 +141,7 @@ module.exports = function(grunt) {
 					//grunt.log.writeln(targetFile + " compiled");
 					var res = tmpl.render(site_obj);
 					grunt.log.writeln("building "+targetFile);
-					fs.writeFile(targetFile, res, function(err){
+					fs.writeFile(targetFile, res, function(){
 						//grunt.log.writeln("wrote to file "+targetFile);
 					});
 				}
