@@ -128,7 +128,7 @@
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;
 			position: absolute;
-			top: 50px;
+			top: 0px;
 			bottom: 0px;
 			width: 298px;
 			z-index: 99165;
@@ -176,10 +176,6 @@
     
 	    top: 0px !important;
 	    min-height: 0 !important;
-			
-		#glue:before {
-			top: 50px;
-			}
 	
 	    footer {
 		    position: relative !important;
