@@ -1,9 +1,10 @@
+/* global require */
 module.exports = function(grunt) {
 	grunt.registerTask("build_tests", "Set up all test pages", function() {
 		var fs = require("fs");
 		var extend = require("extend");
-		var wrench = require("wrench"),
-			util = require("util");
+		var wrench = require("wrench");
+			//util = require("util");
 		var nunjucks = require("nunjucks"),
 			markdown = require("nunjucks-markdown");
 		var env = nunjucks.configure("test");
