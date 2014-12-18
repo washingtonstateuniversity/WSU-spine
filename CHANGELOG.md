@@ -7,6 +7,7 @@
 * Add `autoprefixing` to `grunt` build process
 * Change build process to use custom test page task
 * Update tests units
+* Deprecate .smallish class for fixed behavior in favor of .intermediate
 
 ## 1.2.1 (December 4, 2014)
 
