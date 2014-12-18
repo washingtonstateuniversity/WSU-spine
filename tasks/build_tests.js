@@ -22,7 +22,8 @@ module.exports = function(grunt) {
 				smartLists: true,
 				smartypants: false
 			});
-
+		var done = this.async();
+		
 		grunt.log.writeln("Set up all test pages");
 		
 		// Include sitemap.js" to get the dynamic configuration
@@ -148,7 +149,6 @@ module.exports = function(grunt) {
 			}
 		}
 		build_page();
-			
-		grunt.task.current.async();
+		done();
 	});
 };

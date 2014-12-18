@@ -40,18 +40,18 @@ module.exports = function(grunt) {
 	grunt.registerTask('prod', [
 		'env:prod',
 		'build',
+		'build_tests',
 		'copy:main',
-		'copy:dev',
-		'build_tests'
+		'copy:dev'
 	]);
 
 	grunt.registerTask('dev', [
 		'jshint',
 		'env:dev',
 		'build',
+		'build_tests',
 		'copy:main',
-		'copy:dev',
-		'build_tests'
+		'copy:dev'
 	]);
 
 	grunt.registerTask('build', [
