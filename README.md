@@ -43,3 +43,7 @@ When following along with development, the following can be used:
 * `https://repo.wsu.edu/spine/develop/spine.min.js`
 
 These are cached in the browser for only 10 minutes and can be considered bleeding edge. This is the first place to test fixed bugs, but may also be considered unstable from time to time.
+
+# Contributing to WSU Spine
+
+Contributions to the WSU Spine project are welcome in the form of discussion (through our [GitHub issues](https://github.com/washingtonstateuniversity/WSU-spine/issues)) or code. To learn more about contributing code, please see your [Contribution Guidelines](https://github.com/washingtonstateuniversity/WSU-spine/blob/develop/CONTRIBUTING.md).
