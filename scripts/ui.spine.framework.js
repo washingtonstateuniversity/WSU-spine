@@ -151,12 +151,12 @@
 			jacket=jacket||$("#jacket");
 			current_width = $(window).width();
 			
-			var size_small,size_intermed,size_medium,size_large,size_xlarge;
-			size_small = "size-small size-lt-intermed size-lt-medium size-lt-large size-lt-xlarge";
-			size_intermed = "size-intermed size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
-			size_medium = "size-medium size-lt-xlarge size-lt-large size-gt-intermed size-gt-small";
-			size_large = "size-large size-lt-xlarge size-gt-small size-gt-intermed size-gt-medium";
-			size_xlarge = "size-xlarge size-gt-small size-gt-intermed size-gt-medium size-gt-large";
+			var size_small,size_intermediate,size_medium,size_large,size_xlarge;
+			size_small = "size-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+			size_intermediate = "size-intermediate size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
+			size_medium = "size-medium size-lt-xlarge size-lt-large size-gt-intermediate size-gt-smallish size-gt-small";
+			size_large = "size-large size-lt-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium";
+			size_xlarge = "size-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium size-gt-large";
 			
 			ele_class="";
 			px_width="";
@@ -175,14 +175,14 @@
 			} else if(current_width < 792 && current_width >= 694) {
 				px_width="size-lt-792";
 				if ($("#binder").is(".fixed")) {
-					ele_class=size_intermed;
+					ele_class=size_intermediate;
 				} else {
 					ele_class=size_medium;
 				}
 			} else if(current_width < 694 && current_width >= 396) {
 				ele_class=size_small;
 			} else if(current_width < 396) {
-				ele_class="size-small size-lt-small size-lt-intermed size-lt-medium size-lt-large size-lt-xlarge";
+				ele_class="size-small size-lt-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			}
 			jacket.stripClass("size-").addClass(ele_class).addClass(px_width);
 		},
