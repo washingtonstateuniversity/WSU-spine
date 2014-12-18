@@ -12,7 +12,7 @@ module.exports = {
 			pages:{
 				/* note that these first files are not inclucded in the test suite nav */
 				markup : {
-					file : 'spine.min.html',
+					file : "spine.min.html",
 					file_root : "build",
 					nav:false,
 					vars : {
@@ -21,7 +21,7 @@ module.exports = {
 					}
 				},
 				markup_min : {
-					file : 'spine.min.html',
+					file : "spine.min.html",
 					file_root : "build",
 					nav:false,
 					vars : {
@@ -39,14 +39,14 @@ module.exports = {
 				_options : {
 					file:false,
 					nav:{
-						nav_link : '#',
-						nav_title : 'Options',
+						nav_link : "#",
+						nav_title : "Options",
 					}
 				},
 				demo : {
 					title : "Basic Demo",
 					nav:{
-						nav_link : 'demo.html',
+						nav_link : "demo.html",
 						nav_title:"Demo",
 					},
 					vars : {
@@ -57,7 +57,7 @@ module.exports = {
 					title : "Testing Open Sans",
 					nav:{
 						parent:"Options",
-						nav_link : 'opensans.html',
+						nav_link : "opensans.html",
 						nav_title:"Open Sans",
 					},
 					vars : {
@@ -69,27 +69,27 @@ module.exports = {
 				_behaviors : {
 					file:false,
 					nav:{
-						nav_link : '#',
-						nav_title : 'Behavior',
+						nav_link : "#",
+						nav_title : "Behavior",
 					}
 				},
 				grid_fluid : {
-					title: 'Testing Fluid Grid',
+					title: "Testing Fluid Grid",
 					nav:{
 						parent:"Behavior",
-						nav_link : 'grid_fluid.html',
+						nav_link : "grid_fluid.html",
 						nav_title:"Fluid and Flex",
 					},
 					vars : {
-						behavior : 'fluid',
+						behavior : "fluid",
 						content: true
 					}
 				},
 				grid_hybrid : {
-					title: 'Testing Hybrid Grid',
+					title: "Testing Hybrid Grid",
 					nav:{
 						parent:"Behavior",
-						nav_link : 'grid_hybrid.html',
+						nav_link : "grid_hybrid.html",
 						nav_title:"Fold then Flex",
 					},
 					vars : {
@@ -98,10 +98,10 @@ module.exports = {
 					}
 				},
 				grid_fixed : {
-					title: 'Testing Fixed Grid',
+					title: "Testing Fixed Grid",
 					nav:{
 						parent:"Behavior",
-						nav_link : 'grid_fixed.html',
+						nav_link : "grid_fixed.html",
 						nav_title:"Fixed and Fold",
 					},
 					vars : {
@@ -110,15 +110,15 @@ module.exports = {
 					}
 				},
 				broken : {
-					title: 'Testing Broken Binding',
+					title: "Testing Broken Binding",
 					nav:{
 						parent:"Behavior",
-						nav_link : 'binding_broken.html',
-						nav_title : 'Broken Binding',
+						nav_link : "binding_broken.html",
+						nav_title : "Broken Binding",
 					},
 					vars : {
 						broken : true,
-						behavior : 'fluid',
+						behavior : "fluid",
 						content : true
 					}
 				},
@@ -126,8 +126,8 @@ module.exports = {
 					file:false,
 					nav:{
 						parent:"Behavior",
-						nav_link : 'http://en.wikipedia.org/wiki/Responsive_web_design',
-						nav_title : 'On Responsiveness',
+						nav_link : "http://en.wikipedia.org/wiki/Responsive_web_design",
+						nav_title : "On Responsiveness",
 					}
 				},
 
@@ -138,16 +138,16 @@ module.exports = {
 				_layouts : {
 					file:false,
 					nav:{
-						nav_link : '#',
-						nav_title : 'Layouts and Columns',
+						nav_link : "#",
+						nav_title : "Layouts and Columns",
 					}
 				},
 				
 				columns : {
-					title: 'Testing Columns',
+					title: "Testing Columns",
 					nav:{
-						parent:'Layouts and Columns',
-						nav_link : 'columns.html',
+						parent:"Layouts and Columns",
+						nav_link : "columns.html",
 						nav_title:"Columns",
 					},
 					vars : {
@@ -155,10 +155,10 @@ module.exports = {
 					}
 				},
 				spacing : {
-					title: 'Testing Gutters and Pads',
+					title: "Testing Gutters and Pads",
 					nav:{
-						parent:'Layouts and Columns',
-						nav_link : 'spacing.html',
+						parent:"Layouts and Columns",
+						nav_link : "spacing.html",
 						nav_title:"Gutters and Pads",
 					},
 					vars : {
@@ -170,16 +170,16 @@ module.exports = {
 				_content : {
 					file:false,
 					nav:{
-						nav_link : '#',
-						nav_title : 'Main/Content',
+						nav_link : "#",
+						nav_title : "Main/Content",
 					}
 				},
 				
 				mainheader : {
-					title: 'Testing the Main Header',
+					title: "Testing the Main Header",
 					nav:{
-						parent:'Main/Content',
-						nav_link : 'mainheader.html',
+						parent:"Main/Content",
+						nav_link : "mainheader.html",
 						nav_title:"Main Header",
 					},
 					vars : {
@@ -188,32 +188,32 @@ module.exports = {
 					}
 				},
 				typography : {
-					title: 'Testing Typography',
+					title: "Testing Typography",
 					nav:{
-						parent:'Main/Content',
-						nav_link : 'typography.html',
+						parent:"Main/Content",
+						nav_link : "typography.html",
 					},
 					vars : {
 						typography: true
 					}
 				},
 				unbound : {
-					title: 'Testing Unbound and Rebound',
+					title: "Testing Unbound and Rebound",
 					nav:{
-						parent:'Main/Content',
-						nav_link : 'unbound.html',
-						nav_title : 'Unbound and Rebound',
+						parent:"Main/Content",
+						nav_link : "unbound.html",
+						nav_title : "Unbound and Rebound",
 					},
 					vars : {
 						unbound : true
 					}
 				},
 				ui : {
-					title: 'User Interaction Elements',
+					title: "User Interaction Elements",
 					nav:{
-						parent:'Main/Content',
-						nav_link : 'ui.html',
-						nav_title: 'Behavior',
+						parent:"Main/Content",
+						nav_link : "ui.html",
+						nav_title: "Behavior",
 					},
 					vars : {
 						ui : true
@@ -227,39 +227,39 @@ module.exports = {
 				_broken : {
 					file:false,
 					nav:{
-						nav_link : '#',
-						nav_title : 'Broken',
+						nav_link : "#",
+						nav_title : "Broken",
 					}
 				},
 				
 				contact_malformed : {
 					nav:{
-						parent:'Broken',
-						nav_link : 'contact_malformed.html',
-						nav_title : 'malformed Contact',
+						parent:"Broken",
+						nav_link : "contact_malformed.html",
+						nav_title : "malformed Contact",
 					},
 					vars : {
 						malformed : true,
 						content: true,
-						location : 'https://repo.wsu.edu/spine'
+						location : "https://repo.wsu.edu/spine"
 					}
 				},
 				contact_filled : {
 					nav:{
-						parent:'Broken',
-						nav_link : 'contact_filled.html',
-						nav_title : 'Prefilled Contact',
+						parent:"Broken",
+						nav_link : "contact_filled.html",
+						nav_title : "Prefilled Contact",
 					},
 					vars : {
-						malformed : 'false',
+						malformed : "false",
 						content: true
 					}
 				},
 				contact_double : {
 					nav:{
-						parent:'Broken',
-						nav_link : 'contact_double.html',
-						nav_title : 'Contact doubling',
+						parent:"Broken",
+						nav_link : "contact_double.html",
+						nav_title : "Contact doubling",
 					},
 					vars : {
 						doubledContact : true,
@@ -268,22 +268,22 @@ module.exports = {
 				},
 				nav_data_links : {
 					nav:{
-						parent:'Broken',
-						nav_link : 'nav_data_links.html',
-						nav_title : 'Nav data intergration',
+						parent:"Broken",
+						nav_link : "nav_data_links.html",
+						nav_title : "Nav data intergration",
 					},
 					vars : {
 						navdata : true,
 						content: true,
-						location : 'https://repo.wsu.edu/spine'
+						location : "https://repo.wsu.edu/spine"
 					}
 				},
 				search_tabs : {
-					title: 'Testing serach tab',
+					title: "Testing serach tab",
 					nav:{
-						parent:'Broken',
-						nav_link : 'search_tabs.html',
-						nav_title : 'Local Defined Search',
+						parent:"Broken",
+						nav_link : "search_tabs.html",
+						nav_title : "Local Defined Search",
 					},
 					vars : {
 						filledSearchTab : true,
@@ -295,15 +295,15 @@ module.exports = {
 				_testing : {
 					file:false,
 					nav:{
-						nav_link : '#',
-						nav_title : 'Testing Units',
+						nav_link : "#",
+						nav_title : "Testing Units",
 					}
 				},
 				overly : {
 					nav:{
 						parent:"Testing Units",
-						nav_link : 'overly.html',
-						nav_title: 'Overly Overly',
+						nav_link : "overly.html",
+						nav_title: "Overly Overly",
 					},
 					vars : {
 						manyLinks : true,
@@ -313,20 +313,20 @@ module.exports = {
 				overly_linked : {
 					nav:{
 						parent:"Testing Units",
-						nav_link : 'overly_linked.html',
-						nav_title: 'Overly Linked',
+						nav_link : "overly_linked.html",
+						nav_title: "Overly Linked",
 					},
 					vars : {
 						manyLinks : true,
 						content: true,
-						location : 'https://repo.wsu.edu/spine'
+						location : "https://repo.wsu.edu/spine"
 					}
 				},
 				overly_long : {
 					nav:{
 						parent:"Testing Units",
-						nav_link : 'overly_long.html',
-						nav_title: 'Overly Long',
+						nav_link : "overly_long.html",
+						nav_title: "Overly Long",
 					},
 					vars : {
 						showLong : true
@@ -335,8 +335,8 @@ module.exports = {
 				cropped : {
 					nav:{
 						parent:"Testing Units",
-						nav_link : 'cropped.html',
-						nav_title: 'Testing Cropped Spine',
+						nav_link : "cropped.html",
+						nav_title: "Testing Cropped Spine",
 					},
 					vars : {
 						cropped : true,
@@ -346,18 +346,18 @@ module.exports = {
 				anchored : {
 					nav:{
 						parent:"Testing Units",
-						nav_link : 'anchored.html',
-						nav_title: 'Anchored page',
+						nav_link : "anchored.html",
+						nav_title: "Anchored page",
 					},
 					vars : {
 						anchored: true
 					}
 				},
 				js_units:{
-					title: 'Unit Testing',
+					title: "Unit Testing",
 					nav:{
 						parent:"Testing Units",
-						nav_link : 'js-units.html',
+						nav_link : "js-units.html",
 					},
 					vars : {
 						fixedGrid : true,
@@ -380,8 +380,5 @@ module.exports = {
 			}
 		};
 		return site_obj;
-	},
+	}
 };
-	
-	
-	
