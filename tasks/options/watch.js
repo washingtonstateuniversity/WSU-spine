@@ -1,21 +1,21 @@
 module.exports = {
 	html: {
-		files: ['test/*.html'],
-		tasks: ['dev'],
+		files: ["test/*.html"],
+		tasks: ["dev"],
 		options: {
 			livereload: true
 		}
 	},
 	js: {
-		files: ['scripts/*.js'],
-		tasks: ['dev']
+		files: ["scripts/*.js"],
+		tasks: ["dev"]
 	},
 	css: {
-		files: ['styles/*.css'],
-		tasks: ['dev']
+		files: ["styles/*.css"],
+		tasks: ["dev"]
 	},
 	sass: {
-		files: ['styles/sass/**/*.scss'],
-		tasks: ['dev']
+		files: ["styles/sass/**/*.scss"],
+		tasks: ["dev"]
 	}
-}
+};

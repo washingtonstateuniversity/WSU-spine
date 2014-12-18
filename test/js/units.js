@@ -1,14 +1,15 @@
+/* global alert */
 var native = window.alert;
 
 window.alert = function(){
-    console.log('alerting...');
+    console.log("alerting...");
     native.apply(window, arguments);
-    console.log('alerted!');
+    console.log("alerted!");
 };
 
 (function($){
 	"use strict";
 	$(document).ready(function(){
-		alert('ready to test');
+		alert("ready to test");
 	});
 })(jQuery);

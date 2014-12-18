@@ -1,16 +1,17 @@
+/* global require */
 module.exports = function(grunt) {
-	grunt.registerTask('build_tests', 'Set up all test pages', function() {
-		var fs = require('fs');
-		var extend = require('extend');
-		var wrench = require('wrench'),
-			util = require('util');
-		var nunjucks = require('nunjucks'),
-			markdown = require('nunjucks-markdown');
-		var env = nunjucks.configure('test');
-		env.addFilter('indexof', function(str, cmpstr) {
+	grunt.registerTask("build_tests", "Set up all test pages", function() {
+		var fs = require("fs");
+		var extend = require("extend");
+		var wrench = require("wrench");
+			//util = require("util");
+		var nunjucks = require("nunjucks"),
+			markdown = require("nunjucks-markdown");
+		var env = nunjucks.configure("test");
+		env.addFilter("indexof", function(str, cmpstr) {
 			return str.indexOf(cmpstr);
 		});
-		var marked = require('marked');
+		var marked = require("marked");
 			markdown.register(env,{
 				renderer: new marked.Renderer(),
 				gfm: true,
@@ -22,12 +23,12 @@ module.exports = function(grunt) {
 				smartypants: false
 			});
 
-		grunt.log.writeln("'Set up all test pages'");
+		grunt.log.writeln("Set up all test pages");
 		
-		// Include sitemap.js' to get the dynamic configuration
-		var _sitemap = require('../test/sitemap');
+		// Include sitemap.js" to get the dynamic configuration
+		var _sitemap = require("../test/sitemap");
 
-		sitemap = _sitemap.get_site_obj();
+		var sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
 		//console.log("site_obj: %j", sitemap);
 		wrench.mkdirSyncRecursive("build/tests", 0777);
@@ -67,7 +68,7 @@ module.exports = function(grunt) {
 						if(typeof pagenav.nav_link !== "undefined" ){
 							exurl=pagenav.nav_link;
 						}else{
-							exurl=root+'/'+sitemap.pages[page_key].nav_key+".html";
+							exurl=root+"/"+sitemap.pages[page_key].nav_key+".html";
 						}
 						exnav[linkTitle] = exurl;
 
@@ -84,7 +85,7 @@ module.exports = function(grunt) {
 						if(typeof pagenav.nav_link !== "undefined" ){
 							tmpobj[linkTitle]=pagenav.nav_link;
 						}else{
-							tmpobj[linkTitle]=root+'/'+sitemap.pages[page_key].nav_key+".html";
+							tmpobj[linkTitle]=root+"/"+sitemap.pages[page_key].nav_key+".html";
 						}
 					}
 					if(typeof pagenav.child_nav !== "undefined"){
@@ -99,7 +100,7 @@ module.exports = function(grunt) {
 						for (var link in pagenav.child_nav){
 							var url = link;
 							var title = pagenav.child_nav[link];
-							if(link.indexOf('#')==0){
+							if(link.indexOf("#")===0){
 								url=r+link;
 							}
 							navarray[title] = url;
@@ -125,13 +126,13 @@ module.exports = function(grunt) {
 				var site_obj = sitemap;
 				var page_obj = site_obj.pages[key];
 				if(page_obj.file!==false){
-					var sourceFile = 'test/preprocess/'+page_obj.template+'.tmpl';
-					//var tmpFile = 'build/deletable.tmp';
+					var sourceFile = "test/preprocess/"+page_obj.template+".tmpl";
+					//var tmpFile = "build/deletable.tmp";
 					var root = page_obj.file_root.replace(new RegExp("[\/]+$", "g"), "");
 
 					var page = page_obj.file || page_obj.nav_key+".html";
-					var targetFile = root+'/'+page;
-					var content = fs.readFileSync(sourceFile,'utf8')
+					var targetFile = root+"/"+page;
+					var content = fs.readFileSync(sourceFile,"utf8");
 
 					site_obj.current_page=page;
 					site_obj.current_build=page_obj.nav_key;
@@ -140,7 +141,7 @@ module.exports = function(grunt) {
 					//grunt.log.writeln(targetFile + " compiled");
 					var res = tmpl.render(site_obj);
 					grunt.log.writeln("building "+targetFile);
-					fs.writeFile(targetFile, res, function(err){
+					fs.writeFile(targetFile, res, function(){
 						//grunt.log.writeln("wrote to file "+targetFile);
 					});
 				}
