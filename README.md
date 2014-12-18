@@ -21,7 +21,7 @@ More information is available in this repo's <a href="https://github.com/washing
 
 The Spine framework is made available as part of a central repository at WSU.
 
-Using this repository as an external library in your CMS or the web pages you create will help to ensure you receive the benefits of automatic updates as they are pushed.
+Using this repository as an external library in your CMS or the web pages you create will help to ensure you receive the benefits of automatic updates as they are pushed. Visitors to your web pages will also benefit from faster page loads as the Spine files will likely be cached in their browser from other university properties.
 
 Using the current major version build will ensure that you will receive all non-breaking updates automatically. This is the **recommended** method.
 
