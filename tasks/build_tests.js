@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 						for (var link in pagenav.child_nav){
 							var url = link;
 							var title = pagenav.child_nav[link];
-							if(link.indexOf("#")==0){
+							if(link.indexOf("#")===0){
 								url=r+link;
 							}
 							navarray[title] = url;
