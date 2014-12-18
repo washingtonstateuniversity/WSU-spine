@@ -43,8 +43,8 @@ module.exports = function(grunt) {
 
 				//apply defaults were needed
 				sitemap.pages[page_key].nav_key = page_key;
-				//note extend will not work here, for some reason it"ll alter the ref of defaults
-				//we"ll have to do it by hand for the moment
+				//note extend will not work here, for some reason it'll alter the ref of defaults
+				//we'll have to do it by hand for the moment
 				for (var objKey in defaults){
 					if(typeof sitemap.pages[page_key][objKey] === "undefined"){
 						sitemap.pages[page_key][objKey] = defaults[objKey];
