@@ -283,7 +283,7 @@ button#shelve {
 		background-image: url('#{$locality}/icons/home-crimson.svg');
 		}
 	.spine-sitenav.homeless > ul > li:first-child > a {
-		background-image: none;
+		background-image: none !important;
 		}
 
 	/* #### "Dogeared" Link */
@@ -938,18 +938,6 @@ html.lt-ie9 #spine footer {
 	#glue:before {
 		background-color: white;
 		}
-
-		/*
-	&.bleed:before {
-			content: " ";
-			background-color: white;
-			width: 1000px;
-			position: absolute;
-			min-height: 100%;
-			left: -1000px;
-			background-color: $gray-er;
-			}
-	*/
 
 	@include vellum($gray-er);
 
