@@ -132,7 +132,7 @@ module.exports = function(grunt) {
 
 					var page = page_obj.file || page_obj.nav_key+".html";
 					var targetFile = root+"/"+page;
-					var content = fs.readFileSync(sourceFile,"utf8")
+					var content = fs.readFileSync(sourceFile,"utf8");
 
 					site_obj.current_page=page;
 					site_obj.current_build=page_obj.nav_key;
