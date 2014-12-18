@@ -10,12 +10,12 @@ As a visual element, the WSU Spine is a 198px wide column that binds together th
 A typical implementation of the WSU Spine would start with markup from spine.html.
 
 1. Customize #spine by replacing default data with the appropriate contact details.
-2. Customize the markup in spine.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of spine.html and, for some lesser used options, at brand.wsu.edu.
+2. Customize the markup in spine.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of spine.html and, for some lesser used options, at [brand.wsu.edu](http://brand.wsu.edu).
 3. Rebuild the markup in your CMS of choice while taking care to preserve its elements and structure.
 
-### Details
+## Details
 
-More information is available in this repo's <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki">Wiki</a>.
+More information is available in this repository's <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki">Wiki</a>.
 
 # WSU Spine Repository
 
