@@ -32,13 +32,14 @@
 	position: absolute;
 	bottom: 0;
 
-	button {
+	a#shelve, button {
 		background-color: transparent;
 		border: none;
 		border-radius: 0px;
 		text-indent: 120%;
 		white-space: nowrap;
 		overflow: hidden;
+		cursor:pointer;
 		}
 	a {
 		color: #5e6a71;
@@ -112,11 +113,11 @@
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
-button#shelve {
-  display:none;
+a#shelve {
+  /*display:none;*/
 	}
 
-.shelved button#shelve,.unshelved button#shelve {
+.shelved a#shelve,.unshelved a#shelve {
 	height: 50px;
 	width: 100px;
 	border: none;
@@ -125,7 +126,10 @@ button#shelve {
 	top: 0px;
 	z-index:100;
 	display:block;
-	background: transparent url("#{$locality}/icons/menu.svg") 20px center no-repeat;
+	background-color:transparent;
+	background-image:url("#{$locality}/icons/menu.svg");
+	background-position:20px center;
+	background-repeat: no-repeat;
 	outline: none;
 	}
 

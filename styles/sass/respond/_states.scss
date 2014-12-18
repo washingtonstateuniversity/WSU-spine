@@ -26,7 +26,7 @@
 			width: 1000px;
 			}
 			
-		button#shelve {
+		a#shelve {
 			display: block;
 			}	
 		&.shelved {
@@ -75,7 +75,7 @@
 		
 		left: auto;
 		
-		button#shelve {
+		a#shelve {
 			display: none;
 			}
 		&.unshelved,

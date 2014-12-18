@@ -228,7 +228,7 @@
 		 */
 		setup_spine: function(){
 			var self,spine,glue,main,viewport_ht,spine_ht,height_dif,positionLock;
-			$("#glue > header").prepend("<button id='shelve' />");
+			$("#glue > header").prepend("<a id='shelve' />");
 			self = this;
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
@@ -237,7 +237,7 @@
 			self.nav_state.scroll_dif=0;
 			self.nav_state.positionLock=0;
 
-			$("header button").on("click",function(e) {
+			$("#glue > header a").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
 			});
