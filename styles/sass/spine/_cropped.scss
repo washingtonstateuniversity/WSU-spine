@@ -30,6 +30,11 @@
 		&.bleed #glue:before {
 			left: 0px;
 			}
+			
+		&.shelved button#shelve,
+		&.unshelved button#shelve {
+		  display:none;
+			}
 
 		/* #### Cropped and Scrolled */
 		&.skimmed:not(.unshelved) {
@@ -52,6 +57,8 @@
 				background-position: center 12px;
 				background-size: auto 30px;
 				height: 49px;
+				pointer-events: none;
+				cursor: default;
 				}
 
 			#wsu-actions {
