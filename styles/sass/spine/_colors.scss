@@ -107,7 +107,7 @@
 
 	@include vellum($gray-lighter);
 	
-	button#shelve {
+	a#shelve {
 		background-image: url("#{$locality}/icons/menu-white.svg");
 		}
 

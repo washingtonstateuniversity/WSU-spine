@@ -6,7 +6,7 @@
 	html.print #binder main {
 		margin-left: 0px;
 		}
-	html.print #binder #spine header button#shelve {
+	html.print #binder #spine header a#shelve {
 		display: none;
 		}
 			
@@ -127,7 +127,7 @@
 		print {
 		
 			html.print { zoom: 90%; }
-			html.print #spine header button#shelve,
+			html.print #spine header a#shelve,
 			html.print #spine .print-controls {
 				display: none;
 				}
