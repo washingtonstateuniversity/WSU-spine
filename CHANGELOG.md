@@ -2,12 +2,22 @@
 
 ## 1.3.0 (In progress)
 
-## 1.2.2 (TBD)
-* Fix issues #168, #169, #186, #189, #191, #194, #205
-* Add `autoprefixing` to `grunt` build process
-* Change build process to use custom test page task
-* Update tests units
+## 1.2.2 (December 22, 2014)
+
+### Framework Changes
 * Deprecate `.size-smallish` class for fixed behavior in favor of `.size-intermediate`
+* Fix an issue where the Spine would not resize when using an in page anchor link. (#169)
+* Fix an issue where the shelved hamburger button would appear on a non-mobile view with a cropped Spine. (#189)
+* Fix an issue where Spine tools disappeared in a mobile, unshelved state. (#186)
+* Fix an issue where wrappers were padded by `50px` in some views. (#168)
+* Show related search items by default, as opposed to unrelated search items. (#194)
+* While wildly resizing a window, it was possible for multiple `min-height` transitions to start occurring. (#205)
+* Resolve a namespace issue between `margin-right` as layout and `margin-right` for margining. Use for layout only. (#191)
+
+### Development Changes
+* Add `autoprefixing` to `grunt` build process to automatically add vendor prefixes to CSS for increased cross browser support. (#171)
+* Change build process to use a custom test page task.
+* Update tests units.
 
 ## 1.2.1 (December 4, 2014)
 
