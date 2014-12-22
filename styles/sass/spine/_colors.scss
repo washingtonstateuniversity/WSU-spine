@@ -47,16 +47,16 @@
 	.spine-actions section {
 		background-color: white;
 		}
-	
+
 	}
-	
+
 &.lightly {
 
 	/* #### LIGHTLY #d7dadb, rgb(215 218 219) */
 
 	#glue:before {
 		background-color: $gray-lightly;
-		}	
+		}
 
 	@include vellum($gray-lightly);
 
@@ -88,13 +88,13 @@
 		color: $gray-light;
 		}
 	.spine-search-tab button:hover {
-		color: $gray; 
+		color: $gray;
 		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: $crimson;
-		} 
-	
+		}
+
 	}
 
 &.lighter {
@@ -103,10 +103,10 @@
 
 	#glue:before {
 		background-color: $gray-lighter;
-		}	
+		}
 
 	@include vellum($gray-lighter);
-	
+
 	button#shelve {
 		background-image: url("#{$locality}/icons/menu-white.svg");
 		}
@@ -150,19 +150,19 @@
 	.spine-sitenav li.dogeared > a {
 		color: $crimson;
 		}
-	
+
 	}
 
 &.light {
 
 	/* #### LIGHT #8b9399, rgb(139,147,153) */
-	
+
 	#glue:before {
 		background-color: $gray-light;
 		}
-		
+
 	@include vellum($gray-light);
-	
+
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lightest.svg");
 		}
@@ -207,17 +207,17 @@
 	.spine-sitenav li.dogeared > a {
 		color: white;
 		}
-	
+
 	}
 
 &.gray {
-	
+
 	/* #### GRAY #5e6a71, rgb(94,106,113) */
 
 	#glue:before {
 		background: $gray;
 		}
-	
+
 	@include vellum($gray);
 
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
@@ -267,7 +267,7 @@
 	.spine-sitenav li.dogeared > a {
 		color: white;
 		}
-	
+
 	}
 
 &.dark {
@@ -277,9 +277,9 @@
 	#glue:before {
 		background-color: $gray-dark;
 		}
-	
+
 	@include vellum($gray-dark);
-	
+
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lightest.svg");
 		}
@@ -318,19 +318,19 @@
 		}
 	.spine-social-channels li[class*="-channel"] a:hover {
 		color: $gray-lightly !important;
-		}	
+		}
 	.spine-search-tab button {
 		color: darken($gray-lighter,4%);
 		}
 	.spine-search-tab button:hover {
 		color: $gray-lightly;
 		}
-	
+
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: white;
 		}
-	
+
 	}
 
 &.darker {
@@ -340,9 +340,9 @@
 	#glue:before {
 		background-color: darken($gray-darker, 3%);
 		}
-	
+
 	@include vellum(darken($gray-darker, 3%));
-	
+
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lighter.svg");
 		}
@@ -389,19 +389,19 @@
 	.spine-sitenav li.dogeared > a {
 		color: white;
 		}
-	
+
 	}
 
 &.darkest {
 
 	/* #### GRAY-DARKEST #000, rgb 0,0,0 */
-	
+
 	#glue:before {
 		background-color: $gray-darkest;
 		}
-	
+
 	@include vellum($gray-darkest);
-	
+
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lighter.svg");
 		}
@@ -442,7 +442,7 @@
 	.spine-sitenav li.dogeared > a {
 		color: $crimson-er;
 		}
-	
+
 	}
 
 &.crimson {
@@ -452,9 +452,9 @@
 	#glue:before {
 		background-color: $crimson;
 		}
-	
+
 	@include vellum($crimson);
-	
+
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lighter.svg");
 		}
@@ -500,7 +500,7 @@
 	.spine-sitenav li.dogeared > a {
 		color: white;
 		}
-	
+
 	}
-	
+
 	}

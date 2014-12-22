@@ -15,26 +15,26 @@ $gutters: (
 	.guttered#{$gutter} {
 		padding-left: $dividend;
 		padding-right: $dividend; }
-		
+
 	}
-	
+
 $spacing: (
 	'loose': 4rem,
 	'tight': 1rem
 	);
 
 @each $space, $dividend in $spacing {
-	
+
 	.spacing-#{$space} .gutter .colum,
 	.spacing-#{$space} .guttered {
 		padding-left: $dividend/$whole;
 		padding-right: $dividend/$whole; }
-	
+
 	// One Column
 	.spacing-#{$space} .single.gutter .column {
 		padding-left: $dividend/$whole;
 		padding-right: $dividend/$whole; }
-	
+
 	// Two Columns
 	.spacing-#{$space} .halves.gutter .column.one,
 	.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+3),
@@ -54,7 +54,7 @@ $spacing: (
 		padding-left: ($dividend/$halve);
 		padding-right: $dividend/$whole;
 		}
-	
+
 	// Three Columns
 	.spacing-#{$space} .thirds.gutter .column.one,
 	.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+4),
@@ -74,7 +74,7 @@ $spacing: (
 		padding-left: $dividend/$halve;
 		padding-right: $dividend/$whole;
 		}
-		
+
 	// Four Columns
 	.spacing-#{$space} .quarters.gutter .column.one,
 	.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+5) {
@@ -93,16 +93,16 @@ $spacing: (
 		padding-left: $dividend/$halve;
 		padding-right: $dividend/$whole;
 		}
-		
+
 	}
-	
+
 @each $gutter, $dividend in $gutters {
-	
+
 	// One Column
 	.single.gutter#{$gutter} .column {
 		padding-left: $dividend/$whole;
 		padding-right: $dividend/$whole; }
-	
+
 	// Two Columns
 	.halves.gutter#{$gutter} .column.one,
 	.halves.gutter#{$gutter} .column:nth-of-type(2n+3),
@@ -118,7 +118,7 @@ $spacing: (
 		padding-left: ($dividend/$halve);
 		padding-right: $dividend/$whole;
 		}
-	
+
 	// Three Columns
 	.thirds.gutter#{$gutter} .column.one,
 	.thirds.gutter#{$gutter} .column:nth-of-type(3n+4),
@@ -138,7 +138,7 @@ $spacing: (
 		padding-left: $dividend/$halve;
 		padding-right: $dividend/$whole;
 		}
-	
+
 	// Four Columns
 	.quarters.gutter#{$gutter} .column.one,
 	.quarters.gutter#{$gutter} .column:nth-of-type(4n+5) {
@@ -157,14 +157,14 @@ $spacing: (
 		padding-left: $dividend/$halve;
 		padding-right: $dividend/$whole;
 		}
-		
+
 	}
-	
+
 	.gutterless {
 		padding-left: 0px !important;
 		padding-right: 0px !important;
 		}
-	
+
 	/*
 		.fifths.gutter .column { padding: 1em; }
 		.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }

@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 	grunt.loadTasks('tasks');
-	
+
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
 

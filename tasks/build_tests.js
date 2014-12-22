@@ -23,9 +23,9 @@ module.exports = function(grunt) {
 				smartypants: false
 			});
 		var done = this.async();
-		
+
 		grunt.log.writeln("Set up all test pages");
-		
+
 		// Include sitemap.js" to get the dynamic configuration
 		var _sitemap = require("../test/sitemap");
 
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 						sitemap.pages[page_key][objKey] = defaults[objKey];
 					}
 				}
-				
+
 				//build nav
 				var pagenav = sitemap.pages[page_key].nav!==undefined ? sitemap.pages[page_key].nav:{};
 				if(pagenav!==false){
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 						}
 						exnav = extend(tmp,exnav);
 						nav[pagenav.parent] = exnav;
-						
+
 					}else{
 						if(typeof pagenav.nav_link !== "undefined" ){
 							tmpobj[linkTitle]=pagenav.nav_link;
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
 					if(typeof pagenav.child_nav !== "undefined"){
 						var r = tmpobj[linkTitle];
 						var navarray = {};
-						
+
 						var mainlink= sitemap.pages[page_key].title;
 						if(typeof pagenav.nav_title !== "undefined" ){
 							mainlink = pagenav.nav_title;
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
 		}
 
 		build_site_obj();
-			
+
 		/*
 		 * Construct the static pages
 		 */

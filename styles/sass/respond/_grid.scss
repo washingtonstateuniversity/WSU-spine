@@ -4,7 +4,7 @@
 @mixin grid-large-controls {
 
 	/* Grid - Manual Overrides */
-	
+
 	.at-large-display-none,
 	.at-large-display-none .column {
 		display: none;
@@ -37,13 +37,13 @@
 	.at-large-float-none .column {
 		float: none !important;
 		}
-			
+
 	}
 
 // Medium
 
 @mixin grid-medium-controls {
-	
+
 	/* Grid - Manual Controls */
 
 	.at-medium-display-none,
@@ -78,13 +78,13 @@
 	.at-medium-float-none .column {
 		float: none !important;
 		}
-	
+
 	}
-	
+
 // Smallish
 
 @mixin grid-smallish-controls {
-	
+
 	/* Grid - Manual Controls */
 
 	.at-smallish-max-width,
@@ -111,7 +111,7 @@
 	.at-smallish-float-none .column {
 		float: none !important;
 		}
-	
+
 	}
 
 // Fixed Small
@@ -119,7 +119,7 @@
 @mixin layouts-small {
 
 	.row {
-	
+
 		&.single .column,
 		&.halves .column,
 		&.thirds .column,
@@ -155,12 +155,12 @@
 	.row.fifteenths .three-fifteenths {
 		width: 50%;
 		}
-		
+
 	/* Nesting */
 
 	.row {
 		.row {
-		
+
 			&.thirds .column {
 				width: 33%;
 				}
@@ -176,13 +176,13 @@
 				}
 			}
 		}
-		
+
 }
 
 @mixin grid-small-controls {
 
 	/* Grid - Manual Controls */
-	
+
 	.at-small-display-none,
 	.at-small-display-none .column {
 		display: none;

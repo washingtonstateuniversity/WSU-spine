@@ -9,7 +9,7 @@
 	html.print #binder #spine header button#shelve {
 		display: none;
 		}
-			
+
 	html.print #binder {
 		position: relative;
 		width: 792px;
@@ -47,13 +47,13 @@
 		}
 
 	html.print {
-	
+
 		@include header-colors;
 		@include signatures('horizontal','');
-	
+
 	}
-	
-		
+
+
 	html.print #spine .print-controls {
 		float: right;
 		}
@@ -67,7 +67,7 @@
 	html.print #spine .print-button {
 		display: none;
 		}
-		
+
 
 	#spine .print-controls {
 		display: block;
@@ -122,10 +122,10 @@
 		}
 	#spine button#print-invoke:before { content: "⎙"; }
 	#spine button#print-cancel:before { content: "␡"; }
-	
-	@media 
+
+	@media
 		print {
-		
+
 			html.print { zoom: 90%; }
 			html.print #spine header button#shelve,
 			html.print #spine .print-controls {
@@ -133,5 +133,5 @@
 				}
 
 			}
-	
+
 	}
