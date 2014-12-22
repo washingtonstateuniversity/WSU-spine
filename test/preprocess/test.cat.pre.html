@@ -731,8 +731,8 @@ pre code {
 						<legend>Fieldset Legend</legend>
 						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
 
-						
-<h3>Basic Form</h3>							
+
+<h3>Basic Form</h3>
 <form role="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -771,10 +771,10 @@ pre code {
 <label>tel :<input type="tel" class="form-control" placeholder="tel input"></label><br/>
 <label>color :<input type="color" class="form-control" placeholder="color input"></label><br/>
 
-<h3>Readonly inputs</h3>						
+<h3>Readonly inputs</h3>
 <input class="form-control" type="text" placeholder="Readonly input here…" readonly />
 
-<h3>Disabled inputs</h3>							
+<h3>Disabled inputs</h3>
 <form role="form">
   <fieldset disabled>
     <div class="form-group">
@@ -794,10 +794,10 @@ pre code {
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
-</form>		
-						
-						
-						
+</form>
+
+
+
 								<form>
 								<h2>Form Element</h2>
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
@@ -826,10 +826,10 @@ pre code {
 										</optgroup>
 								</select></label>
 								</p>
-								
 
-								
-								
+
+
+
 								<p>
 										<label for="radio_buttons">Radio Buttons:</label>
 								</p>
@@ -872,14 +872,14 @@ pre code {
 										<input class="button" type="submit" value="Submit" />
 								</p>
 								</p>
-						</form>				
-						
-						
-						
-						
-						
-						
-						
+						</form>
+
+
+
+
+
+
+
 				</fieldset>
 				<p><small><a href="#wrapper">[top]</a></small></p>
 				<hr />
@@ -941,7 +941,7 @@ nunc. Morbi imperdiet augue
 								-Blockquote </p>
 				</blockquote>
 				<p><small><a href="#wrapper">[top]</a></small><br />
-				
+
   <h1 id="code" class="page-header">Code</h1>
 
   <h2 id="code-inline">Inline</h2>
@@ -982,8 +982,8 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     <p><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
   </div>
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;samp&gt;</span>This text is meant to be treated as sample output from a computer program.<span class="nt">&lt;/samp&gt;</span></code></pre></div>
-	
-				
+
+
 		</div>
 </section>
 
@@ -2501,6 +2501,13 @@ Where do you work?
 <!-- <small id="copyright"><a href="http://copyright.wsu.edu">&copy; Washington State University</a></small> -->
 </footer>
 	<!-- @endif -->
+	<!-- @if unit_tests='true' -->
+			<!-- for now but will be replaced to the header later -->
+	<script src="tests/js/units.js"></script>
+	<p>Welcome to the test unit check page.  Hit run to check all of the units.</p>
+	<a href="#" class="button">Run test.</a>
+	<div id="results"></div>
+	<!-- @endif -->
 
 </main>
 <!-- /CONTENT -->
@@ -2785,9 +2792,9 @@ Where do you work?
 <!-- @if markup='true' || markup_min='true' -->
 <!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
 <!-- @endif -->
-<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
-	<span itemprop="department"  content="University Unit"></span> 
-	<span itemprop="name" content="Washington State University"></span> 
+<div id="contact-details" itemscope itemtype="http://schema.org/Organization">
+	<span itemprop="department"  content="University Unit"></span>
+	<span itemprop="name" content="Washington State University"></span>
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		<span itemprop="location" content="Your location"></span>
 		<span itemprop="streetAddress" content="Your PO Box"></span>
@@ -2821,9 +2828,9 @@ Where do you work?
 	<!-- @if malformed='false' -->
 		<!-- NOTE: a normal working contact tab, just could have been better placed
 			 then in the spine directly -->
-		<div id="contact-details" itemscope itemtype="http://schema.org/Organization"> 
-	<span itemprop="department"  content="University Unit"></span> 
-	<span itemprop="name" content="Washington State University"></span> 
+		<div id="contact-details" itemscope itemtype="http://schema.org/Organization">
+	<span itemprop="department"  content="University Unit"></span>
+	<span itemprop="name" content="Washington State University"></span>
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		<span itemprop="location" content="Your location"></span>
 		<span itemprop="streetAddress" content="Your PO Box"></span>

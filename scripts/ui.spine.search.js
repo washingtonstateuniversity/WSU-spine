@@ -27,7 +27,7 @@
 				},
 				atoz:{
 					name:"WSU A to Z index",
-					url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+					url: "https://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
 					urlSpaces:"+",
 					dataType: "jsonp",
 					featureClass: "P",
@@ -52,7 +52,7 @@
 			},
 			result:{
 				appendTo: "#spine-shortcuts",
-				showRelated:false,
+				showRelated:true,
 				target:"_blank",
 				relatedHeader:"<b class='related_sep'>Related</b><hr/>",
 				providerHeader:"<b class='provider_header'><%this.provider_name%></b><hr/>",
@@ -90,7 +90,7 @@
 			var self,term,queries = [];
 			self=this;//hold to preserve scop
 
-			term = request.term;
+			term = $.trim(request.term);
 			self.search_options.data=[];
 			$.each(self.search_options.providers, function(i,provider){
 				$.ui.autocomplete.prototype.options.termTemplate = (typeof(provider.termTemplate) !== undefined && provider.termTemplate !== "") ? provider.termTemplate : undefined;
@@ -115,7 +115,7 @@
 		},
 
 		run_query:function(term,provider){
-			var self, result = [], tmpObj = [];
+			var self, result = [], tmpObj = [], nodes;
 			self=this;//hold to preserve scop
 			result = [];
 
@@ -132,14 +132,17 @@
 					}
 				});
 			}else if(typeof(provider)!==undefined && typeof(provider.nodes)!==undefined ){
-				$.each($(provider.nodes).find("a"),function(i,v){
+				nodes=$(provider.nodes).find("a");
+				$.each(nodes,function(i,v){
 					var obj,text, localtmpObj;
 					obj = $(v);
 					text = obj.text();
-					if(text.toLowerCase().indexOf(term.toLowerCase())>-1){
+					if(text.toLowerCase().indexOf(term.toLowerCase())>-1 && obj.attr("href")!=="#"){
 						localtmpObj = {
 							label:text,
-							value:obj.attr("href")
+							value:obj.attr("href"),
+							related:"false",
+							searchKeywords:""
 						};
 						tmpObj.push(localtmpObj);
 					}
@@ -211,9 +214,11 @@
 				select : function( e, ui ) {
 					var id, term;
 					id = ui.item.searchKeywords;
-					term = ui.item.label;
+					term =$(ui.item.label).text();
+					search_input.val( term );
 					//$("#indices").empty();
 					search_input.autosearch("close");
+					return false;
 				},
 				focus : function( e, ui ) {
 					search_input.val( $(ui.item.label).text() );
@@ -266,7 +271,7 @@
 				cx = "cx=004677039204386950923:xvo7gapmrrg";
 				cof = "cof=FORID%3A11";
 				search_term = search_input.val();
-				search_url = "http://search.wsu.edu/default.aspx?"+cx+"&"+cof+"&q="+search_term+site;
+				search_url = "https://search.wsu.edu/default.aspx?"+cx+"&"+cof+"&q="+search_term+site;
 				window.location.href = search_url;
 				return false;
 			});

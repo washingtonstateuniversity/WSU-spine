@@ -94,7 +94,7 @@
 			if(!$.svg_enabled()){
 				$("html").addClass("nosvg");
 			}
-			
+
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
@@ -135,33 +135,49 @@
 					spine.removeClass("unshelved");
 					spine.removeClass("shelved");
 				}else{
+					glue.css("min-height",viewport_ht-50);
 					spine.addClass("shelved");
 				}
 				//console.log("window-resize | viewport_ht::" + viewport_ht);
 				$(document).trigger("scroll");
 
 			}).trigger("resize");
+			$(document).trigger("scroll");
+
 		},
 		// Label #jacket with current window size
 		sizing: function (jacket) {
-			var current_width,ele_class;
-			jacket=jacket||$("#jacket");
-			current_width = $(window).width();
+
+			var current_width,ele_class,px_width,size_small,size_intermediate,size_medium,size_large,size_xlarge;
+
+            jacket=jacket||$("#jacket");
+            current_width = $(window).width();
+
+			size_small = "size-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+			size_intermediate = "size-intermediate size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
+			size_medium = "size-medium size-lt-xlarge size-lt-large size-gt-intermediate size-gt-smallish size-gt-small";
+			size_large = "size-large size-lt-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium";
+			size_xlarge = "size-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium size-gt-large";
+
 			ele_class="";
+			px_width="";
+
 			if(current_width >= 1188) {
-				ele_class="size-xlarge size-gt-small size-gt-smallish size-gt-medium size-gt-large";
+				ele_class=size_xlarge;
 			} else if(current_width >= 990) {
-				ele_class="size-large size-lt-xlarge size-gt-small size-gt-smallish size-gt-medium";
-			} else if((current_width >= 694 && current_width < 792) && ($("#binder").is(".fixed"))) {
-				ele_class="size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
-			} else if(current_width < 990 && current_width >= 694) {
-				ele_class="size-medium size-lt-xlarge size-lt-large size-gt-smallish size-gt-small";
-			} else if(current_width < 694) {
-				ele_class="size-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+				ele_class=size_large;
+			} else if((current_width < 990) && current_width >= 792 ) {
+				px_width="size-lt-990";
+				ele_class= $("#binder").is(".fluid") ? size_large : size_medium;
+			} else if(current_width < 792 && current_width >= 694) {
+				px_width="size-lt-792";
+				ele_class= $("#binder").is(".fixed") ? size_intermediate : size_medium;
+			} else if(current_width < 694 && current_width >= 396) {
+				ele_class=size_small;
 			} else if(current_width < 396) {
-				ele_class="size-small size-lt-small size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+				ele_class="size-small size-lt-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			}
-			jacket.stripClass("size-").addClass(ele_class);
+			jacket.stripClass("size-").addClass(ele_class+" "+px_width);
 		},
 		// Equalize Columns
 		equalizing: function () {
@@ -234,9 +250,6 @@
 			self.nav_state.scroll_dif=0;
 			self.nav_state.positionLock=0;
 
-
-
-			
 			$("header button").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
@@ -247,10 +260,11 @@
 					spine.toggleClass("shelved unshelved");
 				}
 			});
-			
+
 			if($(".ios .hybrid .unshelved").length <= 0){
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
+					//console.log("should be scrolling");
 					self.apply_nav_func(self);
 				});
 				//check for changes to the dom
@@ -321,14 +335,14 @@
 				main.css({"min-height":glue_ht+scroll_top});
 			}else{
 				if(scroll_dif===0){
-					main.animate({"min-height":glue_ht},"fast");
+					main.stop().animate({"min-height":glue_ht},50);
 				}else{
 					main.css({"min-height":glue_ht});
 				}
 			}
 			if( main.outerHeight(true) > glue_ht ){
 				if( (scroll_dif <= 0) ){//down
-					positionLock = ( positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
+					positionLock = ( positionLock===0 || positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
 					if(bottom <= 0 && positionLock >= height_dif){
 						positionLock = height_dif;
 					}
@@ -388,6 +402,9 @@
 		 * Sets up navigation system
 		 */
 		setup_nav: function(){
+			var self;
+
+			self = this;
 			// NAVIGATION
 			// Tag location and hierarchy
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
@@ -427,6 +444,13 @@
 				});
 
 			});
+			//note the selector is so that we can have # with preceding url that is not off site, but needed for base
+			$("main a[href*='#']:not([href*='://'])").on("mouseup",function(){
+				//self.apply_nav_func(self);
+				//console.log("scroll it");
+				$(document).trigger("scroll");
+			});
+
 			// External Links in nav
 			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
 

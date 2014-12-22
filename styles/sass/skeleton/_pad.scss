@@ -21,7 +21,7 @@
 	.padded.short {
 		padding-top: $spacing-short;
 		padding-bottom: $spacing-short; }
-		
+
 	// One by One
 	.pad-top .column,
 	.padded-top {
@@ -35,7 +35,7 @@
 	.pad-left .column,
 	.padded-left {
 		padding-left: $spacing-default; }
-		
+
 	// One by None
 	.pad-top-none .column,
 	.padded-top-none {
@@ -49,13 +49,13 @@
 	.pad-left-none .column,
 	.padded-left-none {
 		padding-left: 0; }
-		
+
 	// SIDES
 	.pad-sides .column,
 	.padded-sides {
 		padding-left: $spacing-default;
 		padding-right: $spacing-default; }
-	
+
 	// Wide
 	.pad-sides.wide .column,
 	.padded-sides.wide {
@@ -79,13 +79,13 @@
 	.pad-left.narrow .column,
 	.padded-left.narrow {
 		padding-left: $spacing-narrow; }
-		
+
 	// ENDS
 	.pad-ends .column,
 	.padded-ends {
 		padding-top: $spacing-default;
 		padding-bottom: $spacing-default; }
-	
+
 	// Tall
 	.pad-ends.tall .column,
 	.padded-ends.tall {
@@ -97,7 +97,7 @@
 	.pad-bottom.tall .column,
 	.padded-bottom.tall {
 		padding-bottom: $spacing-tall; }
-	
+
 	// Short
 	.pad-ends.short .column,
 	.padded-ends.short {
@@ -109,5 +109,5 @@
 	.pad-bottom.short .column,
 	.padded-bottom.short {
 		padding-bottom: $spacing-short; }
-	
+
 	}

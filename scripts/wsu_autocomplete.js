@@ -12,17 +12,13 @@
 	$.widget( "ui.autosearch", $.ui.autocomplete, {
 		_renderMenu: function( ul, items ) {
 			var that	= this;
-			var related	= items.filter(function(obj, item) {
-				if(obj.related!=="false"){
-					return item;
-				}
+			var related	= $.grep(items,function(obj){//, item) {
+				return obj.related!=="false";
 			});
-
-			$.each(items.filter(function(obj, item) {
-				if(obj.related==="false"){
-					return item;
-				}
-			}), function(i, item) {
+			var unrelated = $.grep(items,function(obj){//, item) {
+				return obj.related==="false";
+			});
+			$.each(unrelated, function(i, item) {
 				that._renderItemData( ul, item );
 			});
 

@@ -18,15 +18,15 @@ $opensans-fonts: (
 	opensans-sb: '-Semibold',
 	opensans-sbi: '-SemiBoldItalic'
 	);
-	
+
 @each $opensans-font, $fontname in $opensans-fonts {
 	@font-face {
 		font-family: "OpenSans#{$fontname}";
-		src: url('#{$font_domain}/fonts/OpenSans#{$fontname}.eot');
-		src: url('#{$font_domain}/fonts/OpenSans#{$fontname}.eot?#iefix') format('embedded-opentype'),
-        	 url('#{$font_domain}/fonts/OpenSans#{$fontname}.woff') format('woff'),
-			 url('#{$font_domain}/fonts/OpenSans#{$fontname}.ttf') format('truetype'),
-			 url('#{$font_domain}/fonts/OpenSans#{$fontname}.svg#OpenSans') format('svg');
+		src: url("#{$font_domain}/fonts/OpenSans#{$fontname}.eot");
+		src: url("#{$font_domain}/fonts/OpenSans#{$fontname}.eot?#iefix") format('embedded-opentype'),
+        	 url("#{$font_domain}/fonts/OpenSans#{$fontname}.woff") format('woff'),
+			 url("#{$font_domain}/fonts/OpenSans#{$fontname}.ttf") format('truetype'),
+			 url("#{$font_domain}/fonts/OpenSans#{$fontname}.svg#OpenSans") format('svg');
 		font-weight: normal;
 		font-style: normal;
 		}

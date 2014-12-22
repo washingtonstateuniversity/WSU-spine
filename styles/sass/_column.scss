@@ -4,10 +4,10 @@
 /* Icons Font */
 @font-face {
 	font-family: "Spine-Icons";
-    src: url('#{$font_domain}/icons/wsu-spine-icons-regular.eot');
-    src: url('#{$font_domain}/icons/wsu-spine-icons-regular.eot?#iefix') format("embedded-opentype"),
-         url('#{$font_domain}/icons/wsu-spine-icons-regular.ttf') format("font/truetype"),
-         url('#{$font_domain}/icons/wsu-spine-icons-regular.woff') format("woff");
+    src: url("#{$font_domain}/icons/wsu-spine-icons-regular.eot");
+    src: url("#{$font_domain}/icons/wsu-spine-icons-regular.eot?#iefix") format("embedded-opentype"),
+         url("#{$font_domain}/icons/wsu-spine-icons-regular.ttf") format("font/truetype"),
+         url("#{$font_domain}/icons/wsu-spine-icons-regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 	}
@@ -125,12 +125,9 @@ button#shelve {
 	top: 0px;
 	z-index:100;
 	display:block;
-	background: transparent url('#{$locality}/icons/menu.svg') 20px center no-repeat;
+	background: transparent url("#{$locality}/icons/menu.svg") 20px center no-repeat;
 	outline: none;
 	}
-
-
-
 
 .spine-actions-tabs,
 .spine-nav,
@@ -271,7 +268,7 @@ button#shelve {
 
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a {
 		padding-left: 1.4em;
-		background-image: url('#{$locality}/icons/home-gray.svg');
+		background-image: url("#{$locality}/icons/home-gray.svg");
 		background-color: transparent;
 		background-repeat: no-repeat;
 		background-position: left center;
@@ -280,10 +277,10 @@ button#shelve {
 	.spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
-		background-image: url('#{$locality}/icons/home-crimson.svg');
+		background-image: url("#{$locality}/icons/home-crimson.svg");
 		}
 	.spine-sitenav.homeless > ul > li:first-child > a {
-		background-image: none;
+		background-image: none !important;
 		}
 
 	/* #### "Dogeared" Link */
@@ -938,18 +935,6 @@ html.lt-ie9 #spine footer {
 	#glue:before {
 		background-color: white;
 		}
-
-		/*
-	&.bleed:before {
-			content: " ";
-			background-color: white;
-			width: 1000px;
-			position: absolute;
-			min-height: 100%;
-			left: -1000px;
-			background-color: $gray-er;
-			}
-	*/
 
 	@include vellum($gray-er);
 

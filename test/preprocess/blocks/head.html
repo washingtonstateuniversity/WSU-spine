@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>{{ page.title }} | Washington State University</title>
+
+	<!-- FAVICON -->
+	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
+
+	<!-- STYLESHEETS -->
+	{% if not page_var.markup and not page_var.markup_min -%}
+		<link href="{{ "../" if not page_var.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
+	{% else -%}
+		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
+	{% endif -%}
+
+	<!-- Your custom stylesheets here -->
+	{% if page_var.opensans -%}
+		<link href="build/{{ build_version }}/styles/opensans.css" rel="stylesheet" type="text/css" />
+		<style>
+		{% include "preprocess/blocks/opensans-styles.css" -%}
+		</style>
+	{% endif -%}
+
+	<!-- RESPOND -->
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+
+	<!-- SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		var spineoptions={
+			{% if not page_var.markup and not page_var.markup_min -%}
+			search:{
+				providers:{
+					local:{
+						url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+						dataType: "jsonp",
+						featureClass: "P",
+						style: "full",
+						maxRows: 12
+					}
+				},
+				result:{
+					appendTo: "#spine-shortcuts",
+					showRelated:true,
+					relatedHeader:"<hr/>",
+					minLength: 2,
+					template:"<li>%s</li>"
+				}
+			},
+			social:{
+				provider:"WSU_share",
+				script_url:"//repo.wsu.edu/wsu_share/1/",
+				channels:[
+					"facebook",
+					"twitter",
+					"Pinterest"
+				]
+				},
+			analytics:{
+				"google":{
+					analytics:{
+						"account_id":"UA-XXXXX-XX"
+					},
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				},
+				"bing":{
+					verification:"XXXXXXXXXXXXXXXXXXXXX"
+				}
+			}
+			{% endif -%}
+		};
+	</script>
+	{% if not page_var.markup and not page_var.markup_min -%}
+	<script src="{{ "../" if not page_var.demo else "" }}spine.js"></script>
+	{% else %}
+	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.js"></script>
+	{% endif -%}
+
+
+	<!-- COMPATIBILITY -->
+	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<noscript><style>#spine .spine-sitenav ul ul li { display: block !important; }</style></noscript>
+
+	<!-- DOCS -->
+	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
+	<link type="text/html" rel="help" href="http://brand.wsu.edu">
+
+	{% if not page_var.demo -%}
+	<!-- BASE URL -->
+	<base href="{{ basepath }}" />
+	{% endif -%}
+
+</head>

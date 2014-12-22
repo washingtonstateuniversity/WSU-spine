@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @mixin shelved {
-	
+
 	#wsu-signature {
 		background-position: center 12px;
 		background-size: auto 30px;
 		height: 50px;
 		margin-left: 40px;
 		}
-	
+
 	#spine {
 
 		width: 298px;
@@ -16,18 +16,19 @@
 		top: 0;
 		z-index: 99164;
 		font-size: 16px;
-		
+
 		#glue {
 			width: 298px;
+			margin-top: 50px;
 			}
 		#glue:before {
 			left: -702px;
 			width: 1000px;
 			}
-			
+
 		button#shelve {
 			display: block;
-			}	
+			}
 		&.shelved {
 			-webkit-transition: left 0.2s ease-in-out;
 			transition: left 0.4s ease-in-out;
@@ -63,17 +64,17 @@
 		footer {
 			width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
 			}
-			
+
 		}
-	
+
 	}
-	
+
 @mixin unshelved {
-	
+
 	#spine {
-		
+
 		left: auto;
-		
+
 		button#shelve {
 			display: none;
 			}
@@ -97,46 +98,37 @@
 		#wsu-actions section {
 			width: 298px;
 			}
-		}	
-		
+		}
+
 	.row.side-right .column {
 		width: 100%;
 		}
-	
+
 	#wsu-signature {
 		background-position: center;
 		background-size: 180px auto;
 		height: 197px;
 		margin-left: 0px;
 		}
-	
-	
+
 	}
-	
+
 @mixin navscroll {
-	
+
     #spine.unshelved {
-    
+
 	    /*top: 0px !important;*/
 	    min-height: 0 !important;
-
-		#glue:before {
-			top: 50px;
-		}
-	
 
 		#wsu-actions {
 			padding-top: 0px !important;
 		}
-		/*.spine-navigation {
-			padding-bottom: 0px !important;
-		}*/
-			
+
 		#scroll {
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;
 			position: absolute;
-			top: 50px;
+			top: 0px;
 			bottom: 0px;
 			width: 298px;
 			z-index: 99165;
@@ -145,11 +137,11 @@
 		    	position: relative !important;
 			}
 		}
-			
+
 		#scroll {
 			-webkit-transition: left 0.2s ease-in-out;
 			left: 0;
-		}	
+		}
 	}
 }
 
@@ -157,17 +149,17 @@
 
 
 @mixin unshelved-ios {
-	
+
 @media
-	
+
 	only screen
 	and (max-device-width: 480px)
 	and (orientation:portrait),
-	
+
 	only screen
 	and (max-device-width: 480px)
 	and (orientation:landscape),
-	
+
 	only screen
 	and (device-width: 768px)
 	and (device-height: 1024px)
@@ -179,16 +171,12 @@
     and (orientation:landscape)
 
 	{
-    
+
     #spine.unshelved {
-    
+
 	    top: 0px !important;
 	    min-height: 0 !important;
-			
-		#glue:before {
-			top: 50px;
-			}
-	
+
 	    footer {
 		    position: relative !important;
 		    }
@@ -198,9 +186,9 @@
 		.spine-navigation {
 			padding-bottom: 0px !important;
 			}
-        
+
 		}
-	
+
 	}
 
 	}

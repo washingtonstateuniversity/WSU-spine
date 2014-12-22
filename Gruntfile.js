@@ -21,30 +21,37 @@ module.exports = function(grunt) {
 	setbase = grunt.option('setbase') || pkg.build_location+'/'+pkg.build_version+'/';
 
 	config = {
-		pkg: grunt.file.readJSON('package.json'),
+		pkg: pkg,
 		setbase:setbase,
 		config: {
 			build: 'build'
 		}
 	};
 
-	grunt.util._.extend(config, loadConfig('./grunt/options/'));
+	grunt.util._.extend(config, loadConfig('./tasks/options/'));
 	grunt.initConfig(config);
 
 	require('load-grunt-tasks')(grunt);
+	grunt.loadTasks('tasks');
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint']);
 
 	grunt.registerTask('prod', [
 		'env:prod',
-		'build'
+		'build',
+		'build_tests',
+		'copy:main',
+		'copy:dev'
 	]);
 
 	grunt.registerTask('dev', [
 		'jshint',
 		'env:dev',
-		'build'
+		'build',
+		'build_tests',
+		'copy:main',
+		'copy:dev'
 	]);
 
 	grunt.registerTask('build', [
@@ -52,33 +59,8 @@ module.exports = function(grunt) {
 		'sass:dev',
 		'concat',
 		'preprocess:js',
+		'autoprefixer',
 		'cssmin',
 		'uglify',
-		'copy',
-		'includereplace',
-		'preprocess:html',
-		'preprocess:opensans',
-		'preprocess:columns',
-		'preprocess:spacing',
-		'preprocess:mainheader',
-		'preprocess:typography',
-		'preprocess:broken',
-		'preprocess:unbound',
-		'preprocess:ui',
-		'preprocess:tu_search_tabs',
-		'preprocess:tu_contact_malformed',
-		'preprocess:tu_contact_filled',
-		'preprocess:tu_contact_double',
-		'preprocess:tu_overly',
-		'preprocess:tu_overly_long',
-		'preprocess:tu_overly_linked',
-		'preprocess:tu_cropped',
-		'preprocess:grid_fluid',
-		'preprocess:grid_hybrid',
-		'preprocess:grid_fixed',
-		'preprocess:tu_navdata',
-		'preprocess:markup',
-		'preprocess:markup_min',
-		'preprocess:demo'
 	]);
 };

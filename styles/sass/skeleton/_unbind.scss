@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @mixin unbind {
-	
+
 	.row.unbound,
 	.unbound {
 		position: relative;
@@ -23,12 +23,12 @@
 	.spineless .recto.verso .rebound {
 		border-left-width: 0px;
 		}
-		
+
 	.rebound,
 	.row.rebound {
 		width: 792px;
 		}
-		
+
 	.spineless .rebound,
 	.fifteenths .rebound,
 	.fifths .rebound,
@@ -36,14 +36,14 @@
 	.max-1188 .row.rebound {
 		width: 990px;
 		}
-		
+
 	.max-1188 .spineless .rebound,
 	.max-1188 .spineless .row.rebound {
 		width: 1188px;
 		}
-		
+
 	.recto.verso .rebound {
 		border-left: 99px transparent solid;
 		}
-	
+
 	}
