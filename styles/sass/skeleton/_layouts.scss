@@ -4,10 +4,10 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 @mixin layouts-pixels {
 
 	// single
-	
+
 	.row.single .column { width: 792px; }
 	.column.singled { width: 792px !important; }
-	
+
 	// halves
 
 	.row.halves .column { width: 396px; }
@@ -45,22 +45,22 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	.row.side-right .column.two,
 	.row.side-left .column.one {
 		width: 264px; }
-	
+
 	}
-	
+
 @mixin layouts-percents {
 
 	// single
-	
+
 	.row.single .column { width: 100%; }
-	
+
 	// halves
-	
+
 	.row.halves .column { width: 50%; }
 	.column.half { width: 50% !important; }
-	
+
 	// thirds
-	
+
 	.row.thirds .column { width: 33%; }
 	.row.thirds .column.two { width: 34%; }
 	.column.third { width: 33.33333% !important; }
@@ -76,7 +76,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	.row.triptych .column.two { width: 50%; }
 
 	// Margin - Right & Left
-	
+
 	.row.margin-right .column.one,
 	.row.margin-left .column.two {
 		width: 75%; }
@@ -92,52 +92,52 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	.row.side-right .column.two,
 	.row.side-left .column.one {
 		width: 33%; }
-	
+
 	}
 
 @mixin nested {
-	
+
 	.row:not(.boundless):not(.max-width):not(.full-width) .row,
 	.row.spineless:not(.boundless):not(.max-width):not(.full-width) .row {
 		max-width: auto;
 		}
-	
+
 	/* single then halves */
-	
+
 	.row.single row.halves .column { width: 396px; }
 	.fluid .row.single .halves .column { width: 50%; }
-	
+
 	/* halves then halves */
-	
+
 	.row.halves .halves .column { width: 198px; }
 	.hybrid .row.halves .halves .column,
 	.fluid .row.halves .halves .column { width: 50%; }
-	
+
 	/* halves then thirds */
-	
+
 	.row .row.thirds .column {
 		width: 132px;
 		}
 	.row.quarters .row.thirds .column { width: 66px; }
 	.fluid .row .row.thirds .column { width: 33%; }
 	.fluid .row .row.thirds .column.two { width: 34%; }
-	
+
 	/* halves then quarters */
-	
+
 	.row .row.quarters .column { width: 99px; }
 	.hybrid .row .row.quarters .column,
 	.fluid .row .row.quarters .column { width: 25%; }
-	
+
 	/* thirds then halves */
-	
+
 	.row.thirds .row.halves .column { width: 132px; }
 	.fluid .row.thirds .halves .column { width: 50%; }
-	
+
 	/* quarters then ... */
-	
+
 	.row .column.row.single,
 	.row .column.row.single .column {
 		width: 792px;
 		}
-	
+
 	}

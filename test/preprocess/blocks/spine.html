@@ -1,21 +1,21 @@
 	<!-- SPINE -->
 	<div id="spine" class="spine-column shelved {{ "color" if page_var.markup else "" }} {{ "bleed" if not page_var.cropped and not page_var.unbound else "" }} {{ "cropped crimson" if page_var.cropped else "" }}">
 		{% if page_var.markup -%}
-		<!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter, 
+		<!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter,
 						gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above
-						with your preferred color if you want to override the default. 
+						with your preferred color if you want to override the default.
 						-->
 		<!-- SPINE BLEED: Remove "bleed" so that  -->
 		{% endif -%}
 		<div id="glue" class="spine-glue">
-		
+
 			<header class="spine-header">
 				<a href="http://www.wsu.edu/" id="wsu-signature" class="spine-signature">Washington State University</a>
 			</header>
-			
+
 			<!-- ACTIONS -->
 			<section id="wsu-actions" class="spine-actions">
-			
+
 				<!-- Tabs -->
 				<ul id="wsu-actions-tabs" class="spine-actions-tabs clearfix">
 					<li id="wsu-search-tab" class="spine-search-tab closed"><button>Search</button></li>
@@ -27,14 +27,14 @@
 				{% if page_var.filledSearchTab -%}
 					{% include "preprocess/blocks/search_present_block.html" %}
 				{% endif -%}
-			
+
 			</section><!--/#wsu-actions-->
 
 			<section id="spine-navigation" class="spine-navigation">
 				<nav id="spine-sitenav" class="spine-sitenav">
 					<ul>
 
-						
+
 						{#% this is the generated nav from the testing sitemap %#}
 						{% for title, link in nav -%}
 						{% if link=="[object Object]" %}
@@ -55,7 +55,7 @@
 							<li><a href="{{ link }}" {% if link|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ title }}</a></li>
 						{%- endif %}
 						{% endfor -%}
-						
+
 						{% if page_var.navdata and not page_var.markup_min -%}
 							<li><a href="link" data-foo="bar" >Data Foo</a><li>
 						{% endif -%}
@@ -68,12 +68,12 @@
 						{% if page_var.manyLinks -%}
 							{% include "preprocess/blocks/nav_extralinks.html" %}
 						{% endif -%}
-						
+
 					</ul>
 				</nav>
 				{% include "preprocess/blocks/nav-offsite.html" %}
 			</section><!-- #navigation -->
-	
+
 			<!-- Social and Global Links -->
 			<footer class="spine-footer">
 				<nav id="wsu-social-channels" class="spine-social-channels">
@@ -100,7 +100,7 @@
 					</ul>
 				</nav>
 			</footer>
-	
+
 		</div><!--/glue-->
 	</div><!--/spine-->
 	<!-- /SPINE -->

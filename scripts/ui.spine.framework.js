@@ -94,7 +94,7 @@
 			if(!$.svg_enabled()){
 				$("html").addClass("nosvg");
 			}
-			
+
 			self.setup_spine();
 			self.setup_printing();
 			$(window).on("resize", function(){
@@ -143,25 +143,25 @@
 
 			}).trigger("resize");
 			$(document).trigger("scroll");
-			
+
 		},
 		// Label #jacket with current window size
 		sizing: function (jacket) {
-			
+
 			var current_width,ele_class,px_width,size_small,size_intermediate,size_medium,size_large,size_xlarge;
 
             jacket=jacket||$("#jacket");
             current_width = $(window).width();
-			
+
 			size_small = "size-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			size_intermediate = "size-intermediate size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
 			size_medium = "size-medium size-lt-xlarge size-lt-large size-gt-intermediate size-gt-smallish size-gt-small";
 			size_large = "size-large size-lt-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium";
 			size_xlarge = "size-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium size-gt-large";
-			
+
 			ele_class="";
 			px_width="";
-			
+
 			if(current_width >= 1188) {
 				ele_class=size_xlarge;
 			} else if(current_width >= 990) {
@@ -260,7 +260,7 @@
 					spine.toggleClass("shelved unshelved");
 				}
 			});
-			
+
 			if($(".ios .hybrid .unshelved").length <= 0){
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
@@ -403,7 +403,7 @@
 		 */
 		setup_nav: function(){
 			var self;
-			
+
 			self = this;
 			// NAVIGATION
 			// Tag location and hierarchy
@@ -450,7 +450,7 @@
 				//console.log("scroll it");
 				$(document).trigger("scroll");
 			});
-			
+
 			// External Links in nav
 			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
 

@@ -18,7 +18,7 @@ $opensans-fonts: (
 	opensans-sb: '-Semibold',
 	opensans-sbi: '-SemiBoldItalic'
 	);
-	
+
 @each $opensans-font, $fontname in $opensans-fonts {
 	@font-face {
 		font-family: "OpenSans#{$fontname}";

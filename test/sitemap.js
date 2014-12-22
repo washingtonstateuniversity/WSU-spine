@@ -65,7 +65,7 @@ module.exports = {
 						typography: true
 					}
 				},
-				
+
 				_behaviors : {
 					file:false,
 					nav:{
@@ -132,9 +132,9 @@ module.exports = {
 				},
 
 
-				
-				
-				
+
+
+
 				_layouts : {
 					file:false,
 					nav:{
@@ -142,7 +142,7 @@ module.exports = {
 						nav_title : "Layouts and Columns",
 					}
 				},
-				
+
 				columns : {
 					title: "Testing Columns",
 					nav:{
@@ -165,8 +165,8 @@ module.exports = {
 						spacing : true,
 					}
 				},
-				
-				
+
+
 				_content : {
 					file:false,
 					nav:{
@@ -174,7 +174,7 @@ module.exports = {
 						nav_title : "Main/Content",
 					}
 				},
-				
+
 				mainheader : {
 					title: "Testing the Main Header",
 					nav:{
@@ -219,11 +219,11 @@ module.exports = {
 						ui : true
 					}
 				},
-				
-				
 
-				
-				
+
+
+
+
 				_broken : {
 					file:false,
 					nav:{
@@ -231,7 +231,7 @@ module.exports = {
 						nav_title : "Broken",
 					}
 				},
-				
+
 				contact_malformed : {
 					nav:{
 						parent:"Broken",
@@ -290,8 +290,8 @@ module.exports = {
 						content: true
 					}
 				},
-				
-				
+
+
 				_testing : {
 					file:false,
 					nav:{

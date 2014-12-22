@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 	/* ### Fonts  */
-	
+
 	body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 	.sans { @include sans; }
 	.serif { @include serif; }
-		
+
 	/* ### Headers */
-	
+
 	h6,h5,h4,h3,h2,h1 {
 		margin: 0;
 		line-height: 1.1em;
@@ -41,10 +41,10 @@
 	h6 {
 		font-size: 1.0em;
 		font-size: 1.0rem;
-		}	
-		
+		}
+
 	/* ### Lists */
-		
+
 	ul, ol {
 		padding: 0em 2em 1em 2em;
 		}
@@ -61,7 +61,7 @@
 	ol li ol {
 		padding-top: .3em;
 		}
-	
+
 	p {
 		margin: 0px;
 		padding-bottom: 1em;
@@ -71,26 +71,26 @@
 	ul, ol {
 		padding-bottom: 1em;
 		}
-	
+
 	h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-		
+
 		}
-	
+
 	h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
 	h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
 		padding-top: .3em;
 		}
-	
+
 	blockquote {
 		padding-left: 1em;
 		padding-right: 1em;
 		@include serif;
 		}
-	
+
 	pre, code {
 		font-family: "Courier New", Courier, monospace;
 		}
-	
+
 	big {
 		font-size: 1.5em;
 		}
@@ -98,14 +98,14 @@
 		font-size: smaller;
 		line-height: 110%;
 		}
-	
+
 	article img[align="right"] {
 		margin: 0px 0px 1em 10px;
 		}
 	article img[align="left"] {
 		margin: 0px 10px 1em 0px;
 		}
-	
+
 	sup,sub { font-size: .7em; line-height: .7em; }
 	sup { vertical-align: super; margin-top: -6px; }
 	sub { vertical-align: sub; }
@@ -128,8 +128,8 @@
 		display: block;
 		clear: both;
 		}
-	
-	
+
+
 	/* IE9, IE10 */
 	@media screen and (min-width:0\0) {
 	    em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
