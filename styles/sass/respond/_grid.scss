@@ -82,6 +82,7 @@
 	}
 
 // Smallish
+// Deprecated, to be replaced by intermediate
 
 @mixin grid-smallish-controls {
 
@@ -109,6 +110,39 @@
 		}
 	.at-smallish-float-none,
 	.at-smallish-float-none .column {
+		float: none !important;
+		}
+
+	}
+	
+// Intermediate
+
+@mixin grid-intermediate-controls {
+
+	/* Grid - Manual Controls */
+
+	.at-intermediate-max-width,
+	.at-intermediate-max-width .column {
+		max-width: 100% !important;
+		}
+	.at-intermediate-full-width,
+	.at-intermediate-full-width .column {
+		width: 100% !important;
+		}
+	.at-intermediate-half-width,
+	.at-intermediate-half-width .column {
+		width: 50% !important;
+		}
+	.at-intermediate-third-width,
+	.at-intermediate-third-width .column {
+		width: 33.3334% !important;
+		}
+	.at-intermediate-clear,
+	.at-intermediate-clear .column {
+		clear: both !important;
+		}
+	.at-intermediate-float-none,
+	.at-intermediate-float-none .column {
 		float: none !important;
 		}
 
