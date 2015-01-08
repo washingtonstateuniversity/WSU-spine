@@ -14,6 +14,15 @@
 			this._set_globals(this.social_globals);
 			this.social_create();
 		},
+		/**
+		 * These default options can be overridden with an object before
+		 * the Spine framework is started.
+		 *
+		 * NOTE: The structure of these social options is subject to change and
+		 * will be deprecated in a future release. Please communicate with the WSU
+		 * Web Communication team (web.wsu.edu) when using these so that we can
+		 * aid in any transition in the future.
+		 */
 		social_options:{
 			provider:"WSU_share",
 			script_url:"//repo.wsu.edu/wsu_share/1/",
