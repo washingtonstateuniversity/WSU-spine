@@ -22,23 +22,25 @@
 				"twitter",
 				"Pintrest"
 			],
-			share_text:"You should know ..."
+			share_text:"You should know ...",
+			twitter_handle:"wsupullman"
 		},
 		social_globals: {
 			share_block: $("#wsu-share")
 		},
 		social_create: function(){
-			var self, share_block, share_text, current_url, wsu_actions, sharehtml;
+			var self, share_block, share_text, current_url, wsu_actions, sharehtml, twitter_handle;
 			self=this;//hold to preserve scope
 			share_block = self._get_globals("share_block").refresh();
 			if (!share_block.length) {
 				share_text = encodeURIComponent(this.social_options.share_text);
+				twitter_handle = encodeURIComponent(this.social_options.twitter_handle);
 				current_url = self._get_globals("current_url");
 				wsu_actions = self._get_globals("wsu_actions").refresh();
 				sharehtml  = "<section id='wsu-share' class='spine-share spine-action closed'> \
 									<ul> \
 										<li class='by-facebook'><a href='http://www.facebook.com/sharer/sharer.php?u="+current_url+"'>Facebook</a></li> \
-										<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text="+share_text+"&url="+current_url+"&via=wsupullman' target='_blank'>Twitter</a></li> \
+										<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text="+share_text+"&url="+current_url+"&via="+twitter_handle+"' target='_blank'>Twitter</a></li> \
 										<li class='by-email'><a href='mailto:?subject="+share_text+"&body="+current_url+"'>Email</a></li> \
 									</ul> \
 									</section>";
