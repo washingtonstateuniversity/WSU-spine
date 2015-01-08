@@ -2,8 +2,16 @@
 
 ## 1.2.3 (In progress)
 
+### Framework Changes
+
 * Add further support for `.size-intermediate`.
-* Add support for override of default `spineoptions` object. Please take care when overriding these options as the structure is not final.
+* Add more explicit support for the override of default `spineoptions` object with `window.spineoptions`.
+
+### Temporary Changes
+
+* Options for `share_text`, `twitter_handle`, and `twitter_text` are now available for override.
+    * This naming is not finalized and will be changed without deprecation notice.
+    * Please leave a note on [#230](https://github.com/washingtonstateuniversity/WSU-spine/issues/230) to express interest in these options.
 
 ## 1.2.2 (December 22, 2014)
 
