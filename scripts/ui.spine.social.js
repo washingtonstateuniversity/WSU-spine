@@ -16,12 +16,13 @@
 		},
 		/**
 		 * These default options can be overridden with an object before
-		 * the Spine framework is started.
+		 * the Spine framework is started and with `$('body').spine( spineoptions )`.
 		 *
-		 * NOTE: The structure of these social options is subject to change and
-		 * will be deprecated in a future release. Please communicate with the WSU
-		 * Web Communication team (web.wsu.edu) when using these so that we can
-		 * aid in any transition in the future.
+		 * NOTE: The structure of these social options **will** change and could be
+		 * deprecated in a future release. Please communicate via the WSU Spine repository
+		 * when using these so that we can reach out before a transition in the future.
+		 *
+		 * https://github.com/washingtonstateuniversity/WSU-spine/issues/230
 		 */
 		social_options:{
 			provider:"WSU_share",
