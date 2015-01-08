@@ -50,7 +50,7 @@
 				wsu_actions = self._get_globals("wsu_actions").refresh();
 				sharehtml  = "<section id='wsu-share' class='spine-share spine-action closed'> \
 									<ul> \
-										<li class='by-facebook'><a href='http://www.facebook.com/sharer/sharer.php?u="+current_url+"'>Facebook</a></li> \
+										<li class='by-facebook'><a href='https://www.facebook.com/sharer/sharer.php?u="+current_url+"'>Facebook</a></li> \
 										<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text="+twitter_text+"&url="+current_url+"&via="+twitter_handle+"' target='_blank'>Twitter</a></li> \
 										<li class='by-email'><a href='mailto:?subject="+share_text+"&body="+current_url+"'>Email</a></li> \
 									</ul> \
