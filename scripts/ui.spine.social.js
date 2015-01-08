@@ -25,13 +25,6 @@
 		 * https://github.com/washingtonstateuniversity/WSU-spine/issues/230
 		 */
 		social_options:{
-			provider:"WSU_share",
-			script_url:"//repo.wsu.edu/wsu_share/1/",
-			channels:[
-				"facebook",
-				"twitter",
-				"Pintrest"
-			],
 			share_text:"You should know ...",
 			twitter_text:"You should know...",
 			twitter_handle:"wsupullman"
