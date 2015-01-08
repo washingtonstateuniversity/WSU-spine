@@ -1,6 +1,9 @@
 # WSU Spine Changelog
 
-## 1.3.0 (In progress)
+## 1.2.3 (In progress)
+
+* Add further support for `.size-intermediate`.
+* Add support for override of default `spineoptions` object. Please take care when overriding these options as the structure is not final.
 
 ## 1.2.2 (December 22, 2014)
 
