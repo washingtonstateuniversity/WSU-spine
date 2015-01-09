@@ -371,11 +371,16 @@ nav a.external:after {
 @media
 
 	only screen
+	and (max-device-width: 420px),
+	
+	only screen
+	and (min-device-width: 990px)
 	and (max-width: 420px)
 
 	{
 
-#wsu-signature {
+#wsu-signature,
+[class*="-signature"] #wsu-signature {
 	background-size: 320px auto !important;
 	}
 
@@ -384,11 +389,16 @@ nav a.external:after {
 @media
 
 	only screen
+	and (max-device-width: 360px),
+	
+	only screen
+	and (min-device-width: 990px)
 	and (max-width: 360px)
 
 	{
 
-#wsu-signature {
+#wsu-signature,
+[class*="-signature"] #wsu-signature {
 	background-size: 260px auto !important;
 	background-position: center 60% !important;
 	}
