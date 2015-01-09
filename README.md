@@ -28,12 +28,12 @@ Using the current major version build will ensure that you will receive all non-
 * `https://repo.wsu.edu/spine/1/spine.min.css`
 * `https://repo.wsu.edu/spine/1/spine.min.js`
 
-As versions change between `1.2.2` to `1.2.3` to `1.3.0`, the files at the above URLs will be automatically built and cached in users' browsers for an hour. A version change to `2.0.0` will result in a new URL and will be communicated at the time.
+As versions change between `1.2.3` to `1.2.4` to `1.3.0`, the files at the above URLs will be automatically built and cached in users' browsers for an hour. A version change to `2.0.0` will result in a new URL and will be communicated at the time.
 
 Specific version builds are also available for every minor version.
 
-* `https://repo.wsu.edu/spine/1.2.2/spine.min.css`
-* `https://repo.wsu.edu/spine/1.2.2/spine.min.js`
+* `https://repo.wsu.edu/spine/1.2.3/spine.min.css`
+* `https://repo.wsu.edu/spine/1.2.3/spine.min.js`
 
 These have the benefit of being cached in browser for 120 days, though will require attention whenever the Spine is updated.
 

@@ -270,6 +270,7 @@ nav a.external:after {
 
 .fixed { @include layouts-small; }
 @include grid-smallish-controls;
+@include grid-intermediate-controls;
 
 
 /* Reverse */
