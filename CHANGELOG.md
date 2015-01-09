@@ -1,6 +1,8 @@
 # WSU Spine Changelog
 
-## 1.2.3 (In progress)
+## 1.3.0 (In Progress)
+
+## 1.2.3 (January 8, 2015)
 
 ### Framework Changes
 
