@@ -375,7 +375,8 @@ nav a.external:after {
 
 	{
 
-#wsu-signature {
+#wsu-signature,
+[class*="-signature"] #wsu-signature {
 	background-size: 320px auto !important;
 	}
 
@@ -388,7 +389,8 @@ nav a.external:after {
 
 	{
 
-#wsu-signature {
+#wsu-signature,
+[class*="-signature"] #wsu-signature {
 	background-size: 260px auto !important;
 	background-position: center 60% !important;
 	}
