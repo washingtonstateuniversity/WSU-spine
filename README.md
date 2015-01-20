@@ -1,6 +1,6 @@
 # WSU Spine
 
-As a visual element, the WSU Spine is a 198px wide column that binds together the many websites of wsu.edu. As a framework, the WSU Spine is a minimal template that provides a responsive and flexible grid for every WSU website. With a uniform and global spine on the left and a blank, unwritten page to the right, the Spine upholds the unity and diversity of our university.
+Visually speaking, the WSU Spine is a 198px wide column that binds together the many websites of wsu.edu. As a framework, the WSU Spine is a minimal template that provides a responsive and flexible grid for every WSU website. With a uniform and global column on the left and a blank, unwritten page to the right, the Spine upholds the unity and diversity of our university.
 
 1. Consistently brands the university across websites and platforms
 2. Provides a usable and consistent navigation solution
