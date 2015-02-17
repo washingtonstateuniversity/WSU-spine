@@ -436,7 +436,7 @@ nav a.external:after {
 		}
 	}
 
-#binder.fluid .row:not(.rebound) {
+#binder.fluid .row:not(.column):not(.rebound) {
 	width: 100% !important;
 	}
 
