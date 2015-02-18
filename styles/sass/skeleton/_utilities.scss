@@ -2,7 +2,7 @@
 
 /* ### Clearing  */
 
-.row:before, .row:after,
+.row:not(.clear-none):before, .row:not(.clear-none):after,
 main:before, main:after,
 #binder:before, #binder:after,
 .clearfix:before, .clearfix:after,
@@ -16,13 +16,13 @@ main:before, main:after,
   }
 #binder:after,
 main:after,
-.row:after,
+.row:not(.clear-none):after,
 .clearfix:after,
 .rebound:after {
   clear: both;
   }
 main,
-.row,
+.row:not(.clear-none),
 .rebound,
 .clearfix {
   zoom: 1; }
