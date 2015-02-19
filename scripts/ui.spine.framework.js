@@ -185,7 +185,7 @@
 			// come back to .. look to mage"s eq"i
 			// all box attr not accounted for
 			if( $(".equalize").length ) {
-				obj=$(".row.equalize");
+				obj=$(".equalize");
 				obj.find(".column").css("min-height","");
 				$.each(obj,function(){
 					var tallestBox = 0;
