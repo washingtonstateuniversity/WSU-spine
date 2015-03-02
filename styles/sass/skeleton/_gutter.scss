@@ -11,7 +11,7 @@ $gutters: (
 
 	/* #{$gutter} */
 
-	.gutter#{$gutter} .column,
+	.gutter#{$gutter} .column:not(.gutterless),
 	.guttered#{$gutter} {
 		padding-left: $dividend;
 		padding-right: $dividend; }
