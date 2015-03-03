@@ -12,6 +12,11 @@
 .nowrap { white-space: nowrap; }
 
 .clear, .clear-both { clear: both; }
+.clear-important, .clear-both-important { clear: both !important; }
+.clear-left { clear: left; }
+.clear-left-important { clear: left !important; }
+.clear-right { clear: right; }
+.clear-right-important { clear: right !important; }
 
 /* Important */
 .padless, .padding-0 { padding: 0px !important }
@@ -19,8 +24,6 @@
 
 .display-block { display: block !important }
 .display-none { display: none !important }
-
-.clear-important, .clear-both-important { clear: both !important; }
 
 .visibility-visible { visibility: visible !important; }
 .visibility-hidden { visibility: hidden !important; }
