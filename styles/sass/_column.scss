@@ -646,52 +646,51 @@ html.lt-ie9 #spine .spine-actions {
 	ul {
 		margin: 1.75em !important;
 		padding: 0;
+		}
 
-		li {
+	li {
 
-			a {
-				display: block;
-				padding-top: .75em;
-				padding-bottom: .75em;
-				border-bottom: 1px #c3cbcf solid;
-				}
-			a:hover {
-				color: white !important;
-				background: #434d53;
-				padding-left: 1.75em;
-				padding-right: 1.75em;
-				margin: -1px -1.75em 1px -1.75em;
-				}
-			a:active {
-				background: #981e32;
-				}
-			a:hover {
-				color: white;
-				}
-			a:before {
-				font-family: "Spine-Icons" !important;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				width: 1.8em;
-				display: inline-block;
-				text-align: center;
-				}
-			&:last-of-type a  {
-				border-bottom: none;
-				}
-			a span {
-				display: none;
-				}
-
-			&.by-facebook a:before { content: "F"; }
-			&.by-twitter a:before { content: "T"; }
-			&.by-googleplus a:before { content: "G"; }
-			&.by-email a:before { content: "@"; }
-			&.by-pinterest a:before { content: "P"; }
-			&.by-linkedin a:before { content: "L"; }
-			&.by-other a:before { content: ""; display: none; }
-
+		a {
+			display: block;
+			padding-top: .75em;
+			padding-bottom: .75em;
+			border-bottom: 1px #c3cbcf solid;
 			}
+		a:hover {
+			color: white !important;
+			background: #434d53;
+			padding-left: 1.75em;
+			padding-right: 1.75em;
+			margin: -1px -1.75em 1px -1.75em;
+			}
+		a:active {
+			background: #981e32;
+			}
+		a:hover {
+			color: white;
+			}
+		a:before {
+			font-family: "Spine-Icons" !important;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			width: 1.8em;
+			display: inline-block;
+			text-align: center;
+			}
+		&:last-of-type a  {
+			border-bottom: none;
+			}
+		a span {
+			display: none;
+			}
+
+		&.by-facebook a:before { content: "F"; }
+		&.by-twitter a:before { content: "T"; }
+		&.by-googleplus a:before { content: "G"; }
+		&.by-email a:before { content: "@"; }
+		&.by-pinterest a:before { content: "P"; }
+		&.by-linkedin a:before { content: "L"; }
+		&.by-other a:before { content: ""; display: none; }
 
 		}
 
