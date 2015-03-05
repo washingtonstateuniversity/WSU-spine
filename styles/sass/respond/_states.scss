@@ -1,13 +1,6 @@
 @charset "UTF-8";
 @mixin shelved {
 
-	#wsu-signature {
-		background-position: center 12px;
-		background-size: auto 30px;
-		height: 50px;
-		margin-left: 40px;
-		}
-
 	#spine {
 
 		width: 298px;
@@ -108,7 +101,6 @@
 		background-position: center;
 		background-size: 180px auto;
 		height: 197px;
-		margin-left: 0px;
 		}
 
 	}
