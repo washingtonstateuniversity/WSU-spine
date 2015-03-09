@@ -383,12 +383,10 @@ nav a.external:after {
 #binder #wsu-signature {
 	background-position: center 12px;
 	background-size: 320px auto;
-	xxbackground-color: blue;
 	}
 [class*="-signature"] #binder #wsu-signature {
 	background-position: right 14px;
 	background-position: center calc(50% + 2px);
-	background-size: 320px auto;
 	}
 	
 	}
