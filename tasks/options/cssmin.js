@@ -1,4 +1,7 @@
 module.exports = {
+	options: {
+		advanced: false
+	},
 	combine: {
 		files: {
 			// Hmmm, in reverse order (see http://gruntjs.com/configuring-tasks#files-object-format)
