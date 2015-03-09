@@ -386,6 +386,7 @@ nav a.external:after {
 	xxbackground-color: blue;
 	}
 [class*="-signature"] #binder #wsu-signature {
+	background-position: right 14px;
 	background-position: center calc(50% + 2px);
 	background-size: 320px auto;
 	}
@@ -404,9 +405,7 @@ nav a.external:after {
 #binder #wsu-signature,
 [class*="-signature"] #binder #wsu-signature {
 	background-size: 280px auto;
-	background-position: 60% 60%;
-	background-size: calc(100% - 75px) auto;
-	background-position: calc(50% + 25px) 60%;
+	background-position: right 60%;
 	}
 
 	}
