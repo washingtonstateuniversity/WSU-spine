@@ -192,7 +192,7 @@
 					$.each($(".column", this),function(){
 						tallestBox = ($(this).outerHeight() > tallestBox) ? $(this).outerHeight() : tallestBox;
 					});
-					if( ( $(window).width() <= 792 && !obj.is(".equalize-medium") ) || ( $(window).width() <= 396 && !obj.is("equalize-small") ) ) {
+					if( ( $(window).width() <= 792 && !obj.is(".equalize-medium") ) || ( $(window).width() <= 694 && !obj.is("equalize-small") ) ) {
 						$(".column",this).not(".unequaled").css("min-height","1");
 					} else {
 						$(".column",this).not(".unequaled").css("min-height",tallestBox);
