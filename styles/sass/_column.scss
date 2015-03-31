@@ -428,6 +428,7 @@ html.lt-ie9 #spine .spine-actions {
 	.spine-share-tab button:before { content: "\F601"; }
 	.spine-print-tab button:before { content: "\2399"; }
 
+	.spine-search-tab.opened button:before,
 	.spine-contact-tab.opened button:before,
 	.spine-share-tab.opened button:before,
 	.spine-print-tab.opened button:before { content: "\2421"; }
