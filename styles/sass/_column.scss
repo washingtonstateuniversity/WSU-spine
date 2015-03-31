@@ -260,6 +260,7 @@ button#shelve {
 		margin-top: 1em;
 		margin-bottom: 1em;
 		}
+
 	.spine-sitenav > ul > li:nth-last-of-type(1) {
 		border-bottom-width: 1px;
 		}
@@ -274,11 +275,13 @@ button#shelve {
 		background-position: left center;
 		background-size: 1em auto;
 		}
+
 	.spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
 		background-image: url("#{$locality}/icons/home-crimson.svg");
 		}
+
 	.spine-sitenav.homeless > ul > li:first-child > a {
 		background-image: none !important;
 		}
@@ -349,22 +352,25 @@ html.lt-ie9 #spine .spine-actions {
 			position: absolute;
 			display: block;
 			width: 198px;
-			xxtop: 0;
-			xxbottom: 0;
 			}
+
 		section.closed {
 			display: none;
 			}
+
 		section.opened {
 			display: block;
 			}
+
 		> ul {
 			display: block;
 			}
+
 		ul li {
 			padding: 0px; margin: 0px;
 			list-style: none;
 			}
+
 		> ul li {
 			display: block;
 			width: 25%;
@@ -389,12 +395,14 @@ html.lt-ie9 #spine .spine-actions {
 		button {
 			outline: none;
 			}
+	
 		li {
 			width: 25%;
 			display: inline-block;
 		    margin: 0;
 		    padding: 0;
 			}
+	
 		li button {
 			position: relative;
 			width: 100%;
@@ -407,6 +415,7 @@ html.lt-ie9 #spine .spine-actions {
 			padding: .8em 0 .8em 0;
 			display: block;
 			}
+	
 		li button:before {
 			text-align: center;
 			top: .9em;
@@ -419,10 +428,9 @@ html.lt-ie9 #spine .spine-actions {
 	.spine-share-tab button:before { content: "\F601"; }
 	.spine-print-tab button:before { content: "\2399"; }
 
-	.spine-search-tab.opened button:hover:before,
-	.spine-contact-tab.opened button:hover:before,
-	.spine-share-tab.opened button:hover:before,
-	.spine-print-tab.opened button:hover:before { content: "\2421"; }
+	.spine-contact-tab.opened button:before,
+	.spine-share-tab.opened button:before,
+	.spine-print-tab.opened button:before { content: "\2421"; }
 
 }
 
@@ -436,12 +444,14 @@ html.lt-ie9 #spine .spine-actions {
 		position: relative;
 		line-height: 1em;
 		}
+
 	input[type="text"] {
-		font-size: 1.6em;
+		//font-size: 1.6em;
+		font-size: 14px;
 		color: #5e6a71;
 		background-color: transparent;
 		border-radius: 0px;
-		padding: .5em 15px 5px 0;
+		padding: 10px 15px 10px 0;
 		text-indent: 0px;
 		height: 1.7em;
 		width: 100%;
@@ -450,43 +460,112 @@ html.lt-ie9 #spine .spine-actions {
 		box-shadow: none;
 		border-bottom: 1px #b6bcbf solid;
 		}
+
 	input:focus {
 		color: $crimson;
 		border: none;
 		border-bottom: 1px $crimson solid;
 		}
+
 	button {
 		position: absolute;
-		left: auto;
+		display: block;
 		bottom: 0px;
-		right: 0px;
+		right: 1.75em;
 		padding: 0px;
-		height: 40px;
-		width: 50px;
-		text-indent: 110%;
+		height: 25px;
+		width: 15px;
+		//text-indent: 110%;
 		overflow: hidden;
 		}
-	button:before {
+
+	&.opened button:before {
 		content: "\25BB";
-		color: $gray-light;
+		color: #d7dadb;
+		color: #8d959a;
+		//content: "$";
+		font-family: "Spine-Icons";
+		position: absolute;
+		right: 0;
 		font-size: 1.3em;
-		display: inline-block;
-		text-align: right;
-		left: auto !important;
-		top: auto !important;
-		bottom: 5px !important;
-		right: 20px !important;
+		font-family: "Spine-Icons";
 		}
+
 	button:hover:before {
 		color: $crimson;
 		}
+
 	label {
 		position:absolute;
 		left: -999em;
 		top:-999em;
 		}
 
+
+
 	}
+
+#spine.search-opened .spine-search.closed {
+		
+	display: block;
+	background-color: transparent;
+	z-index: 0;
+	//min-height: 1px !important;
+	
+	form {
+		
+		padding-left: 0;
+		padding-right: 0;
+		margin-bottom: 0;
+		margin-left: 1.75em;
+		margin-right: 1.75em;
+		
+		
+		input {
+			
+			//font-size: 1em;
+			padding: 0;
+			//color: $gray;
+			background-color: #e4e6e7;
+			border-bottom-color: #e4e6e7;
+			//background-color: #8d959a;
+			//border-bottom-color: #8d959a;
+			text-indent: 5px;
+			color: $gray-light;
+			
+			
+		}
+		
+		
+		input::-webkit-input-placeholder,
+		input:-moz-placeholder,
+		input::-moz-placeholder,
+		input:-ms-placeholder {
+			
+			color: $gray-light;
+			//text-shadow: 1px 1px 0px rgba(141, 148, 153, 0.2);
+			
+		}
+		
+		input:focus {
+			
+			color: $gray;
+			
+		}
+		
+	}
+	
+}
+
+#spine.search-opened .spine-sitenav {
+	
+	margin-top: 45px;
+
+}
+
+#spine.search-opened nav ul li:first-of-type {
+	border-top: none;
+}
 
 .spine-search :-webkit-input-placeholder {
    text-indent: 3px;
