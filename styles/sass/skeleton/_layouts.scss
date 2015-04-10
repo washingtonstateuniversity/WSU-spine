@@ -61,8 +61,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 
 	// thirds
 
-	.row.thirds .column { width: 33%; }
-	.row.thirds .column.two { width: 34%; }
+	.row.thirds .column { width: 33.33333%; }
 	.column.third { width: 33.33333% !important; }
 
 	// quarters
