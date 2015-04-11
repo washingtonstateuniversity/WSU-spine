@@ -82,11 +82,11 @@
 		.spacing-#{$space} .quarters.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+6):not(.gutterless) {
 			@if $layout != "small" { border-left-width: $width * .75; } @else { border-left-width: $width * .5; }
-			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width * .5; }
+			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width; }
 		}
 		.spacing-#{$space} .quarters.gutter .column.three:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+7):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width * .5; }
+			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width; }
 			@if $layout != "small" { border-right-width: $width * .75; } @else { border-right-width: $width * .5; }
 		}
 		.spacing-#{$space} .quarters.gutter .column.four:not(.gutterless),
@@ -144,11 +144,11 @@
 		.quarters.gutter#{$gutter} .column.two:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+6):not(.gutterless) {
 			@if $layout != "small" { border-left-width: $width * .75; } @else { border-left-width: $width * .5; }
-			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width * .5; }
+			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width; }
 		}
 		.quarters.gutter#{$gutter} .column.three:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+7):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width * .5; }
+			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width; }
 			@if $layout != "small" { border-right-width: $width * .75; } @else { border-right-width: $width * .5; }
 		}
 		.quarters.gutter#{$gutter} .column.four:not(.gutterless),
