@@ -96,8 +96,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 
 @mixin nested {
 
-	.row:not(.boundless):not(.max-width):not(.full-width) .row,
-	.row.spineless:not(.boundless):not(.max-width):not(.full-width) .row {
+	.row {
 		max-width: auto;
 		}
 

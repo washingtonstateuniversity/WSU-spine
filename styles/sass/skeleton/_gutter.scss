@@ -60,18 +60,18 @@
 		.spacing-#{$space} .thirds.gutter .column.one:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+4):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.one:not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .25; } @else { border-right-width: $width; }
+			@if $layout != "small" { border-right-width: $width * .3125; } @else { border-right-width: $width; }
 		}
 		.spacing-#{$space} .thirds.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+5):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.two:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .75; } @else { border-left-width: $width; }
-			@if $layout != "small" { border-right-width: $width * .75; } @else { border-right-width: $width; }
+			@if $layout != "small" { border-left-width: $width * .65625; } @else { border-left-width: $width; }
+			@if $layout != "small" { border-right-width: $width * .65625; } @else { border-right-width: $width; }
 		}
 		.spacing-#{$space} .thirds.gutter .column.three:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+6):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.three:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .25; } @else { border-left-width: $width; }
+			@if $layout != "small" { border-left-width: $width * .3125; } @else { border-left-width: $width; }
 		}
 	
 		// Four Columns
@@ -122,18 +122,18 @@
 		.thirds.gutter#{$gutter} .column.one:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+4):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.one:not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .25; } @else { border-right-width: $width; }
+			@if $layout != "small" { border-right-width: $width * .3125; } @else { border-right-width: $width; }
 		}
 		.thirds.gutter#{$gutter} .column.two:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+5):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.two:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .75; } @else { border-left-width: $width; }
-			@if $layout != "small" { border-right-width: $width * .75; } @else { border-right-width: $width; }
+			@if $layout != "small" { border-left-width: $width * .65625; } @else { border-left-width: $width; }
+			@if $layout != "small" { border-right-width: $width * .65625; } @else { border-right-width: $width; }
 		}
 		.thirds.gutter#{$gutter} .column.three:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+6):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.three:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .25; } @else { border-left-width: $width; }
+			@if $layout != "small" { border-left-width: $width * .3125; } @else { border-left-width: $width; }
 		}
 	
 		// Four Columns
