@@ -48,7 +48,7 @@
 @include margin;
 
 /* #### Gutters */
-@include gutter(1,2);
+@include gutter('all');
 
 /* ## CONTENT  */
 
