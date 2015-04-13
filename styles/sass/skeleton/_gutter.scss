@@ -11,11 +11,8 @@
 	
 		.gutter#{$gutter} .column:not(.gutterless),
 		.guttered#{$gutter} {
-			border-width: 0;
-			border-left-width: $width;
-			border-right-width: $width;
-			border-style: solid;
-			border-color: rgba(255, 255, 255, 0);
+			padding-left: $width;
+			padding-right: $width;
 		}
 	
 	}
@@ -29,13 +26,13 @@
 	
 		.spacing-#{$space} .gutter .column:not(.gutterless),
 		.spacing-#{$space} .guttered {
-			border-left-width: $width;
-			border-right-width: $width; }
+			padding-left: $width;
+			padding-right: $width; }
 	
 		// One Column
 		.spacing-#{$space} .single.gutter .column:not(.gutterless) {
-			border-left-width: $width;
-			border-right-width: $width;
+			padding-left: $width;
+			padding-right: $width;
 		}
 	
 		// Two Columns
@@ -45,7 +42,7 @@
 		.spacing-#{$space} .side-right.gutter .column.one:not(.gutterless),
 		.spacing-#{$space} .margin-left.gutter .column.one:not(.gutterless),
 		.spacing-#{$space} .margin-right.gutter .column.one:not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
 		.spacing-#{$space} .halves.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+4):not(.gutterless),
@@ -53,45 +50,45 @@
 		.spacing-#{$space} .side-right.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .margin-left.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .margin-right.gutter .column.two:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width; }
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
 		}
 	
 		// Three Columns
 		.spacing-#{$space} .thirds.gutter .column.one:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+4):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.one:not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .3125; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-right: $width * .3125; } @else { padding-right: $width; }
 		}
 		.spacing-#{$space} .thirds.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+5):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.two:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .65625; } @else { border-left-width: $width; }
-			@if $layout != "small" { border-right-width: $width * .65625; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-left: $width * .65625; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .65625; } @else { padding-right: $width; }
 		}
 		.spacing-#{$space} .thirds.gutter .column.three:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+6):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.three:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .3125; } @else { border-left-width: $width; }
+			@if $layout != "small" { padding-left: $width * .3125; } @else { padding-left: $width; }
 		}
 	
 		// Four Columns
 		.spacing-#{$space} .quarters.gutter .column.one:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+5):not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .25; } @else { border-right-width: $width * .5; }
+			@if $layout != "small" { padding-right: $width * .25; } @else { padding-right: $width * .5; }
 		}
 		.spacing-#{$space} .quarters.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+6):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .75; } @else { border-left-width: $width * .5; }
-			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-left: $width * .75; } @else { padding-left: $width * .5; }
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
 		.spacing-#{$space} .quarters.gutter .column.three:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+7):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width; }
-			@if $layout != "small" { border-right-width: $width * .75; } @else { border-right-width: $width * .5; }
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .75; } @else { padding-right: $width * .5; }
 		}
 		.spacing-#{$space} .quarters.gutter .column.four:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+8):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .25; } @else { border-left-width: $width * .5; }
+			@if $layout != "small" { padding-left: $width * .25; } @else { padding-left: $width * .5; }
 		}
 	
 	}
@@ -100,8 +97,8 @@
 	
 		// One Column
 		.single.gutter#{$gutter} .column:not(.gutterless) {
-			border-left-width: $width;
-			border-right-width: $width;
+			padding-left: $width;
+			padding-right: $width;
 		}
 	
 		// Two Columns
@@ -109,51 +106,51 @@
 		.halves.gutter#{$gutter} .column:nth-of-type(2n+3):not(.gutterless),
 		.side-left.gutter#{$gutter} .column.one:not(.gutterless),
 		.side-right.gutter#{$gutter} .column.one:not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
 		.halves.gutter#{$gutter} .column.two:not(.gutterless),
 		.halves.gutter#{$gutter} .column:nth-of-type(2n+4):not(.gutterless),
 		.side-left.gutter#{$gutter} .column.two:not(.gutterless),
 		.side-right.gutter#{$gutter} .column.two:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width; }
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
 		}
 	
 		// Three Columns
 		.thirds.gutter#{$gutter} .column.one:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+4):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.one:not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .3125; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-right: $width * .3125; } @else { padding-right: $width; }
 		}
 		.thirds.gutter#{$gutter} .column.two:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+5):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.two:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .65625; } @else { border-left-width: $width; }
-			@if $layout != "small" { border-right-width: $width * .65625; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-left: $width * .65625; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .65625; } @else { padding-right: $width; }
 		}
 		.thirds.gutter#{$gutter} .column.three:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+6):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.three:not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .3125; } @else { border-left-width: $width; }
+			@if $layout != "small" { padding-left: $width * .3125; } @else { padding-left: $width; }
 		}
 	
 		// Four Columns
 		.quarters.gutter#{$gutter} .column.one:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+5):not(.gutterless) {
-			@if $layout != "small" { border-right-width: $width * .25 ; } @else { border-right-width: $width * .5; }
+			@if $layout != "small" { padding-right: $width * .25 ; } @else { padding-right: $width * .5; }
 		}
 		.quarters.gutter#{$gutter} .column.two:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+6):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .75; } @else { border-left-width: $width * .5; }
-			@if $layout != "small" { border-right-width: $width * .5; } @else { border-right-width: $width; }
+			@if $layout != "small" { padding-left: $width * .75; } @else { padding-left: $width * .5; }
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
 		.quarters.gutter#{$gutter} .column.three:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+7):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .5; } @else { border-left-width: $width; }
-			@if $layout != "small" { border-right-width: $width * .75; } @else { border-right-width: $width * .5; }
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .75; } @else { padding-right: $width * .5; }
 		}
 		.quarters.gutter#{$gutter} .column.four:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+8):not(.gutterless) {
-			@if $layout != "small" { border-left-width: $width * .25; } @else { border-left-width: $width * .5; }
+			@if $layout != "small" { padding-left: $width * .25; } @else { padding-left: $width * .5; }
 		}
 	
 	}
