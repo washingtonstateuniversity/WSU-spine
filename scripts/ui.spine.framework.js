@@ -463,7 +463,7 @@
 			});
 
 			// External Links in nav
-			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
+			$(".spine-navigation a[href^='http']:not([href*='://"+window.location.hostname+"'])").addClass("external");
 
 		},
 
