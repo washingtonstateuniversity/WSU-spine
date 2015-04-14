@@ -107,10 +107,6 @@
 
 	@include vellum($gray-lighter);
 
-	button#shelve {
-		background-image: url("#{$locality}/icons/menu-white.svg");
-		}
-
 	.spine-actions-tabs .opened button,
 	.spine-actions-tabs button,
 	.spine-actions-tabs .opened button:hover,

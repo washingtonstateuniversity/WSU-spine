@@ -113,21 +113,70 @@
 /* ### Spine Menu Button (Shelve and Unshelve) */
 
 button#shelve {
-  display:none;
-	}
+	display: none;
+}
 
-.shelved button#shelve,.unshelved button#shelve {
-	height: 50px;
-	width: 100px;
-	border: none;
+.shelved button#shelve,
+.unshelved button#shelve {
+	display: block;
+}
+
+button#shelve,
+button#shelve::before,
+button#shelve::after {
 	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index:100;
-	display:block;
-	background: transparent url("#{$locality}/icons/menu.svg") 20px center no-repeat;
-	outline: none;
+	border-color: #b5babe;
+	border-style: solid;
+	border-width: 0;
+}
+
+#spine.gray,
+#spine.light {
+	
+	button#shelve,
+	button#shelve::before,
+	button#shelve::after {
+		border-color: white;
 	}
+	
+}
+
+#spine.lighter {
+	
+	button#shelve,
+	button#shelve::before,
+	button#shelve::after {
+		border-color: $gray;
+	}
+	
+}
+
+button#shelve {
+	width: 100px;
+    height: 50px;
+    z-index: 100;
+    outline: none;
+}
+
+button#shelve::before,
+button#shelve::after {
+	content: "";
+	display: block;
+    width: 20px;
+    height: 3px;
+    left: 18px;
+}
+
+button#shelve::before {
+	bottom: 18px;
+	border-bottom-width: 3px;
+	border-top-width: 3px;
+}
+
+button#shelve::after {
+	bottom: 30px;
+	border-bottom-width: 3px;
+}
 
 .spine-actions-tabs,
 .spine-nav,
@@ -140,9 +189,9 @@ button#shelve {
 		left: 0px;	top: 0em; right: 0px; bottom: 0px;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		}
-
 	}
+
+}
 
 /* ## NAVIGATION
 --------------------------------------------------------------------------- */
