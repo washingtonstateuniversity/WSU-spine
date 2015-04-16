@@ -7,6 +7,7 @@ Visually speaking, the WSU Spine is a 198px wide column that binds together the 
 3. Provides a responsive solution for devices
 
 # Implementation
+
 A typical implementation of the WSU Spine would start with markup from spine.html.
 
 1. Customize #spine by replacing default data with the appropriate contact details.
@@ -28,12 +29,12 @@ Using the current major version build will ensure that you will receive all non-
 * `https://repo.wsu.edu/spine/1/spine.min.css`
 * `https://repo.wsu.edu/spine/1/spine.min.js`
 
-As versions change between `1.2.3` to `1.2.4` to `1.3.0`, the files at the above URLs will be automatically built and cached in users' browsers for an hour. A version change to `2.0.0` will result in a new URL and will be communicated at the time.
+As versions change between `1.2.4` to `1.2.5` to `1.3.0`, the files at the above URLs will be automatically built and cached in users' browsers for an hour. A version change to `2.0.0` will result in a new URL and will be communicated at the time.
 
 Specific version builds are also available for every minor version.
 
-* `https://repo.wsu.edu/spine/1.2.3/spine.min.css`
-* `https://repo.wsu.edu/spine/1.2.3/spine.min.js`
+* `https://repo.wsu.edu/spine/1.2.4/spine.min.css`
+* `https://repo.wsu.edu/spine/1.2.4/spine.min.js`
 
 These have the benefit of being cached in browser for 120 days, though will require attention whenever the Spine is updated.
 
