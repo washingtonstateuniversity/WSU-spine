@@ -89,7 +89,7 @@ $signatures: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$h
 $locality: 'https://repo.wsu.edu/spine/develop';
 // font_domain accomplishes the same thing, but does not force HTTPS to avoid CORs issues when
 // a page is displayed via HTTP
-$font_domain: '//repo.wsu.edu/spine/1';
+$font_domain: '//repo.wsu.edu/spine/develop';
 
 @mixin signatures($directionality,$path) {
 
