@@ -115,6 +115,14 @@
 	}
 
 /* Shelving */
+
+.hybrid #wsu-signature,
+.fixed #wsu-signature {
+	background-position: center 12px;
+	background-size: auto 30px;
+	height: 49px;
+	}
+	
 #binder:not(.fluid) {
 
 	@include shelved;
@@ -147,7 +155,6 @@
 
 /* Signature */
 
-
 nav a.external:after {
 	font-family: "Spine-Icons";
 	-webkit-font-smoothing: antialiased;
@@ -161,7 +168,9 @@ nav a.external:after {
 @include grid-medium-controls;
 
 @include header-colors;
-@include signatures('horizontal','#binder:not(.fluid) ');
+
+@include signatures('horizontal','.fixed ');
+@include signatures('horizontal','.hybrid ');
 
 	}
 
@@ -219,6 +228,7 @@ nav a.external:after {
 	}
 
 /* Shelving */
+
 #binder.fluid {
 
 	@include shelved;
@@ -226,7 +236,7 @@ nav a.external:after {
 	}
 
 /* Signature */
-#binder.fluid #wsu-signature {
+.fluid #wsu-signature {
 	background-position: center 12px;
 	background-size: auto 30px;
 	height: 49px;
@@ -287,7 +297,7 @@ nav a.external:after {
 /* Header Colors and Signatures */
 
 @include header-colors;
-@include signatures('vertical','#binder.fixed ');
+@include signatures('vertical','.fixed ');
 
 }
 
@@ -332,14 +342,6 @@ nav a.external:after {
 	float: left;
 	}
 
-/* #### Logo */
-
-[class*="-signature"]  #wsu-signature {
-	background-size: 340px auto !important;
-	background-position: center 12px !important;
-	margin-left: 40px !important;
-	}
-
 /* #### Grid */
 
 .fixed,.hybrid,.fluid { @include layouts-small; }
@@ -347,18 +349,23 @@ nav a.external:after {
 
 /* #### Gutters */
 
-@include gutter(1,1);
+@include gutter('small');
 
 
 /* #### Signature */
-#wsu-signature {
-	background-position: center 12px !important;
-	background-size: auto 30px !important;
-	height: 49px !important;
+
+#binder #wsu-signature {
+	background-position: center 12px;
+	background-size: auto 30px;
+	height: 49px;
 	}
-[class*="-signature"] #wsu-signature {
-	background-size: 320px auto !important;
+/*
+[class*="-signature"] .fluid #wsu-signature,
+[class*="-signature"] .fixed #wsu-signature,
+[class*="-signature"] .hybrid #wsu-signature {
+	background-size: 320px auto;
 	}
+*/
 
 /* Header Colors and Signatures */
 @include header-colors;
@@ -366,31 +373,46 @@ nav a.external:after {
 
 	}
 
+@media
+
+	only screen
+	and (max-width: 530px)
+
+	{
+		
+#binder #wsu-signature {
+	background-position: center 12px;
+	background-size: 320px auto;
+	}
+[class*="-signature"] #binder #wsu-signature {
+	background-position: right 14px;
+	}
+	
+[class*="-signature"] #binder #wsu-signature {
+	background-position: center calc(50% + 2px);
+	}
+	
+	}
+
 /* ## SMALLER than small */
 
 @media
 
 	only screen
-	and (max-width: 420px)
+	and (max-width: 425px)
 
 	{
 
-#wsu-signature {
-	background-size: 320px auto !important;
+#binder #wsu-signature,
+[class*="-signature"] #binder #wsu-signature {
+	background-size: 280px auto;
+	background-position: right 14px;
 	}
-
-	}
-
-@media
-
-	only screen
-	and (max-width: 360px)
-
-	{
-
-#wsu-signature {
-	background-size: 260px auto !important;
-	background-position: center 60% !important;
+	
+#binder #wsu-signature,
+[class*="-signature"] #binder #wsu-signature {
+	background-size: calc(100% - 75px) auto;
+	background-position: calc(50% + 25px) 60%;
 	}
 
 	}
@@ -434,7 +456,7 @@ nav a.external:after {
 		}
 	}
 
-#binder.fluid .row:not(.rebound) {
+#binder.fluid .row:not(.column):not(.rebound) {
 	width: 100% !important;
 	}
 

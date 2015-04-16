@@ -170,7 +170,7 @@
 		&.margin-right .column.two,
 		&.margin-left .column.one,
 		&.thirds .halves .column,
-		// deprecated
+		// fifteenths deprecated
 		&.fifteenths .four-fifteenths,
 		&.fifteenths .five-fifteenths,
 		&.fifteenths .six-fifteenths,
@@ -183,12 +183,15 @@
 
 	.row.quarters .column {
 		width: 50%;
-		}
+	}
+	.row.quarters .column:nth-of-type(2n+3) {
+		clear: both;
+	}
 	//deprecated
 	.row.fifteenths .two-fifteenths,
 	.row.fifteenths .three-fifteenths {
 		width: 50%;
-		}
+	}
 
 	/* Nesting */
 
@@ -196,10 +199,7 @@
 		.row {
 
 			&.thirds .column {
-				width: 33%;
-				}
-			&.thirds .column.two {
-				width: 34%;
+				width: 33.3333%;
 				}
 			&.quarters .column,
 			&.thirds .column,

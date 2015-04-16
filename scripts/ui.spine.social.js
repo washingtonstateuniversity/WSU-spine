@@ -27,13 +27,14 @@
 		social_options:{
 			share_text:"You should know ...",
 			twitter_text:"You should know...",
-			twitter_handle:"wsupullman"
+			twitter_handle:"wsupullman",
+			linkedin_source:"wsu.edu"
 		},
 		social_globals: {
 			share_block: $("#wsu-share")
 		},
 		social_create: function(){
-			var self, share_block, share_text, current_url, wsu_actions, sharehtml, twitter_text, twitter_handle;
+			var self, share_block, share_text, current_url, wsu_actions, sharehtml, twitter_text, twitter_handle, linkedin_source;
 			self=this;//hold to preserve scope
 			share_block = self._get_globals("share_block").refresh();
 			if (!share_block.length) {
@@ -46,6 +47,8 @@
 									<ul> \
 										<li class='by-facebook'><a href='https://www.facebook.com/sharer/sharer.php?u="+current_url+"'>Facebook</a></li> \
 										<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text="+twitter_text+"&url="+current_url+"&via="+twitter_handle+"' target='_blank'>Twitter</a></li> \
+										<li class='by-googleplus'><a href='https://plus.google.com/share?url="+current_url+"'>Google+</a></li> \
+										<li class='by-linkedin'><a href='https://www.linkedin.com/shareArticle?mini=true&url="+current_url+"&summary="+share_text+"&source="+linkedin_source+"' target='_blank'>Linkedin</a></li> \
 										<li class='by-email'><a href='mailto:?subject="+share_text+"&body="+current_url+"'>Email</a></li> \
 									</ul> \
 									</section>";

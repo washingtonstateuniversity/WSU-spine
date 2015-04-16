@@ -1,174 +1,158 @@
 @charset "UTF-8";
-@mixin gutter($whole,$halve) {
+@mixin gutter($layout) {
 
-$gutters: (
-	'': 2rem,
-	'.wide': 4rem,
-	'.narrow': 1rem
+	$gutters: (
+		'': 2rem,
+		'.wide': 4rem,
+		'.narrow': 1rem
 	);
 
-@each $gutter, $dividend in $gutters {
-
-	/* #{$gutter} */
-
-	.gutter#{$gutter} .column,
-	.guttered#{$gutter} {
-		padding-left: $dividend;
-		padding-right: $dividend; }
-
+	@each $gutter, $width in $gutters {
+	
+		.gutter#{$gutter} .column:not(.gutterless),
+		.guttered#{$gutter} {
+			padding-left: $width;
+			padding-right: $width;
+		}
+	
 	}
 
-$spacing: (
-	'loose': 4rem,
-	'tight': 1rem
-	);
+	$spacing: (
+		'loose': 4rem,
+		'tight': 1rem
+		);
 
-@each $space, $dividend in $spacing {
-
-	.spacing-#{$space} .gutter .colum,
-	.spacing-#{$space} .guttered {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$whole; }
-
-	// One Column
-	.spacing-#{$space} .single.gutter .column {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$whole; }
-
-	// Two Columns
-	.spacing-#{$space} .halves.gutter .column.one,
-	.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+3),
-	.spacing-#{$space} .side-left.gutter .column.one,
-	.spacing-#{$space} .side-right.gutter .column.one,
-	.spacing-#{$space} .margin-left.gutter .column.one,
-	.spacing-#{$space} .margin-right.gutter .column.one {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$halve;
+	@each $space, $width in $spacing {
+	
+		.spacing-#{$space} .gutter .column:not(.gutterless),
+		.spacing-#{$space} .guttered {
+			padding-left: $width;
+			padding-right: $width; }
+	
+		// One Column
+		.spacing-#{$space} .single.gutter .column:not(.gutterless) {
+			padding-left: $width;
+			padding-right: $width;
 		}
-	.spacing-#{$space} .halves.gutter .column.two,
-	.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+4),
-	.spacing-#{$space} .side-left.gutter .column.two,
-	.spacing-#{$space} .side-right.gutter .column.two,
-	.spacing-#{$space} .margin-left.gutter .column.two,
-	.spacing-#{$space} .margin-right.gutter .column.two {
-		padding-left: ($dividend/$halve);
-		padding-right: $dividend/$whole;
+	
+		// Two Columns
+		.spacing-#{$space} .halves.gutter .column.one:not(.gutterless),
+		.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+3):not(.gutterless),
+		.spacing-#{$space} .side-left.gutter .column.one:not(.gutterless),
+		.spacing-#{$space} .side-right.gutter .column.one:not(.gutterless),
+		.spacing-#{$space} .margin-left.gutter .column.one:not(.gutterless),
+		.spacing-#{$space} .margin-right.gutter .column.one:not(.gutterless) {
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
-
-	// Three Columns
-	.spacing-#{$space} .thirds.gutter .column.one,
-	.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+4),
-	.spacing-#{$space} .triptych.gutter .column.one {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$halve;
+		.spacing-#{$space} .halves.gutter .column.two:not(.gutterless),
+		.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+4):not(.gutterless),
+		.spacing-#{$space} .side-left.gutter .column.two:not(.gutterless),
+		.spacing-#{$space} .side-right.gutter .column.two:not(.gutterless),
+		.spacing-#{$space} .margin-left.gutter .column.two:not(.gutterless),
+		.spacing-#{$space} .margin-right.gutter .column.two:not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
 		}
-	.spacing-#{$space} .thirds.gutter .column.two,
-	.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+5),
-	.spacing-#{$space} .triptych.gutter .column.two {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$halve;
+	
+		// Three Columns
+		.spacing-#{$space} .thirds.gutter .column.one:not(.gutterless),
+		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+4):not(.gutterless),
+		.spacing-#{$space} .triptych.gutter .column.one:not(.gutterless) {
+			@if $layout != "small" { padding-right: $width * .3125; } @else { padding-right: $width; }
 		}
-	.spacing-#{$space} .thirds.gutter .column.three,
-	.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+6),
-	.spacing-#{$space} .triptych.gutter .column.three {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$whole;
+		.spacing-#{$space} .thirds.gutter .column.two:not(.gutterless),
+		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+5):not(.gutterless),
+		.spacing-#{$space} .triptych.gutter .column.two:not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .65625; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .65625; } @else { padding-right: $width; }
 		}
-
-	// Four Columns
-	.spacing-#{$space} .quarters.gutter .column.one,
-	.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+5) {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$halve;
+		.spacing-#{$space} .thirds.gutter .column.three:not(.gutterless),
+		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+6):not(.gutterless),
+		.spacing-#{$space} .triptych.gutter .column.three:not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .3125; } @else { padding-left: $width; }
 		}
-	.spacing-#{$space} .quarters.gutter .column.two,
-	.spacing-#{$space} .quarters.gutter .column.three,
-	.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+6),
-	.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+7) {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$halve;
+	
+		// Four Columns
+		.spacing-#{$space} .quarters.gutter .column.one:not(.gutterless),
+		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+5):not(.gutterless) {
+			@if $layout != "small" { padding-right: $width * .25; } @else { padding-right: $width * .5; }
 		}
-	.spacing-#{$space} .quarters.gutter .column.four,
-	.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+8) {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$whole;
+		.spacing-#{$space} .quarters.gutter .column.two:not(.gutterless),
+		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+6):not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .75; } @else { padding-left: $width * .5; }
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
-
+		.spacing-#{$space} .quarters.gutter .column.three:not(.gutterless),
+		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+7):not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .75; } @else { padding-right: $width * .5; }
+		}
+		.spacing-#{$space} .quarters.gutter .column.four:not(.gutterless),
+		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+8):not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .25; } @else { padding-left: $width * .5; }
+		}
+	
 	}
 
-@each $gutter, $dividend in $gutters {
-
-	// One Column
-	.single.gutter#{$gutter} .column {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$whole; }
-
-	// Two Columns
-	.halves.gutter#{$gutter} .column.one,
-	.halves.gutter#{$gutter} .column:nth-of-type(2n+3),
-	.side-left.gutter#{$gutter} .column.one,
-	.side-right.gutter#{$gutter} .column.one {
-		padding-left: $dividend/$whole;
-		padding-right: ($dividend/$halve);
+	@each $gutter, $width in $gutters {
+	
+		// One Column
+		.single.gutter#{$gutter} .column:not(.gutterless) {
+			padding-left: $width;
+			padding-right: $width;
 		}
-	.halves.gutter#{$gutter} .column.two,
-	.halves.gutter#{$gutter} .column:nth-of-type(2n+4),
-	.side-left.gutter#{$gutter} .column.two,
-	.side-right.gutter#{$gutter} .column.two {
-		padding-left: ($dividend/$halve);
-		padding-right: $dividend/$whole;
+	
+		// Two Columns
+		.halves.gutter#{$gutter} .column.one:not(.gutterless),
+		.halves.gutter#{$gutter} .column:nth-of-type(2n+3):not(.gutterless),
+		.side-left.gutter#{$gutter} .column.one:not(.gutterless),
+		.side-right.gutter#{$gutter} .column.one:not(.gutterless) {
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
-
-	// Three Columns
-	.thirds.gutter#{$gutter} .column.one,
-	.thirds.gutter#{$gutter} .column:nth-of-type(3n+4),
-	.triptych.gutter#{$gutter} .column.one {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$halve;
+		.halves.gutter#{$gutter} .column.two:not(.gutterless),
+		.halves.gutter#{$gutter} .column:nth-of-type(2n+4):not(.gutterless),
+		.side-left.gutter#{$gutter} .column.two:not(.gutterless),
+		.side-right.gutter#{$gutter} .column.two:not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
 		}
-	.thirds.gutter#{$gutter} .column.two,
-	.thirds.gutter#{$gutter} .column:nth-of-type(3n+5),
-	.triptych.gutter#{$gutter} .column.two {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$halve;
+	
+		// Three Columns
+		.thirds.gutter#{$gutter} .column.one:not(.gutterless),
+		.thirds.gutter#{$gutter} .column:nth-of-type(3n+4):not(.gutterless),
+		.triptych.gutter#{$gutter} .column.one:not(.gutterless) {
+			@if $layout != "small" { padding-right: $width * .3125; } @else { padding-right: $width; }
 		}
-	.thirds.gutter#{$gutter} .column.three,
-	.thirds.gutter#{$gutter} .column:nth-of-type(3n+6),
-	.triptych.gutter#{$gutter} .column.three {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$whole;
+		.thirds.gutter#{$gutter} .column.two:not(.gutterless),
+		.thirds.gutter#{$gutter} .column:nth-of-type(3n+5):not(.gutterless),
+		.triptych.gutter#{$gutter} .column.two:not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .65625; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .65625; } @else { padding-right: $width; }
 		}
-
-	// Four Columns
-	.quarters.gutter#{$gutter} .column.one,
-	.quarters.gutter#{$gutter} .column:nth-of-type(4n+5) {
-		padding-left: $dividend/$whole;
-		padding-right: $dividend/$halve;
+		.thirds.gutter#{$gutter} .column.three:not(.gutterless),
+		.thirds.gutter#{$gutter} .column:nth-of-type(3n+6):not(.gutterless),
+		.triptych.gutter#{$gutter} .column.three:not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .3125; } @else { padding-left: $width; }
 		}
-	.quarters.gutter#{$gutter} .column.two,
-	.quarters.gutter#{$gutter} .column.three,
-	.quarters.gutter#{$gutter} .column:nth-of-type(4n+6),
-	.quarters.gutter#{$gutter} .column:nth-of-type(4n+7) {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$halve;
+	
+		// Four Columns
+		.quarters.gutter#{$gutter} .column.one:not(.gutterless),
+		.quarters.gutter#{$gutter} .column:nth-of-type(4n+5):not(.gutterless) {
+			@if $layout != "small" { padding-right: $width * .25 ; } @else { padding-right: $width * .5; }
 		}
-	.quarters.gutter#{$gutter} .column.four,
-	.quarters.gutter#{$gutter} .column:nth-of-type(4n+8) {
-		padding-left: $dividend/$halve;
-		padding-right: $dividend/$whole;
+		.quarters.gutter#{$gutter} .column.two:not(.gutterless),
+		.quarters.gutter#{$gutter} .column:nth-of-type(4n+6):not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .75; } @else { padding-left: $width * .5; }
+			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
-
+		.quarters.gutter#{$gutter} .column.three:not(.gutterless),
+		.quarters.gutter#{$gutter} .column:nth-of-type(4n+7):not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
+			@if $layout != "small" { padding-right: $width * .75; } @else { padding-right: $width * .5; }
+		}
+		.quarters.gutter#{$gutter} .column.four:not(.gutterless),
+		.quarters.gutter#{$gutter} .column:nth-of-type(4n+8):not(.gutterless) {
+			@if $layout != "small" { padding-left: $width * .25; } @else { padding-left: $width * .5; }
+		}
+	
 	}
 
-	.gutterless {
-		padding-left: 0px !important;
-		padding-right: 0px !important;
-		}
-
-	/*
-		.fifths.gutter .column { padding: 1em; }
-		.fifths.gutter .column:nth-of-type(5n+1) { padding-left: 2em; }
-		.fifths.gutter .column:nth-of-type(5n+5) { padding-right: 2em; }
-	*/
-
-	}
+}

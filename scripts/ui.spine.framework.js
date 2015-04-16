@@ -185,14 +185,14 @@
 			// come back to .. look to mage"s eq"i
 			// all box attr not accounted for
 			if( $(".equalize").length ) {
-				obj=$(".row.equalize");
+				obj=$(".equalize");
 				obj.find(".column").css("min-height","");
 				$.each(obj,function(){
 					var tallestBox = 0;
 					$.each($(".column", this),function(){
 						tallestBox = ($(this).outerHeight() > tallestBox) ? $(this).outerHeight() : tallestBox;
 					});
-					if($(window).width() <= 792) {
+					if( ( $(window).width() <= 792 && !obj.is(".equalize-medium") ) || ( $(window).width() <= 694 && !obj.is(".equalize-small") ) ) {
 						$(".column",this).not(".unequaled").css("min-height","1");
 					} else {
 						$(".column",this).not(".unequaled").css("min-height",tallestBox);
@@ -452,7 +452,7 @@
 			});
 
 			// External Links in nav
-			$(".spine-navigation a[href^='http']:not([href*='"+window.location.hostname+"'])").addClass("external");
+			$(".spine-navigation a[href^='http']:not([href*='://"+window.location.hostname+"'])").addClass("external");
 
 		},
 
