@@ -1,6 +1,32 @@
 # WSU Spine Changelog
 
-## 1.3.0 (In Progress)
+## 1.2.4 (April 16, 2015)
+
+### Framework Fixes
+
+* Use CSS borders to construct menu icon, remove menu.svg. See #216.
+* Improve math around thirds and quarters to have a better chance at equal sizing of columns and their padding in those layouts.
+* Opened tabs in the Spine persist as "x" rather than only on hover.
+* On a root domain (wsu.edu), show external link indicators for subdomains.
+* Add specificity for signature size on smaller devices.
+* Make a fluid row full width *only* when not also a column.
+
+### Enhancements
+
+* Add `.clear` and `.clear-both` as classes available for assigning `clear: both;`.
+* Add `.clear-important` and `.clear-both-important` as classes for assigning `clear: both !important;`.
+* Add `.clear-left` and `.clear-left-important` for assigning `clear: left;`.
+* Add `.clear-right` and `.clear-right-important` for assinging `clear: right;`.
+* Enable column by column cancellation of gutters via `.gutterless`
+* Support `.equalize-medium` and `.equalize-small` as indicators that an area should be equalized intentionally at smaller screen sizes. See #226.
+* Extend social sharing channels to include Google and LinkedIn.
+
+### Marks and Signatures
+
+* Add the WSU 125 Mark (for use in very specific scenarios).
+* Add a horizontal Campaign signature (for use in very specific scenarios).
+* Add grey and white Campaign signatures.
+* Improvements to the Health Sciences signatures.
 
 ## 1.2.3 (January 8, 2015)
 
