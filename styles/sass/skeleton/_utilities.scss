@@ -70,8 +70,8 @@ img.grayscale {
 .background-images-cover [style*="background-image"] {
 	background-size: cover;
 }
-.background-repeated-no,
-.background-repeat-no * {
+.background-repeat-no-repeat,
+.background-images-norepeat * {
 	background-repeat: no-repeat;
 }
 .background-position-center {
