@@ -74,9 +74,7 @@ img.grayscale {
 .background-repeat-no * {
 	background-repeat: no-repeat;
 }
-.background-position-center,
-.background-image-center [style*="background-image"]:first-of-type,
-.background-images-center [style*="background-image"] {
+.background-position-center {
 	background-position: center;
 }
 /* North */
