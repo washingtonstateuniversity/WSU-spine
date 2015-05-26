@@ -59,17 +59,25 @@ img.grayscale {
     -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
 
-/* ### Responsive Video  */
-.iframe-16-9 {
+/* ### Auto Ratios, Responsive Video  */
+.iframe-16-9,
+.aspect-ratio-16-9,
+.aspect-ratio-hd {
    position: relative;
    padding-bottom: 56.25%;
    /* padding-top: 25px; Add for controls. */
    height: 0;
 }
-.iframe-4-3 {
+.iframe-4-3,
+.aspect-ratio-4-3 {
    position: relative;
    padding-bottom: 75%;
-   /* padding-top: 25px; Add for controls. */
+   height: 0;
+}
+.aspect-ratio-square,
+.aspect-ratio-1-1 {
+   position: relative;
+   padding-bottom: 100%;
    height: 0;
 }
 
