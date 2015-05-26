@@ -58,12 +58,14 @@ img.grayscale {
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
-.background-image-contained,
+
+/* Background Images */
+.background-size-contain,
 .background-image-contain [style*="background-image"]:first-of-type,
-.background-images-contain [style*="background-image"] {
+.background-image-contain [style*="background-image"] {
 	background-size: contain;
 }
-.background-image-covered,
+.background-size-cover,
 .background-image-cover [style*="background-image"]:first-of-type,
 .background-images-cover [style*="background-image"] {
 	background-size: cover;
@@ -71,6 +73,43 @@ img.grayscale {
 .background-repeated-no,
 .background-repeat-no * {
 	background-repeat: no-repeat;
+}
+.background-position-center,
+.background-image-center [style*="background-image"]:first-of-type,
+.background-images-center [style*="background-image"] {
+	background-position: center;
+}
+/* North */
+.background-position-center-top {
+	background-position: center top;
+}
+/* Northeast */
+.background-position-right-top {
+	background-position: right top;
+}
+/* East */
+.background-position-center-top {
+	background-position: right center;
+}
+/* Southeast */
+.background-position-right-bottom {
+	background-position: center top;
+}
+/* South */
+.background-position-center-bottom {
+	background-position: center bottom;
+}
+/* Southwest */
+.background-position-left-bottom {
+	background-position: left bottom;
+}
+/* West */
+.background-position-left-center {
+	background-position: left center;
+}
+/* Northwest */
+.background-position-left-top {
+	background-position: left top;
 }
 
 /* ### Auto Ratios, Responsive Video  */
@@ -94,6 +133,11 @@ img.grayscale {
 .aspect-ratio-4-3 {
    position: relative;
    padding-bottom: 75%;
+   height: 0;
+}
+.aspect-ratio-3-4 {
+   position: relative;
+   padding-bottom: 133%;
    height: 0;
 }
 .aspect-ratio-square,
