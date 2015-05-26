@@ -58,6 +58,20 @@ img.grayscale {
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
+.background-image-contained,
+.background-image-contain [style*="background-image"]:first-of-type,
+.background-images-contain [style*="background-image"] {
+	background-size: contain;
+}
+.background-image-covered,
+.background-image-cover [style*="background-image"]:first-of-type,
+.background-images-cover [style*="background-image"] {
+	background-size: cover;
+}
+.background-repeated-no,
+.background-repeat-no * {
+	background-repeat: no-repeat;
+}
 
 /* ### Auto Ratios, Responsive Video  */
 .iframe-16-9,
