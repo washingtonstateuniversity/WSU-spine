@@ -74,6 +74,14 @@ img.grayscale {
 }
 
 /* ### Auto Ratios, Responsive Video  */
+.aspect-ratio-22-1,
+.aspect-ratio-70mm,
+.aspect-ratio-pano {
+   position: relative;
+   padding-bottom: 45.454545%;
+   /* padding-top: 25px; Add for controls. */
+   height: 0;
+}
 .iframe-16-9,
 .aspect-ratio-16-9,
 .aspect-ratio-hd {
