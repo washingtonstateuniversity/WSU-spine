@@ -74,45 +74,53 @@ img.grayscale {
 .background-images-norepeat * {
 	background-repeat: no-repeat;
 }
+.background-position-center,
 .background-position-center {
-	background-position: center;
+	background-position: center center;
 }
 /* North */
-.background-position-center-top {
+.background-position-center-top,
+.background-position-center-top.trump:not(#x) {
 	background-position: center top;
 }
 /* Northeast */
-.background-position-right-top {
+.background-position-right-top,
+.background-position-right-top.trump:not(#x) {
 	background-position: right top;
 }
 /* East */
-.background-position-center-top {
+.background-position-center-top,
+.background-position-center-top.trump:not(#x) {
 	background-position: right center;
 }
 /* Southeast */
-.background-position-right-bottom {
+.background-position-right-bottom,
+.background-position-right-bottom.trump:not(#x) {
 	background-position: center top;
 }
 /* South */
-.background-position-center-bottom {
+.background-position-center-bottom,
+.background-position-center-bottom.trump:not(#x) {
 	background-position: center bottom;
 }
 /* Southwest */
-.background-position-left-bottom {
+.background-position-left-bottom,
+.background-position-left-bottom.trump:not(#x) {
 	background-position: left bottom;
 }
 /* West */
-.background-position-left-center {
+.background-position-left-center,
+.background-position-left-center.trump:not(#x) {
 	background-position: left center;
 }
 /* Northwest */
-.background-position-left-top {
+.background-position-left-top,
+.background-position-left-top.trump:not(#x) {
 	background-position: left top;
 }
 
 /* ### Auto Ratios, Responsive Video  */
-.aspect-ratio-22-1,
-.aspect-ratio-70mm,
+.aspect-ratio-22-10,
 .aspect-ratio-pano {
    position: relative;
    padding-bottom: 45.454545%;
