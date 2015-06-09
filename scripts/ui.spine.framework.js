@@ -475,6 +475,7 @@
 
 			function print_cancel() {
 				$("html").toggleClass("print");
+				$(".shelved").removeClass("shelved").addClass("unshelved");
 				$(".print-controls").remove();
 			}
 
