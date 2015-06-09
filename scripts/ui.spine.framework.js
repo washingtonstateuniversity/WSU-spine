@@ -477,6 +477,7 @@
 				$("html").toggleClass("print");
 				$(".shelved").removeClass("shelved").addClass("unshelved");
 				$(".print-controls").remove();
+				$(window).trigger("resize");
 			}
 
 			function print(e) {
