@@ -1026,14 +1026,17 @@ html.lt-ie9 #spine footer {
 	ul {
 		display: table;
 		width: 100%;
-		}
+	}
 	ul li {
 		font-size: .8em;
 		line-height: 1em;
 		display: table-cell;
-		text-transform: uppercase;
 		text-align: left;
-		}
+	}
+	ul li:not(.mywsu-link) {
+		text-transform: uppercase;
+	}
+	
 	ul li:nth-of-type(1) { text-align: left; width: 29%; }
 	ul li:nth-of-type(2) { text-align: left; width: 31%; }
 	ul li:nth-of-type(3) { text-align: left; width: 30%; }
@@ -1047,15 +1050,15 @@ html.lt-ie9 #spine footer {
 		text-align: center;
 		margin: 0px 0px;
 		padding: 6px 0px;
-		}
+	}
 	.copyright-link a {
 		color: #8b9399;
-		}
+	}
 	.copyright-link a:hover {
 		color: $gray;
-		}
-
 	}
+
+}
 
 /* ## COLORS - Spinal Column Colors */
 
