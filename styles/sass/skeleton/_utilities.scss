@@ -60,62 +60,49 @@ img.grayscale {
 }
 
 /* Background Images */
-.background-size-contain,
-.background-image-contain [style*="background-image"]:first-of-type,
-.background-image-contain [style*="background-image"] {
+main .background-size-contain {
 	background-size: contain;
 }
-.background-size-cover,
-.background-image-cover [style*="background-image"]:first-of-type,
-.background-images-cover [style*="background-image"] {
+main .background-size-cover {
 	background-size: cover;
 }
-.background-repeat-no-repeat,
-.background-images-norepeat * {
+main .background-repeat-no-repeat {
 	background-repeat: no-repeat;
 }
-.background-position-center,
-.background-position-center {
+/* Center */
+main .background-position-center {
 	background-position: center center;
 }
 /* North */
-.background-position-center-top,
-.background-position-center-top.trump:not(#x) {
+main .background-position-center-top {
 	background-position: center top;
 }
 /* Northeast */
-.background-position-right-top,
-.background-position-right-top.trump:not(#x) {
+main .background-position-right-top {
 	background-position: right top;
 }
 /* East */
-.background-position-center-top,
-.background-position-center-top.trump:not(#x) {
+main .background-position-right-center {
 	background-position: right center;
 }
 /* Southeast */
-.background-position-right-bottom,
-.background-position-right-bottom.trump:not(#x) {
-	background-position: center top;
+main .background-position-right-bottom {
+	background-position: right bottom;
 }
 /* South */
-.background-position-center-bottom,
-.background-position-center-bottom.trump:not(#x) {
+main .background-position-center-bottom {
 	background-position: center bottom;
 }
 /* Southwest */
-.background-position-left-bottom,
-.background-position-left-bottom.trump:not(#x) {
+main .background-position-left-bottom {
 	background-position: left bottom;
 }
 /* West */
-.background-position-left-center,
-.background-position-left-center.trump:not(#x) {
+main .background-position-left-center {
 	background-position: left center;
 }
 /* Northwest */
-.background-position-left-top,
-.background-position-left-top.trump:not(#x) {
+main .background-position-left-top {
 	background-position: left top;
 }
 
