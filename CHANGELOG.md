@@ -2,6 +2,26 @@
 
 ## 1.x.x (TBD)
 
+### Framework Fixes
+
+* Remove `.unset` nots - `:not(.unset)` - to clarify CSS and its specificity.
+* Adjust the specificity of main header padding.
+
+### Enhancements
+
+* Add self-descriptive classes to aid in background positioning: `.background-size-contain`, `.background-size-cover`, `.background-repeat-no-repeat`, `.background-position-center`, `.background-position-center-top`, `.background-position-right-top`, `.background-position-right-center`, `.background-position-right-bottom`, `.background-position-center-bottom`, `.background-position-left-bottom`, `.background-position-left-center`, `.background-position-left-top`
+* Add class to aid with non repeating backgrounds: `.background-repeat-no-repeat`
+* Add classes to aid with sizing video containers at different aspect ratios:
+	* `.aspect-ratio-22-10`
+	* `.aspect-ratio-16-9`, which replaces the existing `.iframe-16-9`
+	* `.aspect-ratio-4-3`, which replaces the `.iframe-4-3`
+	* `.aspect-ratio-3-4`
+	* `.aspect-ratio-1-1`
+
+### Marks and Signatures
+
+* Add and update Foundation signatures.
+
 ## 1.2.4 (April 16, 2015)
 
 ### Framework Fixes
