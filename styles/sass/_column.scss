@@ -1032,9 +1032,10 @@ html.lt-ie9 #spine footer {
 		line-height: 1em;
 		display: table-cell;
 		text-align: left;
-	}
-	ul li:not(.mywsu-link) {
 		text-transform: uppercase;
+	}
+	ul li.mywsu-link {
+		text-transform: none;
 	}
 	
 	ul li:nth-of-type(1) { text-align: left; width: 29%; }
