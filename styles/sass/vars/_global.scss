@@ -72,9 +72,10 @@ $everett: everett;
 
 // Miscellaneous
 $campaign: campaign; /* Stretching the definition of campus. New term? */
+$foundation: foundation;
 
 $campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss;
-$signatures: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss,$campaign;
+$signatures: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss,$foundation,$campaign;
 
 // Typography
 @mixin serif {
