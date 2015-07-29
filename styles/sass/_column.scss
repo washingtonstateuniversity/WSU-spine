@@ -116,16 +116,6 @@ button#shelve {
 	display: none;
 }
 
-.shelved .spine-header::before {
-	content: "";
-	width: 56px;
-	height: 50px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: $gray-lightest;
-	}
-
 .shelved button#shelve,
 .unshelved button#shelve {
 	display: block;
@@ -135,9 +125,30 @@ button#shelve,
 button#shelve::before,
 button#shelve::after {
 	position: absolute;
-	border-color: $gray;
+	border-color: #b5babe;
 	border-style: solid;
 	border-width: 0;
+}
+
+#spine.gray,
+#spine.light {
+	
+	button#shelve,
+	button#shelve::before,
+	button#shelve::after {
+		border-color: white;
+	}
+	
+}
+
+#spine.lighter {
+	
+	button#shelve,
+	button#shelve::before,
+	button#shelve::after {
+		border-color: $gray;
+	}
+	
 }
 
 button#shelve {
@@ -154,7 +165,6 @@ button#shelve::after {
     width: 20px;
     height: 3px;
     left: 18px;
-    transition: transform .5s;
 }
 
 button#shelve::before {
@@ -166,20 +176,6 @@ button#shelve::before {
 button#shelve::after {
 	bottom: 30px;
 	border-bottom-width: 3px;
-}
-
-.unshelved button#shelve::before {
-	transform: rotate(45deg);
-	transform-origin: left top;
-	border-bottom-width: 0;
-	bottom: 30px;
-}
-
-.unshelved button#shelve::after {
-	transform: rotate(-45deg);
-	transform-origin: left top;
-	bottom: 18px;
-	left: 13px;	
 }
 
 .spine-actions-tabs,

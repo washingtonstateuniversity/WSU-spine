@@ -9,47 +9,44 @@
 		}
 
 	@include vellum($gray-lightest);
-	
-	.spine-header::before {
-		background-color: $gray-lightly;
-	}
+
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-search-tab button {
 		color: $gray-dark;
-	}
+		}
 	.spine-sitenav a:hover {
 		color: $crimson;
-	}
+		}
 	.spine-actions-tabs li button,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray-lighter;
-	}
+		}
 	.spine-sitenav ul li,
 	.spine-global-links {
 		border-color: $gray-lightly;
-	}
+		}
 	.spine-offsitenav a,
 	.spine-global-links a {
 		color: lighten($gray-light,2%);
-	}
+		}
 	.spine-actions-tabs button:hover,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
 		color: $gray;
-	}
+		}
 	.spine-search-tab:not(.opened) button {
 		color: $gray-light;
-	}
+		}
 	.spine-search-tab:not(.opened) button:hover {
 		color: $gray;
-	}
+		}
 	.spine-actions-tabs li.opened,
 	.spine-actions-tabs li.opened:hover,
 	.spine-actions section {
 		background-color: white;
-	}
+		}
 
 	}
 
@@ -63,9 +60,6 @@
 
 	@include vellum($gray-lightly);
 
-	.spine-header::before {
-		background-color: $gray-lighter;
-	}
 	.spine-actions-tabs button,
 	.spine-social-channels a:hover,
 	.spine-social-channels a,
@@ -113,14 +107,6 @@
 
 	@include vellum($gray-lighter);
 
-	.spine-header::before {
-		background-color: $gray-lightly;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: $gray;
-	}
 	.spine-actions-tabs .opened button,
 	.spine-actions-tabs button,
 	.spine-actions-tabs .opened button:hover,
@@ -173,14 +159,6 @@
 
 	@include vellum($gray-light);
 
-	.spine-header::before {
-		background-color: $gray-lighter;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: white;
-	}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lightest.svg");
 		}
@@ -238,14 +216,6 @@
 
 	@include vellum($gray);
 
-	.spine-header::before {
-		background-color: $gray-light;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: white;
-	}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lightest.svg");
 		}
@@ -306,14 +276,6 @@
 
 	@include vellum($gray-dark);
 
-	.spine-header::before {
-		background-color: $gray-darker;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: white;
-	}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lightest.svg");
 		}
@@ -358,14 +320,14 @@
 		}
 	.spine-search-tab button:hover {
 		color: $gray-lightly;
-	}
+		}
 
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: white;
-	}
+		}
 
-}
+	}
 
 &.darker {
 
@@ -373,66 +335,58 @@
 
 	#glue:before {
 		background-color: darken($gray-darker, 3%);
-	}
+		}
 
 	@include vellum(darken($gray-darker, 3%));
 
-	.spine-header::before {
-		background-color: $gray;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: $gray-light;
-	}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-	}
+		}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
 	.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
 		background-image: url("#{$locality}/icons/home-white.svg");
-	}
+		}
 	.spine-sitenav a,
 	.spine-offsitenav a:hover {
 		color: $gray-lighter;
-	}
+		}
 	.spine-actions .opened button,
 	.spine-actions button,
 	.spine-actions .opened button:hover,
 	.spine-social-channels a,
 	.spine-footer small a {
 		color: $gray;
-	}
+		}
 	.spine-sitenav ul li,
 	.spine-global-links {
 		border-color: $gray-dark;
-	}
+		}
 	.spine-search-tab.opened button,
 	.spine-search-tab.opened button:hover {
 		color: $gray-darker;
-	}
+		}
 	.spine-offsitenav a,
 	.spine-global-links a {
 		color: lighten($gray, 3%);
-	}
+		}
 	.spine-actions-tabs :not(.opened) button:hover,
 	.spine-sitenav a,
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover{
 		color: $gray-lightly;
-	}
+		}
 	.spine-search-tab button {
 		color: $gray-light;
-	}
+		}
 	.spine-search-tab button:hover {
 		color: $gray-lighter;
-	}
+		}
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: white;
-	}
+		}
 
-}
+	}
 
 &.darkest {
 
@@ -444,14 +398,6 @@
 
 	@include vellum($gray-darkest);
 
-	.spine-header::before {
-		background-color: $gray;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: $gray-lighter;
-	}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lighter.svg");
 		}
@@ -505,14 +451,6 @@
 
 	@include vellum($crimson);
 
-	.spine-header::before {
-		background-color: $crimson-dark;
-	}
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
-		border-color: white;
-	}
 	.spine-sitenav:not(.homeless) > ul > li:first-child a {
 		background-image: url("#{$locality}/icons/home-gray-lighter.svg");
 		}
