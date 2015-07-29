@@ -21,6 +21,7 @@
 ### Marks and Signatures
 
 * Add and update Foundation signatures.
+* Update all Zzusis references to use myWSU and https://my.wsu.edu.
 
 ## 1.2.4 (April 16, 2015)
 
