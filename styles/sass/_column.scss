@@ -519,14 +519,14 @@ html.lt-ie9 #spine .spine-actions {
 	button {
 		position: absolute;
 		display: block;
-		bottom: 0px;
+		bottom: 0;
 		right: 1.75em;
-		padding: 0px;
+		padding: 0;
 		height: 25px;
 		width: 15px;
-		//text-indent: 110%;
 		overflow: hidden;
-		}
+		color: transparent;
+	}
 
 	&.opened button:before {
 		content: "\25BB";
