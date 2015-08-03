@@ -1,5 +1,11 @@
 # WSU Spine Changelog
 
+## 1.x.x (TBD)
+
+### Framework Fixes
+
+* Fix an issue where Spine search input text was clipping in Firefox and IE.
+
 ## 1.3.0 (August 3, 2015)
 
 ### Framework Fixes
