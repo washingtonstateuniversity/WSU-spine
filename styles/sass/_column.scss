@@ -530,15 +530,13 @@ html.lt-ie9 #spine .spine-actions {
 
 	&.opened button:before {
 		content: "\25BB";
-		color: #d7dadb;
 		color: #8d959a;
-		//content: "$";
-		font-family: "Spine-Icons";
 		position: absolute;
 		right: 0;
 		font-size: 1.3em;
 		font-family: "Spine-Icons";
-		}
+		width: 35px;
+	}
 
 	button:hover:before {
 		color: $crimson;
