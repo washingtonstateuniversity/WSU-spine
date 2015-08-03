@@ -10,7 +10,6 @@ module.exports = {
 			behavior: "skip",
 			malformed : "skip", // true or false is what is tested for
 			demo: "skip",
-			opensans: "skip",
 			columns: "skip",
 			spacing: "skip",
 			mainheader: "skip",
@@ -66,18 +65,6 @@ module.exports = {
 			context : {
 				demo : "true",
 				content: "false"
-			}
-		}
-	},
-	opensans : {
-		src : "test/preprocess/test.cat.pre.html",
-		dest : "<%= config.build %>/tests/opensans.html",
-		options : {
-			context : {
-				opensans : "true",
-				test_title: "Testing Open Sans",
-				content: "false",
-				typography: "true"
 			}
 		}
 	},

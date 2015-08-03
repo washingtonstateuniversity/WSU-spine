@@ -53,19 +53,6 @@ module.exports = {
 						demo : true
 					}
 				},
-				opensans : {
-					title : "Testing Open Sans",
-					nav:{
-						parent:"Options",
-						nav_link : "opensans.html",
-						nav_title:"Open Sans",
-					},
-					vars : {
-						opensans : true,
-						typography: true
-					}
-				},
-
 				_behaviors : {
 					file:false,
 					nav:{
