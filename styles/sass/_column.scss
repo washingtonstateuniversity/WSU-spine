@@ -496,20 +496,19 @@ html.lt-ie9 #spine .spine-actions {
 		}
 
 	input[type="text"] {
-		//font-size: 1.6em;
-		font-size: 14px;
+	  	font-size: 1.15em;
 		color: #5e6a71;
 		background-color: transparent;
-		border-radius: 0px;
-		padding: 10px 15px 10px 0;
-		text-indent: 0px;
-		height: 1.7em;
+		border-radius: 0;
+		padding: 0;
+		text-indent: 0;
+		height: 1.55em;
 		width: 100%;
-		margin: 0px;
+		margin: 0;
 		border: none;
 		box-shadow: none;
 		border-bottom: 1px #b6bcbf solid;
-		}
+	}
 
 	input:focus {
 		color: $crimson;
