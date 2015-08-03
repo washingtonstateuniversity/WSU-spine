@@ -510,6 +510,11 @@ html.lt-ie9 #spine .spine-actions {
 		border-bottom: 1px #b6bcbf solid;
 	}
 
+	/* Hide the clear "X" in newer versions of IE */
+	input::-ms-clear {
+		display: none;
+	}
+
 	input:focus {
 		color: $crimson;
 		border: none;
