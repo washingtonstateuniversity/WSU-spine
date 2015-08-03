@@ -1,6 +1,6 @@
 # WSU Spine Changelog
 
-## 1.x.x (TBD)
+## 1.3.0 (August 3, 2015)
 
 ### Framework Fixes
 
