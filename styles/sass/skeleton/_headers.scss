@@ -7,18 +7,18 @@
 	position: relative;
 	box-sizing: border-box;
 	}
-.main-header .header-group:not(.unset) {
+.main-header .header-group {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	max-width: 792px;
 	}
-.main-header:not(.gutter) .header-group:not(.unset):not(.guttered) {
+.header-group {
 	padding-bottom: 1em;
 	padding-left: 2em;
 	}
-.main-header sup:not(.unset),
-.main-header sub:not(.unset) {
+.main-header sup,
+.main-header sub {
 	display: block;
 	color: white;
 	line-height: 1em;
@@ -29,22 +29,22 @@
 .main-header a:hover {
 	color: white;
 	}
-.main-header sup:not(.unset) {
+.main-header sup {
 	font-size: .9em;
 	text-transform: uppercase;
 	}
-.main-header sup:not(.unset) a {
+.main-header sup a {
 	color: #e6e8e9;
 	}
-.main-header sub:not(.unset) {
+.main-header sub {
 	font-size: 2em;
 	}
-.main-header sup:not(.unset) a,
-.main-header sub:not(.unset) a,
-.main-header sub:not(.unset) * {
+.main-header sup a,
+.main-header sub a,
+.main-header sub * {
 	font-size: 100%;
 	}
-.main-header sup:not(.unset) span {
+.main-header sup span {
 	display: block;
 	line-height: 1em;
 	}

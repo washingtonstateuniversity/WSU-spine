@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
-body:not(.unset) table {
+body table {
 	width: 100%;
 	}
-body:not(.unset) table th {
+body table th {
 	font-weight: bold;
 	text-align: left;
 	}
-body:not(.unset) table td,
-body:not(.unset) table th {
+body table td,
+body table th {
 	padding: .3em .6em .3em 0em;
 	vertical-align: top;
 	}

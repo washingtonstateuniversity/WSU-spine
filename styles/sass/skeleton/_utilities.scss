@@ -59,17 +59,84 @@ img.grayscale {
     -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
 
-/* ### Responsive Video  */
-.iframe-16-9 {
+/* Background Images */
+main .background-size-contain {
+	background-size: contain;
+}
+main .background-size-cover {
+	background-size: cover;
+}
+main .background-repeat-no-repeat {
+	background-repeat: no-repeat;
+}
+/* Center */
+main .background-position-center {
+	background-position: center center;
+}
+/* North */
+main .background-position-center-top {
+	background-position: center top;
+}
+/* Northeast */
+main .background-position-right-top {
+	background-position: right top;
+}
+/* East */
+main .background-position-right-center {
+	background-position: right center;
+}
+/* Southeast */
+main .background-position-right-bottom {
+	background-position: right bottom;
+}
+/* South */
+main .background-position-center-bottom {
+	background-position: center bottom;
+}
+/* Southwest */
+main .background-position-left-bottom {
+	background-position: left bottom;
+}
+/* West */
+main .background-position-left-center {
+	background-position: left center;
+}
+/* Northwest */
+main .background-position-left-top {
+	background-position: left top;
+}
+
+/* ### Auto Ratios, Responsive Video  */
+.aspect-ratio-22-10,
+.aspect-ratio-pano {
+   position: relative;
+   padding-bottom: 45.454545%;
+   /* padding-top: 25px; Add for controls. */
+   height: 0;
+}
+.iframe-16-9,
+.aspect-ratio-16-9,
+.aspect-ratio-hd {
    position: relative;
    padding-bottom: 56.25%;
    /* padding-top: 25px; Add for controls. */
    height: 0;
 }
-.iframe-4-3 {
+.iframe-4-3,
+.aspect-ratio-4-3 {
    position: relative;
    padding-bottom: 75%;
-   /* padding-top: 25px; Add for controls. */
+   height: 0;
+}
+.aspect-ratio-3-4 {
+   position: relative;
+   padding-bottom: 133%;
+   height: 0;
+}
+.aspect-ratio-square,
+.aspect-ratio-1-1 {
+   position: relative;
+   padding-bottom: 100%;
    height: 0;
 }
 
