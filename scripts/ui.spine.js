@@ -26,6 +26,15 @@
 		return this;
 	};
 
+	/**
+	 * Refresh a snapshot of stored jQuery selector data.
+	 *
+	 * Not all stored object properties would normally be reflected when
+	 * the original selector is modified. This ensures we capture the
+	 * latest version.
+	 *
+	 * @returns {*}
+	 */
 	$.fn.refresh = function() {
 		var elems;
 		elems = $(this.selector);
@@ -35,17 +44,15 @@
 			this.push.apply(this, elems);
 		}
 		catch(err) {
-			//this.push.call(this, elems);
-			//window.alert("----"+$(this.selector).html()+"----");
 			if($(this.selector).html()!==""){
 				return $(this.selector);
 			}else{
 				return $("<div>");
 			}
 		}
-		//this.push.apply( this, elems );
 		return this;
 	};
+
 	$.runTemplate = function(html, options) {
 		var re,add,match,cursor,code,reExp,result;
 		re = /<%(.+?)%>/g, reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g, code = "var r=[];\n", cursor = 0;
