@@ -54,8 +54,13 @@
 	};
 
 	$.runTemplate = function(html, options) {
-		var re,add,match,cursor,code,reExp,result;
-		re = /<%(.+?)%>/g, reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g, code = "var r=[];\n", cursor = 0;
+		var re, add, match, cursor, code, reExp, result;
+
+		re = /<%(.+?)%>/g;
+		reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g;
+		code = "var r=[];\n";
+		cursor = 0;
+
 		add = function(line, js) {
 					if(js){
 						code += line.match(reExp) ? line + "\n" : "r.push(" + line + ");\n";
