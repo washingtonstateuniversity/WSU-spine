@@ -120,6 +120,11 @@
 		return ( window.navigator.userAgent.match(/(Android)/ig) ? true : false );
 	};
 
+	/**
+	 * Detect browser support for SVG images.
+	 *
+	 * @returns {boolean}
+	 */
 	$.svg_enabled = function() {
 		return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
 	};
