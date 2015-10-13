@@ -102,12 +102,24 @@
 		return $.when.apply($, arguments);
 	};
 
+	/**
+	 * Determine if the current view is an iOS device.
+	 *
+	 * @returns {boolean}
+	 */
 	$.is_iOS = function() {
 		return ( window.navigator.userAgent.match(/(iPad|iPhone|iPod)/ig) ? true : false );
 	};
+
+	/**
+	 * Determine if the current view is an Android device.
+	 *
+	 * @returns {boolean}
+	 */
 	$.is_Android = function() {
 		return ( window.navigator.userAgent.match(/(Android)/ig) ? true : false );
 	};
+
 	$.svg_enabled = function() {
 		return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
 	};
