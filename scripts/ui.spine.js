@@ -139,40 +139,55 @@
 	 * @param obj
 	 * @param callback
 	 */
-	$.observeDOM = function(obj,callback){
-		var config,mutationObserver;
+	$.observeDOM = function(obj,callback) {
+		var config, mutationObserver;
+
 		if (window.MutationObserver) {
-			config = {childList: true, attributes: true, subtree: true, attributeOldValue: true, attributeFilter: ["class", "style"]};
+			config = {
+				childList: true,
+				attributes: true,
+				subtree: true,
+				attributeOldValue: true,
+				attributeFilter: ["class", "style"]
+			};
 
 			mutationObserver = new MutationObserver(function(mutationRecords) {
-			  $.each(mutationRecords, function(index, mutationRecord) {
-				if (mutationRecord.type === "childList") {
-				  if (mutationRecord.addedNodes.length > 0) {
-					callback();
-				  } else if (mutationRecord.removedNodes.length > 0) {
-					callback();
-				  }
-				} else if (mutationRecord.type === "attributes") {
-				  if (mutationRecord.attributeName === "class") {
-					callback();
-				  }
-				}
-			  });
+				$.each(mutationRecords, function(index, mutationRecord) {
+					if (mutationRecord.type === "childList") {
+						if (mutationRecord.addedNodes.length > 0) {
+							callback();
+						} else if (mutationRecord.removedNodes.length > 0) {
+							callback();
+						}
+					} else if (mutationRecord.type === "attributes") {
+						if (mutationRecord.attributeName === "class") {
+							callback();
+						}
+					}
+				});
 			});
 			mutationObserver.observe(obj[0], config);
-		}else{
+		} else {
+			// Set a fallback function to fire every 200ms and watch for DOM changes.
 			window.setTimeout(function(){
 				var current_obj=obj.refresh();
-				if(typeof window.obj_watch === "undefined"){
-					window.obj_watch=current_obj[0];
+
+				if (typeof window.obj_watch === "undefined") {
+					window.obj_watch = current_obj[0];
 				}
-				if(window.obj_watch!==current_obj[0]){
+
+				/**
+				 * If the current object does not match the object we're watching, assume
+				 * a DOM mutation has occurred and fire the callback.
+				 */
+				if (window.obj_watch !== current_obj[0]) {
 					callback();
 				}
-				//reapply the watch
-				window.obj_watch=current_obj[0];
+
+				window.obj_watch = current_obj[0];
+				// Reset observation on the current object.
 				$.observeDOM(current_obj,callback);
-			},200);
+			}, 200);
 		}
 	};
 
