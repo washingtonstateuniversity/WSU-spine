@@ -322,6 +322,8 @@
 		 * @param {string} context e.g. 'search', 'social', 'framework'
 		 */
 		_set_globals: function(obj,context) {
+			context = null; // Avoiding jshint error temporarily.
+
 			if (typeof(obj) !== "object") {
 				return;
 			}
