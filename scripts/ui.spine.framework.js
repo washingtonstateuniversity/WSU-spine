@@ -102,13 +102,6 @@
 				self.setup_tabs("contact",contactHtml);
 			}
 
-			svg_imgs = $(".lt-ie9 img[src$='.svg']");
-			if (svg_imgs.lenght) {
-				$.each(svg_imgs,function() {
-					$(this).attr("src", $(this).attr("src").replace(".svg",".png"));
-				});
-			}
-
 			self.setup_nav();
 
 			if ($.is_iOS()) {
@@ -116,8 +109,16 @@
 				self.setup_nav_scroll();
 			}
 
-			if (!$.svg_enabled()) {
-				$("html").addClass("nosvg");
+			// If SVG is not supported, add a class and replace Spine SVG files with PNG equivalents.
+			if ( ! $.svg_enabled() ) {
+				$( "html" ).addClass( "nosvg" );
+				svg_imgs = $( "img[src$='.svg']" );
+
+				if ( svg_imgs.length ) {
+					$.each( svg_imgs, function() {
+						$( this ).attr( "src", $( this ).attr( "src" ).replace( ".svg", ".png" ) );
+					} );
+				}
 			}
 
 			self.setup_spine();
