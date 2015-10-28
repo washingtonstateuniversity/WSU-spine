@@ -267,70 +267,94 @@
 		};
 	};
 
+	/**
+	 * Configure and create the jQuery.ui.spine plugin.
+	 *
+	 * Based on a fork of MIT Licensed jquery-ui-map
+	 * See: https://code.google.com/p/jquery-ui-map/source/browse/trunk/ui/jquery.ui.map.js
+	 */
 	$.s("ui.spine", {
 
 		globals: {
 			version: "0.1.0",
-			current_url:window.location.href,
+			current_url:window.location.href
 		},
-		options: {
-		},
+
+		options: {},
+
 		/**
-		 * Setup plugin basics,
-		 * @param options:object
-		 * @param element:node
+		 * Setup plugin basics.
+		 *
+		 * @param {object}      options
+		 * @param {HTMLElement} element
 		 */
 		_setup: function(options, element) {
-			//alert('spine _setup');
 			this.el = element;
 			options = options || {};
-			//alert("options==>"+dump(options));
-			//alert("this.options==>"+dump(options));
-			$.extend(this.options, options, {  });
+			$.extend(this.options, options, {});
 			this._create();
 		},
+
 		/**
-		 * Instanciate the object
+		 * Instantiate the object
 		 */
 		_create: function() {
 			var self;
-			//alert('spine _create');
+
 			self = this;
-			this.instance = { spine: self.options, framework: [], search: [], social: [], analytics: []  };
-			//alert('self.instance.spine==>'+dump(self.instance.spine));
+			this.instance = {
+				spine: self.options,
+				framework: [],
+				search: [],
+				social: [],
+				analytics: []
+			};
+
 			self._call(self.options.callback, self.instance.spine);
 		},
 
 		/**
-		 * Sets up values to the global spine obj
-		 * @param obj:object		e.g. {'foo':'bar'}
-		 * @param context:string	e.g. 'search', 'social', 'framework'
+		 * Add objects to the global spine object.
+		 *
+		 * Note: Context is not yet implemented.
+		 *
+		 * @param {object} obj     e.g. {'foo':'bar'}
+		 * @param {string} context e.g. 'search', 'social', 'framework'
 		 */
 		_set_globals: function(obj,context) {
-			//context will be done later
-			context = context || "";
-			if(typeof(obj) !== "object"){
+			if (typeof(obj) !== "object") {
 				return;
 			}
 			$.extend(this.globals,obj);
 		},
 
+		/**
+		 * Retrieve a context's objects from the global spine object.
+		 *
+		 * @param {string} context e.g. 'search', 'social', 'framework'
+		 * @returns {*}
+		 * @private
+		 */
 		_get_globals: function(context) {
 			return this.globals[context];
 		},
 
 		/**
-		 * Clears by type
-		 * @param TAX:string	e.g. 'search', 'social', 'framework'
+		 * Clears an object of a context.
+		 *
+		 * @param {string} context e.g. 'search', 'social', 'framework'
 		 */
-		clear: function(TAX) {
-			this._c(this.get(TAX));
-			this.set(TAX, []);
+		clear: function(context) {
+			this._c(this.get(context));
+			this.set(context, []);
+
 			return this;
 		},
 
 		/**
-		 * Sets up an object that can be worked
+		 * Clears an object of its properties.
+		 *
+		 * @param {object} obj
 		 */
 		_c: function(obj) {
 			for ( var property in obj ) {
@@ -341,14 +365,15 @@
 		},
 
 		/**
-		 * Returns the objects with a specific property and value, e.g. 'category', 'tags'
-		 * @param ctx:string	in what context, e.g. 'search'
-		 * @param options:object	property:string	the property to search within, value:string, operator:string (optional) (AND/OR)
+		 * Returns objects with a specific context.
+		 *
+		 * @param {string} context In what context, e.g. 'search', 'social', 'framework'
+		 * @param {object} options Contains string property, string value, string operator (AND/OR).
 		 * @param callback:function(search:jObj, isFound:boolean)
 		 */
-		find: function(TAX, options, callback) {
+		find: function(context, options, callback) {
 			var obj, isFound, property, value;
-			obj = this.get(TAX);
+			obj = this.get(context);
 			options.value = $.isArray(options.value) ? options.value : [options.value];
 			for ( property in obj ) {
 				if ( obj.hasOwnProperty(property) ) {
@@ -407,6 +432,7 @@
 			this.instance[key] = value;
 			return this;
 		},
+
 		/**
 		 * Helper method for unwrapping jQuery/DOM/string elements
 		 * @param obj:string/node/jQuery
@@ -424,12 +450,14 @@
 				callback.apply(this, Array.prototype.slice.call(arguments, 1));
 			}
 		},
+
 		/**
 		 * Destroys spine elements and options.
 		 */
 		clear_spine: function() {
 			this.clear("search").clear("framework").clear("social").clear("analytics");
 		},
+
 		/**
 		 * Destroys the plugin.
 		 */
@@ -437,8 +465,9 @@
 			this.clear("search").clear("framework").clear("social").clear("analytics")._c(this.instance);
 			$.removeData(this.el, this.name);
 			this._call(callback, this);
-		},
+		}
 	});
+
 	$.spine = function(options) {
 		var targ;
 		//we are going to prep for the day we move to correction to the dom
