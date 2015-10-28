@@ -152,19 +152,26 @@
 			};
 
 			mutationObserver = new MutationObserver(function(mutationRecords) {
+				var fire_callback = false; // Assume no callback is needed.
+
 				$.each(mutationRecords, function(index, mutationRecord) {
 					if (mutationRecord.type === "childList") {
 						if (mutationRecord.addedNodes.length > 0) {
-							callback();
+							fire_callback = true;
 						} else if (mutationRecord.removedNodes.length > 0) {
-							callback();
+							fire_callback = true;
 						}
 					} else if (mutationRecord.type === "attributes") {
 						if (mutationRecord.attributeName === "class") {
-							callback();
+							fire_callback = true;
 						}
 					}
 				});
+
+				// If one of our matched mutations has been observed, fire the callback.
+				if ( fire_callback ) {
+					callback();
+				}
 			});
 			mutationObserver.observe(obj[0], config);
 		} else {
