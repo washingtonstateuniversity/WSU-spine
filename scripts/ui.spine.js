@@ -199,49 +199,44 @@
 	};
 
 	/**
-	 * Sets up the plugins prototype
-	 * @param name:string
-	 * @param prototype:object
+	 * Setup the plugin's prototype.
+	 *
+	 * @param {string} name
+	 * @param {object} prototype
 	 */
 	$.s = function(name, prototype) {
 		var namespace;
 
-		//alert("starting name ==>"+dump(name));
 		namespace = name.split(".")[0];
 		name = name.split(".")[1];
+
 		$[namespace] = $[namespace] || {};
+
 		$[namespace][name] = function(options, element) {
-			//alert("$[namespace][name] options==>"+dump(options));
 			if ( arguments.length ) {
 				this._setup(options, element);
 			}
 		};
+
 		$[namespace][name].prototype = $.extend({
 			namespace: namespace,
 			pluginName: name
 		}, prototype);
+
 		$.fn[name] = function(context) {
 			var isMethodCall, context_options, args, returnValue;
-			//alert("$.fn[name] ==>"+dump(name));
-			//alert("w/ context ==>"+dump(context));
-			context_options={};
-			if(arguments[1]){
-				context_options=arguments[1];
+
+			context_options = {};
+
+			if (arguments[1]) {
+				context_options = arguments[1];
 			}
-			//alert("w/ arguments ==>"+dump(context_options));
 
 			context = context || {};
+
 			this.options = $.extend({}, context);
 
-			//this is will used to provide data changes as things are read if they exist
-			//this.elem = elem;
-			//this.$elem = $(elem);
-			//this.options = options;
-			//this.metadata = this.$elem.data('plugin-options');
-
-			//this.config = $.extend({}, this.defaults, this.options, this.metadata);
-
-			isMethodCall = typeof context === "string";
+			isMethodCall = ( typeof context === "string" );
 			args = Array.prototype.slice.call(arguments, 1);
 			returnValue = this;
 
@@ -251,20 +246,20 @@
 
 			this.each(function() {
 				var instance;
-				//alert("==>"+dump(name));
+
 				instance = $.data(this, name);
 
 				if (!instance) {
 					instance = $.data(this, name, new $[namespace][name](context, this));
 				}
 
-				//alert("LOOKING TO INIT context==>"+dump(context));
-				if(instance[context+"_init"]!== undefined){
-					//alert("INIT @ instance[context+\"_init\"]context_options==>"+dump(context_options));
-					if ( instance[context+"_init"] ) { instance[context+"_init"](context_options); }
+				if (instance[context+"_init"] !== undefined) {
+					if ( instance[context+"_init"] ) {
+						instance[context+"_init"](context_options);
+					}
 				}
+
 				if (isMethodCall && instance[context] !== undefined ) {
-					//alert("has context==>"+dump(context));
 					returnValue = instance[context].apply(instance, args);
 				}
 			});
