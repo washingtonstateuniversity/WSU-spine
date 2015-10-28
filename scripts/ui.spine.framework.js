@@ -6,14 +6,24 @@
 /*jshint multistr: true */
 ( function($) {
 	$.extend($.ui.spine.prototype, {
+		/**
+		 * Initialize the Spine framework. Fired automatically in `$.s`, found
+		 * in ui.spine.js.
+		 *
+		 * @param {object} options
+		 */
 		framework_init: function(options) {
 			$.extend(this.framework_options,options);
 			this._set_globals(this.framework_globals);
 			this.framework_create();
 		},
-		framework_options:{
+
+		/**
+		 * Gobal framework options for the Spine framework.
+		 */
+		framework_options: {
 			equalizer_filter:".skip*",
-			contact_template:" <address itemscope itemtype='http://schema.org/Organization' class='hcard'> \
+			contact_template:"<address itemscope itemtype='http://schema.org/Organization' class='hcard'> \
 									<% if (typeof(this.department) != 'undefined') { %><div class='organization-unit fn org'>\
 										<% if (typeof(this.url) != 'undefined') { %><a href='<%this.url%>' class='url'><% } %> \
 											<%this.department%> \
@@ -35,72 +45,89 @@
 									<% } %> \
 								</address>"
 		},
+
+		/**
+		 * Global objects that are part of the Spine framework.
+		 */
 		framework_globals: {
 			spine: $("#spine"),
 			glue: $("#glue"),
 			main: $("main"),
-			wsu_actions:$("#wsu-actions"),
+			wsu_actions: $("#wsu-actions")
 		},
-		nav_state:{
-			viewport_ht:0,
-			scroll_dif:0,
-			positionLock:0,
-			scroll_top:0,
-			spine_ht:0,
-			glue_ht:0,
-			height_dif:0,
-		},
-		framework_create: function(){
-			var self,contactHtml,propmap={},spread,verso,page,para,recto,recto_margin,verso_width,
-				svg_imgs,viewport_ht,spine,glue,main;
-			//alert("framework_create");
-			self=this;//hold to preserve scop
 
+		/**
+		 * Data on the current state of navigation for use when calculating
+		 * sizes and placement of other elements.
+		 */
+		nav_state:{
+			viewport_ht: 0,
+			scroll_dif: 0,
+			positionLock: 0,
+			scroll_top: 0,
+			spine_ht: 0,
+			glue_ht: 0,
+			height_dif: 0
+		},
+
+		/**
+		 * Create the Spine framework and setup basic events based on information present in the DOM.
+		 */
+		framework_create: function() {
+			var self, contactHtml, propmap = {}, spread, verso, page, para, recto, recto_margin, verso_width,
+				svg_imgs, viewport_ht, spine, glue, main;
+
+			self = this; // preserve scope.
+
+			// Refresh data for global elements.
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
 
-
-			// Section -> Contact
+			// Generate the contact section.
 			if (!$("#wsu-contact").length) {
 				contactHtml = "<section id='wsu-contact' class='spine-contact spine-action closed'>";
-				propmap={};
+				propmap = {};
+
 				$.each($("[itemtype='http://schema.org/Organization']"),function(){
 					var tar = this;
 					$.each($(tar).find("[itemprop]"),function(i,v){
-						var tmp={};
-						tmp[$(v).attr("itemprop")]=$(v).attr("content");
+						var tmp = {};
+						tmp[$(v).attr("itemprop")] = $(v).attr("content");
 						$.extend(propmap,tmp);
 					});
-					contactHtml+=$.runTemplate(self.framework_options.contact_template,propmap);
+					contactHtml += $.runTemplate(self.framework_options.contact_template,propmap);
 				});
 				contactHtml += "</section>";
 				self.setup_tabs("contact",contactHtml);
-			} // End Contact Generation
-
+			}
 
 			svg_imgs = $(".lt-ie9 img[src$='.svg']");
-			if(svg_imgs.lenght){
-				$.each(svg_imgs,function(){
-					$(this).attr("src",$(this).attr("src").replace(".svg",".png"));
+			if (svg_imgs.lenght) {
+				$.each(svg_imgs,function() {
+					$(this).attr("src", $(this).attr("src").replace(".svg",".png"));
 				});
 			}
 
 			self.setup_nav();
-			if($.is_iOS()){
+
+			if ($.is_iOS()) {
 				$("html").addClass("ios");
 				self.setup_nav_scroll();
 			}
-			if(!$.svg_enabled()){
+
+			if (!$.svg_enabled()) {
 				$("html").addClass("nosvg");
 			}
 
 			self.setup_spine();
 			self.setup_printing();
-			$(window).on("resize", function(){
+
+			$(window).on("resize", function() {
 				self.sizing();
 				self.equalizing();
 				self.mainheight();
+
 				// Only run function if an unbound element exists
 				if( $(".unbound,#binder.broken").length ) {
 					spread = $(window).width();
@@ -108,16 +135,20 @@
 					page = self._get_globals("main").width();
 					recto = spread - self._get_globals("main").offset().left;
 					recto_margin = "";
+
 					if (recto >= page ) {
 						recto_margin = recto - page;
 					} else {
 						recto_margin = 0;
 					}
+
 					/* Broken Binding */
 					if ($("#binder").is(".broken")) {
 						self._get_globals("main").css("width",recto);
 					}
+
 					verso_width = verso + self._get_globals("main").width();
+
 					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
 					$(".unbound.element.recto").each( function() {
 						para = $(this).width();
@@ -127,72 +158,81 @@
 					$(".unbound.verso.recto").css("width",spread);
 				}
 
-				viewport_ht		= $(window).height();
+				viewport_ht = $(window).height();
 				glue.css("min-height",viewport_ht);
 				spine.css("min-height",viewport_ht);
 
-				if($(".spine-header").height()>50){
+				if ($(".spine-header").height()>50) {
 					spine.removeClass("unshelved");
 					spine.removeClass("shelved");
-				}else{
+				} else {
 					glue.css("min-height",viewport_ht-50);
 					spine.addClass("shelved");
 				}
-				//console.log("window-resize | viewport_ht::" + viewport_ht);
+
 				$(document).trigger("scroll");
 
 			}).trigger("resize");
 			$(document).trigger("scroll");
-
 		},
+
 		// Label #jacket with current window size
+		/**
+		 * Label `#jacket` with the current window size.
+		 *
+		 * @param {HTMLelement} jacket
+		 */
 		sizing: function (jacket) {
+			var current_width, ele_class, px_width, size_small, size_intermediate, size_medium, size_large, size_xlarge;
 
-			var current_width,ele_class,px_width,size_small,size_intermediate,size_medium,size_large,size_xlarge;
+            jacket = jacket || $("#jacket");
 
-            jacket=jacket||$("#jacket");
             current_width = $(window).width();
-
 			size_small = "size-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			size_intermediate = "size-intermediate size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
 			size_medium = "size-medium size-lt-xlarge size-lt-large size-gt-intermediate size-gt-smallish size-gt-small";
 			size_large = "size-large size-lt-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium";
 			size_xlarge = "size-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium size-gt-large";
 
-			ele_class="";
-			px_width="";
+			ele_class = "";
+			px_width = "";
 
-			if(current_width >= 1188) {
-				ele_class=size_xlarge;
-			} else if(current_width >= 990) {
-				ele_class=size_large;
-			} else if((current_width < 990) && current_width >= 792 ) {
-				px_width="size-lt-990";
-				ele_class= $("#binder").is(".fluid") ? size_large : size_medium;
-			} else if(current_width < 792 && current_width >= 694) {
-				px_width="size-lt-792";
-				ele_class= $("#binder").is(".fixed") ? size_intermediate : size_medium;
-			} else if(current_width < 694 && current_width >= 396) {
-				ele_class=size_small;
-			} else if(current_width < 396) {
-				ele_class="size-small size-lt-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+			if (current_width >= 1188) {
+				ele_class = size_xlarge;
+			} else if (current_width >= 990) {
+				ele_class = size_large;
+			} else if ((current_width < 990) && current_width >= 792 ) {
+				px_width = "size-lt-990";
+				ele_class = $("#binder").is(".fluid") ? size_large : size_medium;
+			} else if (current_width < 792 && current_width >= 694) {
+				px_width = "size-lt-792";
+				ele_class = $("#binder").is(".fixed") ? size_intermediate : size_medium;
+			} else if (current_width < 694 && current_width >= 396) {
+				ele_class = size_small;
+			} else if (current_width < 396) {
+				ele_class = "size-small size-lt-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			}
+
 			jacket.stripClass("size-").addClass(ele_class+" "+px_width);
 		},
-		// Equalize Columns
+
+		/**
+		 * Equalize columns in a layout.
+		 */
 		equalizing: function () {
 			var obj;
-			// come back to .. look to mage"s eq"i
-			// all box attr not accounted for
+
 			if( $(".equalize").length ) {
-				obj=$(".equalize");
+				obj = $(".equalize");
 				obj.find(".column").css("min-height","");
-				$.each(obj,function(){
+
+				$.each(obj,function() {
 					var tallestBox = 0;
-					$.each($(".column", this),function(){
+					$.each($(".column", this), function() {
 						tallestBox = ($(this).outerHeight() > tallestBox) ? $(this).outerHeight() : tallestBox;
 					});
-					if( ( $(window).width() <= 792 && !obj.is(".equalize-medium") ) || ( $(window).width() <= 694 && !obj.is(".equalize-small") ) ) {
+
+					if ( ( $(window).width() <= 792 && !obj.is(".equalize-medium") ) || ( $(window).width() <= 694 && !obj.is(".equalize-small") ) ) {
 						$(".column",this).not(".unequaled").css("min-height","1");
 					} else {
 						$(".column",this).not(".unequaled").css("min-height",tallestBox);
@@ -201,10 +241,16 @@
 				});
 			}
 		},
+
+		/**
+		 * Apply a minimum height to the `main` element.
+		 */
 		mainheight: function () {
-			var main,main_top,window_height,main_height;
+			var main, main_top, window_height, main_height;
+
 			main = this._get_globals("main").refresh();
-			if(main.offset()){
+
+			if(main.offset()) {
 				main_top = main.offset().top;
 				window_height = $(window).height();
 				main_height = window_height;
@@ -218,37 +264,35 @@
 		/**
 		 * Sets up framework html and other DOM attributes
 		 */
-		setup_jacket: function(){
-
-		},
+		setup_jacket: function() {},
 
 		/**
 		 * Sets up framework html and other DOM attributes
 		 */
-		setup_binder: function(){
-
-		},
+		setup_binder: function() {},
 
 		 /**
 		 * Sets up framework html and other DOM attributes
 		 */
-		setup_content: function(){
-
-		},
+		setup_content: function() {},
 
 		/**
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
-			var self,spine,glue,main,viewport_ht,spine_ht,height_dif,positionLock;
+			var self, spine, glue, main, viewport_ht, spine_ht, height_dif, positionLock;
+
 			$("#glue > header").prepend("<button id='shelve' />");
+
 			self = this;
+
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
-			self.nav_state.scroll_top=0;
-			self.nav_state.scroll_dif=0;
-			self.nav_state.positionLock=0;
+
+			self.nav_state.scroll_top = 0;
+			self.nav_state.scroll_dif = 0;
+			self.nav_state.positionLock = 0;
 
 			$("header button").on("click",function(e) {
 				e.preventDefault();
@@ -261,31 +305,32 @@
 				}
 			});
 
-			if($(".ios .hybrid .unshelved").length <= 0){
+
+			if ($(".ios .hybrid .unshelved").length <= 0) {
 				// Fixed/Sticky Horizontal Header
 				$(document).on("scroll touchmove",function() {
-					//console.log("should be scrolling");
 					self.apply_nav_func(self);
 				});
-				//check for changes to the dom
+
+				// Watch for DOM changes and resize the Spine to match.
 				$.observeDOM( glue , function(){
 					self.apply_nav_func(self);
 				});
-			}else{
+			} else {
 				$("#scroll").on("focus",function(){
 					$(document).trigger("touchend");
 				});
 			}
 
-			if($(".ios .hybrid .unshelved").length<=0){
+			if ($(".ios .hybrid .unshelved").length <= 0) {
 				$(document).keydown(function(e) {
 					if(e.which === 35 || e.which === 36) {
 						viewport_ht		= $(window).height();
 						spine_ht		= spine[0].scrollHeight;
 						height_dif		= viewport_ht - spine_ht;
-						if(e.which === 35) {
+						if (e.which === 35) {
 							positionLock = height_dif;
-						} else if(e.which === 36) {
+						} else if (e.which === 36) {
 							positionLock = 0;
 						}
 						spine.css({"position":"fixed","top":positionLock+"px"});
@@ -293,6 +338,7 @@
 					}
 				});
 			}
+
 			// Add skimming
 			$(document).scroll(function() {
 				var top;
@@ -304,89 +350,92 @@
 				}
 			});
 		},
-		apply_nav_func: function(self){
 
-			var spine,glue,main,top,bottom,scroll_top,positionLock,scroll_dif,spine_ht,viewport_ht,glue_ht,height_dif;
+		/**
+		 * Ensure Spine navigation is properly positioned and sized to snap to the top
+		 * and bottom of the document.
+		 *
+		 * @param self
+		 */
+		apply_nav_func: function(self) {
+			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
 
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
 
-			scroll_top=self.nav_state.scroll_top;
-			positionLock=self.nav_state.positionLock;
+			scroll_top   = self.nav_state.scroll_top;
+			positionLock = self.nav_state.positionLock;
 
-			top				= $(document).scrollTop();
-			bottom			= $(document).height() - $(window).height() - $(window).scrollTop();
-			scroll_dif		= scroll_top - top;
-			scroll_top		= top;
-			self.nav_state.scroll_top	= scroll_top;
+			top          = $(document).scrollTop();
+			bottom       = $(document).height() - $(window).height() - $(window).scrollTop();
+			scroll_dif   = scroll_top - top;
+			scroll_top   = top;
+			viewport_ht	 = $(window).height();
+			spine_ht	 = spine[0].scrollHeight;
+			glue_ht		 = glue.height();
+			height_dif	 = viewport_ht - spine_ht;
 
-			viewport_ht		= $(window).height();
-			spine_ht		= spine[0].scrollHeight;
-			glue_ht			= glue.height();
-			height_dif		= viewport_ht - spine_ht;
-			//console.log("------------------------------------"+(scroll_dif>0?"UP":"DOWN")+"---------|||");
-			//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-			//console.log("SCROLLING || spine_ht::" + spine_ht);
-			//console.log("SCROLLING || height_dif::" + height_dif);
-			//console.log("SCROLLING || positionLock::" + positionLock);
-			//console.log("|---------------------------------------------");
-			if(scroll_dif===0 && (glue_ht > main.outerHeight(true))){
+			self.nav_state.scroll_top = scroll_top;
+
+			if (scroll_dif === 0 && (glue_ht > main.outerHeight(true))) {
 				main.css({"min-height":glue_ht+scroll_top});
-			}else{
-				if(scroll_dif===0){
+			} else {
+				if (scroll_dif === 0) {
 					main.stop().animate({"min-height":glue_ht},50);
-				}else{
+				} else {
 					main.css({"min-height":glue_ht});
 				}
 			}
-			if( main.outerHeight(true) > glue_ht ){
-				if( (scroll_dif <= 0) ){//down
+
+			if ( main.outerHeight(true) > glue_ht ) {
+				if( (scroll_dif <= 0) ) { // scrolling down
 					positionLock = ( positionLock===0 || positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-					if(bottom <= 0 && positionLock >= height_dif){
+					if (bottom <= 0 && positionLock >= height_dif) {
 						positionLock = height_dif;
 					}
-				}else{//up
+				} else { // scrolling up
 					positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
 
-					if(top > 0 && positionLock > 0){
+					if (top > 0 && positionLock > 0) {
 						positionLock = 0;
 					}
 				}
 
-				//console.log("SCROLLING || viewport_ht::" + viewport_ht);
-				//console.log("SCROLLING || spine_ht::" + spine_ht);
-				//console.log("SCROLLING || height_dif::" + height_dif);
-				//console.log("SCROLLING || positionLock::" + positionLock);
-				if(top <= 0){
+				if (top <= 0) {
 					positionLock = 0;
 				}
-				if(bottom <= 0){
+
+				if (bottom <= 0) {
 					positionLock = height_dif;
 				}
-				spine.css({"position":"fixed","top":positionLock+"px"});
-				self.nav_state.positionLock=positionLock;
-			} else {
 
+				spine.css({"position":"fixed","top":positionLock+"px"});
+				self.nav_state.positionLock = positionLock;
+			} else {
 				// scroll_top from here should be positionLock above
-				if( spine.is("#spine[style]") ){
+				if ( spine.is("#spine[style]") ) {
 					spine.removeAttr("style");
 				}
 			}
-
 		},
+
 		/**
-		 * Sets up the tabs that will be able to be used by other extensions
+		 * Process a WSU action tab (mail, sharing, etc...) and setup the
+		 * structure accordingly.
 		 */
-		setup_tabs: function(tab,html){
-			var self, wsu_actions,action_ht;
-			html=html||"";
-			self=this;//hold to preserve scope
+		setup_tabs: function(tab,html) {
+			var self, wsu_actions, action_ht;
+
+			html = html || "";
+			self = this;
+
 			wsu_actions = self._get_globals("wsu_actions").refresh();
 			wsu_actions.append(html);
-			$("#wsu-"+tab+"-tab button").on("click",function(e) {
+
+			$("#wsu-" + tab + "-tab button").on("click",function(e) {
 				e.preventDefault();
-				wsu_actions.find("*.opened,#wsu-"+tab+",#wsu-"+tab+"-tab").toggleClass("opened closed");
+				wsu_actions.find("*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab").toggleClass("opened closed");
 
 				action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
 
@@ -394,18 +443,22 @@
 			});
 		},
 
+		/**
+		 * Setup a scroll container for use with iOS.
+		 */
 		setup_nav_scroll: function() {
 			$("#glue").wrapInner( "<div id='scroll'>" );
 			$("#spine header").insertBefore($("#scroll"));
 		},
+
 		/**
 		 * Sets up navigation system
 		 */
-		setup_nav: function(){
+		setup_nav: function() {
 			var self;
 
 			self = this;
-			// NAVIGATION
+
 			// Tag location and hierarchy
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
 
@@ -419,7 +472,7 @@
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
 				var tar, title, classes, url;
-				tar=$(this);
+				tar = $(this);
 
 				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
 				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
@@ -429,7 +482,9 @@
 				if (tar.closest(".parent").is(".dogeared")) {
 					classes += " dogeared";
 				}
+
 				url = tar.attr("href");
+
 				if ( url !== "#" ) {
 					tar.parent("li").children("ul").prepend("<li class='" + classes + "'></li>");
 					tar.clone(true,true).appendTo( tar.parent("li").find("ul .overview:first") );
@@ -444,32 +499,30 @@
 				});
 
 			});
-			//note the selector is so that we can have # with preceding url that is not off site, but needed for base
-			$("main a[href*='#']:not([href*='://'])").on("mouseup",function(){
-				//self.apply_nav_func(self);
-				//console.log("scroll it");
+
+			// Trigger a scroll action when an anchor link is used.
+			$("main a[href*='#']:not([href*='://'])").on("mouseup",function() {
 				$(document).trigger("scroll");
 			});
 
-			// External Links in nav
-			$(".spine-navigation a[href^='http']:not([href*='://"+window.location.hostname+"'])").addClass("external");
-
+			// Mark external URLs in the nav menu.
+			$(".spine-navigation a[href^='http']:not([href*='://" + window.location.hostname + "'])").addClass("external");
 		},
 
 		/**
-		 * Sets up printing, not 100% this should live here
+		 * Handle printing action when selected in the Spine.
 		 */
 		setup_printing: function(){
 			var self, spine, wsu_actions, print_controls;
 
-			self=this;//hold to preserve scope
+			self = this;
 			spine = self._get_globals("spine").refresh();
 			wsu_actions = self._get_globals("wsu_actions").refresh();
 
 			// Print & Print View
 			print_controls = "<span class='print-controls'><button id='print-invoke'>Print</button><button id='print-cancel'>Cancel</button></span>";
 
-			function printPage(){
+			function printPage() {
 				window.print();
 			}
 
@@ -498,6 +551,5 @@
 				wsu_actions.find(".opened").toggleClass("opened closed");
 			});
 		}
-
 	});
 } (jQuery) );
