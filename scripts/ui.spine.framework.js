@@ -19,7 +19,7 @@
 		},
 
 		/**
-		 * Gobal framework options for the Spine framework.
+		 * Global framework options for the Spine framework.
 		 */
 		framework_options: {
 			equalizer_filter:".skip*",
