@@ -455,10 +455,6 @@
 		 * Sets up navigation system
 		 */
 		setup_nav: function() {
-			var self;
-
-			self = this;
-
 			// Tag location and hierarchy
 			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
 
