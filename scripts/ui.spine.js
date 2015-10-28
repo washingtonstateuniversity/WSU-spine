@@ -468,20 +468,29 @@
 		}
 	});
 
+	/**
+	 * The primary Spine method used to start things up.
+	 *
+	 * @param {object} options
+	 * @returns {*}
+	 */
 	$.spine = function(options) {
 		var targ;
-		//we are going to prep for the day we move to correction to the dom
-		targ = this.jquery===undefined ? $("body") : this;
+
+		targ = this.jquery === undefined ? $("body") : this;
+
 		return $.each(targ,function() {
 			var targ;
-			targ=$(this);
-			//init the plugin
+			targ = $(this);
+
+			// Initialize the Spine plugin.
 			targ.spine({});
-			options=$.extend( {"framework":{},"search":{},"social":{},"analytics":{}}, options );
+
+			options = $.extend( {"framework":{},"search":{},"social":{},"analytics":{}}, options );
+
+			// Setup each of the extensions.
 			$.each(options,function(i,v) {
-				//calling out to set up the other extensions
 				targ.spine(i,v);
-				//new SPINE(this, options).init();
 			});
 		});
 	};
