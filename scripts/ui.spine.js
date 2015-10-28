@@ -129,6 +129,16 @@
 		return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
 	};
 
+	/**
+	 * Use MutationObserver to watch for any changes to a specific DOM element and trigger
+	 * the passed callback when a change is made.
+	 *
+	 * This is currently only used within the Spine to watch `#glue` for changes such as
+	 * menu expansion, etc...
+	 *
+	 * @param obj
+	 * @param callback
+	 */
 	$.observeDOM = function(obj,callback){
 		var config,mutationObserver;
 		if (window.MutationObserver) {
