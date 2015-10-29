@@ -316,13 +316,7 @@
 				$.observeDOM( glue , function(){
 					self.apply_nav_func(self);
 				});
-			} else {
-				$("#scroll").on("focus",function(){
-					$(document).trigger("touchend");
-				});
-			}
 
-			if ($(".ios .hybrid .unshelved").length <= 0) {
 				$(document).keydown(function(e) {
 					if(e.which === 35 || e.which === 36) {
 						viewport_ht		= $(window).height();
@@ -336,6 +330,10 @@
 						spine.css({"position":"fixed","top":positionLock+"px"});
 						self.nav_state.positionLock=positionLock;
 					}
+				});
+			} else {
+				$("#scroll").on("focus",function(){
+					$(document).trigger("touchend");
 				});
 			}
 
