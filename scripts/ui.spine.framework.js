@@ -337,16 +337,18 @@
 				});
 			}
 
-			// Add skimming
-			$(document).scroll(function() {
-				var top;
-				top = $(document).scrollTop();
-				if ( top > 148 ) {
-					$("#spine").addClass("skimmed");
-				} else {
-					$("#spine").removeClass("skimmed");
-				}
-			});
+			// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
+			if ( ! $.is_iOS() && !$.is_Android() ) {
+				$( document ).scroll( function() {
+					var top;
+					top = $( document ).scrollTop();
+					if ( top > 148 ) {
+						$( "#spine" ).addClass( "skimmed" );
+					} else {
+						$( "#spine" ).removeClass( "skimmed" );
+					}
+				} );
+			}
 		},
 
 		/**
