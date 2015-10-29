@@ -104,8 +104,8 @@
 
 			self.setup_nav();
 
-			if ($.is_iOS()) {
-				$("html").addClass("ios");
+			if ( $.is_iOS() || $.is_Android() ) {
+				$( "html" ).addClass( "ios" );
 				self.setup_nav_scroll();
 			}
 
