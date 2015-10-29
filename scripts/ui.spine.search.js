@@ -99,7 +99,6 @@
 
 			$.when.apply($, queries).done(
 			function(){
-				//var abreak="";
 				$.each(arguments,function(i,v){
 					var data,proData;
 					if(v!==undefined){
@@ -148,8 +147,6 @@
 					}
 				});
 				return [tmpObj];
-			}else{
-				//self.search_options.data.push(result);
 			}
 		},
 
@@ -187,7 +184,6 @@
 		},
 
 		setup_search: function (){
-
 			var self, wsu_search, search_input, focuseitem={};
 
 			self=this;//hold to preserve scop
@@ -209,28 +205,23 @@
 				},
 				search: function( ) {
 					focuseitem={};
-					/**/
 				},
 				select : function( e, ui ) {
 					var id, term;
 					id = ui.item.searchKeywords;
 					term =$(ui.item.label).text();
 					search_input.val( term );
-					//$("#indices").empty();
 					search_input.autosearch("close");
 					return false;
 				},
 				focus : function( e, ui ) {
 					search_input.val( $(ui.item.label).text() );
 					focuseitem={
-						label:ui.item.label,
-						//id:ui.item.place_id
+						label:ui.item.label
 					};
 					e.preventDefault();
 				},
-				open : function( ) {
-					//var abreak="";
-				},
+				open : function( ) {},
 				close: function( e ) {
 					e.preventDefault();
 					return false;
@@ -242,22 +233,13 @@
 					e.preventDefault();
 				}
 				if ( e.which === 13){
-					//var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
-					//var url=siteroot+"public/get_place.castle";
-					//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?"?id="+id:"")+(term!=""?"&term="+term:""));
 					search_input.autosearch("close");
-					//getSignlePlace(jObj,id);
-
 				}
 			});
 
 			search_input.off("click").on("click",function(e){
 				e.stopPropagation();
 				e.preventDefault();
-				//var btn=$(this);
-				//var id   = (typeof(focuseitem.id)!=="undefined"&&focuseitem.id!="")?focuseitem.id:$( "#placeSearch .ui-autocomplete-input" ).val();
-				//getSignlePlace(jObj,id);
-				//if(typeof($.jtrack)!=="undefined")$.jtrack.trackPageview(pageTracker,url+(id!=""?"?id="+id:"")+(term!=""?"&term="+term:""));
 			});
 
 
@@ -275,9 +257,6 @@
 				window.location.href = search_url;
 				return false;
 			});
-
-
-		},
-
+		}
 	});
 } (jQuery) );
