@@ -119,9 +119,9 @@
 		#scroll {
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;
-			position: absolute;
-			top: 0px;
-			bottom: 0px;
+			position: fixed;
+			top: 50px;
+			bottom: 0;
 			width: 298px;
 			z-index: 99165;
 

@@ -338,7 +338,7 @@
 			}
 
 			// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
-			if ( ! $.is_iOS() && !$.is_Android() ) {
+			if ( ! $.is_iOS() && ! $.is_Android() ) {
 				$( document ).scroll( function() {
 					var top;
 					top = $( document ).scrollTop();
