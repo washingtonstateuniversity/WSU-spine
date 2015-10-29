@@ -247,18 +247,17 @@
 		 * Apply a minimum height to the `main` element.
 		 */
 		mainheight: function () {
-			var main, main_top, window_height, main_height;
+			var main, window_height, main_height;
 
-			main = this._get_globals("main").refresh();
+			main = this._get_globals( "main" ).refresh();
 
-			if(main.offset()) {
-				main_top = main.offset().top;
-				window_height = $(window).height();
+			if ( main.offset() ) {
+				window_height = $( window ).height();
 				main_height = window_height;
-				if ($("#binder").is(".size-lt-large")) {
+				if ( $( "#binder" ).is( ".size-lt-large" ) ) {
 					main_height -= 50;
 				}
-				$("main:not(.height-auto)").css("min-height",main_height);
+				$( "main:not(.height-auto)" ).css( "min-height", main_height );
 			}
 		},
 
