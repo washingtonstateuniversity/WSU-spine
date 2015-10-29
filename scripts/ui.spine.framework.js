@@ -358,6 +358,11 @@
 		apply_nav_func: function(self) {
 			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
 
+			// Disable extended nav positioning for mobile devices.
+			if ( $.is_Android() || $.is_iOS() ) {
+				return;
+			}
+
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
 			main = self._get_globals("main").refresh();
