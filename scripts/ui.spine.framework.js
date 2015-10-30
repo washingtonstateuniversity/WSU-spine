@@ -297,7 +297,7 @@
 			$("header button").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
-				$( "html" ).addClass( "spine-mobile-nav" );
+				$( "html" ).toggleClass( "spine-mobile-nav" );
 			});
 
 			// Close the mobile Spine navigation when a click occurs outside of the Spine.
