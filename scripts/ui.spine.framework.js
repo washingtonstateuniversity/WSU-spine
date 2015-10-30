@@ -294,10 +294,27 @@
 			self.nav_state.scroll_dif = 0;
 			self.nav_state.positionLock = 0;
 
-			$("header button").on("click",function(e) {
+			$( "header button" ).on( "touchstart click", function( e ) {
 				e.preventDefault();
-				spine.toggleClass("unshelved shelved");
-				$( "html" ).toggleClass( "spine-mobile-nav" );
+
+				var $body = $( "body" );
+
+				/* Cross browser support for CSS "transition end" event */
+				var transitionEnd = 'transitionend webkitTransitionEnd otransitionend MSTransitionEnd';
+
+				$body.addClass( "animating" );
+
+				if ( $body.hasClass( "spine-mobile-nav" ) ) {
+					$body.addClass( "nav-right" );
+				} else {
+					$body.addClass( "nav-left" );
+				}
+
+				spine.on( transitionEnd, function() {
+					$body.removeClass( "animating nav-left nav-right" ).toggleClass( "spine-mobile-nav" );
+					spine.toggleClass("unshelved shelved");
+				} );
+
 			});
 
 			// Close the mobile Spine navigation when a click occurs outside of the Spine.

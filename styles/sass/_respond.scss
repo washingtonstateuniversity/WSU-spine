@@ -39,7 +39,7 @@
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 @media screen and ( max-width : 989px ) {
 
-	.spine-mobile-nav body {
+	.spine-mobile-nav {
 		position: fixed;
 		overflow: hidden;
 	}
@@ -116,7 +116,26 @@
 		background-size: auto 30px;
 		height: 49px;
 	}
-	
+
+	.animating #spine {
+		transition: transform .25s ease-in-out;
+		-webkit-transition: -webkit-transform .25s ease-in-out;
+	}
+
+	.animating.nav-left #spine {
+		transform: translate3d( -298px, 0, 0 );
+		-webkit-transform: translate3d( -298px, 0, 0 );
+	}
+
+	.animating.nav-right #page {
+		transform: translate3d( 298px, 0, 0 );
+		-webkit-transform: translate3d( 298px, 0, 0 );
+	}
+
+	.spine-mobile-nav #spine {
+		left: 0;
+	}
+
 	#binder:not(.fluid) {
 		@include shelved;
 	}
