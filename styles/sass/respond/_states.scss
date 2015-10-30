@@ -23,18 +23,6 @@
 			display: block;
 		}
 
-		&.shelved {
-			-webkit-transition: left 300ms ease;
-			transition: left 300ms ease;
-			left: -500px;
-		}
-
-		&.unshelved {
-			-webkit-transition: left 300ms ease;
-			transition: left 300ms ease;
-			left: 0;
-		}
-
 		header {
 			top: 0;
 			left: 0;
