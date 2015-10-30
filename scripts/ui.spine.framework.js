@@ -297,12 +297,14 @@
 			$("header button").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
+				$( "html" ).addClass( "spine-mobile-nav" );
 			});
 
 			// Close the mobile Spine navigation when a click occurs outside of the Spine.
 			main.on( "click swipeleft", function() {
 				if ( spine.hasClass( "unshelved" ) ) {
 					spine.toggleClass( "shelved unshelved" );
+					$( "html" ).removeClass( "spine-mobile-nav" );
 				}
 			} );
 

@@ -48,9 +48,12 @@
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 
 @media screen
-	and ( max-width : 989px )
+	and ( max-width : 989px ) {
 
-	{
+  .spine-mobile-nav body {
+    position: fixed;
+    overflow: hidden;
+  }
 
 #binder {
 	width: 792px;
