@@ -299,11 +299,12 @@
 				spine.toggleClass("unshelved shelved");
 			});
 
-			main.on("click swipeleft", function() {
-				if ( spine.is(".unshelved") ) {
-					spine.toggleClass("shelved unshelved");
+			// Close the mobile Spine navigation when a click occurs outside of the Spine.
+			main.on( "click swipeleft", function() {
+				if ( spine.hasClass( "unshelved" ) ) {
+					spine.toggleClass( "shelved unshelved" );
 				}
-			});
+			} );
 
 			// Fixed/Sticky Horizontal Header
 			$( document ).on( "scroll touchmove", function() {
