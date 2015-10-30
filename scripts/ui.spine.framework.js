@@ -305,37 +305,32 @@
 				}
 			});
 
+			// Fixed/Sticky Horizontal Header
+			$( document ).on( "scroll touchmove", function() {
+				self.apply_nav_func( self );
+			} );
 
-			if ($(".ios .hybrid .unshelved").length <= 0) {
-				// Fixed/Sticky Horizontal Header
-				$(document).on("scroll touchmove",function() {
-					self.apply_nav_func(self);
-				});
+			// Watch for DOM changes and resize the Spine to match.
+			$.observeDOM( glue , function() {
+				self.apply_nav_func( self );
+			} );
 
-				// Watch for DOM changes and resize the Spine to match.
-				$.observeDOM( glue , function(){
-					self.apply_nav_func(self);
-				});
+			$( document ).keydown( function( e ) {
+				if( e.which === 35 || e.which === 36 ) {
+					viewport_ht	= $( window ).height();
+					spine_ht	= spine[0].scrollHeight;
+					height_dif	= viewport_ht - spine_ht;
 
-				$(document).keydown(function(e) {
-					if(e.which === 35 || e.which === 36) {
-						viewport_ht		= $(window).height();
-						spine_ht		= spine[0].scrollHeight;
-						height_dif		= viewport_ht - spine_ht;
-						if (e.which === 35) {
-							positionLock = height_dif;
-						} else if (e.which === 36) {
-							positionLock = 0;
-						}
-						spine.css({"position":"fixed","top":positionLock+"px"});
-						self.nav_state.positionLock=positionLock;
+					if ( e.which === 35 ) {
+						positionLock = height_dif;
+					} else if ( e.which === 36 ) {
+						positionLock = 0;
 					}
-				});
-			} else {
-				$("#scroll").on("focus",function(){
-					$(document).trigger("touchend");
-				});
-			}
+
+					spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
+					self.nav_state.positionLock = positionLock;
+				}
+			} );
 
 			// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
 			if ( ! $.is_iOS() && ! $.is_Android() ) {
