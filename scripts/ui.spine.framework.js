@@ -305,9 +305,9 @@
 				$body.addClass( "animating" );
 
 				if ( $body.hasClass( "spine-mobile-nav" ) ) {
-					$body.addClass( "nav-right" );
-				} else {
 					$body.addClass( "nav-left" );
+				} else {
+					$body.addClass( "nav-right" );
 				}
 
 				spine.on( transitionEnd, function() {
