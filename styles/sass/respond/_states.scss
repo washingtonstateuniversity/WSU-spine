@@ -1,8 +1,7 @@
 @charset "UTF-8";
+
 @mixin shelved {
-
 	#spine {
-
 		width: 298px;
 		min-height: 100%;
 		left: -298px;
@@ -13,64 +12,68 @@
 		#glue {
 			width: 298px;
 			margin-top: 50px;
-			}
+		}
+
 		#glue:before {
 			left: -702px;
 			width: 1000px;
-			}
+		}
 
 		button#shelve {
 			display: block;
-			}
+		}
+
 		&.shelved {
-			-webkit-transition: left 0.2s ease-in-out;
-			transition: left 0.4s ease-in-out;
+			-webkit-transition: left 300ms ease;
+			transition: left 300ms ease;
 			left: -500px;
-			}
+		}
+
 		&.unshelved {
-			-webkit-transition: left 0.2s ease-in-out;
+			-webkit-transition: left 300ms ease;
+			transition: left 300ms ease;
 			left: 0;
-			}
+		}
+
 		header {
 			top: 0;
 			left: 0;
 			width: 100%;
 			position: fixed;
 			height: 50px;
-			}
-		.spine-actions {
-			padding-top: 50px;
-			}
+		}
+
 		#wsu-actions section {
 			width: 298px;
-			}
+		}
+
 		.spine-navigation {
 			padding-bottom: 100px;
-			}
+		}
+
 		nav ul li {
 			line-height: 1.5em;
-			}
+		}
+
 		nav ul li.parent > a:after,
 		nav ul li.parent.opened > a:after {
 			display: block;
-			}
-		footer {
-			width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
-			}
-
 		}
 
+		footer {
+			width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
+		}
 	}
+}
 
 @mixin unshelved {
-
 	#spine {
-
 		left: auto;
 
 		button#shelve {
 			display: none;
-			}
+		}
+
 		&.unshelved,
 		&.shelved,
 		&.skimmed header,
@@ -78,50 +81,49 @@
 			box-shadow: none;
 			-webkit-transition: none;
 			left: auto;
-			}
+		}
+
 		#glue header {
 			top: 0;
 			left: 0;
 			position: relative;
 			height: 198px;
-			}
+		}
+
 		#wsu-actions {
-			padding-top: 0px;
-			}
+			padding-top: 0;
+		}
+
 		#wsu-actions section {
 			width: 298px;
-			}
 		}
+	}
 
 	.row.side-right .column {
 		width: 100%;
-		}
+	}
 
 	#wsu-signature {
 		background-position: center;
 		background-size: 180px auto;
 		height: 197px;
-		}
-
 	}
+}
 
 @mixin navscroll {
-
     #spine.unshelved {
-
-	    /*top: 0px !important;*/
 	    min-height: 0 !important;
 
 		#wsu-actions {
-			padding-top: 0px !important;
+			padding-top: 0 !important;
 		}
 
 		#scroll {
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;
-			position: absolute;
-			top: 0px;
-			bottom: 0px;
+			position: fixed;
+			top: 50px;
+			bottom: 0;
 			width: 298px;
 			z-index: 99165;
 
@@ -131,56 +133,33 @@
 		}
 
 		#scroll {
-			-webkit-transition: left 0.2s ease-in-out;
+			-webkit-transition: left 300ms ease;
 			left: 0;
 		}
 	}
 }
 
-
-
-
 @mixin unshelved-ios {
+	@media only screen and (max-device-width: 480px) and (orientation:portrait),
+		only screen and (max-device-width: 480px) and (orientation:landscape),
+		only screen	and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
+    	only screen and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
 
-@media
+    	#spine.unshelved {
+	    	top: 0 !important;
+	    	min-height: 0 !important;
 
-	only screen
-	and (max-device-width: 480px)
-	and (orientation:portrait),
-
-	only screen
-	and (max-device-width: 480px)
-	and (orientation:landscape),
-
-	only screen
-	and (device-width: 768px)
-	and (device-height: 1024px)
-	and (orientation:portrait),
-
-    only screen
-    and (device-width: 768px)
-    and (device-height: 1024px)
-    and (orientation:landscape)
-
-	{
-
-    #spine.unshelved {
-
-	    top: 0px !important;
-	    min-height: 0 !important;
-
-	    footer {
-		    position: relative !important;
-		    }
-		#wsu-actions {
-			padding-top: 0px !important;
-			}
-		.spine-navigation {
-			padding-bottom: 0px !important;
+			footer {
+				position: relative !important;
 			}
 
+			#wsu-actions {
+				padding-top: 0 !important;
+			}
+
+			.spine-navigation {
+				padding-bottom: 0 !important;
+			}
 		}
-
 	}
-
-	}
+}

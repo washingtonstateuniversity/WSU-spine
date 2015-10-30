@@ -297,56 +297,56 @@
 			$("header button").on("click",function(e) {
 				e.preventDefault();
 				spine.toggleClass("unshelved shelved");
+				$( "html" ).toggleClass( "spine-mobile-nav" );
 			});
 
-			main.on("click swipeleft", function() {
-				if ( spine.is(".unshelved") ) {
-					spine.toggleClass("shelved unshelved");
+			// Close the mobile Spine navigation when a click occurs outside of the Spine.
+			main.on( "click swipeleft", function() {
+				if ( spine.hasClass( "unshelved" ) ) {
+					spine.toggleClass( "shelved unshelved" );
+					$( "html" ).removeClass( "spine-mobile-nav" );
 				}
-			});
+			} );
 
+			// Fixed/Sticky Horizontal Header
+			$( document ).on( "scroll touchmove", function() {
+				self.apply_nav_func( self );
+			} );
 
-			if ($(".ios .hybrid .unshelved").length <= 0) {
-				// Fixed/Sticky Horizontal Header
-				$(document).on("scroll touchmove",function() {
-					self.apply_nav_func(self);
-				});
+			// Watch for DOM changes and resize the Spine to match.
+			$.observeDOM( glue , function() {
+				self.apply_nav_func( self );
+			} );
 
-				// Watch for DOM changes and resize the Spine to match.
-				$.observeDOM( glue , function(){
-					self.apply_nav_func(self);
-				});
+			$( document ).keydown( function( e ) {
+				if( e.which === 35 || e.which === 36 ) {
+					viewport_ht	= $( window ).height();
+					spine_ht	= spine[0].scrollHeight;
+					height_dif	= viewport_ht - spine_ht;
 
-				$(document).keydown(function(e) {
-					if(e.which === 35 || e.which === 36) {
-						viewport_ht		= $(window).height();
-						spine_ht		= spine[0].scrollHeight;
-						height_dif		= viewport_ht - spine_ht;
-						if (e.which === 35) {
-							positionLock = height_dif;
-						} else if (e.which === 36) {
-							positionLock = 0;
-						}
-						spine.css({"position":"fixed","top":positionLock+"px"});
-						self.nav_state.positionLock=positionLock;
+					if ( e.which === 35 ) {
+						positionLock = height_dif;
+					} else if ( e.which === 36 ) {
+						positionLock = 0;
 					}
-				});
-			} else {
-				$("#scroll").on("focus",function(){
-					$(document).trigger("touchend");
-				});
-			}
 
-			// Add skimming
-			$(document).scroll(function() {
-				var top;
-				top = $(document).scrollTop();
-				if ( top > 148 ) {
-					$("#spine").addClass("skimmed");
-				} else {
-					$("#spine").removeClass("skimmed");
+					spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
+					self.nav_state.positionLock = positionLock;
 				}
-			});
+			} );
+
+			// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
+			if ( ! $.is_iOS() && ! $.is_Android() ) {
+				$( document ).scroll( function() {
+					var top;
+					top = $( document ).scrollTop();
+					if ( top > 148 ) {
+						$( "#spine" ).addClass( "skimmed" );
+					} else {
+						$( "#spine" ).removeClass( "skimmed" );
+					}
+				} );
+			}
 		},
 
 		/**
@@ -357,6 +357,11 @@
 		 */
 		apply_nav_func: function(self) {
 			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
+
+			// Disable extended nav positioning for mobile devices.
+			if ( $.is_Android() || $.is_iOS() ) {
+				return;
+			}
 
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
