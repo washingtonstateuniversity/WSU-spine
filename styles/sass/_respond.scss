@@ -15,168 +15,152 @@
 	position: absolute;
 	width: 900px;
 	height: 15px;
-	box-shadow: 0px 4px 10px -6px rgba(0,0,0,0.5);
+	box-shadow: 0 4px 10px -6px rgba(0,0,0,0.5);
 	-webkit-transition: box-shadow 0.1s ease-in-out;
 	transition: box-shadow 0.1s ease-in-out;
 	top: 35px;
 	left: 298px;
 	display: block;
 	z-index: 1;
-	}
-
+}
 
 /* ## LARGE (after first break) */
-
-@media screen
-	and ( max-width : 1187px )
-
-	{
-
-/* ### Large Grid */
-
-@include grid-large-controls;
-
-	}
+@media screen and ( max-width : 1187px ) {
+	/* ### Large Grid */
+	@include grid-large-controls;
+}
 
 .max-1188 .rebound,
 .max-1188 .row.rebound {
 	width: 792px;
-	}
+}
 
 /* ## MEDIUM (after first break) */
-
 /* Tablets (iPad) then iPads (portrait, not landscape) */
+@media screen and ( max-width : 989px ) {
 
-@media screen
-	and ( max-width : 989px ) {
-
-  .spine-mobile-nav body {
-    position: fixed;
-    overflow: hidden;
-  }
-
-#binder {
-	width: 792px;
-	}
-#binder main {
-	margin-left: 0px;
-	margin-top: 50px;
+	.spine-mobile-nav body {
+		position: fixed;
+		overflow: hidden;
 	}
 
-#binder.fluid {
-	width: 100%;
-	}
-#binder.fluid main {
-	width: auto;
-	margin-left: 198px;
-	margin-top: 0px;
+	#binder {
+		width: 792px;
 	}
 
-.spineless.fixed main,
-.spineless.hybrid main,
-.spineless .fixed main,
-.spineless .hybrid main {
-	margin-left: 0px;
-	width: 792px;
+	#binder main {
+		margin-left: 0;
+		margin-top: 50px;
 	}
 
-.spineless.fluid main,
-.spineless .fluid main {
-	margin-left: 0px;
-	}
-#binder.fluid main {
-	margin-top: 0px;
+	#binder.fluid {
+		width: 100%;
 	}
 
-.fluid .row.rebound,
-.fluid .verso .rebound,
-.fluid .recto .rebound,
-.fluid .recto.verso .rebound {
-	width: 100%;
+	#binder.fluid main {
+		width: auto;
+		margin-left: 198px;
+		margin-top: 0;
 	}
 
-.fluid .recto.verso .rebound,
-.fluid .verso .rebound {
-	border-left: 198px transparent solid;
+	.spineless.fixed main,
+	.spineless.hybrid main,
+	.spineless .fixed main,
+	.spineless .hybrid main {
+		margin-left: 0;
+		width: 792px;
 	}
 
-.verso .rebound {
-	border-left: 0px transparent solid;
-	margin-left: auto;
-	margin-right: 0px;
+	.spineless.fluid main,
+	.spineless .fluid main {
+		margin-left: 0;
 	}
 
-.recto.verso .rebound {
-	border-left: 0px transparent solid;
-	margin-left: auto;
-	margin-right: auto;
+	#binder.fluid main {
+		margin-top: 0;
 	}
 
-.spineless .fluid .verso .rebound,
-.spineless .fluid .recto.verso .rebound {
-	border-left: 0px transparent solid;
+	.fluid .row.rebound,
+	.fluid .verso .rebound,
+	.fluid .recto .rebound,
+	.fluid .recto.verso .rebound {
+		width: 100%;
 	}
 
-/* Shelving */
+	.fluid .recto.verso .rebound,
+	.fluid .verso .rebound {
+		border-left: 198px transparent solid;
+	}
 
-.hybrid #wsu-signature,
-.fixed #wsu-signature {
-	background-position: center 12px;
-	background-size: auto 30px;
-	height: 49px;
+	.verso .rebound {
+		border-left: 0 transparent solid;
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.recto.verso .rebound {
+		border-left: 0 transparent solid;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.spineless .fluid .verso .rebound,
+	.spineless .fluid .recto.verso .rebound {
+		border-left: 0 transparent solid;
+	}
+
+	/* Shelving */
+	.hybrid #wsu-signature,
+	.fixed #wsu-signature {
+		background-position: center 12px;
+		background-size: auto 30px;
+		height: 49px;
 	}
 	
-#binder:not(.fluid) {
-
-	@include shelved;
-
+	#binder:not(.fluid) {
+		@include shelved;
 	}
 
-/* Layout Adjustments */
-
-.hybrid {
-
-	@include layouts-percents;
-
+	/* Layout Adjustments */
+	.hybrid {
+		@include layouts-percents;
 	}
 
-/* Adjust Search */
-.spine-search input[type="text"] {
-	padding-right: 18px;
-	}
-.spine-search button {
-	right: 10px;
+	/* Adjust Search */
+	.spine-search input[type="text"] {
+		padding-right: 18px;
 	}
 
-/* Header Colors and Signatures */
+	.spine-search button {
+		right: 10px;
+	}
 
-#binder:not(.fluid) #spine {
-	@each $spine-color, $color in $spine-colors {
-		&.#{""+$spine-color} header { background-color: $color; }
+	/* Header Colors and Signatures */
+	#binder:not(.fluid) #spine {
+		@each $spine-color, $color in $spine-colors {
+			&.#{""+$spine-color} header { background-color: $color; }
 		}
 	}
 
-/* Signature */
+	/* Signature */
 
-nav a.external:after {
-	font-family: "Spine-Icons";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	position: absolute;
-	margin-left: 3px;
-	content: "\21AA";
+	nav a.external:after {
+		font-family: "Spine-Icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		position: absolute;
+		margin-left: 3px;
+		content: "\21AA";
 	}
 
-/* Grid Medium */
-@include grid-medium-controls;
+	/* Grid Medium */
+	@include grid-medium-controls;
 
-@include header-colors;
+	@include header-colors;
 
-@include signatures('horizontal','.fixed ');
-@include signatures('horizontal','.hybrid ');
-
-	}
-
+	@include signatures('horizontal','.fixed ');
+	@include signatures('horizontal','.hybrid ');
+}
 
 /* SMALL (max 791px)
 ------------------------------------------ */
