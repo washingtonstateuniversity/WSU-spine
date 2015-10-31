@@ -127,9 +127,19 @@
 		-webkit-transform: translate3d( -298px, 0, 0 );
 	}
 
+	.animating.nav-left #glue .spine-header {
+		transform: translate3d( 298px, 0, 0 );
+		-webkit-transform: translate3d( 298px, 0, 0 );
+	}
+
 	.animating.nav-right #glue {
 		transform: translate3d( 298px, 0, 0 );
 		-webkit-transform: translate3d( 298px, 0, 0 );
+	}
+
+	.animating.nav-right #glue .spine-header {
+		transform: translate3d( -298px, 0, 0 );
+		-webkit-transform: translate3d( -298px, 0, 0 );
 	}
 
 	.spine-mobile-nav .unshelved #glue {
