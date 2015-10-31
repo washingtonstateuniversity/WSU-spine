@@ -313,6 +313,7 @@
 				spine.on( transitionEnd, function() {
 					$body.removeClass( "animating nav-left nav-right" ).toggleClass( "spine-mobile-nav" );
 					spine.toggleClass("unshelved shelved");
+					spine.off( transitionEnd );
 				} );
 
 			});
