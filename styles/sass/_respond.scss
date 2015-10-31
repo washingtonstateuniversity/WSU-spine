@@ -148,7 +148,7 @@
 	}
 
 	.shelved #glue {
-		left: -298px;
+		left: 0; /* position relative, off screen */
 	}
 
 	#binder:not(.fluid) {
