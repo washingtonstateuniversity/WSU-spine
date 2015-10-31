@@ -310,10 +310,10 @@
 					$body.addClass( "nav-right" );
 				}
 
-				spine.on( transitionEnd, function() {
+				glue.on( transitionEnd, function() {
 					$body.removeClass( "animating nav-left nav-right" ).toggleClass( "spine-mobile-nav" );
 					spine.toggleClass("unshelved shelved");
-					spine.off( transitionEnd );
+					glue.off( transitionEnd );
 				} );
 
 			});

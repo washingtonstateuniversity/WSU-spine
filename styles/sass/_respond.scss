@@ -117,23 +117,27 @@
 		height: 49px;
 	}
 
-	.animating #spine {
+	.animating #glue {
 		transition: transform .25s ease-in-out;
 		-webkit-transition: -webkit-transform .25s ease-in-out;
 	}
 
-	.animating.nav-left #spine {
+	.animating.nav-left #glue {
 		transform: translate3d( -298px, 0, 0 );
 		-webkit-transform: translate3d( -298px, 0, 0 );
 	}
 
-	.animating.nav-right #spine {
+	.animating.nav-right #glue {
 		transform: translate3d( 298px, 0, 0 );
 		-webkit-transform: translate3d( 298px, 0, 0 );
 	}
 
-	.spine-mobile-nav #spine {
+	.spine-mobile-nav .unshelved #glue {
 		left: 0;
+	}
+
+	.spine-mobile-nav .shelved #glue {
+		left: -298px;
 	}
 
 	#binder:not(.fluid) {
