@@ -23,6 +23,14 @@
 			display: block;
 		}
 
+		&.shelved {
+			left: -500px;
+		}
+
+		&.unshelved {
+			left: 0;
+		}
+
 		header {
 			top: 0;
 			left: 0;
