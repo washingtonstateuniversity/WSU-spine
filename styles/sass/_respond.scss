@@ -142,7 +142,8 @@
 		-webkit-transform: translate3d( -298px, 0, 0 );
 	}
 
-	.unshelved #glue {
+	.spine-mobile-nav .unshelved #glue {
+		position: fixed;
 		left: 0;
 	}
 
