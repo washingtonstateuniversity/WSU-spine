@@ -105,8 +105,10 @@
 			self.setup_nav();
 
 			if ( $.is_iOS() || $.is_Android() ) {
-				$( "html" ).addClass( "ios" );
+				$( "html" ).addClass( "ios spine-mobile" );
 				self.setup_nav_scroll();
+			} else {
+				$( "html" ).addClass( "spine-full" );
 			}
 
 			// If SVG is not supported, add a class and replace Spine SVG files with PNG equivalents.
@@ -160,15 +162,13 @@
 				}
 
 				viewport_ht = $(window).height();
-				glue.css("min-height",viewport_ht);
-				spine.css("min-height",viewport_ht);
 
-				if ($(".spine-header").height()>50) {
-					spine.removeClass("unshelved");
-					spine.removeClass("shelved");
+				if ( $( ".spine-header" ).height() > 50 ) {
+					glue.css( "min-height", viewport_ht );
+					spine.css( "min-height", viewport_ht );
 				} else {
-					glue.css("min-height",viewport_ht-50);
-					spine.addClass("shelved");
+					glue.css( "min-height", viewport_ht - 50 );
+					spine.css( "min-height", viewport_ht - 50 );
 				}
 
 				$(document).trigger("scroll");
@@ -277,12 +277,51 @@
 		setup_content: function() {},
 
 		/**
+		 * Toggle the display and removal of the mobile navigation.
+		 *
+		 * @param e
+		 */
+		toggle_mobile_nav: function(e) {
+			var body, spine, glue, transitionEnd;
+
+			if ( typeof e !== "undefined" ) {
+				e.preventDefault();
+			}
+
+			body = $( "body" );
+			spine = $.ui.spine.prototype._get_globals("spine").refresh();
+			glue = $.ui.spine.prototype._get_globals("glue").refresh();
+
+			/* Cross browser support for CSS "transition end" event */
+			transitionEnd = "transitionend webkitTransitionEnd otransitionend MSTransitionEnd";
+
+			body.addClass( "animating" );
+
+			if ( body.hasClass( "spine-mobile-open" ) ) {
+				body.addClass( "nav-left" );
+			} else {
+				body.addClass( "nav-right" );
+			}
+
+			glue.on( transitionEnd, function() {
+				body.removeClass( "animating nav-left nav-right" );
+
+				if ( body.hasClass( "spine-mobile-open" ) ) {
+					body.removeClass( "spine-mobile-open" );
+				} else {
+					body.addClass( "spine-mobile-open" );
+				}
+				glue.off( transitionEnd );
+			} );
+		},
+
+		/**
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
 			var self, spine, glue, main, viewport_ht, spine_ht, height_dif, positionLock;
 
-			$("#glue > header").prepend("<button id='shelve' />");
+			$( "#spine .spine-header" ).prepend( "<button id='shelve' />" );
 
 			self = this;
 
@@ -294,67 +333,42 @@
 			self.nav_state.scroll_dif = 0;
 			self.nav_state.positionLock = 0;
 
-			$( "header button" ).on( "touchstart click", function( e ) {
-				e.preventDefault();
-
-				var $body = $( "body" );
-
-				/* Cross browser support for CSS "transition end" event */
-				var transitionEnd = 'transitionend webkitTransitionEnd otransitionend MSTransitionEnd';
-
-				$body.addClass( "animating" );
-
-				if ( $body.hasClass( "spine-mobile-nav" ) ) {
-					$body.addClass( "nav-left" );
-				} else {
-					$body.addClass( "nav-right" );
+			$( "header button" ).on( "touchstart click", self.toggle_mobile_nav );
+			main.on( "click swipeleft", function( e ) {
+				if ( $( "body" ).hasClass( "spine-mobile-open" ) ) {
+					self.toggle_mobile_nav( e );
 				}
-
-				glue.on( transitionEnd, function() {
-					$body.removeClass( "animating nav-left nav-right" ).toggleClass( "spine-mobile-nav" );
-					spine.toggleClass("unshelved shelved");
-					glue.off( transitionEnd );
-				} );
-
 			});
 
-			// Close the mobile Spine navigation when a click occurs outside of the Spine.
-			main.on( "click swipeleft", function() {
-				if ( spine.hasClass( "unshelved" ) ) {
-					spine.toggleClass( "shelved unshelved" );
-					$( "html" ).removeClass( "spine-mobile-nav" );
-				}
-			} );
-
-			// Fixed/Sticky Horizontal Header
-			$( document ).on( "scroll touchmove", function() {
-				self.apply_nav_func( self );
-			} );
-
-			// Watch for DOM changes and resize the Spine to match.
-			$.observeDOM( glue , function() {
-				self.apply_nav_func( self );
-			} );
-
-			$( document ).keydown( function( e ) {
-				if( e.which === 35 || e.which === 36 ) {
-					viewport_ht	= $( window ).height();
-					spine_ht	= spine[0].scrollHeight;
-					height_dif	= viewport_ht - spine_ht;
-
-					if ( e.which === 35 ) {
-						positionLock = height_dif;
-					} else if ( e.which === 36 ) {
-						positionLock = 0;
-					}
-
-					spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
-					self.nav_state.positionLock = positionLock;
-				}
-			} );
-
-			// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
 			if ( ! $.is_iOS() && ! $.is_Android() ) {
+				// Fixed/Sticky Horizontal Header
+				$( document ).on( "scroll touchmove", function() {
+					self.apply_nav_func( self );
+				} );
+
+				// Watch for DOM changes and resize the Spine to match.
+				$.observeDOM( glue , function() {
+					self.apply_nav_func( self );
+				} );
+
+				$( document ).keydown( function( e ) {
+					if( e.which === 35 || e.which === 36 ) {
+						viewport_ht	= $( window ).height();
+						spine_ht	= spine[0].scrollHeight;
+						height_dif	= viewport_ht - spine_ht;
+
+						if ( e.which === 35 ) {
+							positionLock = height_dif;
+						} else if ( e.which === 36 ) {
+							positionLock = 0;
+						}
+
+						spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
+						self.nav_state.positionLock = positionLock;
+					}
+				} );
+
+				// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
 				$( document ).scroll( function() {
 					var top;
 					top = $( document ).scrollTop();
@@ -468,8 +482,8 @@
 		 * Setup a scroll container for use with iOS.
 		 */
 		setup_nav_scroll: function() {
-			$("#glue").wrapInner( "<div id='scroll'>" );
-			$("#spine header").insertBefore($("#scroll"));
+			$( "#glue" ).wrapInner( "<div id='scroll'>" );
+			$( "#spine header" ).insertBefore( $( "#glue" ) );
 		},
 
 		/**

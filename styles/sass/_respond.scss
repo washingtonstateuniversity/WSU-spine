@@ -9,21 +9,6 @@
 
 @include navscroll;
 
-
-#binder #spine.unshelved header:before {
-	content: "";
-	position: absolute;
-	width: 900px;
-	height: 15px;
-	box-shadow: 0 4px 10px -6px rgba(0,0,0,0.5);
-	-webkit-transition: box-shadow 200ms ease;
-	transition: box-shadow 200ms ease;
-	top: 35px;
-	left: 298px;
-	display: block;
-	z-index: 1;
-}
-
 /* ## LARGE (after first break) */
 @media screen and ( max-width : 1187px ) {
 	/* ### Large Grid */
@@ -38,11 +23,6 @@
 /* ## MEDIUM (after first break) */
 /* Tablets (iPad) then iPads (portrait, not landscape) */
 @media screen and ( max-width : 989px ) {
-
-	.spine-mobile-nav {
-		position: fixed;
-		overflow: hidden;
-	}
 
 	#binder {
 		width: 792px;
@@ -118,37 +98,28 @@
 	}
 
 	.animating #glue {
-		transition: transform .25s ease-in-out;
-		-webkit-transition: -webkit-transform .25s ease-in-out;
+		transition: transform .3s ease;
+		-webkit-transition: -webkit-transform .3s ease;
 	}
 
 	.animating.nav-left #glue {
-		transform: translate3d( -298px, 0, 0 );
-		-webkit-transform: translate3d( -298px, 0, 0 );
-	}
-
-	.animating.nav-left #glue .spine-header {
-		transform: translate3d( 298px, 0, 0 );
-		-webkit-transform: translate3d( 298px, 0, 0 );
+		transform: translate( -298px );
+		-webkit-transform: translate( -298px );
 	}
 
 	.animating.nav-right #glue {
-		transform: translate3d( 298px, 0, 0 );
-		-webkit-transform: translate3d( 298px, 0, 0 );
+		transform: translate( 298px );
+		-webkit-transform: translate( 298px );
 	}
 
-	.animating.nav-right #glue .spine-header {
-		transform: translate3d( -298px, 0, 0 );
-		-webkit-transform: translate3d( -298px, 0, 0 );
+	.spine-mobile #glue {
+		top: 50px;
+		left: -298px;
 	}
 
-	.spine-mobile-nav .unshelved #glue {
-		position: fixed;
+	.spine-mobile-open  #glue {
+		top: 50px;
 		left: 0;
-	}
-
-	.shelved #glue {
-		left: 0; /* position relative, off screen */
 	}
 
 	#binder:not(.fluid) {

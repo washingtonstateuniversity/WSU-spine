@@ -50,33 +50,31 @@
 	}
 
 #glue {
-		margin-top: 0px;
-		position: relative;
-		width: 198px;
-		}
+	margin-top: 0;
+	position: relative;
+	width: 198px;
+}
 
-#glue:before {
-		background-color: white;
-		content: " ";
-		min-height: 100%;
-		position: absolute;
-		width: 198px;
-		visibility: visible;
-		}
+.spine-mobile #glue {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-.bleed {
+.spine-full #glue:before {
+	background-color: white;
+	content: " ";
+	min-height: 100%;
+	position: absolute;
+	width: 198px;
+	visibility: visible;
+}
 
+.spine-full .bleed {
 	#glue:before {
 		left: -802px;
 		width: 1000px;
 		display: block;
-		}
-	&.unshelved #glue:before {
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		left: -802px;
-		}
-
-		}
+	}
+}
 
 #spine {
 
@@ -116,8 +114,7 @@ button#shelve {
 	display: none;
 }
 
-.shelved button#shelve,
-.unshelved button#shelve {
+.spine-mobile button#shelve {
 	display: block;
 }
 
@@ -195,13 +192,15 @@ button#shelve::after {
 
 /* ## NAVIGATION
 --------------------------------------------------------------------------- */
+#spine .spine-navigation {
+	padding-bottom: 100px;
+}
+
+.spine-mobile #spine .spine-navigation {
+	padding-bottom: 0;
+}
 
 #spine {
-
-	&:not(.cropped) .spine-navigation {
-		padding-bottom: 100px;
-		}
-
 	nav {
 
 		ul {
@@ -831,13 +830,20 @@ html.lt-ie9 #spine .spine-actions {
 
 #spine footer {
 	position: absolute;
-	bottom: 0px;
+	bottom: 0;
 	padding: 1.75em 0 0.75em 0;
 	width: 156px; // 198px - ( ( 1.75em x 12px ) x 2 = 42 )
-	}
+}
+
+.spine-mobile #spine footer {
+	position: relative;
+	width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
+}
+
 html.lt-ie9 #spine footer {
 	position: relative;
-	}
+}
+
 #spine footer nav {
 	margin: 0;
 	}
