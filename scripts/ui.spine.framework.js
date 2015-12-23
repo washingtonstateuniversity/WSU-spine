@@ -359,16 +359,16 @@
 			/* Cross browser support for CSS "transition end" event */
 			transitionEnd = "transitionend webkitTransitionEnd otransitionend MSTransitionEnd";
 
-			body.addClass( "animating" );
+			body.addClass( "spine-animating" );
 
 			if ( body.hasClass( "spine-mobile-open" ) ) {
-				body.addClass( "nav-left" );
+				body.addClass( "spine-move-left" );
 			} else {
-				body.addClass( "nav-right" );
+				body.addClass( "spine-move-right" );
 			}
 
 			glue.on( transitionEnd, function() {
-				body.removeClass( "animating nav-left nav-right" );
+				body.removeClass( "spine-animating spine-move-left spine-move-right" );
 
 				if ( body.hasClass( "spine-mobile-open" ) ) {
 					body.removeClass( "spine-mobile-open" );

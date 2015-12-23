@@ -121,8 +121,8 @@
 		}
 	}
 
-	.spine-mobile .animating #spine #scroll,
-	.spine-mobile-open .animating #spine #scroll {
+	.spine-mobile .spine-animating #spine #scroll,
+	.spine-mobile-open .spine-animating #spine #scroll {
 		top: 0;
 		bottom: -69px; /* Offset for when iOS address and nav bars hide */
 		position: fixed;

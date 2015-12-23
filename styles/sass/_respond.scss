@@ -97,17 +97,17 @@
 		height: 49px;
 	}
 
-	.animating #glue {
+	.spine-animating #glue {
 		transition: transform .3s ease;
 		-webkit-transition: -webkit-transform .3s ease;
 	}
 
-	.animating.nav-left #glue {
+	.spine-animating.spine-move-left #glue {
 		transform: translate( -298px );
 		-webkit-transform: translate( -298px );
 	}
 
-	.animating.nav-right #glue {
+	.spine-animating.spine-move-right #glue {
 		transform: translate( 298px );
 		-webkit-transform: translate( 298px );
 	}
