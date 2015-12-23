@@ -121,18 +121,79 @@
 		},
 
 		/**
+		 * On a resize event, adjust pieces of the Spine framework accordingly.
+		 */
+		framework_adjust_on_resize: function() {
+			var self, spread, verso, page, para, recto, recto_margin, verso_width,
+				viewport_ht, spine, glue, main;
+
+			self = this;
+
+			// Refresh data for global elements.
+			spine = self._get_globals( "spine" ).refresh();
+			glue = self._get_globals( "glue" ).refresh();
+			main = self._get_globals( "main" ).refresh();
+
+			if ( self.is_mobile_view() && ! self.has_mobile_state() ) {
+				self.set_spine_state( "mobile" );
+			} else if ( ! self.is_mobile_view() && self.has_mobile_state() ) {
+				self.set_spine_state( "full" );
+			}
+
+			self.sizing();
+			self.equalizing();
+			self.mainheight();
+
+			// Only run function if an unbound element exists
+			if ( $( ".unbound, #binder.broken" ).length ) {
+				spread = $( window ).width();
+				verso = self._get_globals( "main" ).offset().left;
+				page = self._get_globals( "main" ).width();
+				recto = spread - self._get_globals( "main" ).offset().left;
+				recto_margin = "";
+
+				if ( recto >= page ) {
+					recto_margin = recto - page;
+				} else {
+					recto_margin = 0;
+				}
+
+				/* Broken Binding */
+				if ( $( "#binder" ).is( ".broken" ) ) {
+					self._get_globals( "main" ).css( "width", recto );
+				}
+
+				verso_width = verso + self._get_globals( "main" ).width();
+
+				$( ".unbound:not(.element).recto" ).css( "width", recto ).css( "margin-right", -( recto_margin ) );
+				$( ".unbound.element.recto" ).each( function() {
+					para = $( this ).width();
+					$( this ).css( "width", para + recto_margin ).css( "margin-right", -( recto_margin ) );
+				} );
+				$( ".unbound.verso" ).css( "width", verso_width ).css( "margin-left", -( verso ) );
+				$( ".unbound.verso.recto" ).css( "width", spread );
+			}
+
+			viewport_ht = $( window ).height();
+
+			if ( $( ".spine-header" ).height() > 50 ) {
+				glue.css( "min-height", viewport_ht );
+				spine.css( "min-height", viewport_ht );
+			} else {
+				glue.css( "min-height", viewport_ht - 50 );
+				spine.css( "min-height", viewport_ht - 50 );
+			}
+
+			$( document ).trigger( "scroll" );
+		},
+
+		/**
 		 * Create the Spine framework and setup basic events based on information present in the DOM.
 		 */
 		framework_create: function() {
-			var self, contactHtml, propmap = {}, spread, verso, page, para, recto, recto_margin, verso_width,
-				svg_imgs, viewport_ht, spine, glue, main;
+			var self, contactHtml, propmap = {}, svg_imgs;
 
 			self = this; // preserve scope.
-
-			// Refresh data for global elements.
-			spine = self._get_globals("spine").refresh();
-			glue = self._get_globals("glue").refresh();
-			main = self._get_globals("main").refresh();
 
 			// Generate the contact section.
 			if (!$("#wsu-contact").length) {
@@ -176,62 +237,8 @@
 			self.setup_spine();
 			self.setup_printing();
 
-			$(window).on("resize", function() {
-				if ( self.is_mobile_view() && ! self.has_mobile_state() ) {
-					self.set_spine_state( "mobile" );
-				} else if ( ! self.is_mobile_view() && self.has_mobile_state() ) {
-					self.set_spine_state( "full" );
-				}
-
-				self.sizing();
-				self.equalizing();
-				self.mainheight();
-
-				// Only run function if an unbound element exists
-				if( $(".unbound,#binder.broken").length ) {
-					spread = $(window).width();
-					verso = self._get_globals("main").offset().left;
-					page = self._get_globals("main").width();
-					recto = spread - self._get_globals("main").offset().left;
-					recto_margin = "";
-
-					if (recto >= page ) {
-						recto_margin = recto - page;
-					} else {
-						recto_margin = 0;
-					}
-
-					/* Broken Binding */
-					if ($("#binder").is(".broken")) {
-						self._get_globals("main").css("width",recto);
-					}
-
-					verso_width = verso + self._get_globals("main").width();
-
-					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
-					$(".unbound.element.recto").each( function() {
-						para = $(this).width();
-						$(this).css("width",para+recto_margin).css("margin-right",-(recto_margin));
-					});
-					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
-					$(".unbound.verso.recto").css("width",spread);
-				}
-
-				viewport_ht = $(window).height();
-
-				if ( $( ".spine-header" ).height() > 50 ) {
-					glue.css( "min-height", viewport_ht );
-					spine.css( "min-height", viewport_ht );
-				} else {
-					glue.css( "min-height", viewport_ht - 50 );
-					spine.css( "min-height", viewport_ht - 50 );
-				}
-
-				$(document).trigger("scroll");
-
-			}).trigger("resize");
-
-			$(document).trigger("scroll");
+			$( window ).on( "resize", function() { self.framework_adjust_on_resize() } ).trigger( "resize" );
+			$( document ).trigger( "scroll" );
 		},
 
 		// Label #jacket with current window size
