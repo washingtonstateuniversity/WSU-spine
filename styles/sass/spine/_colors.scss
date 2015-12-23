@@ -1,7 +1,6 @@
 @charset "UTF-8";
 #spine  {
 	&.lightest {
-		/* #### LIGHTEST #e6e8e9, rgb(230,232,233) */
 		#glue:before {
 			background-color: $gray-lightest;
 		}
@@ -56,7 +55,6 @@
 	}
 
 	&.lightly {
-		/* #### LIGHTLY #d7dadb, rgb(215 218 219) */
 		#glue:before {
 			background-color: $gray-lightly;
 		}
@@ -107,7 +105,6 @@
 	}
 
 	&.lighter {
-		/* #### LIGHTER #b5babe, rgb(181 186 190) */
 		#glue:before {
 			background-color: $gray-lighter;
 		}
@@ -164,7 +161,6 @@
 	}
 
 	&.light {
-		/* #### LIGHT #8b9399, rgb(139,147,153) */
 		#glue:before {
 			background-color: $gray-light;
 		}
@@ -228,7 +224,6 @@
 	}
 
 	&.gray {
-		/* #### GRAY #5e6a71, rgb(94,106,113) */
 		#glue:before {
 			background: $gray;
 		}
@@ -296,7 +291,6 @@
 	}
 
 	&.dark {
-		/* #### GRAY-DARK #383D42, rgb(75,85,90) */
 		#glue:before {
 			background-color: $gray-dark;
 		}
@@ -366,7 +360,6 @@
 	}
 
 	&.darker {
-		/* #### GRAY-DARKER #2a3033, rgb(42 48 51) */
 		#glue:before {
 			background-color: darken($gray-darker, 3%);
 		}
@@ -432,7 +425,6 @@
 	}
 
 	&.darkest {
-		/* #### GRAY-DARKEST #000, rgb 0,0,0 */
 		#glue:before {
 			background-color: $gray-darkest;
 		}
@@ -491,7 +483,6 @@
 	}
 
 	&.crimson {
-		/* #### CRIMSON #981e32 */
 		#glue:before {
 			background-color: $crimson;
 		}

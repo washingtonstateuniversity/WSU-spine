@@ -230,7 +230,7 @@ button#shelve::after {
 			padding: .25em 0;
 		}
 
-		/* Parents */
+		// Parents
 		li.parent {
 			> a {
 				padding-right: 15px;
@@ -280,7 +280,7 @@ button#shelve::after {
 			top: .4em;
 		}
 
-		/* ### Disclosure */
+		// Disclosure
 		ul ul li {
 			display: none;
 		}
@@ -307,7 +307,7 @@ button#shelve::after {
 		border-bottom-width: 1px;
 	}
 
-	/* #### Home Icon */
+	// Home Icon
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a {
 		padding-left: 1.4em;
 		background-image: url("#{$locality}/icons/home-gray.svg");
@@ -327,7 +327,7 @@ button#shelve::after {
 		background-image: none !important;
 	}
 
-	/* #### "Dogeared" Link */
+	// "Dogeared" Link
 	li:not(.parent).dogeared > a {
 		color: #981e32;
 		font-weight: bold;
@@ -338,7 +338,7 @@ button#shelve::after {
 		cursor: default;
 	}
 
-	/* #### External Links */
+	// External Links
 	nav a.external:hover:after {
 		font-family: "Spine-Icons";
 		-webkit-font-smoothing: antialiased;
@@ -416,7 +416,7 @@ html.lt-ie9 #spine .spine-actions {
 		}
 	}
 
-	/* ### Tabs */
+	// Tabs
 	.spine-actions-tabs {
 		padding: 0;
 		margin-top: 0;
@@ -501,7 +501,7 @@ html.lt-ie9 #spine .spine-actions {
 		border-bottom: 1px #b6bcbf solid;
 	}
 
-	/* Hide the clear "X" in newer versions of IE */
+	// Hide the clear "X" in newer versions of IE
 	input::-ms-clear {
 		display: none;
 	}
