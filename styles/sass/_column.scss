@@ -27,6 +27,7 @@
 	z-index: 99164;
 	position: absolute;
 	bottom: 0;
+	touch-action: manipulation;
 
 	button {
 		background-color: transparent;
@@ -184,10 +185,6 @@ button#shelve::after {
 
 .spine-mobile #spine .spine-navigation {
 	padding-bottom: 0;
-}
-
-#spine {
-	touch-action: manipulation;
 }
 
 #spine {
