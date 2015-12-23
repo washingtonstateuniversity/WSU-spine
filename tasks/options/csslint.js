@@ -16,7 +16,7 @@ module.exports = {
 			"known-properties": false,
 			"floats": false,
 			"font-sizes": false,
-			"overqualified-elements": false,       // 2
+			"overqualified-elements": true,        // We have a couple weird uses that will always generate warnings.
 			"duplicate-background-images": false,  // 2
 			"important": false,                    // 2
 			"duplicate-properties": 2,
