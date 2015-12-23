@@ -71,6 +71,56 @@
 		},
 
 		/**
+		 * Setup a scroll container for use with iOS.
+		 */
+		setup_nav_scroll: function() {
+			$( "#glue" ).wrapInner( "<div id='scroll'>" );
+			$( "#spine header" ).insertBefore( $( "#glue" ) );
+		},
+
+		/**
+		 * Determine if the page view is in a mobile state, defined as less than 990px;
+		 */
+		is_mobile_view: function() {
+			if ( $(document).outerWidth() < 990 ) {
+				return true;
+			}
+
+			return false;
+		},
+
+		/**
+		 * Set the Spine to a given state, mobile or full.
+		 *
+		 * @param {string} state The state of the Spine to set.
+		 */
+		set_spine_state: function( state ) {
+			if ( "mobile" === state ) {
+				$( "html" ).removeClass( "spine-full" ).addClass( "ios spine-mobile" );
+				this.setup_nav_scroll();
+			} else {
+				$( "html" ).removeClass( "ios spine-mobile" ).addClass( "spine-full" );
+				if ( $( "#scroll" ).length ) {
+					$( "#wsu-actions" ).unwrap();
+					$( "#spine header" ).prependTo( "#glue" );
+				}
+			}
+		},
+
+		/**
+		 * Determine if the Spine is already in a mobile state.
+		 *
+		 * @returns {boolean}
+		 */
+		has_mobile_state: function() {
+			if ( $( "html" ).hasClass( "spine-mobile" ) ) {
+				return true;
+			}
+
+			return false;
+		},
+
+		/**
 		 * Create the Spine framework and setup basic events based on information present in the DOM.
 		 */
 		framework_create: function() {
@@ -104,9 +154,9 @@
 
 			self.setup_nav();
 
-			if ( $.is_iOS() || $.is_Android() ) {
-				$( "html" ).addClass( "ios spine-mobile" );
-				self.setup_nav_scroll();
+			// Set the initial state of the Spine on page load. Mobile is defined as less than 990px.
+			if ( self.is_mobile_view() ) {
+				self.set_spine_state( "mobile" );
 			} else {
 				$( "html" ).addClass( "spine-full" );
 			}
@@ -127,6 +177,12 @@
 			self.setup_printing();
 
 			$(window).on("resize", function() {
+				if ( self.is_mobile_view() && ! self.has_mobile_state() ) {
+					self.set_spine_state( "mobile" );
+				} else if ( ! self.is_mobile_view() && self.has_mobile_state() ) {
+					self.set_spine_state( "full" );
+				}
+
 				self.sizing();
 				self.equalizing();
 				self.mainheight();
@@ -174,6 +230,7 @@
 				$(document).trigger("scroll");
 
 			}).trigger("resize");
+
 			$(document).trigger("scroll");
 		},
 
@@ -343,7 +400,7 @@
 				}
 			});
 
-			if ( ! $.is_iOS() && ! $.is_Android() ) {
+			if ( ! self.is_mobile_view() ) {
 				// Fixed/Sticky Horizontal Header
 				$( document ).on( "scroll touchmove", function() {
 					self.apply_nav_func( self );
@@ -479,14 +536,6 @@
 
 				$(".spine-action.opened").css( "min-height", action_ht );
 			});
-		},
-
-		/**
-		 * Setup a scroll container for use with iOS.
-		 */
-		setup_nav_scroll: function() {
-			$( "#glue" ).wrapInner( "<div id='scroll'>" );
-			$( "#spine header" ).insertBefore( $( "#glue" ) );
 		},
 
 		/**
