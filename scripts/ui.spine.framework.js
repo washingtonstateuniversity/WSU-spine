@@ -237,7 +237,7 @@
 			self.setup_spine();
 			self.setup_printing();
 
-			$( window ).on( "resize", function() { self.framework_adjust_on_resize() } ).trigger( "resize" );
+			$( window ).on( "resize orientationchange", function() { self.framework_adjust_on_resize(); } ).trigger( "resize" );
 			$( document ).trigger( "scroll" );
 		},
 
