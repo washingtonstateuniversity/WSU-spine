@@ -401,7 +401,7 @@
 			$( "header button" ).on( "touchstart click", self.toggle_mobile_nav );
 
 			// Tapping anything outside of the Spine should trigger a toggle if the menu is open.
-			main.on( "click swipeleft", function( e ) {
+			main.on( "click touchend swipeleft", function( e ) {
 				if ( $( "body" ).hasClass( "spine-mobile-open" ) ) {
 					self.toggle_mobile_nav( e );
 				}
@@ -535,7 +535,7 @@
 			wsu_actions = self._get_globals("wsu_actions").refresh();
 			wsu_actions.append(html);
 
-			$("#wsu-" + tab + "-tab button").on("click",function(e) {
+			$( "#wsu-" + tab + "-tab button" ).on( "click touchend", function( e ) {
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab").toggleClass("opened closed");
 
@@ -582,7 +582,7 @@
 				}
 
 				// Disclosure
-				tar.on("click",function(e) {
+				tar.on( "click touchend", function( e ) {
 					e.preventDefault();
 					tar.parent("li").siblings().removeClass("opened");
 					tar.parent("li").toggleClass("opened");
@@ -636,7 +636,7 @@
 			$("#wsu-print-tab button").click(print);
 
 			// Shut a tool section
-			$("button.shut").on("click",function(e) {
+			$("button.shut").on( "click touchend", function( e ) {
 				e.preventDefault();
 				wsu_actions.find(".opened").toggleClass("opened closed");
 			});
