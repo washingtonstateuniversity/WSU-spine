@@ -201,6 +201,10 @@ button#shelve::after {
 }
 
 #spine {
+	touch-action: manipulation;
+}
+
+#spine {
 	nav {
 
 		ul {
