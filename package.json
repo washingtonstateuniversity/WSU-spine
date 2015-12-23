@@ -6,7 +6,7 @@
 	"build_location": "",
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/washingtonstateuniversity/wsu-spine.git"
+		"url": "https://github.com/washingtonstateuniversity/wsu-spine.git"
 	},
 	"file": "spine",
 	"devDependencies": {
