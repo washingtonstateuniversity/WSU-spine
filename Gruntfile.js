@@ -60,7 +60,8 @@ module.exports = function(grunt) {
 		'concat',
 		'preprocess:js',
 		'autoprefixer',
+		'csslint',
 		'cssmin',
-		'uglify',
+		'uglify'
 	]);
 };
