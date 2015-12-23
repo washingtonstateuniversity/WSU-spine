@@ -9,7 +9,7 @@ body table th {
 	}
 body table td,
 body table th {
-	padding: .3em .6em .3em 0em;
+	padding: .3em .6em .3em 0;
 	vertical-align: top;
 	}
 table.stripe td,
@@ -33,7 +33,7 @@ ul.line {
 ul.line li {
 	list-style: none;
 	padding: .3em 0;
-	margin: 0px;
+	margin: 0;
 	}
 ul.line li ~ li {
 	border-top: 1px #d7dadb solid;

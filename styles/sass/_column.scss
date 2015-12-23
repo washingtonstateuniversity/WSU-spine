@@ -35,7 +35,7 @@
 	button {
 		background-color: transparent;
 		border: none;
-		border-radius: 0px;
+		border-radius: 0;
 		text-indent: 120%;
 		white-space: nowrap;
 		overflow: hidden;
@@ -181,9 +181,9 @@ button#shelve::after {
 
 	button:before {
 		font-family: "Spine-Icons";
-		text-indent: 0px;
+		text-indent: 0;
 		position: absolute;
-		left: 0px;	top: 0em; right: 0px; bottom: 0px;
+		left: 0;	top: 0; right: 0; bottom: 0;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -208,22 +208,22 @@ button#shelve::after {
 	nav {
 
 		ul {
-			margin: 0px;
-			padding: 0px;
+			margin: 0;
+			padding: 0;
 			}
 		li {
 			list-style: none;
 			}
 		ul li {
 			position: relative;
-			margin: 0px; padding: 0px;
-			border-width: 1px 0px 0px 0px;
+			margin: 0; padding: 0;
+			border-width: 1px 0 0 0;
 			border-style: solid;
 			line-height: 1.1em;
 			}
 		ul li a {
 			display: block;
-			padding: 6px 0px;
+			padding: 6px 0;
 			}
 		ul li li,
 		ul li li:hover {
@@ -374,7 +374,7 @@ button#shelve::after {
 		}
 	a {
 		text-transform: none;
-		padding: .35em 0px;
+		padding: .35em 0;
 		}
 	a i {
 		display: none;
@@ -396,7 +396,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	.spine-actions {
 
-		padding: 0px;
+		padding: 0;
 
 		section {
 			z-index: 99163;
@@ -419,7 +419,7 @@ html.lt-ie9 #spine .spine-actions {
 			}
 
 		ul li {
-			padding: 0px; margin: 0px;
+			padding: 0; margin: 0;
 			list-style: none;
 			}
 
@@ -438,7 +438,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	.spine-actions-tabs {
 
-		padding: 0px;
+		padding: 0;
 		margin-top: 0;
 		margin-right: 1.75em;
 		margin-bottom: 0;
@@ -493,7 +493,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	form {
 		padding: 1em 1.75em 0 1.75em;
-		margin: 0px 0px -1px 0px;
+		margin: 0 0 -1px 0;
 		position: relative;
 		line-height: 1em;
 		}
@@ -644,8 +644,8 @@ html.lt-ie9 #spine .spine-actions {
 #spine-shortcuts *:hover {
 	border: none;
 	background: transparent;
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	border-radius: 0;
 	line-height: 1.1em;
 	box-shadow: none;
@@ -655,7 +655,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	li {
 
-		padding: 0px;
+		padding: 0;
 		list-style: none;
 
 		a {
@@ -669,13 +669,13 @@ html.lt-ie9 #spine .spine-actions {
 		a.ui-state-focus {
 			color: white;
 			background-color: #434d53;
-			margin: -1px -1.75em 0px -1.75em;
+			margin: -1px -1.75em 0 -1.75em;
 			padding: .6em 1.75em .6em 1.75em;
 			border-bottom: 2px #434d53 solid;
 			}
 		&:first-child a:hover,
 		&:first-child a.ui-state-focus {
-			margin: 0px -1.75em 0px -1.75em;
+			margin: 0 -1.75em 0 -1.75em;
 			border-bottom: 1px #434d53 solid;
 			}
 		&:first-child a {
@@ -743,7 +743,7 @@ html.lt-ie9 #spine .spine-actions {
 		}
 	.adr {
 		border: none;
-		padding: 0px;
+		padding: 0;
 		}
 	.street-address {
 		border-bottom: none;
@@ -875,7 +875,7 @@ html.lt-ie9 #spine footer {
 			font-size: 1.8em;
 			line-height: .8em;
 			height: 1.2em;
-			padding: .5em 0px !important;
+			padding: .5em 0 !important;
 			display: block;
 			position: relative;
 			text-transform: none;
@@ -967,19 +967,19 @@ html.lt-ie9 #spine footer {
 		display: block;
 		width: 50%;
 		float: left;
-		padding: 10px 0px;
-		margin: 0px;
+		padding: 10px 0;
+		margin: 0;
 		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		}
 	ul {
-		padding: 0px;
+		padding: 0;
 		}
 	ul li {
 		display: inline-block;
-		margin: 0px;
-		padding: 0px;
+		margin: 0;
+		padding: 0;
 		width: auto;
 		}
 	ul li a {
@@ -1061,8 +1061,8 @@ html.lt-ie9 #spine footer {
 		color: #b6bcbf;
 		display: block;
 		text-align: center;
-		margin: 0px 0px;
-		padding: 6px 0px;
+		margin: 0 0;
+		padding: 6px 0;
 	}
 	.copyright-link a {
 		color: #8b9399;

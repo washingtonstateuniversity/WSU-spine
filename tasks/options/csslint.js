@@ -26,7 +26,7 @@ module.exports = {
 			"important": false,                    // 2
 			"empty-rules": false,                  // 2
 			"vendor-prefix": false,                // 2
-			"zero-units": false                    // 2
+			"zero-units": 2
 		}
 	}
 };

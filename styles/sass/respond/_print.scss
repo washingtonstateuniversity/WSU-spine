@@ -4,7 +4,7 @@
 @mixin print-view {
 
 	html.print #binder main {
-		margin-left: 0px;
+		margin-left: 0;
 		}
 	html.print #binder #spine header button#shelve {
 		display: none;
@@ -17,21 +17,21 @@
 		}
 	html.print #spine,
 	html.print #glue {
-		min-height: 0px !important;
-		top: 0px !important;
+		min-height: 0 !important;
+		top: 0 !important;
 		width: 792px;
 		}
 	html.print #glue:before,
 	html.print #spine.bleed #glue:before {
 		width: 792px;
 		height: 50px;
-		left: 0px;
+		left: 0;
 		}
 	html.print #spine {
 		height: 50px;
 		width: 100%;
 		top: 0;
-		margin-left: 0px;
+		margin-left: 0;
 		}
 	html.print main {
 		padding-top: 50px;
@@ -62,7 +62,7 @@
 		width: auto;
 		font-size: 1.4em;
 		line-height: 1em;
-		padding: 0px;
+		padding: 0;
 		}
 	html.print #spine .print-button {
 		display: none;
@@ -72,15 +72,15 @@
 	#spine .print-controls {
 		display: block;
 		z-index: 99164;
-		margin: 0px 10px 0px 0px;
+		margin: 0 10px 0 0;
 		position: absolute;
 		right: 20px;
 		}
 	#spine .print-controls button {
 		display: block;
 		float: left;
-		margin: 0px;
-		text-indent: 0px;
+		margin: 0;
+		text-indent: 0;
 		font-weight: normal;
 		}
 	#spine button#print-invoke,
@@ -92,13 +92,13 @@
 		display: block;
 		}
 	#spine button#print-invoke {
-		border-width: 0px 1px 1px 1px;
-		border-radius: 0px 0px 0px 5px;
+		border-width: 0 1px 1px 1px;
+		border-radius: 0 0 0 5px;
 		padding: 4px 15px 4px 12px;
 		}
 	#spine button#print-cancel {
-		border-width: 0px 1px 1px 0px;
-		border-radius: 0px 0px 5px 0px;
+		border-width: 0 1px 1px 0;
+		border-radius: 0 0 5px 0;
 		padding: 4px 5px 4px 12px;
 		}
 	#spine button#print-invoke:hover,
