@@ -398,7 +398,7 @@
 			self.nav_state.positionLock = 0;
 
 			// The menu button should always trigger a toggle of the mobile navigation.
-			$( "header button" ).on( "touchstart click", self.toggle_mobile_nav );
+			$( "header button" ).on( "click touchend", self.toggle_mobile_nav );
 
 			// Tapping anything outside of the Spine should trigger a toggle if the menu is open.
 			main.on( "click touchend swipeleft", function( e ) {
