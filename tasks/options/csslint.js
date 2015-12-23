@@ -2,8 +2,9 @@ module.exports = {
 	spine: {
 		src: [ "<%= config.build %>/spine.css" ],
 		options: {
-			"fallback-colors": false, // unless we want to support IE8
-			"box-sizing": false,      // unless we want to support IE7
+			"fallback-colors": false,              // unless we want to support IE8
+			"box-sizing": false,                   // unless we want to support IE7
+			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
 			"ids": false,
 			"regex-selectors": false,
 			"adjoining-classes": false,
@@ -14,8 +15,7 @@ module.exports = {
 			"outline-none": false,       // audit
 			"known-properties": false,
 			"floats": false,
-			"font-sizes": true,
-			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
+			"font-sizes": false,
 			"overqualified-elements": false,       // 2
 			"duplicate-background-images": false,  // 2
 			"important": false,                    // 2
