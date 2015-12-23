@@ -20,7 +20,7 @@ input[type="button"] {
 	line-height: normal;
 	padding: 0.5em 1em;
 	vertical-align: middle;
-	}
+}
 
 .button:hover, button:hover,
 input[type="submit"]:hover,
@@ -34,7 +34,7 @@ input[type="button"]:focus {
 	background: $gray-er;
 	border-color: $gray-light;
 	border-width: 0 2px 2px 0;
-	}
+}
 
 .button:active, .button.active,
 button:active, button.active,
@@ -45,7 +45,7 @@ input[type="button"]:active {
 	border-color: $gray-darkest;
 	background: $gray-dark;
 	border-width: 2px 0 0 2px;
-	}
+}
 
 .button.full-width,
 button.full-width,
@@ -55,7 +55,8 @@ input[type="button"].full-width {
 	width: 100%;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-	text-align: center; }
+	text-align: center;
+}
 
 button.functional,
 button.glassine {
@@ -64,15 +65,14 @@ button.glassine {
 	margin: 0;
 	background: transparent;
 	border-radius: 0;
-	}
+}
 
 /* Fix for odd Mozilla border & padding issues */
 button:-moz-focus-inner,
 input:-moz-focus-inner {
 	border: 0;
 	padding: 0;
-	}
-
+}
 
 /* ## FORMS  */
 
@@ -84,14 +84,17 @@ form,fieldset,input,textarea,legend,label {
 form {
 	margin-bottom: 5px;
 	padding: 10px 0;
-	}
+}
+
 fieldset {
 	margin-bottom: 5px;
 	padding: 0;
-	}
+}
+
 input {
-		outline: none;
-		}
+	outline: none;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -107,7 +110,8 @@ select {
 }
 
 select {
-	padding: 0; }
+	padding: 0;
+}
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -122,21 +126,28 @@ textarea {
 	min-height: 60px;
 	width: 100%;
 	box-sizing: border-box;
-	}
+}
+
 label,
 legend {
 	font-weight: bold;
-	font-size: 13px;  }
+	font-size: 13px;
+}
+
 select {
-	 }
+}
+
 input[type="checkbox"] {
-	display: inline; }
+	display: inline;
+}
+
 label span,
 legend span {
 	font-weight: normal;
 	font-size: 13px;
-	color: #444; }
+	color: #444;
+}
 
 fieldset {
 	position: relative;
-	}
+}

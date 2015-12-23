@@ -24,7 +24,7 @@ $counter: (
 	22: twentytwo,
 	23: twentythree,
 	24: twentyfour
-	);
+);
 
 // Breaks
 $breaks: (
@@ -36,7 +36,7 @@ $breaks: (
 	1584: 'max-1584',
 	1782: 'max-1782',
 	1980: 'max-1980'
-	);
+);
 
 $sizes: (
 	594: 'small',
@@ -48,7 +48,7 @@ $sizes: (
 	1584: 'max-1584',
 	1782: 'max-1782',
 	1980: 'max-1980'
-	);
+);
 
 // Spacing
 $spacing-default: 2rem;
@@ -80,10 +80,11 @@ $signatures: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$h
 // Typography
 @mixin serif {
 	font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-	}
+}
+
 @mixin sans {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-	}
+}
 
 // locality acts as a base URL for assets. This must be updated when tagging a new release.
 // HTTPS is forced to avoid issues with file:// and because we're better off planning ahead.
@@ -99,109 +100,119 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			background-position: center 14px;
 			background-size: auto 30px;
 			height: 49px;
-			}
 		}
+	}
 
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path} #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 			.#{$signature}-signature #{$path} #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}.svg");
-				}
 			}
 		}
+	}
+
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path}.lighter #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 	    	.#{$signature}-signature #{$path}.lighter #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}.svg");
-				}
 			}
 		}
+	}
+
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path}.light #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}-white.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 	    	.#{$signature}-signature #{$path}.light #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}-white.svg");
-				}
 			}
 		}
+	}
+
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path}.gray #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}-white.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 	    	.#{$signature}-signature #{$path}.gray #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}-white.svg");
-				}
 			}
 		}
+	}
+
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path}.dark #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}-white.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 	    	.#{$signature}-signature #{$path}.dark #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}-white.svg");
-				}
 			}
 		}
+	}
+
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path} .darker #wsu-signature,
 			#{$path} .darkest #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 	    	.#{$signature}-signature #{$path}.darker #wsu-signature,
 	    	.#{$signature}-signature #{$path}.darkest #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}.svg");
-				}
 			}
 		}
+	}
+
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path}.crimson #wsu-signature {
 		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}-white.svg");
-		    	}
-	    	}
+			}
+		}
 		@else {
 	    	.#{$signature}-signature #{$path}.crimson #wsu-signature {
 	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}-white.svg");
-				}
 			}
 		}
+	}
 
 	html.lt-ie9 #{$path} #wsu-signature {
 		background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}.png");
-		}
-
 	}
+}
 
 @mixin header-colors {
-  #binder #spine {
-    header,
-    #scroll { background-color: white; }
-    @each $spine-color, $color in $spine-colors {
-      &.#{""+$spine-color} header,
-      &.#{""+$spine-color} #scroll { background-color: $color; }
-    }
-  }
+	#binder #spine {
+		header,
+		#scroll {
+			background-color: white;
+		}
+
+		@each $spine-color, $color in $spine-colors {
+			&.#{""+$spine-color} header,
+			&.#{""+$spine-color} #scroll {
+				background-color: $color;
+			}
+		}
+	}
 }

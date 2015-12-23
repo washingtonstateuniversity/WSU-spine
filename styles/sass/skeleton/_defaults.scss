@@ -1,142 +1,189 @@
 @charset "UTF-8";
 
-	/* ### Fonts  */
+/* ### Fonts  */
+body {
+	font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
 
-	body { font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
-	.sans { @include sans; }
-	.serif { @include serif; }
+.sans {
+	@include sans;
+}
 
-	/* ### Headers */
+.serif {
+	@include serif;
+}
 
-	h6,h5,h4,h3,h2,h1 {
-		margin: 0;
-		line-height: 1.1em;
-		letter-spacing: 0;
-		font-weight: bold;
-		padding: .5em 0 .2em 0;
+/* ### Headers */
+h6,h5,h4,h3,h2,h1 {
+	margin: 0;
+	line-height: 1.1em;
+	letter-spacing: 0;
+	font-weight: bold;
+	padding: .5em 0 .2em 0;
+}
+
+h1 {
+	font-size: 2em;
+	font-size: 2rem;
+	padding-top: 0;
+}
+
+h2 {
+	font-size: 1.8em;
+	font-size: 1.8rem;
+}
+
+h3 {
+	font-size: 1.6em;
+	font-size: 1.6rem;
+}
+
+h4 {
+	font-size: 1.4em;
+	font-size: 1.4rem;
+}
+
+h5 {
+	font-size: 1.2em;
+	font-size: 1.2rem;
+}
+
+h6 {
+	font-size: 1.0em;
+	font-size: 1.0rem;
+}
+
+/* ### Lists */
+ul, ol {
+	padding: 0 2em 1em 2em;
+}
+
+ul ul,
+ol ol {
+	padding-bottom: 0;
+}
+
+ul li,
+ol li {
+	padding: 0 0 .3em 0;
+	line-height: 1.4em;
+}
+
+ul li ul,
+ol li ol {
+	padding-top: .3em;
+}
+
+p {
+	margin: 0;
+	padding-bottom: 1em;
+}
+
+p ~ p,
+blockquote,
+ul, ol {
+	padding-bottom: 1em;
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+}
+
+h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
+h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
+	padding-top: .3em;
+}
+
+blockquote {
+	padding-left: 1em;
+	padding-right: 1em;
+	@include serif;
+}
+
+pre, code {
+	font-family: "Courier New", Courier, monospace;
+}
+
+big {
+	font-size: 1.5em;
+}
+
+small {
+	font-size: smaller;
+	line-height: 110%;
+}
+
+article img[align="right"] {
+	margin: 0 0 1em 10px;
+}
+
+article img[align="left"] {
+	margin: 0 10px 1em 0;
+}
+
+sup,
+sub {
+	font-size: .7em;
+	line-height: .7em;
+}
+
+sup {
+	vertical-align: super;
+	margin-top: -6px;
+}
+
+sub {
+	vertical-align: sub;
+}
+
+small {
+	font-size: .8em;
+	line-height: .8em;
+}
+
+nav ul li,
+.widget ul li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #981e32;
+}
+
+a:hover {
+	color: #c60c30;
+}
+
+strong,
+b {
+	font-weight: bold;
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+hr {
+	border-width: 0;
+	border-style: solid;
+	border-color: black;
+	margin: 1em 0;
+	height: 1px;
+	background-color: rgba(93,105,112,0.50);
+	display: block;
+	clear: both;
+}
+
+/* IE9, IE10 */
+@media screen and (min-width:0\0) {
+	em,i,bold,big,h1,h2,h3,h4,h5,h6 {
+		font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	}
-
-	h1 {
-		font-size: 2em;
-		font-size: 2rem;
-		padding-top: 0;
-		}
-	h2 {
-		font-size: 1.8em;
-		font-size: 1.8rem;
-		}
-	h3 {
-		font-size: 1.6em;
-		font-size: 1.6rem;
-		}
-	h4 {
-		font-size: 1.4em;
-		font-size: 1.4rem;
-		}
-	h5 {
-		font-size: 1.2em;
-		font-size: 1.2rem;
-		}
-	h6 {
-		font-size: 1.0em;
-		font-size: 1.0rem;
-		}
-
-	/* ### Lists */
-
-	ul, ol {
-		padding: 0 2em 1em 2em;
-		}
-	ul ul,
-	ol ol {
-		padding-bottom: 0;
-		}
-	ul li,
-	ol li {
-		padding: 0 0 .3em 0;
-		line-height: 1.4em;
-		}
-	ul li ul,
-	ol li ol {
-		padding-top: .3em;
-		}
-
-	p {
-		margin: 0;
-		padding-bottom: 1em;
-		}
-	p ~ p,
-	blockquote,
-	ul, ol {
-		padding-bottom: 1em;
-		}
-
-	h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-
-		}
-
-	h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
-	h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
-		padding-top: .3em;
-		}
-
-	blockquote {
-		padding-left: 1em;
-		padding-right: 1em;
-		@include serif;
-		}
-
-	pre, code {
-		font-family: "Courier New", Courier, monospace;
-		}
-
-	big {
-		font-size: 1.5em;
-		}
-	small {
-		font-size: smaller;
-		line-height: 110%;
-		}
-
-	article img[align="right"] {
-		margin: 0 0 1em 10px;
-		}
-	article img[align="left"] {
-		margin: 0 10px 1em 0;
-		}
-
-	sup,sub { font-size: .7em; line-height: .7em; }
-	sup { vertical-align: super; margin-top: -6px; }
-	sub { vertical-align: sub; }
-	small { font-size: .8em; line-height: .8em;	}
-	nav ul li,
-	.widget ul li { list-style: none; }
-	a {
-		text-decoration: none;
-		color: #981e32;
-		}
-	a:hover { color: #c60c30; }
-	strong,b { font-weight: bold; }
-	em,i { font-style: italic; }
-	hr { border-width: 0;
-		border-style: solid;
-		border-color: black;
-		margin: 1em 0;
-		height: 1px;
-		background-color: rgba(93,105,112,0.50);
-		display: block;
-		clear: both;
-		}
-
-
-	/* IE9, IE10 */
-	@media screen and (min-width:0\0) {
-	    em,i,bold,big,h1,h2,h3,h4,h5,h6 { font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
-	}
+}
 
 /* Block Styles  */
-
 ul + h1, ul + h2, ul + h3, ul + h4,
 ol + h1, ol + h2, ol + h3, ol + h4 {
 	margin-top: .8;
-	}
+}

@@ -1,59 +1,56 @@
 @charset "UTF-8";
 
-
 // Twelfths
-
-
 @mixin twelfths-pixels {
-
 	@each $count, $name in $counter {
-	@if $count <= 24 {
-		$width: 66*$count;
-		// @if $count == '01' { $plurality: 'count'; }
-		// @else { $plurality: 'counts'; }
-		.#{$name}-twelfths, .twelfths-#{$count} { width: #{$width}px; }
-		.#{$name}-twelfths-max, .twelfths-#{$count}-max { max-width: #{$width}px; }
-		.#{$name}-twelfths-tall, .twelfths-#{$count}-tall { height: #{$width}px; }
+		@if $count <= 24 {
+			$width: 66 * $count;
+			.#{$name}-twelfths, .twelfths-#{$count} { width: #{$width}px; }
+			.#{$name}-twelfths-max, .twelfths-#{$count}-max { max-width: #{$width}px; }
+			.#{$name}-twelfths-tall, .twelfths-#{$count}-tall { height: #{$width}px; }
 		}
 	}
-
-	}
+}
 
 @mixin twelfths-percents {
-
 	$percentage: 8.333333%;
 	@each $count, $name in $counter {
-	@if $count <= 12 {
-			 .#{$name}-twelfths, .twelfths-#{$count} { width: #{$percentage}; }
-			$percentage: 8.333333% + $percentage;
+		@if $count <= 12 {
+			.#{$name}-twelfths, .twelfths-#{$count} {
+				width: #{$percentage};
 			}
+			$percentage: 8.333333% + $percentage;
 		}
-
 	}
+}
 
 // Fifteenths
 
 @mixin fifteenths-pixels {
-
 	@each $count, $name in $counter {
 		@if $count <= 15 {
 			$width: 66*$count;
-			.#{$name}-fifteenths, .fifteenths-#{$count} { width: #{$width}px; }
-			.#{$name}-fifteenths-max, .fifteenths-#{$count}-max { max-width: #{$width}px; }
-			.#{$name}-fifteenths-tall, .fifteenths-#{$count}-tall { height: #{$width}px; }
+			.#{$name}-fifteenths, .fifteenths-#{$count} {
+				width: #{$width}px;
+			}
+			.#{$name}-fifteenths-max, .fifteenths-#{$count}-max {
+				max-width: #{$width}px;
+			}
+			.#{$name}-fifteenths-tall, .fifteenths-#{$count}-tall {
+				height: #{$width}px;
 			}
 		}
-
 	}
+}
 
 @mixin fifteenths-percents {
-
 	$percentage: 6.6666667%;
 	@each $count, $name in $counter {
-	@if $count <= 15 {
-			 .#{$name}-fifteenths, .fifteenths-#{$count} { width: #{$percentage}; }
-			$percentage: 6.6666667% + $percentage;
+		@if $count <= 15 {
+			.#{$name}-fifteenths, .fifteenths-#{$count} {
+				width: #{$percentage};
 			}
+			$percentage: 6.6666667% + $percentage;
 		}
-
 	}
+}

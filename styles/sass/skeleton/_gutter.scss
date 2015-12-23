@@ -8,26 +8,24 @@
 	);
 
 	@each $gutter, $width in $gutters {
-	
 		.gutter#{$gutter} .column:not(.gutterless),
 		.guttered#{$gutter} {
 			padding-left: $width;
 			padding-right: $width;
 		}
-	
 	}
 
 	$spacing: (
 		'loose': 4rem,
 		'tight': 1rem
-		);
+	);
 
 	@each $space, $width in $spacing {
-	
 		.spacing-#{$space} .gutter .column:not(.gutterless),
 		.spacing-#{$space} .guttered {
 			padding-left: $width;
-			padding-right: $width; }
+			padding-right: $width;
+		}
 	
 		// One Column
 		.spacing-#{$space} .single.gutter .column:not(.gutterless) {
@@ -44,6 +42,7 @@
 		.spacing-#{$space} .margin-right.gutter .column.one:not(.gutterless) {
 			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
+
 		.spacing-#{$space} .halves.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .halves.gutter .column:nth-of-type(2n+4):not(.gutterless),
 		.spacing-#{$space} .side-left.gutter .column.two:not(.gutterless),
@@ -59,12 +58,14 @@
 		.spacing-#{$space} .triptych.gutter .column.one:not(.gutterless) {
 			@if $layout != "small" { padding-right: $width * .3125; } @else { padding-right: $width; }
 		}
+
 		.spacing-#{$space} .thirds.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+5):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.two:not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .65625; } @else { padding-left: $width; }
 			@if $layout != "small" { padding-right: $width * .65625; } @else { padding-right: $width; }
 		}
+
 		.spacing-#{$space} .thirds.gutter .column.three:not(.gutterless),
 		.spacing-#{$space} .thirds.gutter .column:nth-of-type(3n+6):not(.gutterless),
 		.spacing-#{$space} .triptych.gutter .column.three:not(.gutterless) {
@@ -76,25 +77,26 @@
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+5):not(.gutterless) {
 			@if $layout != "small" { padding-right: $width * .25; } @else { padding-right: $width * .5; }
 		}
+
 		.spacing-#{$space} .quarters.gutter .column.two:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+6):not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .75; } @else { padding-left: $width * .5; }
 			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
+
 		.spacing-#{$space} .quarters.gutter .column.three:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+7):not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
 			@if $layout != "small" { padding-right: $width * .75; } @else { padding-right: $width * .5; }
 		}
+
 		.spacing-#{$space} .quarters.gutter .column.four:not(.gutterless),
 		.spacing-#{$space} .quarters.gutter .column:nth-of-type(4n+8):not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .25; } @else { padding-left: $width * .5; }
 		}
-	
 	}
 
 	@each $gutter, $width in $gutters {
-	
 		// One Column
 		.single.gutter#{$gutter} .column:not(.gutterless) {
 			padding-left: $width;
@@ -108,6 +110,7 @@
 		.side-right.gutter#{$gutter} .column.one:not(.gutterless) {
 			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
+
 		.halves.gutter#{$gutter} .column.two:not(.gutterless),
 		.halves.gutter#{$gutter} .column:nth-of-type(2n+4):not(.gutterless),
 		.side-left.gutter#{$gutter} .column.two:not(.gutterless),
@@ -121,12 +124,14 @@
 		.triptych.gutter#{$gutter} .column.one:not(.gutterless) {
 			@if $layout != "small" { padding-right: $width * .3125; } @else { padding-right: $width; }
 		}
+
 		.thirds.gutter#{$gutter} .column.two:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+5):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.two:not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .65625; } @else { padding-left: $width; }
 			@if $layout != "small" { padding-right: $width * .65625; } @else { padding-right: $width; }
 		}
+
 		.thirds.gutter#{$gutter} .column.three:not(.gutterless),
 		.thirds.gutter#{$gutter} .column:nth-of-type(3n+6):not(.gutterless),
 		.triptych.gutter#{$gutter} .column.three:not(.gutterless) {
@@ -138,21 +143,22 @@
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+5):not(.gutterless) {
 			@if $layout != "small" { padding-right: $width * .25 ; } @else { padding-right: $width * .5; }
 		}
+
 		.quarters.gutter#{$gutter} .column.two:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+6):not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .75; } @else { padding-left: $width * .5; }
 			@if $layout != "small" { padding-right: $width * .5; } @else { padding-right: $width; }
 		}
+
 		.quarters.gutter#{$gutter} .column.three:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+7):not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .5; } @else { padding-left: $width; }
 			@if $layout != "small" { padding-right: $width * .75; } @else { padding-right: $width * .5; }
 		}
+
 		.quarters.gutter#{$gutter} .column.four:not(.gutterless),
 		.quarters.gutter#{$gutter} .column:nth-of-type(4n+8):not(.gutterless) {
 			@if $layout != "small" { padding-left: $width * .25; } @else { padding-left: $width * .5; }
 		}
-	
 	}
-
 }

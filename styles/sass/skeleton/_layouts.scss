@@ -2,51 +2,66 @@
 $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','margin-right','triptych','quarters','eighths';
 
 @mixin layouts-pixels {
+	.row.single .column {
+		width: 792px;
+	}
 
-	// single
+	.column.singled {
+		width: 792px !important;
+	}
 
-	.row.single .column { width: 792px; }
-	.column.singled { width: 792px !important; }
+	.row.halves .column {
+		width: 396px;
+	}
 
-	// halves
+	.column.half {
+		width: 396px !important;
+	}
 
-	.row.halves .column { width: 396px; }
-	.column.half { width: 396px !important; }
+	.row.thirds .column {
+		width: 264px;
+	}
 
-	// thirds
+	.column.third {
+		width: 264px !important;
+	}
 
-	.row.thirds .column { width: 264px; }
-	.column.third { width: 264px !important; }
+	.row.quarters .column {
+		width: 198px;
+	}
 
-	 // quarters
+	.column.quarter {
+		width: 198px !important;
+	}
 
-	.row.quarters .column { width: 198px; }
-	.column.quarter { width: 198px !important; }
+	.row.triptych .column {
+		width: 198px;
+	}
 
-	// triptych
-
-	.row.triptych .column { width: 198px; }
-	.row.triptych .column.two { width: 396px; }
-
-	// Margin - Right & Left
+	.row.triptych .column.two {
+		width: 396px;
+	}
 
 	.row.margin-right .column.one,
 	.row.margin-left .column.two {
-		width: 594px; }
+		width: 594px;
+	}
+
 	.row.margin-right .column.two,
 	.row.margin-left .column.one {
-		width: 198px; }
-
-	//  Side - Right & Left
+		width: 198px;
+	}
 
 	.row.side-right .column.one,
 	.row.side-left .column.two {
-		width: 528px; }
+		width: 528px;
+	}
+
 	.row.side-right .column.two,
 	.row.side-left .column.one {
-		width: 264px; }
-
+		width: 264px;
 	}
+}
 
 @mixin layouts-percents {
 
@@ -98,44 +113,66 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 
 	.row {
 		max-width: auto;
-		}
+	}
 
 	/* single then halves */
+	.row.single row.halves .column {
+		width: 396px;
+	}
 
-	.row.single row.halves .column { width: 396px; }
-	.fluid .row.single .halves .column { width: 50%; }
+	.fluid .row.single .halves .column {
+		width: 50%;
+	}
 
 	/* halves then halves */
+	.row.halves .halves .column {
+		width: 198px;
+	}
 
-	.row.halves .halves .column { width: 198px; }
 	.hybrid .row.halves .halves .column,
-	.fluid .row.halves .halves .column { width: 50%; }
+	.fluid .row.halves .halves .column {
+		width: 50%;
+	}
 
 	/* halves then thirds */
-
 	.row .row.thirds .column {
 		width: 132px;
-		}
-	.row.quarters .row.thirds .column { width: 66px; }
-	.fluid .row .row.thirds .column { width: 33%; }
-	.fluid .row .row.thirds .column.two { width: 34%; }
+	}
+
+	.row.quarters .row.thirds .column {
+		width: 66px;
+	}
+
+	.fluid .row .row.thirds .column {
+		width: 33%;
+	}
+
+	.fluid .row .row.thirds .column.two {
+		width: 34%;
+	}
 
 	/* halves then quarters */
+	.row .row.quarters .column {
+		width: 99px;
+	}
 
-	.row .row.quarters .column { width: 99px; }
 	.hybrid .row .row.quarters .column,
-	.fluid .row .row.quarters .column { width: 25%; }
+	.fluid .row .row.quarters .column {
+		width: 25%;
+	}
 
 	/* thirds then halves */
+	.row.thirds .row.halves .column {
+		width: 132px;
+	}
 
-	.row.thirds .row.halves .column { width: 132px; }
-	.fluid .row.thirds .halves .column { width: 50%; }
+	.fluid .row.thirds .halves .column {
+		width: 50%;
+	}
 
 	/* quarters then ... */
-
 	.row .column.row.single,
 	.row .column.row.single .column {
 		width: 792px;
-		}
-
 	}
+}
