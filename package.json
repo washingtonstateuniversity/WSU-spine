@@ -10,11 +10,10 @@
 	},
 	"file": "spine",
 	"devDependencies": {
-		"load-grunt-tasks": "~3.4.0",
-		"glob": "~6.0.1",
+		"autoprefixer": "^6.2.1",
 		"deepmerge ": "~0.2.10",
 		"extend": "~3.0.0",
-		"wrench":"~1.5.8",
+		"glob": "~6.0.1",
 		"grunt": "~0.4.5",
 		"grunt-contrib-clean": "^0.7.0",
 		"grunt-contrib-concat": "~0.5.1",
@@ -26,10 +25,12 @@
 		"grunt-contrib-uglify": "~0.11.0",
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-env": "~0.4.4",
+		"grunt-postcss": "^0.7.1",
 		"grunt-preprocess": "~5.0.1",
-		"grunt-autoprefixer": "~3.0.3",
-		"nunjucks": "~2.2.0",
+		"load-grunt-tasks": "~3.4.0",
 		"marked": "~0.3.5",
-		"nunjucks-markdown": "~1.1.0"
+		"nunjucks": "~2.2.0",
+		"nunjucks-markdown": "~1.1.0",
+		"wrench": "~1.5.8"
 	}
 }

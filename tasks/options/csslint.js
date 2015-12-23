@@ -20,12 +20,12 @@ module.exports = {
 			"display-property-grouping": true,
 			"shorthand": false,                    // true
 			"duplicate-properties": false,         // true
-			"compatible-vendor-prefixes": false,   // 2
+			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
 			"overqualified-elements": false,       // 2
 			"duplicate-background-images": false,  // 2
 			"important": false,                    // 2
 			"empty-rules": false,                  // 2
-			"vendor-prefix": false,                // 2
+			"vendor-prefix": 2,
 			"zero-units": 2
 		}
 	}

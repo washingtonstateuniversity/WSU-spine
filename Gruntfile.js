@@ -58,7 +58,7 @@ module.exports = function( grunt ) {
 		"sass:dev",
 		"concat",
 		"preprocess:js",
-		"autoprefixer",
+		"postcss",
 		"csslint",
 		"cssmin",
 		"uglify"
