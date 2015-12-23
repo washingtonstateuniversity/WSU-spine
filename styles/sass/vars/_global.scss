@@ -196,11 +196,12 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 	}
 
 @mixin header-colors {
-
-	#binder #spine {
-		header { background-color: white; }
-		@each $spine-color, $color in $spine-colors {
-			&.#{""+$spine-color} header { background-color: $color; }
-			}
-		}
-	}
+  #binder #spine {
+    header,
+    #scroll { background-color: white; }
+    @each $spine-color, $color in $spine-colors {
+      &.#{""+$spine-color} header,
+      &.#{""+$spine-color} #scroll { background-color: $color; }
+    }
+  }
+}

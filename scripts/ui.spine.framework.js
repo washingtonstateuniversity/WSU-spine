@@ -71,18 +71,129 @@
 		},
 
 		/**
+		 * Setup a scroll container for use with iOS.
+		 */
+		setup_nav_scroll: function() {
+			$( "#glue" ).wrapInner( "<div id='scroll'>" );
+			$( "#spine header" ).insertBefore( $( "#glue" ) );
+		},
+
+		/**
+		 * Determine if the page view is in a mobile state, defined as less than 990px;
+		 */
+		is_mobile_view: function() {
+			if ( $(document).outerWidth() < 990 ) {
+				return true;
+			}
+
+			return false;
+		},
+
+		/**
+		 * Set the Spine to a given state, mobile or full.
+		 *
+		 * @param {string} state The state of the Spine to set.
+		 */
+		set_spine_state: function( state ) {
+			if ( "mobile" === state ) {
+				$( "html" ).removeClass( "spine-full" ).addClass( "ios spine-mobile" );
+				this.setup_nav_scroll();
+			} else {
+				$( "html" ).removeClass( "ios spine-mobile" ).addClass( "spine-full" );
+				if ( $( "#scroll" ).length ) {
+					$( "#wsu-actions" ).unwrap();
+					$( "#spine header" ).prependTo( "#glue" );
+				}
+			}
+		},
+
+		/**
+		 * Determine if the Spine is already in a mobile state.
+		 *
+		 * @returns {boolean}
+		 */
+		has_mobile_state: function() {
+			if ( $( "html" ).hasClass( "spine-mobile" ) ) {
+				return true;
+			}
+
+			return false;
+		},
+
+		/**
+		 * On a resize event, adjust pieces of the Spine framework accordingly.
+		 */
+		framework_adjust_on_resize: function() {
+			var self, spread, verso, page, para, recto, recto_margin, verso_width,
+				viewport_ht, spine, glue, main;
+
+			self = this;
+
+			// Refresh data for global elements.
+			spine = self._get_globals( "spine" ).refresh();
+			glue = self._get_globals( "glue" ).refresh();
+			main = self._get_globals( "main" ).refresh();
+
+			if ( self.is_mobile_view() && ! self.has_mobile_state() ) {
+				self.set_spine_state( "mobile" );
+			} else if ( ! self.is_mobile_view() && self.has_mobile_state() ) {
+				self.set_spine_state( "full" );
+			}
+
+			self.sizing();
+			self.equalizing();
+			self.mainheight();
+
+			// Only run function if an unbound element exists
+			if ( $( ".unbound, #binder.broken" ).length ) {
+				spread = $( window ).width();
+				verso = self._get_globals( "main" ).offset().left;
+				page = self._get_globals( "main" ).width();
+				recto = spread - self._get_globals( "main" ).offset().left;
+				recto_margin = "";
+
+				if ( recto >= page ) {
+					recto_margin = recto - page;
+				} else {
+					recto_margin = 0;
+				}
+
+				/* Broken Binding */
+				if ( $( "#binder" ).is( ".broken" ) ) {
+					self._get_globals( "main" ).css( "width", recto );
+				}
+
+				verso_width = verso + self._get_globals( "main" ).width();
+
+				$( ".unbound:not(.element).recto" ).css( "width", recto ).css( "margin-right", -( recto_margin ) );
+				$( ".unbound.element.recto" ).each( function() {
+					para = $( this ).width();
+					$( this ).css( "width", para + recto_margin ).css( "margin-right", -( recto_margin ) );
+				} );
+				$( ".unbound.verso" ).css( "width", verso_width ).css( "margin-left", -( verso ) );
+				$( ".unbound.verso.recto" ).css( "width", spread );
+			}
+
+			viewport_ht = $( window ).height();
+
+			if ( $( ".spine-header" ).height() > 50 ) {
+				glue.css( "min-height", viewport_ht );
+				spine.css( "min-height", viewport_ht );
+			} else {
+				glue.css( "min-height", viewport_ht - 50 );
+				spine.css( "min-height", viewport_ht - 50 );
+			}
+
+			$( document ).trigger( "scroll" );
+		},
+
+		/**
 		 * Create the Spine framework and setup basic events based on information present in the DOM.
 		 */
 		framework_create: function() {
-			var self, contactHtml, propmap = {}, spread, verso, page, para, recto, recto_margin, verso_width,
-				svg_imgs, viewport_ht, spine, glue, main;
+			var self, contactHtml, propmap = {}, svg_imgs;
 
 			self = this; // preserve scope.
-
-			// Refresh data for global elements.
-			spine = self._get_globals("spine").refresh();
-			glue = self._get_globals("glue").refresh();
-			main = self._get_globals("main").refresh();
 
 			// Generate the contact section.
 			if (!$("#wsu-contact").length) {
@@ -104,9 +215,11 @@
 
 			self.setup_nav();
 
-			if ( $.is_iOS() || $.is_Android() ) {
-				$( "html" ).addClass( "ios" );
-				self.setup_nav_scroll();
+			// Set the initial state of the Spine on page load. Mobile is defined as less than 990px.
+			if ( self.is_mobile_view() ) {
+				self.set_spine_state( "mobile" );
+			} else {
+				$( "html" ).addClass( "spine-full" );
 			}
 
 			// If SVG is not supported, add a class and replace Spine SVG files with PNG equivalents.
@@ -124,57 +237,8 @@
 			self.setup_spine();
 			self.setup_printing();
 
-			$(window).on("resize", function() {
-				self.sizing();
-				self.equalizing();
-				self.mainheight();
-
-				// Only run function if an unbound element exists
-				if( $(".unbound,#binder.broken").length ) {
-					spread = $(window).width();
-					verso = self._get_globals("main").offset().left;
-					page = self._get_globals("main").width();
-					recto = spread - self._get_globals("main").offset().left;
-					recto_margin = "";
-
-					if (recto >= page ) {
-						recto_margin = recto - page;
-					} else {
-						recto_margin = 0;
-					}
-
-					/* Broken Binding */
-					if ($("#binder").is(".broken")) {
-						self._get_globals("main").css("width",recto);
-					}
-
-					verso_width = verso + self._get_globals("main").width();
-
-					$(".unbound:not(.element).recto").css("width",recto).css("margin-right",-(recto_margin));
-					$(".unbound.element.recto").each( function() {
-						para = $(this).width();
-						$(this).css("width",para+recto_margin).css("margin-right",-(recto_margin));
-					});
-					$(".unbound.verso").css("width",verso_width).css("margin-left",-(verso));
-					$(".unbound.verso.recto").css("width",spread);
-				}
-
-				viewport_ht = $(window).height();
-				glue.css("min-height",viewport_ht);
-				spine.css("min-height",viewport_ht);
-
-				if ($(".spine-header").height()>50) {
-					spine.removeClass("unshelved");
-					spine.removeClass("shelved");
-				} else {
-					glue.css("min-height",viewport_ht-50);
-					spine.addClass("shelved");
-				}
-
-				$(document).trigger("scroll");
-
-			}).trigger("resize");
-			$(document).trigger("scroll");
+			$( window ).on( "resize orientationchange", function() { self.framework_adjust_on_resize(); } ).trigger( "resize" );
+			$( document ).trigger( "scroll" );
 		},
 
 		// Label #jacket with current window size
@@ -277,12 +341,51 @@
 		setup_content: function() {},
 
 		/**
+		 * Toggle the display and removal of the mobile navigation.
+		 *
+		 * @param e
+		 */
+		toggle_mobile_nav: function(e) {
+			var body, spine, glue, transitionEnd;
+
+			if ( typeof e !== "undefined" ) {
+				e.preventDefault();
+			}
+
+			body = $( "body" );
+			spine = $.ui.spine.prototype._get_globals("spine").refresh();
+			glue = $.ui.spine.prototype._get_globals("glue").refresh();
+
+			/* Cross browser support for CSS "transition end" event */
+			transitionEnd = "transitionend webkitTransitionEnd otransitionend MSTransitionEnd";
+
+			body.addClass( "spine-animating" );
+
+			if ( body.hasClass( "spine-mobile-open" ) ) {
+				body.addClass( "spine-move-left" );
+			} else {
+				body.addClass( "spine-move-right" );
+			}
+
+			glue.on( transitionEnd, function() {
+				body.removeClass( "spine-animating spine-move-left spine-move-right" );
+
+				if ( body.hasClass( "spine-mobile-open" ) ) {
+					body.removeClass( "spine-mobile-open" );
+				} else {
+					body.addClass( "spine-mobile-open" );
+				}
+				glue.off( transitionEnd );
+			} );
+		},
+
+		/**
 		 * Sets up the spine area
 		 */
 		setup_spine: function(){
 			var self, spine, glue, main, viewport_ht, spine_ht, height_dif, positionLock;
 
-			$("#glue > header").prepend("<button id='shelve' />");
+			$( "#spine .spine-header" ).prepend( "<button id='shelve' />" );
 
 			self = this;
 
@@ -294,59 +397,55 @@
 			self.nav_state.scroll_dif = 0;
 			self.nav_state.positionLock = 0;
 
-			$("header button").on("click",function(e) {
-				e.preventDefault();
-				spine.toggleClass("unshelved shelved");
-			});
+			// The menu button should always trigger a toggle of the mobile navigation.
+			$( "header button" ).on( "click touchend", self.toggle_mobile_nav );
 
-			main.on("click swipeleft", function() {
-				if ( spine.is(".unshelved") ) {
-					spine.toggleClass("shelved unshelved");
+			// Tapping anything outside of the Spine should trigger a toggle if the menu is open.
+			main.on( "click", function( e ) {
+				if ( $( "body" ).hasClass( "spine-mobile-open" ) ) {
+					self.toggle_mobile_nav( e );
 				}
 			});
 
-
-			if ($(".ios .hybrid .unshelved").length <= 0) {
+			if ( ! self.is_mobile_view() ) {
 				// Fixed/Sticky Horizontal Header
-				$(document).on("scroll touchmove",function() {
-					self.apply_nav_func(self);
-				});
+				$( document ).on( "scroll touchmove", function() {
+					self.apply_nav_func( self );
+				} );
 
 				// Watch for DOM changes and resize the Spine to match.
-				$.observeDOM( glue , function(){
-					self.apply_nav_func(self);
-				});
+				$.observeDOM( glue , function() {
+					self.apply_nav_func( self );
+				} );
 
-				$(document).keydown(function(e) {
-					if(e.which === 35 || e.which === 36) {
-						viewport_ht		= $(window).height();
-						spine_ht		= spine[0].scrollHeight;
-						height_dif		= viewport_ht - spine_ht;
-						if (e.which === 35) {
+				$( document ).keydown( function( e ) {
+					if( e.which === 35 || e.which === 36 ) {
+						viewport_ht	= $( window ).height();
+						spine_ht	= spine[0].scrollHeight;
+						height_dif	= viewport_ht - spine_ht;
+
+						if ( e.which === 35 ) {
 							positionLock = height_dif;
-						} else if (e.which === 36) {
+						} else if ( e.which === 36 ) {
 							positionLock = 0;
 						}
-						spine.css({"position":"fixed","top":positionLock+"px"});
-						self.nav_state.positionLock=positionLock;
-					}
-				});
-			} else {
-				$("#scroll").on("focus",function(){
-					$(document).trigger("touchend");
-				});
-			}
 
-			// Add skimming
-			$(document).scroll(function() {
-				var top;
-				top = $(document).scrollTop();
-				if ( top > 148 ) {
-					$("#spine").addClass("skimmed");
-				} else {
-					$("#spine").removeClass("skimmed");
-				}
-			});
+						spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
+						self.nav_state.positionLock = positionLock;
+					}
+				} );
+
+				// Apply the `.skimmed` class to the Spine on non mobile views after 148px.
+				$( document ).scroll( function() {
+					var top;
+					top = $( document ).scrollTop();
+					if ( top > 148 ) {
+						$( "#spine" ).addClass( "skimmed" );
+					} else {
+						$( "#spine" ).removeClass( "skimmed" );
+					}
+				} );
+			}
 		},
 
 		/**
@@ -357,6 +456,11 @@
 		 */
 		apply_nav_func: function(self) {
 			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
+
+			// Disable extended nav positioning for mobile devices.
+			if ( this.is_mobile_view() ) {
+				return;
+			}
 
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
@@ -431,7 +535,7 @@
 			wsu_actions = self._get_globals("wsu_actions").refresh();
 			wsu_actions.append(html);
 
-			$("#wsu-" + tab + "-tab button").on("click",function(e) {
+			$( "#wsu-" + tab + "-tab button" ).on( "click touchend", function( e ) {
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab").toggleClass("opened closed");
 
@@ -439,14 +543,6 @@
 
 				$(".spine-action.opened").css( "min-height", action_ht );
 			});
-		},
-
-		/**
-		 * Setup a scroll container for use with iOS.
-		 */
-		setup_nav_scroll: function() {
-			$("#glue").wrapInner( "<div id='scroll'>" );
-			$("#spine header").insertBefore($("#scroll"));
 		},
 
 		/**
@@ -486,7 +582,7 @@
 				}
 
 				// Disclosure
-				tar.on("click",function(e) {
+				tar.on( "click touchend", function( e ) {
 					e.preventDefault();
 					tar.parent("li").siblings().removeClass("opened");
 					tar.parent("li").toggleClass("opened");
@@ -540,7 +636,7 @@
 			$("#wsu-print-tab button").click(print);
 
 			// Shut a tool section
-			$("button.shut").on("click",function(e) {
+			$("button.shut").on( "click touchend", function( e ) {
 				e.preventDefault();
 				wsu_actions.find(".opened").toggleClass("opened closed");
 			});

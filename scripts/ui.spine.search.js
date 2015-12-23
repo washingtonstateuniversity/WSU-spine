@@ -80,7 +80,7 @@
 				$("#wsu-search").append("<div id='spine-shortcuts' class='spine-shortcuts'></div>");
 			}
 
-			$("#wsu-search-tab button").on("click",function() {
+			$( "#wsu-search-tab button" ).on( "click touchend", function() {
 				self._get_globals("search_input").refresh().focus();
 			});
 			this.setup_search();
@@ -237,11 +237,10 @@
 				}
 			});
 
-			search_input.off("click").on("click",function(e){
+			search_input.off( "click touchend" ).on( "click touchend", function( e ){
 				e.stopPropagation();
 				e.preventDefault();
 			});
-
 
 			$("#wsu-search form").submit( function() {
 				var scope,site,cx,cof,search_term,search_url;
