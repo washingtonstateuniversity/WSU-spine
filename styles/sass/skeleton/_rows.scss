@@ -2,20 +2,13 @@
 
 .row {
 	box-sizing: border-box;
-	}
+}
 
 .row:not(.boundless):not(.rebound) {
 	width: 100%;
-	}
-
-// @each $break, $point in $breaks {
-//	.spineless .#{$point} .row {
-//		max-width: #{$break - 198}px;
-//		}
-//	}
+}
 
 /* ### Columns */
-
 .row .column {
 	position: relative;
 	display: block;
@@ -28,19 +21,24 @@
 .row.fifteenths,
 .row.fifths {
 	max-width: 990px;
-	}
+}
+
 .row.reverse .column {
 	float: right;
-	}
+}
+
 .row.reverse {
 	max-width: 792px;
-	}
+}
+
 .max-1188 .row.reverse {
 	max-width: 990px;
-	}
+}
+
 .max-1386 .row.reverse {
 	max-width: 1188px;
-	}
+}
+
 .max-1584 .row.reverse {
 	max-width: 1386px;
-	}
+}

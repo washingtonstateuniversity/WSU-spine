@@ -1,34 +1,106 @@
 @charset "UTF-8";
 
-.text-align-right { text-align: right; }
-.text-align-left { text-align: left; }
-.text-align-center { text-align: center; }
-.text-align-justify { text-align: justify; }
+.text-align-right {
+	text-align: right;
+}
 
-.hidden { display: none; }
-.shown { display: block; }
-.visible { visibility: visible; }
-.invisible { visibility: hidden; }
-.nowrap { white-space: nowrap; }
+.text-align-left {
+	text-align: left;
+}
 
-.clear, .clear-both { clear: both; }
-.clear-important, .clear-both-important { clear: both !important; }
-.clear-left { clear: left; }
-.clear-left-important { clear: left !important; }
-.clear-right { clear: right; }
-.clear-right-important { clear: right !important; }
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-justify {
+	text-align: justify;
+}
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: block;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.clear,
+.clear-both {
+	clear: both;
+}
+
+.clear-important,
+.clear-both-important {
+	clear: both !important;
+}
+
+.clear-left {
+	clear: left;
+}
+
+.clear-left-important {
+	clear: left !important;
+}
+
+.clear-right {
+	clear: right;
+}
+
+.clear-right-important {
+	clear: right !important;
+}
 
 /* Important */
-.padless, .padding-0 { padding: 0 !important }
-.marginless, .margin-0 { margin: 0 !important }
+.padless,
+.padding-0 {
+	padding: 0 !important
+}
 
-.display-block { display: block !important }
-.display-none { display: none !important }
+.marginless,
+.margin-0 {
+	margin: 0 !important
+}
 
-.visibility-visible { visibility: visible !important; }
-.visibility-hidden { visibility: hidden !important; }
+.display-block {
+	display: block !important
+}
 
-.text-align-right-important { text-align: right !important; }
-.text-align-left-important { text-align: left !important; }
-.text-align-center-important { text-align: center !important; }
-.text-align-justify-important { text-align: justify !important; }
+.display-none {
+	display: none !important
+}
+
+.visibility-visible {
+	visibility: visible !important;
+}
+
+.visibility-hidden {
+	visibility: hidden !important;
+}
+
+.text-align-right-important {
+	text-align: right !important;
+}
+
+.text-align-left-important {
+	text-align: left !important;
+}
+
+.text-align-center-important {
+	text-align: center !important;
+}
+
+.text-align-justify-important {
+	text-align: justify !important;
+}

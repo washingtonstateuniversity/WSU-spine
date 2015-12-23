@@ -2,72 +2,75 @@
 @import '../vars/global';
 
 @mixin print-view {
-
 	html.print #binder main {
 		margin-left: 0;
-		}
+	}
+
 	html.print #binder #spine header button#shelve {
 		display: none;
-		}
+	}
 
 	html.print #binder {
 		position: relative;
 		width: 792px;
 		overflow: hidden;
-		}
+	}
+
 	html.print #spine,
 	html.print #glue {
 		min-height: 0 !important;
 		top: 0 !important;
 		width: 792px;
-		}
+	}
+
 	html.print #glue:before,
 	html.print #spine.bleed #glue:before {
 		width: 792px;
 		height: 50px;
 		left: 0;
-		}
+	}
+
 	html.print #spine {
 		height: 50px;
 		width: 100%;
 		top: 0;
 		margin-left: 0;
-		}
+	}
+
 	html.print main {
 		padding-top: 50px;
-		}
+	}
 
 	html.print #wsu-signature {
 		background-position: center 12px;
 		background-size: auto 30px;
 		height: 49px;
-		}
-	html.print #spine #glue header ~ * {
-		display: none !important;
-		}
-
-	html.print {
-
-		@include header-colors;
-		@include signatures('horizontal','');
-
 	}
 
+	html.print #spine #glue header ~ * {
+		display: none !important;
+	}
+
+	html.print {
+		@include header-colors;
+		@include signatures('horizontal','');
+	}
 
 	html.print #spine .print-controls {
 		float: right;
-		}
+	}
+
 	html.print #spine .print-controls button {
 		display: inline-block;
 		width: auto;
 		font-size: 1.4em;
 		line-height: 1em;
 		padding: 0;
-		}
+	}
+
 	html.print #spine .print-button {
 		display: none;
-		}
-
+	}
 
 	#spine .print-controls {
 		display: block;
@@ -75,14 +78,16 @@
 		margin: 0 10px 0 0;
 		position: absolute;
 		right: 20px;
-		}
+	}
+
 	#spine .print-controls button {
 		display: block;
 		float: left;
 		margin: 0;
 		text-indent: 0;
 		font-weight: normal;
-		}
+	}
+
 	#spine button#print-invoke,
 	#spine button#print-cancel {
 		color: #8D959A;
@@ -90,22 +95,26 @@
 		border-color: #8D959A;
 		border-style: solid;
 		display: block;
-		}
+	}
+
 	#spine button#print-invoke {
 		border-width: 0 1px 1px 1px;
 		border-radius: 0 0 0 5px;
 		padding: 4px 15px 4px 12px;
-		}
+	}
+
 	#spine button#print-cancel {
 		border-width: 0 1px 1px 0;
 		border-radius: 0 0 5px 0;
 		padding: 4px 5px 4px 12px;
-		}
+	}
+
 	#spine button#print-invoke:hover,
 	#spine button#print-cancel:hover {
 		text-shadow: none;
 		background: #EFF0F1;
-		}
+	}
+
 	#spine button#print-invoke:before,
 	#spine button#print-cancel:before {
 		font-family: "Spine-Icons";
@@ -116,22 +125,28 @@
 		position: relative;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		}
+	}
+
 	#spine button#print-cancel:before {
 		padding-right: 5px;
-		}
-	#spine button#print-invoke:before { content: "⎙"; }
-	#spine button#print-cancel:before { content: "␡"; }
-
-	@media
-		print {
-
-			html.print { zoom: 90%; }
-			html.print #spine header button#shelve,
-			html.print #spine .print-controls {
-				display: none;
-				}
-
-			}
-
 	}
+
+	#spine button#print-invoke:before {
+		content: "⎙";
+	}
+
+	#spine button#print-cancel:before {
+		content: "␡";
+	}
+
+	@media print {
+		html.print {
+			zoom: 90%;
+		}
+
+		html.print #spine header button#shelve,
+		html.print #spine .print-controls {
+			display: none;
+		}
+	}
+}

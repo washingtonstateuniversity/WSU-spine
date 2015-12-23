@@ -2,62 +2,61 @@
 // WSU COLORS
 
 $crimson: #981e32;
-	$crimson-er: #c60c30;
-	$crimson-dark: #6b1523;
-	$crimson-darkest: #490e18;
+$crimson-er: #c60c30;
+$crimson-dark: #6b1523;
+$crimson-darkest: #490e18;
 
 $gray: #5E6A71;
-	$gray-er: white;
-	$gray-light: #8d959a;
-	$gray-lighter: #b5babe;
-	$gray-lightly: #d7dadb;
-	$gray-lightest: #eff0f1;
-	$gray-dark: #464e54;
-	$gray-darker: #2a3033;
-	$gray-darkest: black;
+$gray-er: white;
+$gray-light: #8d959a;
+$gray-lighter: #b5babe;
+$gray-lightly: #d7dadb;
+$gray-lightest: #eff0f1;
+$gray-dark: #464e54;
+$gray-darker: #2a3033;
+$gray-darkest: black;
 
 $orange: #b67233;
-	$orange-er: #f6861f;
-	$orange-lightest: #f8f1eb;
-	$orange-lightly: #eddccc;
-	$orange-lighter: #ddbea1;
-	$orange-light: #cb9b6e;
-	$orange-dark: #925b29;
-	$orange-darker: #6d441f;
-	$orange-darkest: #492e14;
+$orange-er: #f6861f;
+$orange-lightest: #f8f1eb;
+$orange-lightly: #eddccc;
+$orange-lighter: #ddbea1;
+$orange-light: #cb9b6e;
+$orange-dark: #925b29;
+$orange-darker: #6d441f;
+$orange-darkest: #492e14;
 
 $green: #8f7e35;
-	$green-er: #ada400;
-	$green-light: #afa370;
-	$green-lighter: #cbc4a2;
-	$green-lightly: #e3dfcd;
-	$green-lightest: #f4f2eb;
-	$green-dark: #72652a;
-	$green-darker: #564c20;
-	$green-darkest: #393215;
+$green-er: #ada400;
+$green-light: #afa370;
+$green-lighter: #cbc4a2;
+$green-lightly: #e3dfcd;
+$green-lightest: #f4f2eb;
+$green-dark: #72652a;
+$green-darker: #564c20;
+$green-darkest: #393215;
 
 $blue: #4f868e;
-	$blue-er: #00a5bd;
-	$blue-lightest: #edf3f4;
-	$blue-lightly: #d3e1e3;
-	$blue-lighter: #aec7cb;
-	$blue-light: #82a9af;
-	$blue-dark: #3f6b72;
-	$blue-darker: #2f5055;
-	$blue-darkest: #203639;
+$blue-er: #00a5bd;
+$blue-lightest: #edf3f4;
+$blue-lightly: #d3e1e3;
+$blue-lighter: #aec7cb;
+$blue-light: #82a9af;
+$blue-dark: #3f6b72;
+$blue-darker: #2f5055;
+$blue-darkest: #203639;
 
 $yellow: #c69214;
-	$yellow-er: #ffb81c;
-	$yellow-lightest: #f9f4e7;
-	$yellow-lightly: #f1e4c4;
-	$yellow-lighter: #e5cd93;
-	$yellow-light: #d7b258;
-	$yellow-dark: #9e7510;
-	$yellow-darker: #77580c;
-	$yellow-darkest: #4f3a08;
+$yellow-er: #ffb81c;
+$yellow-lightest: #f9f4e7;
+$yellow-lightly: #f1e4c4;
+$yellow-lighter: #e5cd93;
+$yellow-light: #d7b258;
+$yellow-dark: #9e7510;
+$yellow-darker: #77580c;
+$yellow-darkest: #4f3a08;
 
 // Spine Colors
-
 $spine-colors: (
 	lightest: $gray-lightest,
 	lightly: $gray-lightly,
@@ -68,7 +67,7 @@ $spine-colors: (
 	darker: darken($gray-darker,3%),
 	darkest: $gray-darkest,
 	crimson: $crimson
-	);
+);
 
 // Spine Transparency
 @mixin vellum($color) {
@@ -76,9 +75,9 @@ $spine-colors: (
 	@each $transparency, $percent in $transparencies {
 		&.vellum-#{$transparency} #glue:before {
 			background-color: transparentize($color,$percent);
-			}
 		}
 	}
+}
 
 // Social Channel Colors
 $facebook-blue: #3B5998;

@@ -12,11 +12,9 @@
 /* # Skeleton */
 
 /* ## RESET */
-
 @import 'skeleton/reset';
 
 /* ## DEFAULTS */
-
 @import 'skeleton/defaults';
 
 /* ## BOARDS  */
@@ -28,14 +26,16 @@
 @import 'skeleton/rows';
 
 /* ## LAYOUTS */
-
 @include layouts-pixels;
-.fluid { @include layouts-percents; }
+.fluid {
+	@include layouts-percents;
+}
 
 /* ## COLUMNS  */
-
 @include twelfths-pixels;
-.fluid { @include twelfths-percents; }
+.fluid {
+	@include twelfths-percents;
+}
 
 /* ### Nesting */
 @include nested;
@@ -65,7 +65,6 @@
 @import 'skeleton/tables';
 
 /* ## FORMS */
-
 @import 'skeleton/forms';
 
 /* ## Shorthand */
@@ -79,4 +78,3 @@
 
 /* ### Spineless  */
 @import 'skeleton/spineless';
-
