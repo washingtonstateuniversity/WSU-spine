@@ -590,26 +590,18 @@ html.lt-ie9 #spine .spine-actions {
 			
 			
 		}
-		
-		
+
 		input::-webkit-input-placeholder,
 		input:-moz-placeholder,
 		input::-moz-placeholder,
-		input:-ms-placeholder {
-			
+		input:-ms-input-placeholder {
 			color: $gray-light;
-			//text-shadow: 1px 1px 0px rgba(141, 148, 153, 0.2);
-			
 		}
 		
 		input:focus {
-			
 			color: $gray;
-			
 		}
-		
 	}
-	
 }
 
 #spine.search-opened .spine-sitenav {
