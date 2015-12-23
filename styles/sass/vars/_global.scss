@@ -94,15 +94,6 @@ $locality: 'https://repo.wsu.edu/spine/develop';
 $font_domain: '//repo.wsu.edu/spine/develop';
 
 @mixin signatures($directionality,$path) {
-
-	@if $directionality == 'horizontal' {
-		#xxwsu-signature {
-			background-position: center 14px;
-			background-size: auto 30px;
-			height: 49px;
-		}
-	}
-
 	@each $signature in $signatures {
 		@if $signature == 'pullman' {
 			#{$path} #wsu-signature {
