@@ -401,7 +401,7 @@
 			$( "header button" ).on( "click touchend", self.toggle_mobile_nav );
 
 			// Tapping anything outside of the Spine should trigger a toggle if the menu is open.
-			main.on( "click touchend swipeleft", function( e ) {
+			main.on( "click", function( e ) {
 				if ( $( "body" ).hasClass( "spine-mobile-open" ) ) {
 					self.toggle_mobile_nav( e );
 				}
