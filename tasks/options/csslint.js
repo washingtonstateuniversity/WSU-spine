@@ -17,12 +17,12 @@ module.exports = {
 			"star-property-hack": 2,
 			"text-indent": true,
 			"font-sizes": true,
-			"display-property-grouping": true,
 			"duplicate-properties": false,         // true
 			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
 			"overqualified-elements": false,       // 2
 			"duplicate-background-images": false,  // 2
 			"important": false,                    // 2
+			"display-property-grouping": 2,
 			"shorthand": 2,
 			"empty-rules": 2,
 			"vendor-prefix": 2,
