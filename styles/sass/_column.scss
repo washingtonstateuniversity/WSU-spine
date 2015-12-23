@@ -802,35 +802,35 @@ html.lt-ie9 #spine .spine-actions {
 		a span {
 			display: none;
 		}
+	}
 
-		&.by-facebook a:before {
-			content: "F";
-		}
+	.by-facebook a:before {
+		content: "F";
+	}
 
-		&.by-twitter a:before {
-			content: "T";
-		}
+	.by-twitter a:before {
+		content: "T";
+	}
 
-		&.by-googleplus a:before {
-			content: "G";
-		}
+	.by-googleplus a:before {
+		content: "G";
+	}
 
-		&.by-email a:before {
-			content: "@";
-		}
+	.by-email a:before {
+		content: "@";
+	}
 
-		&.by-pinterest a:before {
-			content: "P";
-		}
+	.by-pinterest a:before {
+		content: "P";
+	}
 
-		&.by-linkedin a:before {
-			content: "L";
-		}
+	.by-linkedin a:before {
+		content: "L";
+	}
 
-		&.by-other a:before {
-			content: "";
-			display: none;
-		}
+	.by-other a:before {
+		content: "";
+		display: none;
 	}
 }
 
@@ -1128,7 +1128,7 @@ html.lt-ie9 #spine footer {
 		text-transform: uppercase;
 	}
 
-	ul li.mywsu-link {
+	ul .mywsu-link {
 		text-transform: none;
 	}
 	
