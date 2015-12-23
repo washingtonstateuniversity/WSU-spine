@@ -6,7 +6,9 @@
 	width: 100%;
 	position: relative;
 	box-sizing: border-box;
-	}
+	touch-action: manipulation;
+}
+
 .main-header .header-group {
 	position: absolute;
 	bottom: 0;
