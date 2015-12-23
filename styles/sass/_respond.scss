@@ -190,18 +190,18 @@
 #binder main {
 	width: auto;
 	margin-top: 50px;
-	margin-left: 0px;
+	margin-left: 0;
 	}
 #binder.fixed main {
 	width: 396px;
-	margin-left: 0px;
+	margin-left: 0;
 	}
 #binder.hybrid main,
 #binder.fluid main {
 	width: 100%;
 	font-size: 16px;
 	line-height: 26px;
-	margin-left: 0px;
+	margin-left: 0;
 	margin-top: 50px;
 	}
 .row.reverse-at-small .column {
@@ -217,7 +217,7 @@
 
 .fluid .verso .rebound,
 .fluid .recto.verso .rebound {
-	border-left: 0px transparent solid;
+	border-left: 0 transparent solid;
 	}
 
 /* Shelving */
@@ -259,7 +259,7 @@
 	}
 #binder.fixed main {
 	width: 396px;
-	padding-top: 0px;
+	padding-top: 0;
 	margin-left: 298px;
 	}
 
@@ -308,11 +308,11 @@
 
 		width: 396px;
 		min-width: 396px;
-		margin: 0px auto;
+		margin: 0 auto;
 
 		main {
 			margin-top: 50px;
-			margin-left: 0px;
+			margin-left: 0;
 			}
 
 		}
@@ -324,7 +324,7 @@
 
 		main {
 			width: auto;
-			margin-left: 0px;
+			margin-left: 0;
 			}
 
 		}

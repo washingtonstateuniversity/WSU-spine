@@ -11,9 +11,9 @@
 	h6,h5,h4,h3,h2,h1 {
 		margin: 0;
 		line-height: 1.1em;
-		letter-spacing: 0em;
+		letter-spacing: 0;
 		font-weight: bold;
-		padding: .5em 0px .2em 0px;
+		padding: .5em 0 .2em 0;
 		/* Maybe... -webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale; */
 		}
@@ -46,7 +46,7 @@
 	/* ### Lists */
 
 	ul, ol {
-		padding: 0em 2em 1em 2em;
+		padding: 0 2em 1em 2em;
 		}
 	ul ul,
 	ol ol {
@@ -63,7 +63,7 @@
 		}
 
 	p {
-		margin: 0px;
+		margin: 0;
 		padding-bottom: 1em;
 		}
 	p ~ p,
@@ -100,10 +100,10 @@
 		}
 
 	article img[align="right"] {
-		margin: 0px 0px 1em 10px;
+		margin: 0 0 1em 10px;
 		}
 	article img[align="left"] {
-		margin: 0px 10px 1em 0px;
+		margin: 0 10px 1em 0;
 		}
 
 	sup,sub { font-size: .7em; line-height: .7em; }
@@ -119,7 +119,7 @@
 	a:hover { color: #c60c30; }
 	strong,b { font-weight: bold; }
 	em,i { font-style: italic; }
-	hr { border-width: 0px;
+	hr { border-width: 0;
 		border-style: solid;
 		border-color: black;
 		margin: 1em 0;

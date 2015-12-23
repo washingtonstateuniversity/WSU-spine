@@ -16,7 +16,7 @@ input[type="button"] {
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 	line-height: normal;
 	padding: 0.5em 1em;
 	vertical-align: middle;
@@ -33,7 +33,7 @@ input[type="button"]:focus {
 	color: $gray-dark;
 	background: $gray-er;
 	border-color: $gray-light;
-	border-width: 0px 2px 2px 0px;
+	border-width: 0 2px 2px 0;
 	}
 
 .button:active, .button.active,
@@ -44,7 +44,7 @@ input[type="button"]:active {
 	color: $gray-lighter;
 	border-color: $gray-darkest;
 	background: $gray-dark;
-	border-width: 2px 0px 0px 2px;
+	border-width: 2px 0 0 2px;
 	}
 
 .button.full-width,
@@ -60,10 +60,10 @@ input[type="button"].full-width {
 button.functional,
 button.glassine {
 	border: none;
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	background: transparent;
-	border-radius: 0px;
+	border-radius: 0;
 	}
 
 /* Fix for odd Mozilla border & padding issues */
@@ -84,11 +84,11 @@ form,fieldset,input,textarea,legend,label {
 	}
 form {
 	margin-bottom: 5px;
-	padding: 10px 0px;
+	padding: 10px 0;
 	}
 fieldset {
 	margin-bottom: 5px;
-	padding: 0px;
+	padding: 0;
 	}
 input {
 		outline: none;

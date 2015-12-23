@@ -28,7 +28,7 @@
 			}
 
 		&.bleed #glue:before {
-			left: 0px;
+			left: 0;
 			}
 
 		&.shelved button#shelve,
@@ -50,8 +50,8 @@
 				min-height: 0 !important;
 				height: 50px !important;
 				width: 100% !important;
-				padding-top: 0px;
-				padding-bottom: 0px;
+				padding-top: 0;
+				padding-bottom: 0;
 				}
 			#wsu-signature {
 				background-position: center 12px;
