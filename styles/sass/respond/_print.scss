@@ -6,7 +6,7 @@
 		margin-left: 0;
 	}
 
-	html.print #binder #spine header button#shelve {
+	html.print #binder #spine header #shelve {
 		display: none;
 	}
 
@@ -88,8 +88,8 @@
 		font-weight: normal;
 	}
 
-	#spine button#print-invoke,
-	#spine button#print-cancel {
+	#spine #print-invoke,
+	#spine #print-cancel {
 		color: #8D959A;
 		background: white;
 		border-color: #8D959A;
@@ -97,26 +97,26 @@
 		display: block;
 	}
 
-	#spine button#print-invoke {
+	#spine #print-invoke {
 		border-width: 0 1px 1px 1px;
 		border-radius: 0 0 0 5px;
 		padding: 4px 15px 4px 12px;
 	}
 
-	#spine button#print-cancel {
+	#spine #print-cancel {
 		border-width: 0 1px 1px 0;
 		border-radius: 0 0 5px 0;
 		padding: 4px 5px 4px 12px;
 	}
 
-	#spine button#print-invoke:hover,
-	#spine button#print-cancel:hover {
+	#spine #print-invoke:hover,
+	#spine #print-cancel:hover {
 		text-shadow: none;
 		background: #EFF0F1;
 	}
 
-	#spine button#print-invoke:before,
-	#spine button#print-cancel:before {
+	#spine #print-invoke:before,
+	#spine #print-cancel:before {
 		font-family: "Spine-Icons";
 		font-size: 12px;
 		width: 17px;
@@ -127,15 +127,15 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	#spine button#print-cancel:before {
+	#spine #print-cancel:before {
 		padding-right: 5px;
 	}
 
-	#spine button#print-invoke:before {
+	#spine #print-invoke:before {
 		content: "⎙";
 	}
 
-	#spine button#print-cancel:before {
+	#spine #print-cancel:before {
 		content: "␡";
 	}
 
@@ -144,7 +144,7 @@
 			zoom: 90%;
 		}
 
-		html.print #spine header button#shelve,
+		html.print #spine header #shelve,
 		html.print #spine .print-controls {
 			display: none;
 		}

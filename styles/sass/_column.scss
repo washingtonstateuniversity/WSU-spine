@@ -103,17 +103,17 @@
 }
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
-button#shelve {
+#shelve {
 	display: none;
 }
 
-.spine-mobile button#shelve {
+.spine-mobile #shelve {
 	display: block;
 }
 
-button#shelve,
-button#shelve::before,
-button#shelve::after {
+#shelve,
+#shelve::before,
+#shelve::after {
 	position: absolute;
 	border-color: #b5babe;
 	border-style: solid;
@@ -122,30 +122,30 @@ button#shelve::after {
 
 #spine.gray,
 #spine.light {
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
+	#shelve,
+	#shelve::before,
+	#shelve::after {
 		border-color: white;
 	}
 }
 
 #spine.lighter {
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
+	#shelve,
+	#shelve::before,
+	#shelve::after {
 		border-color: $gray;
 	}
 }
 
-button#shelve {
+#shelve {
 	width: 100px;
     height: 50px;
     z-index: 100;
     outline: none;
 }
 
-button#shelve::before,
-button#shelve::after {
+#shelve::before,
+#shelve::after {
 	content: "";
 	display: block;
     width: 20px;
@@ -153,13 +153,13 @@ button#shelve::after {
     left: 18px;
 }
 
-button#shelve::before {
+#shelve::before {
 	bottom: 18px;
 	border-bottom-width: 3px;
 	border-top-width: 3px;
 }
 
-button#shelve::after {
+#shelve::after {
 	bottom: 30px;
 	border-bottom-width: 3px;
 }

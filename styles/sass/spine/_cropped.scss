@@ -27,8 +27,8 @@
 			left: 0;
 		}
 
-		&.shelved button#shelve,
-		&.unshelved button#shelve {
+		&.shelved #shelve,
+		&.unshelved #shelve {
 		  display:none;
 		}
 
