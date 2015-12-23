@@ -18,10 +18,9 @@
 
 #spine,
 #spine * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	}
+}
+
 #spine {
 
 	font-size: 12px;
@@ -962,9 +961,8 @@ html.lt-ie9 #spine footer {
 		padding: 10px 0;
 		margin: 0;
 		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		}
+	}
+
 	ul {
 		padding: 0;
 		}

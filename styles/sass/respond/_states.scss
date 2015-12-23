@@ -59,7 +59,7 @@
 		&.skimmed header,
 		&.unshelved header {
 			box-shadow: none;
-			-webkit-transition: none;
+			transition: none;
 			left: auto;
 		}
 

@@ -99,17 +99,14 @@
 
 	.spine-animating #glue {
 		transition: transform .3s ease;
-		-webkit-transition: -webkit-transform .3s ease;
 	}
 
 	.spine-animating.spine-move-left #glue {
 		transform: translate( -298px );
-		-webkit-transform: translate( -298px );
 	}
 
 	.spine-animating.spine-move-right #glue {
 		transform: translate( 298px );
-		-webkit-transform: translate( 298px );
 	}
 
 	.spine-mobile #glue {
