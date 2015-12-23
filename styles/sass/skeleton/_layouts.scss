@@ -116,7 +116,7 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	}
 
 	/* single then halves */
-	.row.single row.halves .column {
+	.row.single .row.halves .column {
 		width: 396px;
 	}
 
