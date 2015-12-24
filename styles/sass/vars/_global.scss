@@ -75,7 +75,9 @@ $campaign: campaign; /* Stretching the definition of campus. New term? */
 $foundation: foundation;
 
 $campuses: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss;
-$signatures: $pullman,$spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss,$foundation,$campaign;
+
+// Pullman is not included in this list, as the default mark is used.
+$signatures: $spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss,$foundation,$campaign;
 
 // Typography
 @mixin serif {
@@ -93,47 +95,93 @@ $locality: 'https://repo.wsu.edu/spine/develop';
 // a page is displayed via HTTP
 $font_domain: '//repo.wsu.edu/spine/develop';
 
-@mixin signatures($directionality,$path) {
-	@each $signature in $signatures {
-		@if $signature == 'pullman' {
-			#{$path} #wsu-signature,
-			#{$path}.lighter #wsu-signature,
-			#{$path} .darker #wsu-signature,
-			#{$path} .darkest #wsu-signature {
-		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}.svg");
-			}
-		}
-		@else {
-			.#{$signature}-signature #{$path} #wsu-signature,
-			.#{$signature}-signature #{$path}.lighter #wsu-signature,
-			.#{$signature}-signature #{$path}.darker #wsu-signature,
-			.#{$signature}-signature #{$path}.darkest #wsu-signature {
-	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}.svg");
-			}
-		}
+// Signature rules:
+// - The default display, which also covers lighter, darker, and darkest is standard vertical.
+// - For light, gray, dark, and crimson, the white vertical mark is default.
+// - When the Spine is mobile, or cropped and in a skimmed state, horizontal marks are used.
+// - When the print script is used, horizontal marks are used.
+// - In the past, the vertical mark was loaded in a fixed layout between 694px and 791px. (?)
+@mixin signatures() {
+	// Covers default, lighter, darker, darkest.
+	#wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-vertical.svg");
+	}
+
+	.light #wsu-signature,
+	.gray #wsu-signature,
+	.dark #wsu-signature,
+	.darkest #wsu-signature,
+	.crimson #wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-vertical-white.svg");
+	}
+
+	// Covers mobile default and the skimmed view of a cropped spine.
+	.spine-mobile #wsu-signature,
+	.print #wsu-signature,
+	#spine.cropped.skimmed #wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-horizontal.svg");
+	}
+
+	.spine-mobile .light #wsu-signature,
+	.spine-mobile .gray #wsu-signature,
+	.spine-mobile .dark #wsu-signature,
+	.spine-mobile .darkest #wsu-signature,
+	.spine-mobile .crimson #wsu-signature,
+	.print .light #wsu-signature,
+	.print .gray #wsu-signature,
+	.print .dark #wsu-signature,
+	.print .darkest #wsu-signature,
+	.print .crimson #wsu-signature,
+	#spine.cropped.skimmed.light #wsu-signature,
+	#spine.cropped.skimmed.gray #wsu-signature,
+	#spine.cropped.skimmed.dark #wsu-signature,
+	#spine.cropped.skimmed.darkest #wsu-signature,
+	#spine.cropped.skimmed.crimson #wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-horizontal-white.svg");
 	}
 
 	@each $signature in $signatures {
-		@if $signature == 'pullman' {
-			#{$path}.light #wsu-signature,
-			#{$path}.gray #wsu-signature,
-			#{$path}.dark #wsu-signature,
-			#{$path}.crimson #wsu-signature {
-		    	background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}-white.svg");
-			}
+		// Covers default, lighter, darker, darkest.
+		.#{$signature}-signature #wsu-signature {
+			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-vertical.svg");
 		}
-		@else {
-			.#{$signature}-signature #{$path}.light #wsu-signature,
-			.#{$signature}-signature #{$path}.gray #wsu-signature,
-			.#{$signature}-signature #{$path}.dark #wsu-signature,
-			.#{$signature}-signature #{$path}.crimson #wsu-signature {
-	    		background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-#{$directionality}-white.svg");
-			}
+
+		.#{$signature}-signature .light #wsu-signature,
+		.#{$signature}-signature .gray #wsu-signature,
+		.#{$signature}-signature .dark #wsu-signature,
+		.#{$signature}-signature .darkest #wsu-signature,
+		.#{$signature}-signature .crimson #wsu-signature {
+			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-vertical-white.svg");
+		}
+
+		// Covers mobile default and the skimmed view of a cropped spine.
+		.spine-mobile.#{$signature}-signature #wsu-signature
+		.print.#{$signature}-signature #wsu-signature,
+		.#{$signature}-signature  #spine.cropped.skimmed #wsu-signature {
+			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-horizontal.svg");
+		}
+
+		.spine-mobile.#{$signature}-signature .light #wsu-signature,
+		.spine-mobile.#{$signature}-signature .gray #wsu-signature,
+		.spine-mobile.#{$signature}-signature .dark #wsu-signature,
+		.spine-mobile.#{$signature}-signature .darkest #wsu-signature,
+		.spine-mobile.#{$signature}-signature .crimson #wsu-signature,
+		.print.#{$signature}-signature .light #wsu-signature,
+		.print.#{$signature}-signature .gray #wsu-signature,
+		.print.#{$signature}-signature .dark #wsu-signature,
+		.print.#{$signature}-signature .darkest #wsu-signature,
+		.print.#{$signature}-signature .crimson #wsu-signature,
+		.#{$signature}-signature #spine.cropped.skimmed.light #wsu-signature,
+		.#{$signature}-signature #spine.cropped.skimmed.gray #wsu-signature,
+		.#{$signature}-signature #spine.cropped.skimmed.dark #wsu-signature,
+		.#{$signature}-signature #spine.cropped.skimmed.darkest #wsu-signature,
+		.#{$signature}-signature #spine.cropped.skimmed.crimson #wsu-signature {
+			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-horizontal-white.svg");
 		}
 	}
 
-	html.lt-ie9 #{$path} #wsu-signature {
-		background-image: url("#{$locality}/marks/wsu-signature-#{$directionality}.png");
+	html.lt-ie9 #wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-horizontal.png");
 	}
 }
 

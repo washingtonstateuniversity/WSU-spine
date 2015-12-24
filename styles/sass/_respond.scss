@@ -161,9 +161,6 @@
 	@include grid-medium-controls;
 
 	@include header-colors;
-
-	@include signatures('horizontal','.fixed ');
-	@include signatures('horizontal','.hybrid ');
 }
 
 /* SMALL (max 791px)
@@ -234,7 +231,6 @@
 
 	@include grid-small-controls;
 	@include header-colors;
-	@include signatures('horizontal','.fluid ');
 }
 
 /* SMALLISH (Fixed Only)
@@ -270,8 +266,8 @@
 	}
 
 	@include header-colors;
-	@include signatures('vertical','.fixed ');
 
+	// On small fixed layouts, we previously included the vertical signatures. Why?
 }
 
 /* ## SMALL (max 693)  */
@@ -320,7 +316,6 @@
 	}
 
 	@include header-colors;
-	@include signatures('horizontal','.fluid ');
 }
 
 @media only screen and (max-width: 530px) {

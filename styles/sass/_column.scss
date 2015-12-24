@@ -1238,8 +1238,8 @@ html.lt-ie9 #spine footer {
 /* ### Alternate Colors */
 @import 'spine/colors';
 
-/* Campus Signature Versions */
-@include signatures('vertical','');
+/* ### Campus Signatures - Default, vertical layout. */
+@include signatures();
 
 /* ### Cropped */
 @import 'spine/cropped';
