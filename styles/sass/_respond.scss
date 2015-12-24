@@ -159,8 +159,6 @@
 
 	/* Grid Medium */
 	@include grid-medium-controls;
-
-	@include header-colors;
 }
 
 /* SMALL (max 791px)
@@ -230,7 +228,6 @@
 	}
 
 	@include grid-small-controls;
-	@include header-colors;
 }
 
 /* SMALLISH (Fixed Only)
@@ -264,8 +261,6 @@
 	.fixed .row.reverse .column {
 		float: left;
 	}
-
-	@include header-colors;
 
 	// On small fixed layouts, we previously included the vertical signatures. Why?
 }
@@ -314,8 +309,6 @@
 		background-size: auto 30px;
 		height: 49px;
 	}
-
-	@include header-colors;
 }
 
 @media only screen and (max-width: 530px) {

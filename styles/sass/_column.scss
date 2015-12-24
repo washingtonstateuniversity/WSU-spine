@@ -1241,5 +1241,7 @@ html.lt-ie9 #spine footer {
 /* ### Campus Signatures - Default, vertical layout. */
 @include signatures();
 
+@include header-colors();
+
 /* ### Cropped */
 @import 'spine/cropped';
