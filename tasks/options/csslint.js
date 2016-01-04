@@ -6,17 +6,17 @@ module.exports = {
 			"box-sizing": false,                   // unless we want to support IE7
 			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
 			"overqualified-elements": false,       // We have weird uses that will always generate warnings.
+			"known-properties": false,             // Our use of manipulation for touch-action generates an error.
 			"ids": false,
-			"regex-selectors": false,
+			"regex-selectors": false,              // audit
 			"adjoining-classes": false,
-			"box-model": false,          // audit
-			"universal-selector": false, // audit
-			"unique-headings": false,    // audit
-			"outline-none": false,       // audit
-			"known-properties": false,
+			"box-model": false,                    // audit
+			"universal-selector": false,           // audit
+			"unique-headings": false,              // audit
+			"outline-none": false,                 // audit
 			"floats": false,
-			"font-sizes": false,
-			"important": false,                    // 2
+			"font-sizes": false,                   // audit
+			"important": false,                    // This should be set to 2 one day.
 			"qualified-headings": 2,
 			"duplicate-background-images": 2,
 			"duplicate-properties": 2,
