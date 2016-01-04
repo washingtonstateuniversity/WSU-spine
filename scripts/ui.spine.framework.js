@@ -82,7 +82,7 @@
 		 * Determine if the page view is in a mobile state, defined as less than 990px;
 		 */
 		is_mobile_view: function() {
-			if ( $(document).outerWidth() < 990 ) {
+			if ( window.innerWidth < 990 ) {
 				return true;
 			}
 
