@@ -5,6 +5,7 @@ module.exports = {
 			"fallback-colors": false,              // unless we want to support IE8
 			"box-sizing": false,                   // unless we want to support IE7
 			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
+			"overqualified-elements": false,       // We have weird uses that will always generate warnings.
 			"ids": false,
 			"regex-selectors": false,
 			"adjoining-classes": false,
@@ -16,7 +17,6 @@ module.exports = {
 			"known-properties": false,
 			"floats": false,
 			"font-sizes": false,
-			"overqualified-elements": true,        // We have a couple weird uses that will always generate warnings.
 			"important": false,                    // 2
 			"duplicate-background-images": 2,
 			"duplicate-properties": 2,
