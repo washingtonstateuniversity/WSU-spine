@@ -12,12 +12,12 @@ module.exports = {
 			"box-model": false,          // audit
 			"universal-selector": false, // audit
 			"unique-headings": false,    // audit
-			"qualified-headings": false, // audit
 			"outline-none": false,       // audit
 			"known-properties": false,
 			"floats": false,
 			"font-sizes": false,
 			"important": false,                    // 2
+			"qualified-headings": 2,
 			"duplicate-background-images": 2,
 			"duplicate-properties": 2,
 			"star-property-hack": 2,
