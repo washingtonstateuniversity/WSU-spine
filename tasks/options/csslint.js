@@ -17,8 +17,8 @@ module.exports = {
 			"floats": false,
 			"font-sizes": false,
 			"overqualified-elements": true,        // We have a couple weird uses that will always generate warnings.
-			"duplicate-background-images": false,  // 2
 			"important": false,                    // 2
+			"duplicate-background-images": 2,
 			"duplicate-properties": 2,
 			"star-property-hack": 2,
 			"text-indent": 2,
