@@ -307,7 +307,7 @@
 		border-bottom-width: 1px;
 	}
 
-	// Home Icon
+	// Default "Home" icon next to the top list item in the Spine navigation.
 	.spine-sitenav:not(.homeless) > ul > li:first-child > a {
 		padding-left: 1.4em;
 		background-image: url("#{$locality}/icons/home-gray.svg");
@@ -317,10 +317,40 @@
 		background-size: 1em auto;
 	}
 
+	// Default "Home" icon hover state and active (current) state.
+	//
+	// Applies to default, darkest, lightest, lightly, and lighter.
 	.spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
-	.spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
-	.spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
+	.spine-sitenav:not(.homeless) > ul > li:first-child > a:hover {
 		background-image: url("#{$locality}/icons/home-crimson.svg");
+	}
+
+	&.light,
+	&.gray,
+	&.dark {
+		.spine-sitenav:not(.homeless) > ul > li:first-child a {
+			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
+		}
+	}
+
+	&.darker,
+	&.crimson,
+	&.darkest {
+		.spine-sitenav:not(.homeless) > ul > li:first-child a {
+			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
+		}
+	}
+
+	// Override the default "Home" icon hover and active (current) state for some variations.
+	&.light,
+	&.gray,
+	&.dark,
+	&.darker,
+	&.crimson {
+		.spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
+		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
+			background-image: url("#{$locality}/icons/home-white.svg");
+		}
 	}
 
 	.spine-sitenav.homeless > ul > li:first-child > a {

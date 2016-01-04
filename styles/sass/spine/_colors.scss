@@ -167,15 +167,6 @@
 
 		@include vellum($gray-light);
 
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
-
 		.spine-actions .opened button,
 		.spine-actions button,
 		.spine-actions .opened button:hover,
@@ -229,15 +220,6 @@
 		}
 
 		@include vellum($gray);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-actions .opened button,
 		.spine-actions button,
@@ -296,15 +278,6 @@
 		}
 
 		@include vellum($gray-dark);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-sitenav a,
 		.spine-offsitenav a:hover {
@@ -366,15 +339,6 @@
 
 		@include vellum(darken($gray-darker, 3%));
 
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
-
 		.spine-sitenav a,
 		.spine-offsitenav a:hover {
 			color: $gray-lighter;
@@ -431,15 +395,6 @@
 
 		@include vellum($gray-darkest);
 
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-crimson.svg");
-		}
-
 		.spine-sitenav a,
 		.spine-offsitenav a:hover {
 			color: $gray-lighter;
@@ -488,15 +443,6 @@
 		}
 
 		@include vellum($crimson);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-sitenav a {
 			color: $gray-lighter;
