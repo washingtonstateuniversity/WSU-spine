@@ -306,8 +306,7 @@
 				spine: self.options,
 				framework: [],
 				search: [],
-				social: [],
-				analytics: []
+				social: []
 			};
 
 			self._call(self.options.callback, self.instance.spine);
@@ -457,14 +456,14 @@
 		 * Destroys spine elements and options.
 		 */
 		clear_spine: function() {
-			this.clear("search").clear("framework").clear("social").clear("analytics");
+			this.clear("search").clear("framework").clear("social");
 		},
 
 		/**
 		 * Destroys the plugin.
 		 */
 		destroy: function(callback) {
-			this.clear("search").clear("framework").clear("social").clear("analytics")._c(this.instance);
+			this.clear("search").clear("framework").clear("social")._c(this.instance);
 			$.removeData(this.el, this.name);
 			this._call(callback, this);
 		}
@@ -488,7 +487,7 @@
 			// Initialize the Spine plugin.
 			targ.spine({});
 
-			options = $.extend( {"framework":{},"search":{},"social":{},"analytics":{}}, options );
+			options = $.extend( {"framework":{},"search":{},"social":{}}, options );
 
 			// Setup each of the extensions.
 			$.each(options,function(i,v) {
