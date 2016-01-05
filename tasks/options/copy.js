@@ -1,10 +1,9 @@
 module.exports = {
 	main: {
-		files: [ // This can be drastically simplified by putting this stuff in a `src` folder.
+		files: [
 			{ expand: true, src: ["fonts/*"], dest: "<%= config.build %>/", dot: true },
 			{ expand: true, src: ["html/*"], dest: "<%= config.build %>/" },
 			{ expand: true, src: ["icons/*"], dest: "<%= config.build %>/", dot: true },
-			{ expand: true, src: ["images/**"], dest: "<%= config.build %>/" },
 			{ expand: true, src: ["marks/*"], dest: "<%= config.build %>/" },
 			{ expand: true, src: ["scripts/*"], dest: "<%= config.build %>/" },
 			{ expand: true, src: ["styles/jqueryui.css", "styles/styles.css"], dest: "<%= config.build %>/" },
@@ -12,8 +11,9 @@ module.exports = {
 		]
 	},
 	dev: {
-		files: [ // This can be drastically simplified by putting this stuff in a `src` folder.
-			{ flatten: true, expand: true, src: ["test/js/*"], dest: "<%= config.build %>/tests/js/"},
+		files: [
+			{ flatten: true, expand: true, src: ["test/js/*"], dest: "<%= config.build %>/tests/js/" },
+			{ flatten: true, expand: true, src: ["test/images/*"], dest: "<%= config.build %>/tests/images/" }
 		]
 	}
 };
