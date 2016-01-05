@@ -10,10 +10,10 @@
 	},
 	"file": "spine",
 	"devDependencies": {
-		"autoprefixer": "^6.2.1",
+		"autoprefixer": "^6.2.3",
 		"deepmerge ": "~0.2.10",
 		"extend": "~3.0.0",
-		"glob": "~6.0.1",
+		"glob": "~6.0.3",
 		"grunt": "~0.4.5",
 		"grunt-contrib-clean": "^0.7.0",
 		"grunt-contrib-concat": "~0.5.1",

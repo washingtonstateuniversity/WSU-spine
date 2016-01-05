@@ -85,9 +85,6 @@ ul, ol {
 	padding-bottom: 1em;
 }
 
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-}
-
 h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul,
 h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
 	padding-top: .3em;
@@ -180,10 +177,4 @@ hr {
 	em,i,bold,big,h1,h2,h3,h4,h5,h6 {
 		font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	}
-}
-
-/* Block Styles  */
-ul + h1, ul + h2, ul + h3, ul + h4,
-ol + h1, ol + h2, ol + h3, ol + h4 {
-	margin-top: .8;
 }

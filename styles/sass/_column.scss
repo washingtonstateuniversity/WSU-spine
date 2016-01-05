@@ -27,6 +27,7 @@
 	z-index: 99164;
 	position: absolute;
 	bottom: 0;
+	touch-action: manipulation;
 
 	button {
 		background-color: transparent;
@@ -102,17 +103,17 @@
 }
 
 /* ### Spine Menu Button (Shelve and Unshelve) */
-button#shelve {
+#shelve {
 	display: none;
 }
 
-.spine-mobile button#shelve {
+.spine-mobile #shelve {
 	display: block;
 }
 
-button#shelve,
-button#shelve::before,
-button#shelve::after {
+#shelve,
+#shelve::before,
+#shelve::after {
 	position: absolute;
 	border-color: #b5babe;
 	border-style: solid;
@@ -121,30 +122,30 @@ button#shelve::after {
 
 #spine.gray,
 #spine.light {
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
+	#shelve,
+	#shelve::before,
+	#shelve::after {
 		border-color: white;
 	}
 }
 
 #spine.lighter {
-	button#shelve,
-	button#shelve::before,
-	button#shelve::after {
+	#shelve,
+	#shelve::before,
+	#shelve::after {
 		border-color: $gray;
 	}
 }
 
-button#shelve {
+#shelve {
 	width: 100px;
     height: 50px;
     z-index: 100;
     outline: none;
 }
 
-button#shelve::before,
-button#shelve::after {
+#shelve::before,
+#shelve::after {
 	content: "";
 	display: block;
     width: 20px;
@@ -152,13 +153,13 @@ button#shelve::after {
     left: 18px;
 }
 
-button#shelve::before {
+#shelve::before {
 	bottom: 18px;
 	border-bottom-width: 3px;
 	border-top-width: 3px;
 }
 
-button#shelve::after {
+#shelve::after {
 	bottom: 30px;
 	border-bottom-width: 3px;
 }
@@ -184,10 +185,6 @@ button#shelve::after {
 
 .spine-mobile #spine .spine-navigation {
 	padding-bottom: 0;
-}
-
-#spine {
-	touch-action: manipulation;
 }
 
 #spine {
@@ -233,7 +230,7 @@ button#shelve::after {
 			padding: .25em 0;
 		}
 
-		/* Parents */
+		// Parents
 		li.parent {
 			> a {
 				padding-right: 15px;
@@ -283,7 +280,7 @@ button#shelve::after {
 			top: .4em;
 		}
 
-		/* ### Disclosure */
+		// Disclosure
 		ul ul li {
 			display: none;
 		}
@@ -310,8 +307,8 @@ button#shelve::after {
 		border-bottom-width: 1px;
 	}
 
-	/* #### Home Icon */
-	.spine-sitenav:not(.homeless) > ul > li:first-child > a {
+	// Default "Home" icon next to the top list item in the Spine navigation.
+	.spine-sitenav > ul > li:first-child > a {
 		padding-left: 1.4em;
 		background-image: url("#{$locality}/icons/home-gray.svg");
 		background-color: transparent;
@@ -320,17 +317,48 @@ button#shelve::after {
 		background-size: 1em auto;
 	}
 
-	.spine-sitenav:not(.homeless) > ul > li.active:first-child > a,
-	.spine-sitenav:not(.homeless) > ul > li:first-child > a:hover,
-	.spine-sitenav:not(.homeless) > ul > li:first-child > a:before {
+	// Default "Home" icon hover state and active (current) state.
+	//
+	// Applies to default, darkest, lightest, lightly, and lighter.
+	.spine-sitenav > ul > li.active:first-child > a,
+	.spine-sitenav > ul > li:first-child > a:hover {
 		background-image: url("#{$locality}/icons/home-crimson.svg");
 	}
 
-	.spine-sitenav.homeless > ul > li:first-child > a {
-		background-image: none !important;
+	&.light,
+	&.gray,
+	&.dark {
+		.spine-sitenav > ul > li:first-child a {
+			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
+		}
 	}
 
-	/* #### "Dogeared" Link */
+	&.darker,
+	&.crimson,
+	&.darkest {
+		.spine-sitenav > ul > li:first-child a {
+			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
+		}
+	}
+
+	// Override the default "Home" icon hover and active (current) state for some variations.
+	&.light,
+	&.gray,
+	&.dark,
+	&.darker,
+	&.crimson {
+		.spine-sitenav > ul > li.active:first-child > a,
+		.spine-sitenav > ul > li:first-child a:hover {
+			background-image: url("#{$locality}/icons/home-white.svg");
+		}
+	}
+
+	.spine-sitenav.homeless > ul > li:first-child > a {
+		background-image: none;
+		padding-left: 0;
+	}
+
+	// "Dogeared" Link
 	li:not(.parent).dogeared > a {
 		color: #981e32;
 		font-weight: bold;
@@ -341,7 +369,7 @@ button#shelve::after {
 		cursor: default;
 	}
 
-	/* #### External Links */
+	// External Links
 	nav a.external:hover:after {
 		font-family: "Spine-Icons";
 		-webkit-font-smoothing: antialiased;
@@ -419,13 +447,10 @@ html.lt-ie9 #spine .spine-actions {
 		}
 	}
 
-	/* ### Tabs */
+	// Tabs
 	.spine-actions-tabs {
 		padding: 0;
-		margin-top: 0;
-		margin-right: 1.75em;
-		margin-bottom: 0;
-		margin-left: 1.75em;
+		margin: 0 1.75em;
 
 		button {
 			outline: none;
@@ -504,7 +529,7 @@ html.lt-ie9 #spine .spine-actions {
 		border-bottom: 1px #b6bcbf solid;
 	}
 
-	/* Hide the clear "X" in newer versions of IE */
+	// Hide the clear "X" in newer versions of IE
 	input::-ms-clear {
 		display: none;
 	}
@@ -808,35 +833,35 @@ html.lt-ie9 #spine .spine-actions {
 		a span {
 			display: none;
 		}
+	}
 
-		&.by-facebook a:before {
-			content: "F";
-		}
+	.by-facebook a:before {
+		content: "F";
+	}
 
-		&.by-twitter a:before {
-			content: "T";
-		}
+	.by-twitter a:before {
+		content: "T";
+	}
 
-		&.by-googleplus a:before {
-			content: "G";
-		}
+	.by-googleplus a:before {
+		content: "G";
+	}
 
-		&.by-email a:before {
-			content: "@";
-		}
+	.by-email a:before {
+		content: "@";
+	}
 
-		&.by-pinterest a:before {
-			content: "P";
-		}
+	.by-pinterest a:before {
+		content: "P";
+	}
 
-		&.by-linkedin a:before {
-			content: "L";
-		}
+	.by-linkedin a:before {
+		content: "L";
+	}
 
-		&.by-other a:before {
-			content: "";
-			display: none;
-		}
+	.by-other a:before {
+		content: "";
+		display: none;
 	}
 }
 
@@ -880,6 +905,7 @@ html.lt-ie9 #spine footer {
 		}
 
 		li a {
+			direction: ltr;
 			text-indent: -99164px;
 			font-size: 1.8em;
 			line-height: .8em;
@@ -1133,7 +1159,7 @@ html.lt-ie9 #spine footer {
 		text-transform: uppercase;
 	}
 
-	ul li.mywsu-link {
+	ul .mywsu-link {
 		text-transform: none;
 	}
 	
@@ -1243,8 +1269,10 @@ html.lt-ie9 #spine footer {
 /* ### Alternate Colors */
 @import 'spine/colors';
 
-/* Campus Signature Versions */
-@include signatures('vertical','');
+/* ### Campus Signatures - Default, vertical layout. */
+@include signatures();
+
+@include header-colors();
 
 /* ### Cropped */
 @import 'spine/cropped';

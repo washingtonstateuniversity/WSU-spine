@@ -1,7 +1,6 @@
 @charset "UTF-8";
 #spine  {
 	&.lightest {
-		/* #### LIGHTEST #e6e8e9, rgb(230,232,233) */
 		#glue:before {
 			background-color: $gray-lightest;
 		}
@@ -56,7 +55,6 @@
 	}
 
 	&.lightly {
-		/* #### LIGHTLY #d7dadb, rgb(215 218 219) */
 		#glue:before {
 			background-color: $gray-lightly;
 		}
@@ -107,7 +105,6 @@
 	}
 
 	&.lighter {
-		/* #### LIGHTER #b5babe, rgb(181 186 190) */
 		#glue:before {
 			background-color: $gray-lighter;
 		}
@@ -164,21 +161,11 @@
 	}
 
 	&.light {
-		/* #### LIGHT #8b9399, rgb(139,147,153) */
 		#glue:before {
 			background-color: $gray-light;
 		}
 
 		@include vellum($gray-light);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-actions .opened button,
 		.spine-actions button,
@@ -228,21 +215,11 @@
 	}
 
 	&.gray {
-		/* #### GRAY #5e6a71, rgb(94,106,113) */
 		#glue:before {
 			background: $gray;
 		}
 
 		@include vellum($gray);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-actions .opened button,
 		.spine-actions button,
@@ -296,21 +273,11 @@
 	}
 
 	&.dark {
-		/* #### GRAY-DARK #383D42, rgb(75,85,90) */
 		#glue:before {
 			background-color: $gray-dark;
 		}
 
 		@include vellum($gray-dark);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lightest.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-sitenav a,
 		.spine-offsitenav a:hover {
@@ -366,21 +333,11 @@
 	}
 
 	&.darker {
-		/* #### GRAY-DARKER #2a3033, rgb(42 48 51) */
 		#glue:before {
 			background-color: darken($gray-darker, 3%);
 		}
 
 		@include vellum(darken($gray-darker, 3%));
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-sitenav a,
 		.spine-offsitenav a:hover {
@@ -432,21 +389,11 @@
 	}
 
 	&.darkest {
-		/* #### GRAY-DARKEST #000, rgb 0,0,0 */
 		#glue:before {
 			background-color: $gray-darkest;
 		}
 
 		@include vellum($gray-darkest);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-crimson.svg");
-		}
 
 		.spine-sitenav a,
 		.spine-offsitenav a:hover {
@@ -491,21 +438,11 @@
 	}
 
 	&.crimson {
-		/* #### CRIMSON #981e32 */
 		#glue:before {
 			background-color: $crimson;
 		}
 
 		@include vellum($crimson);
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a {
-			background-image: url("#{$locality}/icons/home-gray-lighter.svg");
-		}
-
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:before,
-		.spine-sitenav:not(.homeless) > ul > li:first-child a:hover {
-			background-image: url("#{$locality}/icons/home-white.svg");
-		}
 
 		.spine-sitenav a {
 			color: $gray-lighter;
@@ -514,7 +451,6 @@
 		.spine-actions-tabs button,
 		.spine-social-channels a,
 		.spine-footer small a {
-			xcolor: black;
 			color: $crimson-dark;
 			color: darken($crimson-dark,4%);
 		}

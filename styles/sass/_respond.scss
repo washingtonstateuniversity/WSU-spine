@@ -159,11 +159,6 @@
 
 	/* Grid Medium */
 	@include grid-medium-controls;
-
-	@include header-colors;
-
-	@include signatures('horizontal','.fixed ');
-	@include signatures('horizontal','.hybrid ');
 }
 
 /* SMALL (max 791px)
@@ -233,45 +228,6 @@
 	}
 
 	@include grid-small-controls;
-	@include header-colors;
-	@include signatures('horizontal','.fluid ');
-}
-
-/* SMALLISH (Fixed Only)
------------------------------------------------------ */
-/* Medium and Desktop - Small */
-@media only screen and (min-width: 694px) and (max-width: 791px) {
-	#binder.fixed {
-		width: 694px; /* 298px + 396px */
-	}
-
-	#binder.fixed main {
-		width: 396px;
-		padding-top: 0;
-		margin-left: 298px;
-	}
-
-	/* Shelving */
-	#binder.fixed {
-		@include unshelved;
-	}
-
-	/* Grid */
-	.fixed {
-		@include layouts-small;
-	}
-
-	@include grid-smallish-controls;
-	@include grid-intermediate-controls;
-
-	/* Reverse */
-	.fixed .row.reverse .column {
-		float: left;
-	}
-
-	@include header-colors;
-	@include signatures('vertical','.fixed ');
-
 }
 
 /* ## SMALL (max 693)  */
@@ -318,9 +274,6 @@
 		background-size: auto 30px;
 		height: 49px;
 	}
-
-	@include header-colors;
-	@include signatures('horizontal','.fluid ');
 }
 
 @media only screen and (max-width: 530px) {

@@ -110,13 +110,12 @@ $layouts: 'single','halves','thirds','side-left', 'side-right', 'margin-left','m
 	}
 
 @mixin nested {
-
 	.row {
-		max-width: auto;
+		max-width: none;
 	}
 
 	/* single then halves */
-	.row.single row.halves .column {
+	.row.single .row.halves .column {
 		width: 396px;
 	}
 

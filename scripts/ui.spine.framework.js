@@ -82,8 +82,11 @@
 		 * Determine if the page view is in a mobile state, defined as less than 990px;
 		 */
 		is_mobile_view: function() {
-			if ( $(document).outerWidth() < 990 ) {
-				return true;
+			if ( window.matchMedia ) {
+				return window.matchMedia( "(max-width: 989px)" ).matches;
+			} else if ( window.styleMedia ) {
+				// Fallback for IE 9. IE 8 and below do not support media queries anyway.
+				return window.styleMedia.matchMedium( "(max-width: 989px)" );
 			}
 
 			return false;
