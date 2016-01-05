@@ -1,7 +1,6 @@
 module.exports = {
 	scripts: {
 		src: [
-			"scripts/debug.js",
 			"scripts/wsu_autocomplete.js",
 			"scripts/ui.spine.js",
 			"scripts/ui.spine.framework.js",
