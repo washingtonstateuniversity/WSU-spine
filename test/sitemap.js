@@ -45,7 +45,7 @@ module.exports = {
 						nav_title: "Fluid Grid"
 					},
 					vars: {
-						behavior: "fluid",
+						grid_layout: "fluid",
 						content: true
 					}
 				},
@@ -58,7 +58,7 @@ module.exports = {
 						nav_title: "Hybrid Grid"
 					},
 					vars: {
-						hybridGrid: true,
+						grid_layout: "hybrid",
 						content: true
 					}
 				},
@@ -71,7 +71,7 @@ module.exports = {
 						nav_title: "Fixed Grid"
 					},
 					vars: {
-						fixedGrid: true,
+						grid_layout: "fixed",
 						content: true
 					}
 				},
