@@ -18,13 +18,6 @@ module.exports = {
 						nav_link : "index.html",
 					},
 				},
-				_options : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Options",
-					}
-				},
 				demo : {
 					title : "Basic Demo",
 					nav:{
