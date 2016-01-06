@@ -2,31 +2,30 @@
 {% set page_var = page.vars %}
 {% include "preprocess/blocks/head.html" %}
 <body class="{{ "wireframe" if page_var.demo else "" }}">
-	<!-- WRAPPING -->
+
 	<div id="jacket">
+
 		{% if page_var.cropped -%}
 			{% include "preprocess/content/cropped.html" %}
 		{% endif -%}
+
 		<div id="binder" class="{{ " fixed " if page_var.fixedGrid else "" }} {{ " fluid " if page_var.fluidGrid else "" }} {{ " hybrid " if not page_var.fixedGrid and not page_var.fluidGrid else "" }} {{ " spineless " if page_var.cropped else "" }} {{ " broken " if page_var.broken else "" }} ">
 
-			<!-- CONTENT -->
 			<main>
 				{% include "preprocess/blocks/main_content.html" %}
 			</main>
-			<!-- /CONTENT -->
+
 			{% include "preprocess/blocks/spine.html" %}
-		</div><!--/cover-->
-	</div><!--/jacket-->
-	<!-- /WRAPPING -->
+
+		</div><!-- /binder -->
+
+	</div><!-- /jacket -->
 
 	{% if page_var.malformed -%}
 		{% include "preprocess/blocks/contact_malformed.html" %}
 	{% else -%}
-		<!-- NOTE: a normal working contact tab, just could have been better placed
-			 then in the spine directly -->
 		{% include "preprocess/blocks/contact_normal.html" %}
 	{% endif -%}
 
-	{#% include "preprocess/blocks/analytics.html" -%#}
 </body>
 </html>
