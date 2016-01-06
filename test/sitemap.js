@@ -99,11 +99,6 @@ module.exports = {
 						nav_title : "On Responsiveness",
 					}
 				},
-
-
-
-
-
 				_layouts : {
 					file:false,
 					nav:{
@@ -111,7 +106,6 @@ module.exports = {
 						nav_title : "Layouts and Columns",
 					}
 				},
-
 				columns : {
 					title: "Testing Columns",
 					nav:{
@@ -134,8 +128,6 @@ module.exports = {
 						spacing : true,
 					}
 				},
-
-
 				_content : {
 					file:false,
 					nav:{
@@ -143,7 +135,6 @@ module.exports = {
 						nav_title : "Main/Content",
 					}
 				},
-
 				mainheader : {
 					title: "Testing the Main Header",
 					nav:{
@@ -188,11 +179,6 @@ module.exports = {
 						ui : true
 					}
 				},
-
-
-
-
-
 				_broken : {
 					file:false,
 					nav:{
@@ -200,7 +186,6 @@ module.exports = {
 						nav_title : "Broken",
 					}
 				},
-
 				contact_malformed : {
 					nav:{
 						parent:"Broken",
@@ -259,8 +244,6 @@ module.exports = {
 						content: true
 					}
 				},
-
-
 				_testing : {
 					file:false,
 					nav:{
@@ -322,19 +305,6 @@ module.exports = {
 						anchored: true
 					}
 				}
-				/*"development":{
-					name : "development",
-					title : "WSU Serverbase development guide",
-					"nav_title":"Development",
-					vars : {
-					"showstuff":true
-					},
-					"child_nav":{
-					"#vagrant-options":"Vagrant Options",
-						"#how-to-add-a-web-app-":"Load Web Apps",
-						"#sample-working-file":"Sample Config"
-					}
-				}*/
 			}
 		};
 		return site_obj;
