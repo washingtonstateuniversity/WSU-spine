@@ -12,9 +12,12 @@ module.exports = {
 			pages: {
 				index: {
 					name: "index",
-					title: "WSU Test unit",
+					title: "WSU Spine HTML",
 					nav: {
 						nav_link: "index.html"
+					},
+					vars: {
+						typography: true
 					}
 				},
 
@@ -151,17 +154,6 @@ module.exports = {
 					nav: {
 						nav_link: "#",
 						nav_title: "Content"
-					}
-				},
-
-				typography: {
-					title: "Spine Typography",
-					nav: {
-						parent: "Content",
-						nav_link: "typography.html"
-					},
-					vars: {
-						typography: true
 					}
 				},
 
