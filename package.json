@@ -25,7 +25,6 @@
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-env": "~0.4.4",
 		"grunt-postcss": "^0.7.1",
-		"grunt-preprocess": "~5.0.1",
 		"grunt-sass": "^1.1.0",
 		"load-grunt-tasks": "~3.4.0",
 		"nunjucks": "~2.2.0",
