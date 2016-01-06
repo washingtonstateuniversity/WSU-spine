@@ -14,11 +14,7 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 
 	<!-- STYLESHEETS -->
-	{% if not page_var.markup and not page_var.markup_min -%}
-		<link href="{{ "../" if not page_var.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
-	{% else -%}
-		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
-	{% endif -%}
+	<link href="../spine.css" rel="stylesheet" type="text/css" />
 
 	<!-- Your custom stylesheets here -->
 
@@ -31,7 +27,6 @@
 
 	<script type="text/javascript">
 		var spineoptions={
-			{% if not page_var.markup and not page_var.markup_min -%}
 			search:{
 				providers:{
 					local:{
@@ -49,36 +44,11 @@
 					minLength: 2,
 					template:"<li>%s</li>"
 				}
-			},
-			social:{
-				provider:"WSU_share",
-				script_url:"//repo.wsu.edu/wsu_share/1/",
-				channels:[
-					"facebook",
-					"twitter",
-					"Pinterest"
-				]
-				},
-			analytics:{
-				"google":{
-					analytics:{
-						"account_id":"UA-XXXXX-XX"
-					},
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				},
-				"bing":{
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				}
 			}
-			{% endif -%}
 		};
 	</script>
-	{% if not page_var.markup and not page_var.markup_min -%}
-	<script src="{{ "../" if not page_var.demo else "" }}spine.js"></script>
-	{% else %}
-	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.js"></script>
-	{% endif -%}
 
+	<script src="../spine.js"></script>
 
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -88,9 +58,7 @@
 	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="help" href="http://brand.wsu.edu">
 
-	{% if not page_var.demo -%}
 	<!-- BASE URL -->
 	<base href="{{ basepath }}" />
-	{% endif -%}
 
 </head>

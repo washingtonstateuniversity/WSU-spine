@@ -57,7 +57,6 @@ module.exports = function( grunt ) {
 		"clean",
 		"sass:dev",
 		"concat",
-		"preprocess:js",
 		"postcss",
 		"csslint",
 		"cssmin",
