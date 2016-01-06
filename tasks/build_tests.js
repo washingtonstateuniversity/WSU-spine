@@ -4,7 +4,6 @@ module.exports = function(grunt) {
 		var fs = require("fs");
 		var extend = require("extend");
 		var wrench = require("wrench");
-			//util = require("util");
 		var nunjucks = require("nunjucks");
 		var env = nunjucks.configure("test");
 		env.addFilter("indexof", function(str, cmpstr) {
@@ -19,7 +18,7 @@ module.exports = function(grunt) {
 
 		var sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
-		//console.log("site_obj: %j", sitemap);
+
 		wrench.mkdirSyncRecursive("build/tests", 0777);
 
 		/*
@@ -28,8 +27,6 @@ module.exports = function(grunt) {
 		function build_site_obj(){
 			var nav = {};
 			for (var page_key in sitemap.pages) {
-				//grunt.log.writeln("working "+page_key);
-
 				//apply defaults were needed
 				sitemap.pages[page_key].nav_key = page_key;
 				//note extend will not work here, for some reason it'll alter the ref of defaults
@@ -98,7 +95,6 @@ module.exports = function(grunt) {
 					}
 					nav = extend(nav,tmpobj);
 				}
-				//grunt.log.writeln("worked "+page_key);
 			}
 			sitemap.nav = nav;
 		}
@@ -109,30 +105,25 @@ module.exports = function(grunt) {
 		 * Construct the static pages
 		 */
 		function build_page(){
-			//console.log(sitemap);
-			for (var key in sitemap.pages) {
-
+			for ( var key in sitemap.pages ) {
 				var site_obj = sitemap;
-				var page_obj = site_obj.pages[key];
-				if(page_obj.file!==false){
-					var sourceFile = "test/preprocess/"+page_obj.template+".tmpl";
-					//var tmpFile = "build/deletable.tmp";
-					var root = page_obj.file_root.replace(new RegExp("[\/]+$", "g"), "");
+				var page_obj = site_obj.pages[ key ];
 
-					var page = page_obj.file || page_obj.nav_key+".html";
-					var targetFile = root+"/"+page;
-					var content = fs.readFileSync(sourceFile,"utf8");
+				if ( page_obj.file !== false ) {
+					var sourceFile = "test/preprocess/" + page_obj.template + ".tmpl";
+					var root = page_obj.file_root.replace( new RegExp( "[\/]+$", "g" ), "" );
+					var page = page_obj.file || page_obj.nav_key + ".html";
+					var targetFile = root + "/" + page;
+					var content =  fs.readFileSync( sourceFile, "utf8" );
 
-					site_obj.current_page=page;
-					site_obj.current_build=page_obj.nav_key;
-					//grunt.log.writeln("building "+targetFile);
-					var tmpl = new nunjucks.Template(content,env);
-					//grunt.log.writeln(targetFile + " compiled");
-					var res = tmpl.render(site_obj);
-					grunt.log.writeln("building "+targetFile);
-					fs.writeFile(targetFile, res, function(){
-						//grunt.log.writeln("wrote to file "+targetFile);
-					});
+					site_obj.current_page = page;
+					site_obj.current_build = page_obj.nav_key;
+
+					var tmpl = new nunjucks.Template( content, env );
+					var res = tmpl.render( site_obj );
+
+					grunt.log.writeln( "building " + targetFile );
+					fs.writeFile( targetFile, res );
 				}
 			}
 		}
