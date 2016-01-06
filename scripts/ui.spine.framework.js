@@ -557,8 +557,8 @@
 
 			/**
 			 * Account for historical markup in the WSU ecosystem and add the `active` and `dogeared` classes
-			 * to any list items that already have a class `current` or `active`. Also apply the `active` and
-			 * `dogeared` classes to any parent list items of these elements.
+			 * to any list items that already have classes similar to `current` or `active`. Also apply the
+			 * `active` and `dogeared` classes to any parent list items of these elements.
 			 *
 			 * `active` and `dogeared` are both used for the styling of active menu items in the navigation.
 			 */
