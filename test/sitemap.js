@@ -22,10 +22,10 @@ module.exports = {
 				},
 
 				demo: {
-					title: "Basic Demo",
+					title: "Spine Layout Demo",
 					nav: {
 						nav_link: "demo.html",
-						nav_title: "Demo"
+						nav_title: "Spine Layout Demo"
 					},
 					vars: {
 						demo: true
