@@ -14,11 +14,7 @@
 	<link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
 
 	<!-- STYLESHEETS -->
-	{% if not page_var.markup and not page_var.markup_min -%}
-		<link href="{{ "../" if not page_var.demo else "" }}spine.css" rel="stylesheet" type="text/css" />
-	{% else -%}
-		<link href="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.css" rel="stylesheet" type="text/css" />
-	{% endif -%}
+	<link href="../spine.css" rel="stylesheet" type="text/css" />
 
 	<!-- Your custom stylesheets here -->
 
@@ -73,11 +69,8 @@
 			{% endif -%}
 		};
 	</script>
-	{% if not page_var.markup and not page_var.markup_min -%}
-	<script src="{{ "../" if not page_var.demo else "" }}spine.js"></script>
-	{% else %}
-	<script src="https://repo.wsu.edu/spine/{{ build_version }}/spine{{ ".min" if page_var.markup_min else "" }}.js"></script>
-	{% endif -%}
+
+	<script src="../spine.js"></script>
 
 
 	<!-- COMPATIBILITY -->
@@ -88,9 +81,7 @@
 	<link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
 	<link type="text/html" rel="help" href="http://brand.wsu.edu">
 
-	{% if not page_var.demo -%}
 	<!-- BASE URL -->
 	<base href="{{ basepath }}" />
-	{% endif -%}
 
 </head>
