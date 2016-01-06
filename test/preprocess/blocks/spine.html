@@ -1,12 +1,6 @@
 	<!-- SPINE -->
-	<div id="spine" class="spine-column shelved {{ "color" if page_var.markup else "" }} {{ "bleed" if not page_var.cropped and not page_var.unbound else "" }} {{ "cropped crimson" if page_var.cropped else "" }}">
-		{% if page_var.markup -%}
-		<!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter,
-						gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above
-						with your preferred color if you want to override the default.
-						-->
-		<!-- SPINE BLEED: Remove "bleed" so that  -->
-		{% endif -%}
+	<div id="spine" class="spine-column shelved {{ "bleed" if not page_var.cropped and not page_var.unbound else "" }} {{ "cropped crimson" if page_var.cropped else "" }}">
+
 		<div id="glue" class="spine-glue">
 
 			<header class="spine-header">
@@ -56,15 +50,10 @@
 						{%- endif %}
 						{% endfor -%}
 
-						{% if page_var.navdata and not page_var.markup_min -%}
+						{% if page_var.navdata -%}
 							<li><a href="link" data-foo="bar" >Data Foo</a><li>
 						{% endif -%}
-						{#% if not page_var.markup and not page_var.markup_min -%}
-							{% include "preprocess/blocks/nav-site-tests.html" %}
-						{% endif -%#}
-						{% if page_var.markup or page_var.markup_min -%}
-							{% include "preprocess/blocks/nav-site.html" %}
-						{% endif -%}
+
 						{% if page_var.manyLinks -%}
 							{% include "preprocess/blocks/nav_extralinks.html" %}
 						{% endif -%}
@@ -77,13 +66,6 @@
 			<!-- Social and Global Links -->
 			<footer class="spine-footer">
 				<nav id="wsu-social-channels" class="spine-social-channels">
-					{% if page_var.markup -%}
-					<!--
-					SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-					• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
-					• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
-					• Maximum number of channels is five -->
-					{% endif -%}
 					<ul>
 						<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>
 						<li class="twitter-channel"><a href="http://twitter.com/wsupullman">Twitter</a></li>

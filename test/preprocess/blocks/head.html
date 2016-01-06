@@ -27,7 +27,6 @@
 
 	<script type="text/javascript">
 		var spineoptions={
-			{% if not page_var.markup and not page_var.markup_min -%}
 			search:{
 				providers:{
 					local:{
@@ -45,33 +44,11 @@
 					minLength: 2,
 					template:"<li>%s</li>"
 				}
-			},
-			social:{
-				provider:"WSU_share",
-				script_url:"//repo.wsu.edu/wsu_share/1/",
-				channels:[
-					"facebook",
-					"twitter",
-					"Pinterest"
-				]
-				},
-			analytics:{
-				"google":{
-					analytics:{
-						"account_id":"UA-XXXXX-XX"
-					},
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				},
-				"bing":{
-					verification:"XXXXXXXXXXXXXXXXXXXXX"
-				}
 			}
-			{% endif -%}
 		};
 	</script>
 
 	<script src="../spine.js"></script>
-
 
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
