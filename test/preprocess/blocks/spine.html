@@ -35,10 +35,10 @@
 							<li>
 							{% for ctitle, clink in link -%}
 								{% if loop.first -%}
-									<a href="{{ clink }}" {% if clink|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ ctitle }}</a>
+									<a href="{{ clink }}" {% if clink|indexof(current_page)>-1 -%} class="current active" {% endif -%}>{{ ctitle }}</a>
 									<ul>
 								{% else -%}
-									<li><a href="{{ clink }}">{{ ctitle }}</a></li>
+									<li {% if clink|indexof(current_page)>-1 -%} class="dogeared active current" {% endif -%}><a href="{{ clink }}">{{ ctitle }}</a></li>
 								{% endif -%}
 								{%- if loop.last %}
 									</ul>
@@ -46,7 +46,7 @@
 							{%- endfor %}
 							</li>
 						{% else %}
-							<li><a href="{{ link }}" {% if link|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ title }}</a></li>
+							<li {% if link|indexof(current_page)>-1 -%} class="dogeared active" {% endif -%}><a href="{{ link }}">{{ title }}</a></li>
 						{%- endif %}
 						{% endfor -%}
 
