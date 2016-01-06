@@ -552,15 +552,23 @@
 		 * Sets up navigation system
 		 */
 		setup_nav: function() {
-			// Tag location and hierarchy
-			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
+			// Apply the `parent` class to each parent list item of an unordered list in the navigation.
+			$( "#spine nav ul, #spine ul" ).parents( "li" ).addClass( "parent" );
 
-			// Use "current" or "active" on active li elements. Parents of these elements will automatically
-			// receive the "active" class. We check wildcards to accommodate inflexible platforms.
-			$("#spine nav li[class*=current], #spine nav li[class*=active]").addClass("active").parents("li").addClass("active");
-			$("#spine nav li a[class*=current], #spine nav li a[class*=active]").parents("li").addClass("active");
+			/**
+			 * Account for historical markup in the WSU ecosystem and add the `active` and `dogeared` classes
+			 * to any list items that already have classes similar to `current` or `active`. Also apply the
+			 * `active` and `dogeared` classes to any parent list items of these elements.
+			 *
+			 * `active` and `dogeared` are both used for the styling of active menu items in the navigation.
+			 */
+			$( "#spine nav li[class*=current], #spine nav li[class*=active]" ).addClass( "active dogeared" ).parents( "li" ).addClass( "active dogeared" );
 
-			$("#spine .active:not(:has(.active))").addClass("dogeared");
+			/**
+			 * Also look for any anchor elements using a similar method and apply `active` and `dogeared` classes to
+			 * all parent list items.
+			 */
+			$( "#spine nav li a[class*=current], #spine nav li a[class*=active]" ).parents( "li" ).addClass( "active dogeared" );
 
 			// Couplets
 			$("#spine nav li.parent > a").each( function() {
