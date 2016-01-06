@@ -12,7 +12,6 @@ module.exports = {
 	},
 	dev: {
 		files: [
-			{ flatten: true, expand: true, src: ["test/js/*"], dest: "<%= config.build %>/tests/js/" },
 			{ flatten: true, expand: true, src: ["test/images/*"], dest: "<%= config.build %>/tests/images/" }
 		]
 	}

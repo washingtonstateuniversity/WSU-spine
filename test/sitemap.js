@@ -339,17 +339,6 @@ module.exports = {
 					vars : {
 						anchored: true
 					}
-				},
-				js_units:{
-					title: "Unit Testing",
-					nav:{
-						parent:"Testing Units",
-						nav_link : "js-units.html",
-					},
-					vars : {
-						fixedGrid : true,
-						unit_tests: true
-					}
 				}
 				/*"development":{
 					name : "development",
