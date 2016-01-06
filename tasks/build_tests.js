@@ -5,23 +5,11 @@ module.exports = function(grunt) {
 		var extend = require("extend");
 		var wrench = require("wrench");
 			//util = require("util");
-		var nunjucks = require("nunjucks"),
-			markdown = require("nunjucks-markdown");
+		var nunjucks = require("nunjucks");
 		var env = nunjucks.configure("test");
 		env.addFilter("indexof", function(str, cmpstr) {
 			return str.indexOf(cmpstr);
 		});
-		var marked = require("marked");
-			markdown.register(env,{
-				renderer: new marked.Renderer(),
-				gfm: true,
-				tables: true,
-				breaks: false,
-				pendantic: false,
-				sanitize: false,
-				smartLists: true,
-				smartypants: false
-			});
 		var done = this.async();
 
 		grunt.log.writeln("Set up all test pages");
