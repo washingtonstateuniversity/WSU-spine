@@ -21,17 +21,6 @@ module.exports = {
 					}
 				},
 
-				demo: {
-					title: "Spine Layout Demo",
-					nav: {
-						nav_link: "demo.html",
-						nav_title: "Spine Layout Demo"
-					},
-					vars: {
-						demo: true
-					}
-				},
-
 				_behaviors: {
 					file: false,
 					nav: {
@@ -49,7 +38,7 @@ module.exports = {
 					},
 					vars: {
 						grid_layout: "fluid",
-						content: true
+						demo: true
 					}
 				},
 
@@ -62,7 +51,7 @@ module.exports = {
 					},
 					vars: {
 						grid_layout: "hybrid",
-						content: true
+						demo: true
 					}
 				},
 
@@ -75,7 +64,7 @@ module.exports = {
 					},
 					vars: {
 						grid_layout: "fixed",
-						content: true
+						demo: true
 					}
 				},
 
