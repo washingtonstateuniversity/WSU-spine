@@ -10,24 +10,6 @@ module.exports = {
 				template : "main"
 			},
 			pages:{
-				/* note that these first files are not inclucded in the test suite nav */
-				markup : {
-					file : "spine.min.html",
-					file_root : "build",
-					nav:false,
-					vars : {
-						markup : true,
-						content: true,
-					}
-				},
-				markup_min : {
-					file : "spine.min.html",
-					file_root : "build",
-					nav:false,
-					vars : {
-						markup_min : true
-					}
-				},
 				/* end of navless */
 				index:{
 					name : "index",

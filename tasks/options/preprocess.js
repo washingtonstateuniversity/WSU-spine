@@ -37,26 +37,6 @@ module.exports = {
 		src : "test/preprocess/test.cat.pre.html",
 		dest : "<%= config.build %>/tests/html.html"
 	},
-	markup : {
-		src : "test/preprocess/test.cat.pre.html",
-		dest : "spine.html",
-		options : {
-			context : {
-				markup : "true",
-				content: "true",
-			}
-		}
-	},
-	markup_min : {
-		src : "test/preprocess/test.cat.pre.html",
-		dest : "spine.min.html",
-		options : {
-			context : {
-				markup_min : "true",
-				content: "false"
-			}
-		}
-	},
 	demo : {
 		src : "test/preprocess/test.cat.pre.html",
 		dest : "<%= config.build %>/demo.html",
