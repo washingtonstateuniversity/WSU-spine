@@ -222,19 +222,6 @@ module.exports = {
 					}
 				},
 
-				nav_data_links: {
-					nav: {
-						parent: "Broken",
-						nav_link: "nav_data_links.html",
-						nav_title: "Nav data intergration"
-					},
-					vars: {
-						navdata: true,
-						content: true,
-						location: "https://repo.wsu.edu/spine"
-					}
-				},
-
 				search_tabs: {
 					title: "Testing search tab",
 					nav: {

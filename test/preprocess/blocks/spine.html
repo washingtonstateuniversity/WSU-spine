@@ -27,8 +27,6 @@
 			<section id="spine-navigation" class="spine-navigation">
 				<nav id="spine-sitenav" class="spine-sitenav">
 					<ul>
-
-
 						{#% this is the generated nav from the testing sitemap %#}
 						{% for title, link in nav -%}
 						{% if link=="[object Object]" %}
@@ -49,10 +47,6 @@
 							<li {% if link|indexof(current_page)>-1 -%} class="dogeared active" {% endif -%}><a href="{{ link }}">{{ title }}</a></li>
 						{%- endif %}
 						{% endfor -%}
-
-						{% if page_var.navdata -%}
-							<li><a href="link" data-foo="bar" >Data Foo</a><li>
-						{% endif -%}
 
 						{% if page_var.manyLinks -%}
 							{% include "preprocess/blocks/nav_extralinks.html" %}
