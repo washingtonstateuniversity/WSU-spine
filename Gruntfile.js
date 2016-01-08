@@ -56,6 +56,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( "build", [
 		"clean",
 		"sass:dev",
+		"env:prod",
 		"concat",
 		"postcss",
 		"csslint",
