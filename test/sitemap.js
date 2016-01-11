@@ -225,10 +225,11 @@ module.exports = {
 				},
 
 				overly: {
+					title: "Long Navigation, Long Content",
 					nav: {
 						parent: "Testing Units",
 						nav_link: "overly.html",
-						nav_title: "Overly Overly"
+						nav_title: "Long Navigation, Long Content"
 					},
 					vars: {
 						manyLinks: true,
@@ -237,10 +238,11 @@ module.exports = {
 				},
 
 				overly_linked: {
+					title: "Long Navigation, Short Content",
 					nav: {
 						parent: "Testing Units",
 						nav_link: "overly_linked.html",
-						nav_title: "Overly Linked"
+						nav_title: "Long Navigation, Short Content"
 					},
 					vars: {
 						manyLinks: true,
@@ -250,10 +252,11 @@ module.exports = {
 				},
 
 				overly_long: {
+					title: "Normal Navigation, Long Content",
 					nav: {
 						parent: "Testing Units",
 						nav_link: "overly_long.html",
-						nav_title: "Overly Long"
+						nav_title: "Normal Navigation, Long Content"
 					},
 					vars: {
 						showLong: true
