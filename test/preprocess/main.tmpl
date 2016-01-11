@@ -9,7 +9,7 @@
 			{% include "preprocess/content/cropped.html" %}
 		{% endif -%}
 
-		<div id="binder" class="{{ " fixed " if page_var.fixedGrid else "" }} {{ " fluid " if page_var.fluidGrid else "" }} {{ " hybrid " if not page_var.fixedGrid and not page_var.fluidGrid else "" }} {{ " spineless " if page_var.cropped else "" }} {{ " broken " if page_var.broken else "" }} ">
+		<div id="binder" class="{{ page_var.grid_layout if page_var.grid_layout else "hybrid" }} {{ "spineless" if page_var.cropped else "" }}">
 
 			<main>
 				{% include "preprocess/blocks/main_content.html" %}

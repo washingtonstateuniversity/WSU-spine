@@ -12,20 +12,12 @@ module.exports = {
 			pages: {
 				index: {
 					name: "index",
-					title: "WSU Test unit",
+					title: "WSU Spine HTML",
 					nav: {
 						nav_link: "index.html"
-					}
-				},
-
-				demo: {
-					title: "Basic Demo",
-					nav: {
-						nav_link: "demo.html",
-						nav_title: "Demo"
 					},
 					vars: {
-						demo: true
+						typography: true
 					}
 				},
 
@@ -45,8 +37,8 @@ module.exports = {
 						nav_title: "Fluid Grid"
 					},
 					vars: {
-						behavior: "fluid",
-						content: true
+						grid_layout: "fluid",
+						demo: true
 					}
 				},
 
@@ -58,8 +50,8 @@ module.exports = {
 						nav_title: "Hybrid Grid"
 					},
 					vars: {
-						hybridGrid: true,
-						content: true
+						grid_layout: "hybrid",
+						demo: true
 					}
 				},
 
@@ -71,8 +63,8 @@ module.exports = {
 						nav_title: "Fixed Grid"
 					},
 					vars: {
-						fixedGrid: true,
-						content: true
+						grid_layout: "fixed",
+						demo: true
 					}
 				},
 
@@ -150,15 +142,16 @@ module.exports = {
 					file: false,
 					nav: {
 						nav_link: "#",
-						nav_title: "Content"
+						nav_title: "Types of Content"
 					}
 				},
 
 				typography: {
-					title: "Spine Typography",
+					title: "Typography",
 					nav: {
-						parent: "Content",
-						nav_link: "typography.html"
+						parent: "Types of Content",
+						nav_link: "typography.html",
+						nav_title: "Typography"
 					},
 					vars: {
 						typography: true
@@ -168,7 +161,7 @@ module.exports = {
 				ui: {
 					title: "User Interaction Elements",
 					nav: {
-						parent: "Content",
+						parent: "Types of Content",
 						nav_link: "ui.html",
 						nav_title: "User Interfaces"
 					},
@@ -177,90 +170,20 @@ module.exports = {
 					}
 				},
 
-				_broken : {
-					file: false,
-					nav: {
-						nav_link: "#",
-						nav_title: "Broken"
-					}
-				},
-
-				contact_malformed: {
-					nav: {
-						parent: "Broken",
-						nav_link: "contact_malformed.html",
-						nav_title: "malformed Contact"
-					},
-					vars: {
-						malformed: true,
-						content: true,
-						location: "https://repo.wsu.edu/spine"
-					}
-				},
-
-				contact_filled: {
-					nav: {
-						parent: "Broken",
-						nav_link: "contact_filled.html",
-						nav_title: "Prefilled Contact"
-					},
-					vars: {
-						malformed: "false",
-						content: true
-					}
-				},
-
-				contact_double: {
-					nav: {
-						parent: "Broken",
-						nav_link: "contact_double.html",
-						nav_title: "Contact doubling"
-					},
-					vars: {
-						doubledContact: true,
-						content: true
-					}
-				},
-
-				nav_data_links: {
-					nav: {
-						parent: "Broken",
-						nav_link: "nav_data_links.html",
-						nav_title: "Nav data intergration"
-					},
-					vars: {
-						navdata: true,
-						content: true,
-						location: "https://repo.wsu.edu/spine"
-					}
-				},
-
-				search_tabs: {
-					title: "Testing search tab",
-					nav: {
-						parent: "Broken",
-						nav_link: "search_tabs.html",
-						nav_title: "Local Defined Search"
-					},
-					vars: {
-						filledSearchTab: true,
-						content: true
-					}
-				},
-
 				_testing: {
 					file: false,
 					nav: {
 						nav_link: "#",
-						nav_title: "Testing Units"
+						nav_title: "Navigation and Content"
 					}
 				},
 
 				overly: {
+					title: "Long Navigation, Long Content",
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "overly.html",
-						nav_title: "Overly Overly"
+						nav_title: "Long Navigation, Long Content"
 					},
 					vars: {
 						manyLinks: true,
@@ -269,10 +192,11 @@ module.exports = {
 				},
 
 				overly_linked: {
+					title: "Long Navigation, Short Content",
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "overly_linked.html",
-						nav_title: "Overly Linked"
+						nav_title: "Long Navigation, Short Content"
 					},
 					vars: {
 						manyLinks: true,
@@ -282,24 +206,71 @@ module.exports = {
 				},
 
 				overly_long: {
+					title: "Normal Navigation, Long Content",
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "overly_long.html",
-						nav_title: "Overly Long"
+						nav_title: "Normal Navigation, Long Content"
 					},
 					vars: {
 						showLong: true
 					}
 				},
 
+				short_navigation_normal_content: {
+					title: "Short Navigation, Normal Content",
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "short_navigation_normal_content.html",
+						nav_title: "Short Navigation, Normal Content"
+					},
+					vars: {
+						short_nav: true,
+						content: true
+					}
+				},
+
 				anchored: {
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "anchored.html",
 						nav_title: "Anchored page"
 					},
 					vars: {
 						anchored: true
+					}
+				},
+
+				_miscellaneous : {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Miscellaneous"
+					}
+				},
+
+				search_tabs: {
+					title: "Test the search tab with a CMS defined search",
+					nav: {
+						parent: "Miscellaneous",
+						nav_link: "search_tabs.html",
+						nav_title: "CMS Defined Search"
+					},
+					vars: {
+						filledSearchTab: true,
+						content: true
+					}
+				},
+
+				contact_malformed: {
+					nav: {
+						parent: "Miscellaneous",
+						nav_link: "contact_malformed.html",
+						nav_title: "Malformed Contact HTML"
+					},
+					vars: {
+						malformed: true,
+						content: true
 					}
 				}
 			}

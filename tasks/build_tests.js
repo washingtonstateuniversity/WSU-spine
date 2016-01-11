@@ -128,6 +128,10 @@ module.exports = function(grunt) {
 			}
 		}
 		build_page();
-		done();
+
+		setTimeout( function() {
+			grunt.log.writeln( "All done! " );
+			done();
+		}, 1 );
 	});
 };
