@@ -142,14 +142,26 @@ module.exports = {
 					file: false,
 					nav: {
 						nav_link: "#",
-						nav_title: "Content"
+						nav_title: "Types of Content"
+					}
+				},
+
+				typography: {
+					title: "Typography",
+					nav: {
+						parent: "Types of Content",
+						nav_link: "typography.html",
+						nav_title: "Typography"
+					},
+					vars: {
+						typography: true
 					}
 				},
 
 				ui: {
 					title: "User Interaction Elements",
 					nav: {
-						parent: "Content",
+						parent: "Types of Content",
 						nav_link: "ui.html",
 						nav_title: "User Interfaces"
 					},
@@ -158,76 +170,18 @@ module.exports = {
 					}
 				},
 
-				_broken : {
-					file: false,
-					nav: {
-						nav_link: "#",
-						nav_title: "Broken"
-					}
-				},
-
-				contact_malformed: {
-					nav: {
-						parent: "Broken",
-						nav_link: "contact_malformed.html",
-						nav_title: "malformed Contact"
-					},
-					vars: {
-						malformed: true,
-						content: true,
-						location: "https://repo.wsu.edu/spine"
-					}
-				},
-
-				contact_filled: {
-					nav: {
-						parent: "Broken",
-						nav_link: "contact_filled.html",
-						nav_title: "Prefilled Contact"
-					},
-					vars: {
-						malformed: "false",
-						content: true
-					}
-				},
-
-				contact_double: {
-					nav: {
-						parent: "Broken",
-						nav_link: "contact_double.html",
-						nav_title: "Contact doubling"
-					},
-					vars: {
-						doubledContact: true,
-						content: true
-					}
-				},
-
-				search_tabs: {
-					title: "Testing search tab",
-					nav: {
-						parent: "Broken",
-						nav_link: "search_tabs.html",
-						nav_title: "Local Defined Search"
-					},
-					vars: {
-						filledSearchTab: true,
-						content: true
-					}
-				},
-
 				_testing: {
 					file: false,
 					nav: {
 						nav_link: "#",
-						nav_title: "Testing Units"
+						nav_title: "Navigation and Content"
 					}
 				},
 
 				overly: {
 					title: "Long Navigation, Long Content",
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "overly.html",
 						nav_title: "Long Navigation, Long Content"
 					},
@@ -240,7 +194,7 @@ module.exports = {
 				overly_linked: {
 					title: "Long Navigation, Short Content",
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "overly_linked.html",
 						nav_title: "Long Navigation, Short Content"
 					},
@@ -254,7 +208,7 @@ module.exports = {
 				overly_long: {
 					title: "Normal Navigation, Long Content",
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "overly_long.html",
 						nav_title: "Normal Navigation, Long Content"
 					},
@@ -265,12 +219,45 @@ module.exports = {
 
 				anchored: {
 					nav: {
-						parent: "Testing Units",
+						parent: "Navigation and Content",
 						nav_link: "anchored.html",
 						nav_title: "Anchored page"
 					},
 					vars: {
 						anchored: true
+					}
+				},
+
+				_miscellaneous : {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Miscellaneous"
+					}
+				},
+
+				search_tabs: {
+					title: "Test the search tab with a CMS defined search",
+					nav: {
+						parent: "Miscellaneous",
+						nav_link: "search_tabs.html",
+						nav_title: "CMS Defined Search"
+					},
+					vars: {
+						filledSearchTab: true,
+						content: true
+					}
+				},
+
+				contact_malformed: {
+					nav: {
+						parent: "Miscellaneous",
+						nav_link: "contact_malformed.html",
+						nav_title: "Malformed Contact HTML"
+					},
+					vars: {
+						malformed: true,
+						content: true
 					}
 				}
 			}
