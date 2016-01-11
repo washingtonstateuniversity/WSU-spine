@@ -217,6 +217,19 @@ module.exports = {
 					}
 				},
 
+				short_navigation_normal_content: {
+					title: "Short Navigation, Normal Content",
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "short_navigation_normal_content.html",
+						nav_title: "Short Navigation, Normal Content"
+					},
+					vars: {
+						short_nav: true,
+						content: true
+					}
+				},
+
 				anchored: {
 					nav: {
 						parent: "Navigation and Content",
