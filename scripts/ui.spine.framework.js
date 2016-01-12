@@ -410,14 +410,14 @@
 				}
 			});
 
+			// Watch for DOM changes and resize the Spine to match.
+			$.observeDOM( glue , function() {
+				self.apply_nav_func( self );
+			} );
+
 			if ( ! self.is_mobile_view() ) {
 				// Fixed/Sticky Horizontal Header
 				$( document ).on( "scroll touchmove", function() {
-					self.apply_nav_func( self );
-				} );
-
-				// Watch for DOM changes and resize the Spine to match.
-				$.observeDOM( glue , function() {
 					self.apply_nav_func( self );
 				} );
 
@@ -460,8 +460,16 @@
 		apply_nav_func: function(self) {
 			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
 
-			// Disable extended nav positioning for mobile devices.
 			if ( this.is_mobile_view() ) {
+				// When the navigation area is larger than the window, we position the footer differently.
+				var nav_height = $( ".spine-header" ).height() + $( "#wsu-actions" ).height() + $( "#spine-navigation" ).height();
+				if ( window.innerHeight - nav_height < $( ".spine-footer" ).height() ) {
+					$( "body" ).addClass( "spine-nav-long" );
+				} else {
+					$( "body" ).removeClass( "spine-nav-long" );
+				}
+
+				// Disable extended nav positioning for mobile devices.
 				return;
 			}
 

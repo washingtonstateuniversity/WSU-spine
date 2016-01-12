@@ -114,10 +114,6 @@
 			bottom: -69px; /* Offset for when iOS address and nav bars hide */
 			width: 298px;
 			z-index: 99165;
-
-			footer {
-				position: relative !important;
-			}
 		}
 	}
 
@@ -137,10 +133,6 @@
 		.spine-mobile-open #spine {
 			top: 0 !important;
 			min-height: 0 !important;
-
-			footer {
-				position: relative !important;
-			}
 
 			#wsu-actions {
 				padding-top: 0 !important;
