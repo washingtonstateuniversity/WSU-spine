@@ -376,16 +376,18 @@
 				if ( body.hasClass( "spine-mobile-open" ) ) {
 					body.removeClass( "spine-mobile-open" );
 					$( document ).off( "touchmove" );
+					$( "#scroll" ).off( "touchmove" );
 				} else {
 					body.addClass( "spine-mobile-open" );
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
 					$( document ).on( "touchmove", function( e ) {
-						if ( !$( e.target ).parents( "#scroll" )[0] ) {
-							e.preventDefault();
-						} else {
-							e.stopPropagation();
-						}
+						e.stopPropagation();
+						e.preventDefault();
+					} );
+
+					$( "#scroll" ).on( "touchmove", function( e ) {
+						e.stopPropagation();
 					} );
 				}
 				glue.off( transitionEnd );
