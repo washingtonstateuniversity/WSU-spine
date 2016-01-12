@@ -375,13 +375,13 @@
 
 				if ( body.hasClass( "spine-mobile-open" ) ) {
 					body.removeClass( "spine-mobile-open" );
-					$( document ).off( "touchmove" );
+					$( document ).off( "touchmove touchend touchstart" );
 					$( "#scroll" ).off( "touchmove" );
 				} else {
 					body.addClass( "spine-mobile-open" );
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
-					$( document ).on( "touchmove", function( e ) {
+					$( document ).on( "touchmove touchend touchstart", function( e ) {
 						e.stopPropagation();
 						e.preventDefault();
 					} );
