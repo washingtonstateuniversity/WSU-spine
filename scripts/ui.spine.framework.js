@@ -376,7 +376,7 @@
 				if ( body.hasClass( "spine-mobile-open" ) ) {
 					body.removeClass( "spine-mobile-open" );
 					$( document ).off( "touchmove touchend touchstart" );
-					$( "#scroll" ).off( "touchmove" );
+					$( "#scroll" ).off( "touchmove touchend touchstart" );
 				} else {
 					body.addClass( "spine-mobile-open" );
 
@@ -386,7 +386,7 @@
 						e.preventDefault();
 					} );
 
-					$( "#scroll" ).on( "touchmove", function( e ) {
+					$( "#scroll" ).on( "touchmove touchend touchstart", function( e ) {
 						e.stopPropagation();
 					} );
 				}
