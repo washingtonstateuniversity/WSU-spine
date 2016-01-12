@@ -383,6 +383,8 @@
 					$( document ).on( "touchmove", function( e ) {
 						if ( !$( e.target ).parents( "#scroll" )[0] ) {
 							e.preventDefault();
+						} else {
+							e.stopPropagation();
 						}
 					} );
 				}
