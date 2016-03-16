@@ -590,9 +590,30 @@
 		},
 
 		/**
+		 * Toggle a parent list item and its children between an open
+		 * and closed state on touch.
+		 *
+		 * @param evt
+		 * @private
+		 */
+		_toggle_spine_nav_list : function( evt ) {
+			var target = $( evt.target );
+
+			evt.preventDefault();
+
+			target.parent( "li" ).siblings().removeClass( "opened" );
+			target.parent( "li" ).toggleClass( "opened" );
+
+			// Remove the toggle event, as it will be added again on the next touchstart.
+			target.off( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
+		},
+
+		/**
 		 * Sets up navigation system
 		 */
 		setup_nav: function() {
+			var self = this;
+
 			// Apply the `parent` class to each parent list item of an unordered list in the navigation.
 			$( "#spine nav ul, #spine ul" ).parents( "li" ).addClass( "parent" );
 
@@ -611,8 +632,13 @@
 			 */
 			$( "#spine nav li a[class*=current], #spine nav li a[class*=active]" ).parents( "li" ).addClass( "active dogeared" );
 
-			// Couplets
-			$("#spine nav li.parent > a").each( function() {
+			var couplets = $("#spine nav li.parent > a");
+
+			/**
+			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
+			 * items should be added and what the text should read.
+			 */
+			couplets.each( function() {
 				var tar, title, classes, url;
 				tar = $(this);
 
@@ -632,15 +658,31 @@
 					tar.clone(true,true).appendTo( tar.parent("li").find("ul .overview:first") );
 					tar.parent("li").find("ul .overview:first a").html(title);
 				}
-
-				// Disclosure
-				tar.on( "click touchend", function( e ) {
-					e.preventDefault();
-					tar.parent("li").siblings().removeClass("opened");
-					tar.parent("li").toggleClass("opened");
-				});
-
 			});
+
+			/**
+			 * Setup navigation events depending on what the screen size is when the document first
+			 * loads. If mobile, we use touch events for navigation. If not mobile, we rely on
+			 * standard click events.
+			 *
+			 * Some additional handling is necessary on mobile to properly handle the sequence of
+			 * touchstart, touchmove, and touchend without confusion.
+			 */
+			if ( self.is_mobile_view() ) {
+				couplets.on( "touchstart", function( e ) {
+					$( e.target ).on( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
+					$( e.target ).on( "touchmove", function( e ) {
+						$( e.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
+					} );
+				});
+			} else {
+				// Disclosure
+				couplets.on( "click", function( e ) {
+					e.preventDefault();
+					$( e.target ).parent("li").siblings().removeClass("opened");
+					$( e.target ).parent("li").toggleClass("opened");
+				});
+			}
 
 			// Trigger a scroll action when an anchor link is used.
 			$("main a[href*='#']:not([href*='://'])").on("mouseup",function() {
