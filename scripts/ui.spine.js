@@ -79,7 +79,7 @@
 			return add;
 		};
 
-		while(match = re.exec(html)) {
+		while( ( match = re.exec(html) ) ) {
 			add(html.slice(cursor, match.index))(match[1], true);
 			cursor = match.index + match[0].length;
 		}
