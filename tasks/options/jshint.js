@@ -12,7 +12,7 @@ module.exports = {
 		}
 	},
 	spine_files : {
-		src: [ "scripts/*.js", "scripts/*.js" ],
+		src: [ "scripts/*.js" ],
 		options: {
 			curly: true,
 			eqeqeq: true,
