@@ -363,8 +363,10 @@
 			/* Cross browser support for CSS "transition end" event */
 			transitionEnd = "transitionend webkitTransitionEnd otransitionend MSTransitionEnd";
 
+			// Whether opening or closing, the Spine will be animating from this point forward.
 			body.addClass( "spine-animating" );
 
+			// Tell the browser and stylesheet what direction the Spine is animating.
 			if ( html.hasClass( "spine-mobile-open" ) ) {
 				body.addClass( "spine-move-left" );
 			} else {
@@ -376,19 +378,19 @@
 
 				if ( html.hasClass( "spine-mobile-open" ) ) {
 					html.removeClass( "spine-mobile-open" );
+
 					$( document ).off( "touchmove touchend touchstart" );
-					$( "#scroll" ).off( "touchmove touchend touchstart" );
 				} else {
 					html.addClass( "spine-mobile-open" );
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
-					$( document ).on( "touchmove touchend touchstart", function( e ) {
-						e.stopPropagation();
-						e.preventDefault();
-					} );
+					$( document ).on( "touchmove touchend touchstart", function( evt ) {
+						if ( $( evt.target ).parents( "#scroll" ).length > 0 ) {
+							return true;
+						}
 
-					$( "#scroll" ).on( "touchmove touchend touchstart", function( e ) {
-						e.stopPropagation();
+						evt.stopPropagation();
+						evt.preventDefault();
 					} );
 				}
 				glue.off( transitionEnd );
