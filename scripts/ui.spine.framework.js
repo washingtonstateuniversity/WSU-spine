@@ -186,8 +186,8 @@
 				glue.css( "min-height", viewport_ht );
 				spine.css( "min-height", viewport_ht );
 			} else {
-				glue.css( "min-height", '' );
-				spine.css( "min-height", '' );
+				glue.css( "min-height", "" );
+				spine.css( "min-height", "" );
 			}
 
 			$( document ).trigger( "scroll" );
