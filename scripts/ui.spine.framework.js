@@ -480,6 +480,21 @@
 					}
 				} );
 			}
+
+			/**
+			 * When the navigation area is shorter than the available window, add a margin to the
+			 * Spine footer so that the scroll container becomes active. This avoids issues on
+			 * mobile devices when overflow is not applied.
+			 */
+			if ( self.is_mobile_view() ) {
+				var nav_height = $( ".spine-header" ).height() + $( "#wsu-actions" ).height() + $( "#spine-navigation" ).height();
+				var spine_footer = $( ".spine-footer" );
+				var footer_height = spine_footer.height();
+				if ( window.innerHeight - nav_height >= footer_height ) {
+					var margin = window.innerHeight - nav_height - footer_height;
+					spine_footer.css( "margin-top", margin );
+				}
+			}
 		},
 
 		/**
@@ -492,14 +507,6 @@
 			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
 
 			if ( this.is_mobile_view() ) {
-				// When the navigation area is larger than the window, we position the footer differently.
-				var nav_height = $( ".spine-header" ).height() + $( "#wsu-actions" ).height() + $( "#spine-navigation" ).height();
-				if ( window.innerHeight - nav_height < $( ".spine-footer" ).height() ) {
-					$( "body" ).addClass( "spine-nav-long" );
-				} else {
-					$( "body" ).removeClass( "spine-nav-long" );
-				}
-
 				// Disable extended nav positioning for mobile devices.
 				return;
 			}
