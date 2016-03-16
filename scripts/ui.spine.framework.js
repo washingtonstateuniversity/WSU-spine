@@ -145,7 +145,10 @@
 
 			self.sizing();
 			self.equalizing();
-			self.mainheight();
+
+			if ( self.is_mobile_view() ) {
+				self.mainheight();
+			}
 
 			// Only run function if an unbound element exists
 			if ( $( ".unbound, #binder.broken" ).length ) {
