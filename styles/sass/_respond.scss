@@ -118,6 +118,10 @@
 		left: 0;
 	}
 
+	.spine-mobile #spine .spine-sitenav a:hover {
+		color: inherit;
+	}
+
 	#binder:not(.fluid) {
 		@include shelved;
 	}
