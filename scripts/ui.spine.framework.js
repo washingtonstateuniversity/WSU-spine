@@ -185,12 +185,12 @@
 			if ( ! self.is_mobile_view() ) {
 				glue.css( "min-height", viewport_ht );
 				spine.css( "min-height", viewport_ht );
+
+				$( document ).trigger( "scroll" );
 			} else {
 				glue.css( "min-height", "" );
 				spine.css( "min-height", "" );
 			}
-
-			$( document ).trigger( "scroll" );
 		},
 
 		/**
@@ -244,7 +244,10 @@
 			self.setup_printing();
 
 			$( window ).on( "resize orientationchange", function() { self.framework_adjust_on_resize(); } ).trigger( "resize" );
-			$( document ).trigger( "scroll" );
+
+			if ( ! self.is_mobile_view() ) {
+				$( document ).trigger( "scroll" );
+			}
 		},
 
 		// Label #jacket with current window size
@@ -448,7 +451,7 @@
 				} );
 
 				// Fixed/Sticky Horizontal Header
-				$( document ).on( "scroll touchmove", function() {
+				$( document ).on( "scroll", function() {
 					self.apply_nav_func( self );
 				} );
 
@@ -682,12 +685,12 @@
 					$( e.target ).parent("li").siblings().removeClass("opened");
 					$( e.target ).parent("li").toggleClass("opened");
 				});
-			}
 
-			// Trigger a scroll action when an anchor link is used.
-			$("main a[href*='#']:not([href*='://'])").on("mouseup",function() {
-				$(document).trigger("scroll");
-			});
+				// Trigger a scroll action when an anchor link is used.
+				$( "main a[href*='#']:not([href*='://'])" ).on( "mouseup", function() {
+					$( document ).trigger( "scroll" );
+				} );
+			}
 
 			// Mark external URLs in the nav menu.
 			$(".spine-navigation a[href^='http']:not([href*='://" + window.location.hostname + "'])").addClass("external");
