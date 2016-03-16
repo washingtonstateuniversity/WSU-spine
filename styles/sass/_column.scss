@@ -879,7 +879,7 @@ html.lt-ie9 #spine .spine-actions {
 }
 
 .spine-mobile #spine footer {
-	bottom: 69px;
+	position: relative;
 	width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
 }
 
