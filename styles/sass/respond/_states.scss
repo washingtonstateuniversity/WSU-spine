@@ -115,7 +115,7 @@
 			position: fixed;
 			left: 0;
 			top: 50px;
-			bottom: -69px; /* Offset for when iOS address and nav bars hide */
+			bottom: 0; /* Offset for when iOS address and nav bars hide */
 			width: 298px;
 			z-index: 99165;
 		}
@@ -123,7 +123,7 @@
 
 	.spine-mobile .spine-animating #spine #scroll {
 		top: 0;
-		bottom: -69px; /* Offset for when iOS address and nav bars hide */
+		bottom: 0; /* Offset for when iOS address and nav bars hide */
 		position: fixed;
 	}
 }
