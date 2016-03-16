@@ -4,7 +4,6 @@ module.exports = {
 		// options here to override JSHint defaults
 		curly: true,
 		eqeqeq: true,
-		expr: true,
 		immed: true,
 		noarg: true,
 		onevar: true,
