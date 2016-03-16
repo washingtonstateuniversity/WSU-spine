@@ -182,12 +182,12 @@
 
 			viewport_ht = $( window ).height();
 
-			if ( $( ".spine-header" ).height() > 50 ) {
+			if ( ! self.is_mobile_view() ) {
 				glue.css( "min-height", viewport_ht );
 				spine.css( "min-height", viewport_ht );
 			} else {
-				glue.css( "min-height", viewport_ht - 50 );
-				spine.css( "min-height", viewport_ht - 50 );
+				glue.css( "min-height", '' );
+				spine.css( "min-height", '' );
 			}
 
 			$( document ).trigger( "scroll" );
