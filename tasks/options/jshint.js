@@ -2,7 +2,6 @@ module.exports = {
 	files: ["Gruntfile.js", "test/*", "tasks/*", "scripts/*.js"],
 	options: {
 		// options here to override JSHint defaults
-		boss: true,
 		curly: true,
 		eqeqeq: true,
 		eqnull: true,
