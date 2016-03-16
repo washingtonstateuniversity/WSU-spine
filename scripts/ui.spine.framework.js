@@ -349,12 +349,13 @@
 		 * @param e
 		 */
 		toggle_mobile_nav: function(e) {
-			var body, spine, glue, transitionEnd;
+			var html, body, spine, glue, transitionEnd;
 
 			if ( typeof e !== "undefined" ) {
 				e.preventDefault();
 			}
 
+			html = $( "html" );
 			body = $( "body" );
 			spine = $.ui.spine.prototype._get_globals("spine").refresh();
 			glue = $.ui.spine.prototype._get_globals("glue").refresh();
@@ -362,9 +363,11 @@
 			/* Cross browser support for CSS "transition end" event */
 			transitionEnd = "transitionend webkitTransitionEnd otransitionend MSTransitionEnd";
 
+			// Whether opening or closing, the Spine will be animating from this point forward.
 			body.addClass( "spine-animating" );
 
-			if ( body.hasClass( "spine-mobile-open" ) ) {
+			// Tell the browser and stylesheet what direction the Spine is animating.
+			if ( html.hasClass( "spine-mobile-open" ) ) {
 				body.addClass( "spine-move-left" );
 			} else {
 				body.addClass( "spine-move-right" );
@@ -373,10 +376,35 @@
 			glue.on( transitionEnd, function() {
 				body.removeClass( "spine-animating spine-move-left spine-move-right" );
 
-				if ( body.hasClass( "spine-mobile-open" ) ) {
-					body.removeClass( "spine-mobile-open" );
+				if ( html.hasClass( "spine-mobile-open" ) ) {
+					html.removeClass( "spine-mobile-open" );
+
+					$( "#scroll" ).off( "touchstart" );
+					$( document ).off( "touchmove touchend touchstart" );
 				} else {
-					body.addClass( "spine-mobile-open" );
+					html.addClass( "spine-mobile-open" );
+
+					var scroll_element = document.querySelector( "#scroll" );
+
+					scroll_element.addEventListener( "touchstart", function() {
+						var top = scroll_element.scrollTop, totalScroll = scroll_element.scrollHeight, currentScroll = top + scroll_element.offsetHeight;
+
+						if ( top === 0 ) {
+							scroll_element.scrollTop = 1;
+						} else if ( currentScroll === totalScroll ) {
+							scroll_element.scrollTop = top - 1;
+						}
+					} );
+
+					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
+					$( document ).on( "touchmove touchend touchstart", function( evt ) {
+						if ( $( evt.target ).parents( "#scroll" ).length > 0 ) {
+							return true;
+						}
+
+						evt.stopPropagation();
+						evt.preventDefault();
+					} );
 				}
 				glue.off( transitionEnd );
 			} );
@@ -405,7 +433,7 @@
 
 			// Tapping anything outside of the Spine should trigger a toggle if the menu is open.
 			main.on( "click", function( e ) {
-				if ( $( "body" ).hasClass( "spine-mobile-open" ) ) {
+				if ( $( "html" ).hasClass( "spine-mobile-open" ) ) {
 					self.toggle_mobile_nav( e );
 				}
 			});

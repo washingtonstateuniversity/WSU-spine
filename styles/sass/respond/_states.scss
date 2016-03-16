@@ -94,8 +94,12 @@
 	.spine-mobile #spine {
 		#scroll {
 			overflow-y: scroll;
-			-webkit-overflow-scrolling: touch;
+			-webkit-overflow-scrolling: touch; // Add momentum based scrolling to the scroll area.
 		}
+	}
+
+	.spine-mobile-open body {
+		overflow: hidden;
 	}
 
 	.spine-mobile-open #spine {
