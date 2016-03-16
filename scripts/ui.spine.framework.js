@@ -401,7 +401,7 @@
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
 					$( document ).on( "touchmove touchend touchstart", function( evt ) {
-						if ( $( evt.target ).parents( "#scroll" ).length > 0 ) {
+						if ( $( evt.target ).parents( "#scroll" ).length > 0 || $( evt.target ).is( "#scroll" ) ) {
 							return true;
 						}
 
