@@ -379,9 +379,22 @@
 				if ( html.hasClass( "spine-mobile-open" ) ) {
 					html.removeClass( "spine-mobile-open" );
 
+					$( "#scroll" ).off( "touchstart" );
 					$( document ).off( "touchmove touchend touchstart" );
 				} else {
 					html.addClass( "spine-mobile-open" );
+
+					var scroll_element = document.querySelector( "#scroll" );
+
+					scroll_element.addEventListener( "touchstart", function() {
+						var top = scroll_element.scrollTop, totalScroll = scroll_element.scrollHeight, currentScroll = top + scroll_element.offsetHeight;
+
+						if ( top === 0 ) {
+							scroll_element.scrollTop = 1;
+						} else if ( currentScroll === totalScroll ) {
+							scroll_element.scrollTop = top - 1;
+						}
+					} );
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
 					$( document ).on( "touchmove touchend touchstart", function( evt ) {
