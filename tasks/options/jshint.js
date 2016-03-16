@@ -6,8 +6,6 @@ module.exports = {
 		eqeqeq: true,
 		noarg: true,
 		quotmark: "double",
-		smarttabs: true,
-		trailing: true,
 		undef: true,
 		unused: true,
 		globals: {
