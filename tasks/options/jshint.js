@@ -14,9 +14,13 @@ module.exports = {
 	spine_files : {
 		src: [ "scripts/*.js" ],
 		options: {
+			bitwise: true,
 			curly: true,
 			eqeqeq: true,
+			forin: true,
+			freeze: true,
 			noarg: true,
+			nonbsp: true,
 			quotmark: "double",
 			undef: true,
 			unused: true,
