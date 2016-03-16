@@ -5,7 +5,6 @@ module.exports = {
 		curly: true,
 		eqeqeq: true,
 		noarg: true,
-		onevar: true,
 		quotmark: "double",
 		smarttabs: true,
 		trailing: true,
