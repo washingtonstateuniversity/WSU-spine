@@ -98,6 +98,10 @@
 		}
 	}
 
+	.spine-mobile-open body {
+		overflow: hidden;
+	}
+
 	.spine-mobile-open #spine {
 		min-height: 0 !important;
 

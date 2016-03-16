@@ -577,7 +577,7 @@ html.lt-ie9 #spine .spine-actions {
 	display: block;
 	background-color: transparent;
 	z-index: 0;
-	
+
 	form {
 		padding-left: 0;
 		padding-right: 0;
@@ -871,6 +871,11 @@ html.lt-ie9 #spine .spine-actions {
 	bottom: 0;
 	padding: 1.75em 0 0.75em 0;
 	width: 156px; // 198px - ( ( 1.75em x 12px ) x 2 = 42 )
+}
+
+.spine-mobile-open,
+.spine-mobile-open body {
+	overflow: hidden;
 }
 
 .spine-mobile #spine footer {

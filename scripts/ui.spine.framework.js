@@ -355,6 +355,7 @@
 				e.preventDefault();
 			}
 
+			html = $( "html" );
 			body = $( "body" );
 			spine = $.ui.spine.prototype._get_globals("spine").refresh();
 			glue = $.ui.spine.prototype._get_globals("glue").refresh();
@@ -364,7 +365,7 @@
 
 			body.addClass( "spine-animating" );
 
-			if ( body.hasClass( "spine-mobile-open" ) ) {
+			if ( html.hasClass( "spine-mobile-open" ) ) {
 				body.addClass( "spine-move-left" );
 			} else {
 				body.addClass( "spine-move-right" );
@@ -373,12 +374,12 @@
 			glue.on( transitionEnd, function() {
 				body.removeClass( "spine-animating spine-move-left spine-move-right" );
 
-				if ( body.hasClass( "spine-mobile-open" ) ) {
-					body.removeClass( "spine-mobile-open" );
+				if ( html.hasClass( "spine-mobile-open" ) ) {
+					html.removeClass( "spine-mobile-open" );
 					$( document ).off( "touchmove touchend touchstart" );
 					$( "#scroll" ).off( "touchmove touchend touchstart" );
 				} else {
-					body.addClass( "spine-mobile-open" );
+					html.addClass( "spine-mobile-open" );
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
 					$( document ).on( "touchmove touchend touchstart", function( e ) {
@@ -417,7 +418,7 @@
 
 			// Tapping anything outside of the Spine should trigger a toggle if the menu is open.
 			main.on( "click", function( e ) {
-				if ( $( "body" ).hasClass( "spine-mobile-open" ) ) {
+				if ( $( "html" ).hasClass( "spine-mobile-open" ) ) {
 					self.toggle_mobile_nav( e );
 				}
 			});
