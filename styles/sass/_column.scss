@@ -879,17 +879,8 @@ html.lt-ie9 #spine .spine-actions {
 }
 
 .spine-mobile #spine footer {
-	bottom: 69px;
-	width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
-}
-
-.spine-nav-long #spine footer {
 	position: relative;
-	bottom: 0;
-}
-
-.spine-nav-long #spine #scroll {
-	padding-bottom: 69px;
+	width: 242px; // 298px - ( ( 1.75em x 16px ) x 2 = 56 )
 }
 
 html.lt-ie9 #spine footer {

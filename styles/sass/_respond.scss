@@ -110,12 +110,11 @@
 
 	.spine-mobile #glue {
 		top: 50px;
+		bottom: 0;
 		left: -298px;
 	}
 
 	.spine-mobile-open  #glue {
-		top: 50px;
-		bottom: -69px; /* Offset for when iOS address and nav bars hide */
 		left: 0;
 	}
 

@@ -145,7 +145,10 @@
 
 			self.sizing();
 			self.equalizing();
-			self.mainheight();
+
+			if ( self.is_mobile_view() ) {
+				self.mainheight();
+			}
 
 			// Only run function if an unbound element exists
 			if ( $( ".unbound, #binder.broken" ).length ) {
@@ -179,12 +182,12 @@
 
 			viewport_ht = $( window ).height();
 
-			if ( $( ".spine-header" ).height() > 50 ) {
+			if ( ! self.is_mobile_view() ) {
 				glue.css( "min-height", viewport_ht );
 				spine.css( "min-height", viewport_ht );
 			} else {
-				glue.css( "min-height", viewport_ht - 50 );
-				spine.css( "min-height", viewport_ht - 50 );
+				glue.css( "min-height", "" );
+				spine.css( "min-height", "" );
 			}
 
 			$( document ).trigger( "scroll" );
@@ -398,7 +401,7 @@
 
 					// Prevent scrolling on mobile outside of `#scroll` while the mobile menu is open.
 					$( document ).on( "touchmove touchend touchstart", function( evt ) {
-						if ( $( evt.target ).parents( "#scroll" ).length > 0 ) {
+						if ( $( evt.target ).parents( "#scroll" ).length > 0 || $( evt.target ).is( "#scroll" ) ) {
 							return true;
 						}
 
@@ -438,12 +441,12 @@
 				}
 			});
 
-			// Watch for DOM changes and resize the Spine to match.
-			$.observeDOM( glue , function() {
-				self.apply_nav_func( self );
-			} );
-
 			if ( ! self.is_mobile_view() ) {
+				// Watch for DOM changes and resize the Spine to match.
+				$.observeDOM( glue , function() {
+					self.apply_nav_func( self );
+				} );
+
 				// Fixed/Sticky Horizontal Header
 				$( document ).on( "scroll touchmove", function() {
 					self.apply_nav_func( self );
@@ -477,6 +480,21 @@
 					}
 				} );
 			}
+
+			/**
+			 * When the navigation area is shorter than the available window, add a margin to the
+			 * Spine footer so that the scroll container becomes active. This avoids issues on
+			 * mobile devices when overflow is not applied.
+			 */
+			if ( self.is_mobile_view() ) {
+				var nav_height = $( ".spine-header" ).height() + $( "#wsu-actions" ).height() + $( "#spine-navigation" ).height();
+				var spine_footer = $( ".spine-footer" );
+				var footer_height = spine_footer.height();
+				if ( window.innerHeight - nav_height >= footer_height ) {
+					var margin = window.innerHeight - nav_height - footer_height;
+					spine_footer.css( "margin-top", margin );
+				}
+			}
 		},
 
 		/**
@@ -487,19 +505,6 @@
 		 */
 		apply_nav_func: function(self) {
 			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
-
-			if ( this.is_mobile_view() ) {
-				// When the navigation area is larger than the window, we position the footer differently.
-				var nav_height = $( ".spine-header" ).height() + $( "#wsu-actions" ).height() + $( "#spine-navigation" ).height();
-				if ( window.innerHeight - nav_height < $( ".spine-footer" ).height() ) {
-					$( "body" ).addClass( "spine-nav-long" );
-				} else {
-					$( "body" ).removeClass( "spine-nav-long" );
-				}
-
-				// Disable extended nav positioning for mobile devices.
-				return;
-			}
 
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
