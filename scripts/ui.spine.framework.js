@@ -349,7 +349,7 @@
 		 * @param e
 		 */
 		toggle_mobile_nav: function(e) {
-			var body, spine, glue, transitionEnd;
+			var html, body, spine, glue, transitionEnd;
 
 			if ( typeof e !== "undefined" ) {
 				e.preventDefault();
