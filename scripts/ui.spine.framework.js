@@ -583,9 +583,9 @@
 				e.preventDefault();
 				wsu_actions.find("*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab").toggleClass("opened closed");
 
-				action_ht = $("main").outerHeight() - ( $(".spine-header").outerHeight() + $(".wsu-actions-tabs").outerHeight() );
+				action_ht = window.innerHeight - $(".spine-header").outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 
-				$(".spine-action.opened").css( "min-height", action_ht );
+				$( ".spine-action.opened" ).css( "min-height", action_ht );
 			});
 		},
 
