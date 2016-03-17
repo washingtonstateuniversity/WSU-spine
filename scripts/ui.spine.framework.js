@@ -503,17 +503,17 @@
 		 *
 		 * @param self
 		 */
-		apply_nav_func: function(self) {
+		apply_nav_func: function( self ) {
 			var spine, glue, main, top, scroll_top, positionLock, scroll_dif, glue_ht;
 
-			spine = self._get_globals("spine").refresh();
-			glue = self._get_globals("glue").refresh();
-			main = self._get_globals("main").refresh();
+			spine = self._get_globals( "spine" ).refresh();
+			glue = self._get_globals( "glue" ).refresh();
+			main = self._get_globals( "main" ).refresh();
 
 			scroll_top   = self.nav_state.scroll_top;
 			positionLock = self.nav_state.positionLock;
 
-			top          = $(document).scrollTop();
+			top          = $( document ).scrollTop();
 			scroll_dif   = scroll_top - top;
 			scroll_top   = top;
 			glue_ht		 = glue.height();
