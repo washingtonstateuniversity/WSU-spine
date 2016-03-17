@@ -503,32 +503,25 @@
 		 *
 		 * @param self
 		 */
-		apply_nav_func: function(self) {
+		apply_nav_func: function( self ) {
 			var spine, glue, main, top, scroll_top, positionLock, scroll_dif, glue_ht;
 
-			spine = self._get_globals("spine").refresh();
-			glue = self._get_globals("glue").refresh();
-			main = self._get_globals("main").refresh();
+			spine = self._get_globals( "spine" ).refresh();
+			glue = self._get_globals( "glue" ).refresh();
+			main = self._get_globals( "main" ).refresh();
 
 			scroll_top   = self.nav_state.scroll_top;
 			positionLock = self.nav_state.positionLock;
 
-			top          = $(document).scrollTop();
+			top          = $( document ).scrollTop();
 			scroll_dif   = scroll_top - top;
 			scroll_top   = top;
 			glue_ht		 = glue.height();
 
 			self.nav_state.scroll_top = scroll_top;
 
-			if (scroll_dif === 0 && (glue_ht > main.outerHeight(true))) {
-				main.css({"min-height":glue_ht+scroll_top});
-			} else {
-				if (scroll_dif === 0) {
-					main.stop().animate({"min-height":glue_ht},50);
-				} else {
-					main.css({"min-height":glue_ht});
-				}
-			}
+			// Main should always be at least as high as `#glue`.
+			main.css( { "min-height" : glue_ht } );
 
 			/**
 			 * When the content in `main` is larger than the content in `#glue`, maintain a
