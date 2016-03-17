@@ -1,0 +1,289 @@
+
+.wireframe .row .column,
+.wireframe.row .column {
+	min-height: 198px;
+	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+}
+.inset {
+	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
+}
+
+/* GRID */
+
+/* ------------------- */
+
+#switches {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 56px;
+	height: 56px;
+	z-index: 99210;
+	background: #333;
+	box-sizing: border-box;
+	color: #fefefe;
+	font-size: 1rem;
+	font-weight: 300;
+	font-family: sans-serif;
+}
+
+#switches.disclosed {
+	width: 300px;
+	height: auto;
+	padding: 0 5px 30px 5px;
+}
+
+#switches dl {
+	display: none;
+}
+
+#switches.disclosed dl {
+	display: block;
+	padding-top: 7px;
+}
+
+#switches dt {
+	margin-bottom: 5px;
+}
+
+#onoff {
+	width: 56px;
+	height: 56px;
+	color: white;
+	background-color: #333;
+	border: none;
+}
+
+#onoff:hover {
+	background: #981e32;
+}
+
+/* ------------------- */
+main:not(.wireframe) .wireframe-only {
+	display: none;
+}
+main {
+
+	border-top: 20px #981e32 solid;
+}
+
+.wireframe section.row::before {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .5;
+	position: absolute;
+	right: 0px;
+	width: 75px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+}
+.wireframe .row.eighths::before { content: "eighths"; }
+.wireframe .row.twelfths::before { content: "twelfths"; }
+.wireframe .row.quarters::before { content: "quarters"; }
+.wireframe .row.single::before { content: "single"; }
+.wireframe .row.halves::before { content: "halves"; }
+.wireframe .row.sidebar::before { content: "sidebar"; }
+.wireframe .row.sideleft::before { content: "sideleft"; }
+.wireframe .row.triptych::before { content: "triptych"; }
+.wireframe .row.thirds::before { content: "thirds"; }
+.wireframe .row.margin::before { content: "margin"; }
+
+
+/* Column Numbering */
+.wireframe .column:not(.note)::after {
+	color: rgba(255,255,255,0.5);
+	background-color: rgba(182,188,191,0.5);
+	padding: 5px 10px;
+	position: absolute;
+	right: 0; bottom: 0;
+}
+.wireframe .row:not(.nest) .column.one::after { content:"1"; }
+.wireframe .row:not(.nest) .column.two::after { content:"2"; }
+.wireframe .row:not(.nest) .column.three::after { content:"3"; }
+.wireframe .row:not(.nest) .column.four::after { content:"4"; }
+.wireframe .row:not(.nest) .column.five::after { content:"5"; }
+.wireframe .row:not(.nest) .column.six::after { content:"6"; }
+.wireframe .row:not(.nest) .column.seven::after { content:"7"; }
+.wireframe :not(.nest) .column.eight::after { content:"8"; }
+.wireframe :not(.nest) .column.nine::after { content:"9"; }
+.wireframe :not(.nest) .column.ten::after { content:"10"; }
+.wireframe :not(.nest) .column.eleven::after { content:"11"; }
+.wireframe :not(.nest) .column.twelve::after { content:"12"; }
+
+.wireframe .row .column.one-twelfth::after { content:"1/12"; }
+.wireframe .row .column.two-twelfths::after { content:"2/12"; }
+.wireframe .row .column.three-twelfths::after { content:"3/12"; }
+.wireframe .row .column.six-twelfths::after { content:"6/12"; }
+
+/* Column Measurements */
+.column::before {
+	color: black;
+	padding: 2px 4px;
+	position: absolute;
+	opacity: .2;
+	font-size: 10px;
+	top: 0;	left: 0;
+	width: 95%;
+	margin: 0px auto;
+	text-align: center;
+}
+.wireframe .single .column::before { content:"\2190 792 \2192"; }
+.wireframe .sidebar .column.one::before { content:"\2190 528 \2192"; }
+.wireframe .sidebar .column.two::before,
+.wireframe .thirds .column::before { content:"\2190 264 \2192"; }
+.wireframe .margin .column.one::before { content:"\2190 594 \2192"; }
+.wireframe .margin .column.two::before,
+.wireframe .quarters .column::before,
+.wireframe .triptych .column.one::before,
+.wireframe .triptych .column.three::before,
+.wireframe .halves .halves .column::before { content:"\2190 198 \2192"; }
+.wireframe .halves .column::before,
+.wireframe .triptych .column.two::before { content:"\2190 396 \2192"; }
+.wireframe .halves .quarters .column::before { content:"\2190 99 \2192"; }
+.wireframe .quarters .thirds .column::before { content:"\2190 66 \2192"; }
+.wireframe .halves .thirds .column::before { content:"\2190 132 \2192"; }
+
+.wireframe .row .row::after {
+	display: block;
+	background: #5e6a71;
+	padding: 0px 0px;
+	text-indent: 5px;
+	opacity: .2;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	bottom: 50%;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	margin-left: -25px;
+	width: 50px;
+	height: 20px;
+	xbottom: 0px;
+	z-index: 99;
+	visibility: visible;
+	height: auto;
+	color: white;
+	font-size: 10px;
+	content:"nested";
+}
+
+.sidebar .column.two ul {
+	padding: 0px; margin: 0px;
+}
+.sidebar .column.two li {
+	list-style: none;
+	padding: 10px 0px;
+	margin: 0px;
+}
+.sidebar .column.two li:last-of-type {
+	border-bottom: none;
+}
+
+#binder main .note::after {
+	color: black;
+	padding: 6px 10px;
+	position: absolute;
+	font-size: 12px;
+	opacity: .8;
+	top: 5px;
+	left: 5px;
+	width: auto;
+	height: auto;
+	text-align: left;
+	display: none;
+	z-index: 999631;
+	line-height: 1em;
+	background: white;
+	visibility: visible !important;
+}
+#binder main .note:hover::after {
+	display: block;
+}
+section > big {
+	padding: 100px 100px 10px 100px;
+	font-size: 2em;
+	line-height: 1.1em;
+	display: block;
+}
+#unprecedented .column.one {
+	padding-top: 100px;
+}
+#unprecedented .column.two {
+	position: relative;
+}
+.size-lt-small #controls dl:first-of-type {
+	margin-top: 150px;
+}
+
+#controls dl {
+	margin-top: 15px;
+	padding-top: 5px;
+}
+#controls dl ~ dl {
+	border-top: 1px #D7DAD8 solid;
+}
+#controls dl dt {
+	display: block;
+}
+dt a:hover {
+
+}
+#switches dl dd {
+	display: block; float: left;
+	padding: 0px; margin: 0px 0px 2px 0px;
+}
+#switches dl a.info {
+	float: right;
+	display: block;
+	xtext-indent: -9000px;
+	overflow: hidden;
+	position: relative;
+	color: white;
+	opacity: .3;
+}
+#switches dl a.info::before {
+	font-family: "Iconography";
+	content: "\2139";
+	font-size: 1.4em;
+	color: #b5babe;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 16px;
+	width: 30px;
+	text-align: center;
+}
+#switches dl a.info:hover::before {
+	color: #5e6a71;
+}
+.spine-colors dd {
+	display: block;
+	float: left;
+	padding: 2px 0px;
+	xwidth: 33%;
+}
+.spine-wireframe button::before {
+	content: "show ";
+}
+.wireframe .spine-wireframe button::before {
+	content: "hide ";
+}
+pre,code {
+	xdisplay: none;
+}
+.wireframe pre, .wireframe code {
+	xxdisplay: block;
+}
+pre {
+	white-space: normal;
+}
+pre code {
+	font-style: italic;
+}
