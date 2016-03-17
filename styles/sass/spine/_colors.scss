@@ -33,6 +33,7 @@
 			color: lighten($gray-light,2%);
 		}
 
+		.spine-actions-tabs button:focus,
 		.spine-actions-tabs button:hover,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
@@ -43,6 +44,7 @@
 			color: $gray-light;
 		}
 
+		.spine-search-tab:not(.opened) button:focus,
 		.spine-search-tab:not(.opened) button:hover {
 			color: $gray;
 		}
@@ -83,6 +85,7 @@
 			color: $gray-light;
 		}
 
+		.spine-actions-tabs button:focus,
 		.spine-actions-tabs button:hover,
 		.spine-sitenav a,
 		.spine-offsitenav a:hover,
@@ -94,6 +97,7 @@
 			color: $gray-light;
 		}
 
+		.spine-search-tab button:focus,
 		.spine-search-tab button:hover {
 			color: $gray;
 		}
@@ -139,6 +143,7 @@
 			color: $gray;
 		}
 
+		.spine-actions-tabs button:focus,
 		.spine-actions-tabs button:hover,
 		.spine-sitenav a,
 		.spine-offsitenav a:hover,
@@ -150,6 +155,7 @@
 			color: lighten($gray-darker,25%); /* 3% */
 		}
 
+		.spine-search-tab button:focus,
 		.spine-search-tab button:hover {
 			color: $gray-darkest;
 		}
@@ -190,6 +196,7 @@
 			color: lighten($gray-lighter,2%);
 		}
 
+		.spine-actions-tabs button:focus,
 		.spine-actions-tabs button:hover,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
@@ -200,6 +207,7 @@
 			color: $gray-lightly;
 		}
 
+		.spine-search-tab:not(.opened) button:focus,
 		.spine-search-tab:not(.opened) button:hover {
 			color: $gray-lightest;
 		}
@@ -248,6 +256,7 @@
 			color: darken($gray-dark, 8%);
 		}
 
+		.spine-actions-tabs :not(.opened) button:focus,
 		.spine-actions-tabs :not(.opened) button:hover,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
@@ -284,6 +293,7 @@
 			color: $gray-lightly;
 		}
 
+		.spine-search-tab.opened button:focus
 		.spine-actions .opened button,
 		.spine-actions button,
 		.spine-actions .opened button:hover,
@@ -307,7 +317,8 @@
 			color: $gray-light;
 		}
 
-		.spine-actions-tabs :not(.opened) button:hover,
+		.spine-actions-tabs button:focus,
+		.spine-actions-tabs button:hover,
 		.spine-sitenav a,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
@@ -322,6 +333,7 @@
 			color: darken($gray-lighter,4%);
 		}
 
+		.spine-search-tab button:focus,
 		.spine-search-tab button:hover {
 			color: $gray-lightly;
 		}
@@ -367,6 +379,7 @@
 			color: lighten($gray, 3%);
 		}
 
+		.spine-actions-tabs :not(.opened) button:focus,
 		.spine-actions-tabs :not(.opened) button:hover,
 		.spine-sitenav a,
 		.spine-offsitenav a:hover,
@@ -416,6 +429,9 @@
 			color: $gray;
 		}
 
+		.spine-search-tab:not(.opened) button:focus,
+		.spine-search-tab:not(.opened) button:hover,
+		.spine-actions-tabs :not(.opened) button:focus,
 		.spine-actions-tabs :not(.opened) button:hover,
 		.spine-sitenav a,
 		.spine-offsitenav a:hover,
@@ -425,10 +441,6 @@
 
 		.spine-search-tab:not(.opened) button {
 			color: $gray-light;
-		}
-
-		.spine-search-tab:not(.opened) button:hover {
-			color: $gray-lighter;
 		}
 
 		.spine-sitenav a:hover,
@@ -466,6 +478,9 @@
 			color: black;
 		}
 
+		.spine-search-tab:not(.opened) button:focus,
+		.spine-search-tab:not(.opened) button:hover,
+		.spine-actions-tabs :not(.opened) button:focus,
 		.spine-actions-tabs :not(.opened) button:hover,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
@@ -479,10 +494,6 @@
 
 		.spine-search-tab:not(.opened) button {
 			color: darken($crimson-darkest,10%);
-		}
-
-		.spine-search-tab:not(.opened) button:hover {
-			color: black;
 		}
 
 		.spine-sitenav a:hover,
