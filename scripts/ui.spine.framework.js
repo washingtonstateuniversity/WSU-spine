@@ -520,15 +520,8 @@
 
 			self.nav_state.scroll_top = scroll_top;
 
-			if (scroll_dif === 0 && (glue_ht > main.outerHeight(true))) {
-				main.css({"min-height":glue_ht+scroll_top});
-			} else {
-				if (scroll_dif === 0) {
-					main.stop().animate({"min-height":glue_ht},50);
-				} else {
-					main.css({"min-height":glue_ht});
-				}
-			}
+			// Main should always be at least as high as `#glue`.
+			main.css( { "min-height" : glue_ht } );
 
 			/**
 			 * When the content in `main` is larger than the content in `#glue`, maintain a
