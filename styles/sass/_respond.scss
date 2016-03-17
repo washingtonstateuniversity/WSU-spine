@@ -38,8 +38,6 @@
 
 	#binder.fluid main {
 		width: auto;
-		margin-left: 198px;
-		margin-top: 0;
 	}
 
 	.spineless.fixed main,
@@ -53,10 +51,6 @@
 	.spineless.fluid main,
 	.spineless .fluid main {
 		margin-left: 0;
-	}
-
-	#binder.fluid main {
-		margin-top: 0;
 	}
 
 	.fluid .row.rebound,
@@ -89,8 +83,7 @@
 	}
 
 	/* Shelving */
-	.hybrid #wsu-signature,
-	.fixed #wsu-signature {
+	#wsu-signature {
 		background-position: center 12px;
 		background-size: auto 30px;
 		height: 49px;
@@ -122,7 +115,7 @@
 		color: inherit;
 	}
 
-	#binder:not(.fluid) {
+	#binder {
 		@include shelved;
 	}
 
@@ -141,7 +134,7 @@
 	}
 
 	/* Header Colors and Signatures */
-	#binder:not(.fluid) #spine {
+	#binder #spine {
 		@each $spine-color, $color in $spine-colors {
 			&.#{""+$spine-color} header {
 				background-color: $color;
