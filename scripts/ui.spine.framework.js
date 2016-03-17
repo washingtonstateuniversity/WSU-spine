@@ -504,7 +504,7 @@
 		 * @param self
 		 */
 		apply_nav_func: function(self) {
-			var spine, glue, main, top, bottom, scroll_top, positionLock, scroll_dif, spine_ht, viewport_ht, glue_ht, height_dif;
+			var spine, glue, main, top, scroll_top, positionLock, scroll_dif, glue_ht;
 
 			spine = self._get_globals("spine").refresh();
 			glue = self._get_globals("glue").refresh();
@@ -514,13 +514,9 @@
 			positionLock = self.nav_state.positionLock;
 
 			top          = $(document).scrollTop();
-			bottom       = $(document).height() - $(window).height() - $(window).scrollTop();
 			scroll_dif   = scroll_top - top;
 			scroll_top   = top;
-			viewport_ht	 = $(window).height();
-			spine_ht	 = spine[0].scrollHeight;
 			glue_ht		 = glue.height();
-			height_dif	 = viewport_ht - spine_ht;
 
 			self.nav_state.scroll_top = scroll_top;
 
@@ -534,35 +530,41 @@
 				}
 			}
 
-			if ( main.outerHeight(true) > glue_ht ) {
-				if( (scroll_dif <= 0) ) { // scrolling down
-					positionLock = ( positionLock===0 || positionLock <= height_dif ) ? height_dif : positionLock + scroll_dif;
-					if (bottom <= 0 && positionLock >= height_dif) {
-						positionLock = height_dif;
-					}
-				} else { // scrolling up
-					positionLock = ( positionLock >= 0 ) ? 0 : positionLock + scroll_dif;
+			/**
+			 * When the content in `main` is larger than the content in `#glue`, maintain a
+			 * fixed top position on `#spine` for smooth and predictable navigation scrolling.
+			 */
+			if ( main.outerHeight( true ) > glue_ht ) {
+				var upper_bound = glue_ht - window.innerHeight;
 
-					if (top > 0 && positionLock > 0) {
-						positionLock = 0;
-					}
-				}
+				/**
+				 * Assume fluid movement by default. As long as we are within the upper bounds
+				 * we can calculate the position based on scroll location whether the scroll
+				 * goes up or down.
+				 */
+				positionLock = positionLock + scroll_dif;
 
-				if (top <= 0) {
+				/**
+				 * If the position is ever greater than 0, we've scrolled too far up and can
+				 * reset the position to 0.
+				 */
+				if ( positionLock > 0 ) {
 					positionLock = 0;
 				}
 
-				if (bottom <= 0) {
-					positionLock = height_dif;
+				/**
+				 * If we ever scroll to a place where the new position would be calculated
+				 * outside of the upper bound, then reset it to the upper bound. This prevents
+				 * from scrolling too far down.
+				 */
+				if ( positionLock < ( -1 * upper_bound ) ) {
+					positionLock = ( -1 * upper_bound );
 				}
 
-				spine.css({"position":"fixed","top":positionLock+"px"});
+				spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
 				self.nav_state.positionLock = positionLock;
-			} else {
-				// scroll_top from here should be positionLock above
-				if ( spine.is("#spine[style]") ) {
-					spine.removeAttr("style");
-				}
+			} else if ( spine.is( "#spine[style]" ) ) {
+				spine.removeAttr( "style" );
 			}
 		},
 
