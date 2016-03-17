@@ -352,7 +352,7 @@ pre code {
 		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var campus = $(this).attr('data-campus');
 			campus = campus + '-signature';
-		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		$('html').removeClass('system-signature spokane-signature healthsciences-spokane-signature foundation-signature campaign-signature everett-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		$(this).trigger( "resize" );
 		return false;
 	});
@@ -404,10 +404,14 @@ pre code {
 		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
 		<dd><button data-campus="system">System</button></dd>
 		<dd><button data-campus="spokane">Spokane</button></dd>
-		<dd><button data-campus="tricities">Tri-Cities</button></dd>
 		<dd><button data-campus="vancouver">Vancouver</button></dd>
+		<dd><button data-campus="tricities">Tri-Cities</button></dd>
 		<dd><button data-campus="globalcampus">Global Campus</button></dd>
 		<dd><button data-campus="extension">Extension</button></dd>
+		<dd><button data-campus="healthsciences-spokane">Health Sciences Spokane</button></dd>
+		<dd><button data-campus="everett">Everett</button></dd>
+		<dd><button data-campus="campaign">Campaign</button></dd>
+		<dd><button data-campus="foundation">foundation</button></dd>
 	</dl>
 
 	<dl class="padded-sides narrow spine-behavior clearfix">
