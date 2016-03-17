@@ -17,44 +17,55 @@
 #switches {
 	position: fixed;
 	top: 0;
-	right: 0px;
+	right: 0;
 	width: 56px;
 	height: 56px;
 	z-index: 99210;
-	background: black;
+	background: #333;
 	box-sizing: border-box;
-	}
+	color: #fefefe;
+	font-size: 1rem;
+	font-weight: 300;
+	font-family: sans-serif;
+}
+
 #switches.disclosed {
-	width: 250px;
+	width: 300px;
 	height: auto;
-	}
+	padding: 0 5px 30px 5px;
+}
+
 #switches dl {
-
 	display: none;
-
-	}
+}
 
 #switches.disclosed dl {
 	display: block;
+	padding-top: 7px;
+}
 
-	}
+#switches dt {
+	margin-bottom: 5px;
+}
+
 #onoff {
 	width: 56px;
 	height: 56px;
 	color: white;
-	background-color: black;
+	background-color: #333;
 	border: none;
-	border-radius: 0px;
-	}
+}
+
 #onoff:hover {
 	background: #981e32;
-	}
+}
 
 /* ------------------- */
 
 #grid {
 	display: none;
-	}
+}
+
 .grid #grid {
 	position: absolute;
 	width: 990px;
@@ -64,7 +75,8 @@
 	height: 3000px;
 	z-index: 99999;
 	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid.png') repeat-y left top;
-	}
+}
+
 .grid12 #grid {
 	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid12.png') repeat-y left top;
 	}
@@ -369,10 +381,10 @@ pre code {
 
 <section id="switches" class="short narrow">
 
-	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
+	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">open</button>
 
 	<dl class="padded-sides narrow spine-colors clearfix">
-		<dt>spine colors <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#colors" target="_blank" class="info">info</a></dt>
+		<dt>Spine colors</dt>
 		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd>
 		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
 		<dd><button data-color="lightly" class="lightly-back gray-dark-text inset">Lightly</button></dd>
@@ -386,7 +398,7 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-transparency clearfix">
-		<dt>spine transparency <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#opacity" target="_blank" class="info">info</a></dt>
+		<dt>Transparency</dt>
 		<dd><button data-transparency="">0</button></dd>
 		<dd><button data-transparency="vellum-05">5</button></dd>
 		<dd><button data-transparency="vellum-10">10</button></dd>
@@ -394,14 +406,14 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-column-options clearfix">
-		<dt>spine options <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options" target="_blank" class="info">info</a></dt>
+		<dt>Spine options</dt>
 		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
 		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 
 	<dl class="padded-sides narrow spine-campuses clearfix">
-		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
+		<dt>Signatures</dt>
 		<dd><button data-campus="system">System</button></dd>
 		<dd><button data-campus="spokane">Spokane</button></dd>
 		<dd><button data-campus="vancouver">Vancouver</button></dd>
@@ -415,14 +427,14 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-behavior clearfix">
-		<dt>grid behavior <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/II.3.-Page:-Responsive#responsive-behavior" target="_blank" class="info">info</a></dt>
+		<dt>Grid behavior</dt>
 		<dd><button data-grid="fluid">fluid</button></dd>
 		<dd><button data-grid="fixed">fixed</button></dd>
 		<dd><button data-grid="hybrid">hybrid</button></dd>
 	</dl>
 
 	<dl class="padded-sides narrow spine-sizes clearfix ">
-		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
+		<dt>Max sizes</dt>
 		<dd><button data-max="max-990">default</button></dd>
 		<dd><button data-max="max-1188">1188</button></dd>
 		<dd><button data-max="max-1386">1386</button></dd>
@@ -432,7 +444,7 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-wireframe">
-		<dt>under the hood</dt>
+		<dt>Show wireframe</dt>
 		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
 	</dl>
 
