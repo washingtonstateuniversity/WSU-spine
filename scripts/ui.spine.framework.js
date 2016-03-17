@@ -250,44 +250,41 @@
 			}
 		},
 
-		// Label #jacket with current window size
 		/**
 		 * Label `#jacket` with the current window size.
 		 *
 		 * @param {HTMLelement} jacket
 		 */
-		sizing: function (jacket) {
-			var current_width, ele_class, px_width, size_small, size_intermediate, size_medium, size_large, size_xlarge;
+		sizing: function ( jacket ) {
+			var current_width, jacket_classes, px_width, size_intermediate, size_medium, size_large;
 
-            jacket = jacket || $("#jacket");
+            jacket = jacket || $( "#jacket" );
 
-            current_width = $(window).width();
-			size_small = "size-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+            current_width = $( window ).width();
+
 			size_intermediate = "size-intermediate size-smallish size-lt-medium size-lt-large size-lt-xlarge size-gt-small";
 			size_medium = "size-medium size-lt-xlarge size-lt-large size-gt-intermediate size-gt-smallish size-gt-small";
 			size_large = "size-large size-lt-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium";
-			size_xlarge = "size-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium size-gt-large";
 
-			ele_class = "";
 			px_width = "";
 
-			if (current_width >= 1188) {
-				ele_class = size_xlarge;
-			} else if (current_width >= 990) {
-				ele_class = size_large;
-			} else if ((current_width < 990) && current_width >= 792 ) {
+			if ( current_width >= 1188 ) {
+				jacket_classes = "size-xlarge size-gt-small size-gt-intermediate size-gt-smallish size-gt-medium size-gt-large";
+			} else if ( current_width >= 990 ) {
+				jacket_classes = size_large;
+			} else if ( ( current_width < 990 ) && current_width >= 792 ) {
 				px_width = "size-lt-990";
-				ele_class = $("#binder").is(".fluid") ? size_large : size_medium;
-			} else if (current_width < 792 && current_width >= 694) {
+				jacket_classes = $( "#binder" ).is( ".fluid" ) ? size_large : size_medium;
+			} else if ( current_width < 792 && current_width >= 694 ) {
 				px_width = "size-lt-792";
-				ele_class = $("#binder").is(".fixed") ? size_intermediate : size_medium;
-			} else if (current_width < 694 && current_width >= 396) {
-				ele_class = size_small;
-			} else if (current_width < 396) {
-				ele_class = "size-small size-lt-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+				jacket_classes = $( "#binder" ).is( ".fixed" ) ? size_intermediate : size_medium;
+			} else if ( current_width < 694 && current_width >= 396 ) {
+				jacket_classes = "size-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
+			} else {
+				jacket_classes = "size-small size-lt-small size-lt-intermediate size-lt-smallish size-lt-medium size-lt-large size-lt-xlarge";
 			}
 
-			jacket.stripClass("size-").addClass(ele_class+" "+px_width);
+			jacket.stripClass( "size-" ).addClass( jacket_classes + " " + px_width );
 		},
 
 		/**
