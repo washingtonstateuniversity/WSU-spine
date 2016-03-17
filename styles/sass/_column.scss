@@ -260,7 +260,9 @@
 				content: "\F500";
 			}
 
+			> a:focus:after,
 			> a:hover:after,
+			&.opened > a:focus:after,
 			&.opened > a:hover:after {
 				display: block;
 			}
@@ -1243,6 +1245,7 @@ html.lt-ie9 #spine footer {
 
 	.spine-actions-tabs .opened button,
 	.spine-actions-tabs button:hover,
+	.spine-actions-tabs button:focus,
 	.spine-actions-tabs .opened button:hover {
 		color: $gray-light;
 	}
@@ -1266,6 +1269,7 @@ html.lt-ie9 #spine footer {
 		color: $gray-light;
 	}
 
+	.spine-search-tab button:focus,
 	.spine-search-tab button:hover {
 		color: $gray;
 	}
