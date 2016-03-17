@@ -260,7 +260,9 @@
 				content: "\F500";
 			}
 
+			> a:focus:after,
 			> a:hover:after,
+			&.opened > a:focus:after,
 			&.opened > a:hover:after {
 				display: block;
 			}
