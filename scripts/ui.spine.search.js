@@ -45,7 +45,7 @@
 				tabTemplate: "<section id='wsu-search' class='spine-search spine-action closed'> \
 								<form id='default-search'> \
 									<input name='term' type='text' value='' placeholder='search'> \
-									<button>Submit</button> \
+									<button type='submit'>Submit</button> \
 								</form> \
 								<div id='spine-shortcuts' class='spine-shortcuts'></div> \
 							</section>",
