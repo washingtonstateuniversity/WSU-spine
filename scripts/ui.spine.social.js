@@ -41,15 +41,17 @@
 				twitter_handle = encodeURIComponent( this.social_options.twitter_handle );
 				current_url = self._get_globals( "current_url" );
 				wsu_actions = self._get_globals( "wsu_actions" ).refresh();
-				sharehtml  = "<section id='wsu-share' class='spine-share spine-action closed'> \
-									<ul> \
-										<li class='by-facebook'><a href='https://www.facebook.com/sharer/sharer.php?u=" + current_url + "'>Facebook</a></li> \
-										<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text=" + twitter_text + "&url=" + current_url + "&via=" + twitter_handle + "' target='_blank'>Twitter</a></li> \
-										<li class='by-googleplus'><a href='https://plus.google.com/share?url=" + current_url + "'>Google+</a></li> \
-										<li class='by-linkedin'><a href='https://www.linkedin.com/shareArticle?mini=true&url=" + current_url + "&summary=" + share_text + "&source=" + linkedin_source + "' target='_blank'>Linkedin</a></li> \
-										<li class='by-email'><a href='mailto:?subject=" + share_text + "&body=" + current_url + "'>Email</a></li> \
-									</ul> \
-									</section>";
+
+				sharehtml  = "<section id='wsu-share' class='spine-share spine-action closed'>";
+				sharehtml += "<ul>";
+				sharehtml += "<li class='by-facebook'><a href='https://www.facebook.com/sharer/sharer.php?u=" + current_url + "'>Facebook</a></li>";
+				sharehtml += "<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text=" + twitter_text + "&url=" + current_url + "&via=" + twitter_handle + "' target='_blank'>Twitter</a></li>";
+				sharehtml += "<li class='by-googleplus'><a href='https://plus.google.com/share?url=" + current_url + "'>Google+</a></li>";
+				sharehtml += "<li class='by-linkedin'><a href='https://www.linkedin.com/shareArticle?mini=true&url=" + current_url + "&summary=" + share_text + "&source=" + linkedin_source + "' target='_blank'>Linkedin</a></li>";
+				sharehtml += "<li class='by-email'><a href='mailto:?subject=" + share_text + "&body=" + current_url + "'>Email</a></li>";
+				sharehtml += "</ul>";
+				sharehtml += "</section>";
+
 				self.setup_tabs( "share", sharehtml );
 			} // End Share Generation
 		}
