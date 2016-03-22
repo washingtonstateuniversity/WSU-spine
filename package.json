@@ -20,6 +20,7 @@
 		"grunt-contrib-csslint": "^1.0.0",
 		"grunt-contrib-cssmin": "~1.0.0",
 		"grunt-contrib-jshint": "~1.0.0",
+		"grunt-jscs": "^2.8.0",
 		"grunt-contrib-uglify": "~1.0.0",
 		"grunt-contrib-watch": "~1.0.0",
 		"grunt-env": "~0.4.4",

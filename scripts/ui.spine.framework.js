@@ -4,17 +4,17 @@
  *		jquery.ui.v.js
  */
 /*jshint multistr: true */
-( function($) {
-	$.extend($.ui.spine.prototype, {
+( function( $ ) {
+	$.extend( $.ui.spine.prototype, {
 		/**
 		 * Initialize the Spine framework. Fired automatically in `$.s`, found
 		 * in ui.spine.js.
 		 *
 		 * @param {object} options
 		 */
-		framework_init: function(options) {
-			$.extend(this.framework_options,options);
-			this._set_globals(this.framework_globals);
+		framework_init: function( options ) {
+			$.extend( this.framework_options, options );
+			this._set_globals( this.framework_globals );
 			this.framework_create();
 		},
 
@@ -50,10 +50,10 @@
 		 * Global objects that are part of the Spine framework.
 		 */
 		framework_globals: {
-			spine: $("#spine"),
-			glue: $("#glue"),
-			main: $("main"),
-			wsu_actions: $("#wsu-actions")
+			spine: $( "#spine" ),
+			glue: $( "#glue" ),
+			main: $( "main" ),
+			wsu_actions: $( "#wsu-actions" )
 		},
 
 		/**
@@ -85,6 +85,7 @@
 			if ( window.matchMedia ) {
 				return window.matchMedia( "(max-width: 989px)" ).matches;
 			} else if ( window.styleMedia ) {
+
 				// Fallback for IE 9. IE 8 and below do not support media queries anyway.
 				return window.styleMedia.matchMedium( "(max-width: 989px)" );
 			}
@@ -137,9 +138,9 @@
 			glue = self._get_globals( "glue" ).refresh();
 			main = self._get_globals( "main" ).refresh();
 
-			if ( self.is_mobile_view() && ! self.has_mobile_state() ) {
+			if ( self.is_mobile_view() && !self.has_mobile_state() ) {
 				self.set_spine_state( "mobile" );
-			} else if ( ! self.is_mobile_view() && self.has_mobile_state() ) {
+			} else if ( !self.is_mobile_view() && self.has_mobile_state() ) {
 				self.set_spine_state( "full" );
 			}
 
@@ -182,7 +183,7 @@
 
 			viewport_ht = $( window ).height();
 
-			if ( ! self.is_mobile_view() ) {
+			if ( !self.is_mobile_view() ) {
 				glue.css( "min-height", viewport_ht );
 				spine.css( "min-height", viewport_ht );
 
@@ -199,24 +200,24 @@
 		framework_create: function() {
 			var self, contactHtml, propmap = {}, svg_imgs;
 
-			self = this; // preserve scope.
+			self = this; // Preserve scope.
 
 			// Generate the contact section.
-			if (!$("#wsu-contact").length) {
+			if ( !$( "#wsu-contact" ).length ) {
 				contactHtml = "<section id='wsu-contact' class='spine-contact spine-action closed'>";
 				propmap = {};
 
-				$.each($("[itemtype='http://schema.org/Organization']"),function(){
+				$.each( $( "[itemtype='http://schema.org/Organization']" ), function() {
 					var tar = this;
-					$.each($(tar).find("[itemprop]"),function(i,v){
+					$.each( $( tar ).find( "[itemprop]" ), function( i, v ) {
 						var tmp = {};
-						tmp[$(v).attr("itemprop")] = $(v).attr("content");
-						$.extend(propmap,tmp);
-					});
-					contactHtml += $.runTemplate(self.framework_options.contact_template,propmap);
-				});
+						tmp[ $( v ).attr( "itemprop" ) ] = $( v ).attr( "content" );
+						$.extend( propmap, tmp );
+					} );
+					contactHtml += $.runTemplate( self.framework_options.contact_template, propmap );
+				} );
 				contactHtml += "</section>";
-				self.setup_tabs("contact",contactHtml);
+				self.setup_tabs( "contact", contactHtml );
 			}
 
 			self.setup_nav();
@@ -229,7 +230,7 @@
 			}
 
 			// If SVG is not supported, add a class and replace Spine SVG files with PNG equivalents.
-			if ( ! $.svg_enabled() ) {
+			if ( !$.svg_enabled() ) {
 				$( "html" ).addClass( "nosvg" );
 				svg_imgs = $( "img[src$='.svg']" );
 
@@ -245,7 +246,7 @@
 
 			$( window ).on( "resize orientationchange", function() { self.framework_adjust_on_resize(); } ).trigger( "resize" );
 
-			if ( ! self.is_mobile_view() ) {
+			if ( !self.is_mobile_view() ) {
 				$( document ).trigger( "scroll" );
 			}
 		},
@@ -255,7 +256,7 @@
 		 *
 		 * @param {HTMLelement} jacket
 		 */
-		sizing: function ( jacket ) {
+		sizing: function( jacket ) {
 			var current_width, jacket_classes, px_width, size_intermediate, size_medium, size_large;
 
             jacket = jacket || $( "#jacket" );
@@ -290,33 +291,33 @@
 		/**
 		 * Equalize columns in a layout.
 		 */
-		equalizing: function () {
+		equalizing: function() {
 			var obj;
 
-			if( $(".equalize").length ) {
-				obj = $(".equalize");
-				obj.find(".column").css("min-height","");
+			if ( $( ".equalize" ).length ) {
+				obj = $( ".equalize" );
+				obj.find( ".column" ).css( "min-height", "" );
 
-				$.each(obj,function() {
+				$.each( obj, function() {
 					var tallestBox = 0;
-					$.each($(".column", this), function() {
-						tallestBox = ($(this).outerHeight() > tallestBox) ? $(this).outerHeight() : tallestBox;
-					});
+					$.each( $( ".column", this ), function() {
+						tallestBox = ( $( this ).outerHeight() > tallestBox ) ? $( this ).outerHeight() : tallestBox;
+					} );
 
-					if ( ( $(window).width() <= 792 && !obj.is(".equalize-medium") ) || ( $(window).width() <= 694 && !obj.is(".equalize-small") ) ) {
-						$(".column",this).not(".unequaled").css("min-height","1");
+					if ( ( $( window ).width() <= 792 && !obj.is( ".equalize-medium" ) ) || ( $( window ).width() <= 694 && !obj.is( ".equalize-small" ) ) ) {
+						$( ".column", this ).not( ".unequaled" ).css( "min-height", "1" );
 					} else {
-						$(".column",this).not(".unequaled").css("min-height",tallestBox);
+						$( ".column", this ).not( ".unequaled" ).css( "min-height", tallestBox );
 					}
-					$("section.equalize .column",this).css("min-height","auto");
-				});
+					$( "section.equalize .column", this ).css( "min-height", "auto" );
+				} );
 			}
 		},
 
 		/**
 		 * Apply a minimum height to the `main` element.
 		 */
-		mainheight: function () {
+		mainheight: function() {
 			var main, window_height, main_height;
 
 			main = this._get_globals( "main" ).refresh();
@@ -351,7 +352,7 @@
 		 *
 		 * @param e
 		 */
-		toggle_mobile_nav: function(e) {
+		toggle_mobile_nav: function( e ) {
 			var html, body, spine, glue, transitionEnd;
 
 			if ( typeof e !== "undefined" ) {
@@ -360,8 +361,8 @@
 
 			html = $( "html" );
 			body = $( "body" );
-			spine = $.ui.spine.prototype._get_globals("spine").refresh();
-			glue = $.ui.spine.prototype._get_globals("glue").refresh();
+			spine = $.ui.spine.prototype._get_globals( "spine" ).refresh();
+			glue = $.ui.spine.prototype._get_globals( "glue" ).refresh();
 
 			/* Cross browser support for CSS "transition end" event */
 			transitionEnd = "transitionend webkitTransitionEnd otransitionend MSTransitionEnd";
@@ -416,16 +417,16 @@
 		/**
 		 * Sets up the spine area
 		 */
-		setup_spine: function(){
+		setup_spine: function() {
 			var self, spine, glue, main, viewport_ht, spine_ht, height_dif, positionLock;
 
 			$( "#spine .spine-header" ).prepend( "<button id='shelve' type='button' />" );
 
 			self = this;
 
-			spine = self._get_globals("spine").refresh();
-			glue = self._get_globals("glue").refresh();
-			main = self._get_globals("main").refresh();
+			spine = self._get_globals( "spine" ).refresh();
+			glue = self._get_globals( "glue" ).refresh();
+			main = self._get_globals( "main" ).refresh();
 
 			self.nav_state.scroll_top = 0;
 			self.nav_state.scroll_dif = 0;
@@ -439,11 +440,12 @@
 				if ( $( "html" ).hasClass( "spine-mobile-open" ) ) {
 					self.toggle_mobile_nav( e );
 				}
-			});
+			} );
 
-			if ( ! self.is_mobile_view() ) {
+			if ( !self.is_mobile_view() ) {
+
 				// Watch for DOM changes and resize the Spine to match.
-				$.observeDOM( glue , function() {
+				$.observeDOM( glue, function() {
 					self.apply_nav_func( self );
 				} );
 
@@ -453,9 +455,9 @@
 				} );
 
 				$( document ).keydown( function( e ) {
-					if( e.which === 35 || e.which === 36 ) {
+					if ( e.which === 35 || e.which === 36 ) {
 						viewport_ht	= $( window ).height();
-						spine_ht	= spine[0].scrollHeight;
+						spine_ht	= spine[ 0 ].scrollHeight;
 						height_dif	= viewport_ht - spine_ht;
 
 						if ( e.which === 35 ) {
@@ -464,7 +466,7 @@
 							positionLock = 0;
 						}
 
-						spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
+						spine.css( { "position": "fixed", "top": positionLock + "px" } );
 						self.nav_state.positionLock = positionLock;
 					}
 				} );
@@ -521,7 +523,7 @@
 			self.nav_state.scroll_top = scroll_top;
 
 			// Main should always be at least as high as `#glue`.
-			main.css( { "min-height" : glue_ht } );
+			main.css( { "min-height": glue_ht } );
 
 			/**
 			 * When the content in `main` is larger than the content in `#glue`, maintain a
@@ -554,7 +556,7 @@
 					positionLock = ( -1 * upper_bound );
 				}
 
-				spine.css( { "position" : "fixed", "top" : positionLock + "px" } );
+				spine.css( { "position": "fixed", "top": positionLock + "px" } );
 				self.nav_state.positionLock = positionLock;
 			} else if ( spine.is( "#spine[style]" ) ) {
 				spine.removeAttr( "style" );
@@ -565,23 +567,23 @@
 		 * Process a WSU action tab (mail, sharing, etc...) and setup the
 		 * structure accordingly.
 		 */
-		setup_tabs: function(tab,html) {
+		setup_tabs: function( tab, html ) {
 			var self, wsu_actions, action_ht;
 
 			html = html || "";
 			self = this;
 
-			wsu_actions = self._get_globals("wsu_actions").refresh();
-			wsu_actions.append(html);
+			wsu_actions = self._get_globals( "wsu_actions" ).refresh();
+			wsu_actions.append( html );
 
 			$( "#wsu-" + tab + "-tab button" ).on( "click touchend", function( e ) {
 				e.preventDefault();
-				wsu_actions.find("*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab").toggleClass("opened closed");
+				wsu_actions.find( "*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 
-				action_ht = window.innerHeight - $(".spine-header").outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
+				action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 
 				$( ".spine-action.opened" ).css( "min-height", action_ht );
-			});
+			} );
 		},
 
 		/**
@@ -591,7 +593,7 @@
 		 * @param evt
 		 * @private
 		 */
-		_toggle_spine_nav_list : function( evt ) {
+		_toggle_spine_nav_list: function( evt ) {
 			var target = $( evt.target );
 
 			evt.preventDefault();
@@ -627,7 +629,7 @@
 			 */
 			$( "#spine nav li a[class*=current], #spine nav li a[class*=active]" ).parents( "li" ).addClass( "active dogeared" );
 
-			var couplets = $("#spine nav li.parent > a");
+			var couplets = $( "#spine nav li.parent > a" );
 
 			/**
 			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
@@ -635,25 +637,25 @@
 			 */
 			couplets.each( function() {
 				var tar, title, classes, url;
-				tar = $(this);
+				tar = $( this );
 
-				title = ( tar.is("[title]")  ) ? tar.attr("title") : "Overview";
-				title = ( tar.is("[data-overview]") ) ?tar.data("overview") : title;
-				title = title.length > 0 ? title : "Overview"; // this is just triple checking that a value made it here.
+				title = ( tar.is( "[title]" )  ) ? tar.attr( "title" ) : "Overview";
+				title = ( tar.is( "[data-overview]" ) ) ? tar.data( "overview" ) : title;
+				title = title.length > 0 ? title : "Overview"; // This is just triple checking that a value made it here.
 
 				classes = "overview";
-				if (tar.closest(".parent").is(".dogeared")) {
+				if ( tar.closest( ".parent" ).is( ".dogeared" ) ) {
 					classes += " dogeared";
 				}
 
-				url = tar.attr("href");
+				url = tar.attr( "href" );
 
 				if ( url !== "#" ) {
-					tar.parent("li").children("ul").prepend("<li class='" + classes + "'></li>");
-					tar.clone(true,true).appendTo( tar.parent("li").find("ul .overview:first") );
-					tar.parent("li").find("ul .overview:first a").html(title);
+					tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
+					tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
+					tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
 				}
-			});
+			} );
 
 			/**
 			 * Setup navigation events depending on what the screen size is when the document first
@@ -669,14 +671,15 @@
 					$( e.target ).on( "touchmove", function( e ) {
 						$( e.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
 					} );
-				});
+				} );
 			} else {
+
 				// Disclosure
 				couplets.on( "click", function( e ) {
 					e.preventDefault();
-					$( e.target ).parent("li").siblings().removeClass("opened");
-					$( e.target ).parent("li").toggleClass("opened");
-				});
+					$( e.target ).parent( "li" ).siblings().removeClass( "opened" );
+					$( e.target ).parent( "li" ).toggleClass( "opened" );
+				} );
 
 				// Trigger a scroll action when an anchor link is used.
 				$( "main a[href*='#']:not([href*='://'])" ).on( "mouseup", function() {
@@ -685,18 +688,18 @@
 			}
 
 			// Mark external URLs in the nav menu.
-			$(".spine-navigation a[href^='http']:not([href*='://" + window.location.hostname + "'])").addClass("external");
+			$( ".spine-navigation a[href^='http']:not([href*='://" + window.location.hostname + "'])" ).addClass( "external" );
 		},
 
 		/**
 		 * Handle printing action when selected in the Spine.
 		 */
-		setup_printing: function(){
+		setup_printing: function() {
 			var self, spine, wsu_actions, print_controls;
 
 			self = this;
-			spine = self._get_globals("spine").refresh();
-			wsu_actions = self._get_globals("wsu_actions").refresh();
+			spine = self._get_globals( "spine" ).refresh();
+			wsu_actions = self._get_globals( "wsu_actions" ).refresh();
 
 			// Print & Print View
 			print_controls = "<span class='print-controls'><button id='print-invoke'>Print</button><button id='print-cancel'>Cancel</button></span>";
@@ -706,29 +709,29 @@
 			}
 
 			function print_cancel() {
-				$("html").toggleClass("print");
-				$(".print-controls").remove();
+				$( "html" ).toggleClass( "print" );
+				$( ".print-controls" ).remove();
 			}
 
-			function print(e) {
+			function print( e ) {
 				if ( undefined !== e ) {
 					e.preventDefault();
 				}
-				wsu_actions.find(".opened").toggleClass("opened closed");
-				$("html").toggleClass("print");
-				spine.find("header").prepend(print_controls);
-				$(".unshelved").removeClass("unshelved").addClass("shelved");
-				$("#print-invoke").on("click",function() { window.print(); });
-				$("#print-cancel").on("click",print_cancel);
-				window.setTimeout(function() { printPage(); }, 400);
+				wsu_actions.find( ".opened" ).toggleClass( "opened closed" );
+				$( "html" ).toggleClass( "print" );
+				spine.find( "header" ).prepend( print_controls );
+				$( ".unshelved" ).removeClass( "unshelved" ).addClass( "shelved" );
+				$( "#print-invoke" ).on( "click", function() { window.print(); } );
+				$( "#print-cancel" ).on( "click", print_cancel );
+				window.setTimeout( function() { printPage(); }, 400 );
 			}
-			$("#wsu-print-tab button").click(print);
+			$( "#wsu-print-tab button" ).click( print );
 
 			// Shut a tool section
-			$("button.shut").on( "click touchend", function( e ) {
+			$( "button.shut" ).on( "click touchend", function( e ) {
 				e.preventDefault();
-				wsu_actions.find(".opened").toggleClass("opened closed");
-			});
+				wsu_actions.find( ".opened" ).toggleClass( "opened closed" );
+			} );
 		}
-	});
-} (jQuery) );
+	} );
+}( jQuery ) );
