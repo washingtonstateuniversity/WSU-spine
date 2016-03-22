@@ -27,6 +27,7 @@
 	color: white;
 	line-height: 1em;
 	margin: 0;
+	vertical-align: baseline; // Only applies when not display block.
 }
 
 .main-header a,
