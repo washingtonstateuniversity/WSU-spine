@@ -7,6 +7,7 @@ module.exports = {
 			"compatible-vendor-prefixes": false,   // The library on this is older than autoprefixer.
 			"overqualified-elements": false,       // We have weird uses that will always generate warnings.
 			"known-properties": false,             // Our use of manipulation for touch-action generates an error.
+			"display-property-grouping": false,    // We can't guarantee back-compat with this enabled yet.
 			"ids": false,
 			"regex-selectors": false,              // audit
 			"adjoining-classes": false,
@@ -22,7 +23,6 @@ module.exports = {
 			"duplicate-properties": 2,
 			"star-property-hack": 2,
 			"text-indent": 2,
-			"display-property-grouping": 2,
 			"shorthand": 2,
 			"empty-rules": 2,
 			"vendor-prefix": 2,
