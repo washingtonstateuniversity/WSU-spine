@@ -4,11 +4,11 @@
 
 ### Enhancements
 
-This release refactors how the Spine is handled on mobile devices. Previously, we shared the logic used on larger views for calculating the heights of and resizing `#glue`, `main` as the browser resized or the document scrolled. Not using a `position: fixed` header had a tendency to cause issues when scrolling through the menu on both iOS and Android devices. Android devices had troubles scrolling at all.
+This release refactors how the Spine is handled on mobile devices. Previously, we shared the logic used on larger views for calculating the heights of and resizing `#glue` and `main` as the browser resized or the document scrolled. Not using a `position: fixed` header had a tendency to cause issues when scrolling through the menu on both iOS and Android devices. Android devices had troubles scrolling at all.
 
 We now move elements in the DOM around a bit when a mobile view is detected. The Spine's header becomes a fixed element at the top of the screen. The `#glue` is moved into its own `#scroll` element that is allowed to scroll separately from the document as a whole. The navigation appears and disappears [smoothly](http://apeatling.com/building-smooth-sliding-mobile-menu/) and is much more useable on iOS and Android devices.
 
-This is all handled in JavaScript, yet reduces significantly the amount of JavaScript that is necessary on mobile devices to manage the Spine. No change in markup is necessary on individual pages, it will just work.
+This is all handled in JavaScript, yet significantly reduces the amount of Spine JavaScript necessary on mobile devices. No change in markup is necessary on individual pages, it will just work.
 
 See #314, #318, #332, #333, #334, #337 for the majority of mobile related changes.
 
