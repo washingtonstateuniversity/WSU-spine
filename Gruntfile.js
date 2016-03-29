@@ -42,6 +42,7 @@ module.exports = function( grunt ) {
 	] );
 
 	grunt.registerTask( "dev", [
+		"jscs",
 		"jshint",
 		"build",
 		"build_tests",
