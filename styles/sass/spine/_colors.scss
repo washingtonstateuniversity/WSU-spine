@@ -8,7 +8,6 @@
 		@include vellum($gray-lightest);
 
 		.spine-sitenav a,
-		.spine-offsitenav a:hover,
 		.spine-search-tab button {
 			color: $gray-dark;
 		}
@@ -70,11 +69,6 @@
 			color: $gray-lighter;
 		}
 
-		.spine-sitenav a,
-		.spine-offsitenav a:hover {
-			color: $gray-darker;
-		}
-
 		.spine-sitenav ul li,
 		.spine-global-links {
 			border-color: lighten($gray-lighter,2%);
@@ -122,11 +116,6 @@
 		.spine-social-channels a,
 		.spine-footer small a {
 			color: $gray-light;
-		}
-
-		.spine-sitenav a,
-		.spine-offsitenav a:hover {
-			color: $gray-darker;
 		}
 
 		.spine-sitenav ul li,
@@ -181,11 +170,6 @@
 			color: $gray-lighter;
 		}
 
-		.spine-sitenav a,
-		.spine-offsitenav a:hover {
-			color: $gray-lightly;
-		}
-
 		.spine-sitenav ul li,
 		.spine-global-links {
 			border-color: $gray-lighter;
@@ -198,6 +182,7 @@
 
 		.spine-actions-tabs button:focus,
 		.spine-actions-tabs button:hover,
+		.spine-sitenav a,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
 			color: $gray-lightly;
@@ -237,12 +222,6 @@
 			color: darken($gray-dark, 2%);
 		}
 
-		.spine-sitenav a,
-		.spine-offsitenav a:hover,
-		.spine-search-tab button {
-			color: $gray-lightly;
-		}
-
 		.spine-sitenav ul li,
 		.spine-global-links {
 			border-color: $gray-dark;
@@ -258,6 +237,7 @@
 
 		.spine-actions-tabs :not(.opened) button:focus,
 		.spine-actions-tabs :not(.opened) button:hover,
+		.spine-sitenav a,
 		.spine-offsitenav a:hover,
 		.spine-global-links a:hover {
 			color: $gray-lightly;
@@ -287,11 +267,6 @@
 		}
 
 		@include vellum($gray-dark);
-
-		.spine-sitenav a,
-		.spine-offsitenav a:hover {
-			color: $gray-lightly;
-		}
 
 		.spine-search-tab.opened button:focus
 		.spine-actions .opened button,
@@ -351,11 +326,6 @@
 
 		@include vellum(darken($gray-darker, 3%));
 
-		.spine-sitenav a,
-		.spine-offsitenav a:hover {
-			color: $gray-lighter;
-		}
-
 		.spine-actions .opened button,
 		.spine-actions button,
 		.spine-actions .opened button:hover,
@@ -407,11 +377,6 @@
 		}
 
 		@include vellum($gray-darkest);
-
-		.spine-sitenav a,
-		.spine-offsitenav a:hover {
-			color: $gray-lighter;
-		}
 
 		.spine-actions button,
 		.spine-social-channels a,
