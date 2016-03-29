@@ -577,7 +577,7 @@
 
 			tab = $( evt.target ).parent( "li" ).attr( "id" ).split( "-" )[1];
 
-			wsu_actions.find( "*.opened, #wsu-" + tab + ", #wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
+			$( "#wsu-actions" ).find( "*.opened, #wsu-" + tab + ", #wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 
 			action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 
