@@ -155,7 +155,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 		}
 
 		// Covers mobile default and the skimmed view of a cropped spine.
-		.spine-mobile.#{$signature}-signature #wsu-signature
+		.spine-mobile.#{$signature}-signature #wsu-signature,
 		.print.#{$signature}-signature #wsu-signature,
 		.#{$signature}-signature  #spine.cropped.skimmed #wsu-signature {
 			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-horizontal.svg");
