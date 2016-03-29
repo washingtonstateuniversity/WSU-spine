@@ -34,21 +34,9 @@ module.exports = function( grunt ) {
 	// Default task(s).
 	grunt.registerTask( "default", [ "dev" ] );
 
-	grunt.registerTask( "prod", [
-		"build",
-		"build_tests",
-		"copy:main",
-		"copy:dev"
-	] );
+	grunt.registerTask( "prod", [ "build" ] );
 
-	grunt.registerTask( "dev", [
-		"jscs",
-		"jshint",
-		"build",
-		"build_tests",
-		"copy:main",
-		"copy:dev"
-	] );
+	grunt.registerTask( "dev", [ "jscs", "jshint", "build" ] );
 
 	grunt.registerTask( "build", [
 		"clean",
@@ -57,6 +45,8 @@ module.exports = function( grunt ) {
 		"postcss",
 		"csslint",
 		"cssmin",
-		"uglify"
+		"uglify",
+		"build_tests",
+		"copy"
 	] );
 };
