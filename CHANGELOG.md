@@ -1,5 +1,43 @@
 # WSU Spine Changelog
 
+## 1.4.0 (TBD)
+
+### Enhancements
+
+This release refactors how the Spine is handled on mobile devices. Previously, we shared the logic used on larger views for calculating the heights of and resizing `#glue` and `main` as the browser resized or the document scrolled. Not using a `position: fixed` header had a tendency to cause issues when scrolling through the menu on both iOS and Android devices. Android devices had troubles scrolling at all.
+
+We now move elements in the DOM around a bit when a mobile view is detected. The Spine's header becomes a fixed element at the top of the screen. The `#glue` is moved into its own `#scroll` element that is allowed to scroll separately from the document as a whole. The navigation appears and disappears [smoothly](http://apeatling.com/building-smooth-sliding-mobile-menu/) and is much more useable on iOS and Android devices.
+
+This is all handled in JavaScript, yet significantly reduces the amount of Spine JavaScript necessary on mobile devices. No change in markup is necessary on individual pages, it will just work.
+
+See [#314](https://github.com/washingtonstateuniversity/WSU-spine/pull/314), [#318](https://github.com/washingtonstateuniversity/WSU-spine/pull/318), [#332](https://github.com/washingtonstateuniversity/WSU-spine/pull/332), [#333](https://github.com/washingtonstateuniversity/WSU-spine/pull/333), [#334](https://github.com/washingtonstateuniversity/WSU-spine/pull/334), and [#337](https://github.com/washingtonstateuniversity/WSU-spine/pull/337) for the majority of mobile related changes.
+
+### Framework Fixes
+
+* Treat mobile navigation the same in Fluid, Hybrid, and Fixed grid layouts. 990px is the mark at which we show mobile navigation. See [#338](https://github.com/washingtonstateuniversity/WSU-spine/pull/338).
+* Refactor how `#glue` positioning is handled on scroll. This fixes a bug where the navigation could appear jumpy at certain spots depending on the size of the document and the size of the window. See [#342](https://github.com/washingtonstateuniversity/WSU-spine/pull/342).
+* Along with that, simplify how `min-height` is calculated for `main`. See [#343](https://github.com/washingtonstateuniversity/WSU-spine/pull/343).
+* Calculate the height of the area exposed by the Spine action links based on `window`, not `main` so that things don't disappear in a strange way. See [#341](https://github.com/washingtonstateuniversity/WSU-spine/pull/341).
+* Improve the focus state of Spine action items. Previously they would get lost if navigated through by keyboard. See [#340](https://github.com/washingtonstateuniversity/WSU-spine/pull/340).
+* Provide explicit button types for `button` elements added to the DOM by the Spine. See [#347](https://github.com/washingtonstateuniversity/WSU-spine/pull/347).
+* Remove a `line-height: 1em` rule applied to `figcaption` that squashed text in captions.
+* Simplify and document scripting to add `active`, `dogeared` to nav. See [#328](https://github.com/washingtonstateuniversity/WSU-spine/pull/328).
+
+### Removed
+
+* Remove unused implementation of Spine analytics in favor of jTrack. See [#326](https://github.com/washingtonstateuniversity/WSU-spine/pull/326).
+* Remove the `dump` function that was provided to aid in code debugging. This was not in use anywhere in the Spine. See [#327](https://github.com/washingtonstateuniversity/WSU-spine/pull/327).
+* Remove a series of unused SVG assets. See [#325](https://github.com/washingtonstateuniversity/WSU-spine/pull/325).
+* Remove our custom Open Sans fonts. This font should be loaded via Google's CDN instead. See [#309](https://github.com/washingtonstateuniversity/WSU-spine/pull/309).
+
+### Development Changes
+
+* Apply an initial JSCS configuration based on the [jQuery style guide](https://contribute.jquery.org/style-guide/js/). All JavaScript code must now conform to these standards. See [#348](https://github.com/washingtonstateuniversity/WSU-spine/pull/348).
+* Introduce CSS linting. The [configuration file](https://github.com/washingtonstateuniversity/WSU-spine/blob/develop/tasks/options/csslint.js) explains this best.
+* Use PostCSS to apply vendor prefixes. See the [configuration file](https://github.com/washingtonstateuniversity/WSU-spine/blob/develop/tasks/options/postcss.js).
+* Replace the Ruby based `grunt-contrib-sass` with the much faster `grunt-sass`. See [#322](https://github.com/washingtonstateuniversity/WSU-spine/pull/322).
+* Revisit and clarify JSHint rules. See [#335](https://github.com/washingtonstateuniversity/WSU-spine/pull/335).
+
 ## 1.3.1 (August 31, 2015)
 
 ### Framework Fixes
