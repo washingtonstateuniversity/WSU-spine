@@ -14,14 +14,12 @@ module.exports = function( grunt ) {
 		return object;
 	}
 
-	var pkg,setbase,config;
+	var pkg, config;
 
 	pkg = grunt.file.readJSON( "package.json" );
-	setbase = grunt.option( "setbase" ) || pkg.build_location + "/" + pkg.build_version + "/";
 
 	config = {
 		pkg: pkg,
-		setbase:setbase,
 		config: {
 			build: "build"
 		}
@@ -34,24 +32,11 @@ module.exports = function( grunt ) {
 	grunt.loadTasks( "tasks" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jshint" ] );
+	grunt.registerTask( "default", [ "dev" ] );
 
-	grunt.registerTask( "prod", [
-		"env:prod",
-		"build",
-		"build_tests",
-		"copy:main",
-		"copy:dev"
-	] );
+	grunt.registerTask( "prod", [ "build" ] );
 
-	grunt.registerTask( "dev", [
-		"jshint",
-		"env:dev",
-		"build",
-		"build_tests",
-		"copy:main",
-		"copy:dev"
-	] );
+	grunt.registerTask( "dev", [ "jscs", "jshint", "build" ] );
 
 	grunt.registerTask( "build", [
 		"clean",
@@ -60,6 +45,8 @@ module.exports = function( grunt ) {
 		"postcss",
 		"csslint",
 		"cssmin",
-		"uglify"
+		"uglify",
+		"build_tests",
+		"copy"
 	] );
 };
