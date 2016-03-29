@@ -22,28 +22,28 @@
 		 * Global framework options for the Spine framework.
 		 */
 		framework_options: {
-			equalizer_filter:".skip*",
-			contact_template:"<address itemscope itemtype='http://schema.org/Organization' class='hcard'> \
-									<% if (typeof(this.department) != 'undefined') { %><div class='organization-unit fn org'>\
-										<% if (typeof(this.url) != 'undefined') { %><a href='<%this.url%>' class='url'><% } %> \
-											<%this.department%> \
-										<% if (typeof(this.url) != 'undefined') { %></a><% } %> \
-									</div><% } %> \
-									<% if (typeof(this.name) != 'undefined') { %><div class='organization-name'><%this.name%></div><% } %> \
-									<div class='address'> \
-										<% if (typeof(this.streetAddress) != 'undefined') { %><div class='street-address'><%this.streetAddress%></div><% } %> \
-										<% if (typeof(this.addressLocality) != 'undefined' || typeof(this.postalCode) != 'undefined') { %><div class='locality'> \
-											<% if (typeof(this.addressLocality) != 'undefined' ) { %><%this.addressLocality%><% } %> <% if (typeof(this.addressRegion) != 'undefined' ) { %>, <%this.addressRegion%><% } %> \
-											<% if (typeof(this.postalCode) != 'undefined' ) { %><span class='postalcode'><%this.postalCode%></span><% } %> \
-										</div><% } %> \
-									</div> \
-									<% if (typeof(this.telephone) != 'undefined' ) { %><div class='tel'><%this.telephone%></div><% } %> \
-									<% if (typeof(this.email) != 'undefined' ) { %><div class='email' rel='email'><a href='mailto:<%this.email%>'>Email us</a></div><% } %> \
-										 \
-									<% if (typeof(this.ContactPoint) != 'undefined' && typeof(this.ContactPointTitle) != 'undefined') { %> \
-										<div class='more'><a href='<%this.ContactPoint%>'><%this.ContactPointTitle%></a></div> \
-									<% } %> \
-								</address>"
+			equalizer_filter: ".skip*",
+			contact_template: "<address itemscope itemtype='http://schema.org/Organization' class='hcard'>" +
+								"<% if (typeof(this.department) != 'undefined') { %><div class='organization-unit fn org'>" +
+									"<% if (typeof(this.url) != 'undefined') { %><a href='<%this.url%>' class='url'><% } %>" +
+										"<%this.department%>" +
+									"<% if (typeof(this.url) != 'undefined') { %></a><% } %>" +
+								"</div><% } %> " +
+								"<% if (typeof(this.name) != 'undefined') { %><div class='organization-name'><%this.name%></div><% } %>" +
+								"<div class='address'>" +
+									"<% if (typeof(this.streetAddress) != 'undefined') { %><div class='street-address'><%this.streetAddress%></div><% } %>" +
+									"<% if (typeof(this.addressLocality) != 'undefined' || typeof(this.postalCode) != 'undefined') { %><div class='locality'>" +
+										"<% if (typeof(this.addressLocality) != 'undefined' ) { %><%this.addressLocality%><% } %>" +
+										"<% if (typeof(this.addressRegion) != 'undefined' ) { %>, <%this.addressRegion%><% } %>" +
+										"<% if (typeof(this.postalCode) != 'undefined' ) { %><span class='postalcode'><%this.postalCode%></span><% } %>" +
+									"</div><% } %>" +
+								"</div>" +
+								"<% if (typeof(this.telephone) != 'undefined' ) { %><div class='tel'><%this.telephone%></div><% } %>" +
+								"<% if (typeof(this.email) != 'undefined' ) { %><div class='email' rel='email'><a href='mailto:<%this.email%>'>Email us</a></div><% } %>" +
+								"<% if (typeof(this.ContactPoint) != 'undefined' && typeof(this.ContactPointTitle) != 'undefined') { %>" +
+									"<div class='more'><a href='<%this.ContactPoint%>'><%this.ContactPointTitle%></a></div>" +
+								"<% } %>" +
+								"</address>"
 		},
 
 		/**
@@ -575,7 +575,7 @@
 
 			evt.preventDefault();
 
-			tab = $( evt.target ).parent( "li" ).attr( "id" ).split( "-" )[1];
+			tab = $( evt.target ).parent( "li" ).attr( "id" ).split( "-" )[ 1 ];
 
 			$( "#wsu-actions" ).find( "*.opened, #wsu-" + tab + ", #wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 

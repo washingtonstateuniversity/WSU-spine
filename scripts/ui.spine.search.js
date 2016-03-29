@@ -42,13 +42,13 @@
 				maxRows: 12,
 				getRelated:true,
 				urlSpaces:"+",
-				tabTemplate: "<section id='wsu-search' class='spine-search spine-action closed'> \
-								<form id='default-search'> \
-									<input name='term' type='text' value='' placeholder='search'> \
-									<button type='submit'>Submit</button> \
-								</form> \
-								<div id='spine-shortcuts' class='spine-shortcuts'></div> \
-							</section>"
+				tabTemplate: "<section id='wsu-search' class='spine-search spine-action closed'>" +
+								"<form id='default-search'>" +
+									"<input name='term' type='text' value='' placeholder='search'>" +
+									"<button type='submit'>Submit</button>" +
+								"</form>" +
+								"<div id='spine-shortcuts' class='spine-shortcuts'></div>" +
+							"</section>"
 			},
 			result:{
 				appendTo: "#spine-shortcuts",
