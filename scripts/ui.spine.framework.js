@@ -575,7 +575,7 @@
 
 			evt.preventDefault();
 
-			tab = $( evt.target ).parent( "li" ).attr( "id" ).split( "-" )[1];
+			tab = $( evt.target ).parent( "li" ).attr( "id" ).split( "-" )[ 1 ];
 
 			$( "#wsu-actions" ).find( "*.opened, #wsu-" + tab + ", #wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 
