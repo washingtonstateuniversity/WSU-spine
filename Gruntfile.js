@@ -32,7 +32,7 @@ module.exports = function( grunt ) {
 	grunt.loadTasks( "tasks" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jshint" ] );
+	grunt.registerTask( "default", [ "dev" ] );
 
 	grunt.registerTask( "prod", [
 		"build",
