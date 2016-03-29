@@ -111,8 +111,31 @@
 		left: 0;
 	}
 
-	.spine-mobile #spine .spine-sitenav a:hover {
-		color: inherit;
+	.spine-mobile #spine .spine-sitenav a:hover,
+	.spine-mobile #spine.white .spine-sitenav a:hover,
+	.spine-mobile #spine.lightly .spine-sitenav a:hover {
+		color: $gray;
+	}
+
+	.spine-mobile #spine.crimson .spine-sitenav a:hover {
+		color: $gray-lighter;
+	}
+
+	.spine-mobile #spine.darkest .spine-sitenav a:hover,
+	.spine-mobile #spine.darker .spine-sitenav a:hover,
+	.spine-mobile #spine.dark .spine-sitenav a:hover,
+	.spine-mobile #spine.gray .spine-sitenav a:hover,
+	.spine-mobile #spine.light .spine-sitenav a:hover {
+		color: $gray-lightly;
+	}
+
+	.spine-mobile #spine.lighter .spine-sitenav a:hover,
+	.spine-mobile #spine.lighter .spine-sitenav a:hover {
+		color: $gray-darker;
+	}
+
+	.spine-mobile #spine.lightest .spine-sitenav a:hover {
+		color: $gray-dark;
 	}
 
 	#binder {
