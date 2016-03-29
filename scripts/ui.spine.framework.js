@@ -564,6 +564,28 @@
 		},
 
 		/**
+		 * Toggle a Spine action item and the data associated with it between an
+		 * open and closed state on touch.
+		 *
+		 * @param evt
+		 * @private
+		 */
+		_toggle_spine_action_item: function( evt ) {
+			var tab, action_ht;
+
+			evt.preventDefault();
+
+			tab = $( evt.target ).parent( "li" ).attr( "id" ).split( "-" )[1];
+
+			wsu_actions.find( "*.opened, #wsu-" + tab + ", #wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
+
+			action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
+
+			$( ".spine-action.opened" ).css( "min-height", action_ht );
+			$( evt.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_action_item );
+		},
+
+		/**
 		 * Process a WSU action tab (mail, sharing, etc...) and setup the
 		 * structure accordingly.
 		 */
@@ -576,14 +598,23 @@
 			wsu_actions = self._get_globals( "wsu_actions" ).refresh();
 			wsu_actions.append( html );
 
-			$( "#wsu-" + tab + "-tab button" ).on( "click touchend", function( e ) {
-				e.preventDefault();
-				wsu_actions.find( "*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
+			if ( self.is_mobile_view() ) {
+				$( "#wsu-" + tab + "-tab button" ).on( "touchstart", function( e ) {
+					$( e.target ).on( "click touchend", $.ui.spine.prototype._toggle_spine_action_item );
+					$( e.target ).on( "touchmove", function( e ) {
+						$( e.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_action_item );
+					} );
+				} );
+			} else {
+				$( "#wsu-" + tab + "-tab button" ).on( "click", function( e ) {
+					e.preventDefault();
+					wsu_actions.find( "*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 
-				action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
+					action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 
-				$( ".spine-action.opened" ).css( "min-height", action_ht );
-			} );
+					$( ".spine-action.opened" ).css( "min-height", action_ht );
+				} );
+			}
 		},
 
 		/**
