@@ -582,7 +582,7 @@
 			action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 
 			$( ".spine-action.opened" ).css( "min-height", action_ht );
-			$( evt.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_action_item );
+			$( evt.target ).off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
 		},
 
 		/**
@@ -599,10 +599,10 @@
 			wsu_actions.append( html );
 
 			if ( self.is_mobile_view() ) {
-				$( "#wsu-" + tab + "-tab button" ).on( "touchstart", function( e ) {
-					$( e.target ).on( "click touchend", $.ui.spine.prototype._toggle_spine_action_item );
-					$( e.target ).on( "touchmove", function( e ) {
-						$( e.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_action_item );
+				$( "#wsu-" + tab + "-tab button" ).on( "mousedown touchstart", function( e ) {
+					$( e.target ).on( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
+					$( e.target ).on( "mousemove touchmove", function( e ) {
+						$( e.target ).off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
 					} );
 				} );
 			} else {
@@ -633,7 +633,7 @@
 			target.parent( "li" ).toggleClass( "opened" );
 
 			// Remove the toggle event, as it will be added again on the next touchstart.
-			target.off( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
+			target.off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_nav_list );
 		},
 
 		/**
@@ -697,10 +697,10 @@
 			 * touchstart, touchmove, and touchend without confusion.
 			 */
 			if ( self.is_mobile_view() ) {
-				couplets.on( "touchstart", function( e ) {
-					$( e.target ).on( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
-					$( e.target ).on( "touchmove", function( e ) {
-						$( e.target ).off( "click touchend", $.ui.spine.prototype._toggle_spine_nav_list );
+				couplets.on( "mousedown touchstart", function( e ) {
+					$( e.target ).on( "mouseup touchend", $.ui.spine.prototype._toggle_spine_nav_list );
+					$( e.target ).on( "mousemove touchmove", function( e ) {
+						$( e.target ).off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_nav_list );
 					} );
 				} );
 			} else {
