@@ -14,14 +14,12 @@ module.exports = function( grunt ) {
 		return object;
 	}
 
-	var pkg,setbase,config;
+	var pkg, config;
 
 	pkg = grunt.file.readJSON( "package.json" );
-	setbase = grunt.option( "setbase" ) || pkg.build_location + "/" + pkg.build_version + "/";
 
 	config = {
 		pkg: pkg,
-		setbase:setbase,
 		config: {
 			build: "build"
 		}
