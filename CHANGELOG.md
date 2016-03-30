@@ -1,6 +1,11 @@
 # WSU Spine Changelog
 
-## 1.4.1 (TBD)
+## 1.4.1 (March 30, 2016)
+
+## Bug Fixes
+
+* Some horizontal mobile signatures were not being applied correctly. Our test HTML assigned the signature class to `html`, but code in the wild assigns these classes to `body` instead. We should handle both scenarios. See [#361](https://github.com/washingtonstateuniversity/WSU-spine/pull/361).
+* One of the Health Sciences Spokane marks was missing, and has likely been missing for a long time. See [#364](https://github.com/washingtonstateuniversity/WSU-spine/pull/364).
 
 ## 1.4.0 (March 30, 2016)
 
