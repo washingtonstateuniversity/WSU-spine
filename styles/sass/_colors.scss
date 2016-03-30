@@ -1,168 +1,446 @@
 @charset "UTF-8";
 @import 'vars/colors';
 
-/* WSU COLORS
--------------------------------------------------------- */
-
 /* CRIMSON */
-	.crimson-back { background-color: $crimson; }
-	.crimson-text { color: $crimson; }
+.crimson-back {
+	background-color: $crimson;
+}
+
+.crimson-text {
+	color: $crimson;
+}
+
 /* crimsoner */
-	.crimson-er-back { background-color: $crimson-er; }
-	.crimson-er-text { color: $crimson-er; }
+.crimson-er-back {
+	background-color: $crimson-er;
+}
+
+.crimson-er-text {
+	color: $crimson-er;
+}
 
 /* GRAY */
-	.gray-back { background-color: $gray; }
-	.gray-text { color: $gray; }
+.gray-back {
+	background-color: $gray;
+}
+
+.gray-text {
+	color: $gray;
+}
+
 /* grayer */
-	.gray-er-back, .er-back, .white-back { background-color: $gray-er; }
-	.gray-er-text, .er-text, .white-text { color: $gray-er; }
+.gray-er-back,
+.er-back,
+.white-back {
+	background-color: $gray-er;
+}
+
+.gray-er-text,
+.er-text,
+.white-text {
+	color: $gray-er;
+}
+
 /* light */
-	.gray-light-back,
-	.light-back { background-color: $gray-light; }
-	.gray-light-text, .light-text { color: $gray-light; }
+.gray-light-back,
+.light-back {
+	background-color: $gray-light;
+}
+
+.gray-light-text,
+.light-text {
+	color: $gray-light;
+}
+
 /* lighter */
-	.gray-lighter-back,
-	.lighter-back { background-color: $gray-lighter; }
-	.gray-lighter-text,
-	.lighter-text { color: $gray-lighter; }
+.gray-lighter-back,
+.lighter-back {
+	background-color: $gray-lighter;
+}
+
+.gray-lighter-text,
+.lighter-text {
+	color: $gray-lighter;
+}
+
 /* lightly */
-	.gray-lightly-back,
-	.lightly-back { background-color: $gray-lightly; }
-	.gray-lightly-text,
-	.lightly-text { color: $gray-lightly; }
+.gray-lightly-back,
+.lightly-back {
+	background-color: $gray-lightly;
+}
+
+.gray-lightly-text,
+.lightly-text {
+	color: $gray-lightly;
+}
+
 /* lightest */
-	.gray-lightest-back,
-	.lightest-back { background-color: $gray-lightest; }
-	.gray-lightest-text,
-	.lightest-text,
-	.white-text { color: $gray-lightest; }
+.gray-lightest-back,
+.lightest-back {
+	background-color: $gray-lightest;
+}
+
+.gray-lightest-text,
+.lightest-text,
+.white-text {
+	color: $gray-lightest;
+}
+
 /* dark */
-	.gray-dark-back,
-	.dark-back { background-color: $gray-dark; }
-	.gray-dark-text,
-	.dark-text { color: $gray-dark; }
+.gray-dark-back,
+.dark-back {
+	background-color: $gray-dark;
+}
+
+.gray-dark-text,
+.dark-text {
+	color: $gray-dark;
+}
+
 /* darker */
-	.gray-darker-back,
-	.darker-back { background-color: $gray-darker; }
-	.gray-darker-text,
-	.darker-text { color: $gray-darker; }
+.gray-darker-back,
+.darker-back {
+	background-color: $gray-darker;
+}
+
+.gray-darker-text,
+.darker-text {
+	color: $gray-darker;
+}
+
 /* darkest */
-	.gray-darkest-back,
-	.darkest-back,
-	.black-back { background-color: $gray-darkest; }
-	.gray-darkest-text,
-	.darkest-text,
-	.black-text { color: $gray-darkest; }
+.gray-darkest-back,
+.darkest-back,
+.black-back {
+	background-color: $gray-darkest;
+}
+
+.gray-darkest-text,
+.darkest-text,
+.black-text {
+	color: $gray-darkest;
+}
 
 /* ORANGE */
-	.orange-back { background-color: $orange; }
-	.orange-text { color: $orange; }
+.orange-back {
+	background-color: $orange;
+}
+
+.orange-text {
+	color: $orange;
+}
+
 /* orange-er */
-	.orange-er-back { background-color: $orange-er; }
-	.orange-er-text { color: $orange-er; }
+.orange-er-back {
+	background-color: $orange-er;
+}
+
+.orange-er-text {
+	color: $orange-er;
+}
+
 /* light */
-	.orange-light-back { background-color: $orange-light; }
-	.orange-light-text { color: $orange-light; }
+.orange-light-back {
+	background-color: $orange-light;
+}
+
+.orange-light-text {
+	color: $orange-light;
+}
+
 /* lighter */
-	.orange-lighter-back { background-color: $orange-lighter; }
-	.orange-lighter-text { color: $orange-lighter; }
+.orange-lighter-back {
+	background-color: $orange-lighter;
+}
+
+.orange-lighter-text {
+	color: $orange-lighter;
+}
+
 /* lightly */
-	.orange-lightly-back { background-color: $orange-lightly; }
-	.orange-lightly-text { color: $orange-lightly; }
+.orange-lightly-back {
+	background-color: $orange-lightly;
+}
+
+.orange-lightly-text {
+	color: $orange-lightly;
+}
+
 /* lightest */
-	.orange-lightest-back  { background-color: $orange-lightest; }
-	.orange-lightest-text  { color: $orange-lightest; }
+.orange-lightest-back {
+	background-color: $orange-lightest;
+}
+
+.orange-lightest-text {
+	color: $orange-lightest;
+}
+
 /* dark */
-	.orange-dark-back { background-color: $orange-dark; }
-	.orange-dark-text { color: $orange-dark; }
+.orange-dark-back {
+	background-color: $orange-dark;
+}
+
+.orange-dark-text {
+	color: $orange-dark;
+}
+
 /* darker */
-	.orange-darker-back { background-color: $orange-darker; }
-	.orange-darker-text { color: $orange-darker; }
+.orange-darker-back {
+	background-color: $orange-darker;
+}
+
+.orange-darker-text {
+	color: $orange-darker;
+}
+
 /* darkest */
-	.orange-darkest-back { background-color: $orange-darkest; }
-	.orange-darkest-text { color: $orange-darkest; }
+.orange-darkest-back {
+	background-color: $orange-darkest;
+}
+
+.orange-darkest-text {
+	color: $orange-darkest;
+}
 
 /* GREEN */
-	.green-back { background-color: $green; }
-	.green-text { color: $green; }
+.green-back {
+	background-color: $green;
+}
+
+.green-text {
+	color: $green;
+}
+
 /* greener */
-	.green-er-back { background-color: $green-er; }
-	.green-er-text { color: $green-er; }
+.green-er-back {
+	background-color: $green-er;
+}
+
+.green-er-text {
+	color: $green-er;
+}
+
 /* light */
-	.green-light-back { background-color: $green-light; }
-	.green-light-text { color: $green-light; }
+.green-light-back {
+	background-color: $green-light;
+}
+
+.green-light-text {
+	color: $green-light;
+}
+
 /* lighter */
-	.green-lighter-back { background-color: $green-lighter; }
-	.green-lighter-text { color: $green-lighter; }
+.green-lighter-back {
+	background-color: $green-lighter;
+}
+
+.green-lighter-text {
+	color: $green-lighter;
+}
+
 /* lightly */
-	.green-lightly-back { background-color: $green-lightly; }
-	.green-lightly-text { color: $green-lightly; }
+.green-lightly-back {
+	background-color: $green-lightly;
+}
+
+.green-lightly-text {
+	color: $green-lightly;
+}
+
 /* lightest */
-	.green-lightest-back { background-color: $green-lightest; }
-	.green-lightest-text { color: $green-lightest; }
+.green-lightest-back {
+	background-color: $green-lightest;
+}
+
+.green-lightest-text {
+	color: $green-lightest;
+}
+
 /* dark */
-	.green-dark-back { background-color: $green-dark; }
-	.green-dark-text { color: $green-dark; }
+.green-dark-back {
+	background-color: $green-dark;
+}
+
+.green-dark-text {
+	color: $green-dark;
+}
+
 /* darker */
-	.green-darker-back { background-color: $green-darker; }
-	.green-darker-text 	{ color: $green-darker; }
+.green-darker-back {
+	background-color: $green-darker;
+}
+
+.green-darker-text {
+	color: $green-darker;
+}
+
 /* darkest */
-	.green-darkest-back { background-color: $green-darkest; }
-	.green-darkest-text { color: $green-darkest; }
+.green-darkest-back {
+	background-color: $green-darkest;
+}
+
+.green-darkest-text {
+	color: $green-darkest;
+}
 
 /* BLUE */
-	.blue-back { background-color: $blue; }
-	.blue-text { color: $blue; }
+.blue-back {
+	background-color: $blue;
+}
+
+.blue-text {
+	color: $blue;
+}
+
 /* bluer */
-	.blue-er-back { background-color: $blue-er; }
-	.blue-er-text { color: $blue-er; }
+.blue-er-back {
+	background-color: $blue-er;
+}
+
+.blue-er-text {
+	color: $blue-er;
+}
+
 /* light */
-	.blue-light-back { background-color: $blue-light; }
-	.blue-light-text { color: $blue-light; }
+.blue-light-back {
+	background-color: $blue-light;
+}
+
+.blue-light-text {
+	color: $blue-light;
+}
+
 /* lighter */
-	.blue-lighter-back { background-color: $blue-lighter; }
-	.blue-lighter-text { color: $blue-lighter; }
+.blue-lighter-back {
+	background-color: $blue-lighter;
+}
+
+.blue-lighter-text {
+	color: $blue-lighter;
+}
+
 /* lightly */
-	.blue-lightly-back { background-color: $blue-lightly; }
-	.blue-lightly-text { color: $blue-lightly; }
+.blue-lightly-back {
+	background-color: $blue-lightly;
+}
+
+.blue-lightly-text {
+	color: $blue-lightly;
+}
+
 /* lightest */
-	.blue-lightest-back { background-color: $blue-lightest; }
-	.blue-lightest-text { color: $blue-lightest; }
+.blue-lightest-back {
+	background-color: $blue-lightest;
+}
+
+.blue-lightest-text {
+	color: $blue-lightest;
+}
+
 /* dark */
-	.blue-dark-back { background-color: $blue-dark; }
-	.blue-dark-text { color: $blue-dark; }
+.blue-dark-back {
+	background-color: $blue-dark;
+}
+
+.blue-dark-text {
+	color: $blue-dark;
+}
+
 /* darker */
-	.blue-darker-back { background-color: $blue-darker; }
-	.blue-darker-text { color: $blue-darker; }
+.blue-darker-back {
+	background-color: $blue-darker;
+}
+
+.blue-darker-text {
+	color: $blue-darker;
+}
+
 /* darkest */
-	.blue-darkest-back { background-color: $blue-darkest; }
-	.blue-darkest-text { color: $blue-darkest; }
+.blue-darkest-back {
+	background-color: $blue-darkest;
+}
+
+.blue-darkest-text {
+	color: $blue-darkest;
+}
 
 /* YELLOW */
-	.yellow-back { background-color: $yellow; }
-	.yellow-text { color: $yellow; }
+.yellow-back {
+	background-color: $yellow;
+}
+
+.yellow-text {
+	color: $yellow;
+}
+
 /* yellower */
-	.yellow-er-back { background-color: $yellow-er; }
-	.yellow-er-text { color: $yellow-er; }
+.yellow-er-back {
+	background-color: $yellow-er;
+}
+
+.yellow-er-text {
+	color: $yellow-er;
+}
+
 /* light */
-	.yellow-light-back { background-color: $yellow-light; }
-	.yellow-light-text 	{ color: $yellow-light; }
+.yellow-light-back {
+	background-color: $yellow-light;
+}
+
+.yellow-light-text {
+	color: $yellow-light;
+}
+
 /* lighter */
-	.yellow-lighter-back { background-color: $yellow-lighter; }
-	.yellow-lighter-text { color: $yellow-lighter; }
+.yellow-lighter-back {
+	background-color: $yellow-lighter;
+}
+
+.yellow-lighter-text {
+	color: $yellow-lighter;
+}
+
 /* lightly */
-	.yellow-lightly-back { background-color: $yellow-lightly; }
-	.yellow-lightly-text { color: $yellow-lightly; }
+.yellow-lightly-back {
+	background-color: $yellow-lightly;
+}
+
+.yellow-lightly-text {
+	color: $yellow-lightly;
+}
+
 /* lightest */
-	.yellow-lightest-back { background-color: $yellow-lightest; }
-	.yellow-lightest-text { color: $yellow-lightest; }
+.yellow-lightest-back {
+	background-color: $yellow-lightest;
+}
+
+.yellow-lightest-text {
+	color: $yellow-lightest;
+}
+
 /* dark */
-	.yellow-dark-back { background-color: $yellow-dark; }
-	.yellow-dark-text { color: $yellow-dark; }
+.yellow-dark-back {
+	background-color: $yellow-dark;
+}
+
+.yellow-dark-text {
+	color: $yellow-dark;
+}
+
 /* darker */
-	.yellow-darker-back { background-color: $yellow-darker; }
-	.yellow-darker-text { color: $yellow-darker; }
+.yellow-darker-back {
+	background-color: $yellow-darker;
+}
+
+.yellow-darker-text {
+	color: $yellow-darker;
+}
+
 /* darkest */
-	.yellow-darkest-back { background-color: $yellow-darkest; }
-	.yellow-darkest-text { color: $yellow-darkest; }
+.yellow-darkest-back {
+	background-color: $yellow-darkest;
+}
+
+.yellow-darkest-text {
+	color: $yellow-darkest;
+}

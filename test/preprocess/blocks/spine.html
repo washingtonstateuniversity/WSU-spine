@@ -1,16 +1,10 @@
 	<!-- SPINE -->
-	<div id="spine" class="spine-column shelved {{ "color" if page_var.markup else "" }} {{ "bleed" if not page_var.cropped and not page_var.unbound else "" }} {{ "cropped crimson" if page_var.cropped else "" }}">
-		{% if page_var.markup -%}
-		<!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter,
-						gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above
-						with your preferred color if you want to override the default.
-						-->
-		<!-- SPINE BLEED: Remove "bleed" so that  -->
-		{% endif -%}
+	<div id="spine" class="spine-column shelved {{ "bleed" if not page_var.cropped and not page_var.unbound else "" }} {{ "cropped" if page_var.cropped else "" }}">
+
 		<div id="glue" class="spine-glue">
 
 			<header class="spine-header">
-				<a href="http://www.wsu.edu/" id="wsu-signature" class="spine-signature">Washington State University</a>
+				<a href="https://wsu.edu/" id="wsu-signature" class="spine-signature">Washington State University</a>
 			</header>
 
 			<!-- ACTIONS -->
@@ -33,42 +27,35 @@
 			<section id="spine-navigation" class="spine-navigation">
 				<nav id="spine-sitenav" class="spine-sitenav">
 					<ul>
-
-
-						{#% this is the generated nav from the testing sitemap %#}
-						{% for title, link in nav -%}
-						{% if link=="[object Object]" %}
-							<li>
-							{% for ctitle, clink in link -%}
-								{% if loop.first -%}
-									<a href="{{ clink }}" {% if clink|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ ctitle }}</a>
-									<ul>
-								{% else -%}
-									<li><a href="{{ clink }}">{{ ctitle }}</a></li>
-								{% endif -%}
-								{%- if loop.last %}
-									</ul>
-								{% endif -%}
-							{%- endfor %}
-							</li>
+						{% if page_var.short_nav -%}
+							<li><a href="index.html">WSU Spine HTML</a></li>
+							<li class="current dogeared active"><a class="current active" href="short_navigation_normal_content.html">Short Navigation, Normal Content</a></li>
 						{% else %}
-							<li><a href="{{ link }}" {% if link|indexof(current_page)>-1 -%} class="active" {% endif -%}>{{ title }}</a></li>
-						{%- endif %}
-						{% endfor -%}
+							{#% this is the generated nav from the testing sitemap %#}
+							{% for title, link in nav -%}
+							{% if link=="[object Object]" %}
+								<li>
+								{% for ctitle, clink in link -%}
+									{% if loop.first -%}
+										<a href="{{ clink }}" {% if clink|indexof(current_page)>-1 -%} class="current active" {% endif -%}>{{ ctitle }}</a>
+										<ul>
+									{% else -%}
+										<li {% if clink|indexof(current_page)>-1 -%} class="dogeared active current" {% endif -%}><a href="{{ clink }}">{{ ctitle }}</a></li>
+									{% endif -%}
+									{%- if loop.last %}
+										</ul>
+									{% endif -%}
+								{%- endfor %}
+								</li>
+							{% else %}
+								<li {% if link|indexof(current_page)>-1 -%} class="dogeared active" {% endif -%}><a href="{{ link }}">{{ title }}</a></li>
+							{%- endif %}
+							{% endfor -%}
 
-						{% if page_var.navdata and not page_var.markup_min -%}
-							<li><a href="link" data-foo="bar" >Data Foo</a><li>
+							{% if page_var.manyLinks -%}
+								{% include "preprocess/blocks/nav_extralinks.html" %}
+							{% endif -%}
 						{% endif -%}
-						{#% if not page_var.markup and not page_var.markup_min -%}
-							{% include "preprocess/blocks/nav-site-tests.html" %}
-						{% endif -%#}
-						{% if page_var.markup or page_var.markup_min -%}
-							{% include "preprocess/blocks/nav-site.html" %}
-						{% endif -%}
-						{% if page_var.manyLinks -%}
-							{% include "preprocess/blocks/nav_extralinks.html" %}
-						{% endif -%}
-
 					</ul>
 				</nav>
 				{% include "preprocess/blocks/nav-offsite.html" %}
@@ -77,13 +64,6 @@
 			<!-- Social and Global Links -->
 			<footer class="spine-footer">
 				<nav id="wsu-social-channels" class="spine-social-channels">
-					{% if page_var.markup -%}
-					<!--
-					SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-					• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
-					• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
-					• Maximum number of channels is five -->
-					{% endif -%}
 					<ul>
 						<li class="facebook-channel"><a href="http://facebook.com/wsupullman">Facebook</a></li>
 						<li class="twitter-channel"><a href="http://twitter.com/wsupullman">Twitter</a></li>

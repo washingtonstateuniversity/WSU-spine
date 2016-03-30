@@ -1,27 +1,31 @@
 module.exports = {
-	files: ["Gruntfile.js", "test/*", "tasks/*", "scripts/*.js"],
-	options: {
-		// options here to override JSHint defaults
-		boss: true,
-		curly: true,
-		eqeqeq: true,
-		eqnull: true,
-		expr: true,
-		immed: true,
-		noarg: true,
-		onevar: true,
-		quotmark: "double",
-		smarttabs: true,
-		trailing: true,
-		undef: true,
-		unused: true,
-		globals: {
-			jQuery: true,
-			console: true,
-			module: true,
-			document: true,
-			window:true,
-			MutationObserver:true
+	grunt_files : {
+		src: [ "Gruntfile.js", "tasks/*", "test/sitemap.js" ],
+		options: {
+			curly: true,
+			eqeqeq: true,
+			noarg: true,
+			quotmark: "double",
+			undef: true,
+			unused: true,
+			node: true     // Define globals available when running in Node.
+		}
+	},
+	spine_files : {
+		src: [ "scripts/*.js" ],
+		options: {
+			bitwise: true,
+			curly: true,
+			eqeqeq: true,
+			forin: true,
+			freeze: true,
+			noarg: true,
+			nonbsp: true,
+			quotmark: "double",
+			undef: true,
+			unused: true,
+			browser: true, // Define globals exposed by modern browsers.
+			jquery: true   // Define globals exposed by jQuery.
 		}
 	}
 };

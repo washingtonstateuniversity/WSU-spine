@@ -1,13 +1,8 @@
 @import '../vars/global';
 @import '../vars/colors';
 
-@media screen
-	and ( min-width : 990px )
-
-	{
-
+@media screen and ( min-width : 990px ) {
 	#spine.cropped {
-
 		height: 198px !important;
 		min-height: 198px !important;
 		top: 0 !important;
@@ -17,28 +12,28 @@
 			width: 198px;
 			height: 198px !important;
 			min-height: 198px !important;
-			}
+		}
+
 		#glue:before {
 			width: 198px;
-			}
+		}
 
 		nav,
 		footer {
 			display: none;
-			}
+		}
 
 		&.bleed #glue:before {
-			left: 0px;
-			}
+			left: 0;
+		}
 
-		&.shelved button#shelve,
-		&.unshelved button#shelve {
+		&.shelved #shelve,
+		&.unshelved #shelve {
 		  display:none;
-			}
+		}
 
 		/* #### Cropped and Scrolled */
 		&.skimmed:not(.unshelved) {
-
 			left: 0 !important;
 			top: 0 !important;
 			width: 100% !important;
@@ -50,24 +45,22 @@
 				min-height: 0 !important;
 				height: 50px !important;
 				width: 100% !important;
-				padding-top: 0px;
-				padding-bottom: 0px;
-				}
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+
 			#wsu-signature {
 				background-position: center 12px;
 				background-size: auto 30px;
 				height: 49px;
 				pointer-events: none;
 				cursor: default;
-				}
+			}
 
 			#wsu-actions {
 				width: 198px;
 				margin-top: -40px;
-				}
 			}
 		}
-
-	@include signatures('horizontal','#spine.cropped.skimmed');
-
 	}
+}

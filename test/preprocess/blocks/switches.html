@@ -1,378 +1,9 @@
-<style>
-
-.wireframe .row .column,
-.wireframe.row .column {
-	min-height: 198px;
-	xbox-shadow: inset -2px -2px 1px rgba(137,137,137,0.1);
-	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
-	}
-.inset {
-	box-shadow: inset 0px 0px 1px rgba(137,137,137,0.6);
-	}
-
-/* GRID */
-
-/* ------------------- */
-
-#switches {
-	position: fixed;
-	top: 0;
-	right: 0px;
-	width: 56px;
-	height: 56px;
-	z-index: 99210;
-	background: black;
-	box-sizing: border-box;
-	}
-#switches.disclosed {
-	width: 250px;
-	height: auto;
-	}
-#switches dl {
-
-	display: none;
-
-	}
-
-#switches.disclosed dl {
-	display: block;
-
-	}
-#onoff {
-	width: 56px;
-	height: 56px;
-	color: white;
-	background-color: black;
-	border: none;
-	border-radius: 0px;
-	}
-#onoff:hover {
-	background: #981e32;
-	}
-
-/* ------------------- */
-
-#grid {
-	display: none;
-	}
-.grid #grid {
-	position: absolute;
-	width: 990px;
-	left: 0;
-	top: 0;
-	display: block;
-	height: 3000px;
-	z-index: 99999;
-	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid.png') repeat-y left top;
-	}
-.grid12 #grid {
-	background: transparent url('/wp-content/themes/brand/images/pages/wireframe/grid12.png') repeat-y left top;
-	}
-
-main:not(.wireframe) .wireframe-only {
-	display: none;
-	}
-main {
-
-	border-top: 20px #981e32 solid;
-}
-
-.wireframe section.row::before {
-	display: block;
-	background: #5e6a71;
-	padding: 0px 0px;
-	text-indent: 5px;
-	opacity: .5;
-	position: absolute;
-	right: 0px;
-	width: 75px;
-	z-index: 99;
-	visibility: visible;
-	height: auto;
-	color: white;
-	font-size: 10px;
-	}
-.wireframe .row.eighths::before { content: "eighths"; }
-.wireframe .row.twelfths::before { content: "twelfths"; }
-.wireframe .row.quarters::before { content: "quarters"; }
-.wireframe .row.single::before { content: "single"; }
-.wireframe .row.halves::before { content: "halves"; }
-.wireframe .row.sidebar::before { content: "sidebar"; }
-.wireframe .row.sideleft::before { content: "sideleft"; }
-.wireframe .row.triptych::before { content: "triptych"; }
-.wireframe .row.thirds::before { content: "thirds"; }
-.wireframe .row.margin::before { content: "margin"; }
-
-
-/* Column Numbering */
-.wireframe .column:not(.note)::after {
-	color: rgba(255,255,255,0.5);
-	background-color: rgba(182,188,191,0.5);
-	padding: 5px 10px;
-	position: absolute;
-	right: 0; bottom: 0;
-	}
-.wireframe .row:not(.nest) .column.one::after { content:"1"; }
-.wireframe .row:not(.nest) .column.two::after { content:"2"; }
-.wireframe .row:not(.nest) .column.three::after { content:"3"; }
-.wireframe .row:not(.nest) .column.four::after { content:"4"; }
-.wireframe .row:not(.nest) .column.five::after { content:"5"; }
-.wireframe .row:not(.nest) .column.six::after { content:"6"; }
-.wireframe .row:not(.nest) .column.seven::after { content:"7"; }
-.wireframe :not(.nest) .column.eight::after { content:"8"; }
-.wireframe :not(.nest) .column.nine::after { content:"9"; }
-.wireframe :not(.nest) .column.ten::after { content:"10"; }
-.wireframe :not(.nest) .column.eleven::after { content:"11"; }
-.wireframe :not(.nest) .column.twelve::after { content:"12"; }
-
-.wireframe .row .column.one-twelfth::after { content:"1/12"; }
-.wireframe .row .column.two-twelfths::after { content:"2/12"; }
-.wireframe .row .column.three-twelfths::after { content:"3/12"; }
-.wireframe .row .column.six-twelfths::after { content:"6/12"; }
-
-/* Column Measurements */
-.column::before {
-	color: black;
-	padding: 2px 4px;
-	position: absolute;
-	opacity: .2;
-	font-size: 10px;
-	top: 0;	left: 0;
-	width: 95%;
-	margin: 0px auto;
-	text-align: center;
-	}
-.wireframe .single .column::before { content:"\2190 792 \2192"; }
-.wireframe .sidebar .column.one::before { content:"\2190 528 \2192"; }
-.wireframe .sidebar .column.two::before,
-.wireframe .thirds .column::before { content:"\2190 264 \2192"; }
-.wireframe .margin .column.one::before { content:"\2190 594 \2192"; }
-.wireframe .margin .column.two::before,
-.wireframe .quarters .column::before,
-.wireframe .triptych .column.one::before,
-.wireframe .triptych .column.three::before,
-.wireframe .halves .halves .column::before { content:"\2190 198 \2192"; }
-.wireframe .halves .column::before,
-.wireframe .triptych .column.two::before { content:"\2190 396 \2192"; }
-.wireframe .halves .quarters .column::before { content:"\2190 99 \2192"; }
-.wireframe .quarters .thirds .column::before { content:"\2190 66 \2192"; }
-.wireframe .halves .thirds .column::before { content:"\2190 132 \2192"; }
-
-.wireframe .row .row::after {
-	display: block;
-	background: #5e6a71;
-	padding: 0px 0px;
-	text-indent: 5px;
-	opacity: .2;
-	position: absolute;
-	text-align: center;
-	left: 50%;
-	top: 50%;
-	bottom: 50%;
-	margin-top: -10px;
-	margin-bottom: -10px;
-	margin-left: -25px;
-	width: 50px;
-	height: 20px;
-	xbottom: 0px;
-	z-index: 99;
-	visibility: visible;
-	height: auto;
-	color: white;
-	font-size: 10px;
-	content:"nested";
-	}
-
-.sidebar .column.two ul {
-	padding: 0px; margin: 0px;
-	}
-.sidebar .column.two li {
-	list-style: none;
-	padding: 10px 0px;
-	margin: 0px;
-	}
-.sidebar .column.two li:last-of-type {
-	border-bottom: none;
-	}
-
-#binder main .note::after {
-	color: black;
-	padding: 6px 10px;
-	position: absolute;
-	font-size: 12px;
-	opacity: .8;
-	top: 5px;
-	left: 5px;
-	width: auto;
-	height: auto;
-	text-align: left;
-	display: none;
-	z-index: 999631;
-	line-height: 1em;
-	background: white;
-	visibility: visible !important;
-	}
-#binder main .note:hover::after {
-	display: block;
-	}
-section > big {
-	padding: 100px 100px 10px 100px;
-	font-size: 2em;
-	line-height: 1.1em;
-	display: block;
-	}
-#unprecedented .column.one {
-	padding-top: 100px;
-	}
-#unprecedented .column.two {
-	position: relative;
-	}
-.size-lt-small #controls dl:first-of-type {
-	margin-top: 150px;
-	}
-
-#controls dl {
-	margin-top: 15px;
-	padding-top: 5px;
-	}
-#controls dl ~ dl {
-	border-top: 1px #D7DAD8 solid;
-	}
-#controls dl dt {
-	display: block;
-	}
-dt a:hover {
-
-	}
-#switches dl dd {
-	display: block; float: left;
-	padding: 0px; margin: 0px 0px 2px 0px;
-	}
-#switches dl a.info {
-	float: right;
-	display: block;
-	xtext-indent: -9000px;
-	overflow: hidden;
-	position: relative;
-	color: white;
-	opacity: .3;
-	}
-#switches dl a.info::before {
-	font-family: "Iconography";
-	content: "\2139";
-	font-size: 1.4em;
-	color: #b5babe;
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 16px;
-	width: 30px;
-	text-align: center;
-	}
-#switches dl a.info:hover::before {
-	color: #5e6a71;
-	}
-.spine-colors dd {
-	display: block;
-	float: left;
-	padding: 2px 0px;
-	xwidth: 33%;
-	}
-.spine-wireframe button::before {
-	content: "show ";
-	}
-.wireframe .spine-wireframe button::before {
-	content: "hide ";
-	}
-pre,code {
-	xdisplay: none;
-	}
-.wireframe pre, .wireframe code {
-	xxdisplay: block;
-	}
-pre {
-	white-space: normal;
-	}
-pre code {
-	font-style: italic;
-	}
-
-</style>
-
-<script>
-
-	$(document).ready(function(){
-
-	if ($('#binder').hasClass('spineless')) { $('#spineless-switch').addClass('active'); }
-	if ($('#spine').hasClass('bleed')) { $('#bleed-switch').addClass('active'); }
-
-	//
-	$('.spine-behavior button').on('click', function() {
-		$(this).parents('dd').siblings().children('button').removeClass('active');
-		var grid = $(this).attr('data-grid');
-		$('#binder').removeClass('fluid fixed hybrid').addClass(grid);
-		$(this).trigger( "resize" );
-		return false;
-	});
-
-	// Change Spine color
-	$('.spine-colors button').on('click', function() {
-		var color = $(this).attr('data-color');
-		$(this).toggleClass('active').parents('dd').siblings().children('button').removeClass('active');
-		// $('html').removeClass('spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature');
-		$('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
-		$('#spine').addClass(color);
-		$(this).trigger( "resize" );
-		return false;
-	});
-
-	// Change Spine transparency
-	$('.spine-transparency button').on('click', function() {
-		var transparency = $(this).attr('data-transparency');
-		$(this).parents('dd').siblings().children('button').removeClass('active');
-		$('#spine').removeClass('vellum-00 vellum-05 vellum-10 vellum-15 vellum-20 vellum-25');
-		$('#spine').addClass(transparency);
-		$(this).trigger( "resize" );
-		return false;
-	});
-
-	// Folio Sizes
-	$('.spine-sizes button').on('click', function() {
-		var max = $(this).attr('data-max');
-		$(this).parents('dd').siblings().children('button').removeClass('active');
-		$('#binder').removeClass('max-default max-1188 max-1386 max-1584 max-1782 max-1980');
-		$('#binder').addClass('folio').addClass(max);
-		$(this).trigger( "resize" );
-		return false;
-	});
-
-	// Change Campus
-	$('.spine-campuses button').on('click', function() {
-		// $('#spine').removeClass('white lightest lightly lighter light gray dark darker darkest crimson transparent');
-		$(this).parents('dd').siblings().children('button').removeClass('active');
-		var campus = $(this).attr('data-campus');
-			campus = campus + '-signature';
-		$('html').removeClass('system-signature spokane-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
-		$(this).trigger( "resize" );
-		return false;
-	});
-
-	$('#switches button').on('click', function() {
-
-		$(this).not('.active').toggleClass('active');
-
-		});
-
-	});
-
-</script>
-
 <section id="switches" class="short narrow">
 
-	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">+</button>
+	<button id="onoff" onclick="$('#switches').toggleClass('disclosed');">open</button>
 
 	<dl class="padded-sides narrow spine-colors clearfix">
-		<dt>spine colors <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#colors" target="_blank" class="info">info</a></dt>
+		<dt>Spine colors</dt>
 		<dd><button data-color="white" class="white-back gray-text inset">Default</button></dd>
 		<dd><button data-color="lightest" class="lightest-back gray-text inset">Lightest</button></dd>
 		<dd><button data-color="lightly" class="lightly-back gray-dark-text inset">Lightly</button></dd>
@@ -386,7 +17,7 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-transparency clearfix">
-		<dt>spine transparency <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options#opacity" target="_blank" class="info">info</a></dt>
+		<dt>Transparency</dt>
 		<dd><button data-transparency="">0</button></dd>
 		<dd><button data-transparency="vellum-05">5</button></dd>
 		<dd><button data-transparency="vellum-10">10</button></dd>
@@ -394,31 +25,35 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-column-options clearfix">
-		<dt>spine options <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/I.1.-Spine:-Options" target="_blank" class="info">info</a></dt>
+		<dt>Spine options</dt>
 		<dd><button id="bleed-switch" onclick="$('#spine').toggleClass('bleed'); $(this).toggleClass('active');">bleed spine</button></dd>
 		<dd><button onclick="$('#binder').toggleClass('broken'); $(window).trigger('resize'); $(this).toggleClass('active');">bleed main</button></dd>
 		<dd><button id="spineless-switch" onclick="$('#binder').toggleClass('spineless'); $('#spine').toggleClass('cropped'); $(this).trigger('resize');">spineless</button></dd>
 	</dl>
 
 	<dl class="padded-sides narrow spine-campuses clearfix">
-		<dt>campus ready <a href="#campus-ready" class="info">info</a></dt>
+		<dt>Signatures</dt>
 		<dd><button data-campus="system">System</button></dd>
 		<dd><button data-campus="spokane">Spokane</button></dd>
-		<dd><button data-campus="tricities">Tri-Cities</button></dd>
 		<dd><button data-campus="vancouver">Vancouver</button></dd>
+		<dd><button data-campus="tricities">Tri-Cities</button></dd>
 		<dd><button data-campus="globalcampus">Global Campus</button></dd>
 		<dd><button data-campus="extension">Extension</button></dd>
+		<dd><button data-campus="healthsciences-spokane">Health Sciences Spokane</button></dd>
+		<dd><button data-campus="everett">Everett</button></dd>
+		<dd><button data-campus="campaign">Campaign</button></dd>
+		<dd><button data-campus="foundation">foundation</button></dd>
 	</dl>
 
 	<dl class="padded-sides narrow spine-behavior clearfix">
-		<dt>grid behavior <a href="https://github.com/washingtonstateuniversity/WSU-spine/wiki/II.3.-Page:-Responsive#responsive-behavior" target="_blank" class="info">info</a></dt>
+		<dt>Grid behavior</dt>
 		<dd><button data-grid="fluid">fluid</button></dd>
 		<dd><button data-grid="fixed">fixed</button></dd>
 		<dd><button data-grid="hybrid">hybrid</button></dd>
 	</dl>
 
 	<dl class="padded-sides narrow spine-sizes clearfix ">
-		<dt>extra large sizes <a href="#spine-sizes" class="info hidden">info</a></dt>
+		<dt>Max sizes</dt>
 		<dd><button data-max="max-990">default</button></dd>
 		<dd><button data-max="max-1188">1188</button></dd>
 		<dd><button data-max="max-1386">1386</button></dd>
@@ -428,7 +63,7 @@ pre code {
 	</dl>
 
 	<dl class="padded-sides narrow spine-wireframe">
-		<dt>under the hood</dt>
+		<dt>Show wireframe</dt>
 		<dd><button onclick="$('body').toggleClass('wireframe');">framework</button></dd>
 	</dl>
 

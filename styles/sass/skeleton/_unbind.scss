@@ -1,33 +1,34 @@
 @charset "UTF-8";
 @mixin unbind {
-
 	.row.unbound,
 	.unbound {
 		position: relative;
 		max-width: 100%;
 		max-width: 99164px;
-		}
+	}
+
 	.rebound {
 		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		}
+	}
+
 	.verso .rebound {
-		margin-right: 0px;
+		margin-right: 0;
 		margin-left: auto;
-		}
+	}
+
 	.recto.verso .rebound {
 		margin-left: auto;
 		margin-right: auto;
-		}
+	}
+
 	.spineless .recto.verso .rebound {
-		border-left-width: 0px;
-		}
+		border-left-width: 0;
+	}
 
 	.rebound,
 	.row.rebound {
 		width: 792px;
-		}
+	}
 
 	.spineless .rebound,
 	.fifteenths .rebound,
@@ -35,15 +36,14 @@
 	.max-1188 .rebound,
 	.max-1188 .row.rebound {
 		width: 990px;
-		}
+	}
 
 	.max-1188 .spineless .rebound,
 	.max-1188 .spineless .row.rebound {
 		width: 1188px;
-		}
+	}
 
 	.recto.verso .rebound {
 		border-left: 99px transparent solid;
-		}
-
 	}
+}

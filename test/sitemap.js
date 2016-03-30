@@ -2,381 +2,277 @@ module.exports = {
 	get_site_obj: function () {
 		var site_obj = {
 			globals:{
-				google_analytics:""
+				google_analytics: ""
 			},
-			page_defaults:{
-				file_root : "build/tests/",
-				nav_root : "tests/",
-				template : "main"
+			page_defaults: {
+				file_root: "build/tests/",
+				nav_root: "tests/",
+				template: "main"
 			},
-			pages:{
-				/* note that these first files are not inclucded in the test suite nav */
-				markup : {
-					file : "spine.min.html",
-					file_root : "build",
-					nav:false,
-					vars : {
-						markup : true,
-						content: true,
-					}
-				},
-				markup_min : {
-					file : "spine.min.html",
-					file_root : "build",
-					nav:false,
-					vars : {
-						markup_min : true
-					}
-				},
-				/* end of navless */
-				index:{
-					name : "index",
-					title : "WSU Test unit",
-					nav:{
-						nav_link : "index.html",
+			pages: {
+				index: {
+					name: "index",
+					title: "WSU Spine HTML",
+					nav: {
+						nav_link: "index.html"
 					},
-				},
-				_options : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Options",
-					}
-				},
-				demo : {
-					title : "Basic Demo",
-					nav:{
-						nav_link : "demo.html",
-						nav_title:"Demo",
-					},
-					vars : {
-						demo : true
-					}
-				},
-				opensans : {
-					title : "Testing Open Sans",
-					nav:{
-						parent:"Options",
-						nav_link : "opensans.html",
-						nav_title:"Open Sans",
-					},
-					vars : {
-						opensans : true,
+					vars: {
 						typography: true
 					}
 				},
 
-				_behaviors : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Behavior",
+				_behaviors: {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Responsive Grids"
 					}
 				},
-				grid_fluid : {
+
+				grid_fluid: {
 					title: "Testing Fluid Grid",
-					nav:{
-						parent:"Behavior",
-						nav_link : "grid_fluid.html",
-						nav_title:"Fluid and Flex",
+					nav: {
+						parent: "Responsive Grids",
+						nav_link: "grid_fluid.html",
+						nav_title: "Fluid Grid"
 					},
-					vars : {
-						behavior : "fluid",
-						content: true
+					vars: {
+						grid_layout: "fluid",
+						demo: true
 					}
 				},
-				grid_hybrid : {
+
+				grid_hybrid: {
 					title: "Testing Hybrid Grid",
-					nav:{
-						parent:"Behavior",
-						nav_link : "grid_hybrid.html",
-						nav_title:"Fold then Flex",
+					nav: {
+						parent: "Responsive Grids",
+						nav_link: "grid_hybrid.html",
+						nav_title: "Hybrid Grid"
 					},
-					vars : {
-						hybridGrid : true,
-						content: true
+					vars: {
+						grid_layout: "hybrid",
+						demo: true
 					}
 				},
-				grid_fixed : {
+
+				grid_fixed: {
 					title: "Testing Fixed Grid",
-					nav:{
-						parent:"Behavior",
-						nav_link : "grid_fixed.html",
-						nav_title:"Fixed and Fold",
+					nav: {
+						parent: "Responsive Grids",
+						nav_link: "grid_fixed.html",
+						nav_title: "Fixed Grid"
 					},
-					vars : {
-						fixedGrid : true,
-						content: true
-					}
-				},
-				broken : {
-					title: "Testing Broken Binding",
-					nav:{
-						parent:"Behavior",
-						nav_link : "binding_broken.html",
-						nav_title : "Broken Binding",
-					},
-					vars : {
-						broken : true,
-						behavior : "fluid",
-						content : true
-					}
-				},
-				responsiveness : {
-					file:false,
-					nav:{
-						parent:"Behavior",
-						nav_link : "http://en.wikipedia.org/wiki/Responsive_web_design",
-						nav_title : "On Responsiveness",
+					vars: {
+						grid_layout: "fixed",
+						demo: true
 					}
 				},
 
-
-
-
-
-				_layouts : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Layouts and Columns",
+				_layouts: {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Layouts and Columns"
 					}
 				},
 
-				columns : {
+				columns: {
 					title: "Testing Columns",
-					nav:{
-						parent:"Layouts and Columns",
-						nav_link : "columns.html",
-						nav_title:"Columns",
+					nav: {
+						parent: "Layouts and Columns",
+						nav_link: "columns.html",
+						nav_title: "Columns"
 					},
-					vars : {
-						columns : true,
+					vars: {
+						columns: true
 					}
 				},
-				spacing : {
+
+				spacing: {
 					title: "Testing Gutters and Pads",
-					nav:{
-						parent:"Layouts and Columns",
-						nav_link : "spacing.html",
-						nav_title:"Gutters and Pads",
+					nav: {
+						parent: "Layouts and Columns",
+						nav_link: "spacing.html",
+						nav_title: "Gutters and Pads"
 					},
-					vars : {
-						spacing : true,
+					vars: {
+						spacing: true
 					}
 				},
 
-
-				_content : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Main/Content",
-					}
-				},
-
-				mainheader : {
+				mainheader: {
 					title: "Testing the Main Header",
-					nav:{
-						parent:"Main/Content",
-						nav_link : "mainheader.html",
-						nav_title:"Main Header",
+					nav: {
+						parent: "Layouts and Columns",
+						nav_link: "mainheader.html",
+						nav_title: "Main Header"
 					},
-					vars : {
-						mainheader : true,
+					vars: {
+						mainheader: true,
 						content: true
 					}
 				},
-				typography : {
-					title: "Testing Typography",
-					nav:{
-						parent:"Main/Content",
-						nav_link : "typography.html",
+
+				unbound: {
+					title: "Testing Unbound and Rebound",
+					nav: {
+						parent: "Layouts and Columns",
+						nav_link: "unbound.html",
+						nav_title: "Unbound and Rebound"
 					},
-					vars : {
+					vars: {
+						unbound: true
+					}
+				},
+
+				cropped: {
+					title: "Cropped Spine",
+					nav: {
+						parent: "Layouts and Columns",
+						nav_link: "cropped.html",
+						nav_title: "Cropped Spine"
+					},
+					vars: {
+						cropped: true,
+						content: true
+					}
+				},
+
+				_content: {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Types of Content"
+					}
+				},
+
+				typography: {
+					title: "Typography",
+					nav: {
+						parent: "Types of Content",
+						nav_link: "typography.html",
+						nav_title: "Typography"
+					},
+					vars: {
 						typography: true
 					}
 				},
-				unbound : {
-					title: "Testing Unbound and Rebound",
-					nav:{
-						parent:"Main/Content",
-						nav_link : "unbound.html",
-						nav_title : "Unbound and Rebound",
-					},
-					vars : {
-						unbound : true
-					}
-				},
-				ui : {
+
+				ui: {
 					title: "User Interaction Elements",
-					nav:{
-						parent:"Main/Content",
-						nav_link : "ui.html",
-						nav_title: "Behavior",
+					nav: {
+						parent: "Types of Content",
+						nav_link: "ui.html",
+						nav_title: "User Interfaces"
 					},
-					vars : {
-						ui : true
+					vars: {
+						ui: true
 					}
 				},
 
-
-
-
-
-				_broken : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Broken",
+				_testing: {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Navigation and Content"
 					}
 				},
 
-				contact_malformed : {
-					nav:{
-						parent:"Broken",
-						nav_link : "contact_malformed.html",
-						nav_title : "malformed Contact",
+				overly: {
+					title: "Long Navigation, Long Content",
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "overly.html",
+						nav_title: "Long Navigation, Long Content"
 					},
-					vars : {
-						malformed : true,
+					vars: {
+						manyLinks: true,
+						showLong: true
+					}
+				},
+
+				overly_linked: {
+					title: "Long Navigation, Short Content",
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "overly_linked.html",
+						nav_title: "Long Navigation, Short Content"
+					},
+					vars: {
+						manyLinks: true,
 						content: true,
-						location : "https://repo.wsu.edu/spine"
+						location: "https://repo.wsu.edu/spine"
 					}
 				},
-				contact_filled : {
-					nav:{
-						parent:"Broken",
-						nav_link : "contact_filled.html",
-						nav_title : "Prefilled Contact",
+
+				overly_long: {
+					title: "Normal Navigation, Long Content",
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "overly_long.html",
+						nav_title: "Normal Navigation, Long Content"
 					},
-					vars : {
-						malformed : "false",
-						content: true
+					vars: {
+						showLong: true
 					}
 				},
-				contact_double : {
-					nav:{
-						parent:"Broken",
-						nav_link : "contact_double.html",
-						nav_title : "Contact doubling",
+
+				short_navigation_normal_content: {
+					title: "Short Navigation, Normal Content",
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "short_navigation_normal_content.html",
+						nav_title: "Short Navigation, Normal Content"
 					},
-					vars : {
-						doubledContact : true,
-						content: true
-					}
-				},
-				nav_data_links : {
-					nav:{
-						parent:"Broken",
-						nav_link : "nav_data_links.html",
-						nav_title : "Nav data intergration",
-					},
-					vars : {
-						navdata : true,
-						content: true,
-						location : "https://repo.wsu.edu/spine"
-					}
-				},
-				search_tabs : {
-					title: "Testing serach tab",
-					nav:{
-						parent:"Broken",
-						nav_link : "search_tabs.html",
-						nav_title : "Local Defined Search",
-					},
-					vars : {
-						filledSearchTab : true,
+					vars: {
+						short_nav: true,
 						content: true
 					}
 				},
 
-
-				_testing : {
-					file:false,
-					nav:{
-						nav_link : "#",
-						nav_title : "Testing Units",
-					}
-				},
-				overly : {
-					nav:{
-						parent:"Testing Units",
-						nav_link : "overly.html",
-						nav_title: "Overly Overly",
+				anchored: {
+					nav: {
+						parent: "Navigation and Content",
+						nav_link: "anchored.html",
+						nav_title: "Anchored page"
 					},
-					vars : {
-						manyLinks : true,
-						showLong : true
-					}
-				},
-				overly_linked : {
-					nav:{
-						parent:"Testing Units",
-						nav_link : "overly_linked.html",
-						nav_title: "Overly Linked",
-					},
-					vars : {
-						manyLinks : true,
-						content: true,
-						location : "https://repo.wsu.edu/spine"
-					}
-				},
-				overly_long : {
-					nav:{
-						parent:"Testing Units",
-						nav_link : "overly_long.html",
-						nav_title: "Overly Long",
-					},
-					vars : {
-						showLong : true
-					}
-				},
-				cropped : {
-					nav:{
-						parent:"Testing Units",
-						nav_link : "cropped.html",
-						nav_title: "Testing Cropped Spine",
-					},
-					vars : {
-						cropped : true,
-						content: true
-					}
-				},
-				anchored : {
-					nav:{
-						parent:"Testing Units",
-						nav_link : "anchored.html",
-						nav_title: "Anchored page",
-					},
-					vars : {
+					vars: {
 						anchored: true
 					}
 				},
-				js_units:{
-					title: "Unit Testing",
-					nav:{
-						parent:"Testing Units",
-						nav_link : "js-units.html",
+
+				_miscellaneous : {
+					file: false,
+					nav: {
+						nav_link: "#",
+						nav_title: "Miscellaneous"
+					}
+				},
+
+				search_tabs: {
+					title: "Test the search tab with a CMS defined search",
+					nav: {
+						parent: "Miscellaneous",
+						nav_link: "search_tabs.html",
+						nav_title: "CMS Defined Search"
 					},
-					vars : {
-						fixedGrid : true,
-						unit_tests: true
+					vars: {
+						filledSearchTab: true,
+						content: true
+					}
+				},
+
+				contact_malformed: {
+					nav: {
+						parent: "Miscellaneous",
+						nav_link: "contact_malformed.html",
+						nav_title: "Malformed Contact HTML"
+					},
+					vars: {
+						malformed: true,
+						content: true
 					}
 				}
-				/*"development":{
-					name : "development",
-					title : "WSU Serverbase development guide",
-					"nav_title":"Development",
-					vars : {
-					"showstuff":true
-					},
-					"child_nav":{
-					"#vagrant-options":"Vagrant Options",
-						"#how-to-add-a-web-app-":"Load Web Apps",
-						"#sample-working-file":"Sample Config"
-					}
-				}*/
 			}
 		};
 		return site_obj;

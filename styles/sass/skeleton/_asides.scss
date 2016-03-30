@@ -3,44 +3,36 @@
 .column .marginalized {
 	position: absolute;
 	box-sizing: border-box;
-	border-width: 0px;
+	border-width: 0;
 	border-style: solid;
 	border-color: #b5babe;
 	padding: 1em 2em;
-	}
+}
 
 .side-right .marginalized {
-
 	width: 264px;
 	padding-left: 1em;
 	border-left-width: 1px;
 	right: -264px;
-
-	}
+}
 
 .side-left .marginalized {
-
 	width: 264px;
 	left: -264px;
 	padding-right: 1em;
 	border-right-width: 1px;
-
-	}
+}
 
 .margin-right .marginalized {
-
 	width: 198px;
 	right: -198px;
 	border-left-width: 1px;
 	padding-left: 1em;
-
-	}
+}
 
 .margin-left .marginalized {
-
 	width: 198px;
 	left: -198px;
 	border-right-width: 1px;
 	padding-right: 1em;
-
-	}
+}
