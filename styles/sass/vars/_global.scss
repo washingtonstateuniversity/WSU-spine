@@ -155,12 +155,20 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 		}
 
 		// Covers mobile default and the skimmed view of a cropped spine.
+		// Account for the signature class assigned to `html`.
 		.spine-mobile.#{$signature}-signature #wsu-signature,
 		.print.#{$signature}-signature #wsu-signature,
+		// Account for the signature class assigned between `html` and `#spine`.
+		.spine-mobile .#{$signature}-signature #wsu-signature,
+		.print .#{$signature}-signature #wsu-signature,
+		// Account for the cropped skimmed mark.
 		.#{$signature}-signature  #spine.cropped.skimmed #wsu-signature {
 			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-horizontal.svg");
 		}
 
+		// A horizontal mark should be used on mobile and cropped skimmed views.
+		//
+		// Account for the signature class assigned to `html`.
 		.spine-mobile.#{$signature}-signature .light #wsu-signature,
 		.spine-mobile.#{$signature}-signature .gray #wsu-signature,
 		.spine-mobile.#{$signature}-signature .dark #wsu-signature,
@@ -171,6 +179,18 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 		.print.#{$signature}-signature .dark #wsu-signature,
 		.print.#{$signature}-signature .darkest #wsu-signature,
 		.print.#{$signature}-signature .crimson #wsu-signature,
+		// Account for the signature class assigned between `html` and `#spine`.
+		.spine-mobile .#{$signature}-signature .light #wsu-signature,
+		.spine-mobile .#{$signature}-signature .gray #wsu-signature,
+		.spine-mobile .#{$signature}-signature .dark #wsu-signature,
+		.spine-mobile .#{$signature}-signature .darkest #wsu-signature,
+		.spine-mobile .#{$signature}-signature .crimson #wsu-signature,
+		.print .#{$signature}-signature .light #wsu-signature,
+		.print .#{$signature}-signature .gray #wsu-signature,
+		.print .#{$signature}-signature .dark #wsu-signature,
+		.print .#{$signature}-signature .darkest #wsu-signature,
+		.print .#{$signature}-signature .crimson #wsu-signature,
+		// Account for the signature class assigned anywhere above Spine for cropped views.
 		.#{$signature}-signature #spine.cropped.skimmed.light #wsu-signature,
 		.#{$signature}-signature #spine.cropped.skimmed.gray #wsu-signature,
 		.#{$signature}-signature #spine.cropped.skimmed.dark #wsu-signature,
