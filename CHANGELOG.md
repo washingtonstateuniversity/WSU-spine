@@ -1,6 +1,6 @@
 # WSU Spine Changelog
 
-## 1.4.0 (TBD)
+## 1.4.0 (March 30, 2016)
 
 ### Enhancements
 
