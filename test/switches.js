@@ -49,7 +49,7 @@ $(document).ready(function(){
 		$(this).parents('dd').siblings().children('button').removeClass('active');
 		var campus = $(this).attr('data-campus');
 		campus = campus + '-signature';
-		$('html').removeClass('system-signature spokane-signature healthsciences-spokane-signature foundation-signature campaign-signature everett-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
+		$('body').removeClass('system-signature spokane-signature healthsciences-spokane-signature foundation-signature campaign-signature everett-signature tricities-signature vancouver-signature globalcampus-signature extension-signature').addClass(campus);
 		$(this).trigger( "resize" );
 		return false;
 	});
