@@ -670,6 +670,13 @@
 				var tar, title, classes, url;
 				tar = $( this );
 
+				url = tar.attr( "href" );
+
+				// "Overview" anchors are only added for parents with URLs.
+				if ( "#" === url ) {
+					return;
+				}
+
 				title = ( tar.is( "[title]" )  ) ? tar.attr( "title" ) : "Overview";
 				title = ( tar.is( "[data-overview]" ) ) ? tar.data( "overview" ) : title;
 				title = title.length > 0 ? title : "Overview"; // This is just triple checking that a value made it here.
@@ -679,13 +686,9 @@
 					classes += " dogeared";
 				}
 
-				url = tar.attr( "href" );
-
-				if ( url !== "#" ) {
-					tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
-					tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
-					tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
-				}
+				tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
+				tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
+				tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
 			} );
 
 			/**
