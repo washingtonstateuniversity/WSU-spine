@@ -21,10 +21,10 @@ module.exports = {
 					}
 				},
 
-				_behaviors: {
-					file: false,
+				overview_grids: {
+					title: "Testing Overview anchors in the navigation",
 					nav: {
-						nav_link: "#",
+						nav_link: "overview_grids.html",
 						nav_title: "Responsive Grids"
 					}
 				},

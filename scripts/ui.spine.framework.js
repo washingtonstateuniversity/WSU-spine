@@ -645,6 +645,31 @@
 			// Apply the `parent` class to each parent list item of an unordered list in the navigation.
 			$( "#spine nav ul, #spine ul" ).parents( "li" ).addClass( "parent" );
 
+			var couplets = $( "#spine nav li.parent > a" );
+
+			/**
+			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
+			 * items should be added and what the text should read.
+			 */
+			couplets.each( function() {
+				var tar, title, url;
+				tar = $( this );
+				url = tar.attr( "href" );
+
+				// "Overview" anchors are only added for parents with URLs.
+				if ( "#" === url ) {
+					return;
+				}
+
+				title = ( tar.is( "[title]" )  ) ? tar.attr( "title" ) : "Overview";
+				title = ( tar.is( "[data-overview]" ) ) ? tar.data( "overview" ) : title;
+				title = title.length > 0 ? title : "Overview"; // This is just triple checking that a value made it here.
+
+				tar.parent( "li" ).children( "ul" ).prepend( "<li class='overview'></li>" );
+				tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
+				tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
+			} );
+
 			/**
 			 * Account for historical markup in the WSU ecosystem and add the `active` and `dogeared` classes
 			 * to any list items that already have classes similar to `current` or `active`. Also apply the
@@ -659,34 +684,6 @@
 			 * all parent list items.
 			 */
 			$( "#spine nav li a[class*=current], #spine nav li a[class*=active]" ).parents( "li" ).addClass( "active dogeared" );
-
-			var couplets = $( "#spine nav li.parent > a" );
-
-			/**
-			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
-			 * items should be added and what the text should read.
-			 */
-			couplets.each( function() {
-				var tar, title, classes, url;
-				tar = $( this );
-
-				title = ( tar.is( "[title]" )  ) ? tar.attr( "title" ) : "Overview";
-				title = ( tar.is( "[data-overview]" ) ) ? tar.data( "overview" ) : title;
-				title = title.length > 0 ? title : "Overview"; // This is just triple checking that a value made it here.
-
-				classes = "overview";
-				if ( tar.closest( ".parent" ).is( ".dogeared" ) ) {
-					classes += " dogeared";
-				}
-
-				url = tar.attr( "href" );
-
-				if ( url !== "#" ) {
-					tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
-					tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
-					tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
-				}
-			} );
 
 			/**
 			 * Setup navigation events depending on what the screen size is when the document first
