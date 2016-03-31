@@ -1,8 +1,14 @@
 # WSU Spine Changelog
 
-## 1.x.x (TBD)
+## 1.4.2 (March 31, 2016)
 
-## 1.4.1 (March 30, 2016)
+## Bug Fixes
+
+* Process couplets into Overview anchors before checking their active state so that a child's parent's Overview link doesn't show as active because of an over-eager clone.
+
+## Enhancements
+
+* Short circuit Overview creation if a parent has a `#` href, speeding up the processing of large, multi-level menus.
 
 ## Bug Fixes
 
