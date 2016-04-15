@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.registerTask("build_tests", "Set up all test pages", function() {
 		var fs = require("fs");
 		var extend = require("extend");
-		var wrench = require("wrench");
+		var fs = require('fs-extra')
 		var nunjucks = require("nunjucks");
 		var env = nunjucks.configure("test");
 		env.addFilter("indexof", function(str, cmpstr) {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 		var sitemap = _sitemap.get_site_obj();
 		var defaults = sitemap.page_defaults;
 
-		wrench.mkdirSyncRecursive("build/tests", 0777);
+		fs.mkdirsSync("build/tests");
 
 		/*
 		 * This will apply defaults and build the nav
