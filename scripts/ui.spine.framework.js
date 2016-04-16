@@ -103,7 +103,7 @@
 				$( "html" ).removeClass( "spine-full" ).addClass( "ios spine-mobile" );
 				this.setup_nav_scroll();
 			} else {
-				$( "html" ).removeClass( "ios spine-mobile" ).addClass( "spine-full" );
+				$( "html" ).removeClass( "ios spine-mobile spine-mobile-open" ).addClass( "spine-full" );
 				if ( $( "#scroll" ).length ) {
 					$( "#wsu-actions" ).unwrap();
 					$( "#spine header" ).prependTo( "#glue" );
