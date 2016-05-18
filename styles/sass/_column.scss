@@ -372,7 +372,7 @@
 	}
 
 	// External Links
-	nav a.external:hover:after {
+	nav a.external:after {
 		font-family: "Spine-Icons";
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -1240,7 +1240,7 @@ html.lt-ie9 #spine footer {
 
 	.spine-offsitenav a,
 	.spine-global-links a {
-		color: $gray-lighter;
+		color: $gray;
 	}
 
 	.spine-actions-tabs .opened button,
@@ -1252,7 +1252,7 @@ html.lt-ie9 #spine footer {
 
 	.spine-offsitenav a:hover,
 	.spine-global-links a:hover {
-		color: $gray;
+		color: $crimson;
 	}
 
 	.spine-actions-tabs .opened,
