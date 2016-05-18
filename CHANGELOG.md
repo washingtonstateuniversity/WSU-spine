@@ -2,6 +2,11 @@
 
 ## 1.x.x (TBD)
 
+### Bug Fixes
+
+* Only apply box shadow to `#glue` on `.spine-mobile-open`. See [#374](https://github.com/washingtonstateuniversity/WSU-spine/pull/374)
+* Remove `spine-mobile-open` from `html` on resize to full screen. See [#375](https://github.com/washingtonstateuniversity/WSU-spine/pull/375)
+
 ## 1.4.2 (March 31, 2016)
 
 ### Bug Fixes
