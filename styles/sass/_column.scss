@@ -1230,7 +1230,7 @@ html.lt-ie9 #spine footer {
 
 	.spine-sitenav ul li,
 	.spine-global-links {
-		border-color: lighten($gray-lightly, 5%);
+		border-color: rgba(0,0,0,.1);
 	}
 
 	.spine-sitenav a:hover,
