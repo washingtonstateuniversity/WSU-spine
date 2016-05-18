@@ -601,7 +601,7 @@ html.lt-ie9 #spine .spine-actions {
 		input:-ms-input-placeholder {
 			color: $gray-light;
 		}
-		
+
 		input:focus {
 			color: $gray;
 		}
@@ -1169,7 +1169,7 @@ html.lt-ie9 #spine footer {
 	ul .mywsu-link {
 		text-transform: none;
 	}
-	
+
 	ul li:nth-of-type(1) {
 		text-align: left;
 		width: 29%;
@@ -1225,7 +1225,7 @@ html.lt-ie9 #spine footer {
 	.spine-actions-tabs button,
 	.spine-social-channels a,
 	.spine-footer small a {
-		color: $gray-lightly;
+		color: $gray;
 	}
 
 	.spine-sitenav ul li,
@@ -1247,7 +1247,7 @@ html.lt-ie9 #spine footer {
 	.spine-actions-tabs button:hover,
 	.spine-actions-tabs button:focus,
 	.spine-actions-tabs .opened button:hover {
-		color: $gray-light;
+		color: $crimson;
 	}
 
 	.spine-offsitenav a:hover,
@@ -1263,15 +1263,6 @@ html.lt-ie9 #spine footer {
 
 	.spine-actions li:hover i {
 		color: $crimson;
-	}
-
-	.spine-search-tab button {
-		color: $gray-light;
-	}
-
-	.spine-search-tab button:focus,
-	.spine-search-tab button:hover {
-		color: $gray;
 	}
 }
 
