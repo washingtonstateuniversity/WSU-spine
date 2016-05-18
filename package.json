@@ -27,6 +27,6 @@
 		"grunt-sass": "^1.1.0",
 		"load-grunt-tasks": "~3.5.0",
 		"nunjucks": "~2.4.0",
-		"fs-extra": "^0.27.0"
+		"fs-extra": "^0.30.0"
 	}
 }
