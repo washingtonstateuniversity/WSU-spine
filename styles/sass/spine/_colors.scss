@@ -312,50 +312,44 @@
 			background-color: darken($gray-darker, 3%);
 		}
 
+		#shelve,
+		#shelve::before,
+		#shelve::after {
+			color: $gray-lightly;
+		}
+
 		@include vellum(darken($gray-darker, 3%));
 
-		.spine-actions .opened button,
+		.spine-sitenav a,
 		.spine-actions button,
-		.spine-actions .opened button:hover,
 		.spine-social-channels a,
-		.spine-footer small a {
-			color: $gray;
+		.spine-footer small a,
+		.spine-offsitenav a,
+		.spine-global-links a {
+			color: $gray-lightly;
+		}
+
+		.spine-global-links a:focus,
+		.spine-global-links a:hover,
+		.spine-actions-tabs button:focus,
+		.spine-actions-tabs button:hover,
+		.spine-offsitenav a:focus,
+		.spine-offsitenav a:hover,
+		.spine-sitenav a:focus,
+		.spine-sitenav a:hover,
+		.spine-sitenav li.dogeared > a {
+			color: white;
+		}
+
+		.spine-actions .opened button,
+		.spine-actions .opened button:focus,
+		.spine-actions .opened button:hover {
+			color: $gray-darker;
 		}
 
 		.spine-sitenav ul li,
 		.spine-global-links {
-			border-color: $gray-dark;
-		}
-
-		.spine-search-tab.opened button,
-		.spine-search-tab.opened button:hover {
-			color: $gray-darker;
-		}
-
-		.spine-offsitenav a,
-		.spine-global-links a {
-			color: lighten($gray, 3%);
-		}
-
-		.spine-actions-tabs :not(.opened) button:focus,
-		.spine-actions-tabs :not(.opened) button:hover,
-		.spine-sitenav a,
-		.spine-offsitenav a:hover,
-		.spine-global-links a:hover{
-			color: $gray-lightly;
-		}
-
-		.spine-search-tab button {
-			color: $gray-light;
-		}
-
-		.spine-search-tab button:hover {
-			color: $gray-lighter;
-		}
-
-		.spine-sitenav a:hover,
-		.spine-sitenav li.dogeared > a {
-			color: white;
+			border-color: rgba(255,255,255,0.1);
 		}
 	}
 
