@@ -628,7 +628,6 @@
 			var target = $( evt.target );
 
 			evt.preventDefault();
-			target.closest( "li" ).siblings().removeClass( "opened" );
 			target.closest( "li" ).toggleClass( "opened" );
 
 			// Remove the toggle event, as it will be added again on the next touchstart.
@@ -704,7 +703,6 @@
 				// Disclosure
 				couplets.on( "click", function( e ) {
 					e.preventDefault();
-					$( e.target ).closest( "li" ).siblings().removeClass( "opened" );
 					$( e.target ).closest( "li" ).toggleClass( "opened" );
 				} );
 
