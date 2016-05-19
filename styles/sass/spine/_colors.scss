@@ -409,15 +409,16 @@
 
 		@include vellum($crimson);
 
-		.spine-sitenav a {
-			color: $gray-lighter;
-		}
-
+		.spine-sitenav a,
+		.spine-global-links a,
 		.spine-actions button,
 		.spine-offsitenav a {
 			color: $gray-lightly;
 		}
 
+		.spine-sitenav a:hover,
+		.spine-sitenav li.dogeared > a,
+		.spine-global-links a:hover,
 		.spine-actions-tabs button:focus,
 		.spine-actions-tabs button:hover,
 		.spine-offsitenav a:focus,
@@ -442,23 +443,8 @@
 			border-color: #81192a;
 		}
 
-		.spine-global-links a {
-			color: darken($crimson-darkest,6%);
-			color: black;
-		}
-
-		.spine-global-links a:hover {
-			color: black;
-			color: $crimson-darkest;
-		}
-
 		.spine-social-channels li[class*="-channel"] a:hover {
 			color: $crimson-darkest !important;
-		}
-
-		.spine-sitenav a:hover,
-		.spine-sitenav li.dogeared > a {
-			color: white;
 		}
 	}
 }
