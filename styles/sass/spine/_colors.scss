@@ -266,6 +266,12 @@
 			background-color: $gray-dark;
 		}
 
+		#shelve,
+		#shelve::before,
+		#shelve::after {
+			color: $gray-lightly;
+		}
+
 		@include vellum($gray-dark);
 
 		.spine-sitenav a,
@@ -290,7 +296,7 @@
 		}
 
 		.spine-actions .opened button,
-		.spine-actions .opened button:focus.
+		.spine-actions .opened button:focus,
 		.spine-actions .opened button:hover {
 			color: $gray-darker;
 		}
