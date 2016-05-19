@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 .column img:not(.unscaled),
+.row:not(.unscale) .column figure,
 .row:not(.unscale) .column img,
 .column:not(.unscale) img {
 	max-width: 100%;
