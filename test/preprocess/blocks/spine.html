@@ -34,19 +34,19 @@
 							{#% this is the generated nav from the testing sitemap %#}
 							{% for title, link in nav -%}
 							{% if link=="[object Object]" %}
-								<li>
 								{% for ctitle, clink in link -%}
 									{% if loop.first -%}
-										<a href="{{ clink }}" {% if clink|indexof(current_page)>-1 -%} class="current active" {% endif -%}>{{ ctitle }}</a>
+										<li {% if clink|indexof(current_page)>-1 -%} class="active" {% endif -%}>
+										<a href="{{ clink }}">{{ ctitle }}</a>
 										<ul>
 									{% else -%}
-										<li {% if clink|indexof(current_page)>-1 -%} class="dogeared active current" {% endif -%}><a href="{{ clink }}">{{ ctitle }}</a></li>
+										<li {% if clink|indexof(current_page)>-1 -%} class="active" {% endif -%}><a href="{{ clink }}">{{ ctitle }}</a></li>
 									{% endif -%}
 									{%- if loop.last %}
 										</ul>
+										</li>
 									{% endif -%}
 								{%- endfor %}
-								</li>
 							{% else %}
 								<li {% if link|indexof(current_page)>-1 -%} class="dogeared active" {% endif -%}><a href="{{ link }}">{{ title }}</a></li>
 							{%- endif %}
