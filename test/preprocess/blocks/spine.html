@@ -48,7 +48,7 @@
 									{% endif -%}
 								{%- endfor %}
 							{% else %}
-								<li {% if link|indexof(current_page)>-1 -%} class="dogeared active" {% endif -%}><a href="{{ link }}">{{ title }}</a></li>
+								<li {% if link|indexof(current_page)>-1 -%} class="active" {% endif -%}><a href="{{ link }}">{{ title }}</a></li>
 							{%- endif %}
 							{% endfor -%}
 
