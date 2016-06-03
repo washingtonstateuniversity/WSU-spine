@@ -647,6 +647,9 @@
 
 			var couplets = $( "#spine nav li.parent > a" );
 
+			// Assign active elements a class of dogeared unless those elements contain other active elements.
+			$("#spine .active:not(:has(.active))").addClass("dogeared");
+
 			/**
 			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
 			 * items should be added and what the text should read.
@@ -661,11 +664,17 @@
 					return;
 				}
 
+				classes = "overview";
+				// If a generated overview's parent is marked as dogeared, do the same with the overview.
+				if ( tar.closest( ".parent" ).is( ".dogeared" ) ) {
+					classes += " dogeared";
+				}
+
 				title = ( tar.is( "[title]" )  ) ? tar.attr( "title" ) : "Overview";
 				title = ( tar.is( "[data-overview]" ) ) ? tar.data( "overview" ) : title;
 				title = title.length > 0 ? title : "Overview"; // This is just triple checking that a value made it here.
 
-				tar.parent( "li" ).children( "ul" ).prepend( "<li class='overview'></li>" );
+				tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
 				tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
 				tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
 			} );
