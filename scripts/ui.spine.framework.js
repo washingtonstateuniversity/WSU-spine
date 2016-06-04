@@ -628,9 +628,7 @@
 			var target = $( evt.target );
 
 			evt.preventDefault();
-
-			target.parent( "li" ).siblings().removeClass( "opened" );
-			target.parent( "li" ).toggleClass( "opened" );
+			target.closest( "li" ).toggleClass( "opened" );
 
 			// Remove the toggle event, as it will be added again on the next touchstart.
 			target.off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_nav_list );
@@ -714,8 +712,7 @@
 				// Disclosure
 				couplets.on( "click", function( e ) {
 					e.preventDefault();
-					$( e.target ).parent( "li" ).siblings().removeClass( "opened" );
-					$( e.target ).parent( "li" ).toggleClass( "opened" );
+					$( e.target ).closest( "li" ).toggleClass( "opened" );
 				} );
 
 				// Trigger a scroll action when an anchor link is used.
