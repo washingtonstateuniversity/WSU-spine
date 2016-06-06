@@ -675,16 +675,21 @@
 				tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
 				tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
 				tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
+
+				// When the overview page is active, that area of the navigation should be opened.
+				if ( tar.parent( "li" ).hasClass( "active" ) ) {
+					tar.parents( "li" ).removeClass( "active" ).addClass( "opened dogeared" );
+				}
 			} );
 
 			/**
 			 * Account for historical markup in the WSU ecosystem and add the `active` and `dogeared` classes
 			 * to any list items that already have classes similar to `current` or `active`. Also apply the
-			 * `active` and `dogeared` classes to any parent list items of these elements.
+			 * `opened` and `dogeared` classes to any parent list items of these active elements.
 			 *
 			 * `active` and `dogeared` are both used for the styling of active menu items in the navigation.
 			 */
-			$( "#spine nav li[class*=current], #spine nav li[class*=active]" ).addClass( "active dogeared" ).parents( "li" ).addClass( "active dogeared" );
+			$( "#spine nav li[class*=current], #spine nav li[class*=active]" ).addClass( "active dogeared" ).parents( "li" ).addClass( "opened dogeared" );
 
 			/**
 			 * Also look for any anchor elements using a similar method and apply `active` and `dogeared` classes to
