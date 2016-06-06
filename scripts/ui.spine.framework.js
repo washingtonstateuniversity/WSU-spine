@@ -678,7 +678,7 @@
 
 				// When the overview page is active, that area of the navigation should be opened.
 				if ( tar.parent( "li" ).hasClass( "active" ) ) {
-					tar.parent( "li" ).removeClass( "active" ).addClass( "opened" );
+					tar.parents( "li" ).removeClass( "active" ).addClass( "opened dogeared" );
 				}
 			} );
 
