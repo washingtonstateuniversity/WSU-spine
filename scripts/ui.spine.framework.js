@@ -103,7 +103,7 @@
 				$( "html" ).removeClass( "spine-full" ).addClass( "ios spine-mobile" );
 				this.setup_nav_scroll();
 			} else {
-				$( "html" ).removeClass( "ios spine-mobile" ).addClass( "spine-full" );
+				$( "html" ).removeClass( "ios spine-mobile spine-mobile-open" ).addClass( "spine-full" );
 				if ( $( "#scroll" ).length ) {
 					$( "#wsu-actions" ).unwrap();
 					$( "#spine header" ).prependTo( "#glue" );
@@ -628,9 +628,7 @@
 			var target = $( evt.target );
 
 			evt.preventDefault();
-
-			target.parent( "li" ).siblings().removeClass( "opened" );
-			target.parent( "li" ).toggleClass( "opened" );
+			target.closest( "li" ).toggleClass( "opened" );
 
 			// Remove the toggle event, as it will be added again on the next touchstart.
 			target.off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_nav_list );
@@ -647,6 +645,9 @@
 
 			var couplets = $( "#spine nav li.parent > a" );
 
+			// Assign active elements a class of dogeared unless those elements contain other active elements.
+			$("#spine .active:not(:has(.active))").addClass("dogeared");
+
 			/**
 			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
 			 * items should be added and what the text should read.
@@ -661,23 +662,34 @@
 					return;
 				}
 
+				classes = "overview";
+				// If a generated overview's parent is marked as dogeared, do the same with the overview.
+				if ( tar.closest( ".parent" ).is( ".dogeared" ) ) {
+					classes += " dogeared";
+				}
+
 				title = ( tar.is( "[title]" )  ) ? tar.attr( "title" ) : "Overview";
 				title = ( tar.is( "[data-overview]" ) ) ? tar.data( "overview" ) : title;
 				title = title.length > 0 ? title : "Overview"; // This is just triple checking that a value made it here.
 
-				tar.parent( "li" ).children( "ul" ).prepend( "<li class='overview'></li>" );
+				tar.parent( "li" ).children( "ul" ).prepend( "<li class='" + classes + "'></li>" );
 				tar.clone( true, true ).appendTo( tar.parent( "li" ).find( "ul .overview:first" ) );
 				tar.parent( "li" ).find( "ul .overview:first a" ).html( title );
+
+				// When the overview page is active, that area of the navigation should be opened.
+				if ( tar.parent( "li" ).hasClass( "active" ) ) {
+					tar.parents( "li" ).removeClass( "active" ).addClass( "opened dogeared" );
+				}
 			} );
 
 			/**
 			 * Account for historical markup in the WSU ecosystem and add the `active` and `dogeared` classes
 			 * to any list items that already have classes similar to `current` or `active`. Also apply the
-			 * `active` and `dogeared` classes to any parent list items of these elements.
+			 * `opened` and `dogeared` classes to any parent list items of these active elements.
 			 *
 			 * `active` and `dogeared` are both used for the styling of active menu items in the navigation.
 			 */
-			$( "#spine nav li[class*=current], #spine nav li[class*=active]" ).addClass( "active dogeared" ).parents( "li" ).addClass( "active dogeared" );
+			$( "#spine nav li[class*=current], #spine nav li[class*=active]" ).addClass( "active dogeared" ).parents( "li" ).addClass( "opened dogeared" );
 
 			/**
 			 * Also look for any anchor elements using a similar method and apply `active` and `dogeared` classes to
@@ -705,8 +717,7 @@
 				// Disclosure
 				couplets.on( "click", function( e ) {
 					e.preventDefault();
-					$( e.target ).parent( "li" ).siblings().removeClass( "opened" );
-					$( e.target ).parent( "li" ).toggleClass( "opened" );
+					$( e.target ).closest( "li" ).toggleClass( "opened" );
 				} );
 
 				// Trigger a scroll action when an anchor link is used.

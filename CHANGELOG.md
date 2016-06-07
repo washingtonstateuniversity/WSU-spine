@@ -1,12 +1,28 @@
 # WSU Spine Changelog
 
+## 1.4.3 (June 7, 2016)
+
+### Enhancements
+
+* Adjust Spine colors for various themes and nav elements. See [#353](https://github.com/washingtonstateuniversity/WSU-spine/issues/353) for the discussion and [#381](https://github.com/washingtonstateuniversity/WSU-spine/pull/381)
+* Allow multiple nav sections to be open at the same time in the Spine. See [#367](https://github.com/washingtonstateuniversity/WSU-spine/issues/367)
+* Allow the current nav section to be toggled closed. See [#386](https://github.com/washingtonstateuniversity/WSU-spine/pull/386)
+* Several adjustments to test HTML markup to help better describe expected conditions of the Spine.
+
+### Bug Fixes
+
+* Only apply box shadow to `#glue` on `.spine-mobile-open`. See [#374](https://github.com/washingtonstateuniversity/WSU-spine/pull/374)
+* Remove `spine-mobile-open` from `html` on resize to full screen. See [#375](https://github.com/washingtonstateuniversity/WSU-spine/pull/375)
+* Apply a max width of 100% to `figure`. See [#382](https://github.com/washingtonstateuniversity/WSU-spine/pull/382)
+* Allow other HTML tags inside anchor elements in the Spine navigation. See [#385](https://github.com/washingtonstateuniversity/WSU-spine/pull/385)
+
 ## 1.4.2 (March 31, 2016)
 
-## Bug Fixes
+### Bug Fixes
 
 * Process couplets into Overview anchors before checking their active state so that a child's parent's Overview link doesn't show as active because of an over-eager clone.
 
-## Enhancements
+### Enhancements
 
 * Short circuit Overview creation if a parent has a `#` href, speeding up the processing of large, multi-level menus.
 
