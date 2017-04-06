@@ -112,8 +112,8 @@
 }
 
 #shelve,
-#shelve::before,
-#shelve::after {
+#shelve:before,
+#shelve:after {
 	position: absolute;
 	border-color: $gray;
 	border-style: solid;
@@ -123,16 +123,16 @@
 #spine.gray,
 #spine.light {
 	#shelve,
-	#shelve::before,
-	#shelve::after {
+	#shelve:before,
+	#shelve:after {
 		border-color: #fff;
 	}
 }
 
 #spine.lighter {
 	#shelve,
-	#shelve::before,
-	#shelve::after {
+	#shelve:before,
+	#shelve:after {
 		border-color: $gray;
 	}
 }
@@ -144,8 +144,8 @@
     outline: none;
 }
 
-#shelve::before,
-#shelve::after {
+#shelve:before,
+#shelve:after {
 	content: "";
 	display: block;
     width: 20px;
@@ -153,13 +153,13 @@
     left: 18px;
 }
 
-#shelve::before {
+#shelve:before {
 	bottom: 18px;
 	border-bottom-width: 3px;
 	border-top-width: 3px;
 }
 
-#shelve::after {
+#shelve:after {
 	bottom: 30px;
 	border-bottom-width: 3px;
 }
