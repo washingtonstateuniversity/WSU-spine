@@ -3,7 +3,7 @@
 
 /* Icons Font */
 @font-face {
-	font-family: "Spine-Icons";
+	font-family: Spine-Icons;
     src: url("#{$font_domain}/icons/wsu-spine-icons-regular.eot");
     src: url("#{$font_domain}/icons/wsu-spine-icons-regular.eot?#iefix") format("embedded-opentype"),
          url("#{$font_domain}/icons/wsu-spine-icons-regular.ttf") format("font/truetype"),
@@ -168,7 +168,7 @@
 .spine-nav,
 .spine-footer  {
 	button:before {
-		font-family: "Spine-Icons";
+		font-family: Spine-Icons;
 		text-indent: 0;
 		position: absolute;
 		left: 0;	top: 0; right: 0; bottom: 0;
@@ -243,7 +243,7 @@
 
 			> a:after,
 			&.opened > a:after {
-				font-family: "Spine-Icons";
+				font-family: Spine-Icons;
 				display: none;
 				position: absolute;
 				top: .5em;
@@ -373,7 +373,7 @@
 
 	// External Links
 	nav a.external:after {
-		font-family: "Spine-Icons";
+		font-family: Spine-Icons;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		position: absolute;
@@ -560,7 +560,7 @@ html.lt-ie9 #spine .spine-actions {
 		position: absolute;
 		right: 0;
 		font-size: 1.3em;
-		font-family: "Spine-Icons";
+		font-family: Spine-Icons;
 		width: 35px;
 	}
 
@@ -763,7 +763,7 @@ html.lt-ie9 #spine .spine-actions {
 	}
 
 	div:before {
-		font-family: "Spine-Icons";
+		font-family: Spine-Icons;
 		width: 1.7em;
 		display: inline-block;
 		text-align: center;
@@ -820,7 +820,7 @@ html.lt-ie9 #spine .spine-actions {
 		}
 
 		a:before {
-			font-family: "Spine-Icons" !important;
+			font-family: Spine-Icons !important;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			width: 1.8em;
@@ -924,7 +924,7 @@ html.lt-ie9 #spine footer {
 		}
 
 		li a:before {
-			font-family: "Spine-Icons";
+			font-family: Spine-Icons;
 			position: absolute;
 			top: 0;
 			left: 0;
