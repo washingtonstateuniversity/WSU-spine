@@ -271,10 +271,6 @@
 			&.active li:last-child a {
 				padding-bottom: 8px;
 			}
-
-			&.active > a:hover {
-				cursor: default;
-			}
 		}
 
 		.active li.parent > a:after,
