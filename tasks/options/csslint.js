@@ -18,6 +18,7 @@ module.exports = {
 			"floats": false,
 			"font-sizes": false,                   // audit
 			"important": false,                    // This should be set to 2 one day.
+			"order-alphabetical": false,
 			"qualified-headings": 2,
 			"duplicate-background-images": 2,
 			"duplicate-properties": 2,
