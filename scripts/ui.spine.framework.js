@@ -646,7 +646,7 @@
 			var couplets = $( "#spine nav li.parent > a" );
 
 			// Assign active elements a class of dogeared unless those elements contain other active elements.
-			$("#spine .active:not(:has(.active))").addClass("dogeared");
+			$( "#spine .active:not(:has(.active))" ).addClass( "dogeared" );
 
 			/**
 			 * Walk through each of the anchor elements in the navigation to establish when "Overview"
@@ -663,6 +663,7 @@
 				}
 
 				classes = "overview";
+
 				// If a generated overview's parent is marked as dogeared, do the same with the overview.
 				if ( tar.closest( ".parent" ).is( ".dogeared" ) ) {
 					classes += " dogeared";
