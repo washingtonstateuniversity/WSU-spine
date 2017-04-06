@@ -58,7 +58,7 @@
 }
 
 .spine-full #glue:before {
-	background-color: white;
+	background-color: #fff;
 	content: " ";
 	min-height: 100%;
 	position: absolute;
@@ -125,7 +125,7 @@
 	#shelve,
 	#shelve::before,
 	#shelve::after {
-		border-color: white;
+		border-color: #fff;
 	}
 }
 
@@ -661,7 +661,7 @@ html.lt-ie9 #spine .spine-actions {
 
 		a:hover,
 		a.ui-state-focus {
-			color: white;
+			color: #fff;
 			background-color: #434d53;
 			margin: -1px -1.75em 0 -1.75em;
 			padding: .6em 1.75em .6em 1.75em;
@@ -735,7 +735,7 @@ html.lt-ie9 #spine .spine-actions {
 
 	.organization-unit a,
 	.organization-unit a:hover {
-		color: black;
+		color: #000;
 	}
 
 	.organization-name  {
@@ -804,7 +804,7 @@ html.lt-ie9 #spine .spine-actions {
 		}
 
 		a:hover {
-			color: white !important;
+			color: #fff !important;
 			background: #434d53;
 			padding-left: 1.75em;
 			padding-right: 1.75em;
@@ -816,7 +816,7 @@ html.lt-ie9 #spine .spine-actions {
 		}
 
 		a:hover {
-			color: white;
+			color: #fff;
 		}
 
 		a:before {
@@ -1212,7 +1212,7 @@ html.lt-ie9 #spine footer {
 /* ## COLORS - Spinal Column Colors */
 #spine  {
 	#glue:before {
-		background-color: white;
+		background-color: #fff;
 	}
 
 	@include vellum($gray-er);

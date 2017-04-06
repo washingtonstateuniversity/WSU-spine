@@ -209,7 +209,7 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 	#binder #spine {
 		header,
 		#scroll {
-			background-color: white;
+			background-color: #fff;
 		}
 
 		@each $spine-color, $color in $spine-colors {
