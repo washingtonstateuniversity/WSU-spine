@@ -71,7 +71,7 @@ $spine-colors: (
 
 // Spine Transparency
 @mixin vellum($color) {
-	$transparencies: ('05':.05, '10':.10, '15':.15, '20':.2, '25':.25);
+	$transparencies: ('05':.05, '10':.1, '15':.15, '20':.2, '25':.25);
 	@each $transparency, $percent in $transparencies {
 		&.vellum-#{$transparency} #glue:before {
 			background-color: transparentize($color,$percent);
