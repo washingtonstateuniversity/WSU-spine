@@ -1,7 +1,6 @@
 /* global require, setTimeout */
 module.exports = function(grunt) {
 	grunt.registerTask("build_tests", "Set up all test pages", function() {
-		var fs = require("fs");
 		var extend = require("extend");
 		var fs = require("fs-extra");
 		var nunjucks = require("nunjucks");
