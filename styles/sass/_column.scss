@@ -8,8 +8,8 @@
     src: url("#{$font_domain}/icons/wsu-spine-icons-regular.eot?#iefix") format("embedded-opentype"),
          url("#{$font_domain}/icons/wsu-spine-icons-regular.ttf") format("font/truetype"),
          url("#{$font_domain}/icons/wsu-spine-icons-regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 400;
+    font-style: 400;
 }
 
 /* # THE SPINE
@@ -363,7 +363,7 @@
 	// "Dogeared" Link
 	li:not(.parent).dogeared > a {
 		color: #981e32;
-		font-weight: bold;
+		font-weight: 700;
 	}
 
 	li.dogeared > a:hover,
@@ -469,7 +469,7 @@ html.lt-ie9 #spine .spine-actions {
 			position: relative;
 			width: 100%;
 			height: 2.2em;
-			font-weight: normal;
+			font-weight: 400;
 			font-size: 1.2em;
 			line-height: 1em;
 			text-shadow: none;
@@ -723,7 +723,7 @@ html.lt-ie9 #spine .spine-actions {
 	}
 
 	.organization  {
-		font-weight: bold;
+		font-weight: 700;
 		padding-bottom: .5em;
 	}
 
