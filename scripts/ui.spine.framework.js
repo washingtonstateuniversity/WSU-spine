@@ -662,7 +662,7 @@
 					return;
 				}
 
-				classes = "overview";
+				var classes = "overview";
 
 				// If a generated overview's parent is marked as dogeared, do the same with the overview.
 				if ( tar.closest( ".parent" ).is( ".dogeared" ) ) {
