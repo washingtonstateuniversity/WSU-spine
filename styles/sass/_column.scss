@@ -54,7 +54,7 @@
 }
 
 .spine-mobile-open #glue {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 .spine-full #glue:before {
@@ -710,7 +710,7 @@ html.lt-ie9 #spine .spine-actions {
 	}
 
 	div {
-		padding: 0.75em 0;
+		padding: .75em 0;
 		border-bottom: 1px $gray-lightly solid;
 		line-height: 1.4em;
 	}
@@ -870,7 +870,7 @@ html.lt-ie9 #spine .spine-actions {
 #spine footer {
 	position: absolute;
 	bottom: 0;
-	padding: 1.75em 0 0.75em 0;
+	padding: 1.75em 0 .75em 0;
 	width: 156px; // 198px - ( ( 1.75em x 12px ) x 2 = 42 )
 }
 
