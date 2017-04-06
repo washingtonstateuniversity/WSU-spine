@@ -609,7 +609,7 @@ button.ui-button::-moz-focus-inner {
 .ui-selectable-helper {
 	position: absolute;
 	z-index: 100;
-	border: 1px dotted black;
+	border: 1px dotted #000;
 }
 .ui-slider {
 	position: relative;

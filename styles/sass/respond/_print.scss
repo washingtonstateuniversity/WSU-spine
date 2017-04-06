@@ -84,14 +84,14 @@
 		float: left;
 		margin: 0;
 		text-indent: 0;
-		font-weight: normal;
+		font-weight: 400;
 	}
 
 	#spine #print-invoke,
 	#spine #print-cancel {
-		color: #8D959A;
-		background: white;
-		border-color: #8D959A;
+		color: #8d959a;
+		background: #fff;
+		border-color: #8d959a;
 		border-style: solid;
 		display: block;
 	}
@@ -111,12 +111,12 @@
 	#spine #print-invoke:hover,
 	#spine #print-cancel:hover {
 		text-shadow: none;
-		background: #EFF0F1;
+		background: #eff0f1;
 	}
 
 	#spine #print-invoke:before,
 	#spine #print-cancel:before {
-		font-family: "Spine-Icons";
+		font-family: Spine-Icons;
 		font-size: 12px;
 		width: 17px;
 		text-align: left;

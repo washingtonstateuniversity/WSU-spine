@@ -11,14 +11,14 @@ input[type="button"] {
 	border-style: solid;
 	border-width: 1px;
 	border-color: $gray-lightly $gray-light $gray-light $gray-lightly;
-	border-radius: 0.5em;
+	border-radius: .5em;
 	color: $gray-dark;
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
 	margin-bottom: 0;
 	line-height: normal;
-	padding: 0.5em 1em;
+	padding: .5em 1em;
 	vertical-align: middle;
 }
 
@@ -130,7 +130,7 @@ textarea {
 
 label,
 legend {
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 13px;
 }
 
@@ -140,7 +140,7 @@ input[type="checkbox"] {
 
 label span,
 legend span {
-	font-weight: normal;
+	font-weight: 400;
 	font-size: 13px;
 	color: #444;
 }

@@ -7,14 +7,14 @@ $crimson-dark: #6b1523;
 $crimson-darkest: #490e18;
 
 $gray: #717171;
-$gray-er: white;
+$gray-er: #fff;
 $gray-light: #8d959a;
 $gray-lighter: #b5babe;
 $gray-lightly: #d7dadb;
 $gray-lightest: #eff0f1;
 $gray-dark: #3b4042;
 $gray-darker: #2a3033;
-$gray-darkest: black;
+$gray-darkest: #000;
 
 $orange: #b67233;
 $orange-er: #f6861f;
@@ -71,7 +71,7 @@ $spine-colors: (
 
 // Spine Transparency
 @mixin vellum($color) {
-	$transparencies: ('05':.05, '10':.10, '15':.15, '20':.2, '25':.25);
+	$transparencies: ('05':.05, '10':.1, '15':.15, '20':.2, '25':.25);
 	@each $transparency, $percent in $transparencies {
 		&.vellum-#{$transparency} #glue:before {
 			background-color: transparentize($color,$percent);
@@ -80,8 +80,8 @@ $spine-colors: (
 }
 
 // Social Channel Colors
-$facebook-blue: #3B5998;
-$facebook-light: #D3D8E8;
+$facebook-blue: #3b5998;
+$facebook-light: #d3d8e8;
 $twitter-blue: #55acee;
 $twitter-light: #e1e8ed;
 $youtube-red: #cc181e;

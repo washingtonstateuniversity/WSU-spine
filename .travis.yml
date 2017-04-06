@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "node"
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+  slack:
+    rooms:
+      - wsu-ucomm:n2TLZRJd84rMOMbkKthSEMgS
+    on_success: change
+    on_failure: always
+    on_start: never
+
+branches:
+  only:
+    - master
+    - develop
+
+before_script:
+  - node --version
+  - npm --version
+
+script:
+  - grunt

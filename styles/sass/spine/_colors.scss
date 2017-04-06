@@ -51,7 +51,7 @@
 		.spine-actions-tabs li.opened,
 		.spine-actions-tabs li.opened:hover,
 		.spine-actions section {
-			background-color: white;
+			background-color: #fff;
 		}
 	}
 
@@ -203,7 +203,7 @@
 
 		.spine-sitenav a:hover,
 		.spine-sitenav li.dogeared > a {
-			color: white;
+			color: #fff;
 		}
 	}
 
@@ -257,7 +257,7 @@
 
 		.spine-sitenav a:hover,
 		.spine-sitenav li.dogeared > a {
-			color: white;
+			color: #fff;
 		}
 	}
 
@@ -267,8 +267,8 @@
 		}
 
 		#shelve,
-		#shelve::before,
-		#shelve::after {
+		#shelve:before,
+		#shelve:after {
 			color: $gray-lightly;
 		}
 
@@ -292,7 +292,7 @@
 		.spine-sitenav a:focus,
 		.spine-sitenav a:hover,
 		.spine-sitenav li.dogeared > a {
-			color: white;
+			color: #fff;
 		}
 
 		.spine-actions .opened button,
@@ -303,7 +303,7 @@
 
 		.spine-sitenav ul li,
 		.spine-global-links {
-			border-color: rgba(255,255,255,0.1);
+			border-color: rgba(255, 255, 255, .1);
 		}
 	}
 
@@ -313,8 +313,8 @@
 		}
 
 		#shelve,
-		#shelve::before,
-		#shelve::after {
+		#shelve:before,
+		#shelve:after {
 			color: $gray-lightly;
 		}
 
@@ -338,7 +338,7 @@
 		.spine-sitenav a:focus,
 		.spine-sitenav a:hover,
 		.spine-sitenav li.dogeared > a {
-			color: white;
+			color: #fff;
 		}
 
 		.spine-actions .opened button,
@@ -349,7 +349,7 @@
 
 		.spine-sitenav ul li,
 		.spine-global-links {
-			border-color: rgba(255,255,255,0.1);
+			border-color: rgba(255, 255, 255, .1);
 		}
 	}
 
@@ -402,8 +402,8 @@
 		}
 
 		#shelve,
-		#shelve::before,
-		#shelve::after {
+		#shelve:before,
+		#shelve:after {
 			color: $gray-lightly;
 		}
 
@@ -423,7 +423,7 @@
 		.spine-actions-tabs button:hover,
 		.spine-offsitenav a:focus,
 		.spine-offsitenav a:hover {
-			color: white;
+			color: #fff;
 		}
 
 		.spine-actions .opened button,
