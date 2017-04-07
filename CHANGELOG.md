@@ -1,6 +1,18 @@
 # WSU Spine Changelog
 
-## 1.x.x (TBD)
+## 1.4.4 (April 7, 2017)
+
+### Enhancmenets
+
+* Introduce stylelint as a replacement for csslint. See [#398](https://github.com/washingtonstateuniversity/WSU-spine/pull/398)
+* Update the signature SVGs for the `.darker` Spine to be fully accessible. See [#399](https://github.com/washingtonstateuniversity/WSU-spine/pull/399)
+* Remove unused signature SVGs. See [#366](https://github.com/washingtonstateuniversity/WSU-spine/issues/366)
+
+### Bug Fixes
+
+* Add a space before generated postal code HTML. See [#393](https://github.com/washingtonstateuniversity/WSU-spine/issues/393)
+* Update HTML5 shiv URL to new CDN location. See [#389](https://github.com/washingtonstateuniversity/WSU-spine/issues/389)
+* Remove cursor override for active parents. See [#391](https://github.com/washingtonstateuniversity/WSU-spine/issues/391)
 
 ## 1.4.3 (June 7, 2016)
 
