@@ -107,6 +107,10 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 		background-image: url("#{$locality}/marks/wsu-signature-vertical.svg");
 	}
 
+	.darker #wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-vertical-darker.svg");
+	}
+
 	.light #wsu-signature,
 	.gray #wsu-signature,
 	.dark #wsu-signature,
@@ -120,6 +124,12 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 	.print #wsu-signature,
 	#spine.cropped.skimmed #wsu-signature {
 		background-image: url("#{$locality}/marks/wsu-signature-horizontal.svg");
+	}
+
+	.spine-mobile .darker #wsu-signature,
+	.print .darker #wsu-signature,
+	#spine.cropped.skimmed.darker #wsu-signature {
+		background-image: url("#{$locality}/marks/wsu-signature-horizontal-darker.svg");
 	}
 
 	.spine-mobile .light #wsu-signature,
@@ -146,6 +156,10 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-vertical.svg");
 		}
 
+		.#{$signature}-signature .darker #wsu-signature {
+			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-vertical-darker.svg");
+		}
+
 		.#{$signature}-signature .light #wsu-signature,
 		.#{$signature}-signature .gray #wsu-signature,
 		.#{$signature}-signature .dark #wsu-signature,
@@ -164,6 +178,18 @@ $font_domain: '//repo.wsu.edu/spine/develop';
 		// Account for the cropped skimmed mark.
 		.#{$signature}-signature  #spine.cropped.skimmed #wsu-signature {
 			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-horizontal.svg");
+		}
+
+		// Covers mobile default and the skimmed view of a cropped spine.
+		// Account for the signature class assigned to `html`.
+		.spine-mobile.#{$signature}-signature .darker #wsu-signature,
+		.print.#{$signature}-signature .darker #wsu-signature,
+		// Account for the signature class assigned between `html` and `#spine`.
+		.spine-mobile .#{$signature}-signature .darker #wsu-signature,
+		.print .#{$signature}-signature .darker #wsu-signature,
+		// Account for the cropped skimmed mark.
+		.#{$signature}-signature  #spine.cropped.skimmed.darker #wsu-signature {
+			background-image: url("#{$locality}/marks/wsu-#{$signature}-signature-horizontal-darker.svg");
 		}
 
 		// A horizontal mark should be used on mobile and cropped skimmed views.
