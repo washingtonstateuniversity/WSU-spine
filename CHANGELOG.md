@@ -1,6 +1,14 @@
 # WSU Spine Changelog
 
-## 1.x.x (TBD)
+## 1.4.5 (May 1, 2017)
+
+### Bug Fixes
+
+* Add a title attribute to the Spine search input.
+* Add a title attribute to the Menu button.
+* Assign a background color to `#glue` unless using vellum.
+* Remove unnecessary prevention of click/touchend on search input.
+* Fix contrast issue for non-focused text inputs.
 
 ## 1.4.4 (April 7, 2017)
 
