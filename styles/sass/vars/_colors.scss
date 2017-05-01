@@ -76,6 +76,10 @@ $spine-colors: (
 		&.vellum-#{$transparency} #glue:before {
 			background-color: transparentize($color,$percent);
 		}
+
+		&.vellum-#{$transparency} #glue {
+			background: none;
+		}
 	}
 }
 

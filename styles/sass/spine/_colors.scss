@@ -1,6 +1,7 @@
 @charset "UTF-8";
-#spine  {
+#spine {
 	&.lightest {
+		#glue,
 		#glue:before {
 			background-color: $gray-lightest;
 		}
@@ -56,6 +57,7 @@
 	}
 
 	&.lightly {
+		#glue,
 		#glue:before {
 			background-color: $gray-lightly;
 		}
@@ -103,6 +105,7 @@
 	}
 
 	&.lighter {
+		#glue,
 		#glue:before {
 			background-color: $gray-lighter;
 		}
@@ -156,6 +159,7 @@
 	}
 
 	&.light {
+		#glue,
 		#glue:before {
 			background-color: $gray-light;
 		}
@@ -208,6 +212,7 @@
 	}
 
 	&.gray {
+		#glue,
 		#glue:before {
 			background: $gray;
 		}
@@ -262,6 +267,7 @@
 	}
 
 	&.dark {
+		#glue,
 		#glue:before {
 			background-color: $gray-dark;
 		}
@@ -308,6 +314,7 @@
 	}
 
 	&.darker {
+		#glue,
 		#glue:before {
 			background-color: darken($gray-darker, 3%);
 		}
@@ -354,6 +361,7 @@
 	}
 
 	&.darkest {
+		#glue,
 		#glue:before {
 			background-color: $gray-darkest;
 		}
@@ -397,6 +405,7 @@
 	}
 
 	&.crimson {
+		#glue,
 		#glue:before {
 			background-color: $crimson;
 		}
