@@ -1,5 +1,7 @@
 # WSU Spine Changelog
 
+## 1.x.x (TBD)
+
 ## 1.4.6 (May 1, 2017)
 
 * Fix incorrect tag.
