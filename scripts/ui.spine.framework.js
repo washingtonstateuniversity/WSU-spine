@@ -420,7 +420,7 @@
 		setup_spine: function() {
 			var self, spine, glue, main, viewport_ht, spine_ht, height_dif, positionLock;
 
-			$( "#spine .spine-header" ).prepend( "<button id='shelve' type='button' />" );
+			$( "#spine .spine-header" ).prepend( "<button id='shelve' type='button' title='Menu' />" );
 
 			self = this;
 
