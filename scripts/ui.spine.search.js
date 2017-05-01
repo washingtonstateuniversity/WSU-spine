@@ -237,11 +237,6 @@
 				}
 			} );
 
-			search_input.off( "click touchend" ).on( "click touchend", function( e ) {
-				e.stopPropagation();
-				e.preventDefault();
-			} );
-
 			$( "#wsu-search form" ).submit( function() {
 				var scope, site, cx, cof, search_term, search_url;
 				scope = wsu_search.attr( "data-default" );
