@@ -44,7 +44,7 @@
 				urlSpaces:"+",
 				tabTemplate: "<section id='wsu-search' class='spine-search spine-action closed'>" +
 								"<form id='default-search'>" +
-									"<input name='term' type='text' value='' placeholder='search'>" +
+									"<input name='term' type='text' value='' placeholder='search' title='Type search term here'>" +
 									"<button type='submit'>Submit</button>" +
 								"</form>" +
 								"<div id='spine-shortcuts' class='spine-shortcuts'></div>" +
