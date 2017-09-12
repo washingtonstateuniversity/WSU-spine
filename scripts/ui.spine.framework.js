@@ -22,6 +22,7 @@
 		 * Global framework options for the Spine framework.
 		 */
 		framework_options: {
+			viewport_offset: 0,
 			equalizer_filter: ".skip*",
 			contact_template: "<address itemscope itemtype='http://schema.org/Organization' class='hcard'>" +
 								"<% if (typeof(this.department) != 'undefined') { %><div class='organization-unit fn org'>" +
@@ -181,7 +182,7 @@
 				$( ".unbound.verso.recto" ).css( "width", spread );
 			}
 
-			viewport_ht = $( window ).height();
+			viewport_ht = $( window ).height() - this.framework_options.viewport_offset;
 
 			if ( !self.is_mobile_view() ) {
 				glue.css( "min-height", viewport_ht );
