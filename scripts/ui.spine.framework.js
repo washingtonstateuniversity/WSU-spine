@@ -467,8 +467,6 @@
 							positionLock = 0;
 						}
 
-						positionLock = positionLock + this.framework_options.viewport_offset;
-
 						spine.css( { "position": "fixed", "top": positionLock + "px" } );
 						self.nav_state.positionLock = positionLock;
 					}
