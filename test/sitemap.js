@@ -272,7 +272,53 @@ module.exports = {
 						malformed: true,
 						content: true
 					}
-				}
+				},
+
+                wp_admin_bar_short_child: {
+                    nav: {
+                        parent: "Miscellaneous",
+                        nav_link: "wp_admin_bar_short_child.html",
+                        nav_title: "WP Admin Bar Short"
+                    },
+                    vars: {
+                        wp_admin: true,
+                        content: true
+                    }
+                },
+
+                wp_admin_bar_long_child: {
+                    nav: {
+                        parent: "Miscellaneous",
+                        nav_link: "wp_admin_bar_long_child.html",
+                        nav_title: "WP Admin Bar Long"
+                    },
+                    vars: {
+                        wp_admin: true,
+                        showLong: true
+                    }
+                },
+
+				wp_admin_bar_short: {
+					nav: {
+						nav_link: "wp_admin_bar_short.html",
+						nav_title: "WP Admin Bar Short"
+					},
+					vars: {
+						wp_admin: true,
+						content: true
+					}
+				},
+
+                wp_admin_bar_long: {
+                    nav: {
+                        nav_link: "wp_admin_bar_long.html",
+                        nav_title: "WP Admin Bar Long"
+                    },
+                    vars: {
+                        wp_admin: true,
+                        showLong: true
+                    }
+                }
 			}
 		};
 		return site_obj;

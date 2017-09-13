@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>{{ page.title }} | Washington State University</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="http://repo.wsu.edu/spine/1/favicon.ico" />
+
+    <link rel='stylesheet' id='dashicons-css'  href='https://web.wsu.edu/wp-includes/css/dashicons.min.css?ver=4.8.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='admin-bar-css'  href='https://web.wsu.edu/wp-includes/css/admin-bar.min.css?ver=4.8.1' type='text/css' media='all' />
+
+    <!-- STYLESHEETS -->
+    <link href="../spine.css" rel="stylesheet" type="text/css" />
+
+    <!-- Your custom stylesheets here -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link rel='stylesheet' id='spine-theme-css'  href='https://web.wsu.edu/wp-content/themes/spine/style.css?ver=0.27.13-1.6.6-41211' type='text/css' media='all' />
+
+    <!-- RESPOND -->
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+        var spineoptions={
+            framework: {
+                viewport_offset: 32
+            },
+            search:{
+                providers:{
+                    local:{
+                        url: "http://search.wsu.edu/2013service/searchservice/search.asmx/AZSearch",
+                        dataType: "jsonp",
+                        featureClass: "P",
+                        style: "full",
+                        maxRows: 12
+                    }
+                },
+                result:{
+                    appendTo: "#spine-shortcuts",
+                    showRelated:true,
+                    relatedHeader:"<hr/>",
+                    minLength: 2,
+                    template:"<li>%s</li>"
+                }
+            }
+        };
+    </script>
+
+    <script src="../spine.js"></script>
+    <script src="switches.js"></script>
+
+    <style type="text/css" media="screen">
+        html { margin-top: 32px !important; }
+        * html body { margin-top: 32px !important; }
+        @media screen and ( max-width: 782px ) {
+            html { margin-top: 46px !important; }
+            * html body { margin-top: 46px !important; }
+        }
+    </style>
+
+    <!-- COMPATIBILITY -->
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <noscript><style>#spine .spine-sitenav ul ul li { display: block !important; }</style></noscript>
+
+    <!-- DOCS -->
+    <link type="text/plain" rel="author" href="http://repo.wsu.edu/spine/1/authors.txt">
+    <link type="text/html" rel="help" href="http://brand.wsu.edu">
+
+    <!-- BASE URL -->
+    <base href="{{ basepath }}" />
+
+</head>
