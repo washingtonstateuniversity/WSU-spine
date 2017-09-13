@@ -554,7 +554,7 @@
 				 * from scrolling too far down.
 				 */
 				if ( positionLock < ( -1 * upper_bound ) ) {
-					positionLock = ( -1 * upper_bound );
+					positionLock = ( -1 * upper_bound ) - this.framework_options.viewport_offset;
 				}
 
 				spine.css( { "position": "fixed", "top": positionLock + "px" } );
