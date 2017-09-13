@@ -354,7 +354,7 @@
 		 * @param e
 		 */
 		toggle_mobile_nav: function( e ) {
-			var html, body, spine, glue, transitionEnd;
+			var html, body, shelve, spine, glue, transitionEnd;
 
 			if ( typeof e !== "undefined" ) {
 				e.preventDefault();
@@ -362,6 +362,7 @@
 
 			html = $( "html" );
 			body = $( "body" );
+			shelve = $( "#shelve" );
 			spine = $.ui.spine.prototype._get_globals( "spine" ).refresh();
 			glue = $.ui.spine.prototype._get_globals( "glue" ).refresh();
 
@@ -374,8 +375,10 @@
 			// Tell the browser and stylesheet what direction the Spine is animating.
 			if ( html.hasClass( "spine-mobile-open" ) ) {
 				body.addClass( "spine-move-left" );
+				shelve.attr( "aria-expanded", "false" );
 			} else {
 				body.addClass( "spine-move-right" );
+				shelve.attr( "aria-expanded", "true" );
 			}
 
 			glue.on( transitionEnd, function() {
@@ -421,7 +424,7 @@
 		setup_spine: function() {
 			var self, spine, glue, main, viewport_ht, spine_ht, height_dif, positionLock;
 
-			$( "#spine .spine-header" ).prepend( "<button id='shelve' type='button' title='Menu' />" );
+			$( "#spine .spine-header" ).prepend( "<button id='shelve' type='button' aria-label='Site Navigation' aria-haspopup='true' aria-controls='glue' aria-expanded='false' />" );
 
 			self = this;
 
