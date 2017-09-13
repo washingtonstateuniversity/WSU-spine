@@ -35,8 +35,8 @@ As versions change between `1.2.4` to `1.2.5` to `1.3.0`, the files at the above
 
 Specific version builds are also available for every minor version.
 
-* `https://repo.wsu.edu/spine/1.4.6/spine.min.css`
-* `https://repo.wsu.edu/spine/1.4.6/spine.min.js`
+* `https://repo.wsu.edu/spine/1.4.7/spine.min.css`
+* `https://repo.wsu.edu/spine/1.4.7/spine.min.js`
 
 These have the benefit of being cached in browser for 120 days, though will require attention whenever the Spine is updated.
 

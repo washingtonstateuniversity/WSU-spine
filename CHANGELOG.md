@@ -1,6 +1,9 @@
 # WSU Spine Changelog
 
-## 1.x.x (TBD)
+## 1.4.7 (September 13, 2017)
+
+* Add a `viewport_offset` setting to help the Spine account for fixed toolbars.
+* Add ARIA attributes to the menu `button` on mobile.
 
 ## 1.4.6 (May 1, 2017)
 
