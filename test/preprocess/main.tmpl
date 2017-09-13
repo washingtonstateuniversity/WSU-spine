@@ -1,7 +1,13 @@
 {% set page = pages[current_build] -%}
 {% set page_var = page.vars %}
-{% include "preprocess/blocks/head.html" %}
-<body class="{{ "wireframe" if page_var.demo else "" }}">
+
+{% if page_var.wp_admin -%}
+    {% include "preprocess/blocks/wp-admin-bar-head.html" %}
+{% else -%}
+    {% include "preprocess/blocks/head.html" %}
+{% endif -%}
+
+<body class="{{ "wireframe" if page_var.demo else "" }} {{ "admin-bar" if page_var.wp_admin else "" }}">
 
 	<div id="jacket">
 
@@ -27,5 +33,8 @@
 		{% include "preprocess/blocks/contact_normal.html" %}
 	{% endif -%}
 
+    {% if page_var.wp_admin -%}
+        {% include "preprocess/blocks/wp-admin-bar.html" %}
+    {% endif -%}
 </body>
 </html>
