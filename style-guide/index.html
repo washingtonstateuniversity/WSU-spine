@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-svg lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-svg lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-svg lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Page Title | Unit or Department at WSU</title>
+
+    <link rel="shortcut icon" href="../favicon.ico" />
+
+    <!-- WSU Spine stylesheet, relative to build directory. -->
+    <link href="../spine.css" rel="stylesheet" type="text/css" />
+
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+
+    <!-- Current library versions can be found at https://developers.google.com/speed/libraries/ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- WSU Spine JavaScript, relative to build directory. -->
+    <script src="../spine.min.js"></script>
+
+    <!-- Include an HTML5 compatibility shim for HTML5 -->
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+
+    <!-- Ensure the Spine is displayed fully when no-JS -->
+    <noscript>
+        <style>
+            #spine .spine-sitenav ul ul li {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+
+</head>
+
+<body>
+
+<div id="jacket">
+
+    <!-- fixed and hybrid binders are no longer officially supported -->
+    <div id="binder" class="fluid">
+
+        <main>
+            <section class="single">
+                <div class="column one">
+                    <p>This is the content of the column.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- The #spine contains the site navigation and branding -->
+        <div id="spine">
+
+            <div id="glue">
+
+                <header class="spine-header">
+                    <a href="https://wsu.edu/" id="wsu-signature">Washington State University</a>
+                </header>
+
+                <!-- Both #wsu-actions and .spine-actions are used -->
+                <section id="wsu-actions" class="spine-actions">
+
+                    <!-- Both #wsu-actions-tabs and .spine-actions-tabs are used -->
+                    <ul id="wsu-actions-tabs" class="spine-actions-tabs clearfix">
+                        <li id="wsu-search-tab" class="spine-search-tab closed">
+                            <button>Search</button>
+                        </li>
+                        <li id="wsu-contact-tab" class="spine-contact-tab closed">
+                            <button>Contact</button>
+                        </li>
+                        <li id="wsu-share-tab" class="spine-share-tab closed">
+                            <button>Share</button>
+                        </li>
+                        <li id="wsu-print-tab" class="spine-print-tab closed">
+                            <button>Print</button>
+                        </li>
+                    </ul>
+
+                </section><!-- end #wsu-actions -->
+
+                <!-- Both #spine-navigation and .spine-navigation are used -->
+                <section id="spine-navigation" class="spine-navigation">
+
+                    <nav class="spine-sitenav">
+
+                        <ul>
+                            <li><a href="index.html" class="active">Style Guide Home</a></li>
+                        </ul>
+
+                    </nav>
+
+                    <nav class="spine-offsitenav">
+
+                        <ul>
+                            <li><a href="https://github.com/washingtonstateuniversity">WSU GitHub</a></li>
+                            <li><a href="https://web.wsu.edu">Web Communication</a></li>
+                        </ul>
+
+                    </nav>
+
+                </section><!-- end #spine-navigation -->
+
+                <footer class="spine-footer">
+
+                    <nav id="wsu-social-channels" class="spine-social-channels">
+
+                        <ul>
+                            <li class="facebook-channel"><a href="https://facebook.com/wsupullman">Facebook</a></li>
+                            <li class="twitter-channel"><a href="https://twitter.com/wsupullman">Twitter</a></li>
+                            <li class="youtube-channel"><a href="https://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+                            <li class="directory-channel"><a href="https://social.wsu.edu">Directory</a></li>
+                        </ul>
+
+                    </nav>
+
+                    <nav id="wsu-global-links" class="spine-global-links">
+
+                        <ul>
+                            <li class="mywsu-link"><a href="https://my.wsu.edu/">myWSU</a></li>
+                            <li class="access-link"><a href="http://access.wsu.edu/">Access</a></li>
+                            <li class="policies-link"><a href="https://policies.wsu.edu/">Policies</a></li>
+                            <li class="copyright-link"><a href="https://copyright.wsu.edu">&copy;</a></li>
+                        </ul>
+
+                    </nav>
+                </footer>
+
+            </div><!--/glue-->
+
+        </div><!--/spine-->
+
+    </div><!--/binder-->
+
+</div><!--/jacket-->
+
+<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
+<div id="contact-details" itemscope itemtype="http://schema.org/Organization">
+    <span itemprop="department"  content="University Unit"></span>
+    <span itemprop="name" content="Washington State University"></span>
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="location" content="Your location"></span>
+        <span itemprop="streetAddress" content="Your PO Box"></span>
+        <span itemprop="addressLocality" content="Pullman"></span>
+        <span itemprop="addressRegion" content="WA"></span>
+        <span itemprop="postalCode" content="99164"></span>
+    </div>
+    <span itemprop="telephone" content="(509) 335-3564"></span>
+    <span itemprop="email" content="your-contact-email@wsu.edu"></span>
+    <span itemprop="contactPoint" content="http://contactpage.wsu.edu"></span>
+    <span itemprop="url" content="http://your-unit.wsu.edu"></span>
+</div>
+
+</body>
+</html>

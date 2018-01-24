@@ -3,6 +3,7 @@ module.exports = {
 		files: [
 			{ expand: true, src: ["fonts/*"], dest: "<%= config.build %>/", dot: true },
 			{ expand: true, src: ["html/*"], dest: "<%= config.build %>/" },
+			{ expand: true, src: ["style-guide/*"], dest: "<%= config.build %>/" },
 			{ expand: true, src: ["icons/*"], dest: "<%= config.build %>/", dot: true },
 			{ expand: true, src: ["marks/*"], dest: "<%= config.build %>/" },
 			{ expand: true, src: ["scripts/*"], dest: "<%= config.build %>/" },
