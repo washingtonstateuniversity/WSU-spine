@@ -45,6 +45,11 @@
 	a:hover {
 		color: #981e32;
 	}
+
+	#glue,
+	#glue:before {
+		background-color: #fff;
+	}
 }
 
 #glue {
@@ -58,7 +63,6 @@
 }
 
 .spine-full #glue:before {
-	background-color: #fff;
 	content: " ";
 	min-height: 100%;
 	position: absolute;
