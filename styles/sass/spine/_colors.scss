@@ -6,8 +6,6 @@
 			background-color: $gray-lightest;
 		}
 
-		@include vellum($gray-lightest);
-
 		.spine-sitenav a,
 		.spine-search-tab button {
 			color: $gray-dark;
@@ -62,8 +60,6 @@
 			background-color: $gray-lightly;
 		}
 
-		@include vellum($gray-lightly);
-
 		.spine-actions-tabs button,
 		.spine-social-channels a:hover,
 		.spine-social-channels a,
@@ -109,8 +105,6 @@
 		#glue:before {
 			background-color: $gray-lighter;
 		}
-
-		@include vellum($gray-lighter);
 
 		.spine-actions-tabs .opened button,
 		.spine-actions-tabs button,
@@ -164,8 +158,6 @@
 			background-color: $gray-light;
 		}
 
-		@include vellum($gray-light);
-
 		.spine-actions .opened button,
 		.spine-actions button,
 		.spine-actions .opened button:hover,
@@ -216,8 +208,6 @@
 		#glue:before {
 			background: $gray;
 		}
-
-		@include vellum($gray);
 
 		.spine-actions .opened button,
 		.spine-actions button,
@@ -278,8 +268,6 @@
 			color: $gray-lightly;
 		}
 
-		@include vellum($gray-dark);
-
 		.spine-sitenav a,
 		.spine-actions button,
 		.spine-social-channels a,
@@ -325,8 +313,6 @@
 			color: $gray-lightly;
 		}
 
-		@include vellum(darken($gray-darker, 3%));
-
 		.spine-sitenav a,
 		.spine-actions button,
 		.spine-social-channels a,
@@ -365,8 +351,6 @@
 		#glue:before {
 			background-color: $gray-darkest;
 		}
-
-		@include vellum($gray-darkest);
 
 		.spine-actions button,
 		.spine-social-channels a,
@@ -415,8 +399,6 @@
 		#shelve:after {
 			color: $gray-lightly;
 		}
-
-		@include vellum($crimson);
 
 		.spine-sitenav a,
 		.spine-global-links a,
