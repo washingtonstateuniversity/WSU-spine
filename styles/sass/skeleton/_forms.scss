@@ -2,6 +2,25 @@
 /* BUTTONS
 -------------------------------------------------------- */
 
+// Some browsers size default monospace elements differently. This is a trick.
+input[type="date"],
+input[type="time"] {
+	font-family: monospace, monospace;
+}
+
+input,
+textarea,
+select,
+button {
+	font-size: 1rem; // Override the browser/system-ui default.
+	line-height: 1.3;
+}
+
+label,
+legend {
+	font-weight: 700;
+}
+
 .spine-button,
 .button, button,
 input[type="submit"],
@@ -128,12 +147,6 @@ textarea {
 	box-sizing: border-box;
 }
 
-label,
-legend {
-	font-weight: 700;
-	font-size: 13px;
-}
-
 input[type="checkbox"] {
 	display: inline;
 }
@@ -141,7 +154,6 @@ input[type="checkbox"] {
 label span,
 legend span {
 	font-weight: 400;
-	font-size: 13px;
 	color: #444;
 }
 
