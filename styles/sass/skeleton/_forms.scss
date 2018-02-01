@@ -110,10 +110,6 @@ fieldset {
 	padding: 0;
 }
 
-input {
-	outline: none;
-}
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -128,7 +124,6 @@ textarea,
 select {
 	border: 1px solid #ccc;
 	padding: 6px 4px;
-	outline: none;
 	border-radius: 2px;
 	color: #717171;
 	margin: 0;
@@ -142,10 +137,15 @@ select {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datalist"]:focus,
 textarea:focus {
-	border: 1px solid #aaa;
 	color: #444;
-	box-shadow:  0 0 3px rgba(0,0,0,.2);
 }
 
 textarea {
