@@ -117,13 +117,20 @@ input {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datalist"],
 textarea,
 select {
 	border: 1px solid #ccc;
 	padding: 6px 4px;
 	outline: none;
 	border-radius: 2px;
-	color: #767676;
+	color: #717171;
 	margin: 0;
 	background: #fff;
 }
