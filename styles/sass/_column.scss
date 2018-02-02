@@ -506,8 +506,8 @@ html.lt-ie9 #spine .spine-actions {
 /* ### Search  */
 .spine-search {
 	form {
-		padding: 1em .75em 0 .75em;
-		margin: 0 0 -1px 0;
+		padding: 0 .75em;
+		margin: 1em 0 -1px 0;
 		position: relative;
 		line-height: 1em;
 	}
@@ -516,7 +516,6 @@ html.lt-ie9 #spine .spine-actions {
 		color: #717171;
 		background-color: #fff;
 		width: 100%;
-		margin: 2px 0 0 0;
 		box-shadow: none;
 		padding-right: 25px;
 	}
@@ -536,7 +535,7 @@ html.lt-ie9 #spine .spine-actions {
 		bottom: 0;
 		right: 1em;
 		padding: 0;
-		height: 25px;
+		height: 100%;
 		width: 15px;
 		overflow: hidden;
 		color: transparent;
@@ -547,10 +546,12 @@ html.lt-ie9 #spine .spine-actions {
 		color: #8d959a;
 		position: absolute;
 		right: 0;
+		top: 1em;
 		font-size: .75em;
 		font-family: Spine-Icons;
 	}
 
+	button:focus:before,
 	button:hover:before {
 		color: $crimson;
 	}
