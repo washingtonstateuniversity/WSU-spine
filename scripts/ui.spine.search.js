@@ -228,15 +228,6 @@
 				}
 			} ).data( "autosearch" );
 
-			search_input.on( "keydown", function( e ) {
-				if ( e.keyCode === $.ui.keyCode.TAB && search_input.is( $( ":focus" ) ) ) {
-					e.preventDefault();
-				}
-				if ( e.which === 13 ) {
-					search_input.autosearch( "close" );
-				}
-			} );
-
 			$( "#wsu-search form" ).submit( function() {
 				var scope, site, cx, cof, search_term, search_url;
 				scope = wsu_search.attr( "data-default" );
