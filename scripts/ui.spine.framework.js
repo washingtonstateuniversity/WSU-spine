@@ -606,17 +606,18 @@
 			self = this;
 
 			wsu_actions = self._get_globals( "wsu_actions" ).refresh();
-			wsu_actions.append( html );
+
+			$( "#wsu-" + tab + "-tab" ).append( html );
 
 			if ( self.is_mobile_view() ) {
-				$( "#wsu-" + tab + "-tab button" ).on( "mousedown touchstart", function( e ) {
+				$( "#wsu-" + tab + "-tab > button" ).on( "mousedown touchstart", function( e ) {
 					$( e.target ).on( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
 					$( e.target ).on( "mousemove touchmove", function( e ) {
 						$( e.target ).off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
 					} );
 				} );
 			} else {
-				$( "#wsu-" + tab + "-tab button" ).on( "click", function( e ) {
+				$( "#wsu-" + tab + "-tab > button" ).on( "click", function( e ) {
 					e.preventDefault();
 					wsu_actions.find( "*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 
