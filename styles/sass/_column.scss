@@ -794,7 +794,7 @@ html.lt-ie9 #spine .spine-actions {
 }
 
 /* ### Share */
-.spine-share {
+#spine .spine-share {
 	ul {
 		margin: 1.75em !important;
 		padding: 0;
@@ -806,6 +806,7 @@ html.lt-ie9 #spine .spine-actions {
 		padding: 0;
 
 		a {
+			color: #2a3033;
 			display: block;
 			padding-top: .75em;
 			padding-bottom: .75em;
