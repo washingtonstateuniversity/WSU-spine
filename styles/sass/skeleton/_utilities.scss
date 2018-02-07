@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	position: absolute !important;
+}
+
 .screen-reader-shortcut {
 	position: absolute;
 	top: -1000em;
