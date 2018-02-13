@@ -44,11 +44,17 @@
 
 				sharehtml  = "<section id='wsu-share' class='spine-share spine-action closed'>";
 				sharehtml += "<ul>";
-				sharehtml += "<li class='by-facebook'><a href='https://www.facebook.com/sharer/sharer.php?u=" + current_url + "'>Facebook</a></li>";
-				sharehtml += "<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text=" + twitter_text + "&url=" + current_url + "&via=" + twitter_handle + "' target='_blank'>Twitter</a></li>";
-				sharehtml += "<li class='by-googleplus'><a href='https://plus.google.com/share?url=" + current_url + "'>Google+</a></li>";
-				sharehtml += "<li class='by-linkedin'><a href='https://www.linkedin.com/shareArticle?mini=true&url=" + current_url + "&summary=" + share_text + "&source=" + linkedin_source + "' target='_blank'>Linkedin</a></li>";
-				sharehtml += "<li class='by-email'><a href='mailto:?subject=" + share_text + "&body=" + current_url + "'>Email</a></li>";
+				sharehtml += "<li class='by-facebook'><a href='https://www.facebook.com/sharer/sharer.php?u=" + current_url + "'><span class='screen-reader-text'>Share this URL on </span>Facebook</a></li>";
+
+				sharehtml += "<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text=" + twitter_text + "&url=" + current_url;
+				sharehtml += "&via=" + twitter_handle + "' target='_blank'><span class='screen-reader-text'>Share this URL on </span>Twitter</a></li>";
+
+				sharehtml += "<li class='by-googleplus'><a href='https://plus.google.com/share?url=" + current_url + "'><span class='screen-reader-text'>Share this URL on </span>Google+</a></li>";
+
+				sharehtml += "<li class='by-linkedin'><a href='https://www.linkedin.com/shareArticle?mini=true&url=" + current_url + "&summary=";
+				sharehtml += share_text + "&source=" + linkedin_source + "' target='_blank'><span class='screen-reader-text'>Share this URL on </span>Linkedin</a></li>";
+
+				sharehtml += "<li class='by-email'><a href='mailto:?subject=" + share_text + "&body=" + current_url + "'><span class='screen-reader-text'>Share this URL with </span>Email</a></li>";
 				sharehtml += "</ul>";
 				sharehtml += "</section>";
 

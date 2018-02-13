@@ -1,5 +1,33 @@
 @charset "UTF-8";
 
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	position: absolute !important;
+}
+
+.screen-reader-shortcut {
+	position: absolute;
+	top: -1000em;
+}
+
+.screen-reader-shortcut:focus {
+	left: 5px;
+	top: 5px;
+	height: auto;
+	width: auto;
+	display: block;
+	font-size: 1em;
+	font-weight: 600;
+	padding: 15px 20px 15px;
+	background: #f2f2f2;
+	color: #981e32;
+	z-index: 100000;
+	line-height: 1.5;
+}
+
 /* ### Clearing  */
 .row:not(.clear-none):before,
 .row:not(.clear-none):after,

@@ -583,6 +583,12 @@
 
 			$( "#wsu-actions" ).find( "*.opened, #wsu-" + tab + ", #wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
 
+			if ( $( evt.target ).parent( "li" ).hasClass( "opened" ) ) {
+				$( "#spine-navigation, .spine-footer" ).css( "visibility", "hidden" );
+			} else {
+				$( "#spine-navigation, .spine-footer" ).css( "visibility", "initial" );
+			}
+
 			action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 
 			$( ".spine-action.opened" ).css( "min-height", action_ht );
@@ -600,19 +606,27 @@
 			self = this;
 
 			wsu_actions = self._get_globals( "wsu_actions" ).refresh();
-			wsu_actions.append( html );
+
+			$( "#wsu-" + tab + "-tab" ).append( html );
 
 			if ( self.is_mobile_view() ) {
-				$( "#wsu-" + tab + "-tab button" ).on( "mousedown touchstart", function( e ) {
+				$( "#wsu-" + tab + "-tab > button" ).on( "mousedown touchstart", function( e ) {
 					$( e.target ).on( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
 					$( e.target ).on( "mousemove touchmove", function( e ) {
 						$( e.target ).off( "mouseup touchend", $.ui.spine.prototype._toggle_spine_action_item );
 					} );
 				} );
 			} else {
-				$( "#wsu-" + tab + "-tab button" ).on( "click", function( e ) {
+				$( "#wsu-" + tab + "-tab > button" ).on( "click", function( e ) {
 					e.preventDefault();
 					wsu_actions.find( "*.opened,#wsu-" + tab + ",#wsu-" + tab + "-tab" ).toggleClass( "opened closed" );
+
+					// Hide the Spine navigation from screen readers when action tabs are in focus.
+					if ( $( "#wsu-" + tab + "-tab" ).hasClass( "opened" ) ) {
+						$( "#spine-navigation, .spine-footer" ).css( "visibility", "hidden" );
+					} else {
+						$( "#spine-navigation, .spine-footer" ).css( "visibility", "initial" );
+					}
 
 					action_ht = window.innerHeight - $( ".spine-header" ).outerHeight() - $( "#wsu-actions-tabs" ).outerHeight();
 

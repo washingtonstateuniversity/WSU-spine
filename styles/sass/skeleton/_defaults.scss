@@ -2,7 +2,9 @@
 
 /* ### Fonts  */
 body {
-	font: 14px/22px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 .sans {
@@ -16,40 +18,34 @@ body {
 /* ### Headers */
 h6,h5,h4,h3,h2,h1 {
 	margin: 0;
-	line-height: 1.1em;
+	line-height: 1.1;
 	letter-spacing: 0;
 	font-weight: 700;
 	padding: .5em 0 .2em 0;
 }
 
 h1 {
-	font-size: 2em;
 	font-size: 2rem;
 	padding-top: 0;
 }
 
 h2 {
-	font-size: 1.8em;
 	font-size: 1.8rem;
 }
 
 h3 {
-	font-size: 1.6em;
 	font-size: 1.6rem;
 }
 
 h4 {
-	font-size: 1.4em;
 	font-size: 1.4rem;
 }
 
 h5 {
-	font-size: 1.2em;
 	font-size: 1.2rem;
 }
 
 h6 {
-	font-size: 1em;
 	font-size: 1rem;
 }
 
@@ -106,7 +102,7 @@ big {
 
 small {
 	font-size: smaller;
-	line-height: 110%;
+	line-height: 1.1;
 }
 
 article img[align="right"] {
@@ -143,10 +139,14 @@ nav ul li,
 }
 
 a {
-	text-decoration: none;
 	color: #981e32;
 }
 
+#spine a {
+	text-decoration: none;
+}
+
+a:focus,
 a:hover {
 	color: #c60c30;
 }
@@ -167,7 +167,7 @@ hr {
 	border-color: #000;
 	margin: 1em 0;
 	height: 1px;
-	background-color: rgba(93, 105, 112, .50);
+	background-color: rgba(93, 105, 112, .5);
 	display: block;
 	clear: both;
 }

@@ -45,6 +45,11 @@
 	a:hover {
 		color: #981e32;
 	}
+
+	#glue,
+	#glue:before {
+		background-color: #fff;
+	}
 }
 
 #glue {
@@ -58,7 +63,6 @@
 }
 
 .spine-full #glue:before {
-	background-color: #fff;
 	content: " ";
 	min-height: 100%;
 	position: absolute;
@@ -166,12 +170,15 @@
 
 .spine-actions-tabs,
 .spine-nav,
-.spine-footer  {
+.spine-footer {
 	button:before {
 		font-family: Spine-Icons;
 		text-indent: 0;
 		position: absolute;
-		left: 0;	top: 0; right: 0; bottom: 0;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -407,7 +414,7 @@ html.lt-ie9 #spine .spine-actions {
 	display: none;
 }
 
-#spine	{
+#spine {
 	.spine-actions {
 		padding: 0;
 
@@ -415,6 +422,7 @@ html.lt-ie9 #spine .spine-actions {
 			z-index: 99163;
 			height: 100%;
 			position: absolute;
+			left: 0;
 			display: block;
 			width: 198px;
 		}
@@ -431,17 +439,14 @@ html.lt-ie9 #spine .spine-actions {
 			display: block;
 		}
 
-		ul li {
-			padding: 0; margin: 0;
-			list-style: none;
-		}
-
-		> ul li {
+		> ul > li {
 			display: block;
 			width: 25%;
 			text-align: center;
 			list-style: none;
 			float: left;
+			padding: 0;
+			margin: 0;
 		}
 	}
 
@@ -450,18 +455,14 @@ html.lt-ie9 #spine .spine-actions {
 		padding: 0;
 		margin: 0 1.75em;
 
-		button {
-			outline: none;
-		}
-
-		li {
+		> li {
 			width: 25%;
 			display: inline-block;
 			margin: 0;
 			padding: 0;
 		}
 
-		li button {
+		> li > button {
 			position: relative;
 			width: 100%;
 			height: 2.2em;
@@ -473,32 +474,32 @@ html.lt-ie9 #spine .spine-actions {
 			display: block;
 		}
 
-		li button:before {
+		> li > button:before {
 			text-align: center;
 			top: .9em;
 		}
 	}
 
-	.spine-search-tab button:before {
+	.spine-search-tab > button:before {
 		content: "$";
 	}
 
-	.spine-contact-tab button:before {
+	.spine-contact-tab > button:before {
 		content: "\2709";
 	}
 
-	.spine-share-tab button:before {
+	.spine-share-tab > button:before {
 		content: "\F601";
 	}
 
-	.spine-print-tab button:before {
+	.spine-print-tab > button:before {
 		content: "\2399";
 	}
 
-	.spine-search-tab.opened button:before,
-	.spine-contact-tab.opened button:before,
-	.spine-share-tab.opened button:before,
-	.spine-print-tab.opened button:before {
+	.spine-search-tab.opened > button:before,
+	.spine-contact-tab.opened > button:before,
+	.spine-share-tab.opened > button:before,
+	.spine-print-tab.opened > button:before {
 		content: "\2421";
 	}
 }
@@ -506,25 +507,18 @@ html.lt-ie9 #spine .spine-actions {
 /* ### Search  */
 .spine-search {
 	form {
-		padding: 1em 1.75em 0 1.75em;
-		margin: 0 0 -1px 0;
+		padding: 0 .75em;
+		margin: 1em 0 -1px 0;
 		position: relative;
 		line-height: 1em;
 	}
 
 	input[type="text"] {
-	  	font-size: 1.15em;
 		color: #717171;
-		background-color: transparent;
-		border-radius: 0;
-		padding: 0;
-		text-indent: 0;
-		height: 1.55em;
+		background-color: #fff;
 		width: 100%;
-		margin: 2px 0 0 0;
-		border: none;
 		box-shadow: none;
-		border-bottom: 1px #b6bcbf solid;
+		padding-right: 25px;
 	}
 
 	// Hide the clear "X" in newer versions of IE
@@ -533,18 +527,16 @@ html.lt-ie9 #spine .spine-actions {
 	}
 
 	input:focus {
-		color: $crimson;
-		border: none;
-		border-bottom: 1px $crimson solid;
+		color: #444;
 	}
 
 	button {
 		position: absolute;
 		display: block;
 		bottom: 0;
-		right: 1.75em;
+		right: 1em;
 		padding: 0;
-		height: 25px;
+		height: 100%;
 		width: 15px;
 		overflow: hidden;
 		color: transparent;
@@ -555,11 +547,12 @@ html.lt-ie9 #spine .spine-actions {
 		color: #8d959a;
 		position: absolute;
 		right: 0;
-		font-size: 1.3em;
+		top: 1em;
+		font-size: .75em;
 		font-family: Spine-Icons;
-		width: 35px;
 	}
 
+	button:focus:before,
 	button:hover:before {
 		color: $crimson;
 	}
@@ -699,6 +692,18 @@ html.lt-ie9 #spine .spine-actions {
 
 /* ### Contact  */
 #spine .spine-contact {
+	text-align: left;
+
+	a {
+		color: #000;
+	}
+
+	a:focus,
+	a:hover {
+		color: #c60c30;
+		text-decoration: underline;
+	}
+
 	address {
 		color: #384044;
 		margin: 1.75em;
@@ -717,23 +722,28 @@ html.lt-ie9 #spine .spine-actions {
 		border-bottom: none;
 	}
 
-	.organization  {
+	.organization {
 		font-weight: 700;
 		padding-bottom: .5em;
 	}
 
-	.organization-unit  {
+	.organization-unit {
 		font-size: 1.3em;
 		padding-bottom: .3em;
 		border-bottom: none;
 	}
 
-	.organization-unit a,
-	.organization-unit a:hover {
-		color: #000;
+	.organization-unit a {
+		color: #981e32;
+		text-decoration: underline;
 	}
 
-	.organization-name  {
+	.organization-unit a:focus,
+	.organization-unit a:hover {
+		color: #c60c2f;
+	}
+
+	.organization-name {
 		font-size: .9em;
 		padding: 0;
 		border-bottom: none;
@@ -784,20 +794,26 @@ html.lt-ie9 #spine .spine-actions {
 }
 
 /* ### Share */
-.spine-share {
+#spine .spine-share {
 	ul {
 		margin: 1.75em !important;
 		padding: 0;
 	}
 
 	li {
+		text-align: left;
+		list-style: none;
+		padding: 0;
+
 		a {
+			color: #2a3033;
 			display: block;
 			padding-top: .75em;
 			padding-bottom: .75em;
 			border-bottom: 1px #c3cbcf solid;
 		}
 
+		a:focus,
 		a:hover {
 			color: #fff !important;
 			background: #434d53;
@@ -810,10 +826,6 @@ html.lt-ie9 #spine .spine-actions {
 			background: #981e32;
 		}
 
-		a:hover {
-			color: #fff;
-		}
-
 		a:before {
 			font-family: Spine-Icons !important;
 			-webkit-font-smoothing: antialiased;
@@ -823,12 +835,8 @@ html.lt-ie9 #spine .spine-actions {
 			text-align: center;
 		}
 
-		&:last-of-type a  {
+		&:last-of-type a {
 			border-bottom: none;
-		}
-
-		a span {
-			display: none;
 		}
 	}
 
@@ -1210,8 +1218,6 @@ html.lt-ie9 #spine footer {
 		background-color: #fff;
 	}
 
-	@include vellum($gray-er);
-
 	.spine-sitenav a,
 	.spine-search-tab button {
 		color: $gray;
@@ -1228,6 +1234,7 @@ html.lt-ie9 #spine footer {
 		border-color: rgba(0,0,0,.1);
 	}
 
+	.spine-sitenav a:focus,
 	.spine-sitenav a:hover,
 	.spine-sitenav li.dogeared > a {
 		color: $crimson;
