@@ -1,6 +1,8 @@
 # WSU Spine Changelog
 
-## 1.x.x (TBD)
+## 1.4.8 (February 13, 2018)
+
+* Add specificity to the mobile menu button.
 
 ## 1.4.7 (September 13, 2017)
 
