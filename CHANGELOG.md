@@ -1,5 +1,7 @@
 # WSU Spine Changelog
 
+## 2.x.x (TBD)
+
 ## 2.0.0 (February 26, 2018)
 
 * Add screen reader shortcuts for main content and navigation to example HTML.
