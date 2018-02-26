@@ -9,169 +9,194 @@
 	<meta charset="utf-8">
 	<title>Page Title | Unit or Department at WSU</title>
 
-	<!-- FAVICON -->
-	<link rel="shortcut icon" href="https://repo.wsu.edu/spine/1/favicon.ico" />
+	<!-- The WSU logo as a favicon -->
+	<link rel="shortcut icon" href="https://repo.wsu.edu/spine/2/favicon.ico" />
 
-	<!-- STYLESHEETS -->
-	<link href="https://repo.wsu.edu/spine/1/spine.min.css" rel="stylesheet" type="text/css" />
-	<!-- Your custom stylesheets here -->
-	<!-- RESPOND -->
+	<!-- The primary WSU Spine stylesheet -->
+	<link href="https://repo.wsu.edu/spine/2/spine.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- Site specific stylesheets should be inserted after the Spine CSS above. -->
+
 	<meta name="viewport" content="width=device-width, user-scalable=yes">
 
-	<!-- SCRIPTS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<script src="https://repo.wsu.edu/spine/1/spine.min.js"></script>
-	<!-- COMPATIBILITY -->
+
+	<!-- Current library versions can be found at https://developers.google.com/speed/libraries/ -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<script src="https://repo.wsu.edu/spine/2/spine.min.js"></script>
+
+	<!-- Site specific JavaScript should be inserted after jQuery and the Spine JS above, ideally at the end of the document. -->
+
+	<!-- Include an HTML5 compatibility shim for HTML5 -->
 	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
-	<noscript><style>#spine .spine-sitenav ul ul li { display: block !important; }</style></noscript>
 
-	<!-- DOCS -->
-	<link type="text/plain" rel="author" href="https://repo.wsu.edu/spine/1/authors.txt">
-	<link type="text/html" rel="help" href="https://brand.wsu.edu">
-
-	<!-- BASE URL -->
-	<base href="/1/" />
+	<!-- Ensure the Spine is displayed fully when no-JS -->
+	<noscript>
+		<style>
+			#spine .spine-sitenav ul ul li {
+				display: block !important;
+			}
+		</style>
+	</noscript>
 
 </head>
 
-<body class="">
+<body>
+<a href="#wsu-main-content" class="screen-reader-shortcut">Skip to main content</a>
+<a href="#spine-navigation" class="screen-reader-shortcut">Skip to navigation</a>
 
-<!-- WRAPPING -->
 <div id="jacket">
-<div id="binder" class=" hybrid">
-<!-- GRID BEHAVIOR: Default behavior can be changed by changing "hybrid" to "fixed" or "fluid". -->
-<!-- CONTENT -->
-<main>
 
-	<!-- Responsive Sections -->
-		<section class="row side-right gutter pad-bottom tall">
+	<!-- Fluid layout is recommended and supported. "hybrid" and "fixed" are also possible here. -->
+	<div id="binder" class="fluid">
 
-	<div class="column one">
+		<!-- Primary site content should go within this main element. -->
+		<main id="wsu-main-content">
 
-		<article class="post-15 page type-page status-publish hentry" id="post-15">
+			<!-- A variety of section layouts are available. -->
+			<section class="row side-right gutter pad-bottom tall">
 
-			<p><big>Integer vestibulum</big> quis lacus imperdiet imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sollicitudin mauris a augue mattis, in sollicitudin felis tincidunt. Nulla id leo et justo molestie egestas. Mauris ultrices metus nunc, vel tempor diam molestie id. Ut vitae porttitor massa. Ut posuere enim at turpis tristique varius. Praesent pellentesque augue nulla. In consequat dui quam. Duis pellentesque in orci cursus varius. Ut vehicula enim libero, sit amet porta dui suscipit in.</p>
+				<!-- Sections (rows) contain one or more columns. -->
+				<div class="column one">
 
-<h3>Cras at bibendum elit.</h3>
-<p>Sed facilisis feugiat nunc, quis aliquet nisl tristique vitae. Nam adipiscing mauris metus, eget commodo tortor placerat id. Etiam tincidunt eget nisi id elementum. Nam vel tincidunt nibh, vel lobortis sapien. Aliquam egestas augue nec libero porttitor tincidunt. Curabitur quis sapien a diam adipiscing gravida. Sed sed porta sem. Duis vel sapien nec metus sollicitudin rhoncus. Vestibulum ultrices vulputate mauris, ac ullamcorper magna porta quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+					<article>
 
-<p>Etiam dignissim nec felis vel fringilla. Proin imperdiet aliquet ante, quis egestas felis tincidunt id. Duis vel adipiscing quam. Praesent iaculis sagittis mattis. Morbi ac bibendum nulla. Donec quis est augue. Vestibulum rutrum quam ac interdum elementum.</p>
+						<p><big>Integer vestibulum</big> quis lacus imperdiet imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sollicitudin mauris a augue mattis, in sollicitudin felis tincidunt. Nulla id leo et justo molestie egestas. Mauris ultrices metus nunc, vel tempor diam molestie id. Ut vitae porttitor massa. Ut posuere enim at turpis tristique varius. Praesent pellentesque augue nulla. In consequat dui quam. Duis pellentesque in orci cursus varius. Ut vehicula enim libero, sit amet porta dui suscipit in.</p>
 
-		</article>
+						<h3>Cras at bibendum elit.</h3>
 
-	</div><!--/column-->
+						<p>Sed facilisis feugiat nunc, quis aliquet nisl tristique vitae. Nam adipiscing mauris metus, eget commodo tortor placerat id. Etiam tincidunt eget nisi id elementum. Nam vel tincidunt nibh, vel lobortis sapien. Aliquam egestas augue nec libero porttitor tincidunt. Curabitur quis sapien a diam adipiscing gravida. Sed sed porta sem. Duis vel sapien nec metus sollicitudin rhoncus. Vestibulum ultrices vulputate mauris, ac ullamcorper magna porta quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
 
-	<div class="column two">
+						<p>Etiam dignissim nec felis vel fringilla. Proin imperdiet aliquet ante, quis egestas felis tincidunt id. Duis vel adipiscing quam. Praesent iaculis sagittis mattis. Morbi ac bibendum nulla. Donec quis est augue. Vestibulum rutrum quam ac interdum elementum.</p>
 
-		<aside>
-				<h2>Sidebar</h2>
-				<ul>
-					<li>Fight, fight, fight for Washington State! Win the victory!</li>
-					<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
-					<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
-					<li>Fight, fight, fight for Washington State and victory!</li>
-					<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
-				</ul>
-				<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
-		</aside>
+					</article>
 
-	</div><!--/column-->
+				</div>
 
-</section>
-</main>
-<!-- /CONTENT -->
+				<div class="column two">
 
-<!-- SPINE -->
-<div id="spine" class="spine-column shelved color bleed">
-<!-- SPINE COLOR: Available spine colors are crimson, gray, gray-lightest, gray-lightly, gray-lighter, gray-light, gray-dark, gray-darker, gray-darkest. Replace the color class above with your preferred color if you want to override the default. -->
-<!-- SPINE BLEED: Remove "bleed" so that  -->
-<div id="glue" class="spine-glue">
+					<aside>
+						<h2>Sidebar</h2>
+						<ul>
+							<li>Fight, fight, fight for Washington State! Win the victory!</li>
+							<li>Win the day for Crimson and Gray! Best in the West, we know you'll all do your best, so</li>
+							<li>On, on, on, on! Fight to the end! Honor and Glory you must win! So</li>
+							<li>Fight, fight, fight for Washington State and victory!</li>
+							<li>W-A-S-H-I-N-G-T-O-N-S-T-A-T-E-C-O-U-G-S! <strong>GO COUGS!!</strong></li>
+						</ul>
+						<small>The song appears in the 1985 film <i>Volunteers</i>, sung by John Candy's character Tommy Tuttle from Tacoma, Washington, and later used as a war cry by the Communists.</small>
+					</aside>
 
-<header class="spine-header">
-	<a href="https://wsu.edu/" id="wsu-signature" class="spine-signature">Washington State University</a>
-</header>
+				</div>
 
-<!-- ACTIONS -->
-<section id="wsu-actions" class="spine-actions">
+			</section><!-- End .row -->
 
-	<!-- Tabs -->
-	<ul id="wsu-actions-tabs" class="spine-actions-tabs clearfix">
-		<li id="wsu-search-tab" class="spine-search-tab closed"><button>Search</button></li>
-		<li id="wsu-contact-tab" class="spine-contact-tab closed"><button>Contact</button></li>
-		<li id="wsu-share-tab" class="spine-share-tab closed"><button>Share</button></li>
-		<li id="wsu-print-tab" class="spine-print-tab closed"><button>Print</button></li>
-	</ul>
+		</main><!-- End #wsu-main-content -->
 
-	<!-- Actions generated by spine.js end up here -->
-</section><!--/#wsu-actions-->
-
-<section id="spine-navigation" class="spine-navigation">
-
-	<nav class="spine-sitenav">
-
-		<ul>
-			<!--
-			NAVIGATION: Your navigation list here
-			• Active link should be denoted with an "active" or "current" link on the link's parent li element.
-			• First link should be a home link (otherwise, in exceptional cases, add "homeless" class to #site nav)
-			• Replace example navigation list below -->
-			<li><a href="/">Site Home</a></li>
-			<li><a href="">Options</a>
-				<ul>
-					<li><a href="https://brand.wsu.edu/media/web/">The WSU Web Template</a></li>
-					<li><a href="https://brand.wsu.edu/media/web/web-standards">Spine standards</a></li>
-				</ul>
-			</li>
-			<li class="current"><a href="spine.html">The Spine framework</a></li>
-			<li><a href="spine.min.html">Minimal Markup</a></li>
-		</ul>
-
-	</nav>
-
-	<nav class="spine-offsitenav">
-	<ul>
-		<li><a href="http://www.example.com">Offsite Link</a></li>
-		<li><a href="http://fonts.wsu.edu">Another</a></li>
-	</ul>
-</nav>
-
-</section><!-- #navigation -->
-
-<!-- Social and Global Links -->
-<footer class="spine-footer">
-	<nav id="wsu-social-channels" class="spine-social-channels">
 		<!--
-		SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
-		• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
-		• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
-		• Maximum number of channels is five -->
-		<ul>
-			<li class="facebook-channel"><a href="https://facebook.com/wsupullman">Facebook</a></li>
-			<li class="twitter-channel"><a href="https://twitter.com/wsupullman">Twitter</a></li>
-			<li class="youtube-channel"><a href="https://www.youtube.com/washingtonstateuniv">YouTube</a></li>
-			<li class="directory-channel"><a href="http://social.wsu.edu">Directory</a></li>
-		</ul>
-	</nav>
-	<nav id="wsu-global-links" class="spine-global-links">
-		<ul>
-			<li class="mywsu-link"><a href="https://my.wsu.edu/">myWSU</a></li>
-			<li class="access-link"><a href="http://access.wsu.edu/">Access</a></li>
-			<li class="policies-link"><a href="http://policies.wsu.edu/">Policies</a></li>
-			<li class="copyright-link"><a href="http://copyright.wsu.edu">&copy;</a></li>
-		</ul>
-	</nav>
-</footer>
+		The #spine contains the site navigation and branding
+			* Color: By default, the WSU Spine is white. Add the gray-darker class to use the darker Spine.
+			* Bleed: By default, the Spine is 198px wide. To have it bleed fully to the left, add the bleed class.
+		-->
+		<div id="spine">
 
-</div><!--/glue-->
-</div><!--/spine-->
-<!-- /SPINE -->
+			<div id="glue">
 
-</div><!--/cover-->
-</div><!--/jacket-->
-<!-- /WRAPPING -->
+				<header class="spine-header">
+					<a href="https://wsu.edu/" id="wsu-signature">Washington State University</a>
+				</header>
 
-<!-- CONTACT INFO: Adjust the sample contact info below to reflect appropriate contact information. -->
+				<!-- Both #wsu-actions and .spine-actions are required here. -->
+				<section id="wsu-actions" class="spine-actions">
+
+					<!-- Both #wsu-actions-tabs and .spine-actions-tabs are required here. -->
+					<ul id="wsu-actions-tabs" class="spine-actions-tabs clearfix">
+						<li id="wsu-search-tab" class="spine-search-tab closed">
+							<button>Search</button>
+						</li>
+						<li id="wsu-contact-tab" class="spine-contact-tab closed">
+							<button>Contact</button>
+						</li>
+						<li id="wsu-share-tab" class="spine-share-tab closed">
+							<button>Share</button>
+						</li>
+						<li id="wsu-print-tab" class="spine-print-tab closed">
+							<button>Print</button>
+						</li>
+					</ul>
+
+				</section><!-- End #wsu-actions .spine-actions -->
+
+				<!-- Both #spine-navigation and .spine-navigation are required here. -->
+				<section id="spine-navigation" class="spine-navigation">
+
+					<!-- The main navigation for the site. -->
+					<nav class="spine-sitenav">
+
+						<ul>
+							<!--
+							Site specific navigation should be output here.
+								* Active link should be denoted with an "active" or "current" link on the link's parent li element.
+								* First link should be a home link.
+								* Replace example navigation list below.
+							-->
+							<li><a href="/">Site Home</a></li>
+							<li><a href="">Options</a>
+								<ul>
+									<li><a href="https://brand.wsu.edu/media/web/">The WSU Web Template</a></li>
+									<li><a href="https://brand.wsu.edu/media/web/web-standards">Spine standards</a></li>
+								</ul>
+							</li>
+							<li class="current"><a href="spine.html">The Spine framework</a></li>
+						</ul>
+
+					</nav>
+
+					<!-- Offsite navigation for the site. -->
+					<nav class="spine-offsitenav">
+						<ul>
+							<li><a href="http://www.example.com">Offsite Link</a></li>
+							<li><a href="http://fonts.wsu.edu">Another</a></li>
+						</ul>
+					</nav>
+
+				</section><!-- End #spine-navigation .spine-navigation -->
+
+				<!-- Social and required global WSU links. -->
+				<footer class="spine-footer">
+					<nav id="wsu-social-channels" class="spine-social-channels">
+						<!--
+						SOCIAL CHANNELS: You can replace default social channels with your own. Available channels are:
+						• Facebook, Twitter, Youtube, Google+ (.googleplus-channel), Tumblr, Pinterest, Flickr,
+						• Example: <li class="pinterest-channel"><a href="http://pinterest.com/user">Pinterest</a></li>
+						• Maximum number of channels is five -->
+						<ul>
+							<li class="facebook-channel"><a href="https://facebook.com/wsupullman">Facebook</a></li>
+							<li class="twitter-channel"><a href="https://twitter.com/wsupullman">Twitter</a></li>
+							<li class="youtube-channel"><a href="https://www.youtube.com/washingtonstateuniv">YouTube</a></li>
+							<li class="directory-channel"><a href="https://socialmedia.wsu.edu/">Social media at WSU</a></li>
+						</ul>
+					</nav>
+					<nav id="wsu-global-links" class="spine-global-links">
+						<ul>
+							<li class="mywsu-link"><a href="https://my.wsu.edu/">myWSU</a></li>
+							<li class="access-link"><a href="https://access.wsu.edu/">Access</a></li>
+							<li class="policies-link"><a href="https://policies.wsu.edu/">Policies</a></li>
+							<li class="copyright-link"><a href="https://copyright.wsu.edu">&copy;</a></li>
+						</ul>
+					</nav>
+				</footer><!-- End .spine-footer -->
+
+			</div><!-- End #glue -->
+
+		</div><!-- End #spine -->
+
+	</div><!-- End #binder -->
+
+</div><!-- End #jacket -->
+
+<!-- Adjust this sample contact information to reflect appropriate data for the site. -->
 <div id="contact-details" itemscope itemtype="http://schema.org/Organization">
 	<span itemprop="department"  content="University Unit"></span>
 	<span itemprop="name" content="Washington State University"></span>
