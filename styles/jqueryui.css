@@ -217,13 +217,6 @@ input.ui-button {
 	margin-right: -.3em;
 }
 
-/* workarounds */
-/* reset extra padding in Firefox, see h5bp.com/l */
-input.ui-button::-moz-focus-inner,
-button.ui-button::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
 .ui-datepicker {
 	width: 17em;
 	padding: .2em .2em 0;
