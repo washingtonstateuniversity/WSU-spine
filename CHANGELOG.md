@@ -1,6 +1,27 @@
 # WSU Spine Changelog
 
-## 2.x.x (TBD)
+## 2.0.0 (February 26, 2018)
+
+* Add screen reader shortcuts for main content and navigation to example HTML.
+* Add global styles for screen reader shortcuts.
+* Apply the default Spine color to #glue to help avoid false positives when automatically scanning for accessibility issues.
+* Remove handling of a transparent Spine.
+* Darken default body color to #2a3033.
+* Set body text to the root element font size, effectively increasing the default font size from 14px to 16px.
+* Remove em fallbacks for header font size.
+* Set line-height to 1.1 instead of 100% on small
+* Fix input styles so that font size matches root by default.
+* Set the default input color slightly darker – #717171 on #ffffff.
+* Re-introduce default browser :focus handling (outline).
+* Show default underline on anchors in main.
+* Restore :focus outline on Spine action tab buttons.
+* Improve the experience of the Spine search input field.
+* Avoid trapping a keyboard user in the Spine search input.
+* Fix and accurately describe the social media directory link.
+* Hide Spine navigation from screen readers when focus is on an open action tab.
+* Add more descriptive link text for share options in Spine.
+* Append Spine action sections to li rather than parent section to make screen reader behavior and keyboard navigation more natural.
+* Fix contrast issue with social sharing anchors.
 
 ## 1.4.8 (February 13, 2018)
 
