@@ -86,12 +86,7 @@ button.glassine {
 	border-radius: 0;
 }
 
-/* Fix for odd Mozilla border & padding issues */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
+
 
 /* ## FORMS  */
 
@@ -122,12 +117,9 @@ input[type="time"],
 input[type="datalist"],
 textarea,
 select {
-	border: 1px solid #ccc;
 	padding: 6px 4px;
-	border-radius: 2px;
 	color: #717171;
 	margin: 0;
-	background: #fff;
 }
 
 select {
