@@ -1,8 +1,8 @@
 {
 	"name": "wsu-spine",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"latest_stable": "2",
-	"build_version": "develop",
+	"build_version": "2",
 	"build_location": "",
 	"repository": {
 		"type": "git",

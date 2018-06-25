@@ -1,6 +1,8 @@
 # WSU Spine Changelog
 
-## 2.x.x (TBD)
+## 2.0.1 (June 25, 2018)
+
+* Update text alignment in Health Sciences Spokane vertical SVG.
 
 ## 2.0.0 (February 26, 2018)
 
