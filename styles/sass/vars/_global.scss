@@ -90,10 +90,10 @@ $signatures: $spokane,$vancouver,$tricities,$globalcampus,$extension,$hs,$hss,$f
 
 // locality acts as a base URL for assets. This must be updated when tagging a new release.
 // HTTPS is forced to avoid issues with file:// and because we're better off planning ahead.
-$locality: 'https://repo.wsu.edu/spine/2.0.1';
+$locality: 'https://repo.wsu.edu/spine/2.0.2';
 // font_domain accomplishes the same thing, but does not force HTTPS to avoid CORs issues when
 // a page is displayed via HTTP
-$font_domain: '//repo.wsu.edu/spine/2.0.1';
+$font_domain: '//repo.wsu.edu/spine/2.0.2';
 
 // Signature rules:
 // - The default display, which also covers lighter, darker, and darkest is standard vertical.

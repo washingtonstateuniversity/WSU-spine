@@ -1,5 +1,10 @@
 # WSU Spine Changelog
 
+## 2.0.2 (July 24, 2018)
+
+* Update NPM dependencies.
+* Add and test new deployment procedure.
+
 ## 2.0.1 (June 25, 2018)
 
 * Update text alignment in Health Sciences Spokane vertical SVG.
