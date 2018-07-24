@@ -10,10 +10,10 @@ Visually speaking, the WSU Spine is a 198px wide column that binds together the 
 
 # Implementation
 
-A typical implementation of the WSU Spine would start with markup from spine.html.
+A typical implementation of the WSU Spine would start with markup from the `spine.html` file in this repository.
 
-1. Customize #spine by replacing default data with the appropriate contact details.
-2. Customize the markup in spine.html by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of spine.html and, for some lesser used options, at [brand.wsu.edu](https://brand.wsu.edu).
+1. Customize the `#spine` element by replacing default data with appropriate contact details.
+2. Customize the markup in `spine.html` by adding any out-of-the-box modifications, such as changing the color of the spine. Customization options can be found in the comments of `spine.html` and, for some lesser used options, at [brand.wsu.edu](https://brand.wsu.edu).
 3. Rebuild the markup in your CMS of choice while taking care to preserve its elements and structure.
 
 ## Details
@@ -46,6 +46,22 @@ When following along with development, the following can be used:
 * `https://repo.wsu.edu/spine/develop/spine.min.js`
 
 These are cached in the browser for only 10 minutes and can be considered bleeding edge. This is the first place to test fixed bugs, but may also be considered unstable from time to time.
+
+# Deployment at WSU
+
+A `Makefile` is included with the repository to aid in the deployment of the WSU Spine to the server hosting repo.wsu.edu.
+
+For deployment to work, you must be authorized on the wsuwp-indie-p2n01.web.wsu.edu server. This likely means that you are a member of the web team at WSU and have the appropriate network access required.
+
+From a command line within the Spine directory on your local machine:
+
+* `make deploy version=develop` deploys your current branch to the develop directory. `repo.wsu.edu/spine/develop/...`
+* `make deploy version=2.0.2` should be used after tagging a release and deploys the current working directory to three different branch directories.
+    * `repo.wsu.edu/spine/2.0.2/...`
+    * `repo.wsu.edu/spine/2.0/...`
+    * `repo.wsu.edu/spine/2/...`
+
+If a version number that is not `develop` or a semver type number is passed, the deployment will fail with an error message.
 
 # Contributing to WSU Spine
 
