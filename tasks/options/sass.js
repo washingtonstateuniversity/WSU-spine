@@ -1,6 +1,9 @@
+var sass = require( "node-sass" );
+
 module.exports = {
 	dev: {
 		options: {
+			implementation: sass,
 			sourceMap: true,
 			outputStyle: "expanded"
 		},
