@@ -47,6 +47,33 @@ When following along with development, the following can be used:
 
 These are cached in the browser for only 10 minutes and can be considered bleeding edge. This is the first place to test fixed bugs, but may also be considered unstable from time to time.
 
+# Releasing a new version
+
+* `git checkout master` - Check out the master branch locally.
+* `git checkout -b release-2.0.2` - Check out a release branch based on `master`.
+* `git merge develop` - Merge the `develop` branch into the release branch.
+* Resolve any conflicts during the merge process.
+* Update `$locality` and `$font_domain` in `styles/sass/vars/_global.scss` to reference the correct version number. These both use `develop` for the `develop` branch and the full, latest version number in the `master` branch.
+    * Example: `$locality: 'https://repo.wsu.edu/spine/2.0.2';`
+    * Example: `$font_domain: '//repo.wsu.edu/spine/2.0.2';`
+* Update the `CHANGELOG.md` file with the upcoming version number, date, and description of changes.
+* Update `package.json` version number to the upcoming version number.
+* Use `npm install` to automatically update `package-lock.json` with the new version number.
+* Commit version number changes to the release branch.
+* `git checkout master` - Check out the master branch.
+* `git merge release-2.0.2` - Merge the release branch into the master branch.
+* `git push origin master` - Push the master branch to GitHub.
+* `git checkout develop` - Check out the develop branch.
+* `git merge release-2.0.2` - Merge the release branch into the develop branch.
+* Update `$locality` and `$font_domain` in `styles/sass/vars/_global.scss` to reference the `develop` version.
+    * Example: `$locality: 'https://repo.wsu.edu/spine/develop';`
+    * Example: `$font_domain: '//repo.wsu.edu/spine/develop';`
+* Commit version changes to the develop branch.
+* `git push origin develop` - Push the develop branch to GitHub.
+* Use the GitHub release interface to tag a new version number based on the latest position of the `master` branch.
+
+The `master` and `develop` branches should now be different by only one commit, the one used to update the `develop` branch for development again. Use `git fetch --all` to retrieve new tags locally so that you can deploy as needed.
+
 # Deployment at WSU
 
 A `Makefile` is included with the repository to aid in the deployment of the WSU Spine to the server hosting repo.wsu.edu.
