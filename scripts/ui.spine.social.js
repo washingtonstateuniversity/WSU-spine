@@ -49,7 +49,7 @@
 				sharehtml += "<li class='by-twitter'><a href='https://twitter.com/intent/tweet?text=" + twitter_text + "&url=" + current_url;
 				sharehtml += "&via=" + twitter_handle + "' target='_blank'><span class='screen-reader-text'>Share this URL on </span>Twitter</a></li>";
 
-				sharehtml += "<li class='by-googleplus'><a href='https://plus.google.com/share?url=" + current_url + "'><span class='screen-reader-text'>Share this URL on </span>Google+</a></li>";
+				
 
 				sharehtml += "<li class='by-linkedin'><a href='https://www.linkedin.com/shareArticle?mini=true&url=" + current_url + "&summary=";
 				sharehtml += share_text + "&source=" + linkedin_source + "' target='_blank'><span class='screen-reader-text'>Share this URL on </span>Linkedin</a></li>";
